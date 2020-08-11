@@ -1,0 +1,2638 @@
+MAIN_DEFINITIONS
+  SIZE 120 100
+  TICK 0
+  PLAYER_NUMBER 1
+  FOG_TYPE 0
+  FOGSIDES 1 2 3 4 5 6 7 8
+  MAP_GBI multi_river_of_lost_souls.gbi
+  MUCHY_RECT 0 0 0 0
+  EAGLES 5 80
+  WAVES 20
+  WATER_COLORS E8E860 3 FFE0D0 3 FFE0D0
+END_OF_MAIN_DEFINITIONS
+
+HEXES
+  LINE 0 0 119
+    t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vBsK t4r2v9sK t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9sH t4r7vBsX t4r7vFsX t4r6vJsX t4r6vNsf t4r6vS t4r6vQsK t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4vQ t4r7vMsZ t4r7vMsJ t4r7vMsJ t4r6vHsi t4r6vFsK t4r6vAsi t4r6v8sJ t4r2v8sB t4r2v9s9 t4r2vA t4r2vA t4vA t4vA t4vA t4vA t4v9sC t4v9 t4v9 t4v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4r2v9 t4v9 t4rBv5sa t4r5v3sKhA t4r5v3hA t4r5v3hA t4r5v3hA t4r5v3hA t4r5v3hA
+  LINE 1 1 120
+    t4r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vCsC t2r2vBsC t2r2v9sK t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9sH t2r7vBsX t2r7vFsX t2r6vJsX t2r6vNsP t2r6vQsG t2r6vQsL t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2vQ t2r7vOsK t2r7vO t2r7vMsK t2r6vHsi t2r6vCsi t2r6vAsK t2r2v8sJ t2r2v8sH t2r2vA t2r2vA t2vA t2vA t2vA t2vA t2vA t2v9sC t2v9 t2v9 t2v9 t2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2r2v9 t2rBv5sb t2rBv5sb t2r5v3sKhA t2r5v3hA t2r5v3hA t2r5v3hA t2r5v3hA t2r5v3hA t4r5v3hA
+  LINE 2 1 120
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sH r7vBsX r7vFsX r6vJsX r6vNsP vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r7vNsT r7vNsD r7vNsD r6vIsi r6vGsK r6vAsq r6v8sL r2v8s9 r2v9s9 r2vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA t2r5v3hA t4r5v3hA
+  LINE 3 2 121
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sH r7vBsX r7vFsX r7vJsX r7vNsP vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r7vNsS r7vN r7vN r7vN r6vHsq r6vDsa r6v8si v8 v8sH r2vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v3sLhA r5v3sDhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3hA t2r5v3sIhA t4rBv3sJhA
+  LINE 4 2 121
+    t4r2vD t2r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r7v9sH r6vBsX r6vFsn r7vLsH r7vNsP vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vOsK vMsK r7vKsT r7vKsT r6vIsj r6vDsi r6vAsS r6v8sJ v8sI vA vA vA vA vA vA v9sD v9sD v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v3sLhA r5v3sDhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA t2r5v3sIhA t4rBv5sg
+  LINE 5 3 122
+    t4r2vD t2r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sH r6vBsX r6vFsn r7vLs9 r7vMsX vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vOsK vMsK vKsK vK vIsL r6vGsK r6vBsi r6vAsC vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3hA r5v3hA r5v3sIhA t2rBv5sg t4vA
+  LINE 6 3 122
+    t4r2vD t2r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r6v9sn r6vFsn r7vLsI r7vMsA r7vNsP vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vOsL vMsK vKsK vK vIsL vGsL r6vEsK r6vAsa vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA t2rBv5sg t4vAsA
+  LINE 7 4 123
+    t4r2vD t2r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sH r6vBsn r6vHsn r7vNsA r7vNsQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r7vMsb vMsL vKsL vIsL vIsL vGsL vEsK r6vAsa vA vA vA vA vA vA vA vA v9sB v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA rBv5sg t2vAsA t4vB
+  LINE 8 4 123
+    t4r2vD t2r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sA r2v9sA r2v9sI r6vBsX r6vFsf r7vKsX r7vOsH vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r7vMsb r7vLsD r7vJsT r7vHsT vGsL vGsL vEsL vCsK vAsK vA vA vA vA vA vA vA vA vA v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg rBv5sg t2vAsA t4vB
+  LINE 9 5 124
+    t4r2vD t2r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9sA r2vAsA r2vAsA r7vBsX r6vFsf r7vK r7vKsW r7vMsW vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r7vMsb r7vLsD r7vJsL r7vHsL vFsL vEsL vEsL vCsL vAsK v9sD v9s8 vA vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vAsA t2vB t4vB
+  LINE 10 5 124
+    t4r2vD t2r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9s9 r2vAs9 r2vBsI r7vBsX r7vFs9 r7vGsX r7vK r7vKsH r7vMsX vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ vQ r6vKsr r6vGsr r6vFsr r6vDsr r6vBsr r6vBsb vCsL vCsL vAsL v9sD v9 v9s8 vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB t2vB t4vB
+  LINE 11 6 125
+    t4r2vD t2r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9s9 r2vAs9 r2vBsH r7vD r7vDsP r7vG r7vGsX r7vJsP r7vMsX vQ vQ vQ vQ vQ vQ vQ vQ vQ r6vKsr r6vKsr r6vKsr r6vEsr r6vAsr r6v9sr r6v9sb r6v9sL r7v9sO vAsL vAsL v9sD v9 v9 v9s8 vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 r2v9 v9 r2v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB t2vB t4vB
+  LINE 12 6 125
+    t4r2vD t2r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9s9 r2vAs9 r7vBsH r7vDs9 r7vEsG r7vFsG r7vHsH r7vJsO r6vLse vQ vQ vQ vQ vQ vQ vQ r6vKsr r6vKsr r6vEsr r6vEsr r6vEsr r6v9sj r6v9sD r7v9 r7v9 r7v9 r7v9s8 v9sD v9sD v9 v9 v9 v9s8 vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 r2v9 v9 rBv9 rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB t2vB t4vB
+  LINE 13 7 126
+    t4r2vD t2r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9s8 r2vAs8 r7vAsO r7vCsG r7vDsG r7vFsH r7vHsH r6vJsH r6vLsf vQ vQ vQ vQ vQ vQ r6vKsr r6vEsr r6vEsr r6v9sj r6v9sj r6v9sj r6v9 r7v9 r7v9 r7v9 r7v9 v9 v9 v9 v9 v9 v9 v9s9 vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 r2v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB vB t2vB t4vB
+  LINE 14 7 126
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsC r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9s8 r2v9s8 r7v9sO r7vBsG r6vBsm r7vHsH r6vJsH r6vLsf vQ vQ vQ vQ vQ vQ r6vKsr r6vEsr r6v9sj r6v9sj r7v9 r7v9 r7v9 r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 r2v9 rBv5sb rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB vB t2vB t4vB
+  LINE 15 8 127
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vCsD r2vCsD r2vBsC r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r7v9sG r7v9sG r6vBsm r7vFsW r6vJsH r6vLsf vQ vQ vQ vQ vQ r6vKsq r6vEsq r6v9si r6v9 r7v9 r7v9 r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB vB vB t2vB t4vB
+  LINE 16 8 127
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vD r2vCsD r2vBsD r2vBsD r2v9sK r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r7v9 r7v9sH r7vBsX r7vFsX r6vJsH r6vLsf vQ vQ vQ vQ r6vKsq r6vEsq r6v9si r7v9 r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9s8 v9s8 vA vA vA vA vA v9sC v9 v9 v9 r2v9 v7sL rBv5sb r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sQhA rBv5sg vAsA vB vB vB vB t2vB t4vB
+  LINE 17 9 128
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vCsD r2vBsD r2v9sL r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r7v9sH r7vBsX r7vFsX r6vJs9 r6vKsn vQ vQ vQ vQ vQ r6vKsq r6vEsq r6v9si r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA vA vA vA v9sC v9 v9 v9 r2v9 rBv7sL rBv5sLhA r5v4sDhA r5v3sBhA r5v3hA r5v3hA r5v3sAhA r5v3sAhA r5v3sAhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3sIhA rBv5sg rBv6sg vAsA vB vB vB vB vB t2vB t4vB
+  LINE 18 9 128
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vCsD r2vBsD r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r7v9sH r7vBsX r7vFsX r6vJsH r6vLsf vQ vQ vQ vQ r6vKsq r6vEsq r6v9si r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA v9sD v9sD v9sD v9sD v9 v9 v9 r2v9 rBv7sL r5v5sLhA r5v4sDhA r5v4hA r5v3sBhA r5v3sBhA r5v3sAhA r5v4hA r5v4hA r5v3sDhA r5v3sDhA r5v3hA r5v3hA r5v3sIhA rBv5sg vAsA vB vB vB vB vB vB t2vB t4vB
+  LINE 19 10 129
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vCsD r2vBsD r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r7v9 r7v9sH r7vBsX r7vFsX r6vJsf vOsH vQ vQ vQ r6vKsq r6vEsq r6v9si r7v9 r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9sD v9 r2v9 r2v9 v9 v9 v9 r2v9 rBv7sL r5v5sLhA r5v4sDhA r5v4hA r5v4hA r5v4hA r5v4hA r5v3sChA r5v3sDhA r5v3sDhA r5v3hA r5v3hA r5v3sIhA r5v3sQhA rBv5sg vAsA vB vB vB vB vB vB vB t2vB t4vB
+  LINE 20 10 129
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vD r2vCsD r2vBsD r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r7v9 r6v9sH r6vBsn r6vHsf vMsH vOsH vQ vQ r6vKsq r6vEsq r6v9si r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 v9 r2v9 rBv7sL rBv7sL r5v5sLhA r5v4sDhA r5v4hA r5v4hA r5v4hA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA rBv5sg rBv6sg vAsA vB vB vB vB vB vB vB t2vB t4vB
+  LINE 21 11 130
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD vD r2vD r2vCsD r2vBsD r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r2v9 v9 v9 v9 r6v9 r6v9sf r6vEsn vKsH vMsH vOsH vQ r6vKsq r6vEsq r6v9si r7v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv7sK r5v5sLhA r5v5sLhA r5v4sDhA r5v4hA r5v4hA r5v4hA r5v4hA r5v4hA r5v3sBhA r5v3hA r5v3hA r5v3sIhA rBv5sg rBv5sg vAsA vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 22 11 130
+    t4r2vD t2r2vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vD vD vCsD vCsD vCsD r2vCsD r2vBsL r2vBsD r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 r7v9 r6v9sP r6vCsn vIsH vKsH vMsH vOsG r6vKsq r6vEsq r6v9si r7v9 v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv7sK r5v5sKhA r5v5hA r5v4sDhA r5v4hA r5v4hA r5v4hA r5v4hA r5v4hA r5v4sAhA r5v3sJhA r5v3sIhA r5v3sIhA rBv5sg vAsA vAsA vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 23 12 131
+    t4r7v9sW t2r7v9sW r7v9sW vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vD vCsD vBsD vBsD vBsD r2vBsD r2v9sL r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 r7v9 r6v9s9 r6vAsn vGsH vIsH vKsH vMsG r7vLsT r6vFsq r6v9sq r7v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 rBv7sK r5v5sKhA r5v4sChA r5v4hA r5v4hA r5v4hA r5v4hA r5v4hA r5v4sAhA r5v5sIhA r5v5sIhA r7v5sY rBv5sg vAsA vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 24 12 131
+    t4r5v7sGhA t2r5v7sGhA r5v7sGhA r7v9sW r7v9sW r7v9sW vD vD r2vD r2vD r2vD r2vD r2vD r7v9sb r7v9sb r7v9sW r7v9sW vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vD vD vCsD vBsD vB vB r2v9sL r2v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r6v9sf vEsH vGsH vIsH vKsG r7vJsT r6vFsr r6v9sq r7v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v5sLhA r5v4sChA r5v4hA r5v4hA r5v4hA r5v4hA r5v4hA r5v4sAhA r5v5sIhA rBv7sI rBv7sI rBv9sA vAsA vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 25 13 132
+    t4r5v7hA t2r5v7hA r5v7sGhA r5v7sGhA r5v7sGhA r7v9sW r7v9sW vD r2vD r2vD r2vD r2vD r7v9sa r7v7sL r7v7sG r7v9 r7v9sW vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vD vD vD vD vD vCsD vBsD v9sL v9sL v9sL r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP vCsH vEsH vGsH vIsG r7vIsL r6vFsb r6v9sq r7v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 rBv5sb r5v3sLhA r5v3sLhA r5v3sDhA r5v4hA r5v4hA r5v4hA r5v4hA r5v4sAhA r5v5sIhA rBv7sI v9 v9s9 vAs9 vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 26 13 132
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r7v9sW r7v9sW r2vD r2vD vD r7v9sa r7v7sK r5v7hA r5v7sGhA r5v7sGhA r7v9sW vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vD vCsD vCsD vCsD vCsD vBsD v9sL v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAsH vCsH vEsH vGsG vGsG r7vHsD r6vBsq r7v9sK v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 rBv5sa r5v3sLhA r5v3sDhA r5v3sDhA r5v3sDhA r5v3s8hA r5v4hA r5v4hA r5v4sAhA r5v5sIhA rBv7sI v9 v9 v9s8 vAs8 vAs8 vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+  LINE 27 14 133
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r7v9sW vD r7vD r7vD r7v9sa r7v7sJ r5v7sGhA r5v7hA r5v7sGhA r7v9sW vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsD vBsD vBsD vBsD vBsD v9sL v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAsH vCsH vEsG vEsG vFsG r7vFsL r6v9sq r7v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 v9 rBv5sa r5v3sKhA r5v3sDhA r5v4hA r5v3sChA r5v3hA r5v3s8hA r5v3s8hA r5v4sAhA r5v5sIhA rBv7sI v9 v9 v9 v9s8 v9s8 vAs8 vAs8 vAs8 vB vB vAsD vAsD vAsD vAs8 vB vB t2vB t4vB
+  LINE 28 14 133
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r7v9sW r7vD r7vD r7vD r7v9sa r7v9 r5v7sKhA r5v7hA r5v7sHhA r7v9sX vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsD r2vBsD vB vB v9sL v9sL v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAsG vCsG vCsG vDsG vDsG r6v9sq r7v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3s8hA r5v3s8hA r5v3s9hA r5v3s8hA r5v3hA r5v3sHhA rBv5sY rBv7sI v9 v9 v9 v9 v9 v9s8 v9s8 v9s8 vAs8 vAs8 vAsD vA v9sD v9s8 v9sG vAs8 t2vAs8 t4vB
+  LINE 29 15 134
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r7v9sW r7vD r7vD r7vD r7v9sa r5v7sKhA r5v7hA r5v7sHhA r7v9sX r7vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsD r2vBsD r2v9sL v9sL v9sL v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9sO vAsG vBsG vBsG vD r7v9sa r7v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3s9hA r5v4hA r5v3sAhA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9s8 vA vA v9sC v9 v9 v9s9 vA t2vAs9 t4vB
+  LINE 30 15 134
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r7v9sW r7v9sW r7vD r7v9sb r7v9 r5v7sKhA r5v7sHhA r7v9sX r7vD r7vD vD r2vD r2vD r2vD r2vD r2vD r2vD r2vCsD r2vBsD r2v9sL r2v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9sG v9sG vBsG vCsD r7v9sT r7v9sB r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3s8hA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 vA vA v9sB v9sA v9sA vA t2vAs9 t4vB
+  LINE 31 16 135
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r7v9sW r7v9sb r5v7sLhA r5v7sLhA r5v7hA r5v7sGhA r7v9sW r7v9sW r7vD vD r2vD r2vD r2vD r2vD r2vD r2vBsL r2vBsD r2v9sL r2v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sG vAsG vAsL r7vA r7v9sC v9 v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA vA vAsA vAsA vAsA vAsA t2vB t4vB
+  LINE 32 16 135
+    t4r5v7hA t2r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r5v7sLhA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r7v9sW r7v9sW r7v9sW vD r7v9sb r7v9sb r7v9sb r7v9sb r2v9sL r2v9sL r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9s8 v9sD v9sD v9 v9 v9 v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vA vAsA vAsA vBsA vBsA vBsA t2vBsA t4vBsA
+  LINE 33 17 136
+    t4r5v7sIhA t2r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r5v7sGhA r7v9sW r7v9sb r7v9 r5v7sLhA r5v7sGhA v9 v9 r6v9sA r6v9sA r6v9sA r6v9sB r6v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vAsA vBsA vBsA vC vC vC t2vC t4vC
+  LINE 34 17 136
+    t4r5v7sIhA t2v9 r5v7sJhA r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r5v7sLhA r5v7sLhA r5v7hA r5v7sGhA r5v7sGhA r6v9s9 r6vAso r6vAso r6vAso r6vAsp r6v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sH r7vBsA vBsA vC vC vC vC t2vC t4vC
+  LINE 35 18 137
+    t4v9 t2v9 v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsn r6vG r6vGsg r6vGsh r6vAsp r6v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sKhA r5v3sChA r5v3sBhA r5v3sBhA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r7vC vC vC vC vC vC t2vC t4vC
+  LINE 36 18 137
+    t4r2v9 t2r2v9 r2v9 r2v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsn r6vGsf r6vL r6vGsh r6vAsq r6v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3sChA r5v4hA r5v4hA r5v3sChA r5v3hA rBv3sH rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r7vC vC vCsA vCsB vC t2vC t4vCsA
+  LINE 37 19 138
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsn r6vGsf r6vL r6vL r6vFsq r6v9sq v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3s9hA r5v4hA r5v3sChA r5v3hA rBv3sH rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r7vCsA r7vCsA vCsI vDsB vCsJ vCsI t2vCsI t4vDsB
+  LINE 38 19 138
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsn r6vGsf r6vL r6vGsi r6vAsq r6v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3s9hA r5v4hA r5v3sChA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sf r7vDsA r7vDsQ r7vEsI vEsJ vE t2vEsI t4vEsI
+  LINE 39 20 139
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsn r6vGse r6vGsj r6vAsq r6v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sf r7vEsA r7vEsI r7vGsI r7vGsJ r7vEsJ r7vEsI t2r7vGsI t4r7vGsJ
+  LINE 40 20 139
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sPhA r6vAsm r6vG r6vAsr r6v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb rBv5sb rBv5sb rBv5sb rBv5sb rBv5sb rBv5sW rBv5sW v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3hA r5v3sBhA r5v3sBhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sn r7vFsA r7vGsY r7vIsI r7vGsZ r7vGsY t2r7vGsY t4r7vIsI
+  LINE 41 21 140
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sOhA r6vAsm r6vAsr r6v9sD v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3sLhA r5v3sLhA r5v3sLhA r5v3sLhA r5v3sGhA r5v3sGhA rBv5sW rBv5sW rBv5sW v9 v9 rBv5sb rBv5sb rBv5sb r5v3sKhA r5v3hA r5v3sIhA r5v4sBhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCso r7vGsY r7vK r7vK r7vK r7vK t2r7vK t4r7vK
+  LINE 42 21 140
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sOhA r5v7sOhA r6v9sD v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sGhA r5v3sGhA r5v3sGhA rBv5sW rBv5sW rBv5sb r5v3sLhA r5v3sLhA r5v3sLhA r5v3s9hA r5v3sGhA r5v5hA r5v3sLhA r5v3sDhA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIso r7vKsY r7vKsY r7vKsY r7vKsY t2r7vKsY t4r7vKsY
+  LINE 43 22 141
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sGhA r5v3sGhA r5v3sGhA r5v3sLhA r5v3hA r5v3hA r5v3s9hA r5v4hA r5v4s8hA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIsn r7vO r7vO vO vO vO t2vO t4vO
+  LINE 44 22 141
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA rBv3so rBv3so rBv3so rBv3sp r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3s8hA r5v3s8hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIsn r7vO r7vO vO vO vO t2vO t4vO
+  LINE 45 23 142
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA rBv3so r7v9 r7v9 r7v9 rBv3sp r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v3sIhA r5v3sIhA rBv5sg rBv5sg v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9sP r6vCsn r6vIsn r7vO vO vO vO vO t2vO t4vO
+  LINE 46 23 142
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 r7v9 rBv3sp rBv3sp r5v3hA rBv3so rBv3so rBv3sp r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA r7v3sJ r5v3sAhA rBv4so rBv5sg rBv5sg vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9sP r6vCsn r6vIsn vO vO vO vO t2vO t4vO
+  LINE 47 24 143
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 r7v9 r7v9 rBv9 rBv3sp rBv3so rBv9 rBv9 rBv3sp r5v3hA r5v3hA r5v3sIhA rBv5sg rBv5sg rBv4sp rBv4so vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9s9 r6vAsH r6vCsn r6vIsn vO vO vO vO t2vO t4vO
+  LINE 48 24 143
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3sHhA rBv5sf vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9 r6v9sP r6vCsn r6vIsn vO vO vO vO t2vO t4vO
+  LINE 49 25 144
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3sHhA rBv5sf vA vA vA vA vA vA vA v9sC v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9 r7v9sP r6vCsn r6vIsn vO vO vO vO vO t2vO t4vO
+  LINE 50 25 144
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3sIhA r5v3sIhA rBv3so r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3hA r5v3sHhA rBv5sf vA vA vA vA v9sD v9sD v9sD v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9 r7v9sP r6vCsn r6vIsn vO vO vO vO vO t2vO t4vO
+  LINE 51 26 145
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3sIhA rBv5sY rBv5sY r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3hA r5v3sHhA rBv5sf vA vA v9sD v9sD v9sD v9 v9 v9 v9 v9 v9 v9 v9sA v9sA v9sB v9 v9 v9 v9 r7v9 r7v9 r7v9 r7v9 r7v9 r6v9 r6v9sP r6vCsn r6vIsn vO vO vO vO vO t2vO t4vO
+  LINE 52 26 145
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sHhA v9 v9 v9 v9 v7sL v7sG v9 v7sL v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3sIhA rBv5sY r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3hA r5v3sHhA rBv5sf vA v9sD v9sD v9 v9 v9 v9 v9 v9 v9 v9 v9sA v9sA vAsI vAsI r7v9sR r7v9sB r7v9sB r7v9sB r7v9 r7v9sQ r6v9sQ r6v9sQ r6v9sQ r6v9sQ r6v9sQ r6vCsn r6vIsn vO vO vO vO vO t2vO t4vO
+  LINE 53 27 146
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA v9 v9 v9 v7sL r5v7hA v7sG v7sL r5v7hA v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3sIhA rBv5sY r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3hA r5v3sHhA rBv5sX v9s8 v9sD v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAsI vAsI vCsI vCsI r7vAsZ r7vAsJ r7vAsJ r7v9sR r6v9sQ r6vCso r6vCso r6vCso r6vCso r6vCso r6vCso r6vIsn vO vO vO vO vO vO t2vO t4vO
+  LINE 54 27 146
+    t4r2v9 t2r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sGhA r5v7sGhA r5v7sGhA r5v7sLhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA rBv7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3sHhA rBv5sX r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r6v9sP vCsI vCsI vEsI vEsI r7vCsZ r7vCsJ r6vCsJ r6vCso r6vCso r6vIso r6vIso r6vIso r6vIso r6vIso r6vIso vO vO vO vO vO vO t2vO t4vO
+  LINE 55 28 147
+    t4r2v9sI t2r2v9sI r2v9sI r2v9sI r2v9sI r2v9sI r2v9sJ r2v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA rBv7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv9 rBv5sa r5v3sKhA r5v3hA r5v3sHhA rBv5sX r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sA r7v9sA r6v9sA r6vAso vEsI vEsI vGsI vGsI r7vEsZ r6vEsZ r6vEsY r6vIso r6vIso vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 56 28 147
+    t4r2v9sI t2r2vB r2vB r2vB r2vB r2vB r2vB r2v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA rBv7sGhA rBv7sGhA v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv7sL rBv7sL r5v3sahA r5v3hA r5v3hA r5v3sHhA rBv5sX r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 r7v9sA v9sA r7v9sA r7vAsI r6vAsI r6vAso vGsI vGsI vGsI vIsI vIsI r7vIsI r6vIso r6vIso vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 57 29 148
+    t4vB t2vB vB vB vB vB vB vB v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA rBv7sGhA rBv7sGhA rBv7sGhA rBv7sGhA rBv7sGhA v9 v9 v9 v9 v9 v9 v9 v9 rBv7sL r5v5sLhA r5v5sLhA r5v3sLhA r5v3sAhA r5v3sIhA rBv5sX r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv3sq r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9s9 r7vAsI r7vAsI r7vAsI r7vCsI r6vCsI r6vEso vIsI vIsI vIsI vKsI vKsI r7vKsY vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 58 29 148
+    t4vB t2vB vB vB vB vB vB vB vB vB v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7sIhA r5v7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA rBv7sGhA rBv7sGhA rBv8s8 rBv9 v9 v9 rBv7sL rBv7sL rBv7sL r5v5sLhA r5v4sDhA r5v4sDhA r5v4sAhA r5v4sAhA rBv5sY r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv5sb rBv5sb rBv5sb rBv5sb rBv3sr r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 r7v9sP r7vCsI r7vCsI r6vCsI r6vEsY r6vEso r7vKsI vKsI vKsI vKsI vMsI vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 59 30 149
+    t4vB t2vB vB vB vB vB vB vB vB vB v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r5v7sJhA r5v7sJhA r5v7sJhA r5v7sJhA r5v7sIhA r5v7sIhA v9 rBv7sJhA rBv7sJhA rBv7sJhA rBv7sJhA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v7hA r5v6sGhA rBv6sO rBv9 rBv9 rBv7sL r5v5sLhA r5v5sLhA r5v5sLhA r5v3sLhA r5v3s8hA r5v4s9hA rBv5sY rBv5sY r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv5sb r5v3sLhA r5v3sLhA r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 r6v9sP r6vCsI r6vEsY r6vEsY r6vEsY r6vIso r7vKsY vMsI vMsI vMsI vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 60 30 149
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv9 rBv7sJhA r5v7hA r5v7hA r5v7hA r5v7sAhA r5v7sBhA r5v6sDhA r5v5sLhA r5v5s8hA r7v6sP rBv9 r6v7sK r5v5sKhA r5v3sLhA r5v3sLhA r5v3sLhA r5v3hA r5v3s9hA rBv4sf r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 r6v9sP r6vCso r6vEsY r6vIso r6vIso r6vIso r7vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 61 31 150
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB v9sJ v9sB v9sB v9sB v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sA rBv7sRhA r5v7hA r5v7hA r5v7s9hA r5v8hA r5v6sKhA r5v4sLhA r5v4s8hA r6v5sP r7v8sX r6v7si r5v5sKhA r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 r7v9 rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 r6v9sQ r6vCso r6vIso r6vIso r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4vO
+  LINE 62 31 150
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vAsB vA vA vA v9sB v9sB v9sB v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sA v9sA vA rBv7sRhA r5v7hA r5v7hA r5v7s8hA r5v6sKhA r5v4sKhA r5v4hA r5v4sHhA r6v6sn r6vC r5v6sqhA r5v4sKhA r5v3sChA r5v3hA r5v3hA r5v3hA rBv3sn r7v9 r7v9 r7v9 rBv3sr rBv3sr rBv3sr rBv3sm rBv3sm r7v9 r7v9 rBv3sr r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9sY r6v9sY r6vCso r6vIso vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4r2vO
+  LINE 63 32 151
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vAsC vA vA vA vA vA v9sB v9 v9 v9 v9 v9 v9 v9sI v9sI v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAsA vAsA vAsB rBv7sRhA r5v7hA r5v7hA r5v7hA r5v6sChA r5v4sKhA r5v3sDhA r5v3sOhA r5v6smhA r5v6srhA r5v4sKhA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA rBv3sm rBv3sm rBv3sm rBv3sp r5v3hA r5v3hA r5v3hA r5v3hA rBv3sm rBv3sm rBv3sr r5v3hA r5v3hA r5v3sIhA r5v3sJhA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA rBv5sX v9 v9 v9 r6v9so r6vDso r6vDso r6vIso vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 64 32 151
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vAsC vA vA vA vA vA vA v9sB v9sA v9sI v9sI v9sI v9sI v9sI vB vB v9sJ v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s9 vAs9 vB vB vAsB rBv7sRhA r5v7hA r5v7hA r5v5sLhA r5v5sDhA r5v3sKhA r5v3hA r5v3sOhA r5v3sOhA r5v3sShA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3sBhA r5v3sBhA r5v3sBhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5 r5v3sJhA r5v3sJhA r5v3sIhA r5v3sIhA rBv5sY rBv5sY v9 v9 v9 r6v9so r6vFso r6vJsI r6vJsg vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 65 33 152
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vAsC vA vA vA vA vA vAsI vAsJ vAsA vAsA vB vB vB vB vB vB vB vB vB v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 vAs8 vAs8 vB vAsC rBv7sShA r5v7hA r5v5sLhA r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sChA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v4hA r5v4hA r5v4hA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sY rBv5sY rBv5sZ rBv5sZ rBv5sY rBv5sY rBv9 v9 v9 v9 r6v9sn r6vFsn r6vLsI r6vLsQ vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 66 33 152
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vAsB vAsB vA vA vA vAsH vC vBsC vB vB vB vB vB vB vB vB vB vB vB vB v9sJ v9sJ v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9s8 vAs8 vAsD vA rBv7sShA r5v5sLhA r5v3sLhA r5v3sDhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3s9hA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v4hA r5v4hA r5v4hA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sn r6vFsn r6vLsH r6vNs9 vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 67 34 153
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vAsB vAsB vA vA vAsH vBsD vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9s8 v9s8 v9sD rBv7sThA rBv5sKhA r5v3sLhA r5v3sDhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v4sAhA r5v4sAhA r5v4sBhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX r6vDsn r6vJsH r6vLsP vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 68 34 153
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vAsB vAsA vAsA vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v7sK rBv5sKhA r5v3sKhA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v5sIhA r5v5sIhA r5v5sIhA rBv4sR r5v4sBhA r5v3sJhA r5v3sJhA r5v3sJhA r5v3hA r5v3hA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX r6vDsn r6vJsf r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 69 35 154
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v7sK rBv5sK r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA r5v5sIhA rBv7sI rBv7sI rBv7sI rBv5sZ rBv5sZ rBv5sZ rBv5sZ r5v3sJhA rBv3sI rBv3sI rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsn r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 70 35 154
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v5sIhA r5v5sIhA rBv7sI v9 v9 v9 v9 v9 v9 rBv5sZ rBv5sZ rBv5sY rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsn r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 71 36 155
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sa r5v3sKhA r5v3sChA r5v3sBhA r5v3hA r5v3s9hA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sY rBv7sI rBv7sI v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 72 36 155
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sChA r5v4hA r5v3sChA r5v3hA r6v3s8 r5v3s8hA r5v3sIhA r5v3sIhA rBv3sI rBv3sI r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsn r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 73 37 156
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3hA r5v3sIhA rBv3sYhA rBv5sY rBv5sY rBv5sY rBv5sY rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 74 37 156
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sK v9 v9 v9 v9 v9 v9 v9 v9 v9 rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA rBv5sY v7sI v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 75 38 157
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB v9sJ v9 v9 v9 v9 v9 v9 v9 v9 r7v5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v3sIhA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 76 38 157
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB vB vB vB vB vB vB v9sJ v9sJ v9 r7v9 v9 v9 v9 rBv5sb rBv5sb r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA r5v5hA rBv5sY v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 77 39 158
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB vB vB vB vB vB vB vB v9sJ r7v9sJ r7v9sB v9sB rBv5sb rBv5sb r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sI v9sI v9sJ r7v9 r7v9 r7v9sP r6vCsn r6vIsn vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 78 39 158
+    t4vB t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB vB vB vB vB vBsA r6vBsA r7vBsQ r7vAsZ r7vA rBv5si r5v3sLhA r5v3sLhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sI vBsI vBsI r7v9sZ r7v9 r7v9sQ r6vCsn r6vIsn vO vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 79 40 159
+    t4vBsJ t2vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB vB vBsA vBsI r6vBsI r6vCso r6vCso r7vE r7vAsa r7v5si r5v3sKhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vBsI vDsI r7vDsJ r7v9sZ r6v9so r6vCso r6vIsn vO vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 80 40 159
+    t4r2vD t2vBsJ vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB vBsA vCsI r6vDso r6vDso r7vI r7vEsa r7vE r6v8sq r5v3sihA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vBsH vDsI vFsI r7vDsZ r6vDsI r6vFso r6vIso vO vO vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO t2r2vO t4r2vO
+  LINE 81 41 160
+    t4r2vD t2vBsJ vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB vBs9 vCsH r6vEsg r7vJ r7vIsC r7vEsa r7vCsL r6v8sr r5v3sihA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX vDsH vFsI vHsI r6vFsZ r6vFso r7vLsP vO vO vO vO vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO t2r2vO t4r2vO
+  LINE 82 41 160
+    t4r2vD t2r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vBs9 vCsH r6vEsf r7vJ r7vIsC r7vI r6vCsq r6v6sr r5v3sjhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX vDsH vFsH vHsI vJsI r7vJsI r7vL r7vLsP vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO t2r2vO t4r2vO
+  LINE 83 42 161
+    t4r2vD t2vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vBs9 vCs9 r6vDsn r7vJ r7vIsC r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sn vFsH vHsH vJsI r7vL r7vL r7vLsP vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO t2r2vO t4r2vO
+  LINE 84 42 161
+    t4r2vD t2r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r6vBs9 r6vCsf r7vHsP r7vIsK r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3sAhA r5v4hA r5v3sChA r5v3hA r5v3hA r5v3hA rBv3sn v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sn vFsH vHsH vJsH vL r7vL r7vLsP vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2r2vO t4r2vO
+  LINE 85 43 162
+    t4r2vD t2r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r7vB r6vBsf r7vGsX r7vK r7vIsK r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3sIhA r5v4sBhA r5v3sChA r5v3hA r5v3hA r5v3hA r5v3hA rBv3sn v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sH r6vBsn vHsH vJsH vL r7vL r7vLsP vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4r2vO
+  LINE 86 43 162
+    t4r2vD t2r2vD r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r7vB r6vBsf r7vGsP r7vJs9 r7vIsL r7vI r7vI r6vCsq r5v6sqhA r5v3sShA r5v3hA r5v3hA r5v3sHhA r5v5hA r5v3sKhA r5v3hA r5v3hA r5v3sIhA rBv3so rBv3so v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX r6vDsn vJsH vL vLsA r7vLsQ vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4r2vO
+  LINE 87 44 163
+    t4r2vD t2r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r7vB r6vBsf r6vGso r7vJsP r7vIs9 r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3s9hA r5v4s9hA r5v4sChA r5v3sChA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sX r6vDsn vJsH vL vLsA vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4r2vO
+  LINE 88 44 163
+    t4r2vD t2r2vD r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r6vBsf r6vGsn r7vM r7vIsa r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3sHhA r5v5hA r5v3sKhA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCsn r6vIsP vL vLsA vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2vO t4r2vO
+  LINE 89 45 164
+    t4r2vD t2r2vD r2vD vBsK vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r6vBsn r6vHsf r7vKsL r7vIsK r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3s9hA r5v4s8hA r5v3sLhA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sQ r6v9sQ r6vCsn r6vIsP vL vLsA vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2r2vO t4r2vO
+  LINE 90 45 164
+    t4r2vD t2r2vD r2vD r2vD vBsJ vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r6vBsP r6vEsn r7vK r7vIsK r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3s9hA r5v3s8hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9 r6v9sQ r6vCso r6vCso r6vIsP vL vLs9 vMsI vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO t2r2vO t4r2vO
+  LINE 91 46 165
+    t4r2vD t2r2vD r2vD r2vD vBsJ vBsJ vB vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r6vBsH r6vDsn r7vJs8 r7vIsK r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3s9hA r5v4hA r5v3sChA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sQ r6v9sQ r6v9sQ r6v9so r6vCso r6vI r6vIsQ vL vLs9 vMsH vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO t2r2vO t4r2vO
+  LINE 92 46 165
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD vBsJ vB vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r6vBsP r6vEsf r7vJ r7vIsC r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3s8hA r5v3sDhA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sQ r6vCso r6vCso r6vCso r6vFso r7vIsQ r7vIsQ vL vL r7vLsP vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO t2r2vO t4r2vO
+  LINE 93 47 166
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD vBsJ vB vB vB vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r6vBsP r6vEsf r7vJsQ r7vIsa r7vI r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r6v9sP r6vCso r6vIsA r6vIsQ r6vIsQ r7vLsA r7vLsA r7vLsB vL r7vLsP vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO t2r2vO t4r2vO
+  LINE 94 47 166
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD vBsJ vBsJ vB vB vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r6vBsf r6vGsn r7vM r7vIsa r7vI r6vCsq r6v6sq r5v3sShA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r6vIs9 r7vJsH r7vLsA r7vLsA r7vM r7vM vLsC vL r7vLsP r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO t2r2vO t4r2vO
+  LINE 95 48 167
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD vBsJ vBsJ vB vB vB vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB vB r7vBsP r6vEsP r6vHse r7vIsb r7vI r6vCsq r6vBsC r6v6si r5v3sShA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9 r7v9sX r6vDsn r7vJsH r7vLs9 r7vM vM vM vLsC vL r7vLsP r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 96 48 167
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD vBsJ vBsJ vB vB vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r7vBsP r7vE r7vEsP r7vHs9 r7vI r6vCsq r6vBsC r6v6si r5v3sShA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 r7v9sP r6vCsn r7vIs9 r7vJsH r7vLs9 vM vM vLsC vL r7vLsP r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 97 49 168
+    t4r2vD t2r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vD r2vBsJ r2vBsJ r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r2vB r7vB r7vBsP r7vE r7vEsP r7vHs9 r7vI r6vCsq r6v6sq r5v3sShA r5v3sChA r5v3sBhA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3hA r5v3sHhA rBv5sX v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sI r7v9sY r7vCsQ r7vFsP r7vIsP r7vLs9 vM vM vM vLsC r7vL r7vLsP r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO r2vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO r2vO r2vO r2vO r2vO t2r2vO t4r2vO
+  LINE 98 49 168
+    t4r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vD t2r2vBsJ t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r2vB t2r7vB t2r7vBsP t2r7vEsQ t2r7vEsQ t2r7vHs9 t2r7vI t2r6vCsq t2r6v6sq t2r5v3sThA t2r5v3sChA t2r5v4hA t2r5v3sBhA t2r5v3sBhA t2r5v3hA t2r5v3hA t2r5v3hA t2r5v3hA t2r5v3sHhA t2rBv5sX t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9 t2v9sH t2vBsH t2r7vDsH t2r7vFsH t2r7vHsH t2r7vJsH t2vLs8 t2vLs8 t2vM t2vLsC t2r7vL t2r7vLsP t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t2r2vO t4r2vO
+  LINE 99 50 169
+    t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vD t4r2vBsK t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r2vB t4r7vB t4r7vB t4r6vBsn t4r7vH t4r7vHs9 t4r7vI t4r6vCsq t4r6v6sq t4r5v3sShA t4r5v3hA t4r5v3sChA t4r5v4hA t4r5v4hA t4r5v3sChA t4r5v3hA t4r5v3hA t4r5v3hA t4r5v3hA t4r5v3sHhA t4rBv5sX t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9 t4v9sH t4r7vBsH t4r7vDsH t4r7vFsH t4r7vHsH t4vJsG t4vJsG t4vLs8 t4vLsD t4r7vKsD t4r7vKsX t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO t4r2vO
+END_OF_HEXES
+
+EXTERNAL_NODES nodes.bin
+ENVIROMENT
+  SET 1 dummy
+  SET 2 list-akatojerab
+  SET 3 list-jerab-spal
+  SET 4 list-platan
+  SET 5 list-platan-spal
+  SET 6 list-mocal-koreny
+  SET 7 list-vrba
+  SET 8 list-vrba-zluta
+  SET 9 jehl-borovice
+  SET 10 jehl-borov-vysoka
+  SET 11 jehl-borovice-mala
+  SET 12 stone_set_01
+  SET 13 stone_set_02
+  SET 14 stone_set_03
+  SET 15 stone_set_04
+  SET 16 stone_set_05
+  SET 17 stone_set_06
+  SET 18 stone_set_07
+  SET 19 houby
+  SET 20 mrcha
+  SET 21 jehl-smrk-silny
+  SET 22 jehl-smrk-stredni
+  SET 23 jehl-smrk-uzky-spal
+  SET 24 jehl-smrk-stredni
+  SET 25 jehl-smrk-stredni-spal
+  SET 26 jehl-smrk-stredni-suchy
+  SET 27 list-dvoupatr
+  SET 28 list-briza
+  SET 29 list-paskvil
+  SET 30 ker
+  SET 31 jehl-borov-vysoka-spal
+  SET 32 list-akat-vysoky-spal
+  SET 33 plavun
+  SET 34 cykas
+  SET 35 list-kastan
+  SET 36 mech
+  SET 37 jehl-smrk-maly
+  SET 38 ker-husty
+  SET 39 ker-rosti
+  SET 40 list-akat-rosti
+  SET 41 list-briza-vyssi
+  SET 42 list-sahara
+  SET 43 list-akat-maly
+  SET 44 list-dvoupatr-maly
+  SET 45 parez
+  SET 46 polosuche
+  SET 47 list-dub
+  SET 48 list-kastan-vanek
+  SET 49 parezoid
+  SET 50 branka
+  SET 51 leknin
+  SET 52 monolit
+  ON_HEX 1 0
+    sbi9
+  ON_HEX 42 0
+    sbi7
+  ON_HEX 83 0
+    sMi5
+  ON_HEX 85 0
+    sMi3
+  ON_HEX 97 0
+    sbi1
+  ON_HEX 2 1
+    shi7
+  ON_HEX 4 1
+    sbi8
+  ON_HEX 6 1
+    sbi4
+  ON_HEX 42 1
+    shi5
+  ON_HEX 44 1
+    sbi6
+  ON_HEX 46 1
+    sbi9
+  ON_HEX 47 1
+    sbi7
+  ON_HEX 51 1
+    shi9
+  ON_HEX 52 1
+    sWi7
+  ON_HEX 53 1
+    sbi6
+  ON_HEX 98 1
+    sWi2
+  ON_HEX 104 1
+    shi6
+  ON_HEX 108 1
+    shi9
+  ON_HEX 109 1
+    sbi3
+  ON_HEX 110 1
+    sbi8
+  ON_HEX 5 2
+    shi6
+  ON_HEX 6 2
+    sWi6
+  ON_HEX 45 2
+    shi4
+  ON_HEX 47 2
+    shi3
+  ON_HEX 51 2
+    shi3
+  ON_HEX 53 2
+    shiA
+  ON_HEX 54 2
+    shi5
+  ON_HEX 84 2
+    shi1
+  ON_HEX 99 2
+    shi3
+  ON_HEX 100 2
+    shi6
+  ON_HEX 102 2
+    sbi6
+  ON_HEX 106 2
+    shi4
+  ON_HEX 109 2
+    sWi8
+  ON_HEX 110 2
+    shi7
+  ON_HEX 2 3
+    sbi1
+  ON_HEX 4 3
+    shi8
+  ON_HEX 5 3
+    ski3
+  ON_HEX 86 3
+    shi5
+  ON_HEX 100 3
+    shi5
+  ON_HEX 101 3
+    sbi3
+  ON_HEX 102 3
+    sbi4
+  ON_HEX 107 3
+    sbi6
+  ON_HEX 4 4
+    shi6
+  ON_HEX 40 4
+    sWi8
+  ON_HEX 41 4
+    shi6
+  ON_HEX 107 4
+    shi2
+  ON_HEX 4 5
+    sbi8
+  ON_HEX 39 5
+    sbi7
+  ON_HEX 47 5
+    shi5
+  ON_HEX 4 6
+    shi9
+  ON_HEX 5 6
+    sbi7
+  ON_HEX 40 6
+    shi3
+  ON_HEX 41 6
+    sbiA
+  ON_HEX 104 6
+    shi7
+  ON_HEX 4 7
+    sbi3
+  ON_HEX 41 7
+    shi5
+  ON_HEX 44 7
+    sbi4
+  ON_HEX 48 7
+    shi9
+  ON_HEX 104 7
+    sWi8
+  ON_HEX 108 7
+    sbiA
+  ON_HEX 5 8
+    shi2
+  ON_HEX 46 8
+    sbiA
+  ON_HEX 106 8
+    shi3
+  ON_HEX 107 8
+    sWi5
+  ON_HEX 108 8
+    shiA
+  ON_HEX 5 9
+    sbi4
+  ON_HEX 45 9
+    shi9
+  ON_HEX 51 9
+    sWi8
+  ON_HEX 53 9
+    sWi2
+  ON_HEX 106 9
+    sbi3
+  ON_HEX 53 10
+    sMi3
+  ON_HEX 54 10
+    shi4
+  ON_HEX 55 10
+    sbi8
+  ON_HEX 56 10
+    shi1
+  ON_HEX 45 11
+    sWi1
+  ON_HEX 47 11
+    shi8
+  ON_HEX 52 11
+    shi1
+  ON_HEX 58 11
+    shi1
+  ON_HEX 51 12
+    shi5
+  ON_HEX 57 12
+    shi6
+  ON_HEX 59 12
+    sbi4
+  ON_HEX 75 12
+    sbi8
+  ON_HEX 105 12
+    shi7
+  ON_HEX 48 13
+    sbi6
+  ON_HEX 75 13
+    shi6
+  ON_HEX 76 13
+    shi8
+  ON_HEX 101 13
+    shi6
+  ON_HEX 123 13
+    sfiA
+  ON_HEX 125 13
+    sfi9
+  ON_HEX 9 14
+    shiA
+  ON_HEX 10 14
+    sOi8
+  ON_HEX 47 14
+    sbi2
+  ON_HEX 48 14
+    sbi3
+  ON_HEX 55 14
+    shi5
+  ON_HEX 56 14
+    shi2
+  ON_HEX 100 14
+    shi3
+  ON_HEX 101 14
+    sbi2
+  ON_HEX 104 14
+    shi9
+  ON_HEX 9 15
+    ski1
+  ON_HEX 10 15
+    shi8
+  ON_HEX 11 15
+    shi8
+  ON_HEX 48 15
+    shi3
+  ON_HEX 54 15
+    shiA
+  ON_HEX 55 15
+    sbi5
+  ON_HEX 99 15
+    sbi4
+  ON_HEX 101 15
+    shi6
+  ON_HEX 102 15
+    sbiA
+  ON_HEX 60 16
+    sMi7
+  ON_HEX 62 16
+    sWi4
+  ON_HEX 104 16
+    sbi3
+  ON_HEX 122 16
+    sJi2
+  ON_HEX 48 17
+    sMi2
+  ON_HEX 50 17
+    sMi2
+  ON_HEX 59 17
+    sbiA
+  ON_HEX 123 17
+    sfiA
+  ON_HEX 50 18
+    shi1
+  ON_HEX 59 18
+    sbi3
+  ON_HEX 60 18
+    shi5
+  ON_HEX 128 18
+    sfi5
+  ON_HEX 11 19
+    shiA
+  ON_HEX 12 19
+    shi2
+  ON_HEX 62 19
+    sMi9
+  ON_HEX 99 19
+    shi3
+  ON_HEX 126 19
+    sfi1
+  ON_HEX 11 20
+    shi3
+  ON_HEX 50 20
+    shi8
+  ON_HEX 61 20
+    shi5
+  ON_HEX 62 20
+    sbi8
+  ON_HEX 63 20
+    shi4
+  ON_HEX 100 20
+    sbi6
+  ON_HEX 14 21
+    sbi8
+  ON_HEX 15 21
+    shi3
+  ON_HEX 16 21
+    sbi7
+  ON_HEX 23 21
+    sbi3
+  ON_HEX 50 21
+    shi8
+  ON_HEX 53 21
+    sbi8
+  ON_HEX 99 21
+    shi6
+  ON_HEX 100 21
+    shi8
+  ON_HEX 104 21
+    shi5
+  ON_HEX 16 22
+    sbi6
+  ON_HEX 52 22
+    sbi8
+  ON_HEX 53 22
+    shi9
+  ON_HEX 98 22
+    sbi9
+  ON_HEX 99 22
+    sbi1
+  ON_HEX 103 22
+    shi8
+  ON_HEX 104 22
+    shi9
+  ON_HEX 130 22
+    sfi7
+  ON_HEX 20 23
+    sbi1
+  ON_HEX 22 23
+    shi5
+  ON_HEX 31 23
+    shi8
+  ON_HEX 53 23
+    shi8
+  ON_HEX 98 23
+    sbi4
+  ON_HEX 101 23
+    sbi9
+  ON_HEX 103 23
+    sbi7
+  ON_HEX 128 23
+    sfi9
+  ON_HEX 130 23
+    sJi2
+  ON_HEX 131 23
+    sfi2
+  ON_HEX 22 24
+    shi6
+  ON_HEX 23 24
+    ski3
+  ON_HEX 24 24
+    shi7
+  ON_HEX 31 24
+    sbi1
+  ON_HEX 32 24
+    ski3
+  ON_HEX 50 24
+    sbiA
+  ON_HEX 53 24
+    shi8
+  ON_HEX 56 24
+    sbi4
+  ON_HEX 81 24
+    sbi5
+  ON_HEX 98 24
+    sbi3
+  ON_HEX 100 24
+    sbi6
+  ON_HEX 103 24
+    sbiA
+  ON_HEX 131 24
+    sfi3
+  ON_HEX 24 25
+    shi4
+  ON_HEX 34 25
+    sbi9
+  ON_HEX 35 25
+    sbi1
+  ON_HEX 36 25
+    sWi4
+  ON_HEX 81 25
+    shi5
+  ON_HEX 83 25
+    shi9
+  ON_HEX 103 25
+    sbi2
+  ON_HEX 23 26
+    sbi5
+  ON_HEX 24 26
+    shi5
+  ON_HEX 36 26
+    sbi6
+  ON_HEX 52 26
+    shi7
+  ON_HEX 56 26
+    sbi4
+  ON_HEX 84 26
+    sbi8
+  ON_HEX 101 26
+    sbi3
+  ON_HEX 102 26
+    sbi7
+  ON_HEX 103 26
+    sbi7
+  ON_HEX 50 27
+    shi7
+  ON_HEX 81 27
+    sbi4
+  ON_HEX 85 27
+    shi1
+  ON_HEX 41 28
+    shi1
+  ON_HEX 42 28
+    sWi6
+  ON_HEX 51 28
+    sbiA
+  ON_HEX 52 28
+    sbi7
+  ON_HEX 53 28
+    sbiA
+  ON_HEX 65 28
+    sJi3
+  ON_HEX 66 28
+    sSi2
+  ON_HEX 98 28
+    sbi5
+  ON_HEX 35 29
+    shi2
+  ON_HEX 41 29
+    shi7
+  ON_HEX 42 29
+    sbi1
+  ON_HEX 43 29
+    sbiA
+  ON_HEX 66 29
+    sSi9
+  ON_HEX 83 29
+    shi3
+  ON_HEX 87 29
+    shi9
+  ON_HEX 100 29
+    sMi8
+  ON_HEX 35 30
+    sbi1
+  ON_HEX 43 30
+    sbi6
+  ON_HEX 44 30
+    shi5
+  ON_HEX 52 30
+    shi7
+  ON_HEX 53 30
+    sbi5
+  ON_HEX 68 30
+    sJi3
+  ON_HEX 101 30
+    shi4
+  ON_HEX 104 30
+    shi7
+  ON_HEX 85 31
+    sbi1
+  ON_HEX 86 31
+    shi5
+  ON_HEX 87 31
+    sbiA
+  ON_HEX 101 31
+    sMi1
+  ON_HEX 102 31
+    shiA
+  ON_HEX 102 32
+    shi3
+  ON_HEX 75 35
+    sfi8
+  ON_HEX 74 36
+    sfi4
+  ON_HEX 75 37
+    sfi7
+  ON_HEX 77 37
+    sDin
+  ON_HEX 69 38
+    sSi1
+  ON_HEX 20 39
+    shi3
+  ON_HEX 21 39
+    shi3
+  ON_HEX 50 39
+    shiA
+  ON_HEX 51 39
+    shi1
+  ON_HEX 70 39
+    sSi1
+  ON_HEX 71 39
+    sJi3
+  ON_HEX 77 39
+    sKi5
+  ON_HEX 123 39
+    sCin
+  ON_HEX 20 40
+    sbi5
+  ON_HEX 22 40
+    sbi8
+  ON_HEX 26 40
+    shi9
+  ON_HEX 51 40
+    shi5
+  ON_HEX 28 41
+    shi2
+  ON_HEX 26 42
+    sbi6
+  ON_HEX 28 42
+    sbi1
+  ON_HEX 67 42
+    sCi1
+  ON_HEX 22 43
+    shi3
+  ON_HEX 23 43
+    sbiA
+  ON_HEX 27 43
+    shi9
+  ON_HEX 29 43
+    sbi3
+  ON_HEX 30 43
+    sWi8
+  ON_HEX 63 44
+    sDi1
+  ON_HEX 25 45
+    sbi8
+  ON_HEX 29 45
+    sbi3
+  ON_HEX 24 46
+    sbi2
+  ON_HEX 25 46
+    sbi6
+  ON_HEX 30 46
+    shiA
+  ON_HEX 31 46
+    sbi7
+  ON_HEX 46 46
+    shi9
+  ON_HEX 47 46
+    shi9
+  ON_HEX 96 46
+    shiA
+  ON_HEX 97 46
+    shi5
+  ON_HEX 113 46
+    shi9
+  ON_HEX 24 47
+    sbi7
+  ON_HEX 26 47
+    shi8
+  ON_HEX 104 47
+    shi9
+  ON_HEX 110 47
+    shi4
+  ON_HEX 111 47
+    shi9
+  ON_HEX 104 48
+    shi6
+  ON_HEX 70 49
+    sCi1
+  ON_HEX 80 50
+    sSi2
+  ON_HEX 31 52
+    shi7
+  ON_HEX 33 52
+    sWi8
+  ON_HEX 34 52
+    shi8
+  ON_HEX 29 53
+    shi8
+  ON_HEX 28 54
+    shi1
+  ON_HEX 29 54
+    shi4
+  ON_HEX 30 54
+    shi1
+  ON_HEX 33 54
+    shi4
+  ON_HEX 34 54
+    sbi1
+  ON_HEX 29 55
+    shi6
+  ON_HEX 34 55
+    shi9
+  ON_HEX 107 55
+    shi7
+  ON_HEX 107 56
+    shiA
+  ON_HEX 101 57
+    sjiA
+  ON_HEX 102 59
+    shi8
+  ON_HEX 103 59
+    shi9
+  ON_HEX 95 60
+    shi3
+  ON_HEX 74 61
+    shi3
+  ON_HEX 75 61
+    shi6
+  ON_HEX 86 61
+    shi9
+  ON_HEX 87 61
+    shiA
+  ON_HEX 96 61
+    shi2
+  ON_HEX 127 61
+    sbi8
+  ON_HEX 75 62
+    shi8
+  ON_HEX 127 62
+    shi8
+  ON_HEX 129 62
+    shi6
+  ON_HEX 126 63
+    sbi6
+  ON_HEX 127 63
+    shiA
+  ON_HEX 132 64
+    sbi8
+  ON_HEX 133 65
+    sbi9
+  ON_HEX 148 65
+    shi7
+  ON_HEX 150 65
+    shi3
+  ON_HEX 151 65
+    sbi2
+  ON_HEX 125 66
+    sbi1
+  ON_HEX 134 66
+    shi3
+  ON_HEX 148 66
+    sbi9
+  ON_HEX 151 66
+    sbi8
+  ON_HEX 122 67
+    shi7
+  ON_HEX 124 67
+    sbi6
+  ON_HEX 125 67
+    shi6
+  ON_HEX 132 67
+    shi9
+  ON_HEX 148 67
+    sbi2
+  ON_HEX 124 68
+    sbi8
+  ON_HEX 134 68
+    sbi3
+  ON_HEX 149 68
+    sbi5
+  ON_HEX 150 68
+    shi6
+  ON_HEX 121 69
+    sbi4
+  ON_HEX 125 69
+    shi6
+  ON_HEX 129 69
+    shiA
+  ON_HEX 131 69
+    sWi6
+  ON_HEX 149 69
+    shi5
+  ON_HEX 151 69
+    sWi4
+  ON_HEX 152 69
+    sWi8
+  ON_HEX 153 69
+    sbi4
+  ON_HEX 122 70
+    shi9
+  ON_HEX 130 70
+    sWi9
+  ON_HEX 131 70
+    shi9
+  ON_HEX 136 70
+    sbi6
+  ON_HEX 152 70
+    sbi4
+  ON_HEX 83 71
+    shi5
+  ON_HEX 84 71
+    shi3
+  ON_HEX 135 71
+    sbi1
+  ON_HEX 150 71
+    shi8
+  ON_HEX 154 71
+    shi1
+  ON_HEX 84 72
+    shi9
+  ON_HEX 150 72
+    shiA
+  ON_HEX 154 72
+    shi8
+  ON_HEX 124 73
+    sbi4
+  ON_HEX 137 73
+    shi9
+  ON_HEX 138 73
+    sbi9
+  ON_HEX 155 73
+    shi3
+  ON_HEX 126 74
+    sbi1
+  ON_HEX 137 74
+    sbi2
+  ON_HEX 138 74
+    sbi4
+  ON_HEX 70 75
+    sbiA
+  ON_HEX 126 75
+    sbi1
+  ON_HEX 127 75
+    shi7
+  ON_HEX 128 75
+    shi6
+  ON_HEX 69 76
+    shi7
+  ON_HEX 70 76
+    shi8
+  ON_HEX 153 76
+    shi5
+  ON_HEX 155 76
+    shi8
+  ON_HEX 68 77
+    sbi2
+  ON_HEX 72 77
+    shiA
+  ON_HEX 95 77
+    shiA
+  ON_HEX 131 77
+    shi6
+  ON_HEX 135 77
+    sbi7
+  ON_HEX 155 77
+    sbiA
+  ON_HEX 66 78
+    sbi2
+  ON_HEX 67 78
+    sbi3
+  ON_HEX 71 78
+    shiA
+  ON_HEX 72 78
+    sbi7
+  ON_HEX 96 78
+    shi6
+  ON_HEX 131 78
+    shi9
+  ON_HEX 134 78
+    shi6
+  ON_HEX 155 78
+    sbi4
+  ON_HEX 65 79
+    shi1
+  ON_HEX 67 79
+    shi6
+  ON_HEX 69 79
+    shi6
+  ON_HEX 70 79
+    sWi1
+  ON_HEX 95 79
+    shi6
+  ON_HEX 97 79
+    shi3
+  ON_HEX 129 79
+    shi7
+  ON_HEX 131 79
+    shi1
+  ON_HEX 132 79
+    shi8
+  ON_HEX 133 79
+    sbi4
+  ON_HEX 135 79
+    sbi9
+  ON_HEX 156 79
+    shiA
+  ON_HEX 158 79
+    shi6
+  ON_HEX 42 80
+    shi3
+  ON_HEX 66 80
+    sWi1
+  ON_HEX 81 80
+    sbi6
+  ON_HEX 82 80
+    sbi2
+  ON_HEX 101 80
+    sCiR
+  ON_HEX 129 80
+    sbi7
+  ON_HEX 130 80
+    sbi2
+  ON_HEX 68 81
+    shi3
+  ON_HEX 73 81
+    sbi7
+  ON_HEX 81 81
+    sbi2
+  ON_HEX 158 81
+    sbi2
+  ON_HEX 43 82
+    shi6
+  ON_HEX 67 82
+    sbi4
+  ON_HEX 82 82
+    shi9
+  ON_HEX 160 82
+    sbi2
+  ON_HEX 42 83
+    sbi5
+  ON_HEX 44 83
+    shi8
+  ON_HEX 66 83
+    sbi1
+  ON_HEX 67 83
+    shi5
+  ON_HEX 73 83
+    sbiA
+  ON_HEX 43 84
+    sbi3
+  ON_HEX 66 84
+    shi8
+  ON_HEX 81 84
+    sbi9
+  ON_HEX 44 85
+    shi9
+  ON_HEX 46 85
+    shiA
+  ON_HEX 66 85
+    sbi3
+  ON_HEX 67 85
+    shi4
+  ON_HEX 82 85
+    sbi1
+  ON_HEX 94 85
+    shi6
+  ON_HEX 106 85
+    sCiP
+  ON_HEX 110 85
+    sCiy
+  ON_HEX 82 86
+    sbi7
+  ON_HEX 44 87
+    sbi8
+  ON_HEX 68 87
+    shi6
+  ON_HEX 94 87
+    shi2
+  ON_HEX 103 87
+    sCih
+  ON_HEX 104 87
+    sCia
+  ON_HEX 46 88
+    sbi3
+  ON_HEX 115 88
+    shi1
+  ON_HEX 45 89
+    shi8
+  ON_HEX 52 89
+    shi6
+  ON_HEX 65 89
+    shi1
+  ON_HEX 66 89
+    shi4
+  ON_HEX 73 89
+    sWi4
+  ON_HEX 74 89
+    sWi6
+  ON_HEX 115 89
+    shiA
+  ON_HEX 116 89
+    shi6
+  ON_HEX 73 90
+    shi6
+  ON_HEX 164 90
+    sbi5
+  ON_HEX 49 91
+    sbiA
+  ON_HEX 50 91
+    sbi8
+  ON_HEX 65 91
+    sWi1
+  ON_HEX 75 91
+    shi7
+  ON_HEX 83 91
+    sbi1
+  ON_HEX 84 91
+    sbi8
+  ON_HEX 107 91
+    sCiI
+  ON_HEX 115 91
+    shi7
+  ON_HEX 127 91
+    shi2
+  ON_HEX 128 91
+    sbi4
+  ON_HEX 164 91
+    sbi7
+  ON_HEX 50 92
+    shi3
+  ON_HEX 51 92
+    sbi5
+  ON_HEX 52 92
+    sbi6
+  ON_HEX 67 92
+    shi8
+  ON_HEX 72 92
+    sbi6
+  ON_HEX 73 92
+    sbi5
+  ON_HEX 75 92
+    sbi5
+  ON_HEX 83 92
+    sbi7
+  ON_HEX 127 92
+    sbi6
+  ON_HEX 53 93
+    shiA
+  ON_HEX 65 93
+    shi8
+  ON_HEX 66 93
+    sbi8
+  ON_HEX 74 93
+    shiA
+  ON_HEX 75 93
+    sbi8
+  ON_HEX 85 93
+    sbi4
+  ON_HEX 103 93
+    sCiv
+  ON_HEX 127 93
+    shi7
+  ON_HEX 132 93
+    shi9
+  ON_HEX 164 93
+    shi4
+  ON_HEX 165 93
+    sbi7
+  ON_HEX 166 93
+    sbi3
+  ON_HEX 49 94
+    shi5
+  ON_HEX 53 94
+    shiA
+  ON_HEX 54 94
+    sbi9
+  ON_HEX 59 94
+    sWi6
+  ON_HEX 62 94
+    shi4
+  ON_HEX 63 94
+    shi1
+  ON_HEX 66 94
+    sbi7
+  ON_HEX 67 94
+    shi9
+  ON_HEX 115 94
+    shi8
+  ON_HEX 127 94
+    shi6
+  ON_HEX 129 94
+    sbiA
+  ON_HEX 165 94
+    shi8
+  ON_HEX 52 95
+    shi5
+  ON_HEX 55 95
+    sbi2
+  ON_HEX 56 95
+    sbi3
+  ON_HEX 57 95
+    shi5
+  ON_HEX 65 95
+    sbi6
+  ON_HEX 67 95
+    sbi3
+  ON_HEX 76 95
+    sbi8
+  ON_HEX 107 95
+    sCis
+  ON_HEX 115 95
+    shi8
+  ON_HEX 116 95
+    shi8
+  ON_HEX 127 95
+    shiA
+  ON_HEX 164 95
+    shi9
+  ON_HEX 49 96
+    shi4
+  ON_HEX 51 96
+    sbi2
+  ON_HEX 58 96
+    sbi1
+  ON_HEX 59 96
+    shi8
+  ON_HEX 62 96
+    shi5
+  ON_HEX 70 96
+    shi6
+  ON_HEX 73 96
+    shiA
+  ON_HEX 106 96
+    sCiE
+  ON_HEX 116 96
+    shi6
+  ON_HEX 130 96
+    sbi8
+  ON_HEX 131 96
+    sbiA
+  ON_HEX 132 96
+    sbi4
+  ON_HEX 136 96
+    sbi3
+  ON_HEX 137 96
+    sbi1
+  ON_HEX 164 96
+    ski3
+  ON_HEX 167 96
+    shi9
+  ON_HEX 49 97
+    sbi2
+  ON_HEX 51 97
+    sbi5
+  ON_HEX 52 97
+    sbi9
+  ON_HEX 58 97
+    sbiA
+  ON_HEX 59 97
+    sbiA
+  ON_HEX 61 97
+    sbi2
+  ON_HEX 69 97
+    sbi7
+  ON_HEX 74 97
+    sbiA
+  ON_HEX 127 97
+    shi3
+  ON_HEX 130 97
+    shiA
+  ON_HEX 131 97
+    shiA
+  ON_HEX 132 97
+    shi1
+  ON_HEX 133 97
+    shi1
+  ON_HEX 136 97
+    sbi7
+  ON_HEX 139 97
+    shi4
+  ON_HEX 140 97
+    sbi3
+  ON_HEX 164 97
+    shi3
+  ON_HEX 166 97
+    shi1
+  ON_HEX 50 98
+    sbi7
+  ON_HEX 57 98
+    sbi4
+  ON_HEX 70 98
+    sbi4
+  ON_HEX 74 98
+    sbi6
+  ON_HEX 75 98
+    sbi4
+  ON_HEX 129 98
+    sbi9
+  ON_HEX 132 98
+    sbi6
+  ON_HEX 133 98
+    sbi4
+  ON_HEX 135 98
+    sbi6
+  ON_HEX 136 98
+    sbi3
+  ON_HEX 138 98
+    shi7
+  ON_HEX 140 98
+    shi7
+  ON_HEX 142 98
+    shi3
+  ON_HEX 163 98
+    shi9
+  ON_HEX 165 98
+    sbi4
+  ON_HEX 163 99
+    sbi9
+END_OF_ENVIROMENT
+
+EXTERNAL_SECTORS sectors.bin
+ATTITUDES
+  PARAMS 8
+  1 0 0 0 0 0 0 0 0
+  0 1 2 2 2 2 2 2 2
+  0 2 1 2 2 2 2 2 2
+  0 2 2 1 2 2 2 2 2
+  0 2 2 2 1 2 2 2 2
+  0 2 2 2 2 1 2 2 2
+  0 2 2 2 2 2 1 2 2
+  0 2 2 2 2 2 2 1 2
+  0 2 2 2 2 2 2 2 1
+  FLAG 8
+  T T T T T T T T T
+END_OF_ATTITUDES
+
+TECHS
+  PARAMS 72 8
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+END_OF_TECHS
+
+RESTRICTS
+  PARAMS 0 40 8
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+  T T T T T T T T T
+END_OF_RESTRICTS
+
+MISSION_OBJECTIVES_FULL 0
+
+SPECS
+  PARAMS 8 8
+    9 4 1
+    T F F F F F F F F
+    37 24 2
+    T F F F F F F F F
+    71 4 2
+    T F F F F F F F F
+    97 3 1
+    T F F F F F F F F
+    51 88 1
+    T F F F F F F F F
+    135 83 2
+    T F F F F F F F F
+    160 87 1
+    T F F F F F F F F
+    35 59 2
+    T F F F F F F F F
+  FLAG 0 0
+END_OF_SPECS
+
+BASES
+  PARAMS T T
+
+
+END_OF_BASES
+
+
+
+RANDOMS
+  MICROLOGIC 2 0 1 RANDOM_SEED 1 -61867305
+  RANDOM_SEED 2 -1373904594
+  RANDOM_SEED 3 -61867305
+  RANDOM_SEED 4 -2882902
+  RANDOM_SEED 5 -799410835
+  RANDOM_SEED 6 -512714511
+  RANDOM_SEED 7 536735290
+  RANDOM_SEED 8 1751026996
+  RANDOM_SEED 9 -1799142867
+  RANDOM_SEED 10 -1424781148
+  RANDOM_SEED 11 -443074555
+  RANDOM_SEED 12 911650
+  RANDOM_SEED 13 1716592936
+  RANDOM_SEED 14 378023
+  RANDOM_SEED 15 331240010
+  RANDOM_SEED 16 907772
+  RANDOM_SEED 17 435943
+  RANDOM_SEED 18 136448
+  RANDOM_SEED 19 -987889945
+  RANDOM_SEED 20 1008144682
+  RANDOM_SEED 21 496574006
+  RANDOM_SEED 22 1435676571
+  WIND_TIME 579060 579076 579137
+  WIND_STRENGTH 36.7606167791381 52 53.3803083895691
+  WIND_SCATTER 24.1066377870272
+END_OF_RANDOMS
+
+NEW_UNITS
+END_OF_NEW_UNITS
+
+COLDMEAT
+END_OF_COLDMEAT
+
+FOGOBJ
+END_OF_FOGOBJ
+
+MISSILES
+END_OF_MISSILES
+
+EXPLOSIONS
+END_OF_EXPLOSIONS
+
+CRATERS_NEW
+END_OF_CRATERS_NEW
+
+LAPSER_EFECTS
+END_OF_LAPSER_EFECTS
+
+LASER_EFECTS
+END_OF_LASER_EFECTS
+
+USER_INTERFACE
+  VIEW 1478 488 1104 924 1
+  MASHA_FLAG 2 F F
+END_OF_USER_INTERFACE
+
+MC_COMMANDS
+END_OF_MC_COMMANDS
+
+DEBRIEFING
+SIDE 0 10
+  LINES
+SIDE 1 10
+  LINES
+SIDE 2 10
+  LINES
+SIDE 3 10
+  LINES
+SIDE 4 10
+  LINES
+SIDE 5 10
+  LINES
+SIDE 6 10
+  LINES
+SIDE 7 10
+  LINES
+SIDE 8 10
+  LINES
+END_OF_DEBRIEFING
+
+AREAS
+  ACTIVE 35
+  LAST 94
+  AREA 1
+    NAME q1
+    COLOR 0099FF
+    SHORTCUT 2
+    LINES 0 0 60 39
+    +++++++++++++++++++++++++++++++++++++++++++++-++++++--------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++--------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++-------
+    --++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    ---+++++++++++++++++++++++++++++++++++++++++++++++++++------
+    ---+++++++++++++++++++++++++++++++++++++++++++++++++++------
+    ----+++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    ----+++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    -----+++++++++++++++++++++++++++++++++++++++++++++++++++----
+    -----+++++++++++++++++++++++++++++++++++++++++++++++++++----
+    ------++++++++++++++++++++++++++++++++++++++++++++++++++----
+    ------+++++++++++++++++++++++++++++++++++++++++++++++++++---
+    -------++++++++++++++++++++++++++++++++++++++++++++++++++---
+    -------++++++++++++++++++++++++++++++++++++++++++++++++++---
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++---
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---------+++++++++++++++++++++++++++++++++++++++++++++++++--
+    ---------+++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------+++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------++++++++++++++++++++++++++++++++++++++++++++++++-
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++-
+    ------------++++++++++++++++++++++++++++++++++++++++++++++++
+    -------------+++++++++++++++++++++++++++++++++++++++++++++++
+    --------------++++++++++++++++++++++++++++++++++++++++++++++
+    ---------------+++++++++++++++++++++++++++++++++++++++++++++
+    -----------------++++++++++++++++++++++++++++++++++++++++++-
+    ------------------+++++++++++++++++++++++++++++++++++++++++-
+    --------------------+++++++++++++++++++++++++++++++++++++++-
+    ----------------------++++++++++++++++++++++++++++++++++++--
+    ------------------------+++++++++----+++++++++++++++++++++--
+    --------------------------------------++++++++++++++++++++--
+    ----------------------------------------++++++++++++++++++--
+    ------------------------------------------++++++++++++++++--
+    --------------------------------------------+++++++++++++---
+    -----------------------------------------------+++++++++----
+    -------------------------------------------------+++++------
+  AREA 2
+    NAME q2
+    COLOR 39FF44
+    SHORTCUT 3
+    LINES 62 0 72 47
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
+    --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------
+    ---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------
+    ----+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+    -----+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+    ------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+    ------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+    -------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    --------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    --------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    -----------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    -------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    --------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ---------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ----------------+++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    -----------------+++++++++++++++++++++++++++++++++++++++++++------------
+    ------------------++++++++++++++++++++++++++++++++++++++++++------------
+    --------------------++++++++++++++++++++++++++++++++++++++++------------
+    ---------------------+++++++++++++++++++++++++++++++++++++++------------
+    -----------------------++++++++++++++++++++++++++++++++++++-------------
+    ------------------------+++++++++++++++++++++++++++++++++++-------------
+    -------------------------++++++++++++++++++++++++++++++++++-------------
+    ----------------------------+++++++++++++++++++++++++++++++-------------
+    ------------------------------++++++++++++++++++++++++++++--------------
+    ---------------------------------+++++++++++++++++++++++++--------------
+    ----------------------------------------+++++++++++++++++---------------
+    ------------------------------------------++++++-++++++-----------------
+    ---------------------------------------------++------+------------------
+  AREA 3
+    NAME q3
+    COLOR CCFF44
+    SHORTCUT 4
+    LINES 24 46 59 54
+    ---+++-----------------------------------------------------
+    ++++++++++-------------------------------------------------
+    ++++++++++++-----------------------------------------------
+    -+++++++++++++---------------------------------------------
+    -+++++++++++++++-------------------------------------------
+    --++++++++++++++++-----------------------------------------
+    --++++++++++++++++++---------------------------------------
+    ---+++++++++++++++++++-------------------------------------
+    ---++++++++++++++++++++++----------------------------------
+    ----+++++++++++++++++++++++--------------------------------
+    ----+++++++++++++++++++++++++------------------------------
+    -----+++++++++++++++++++++++++-----------------------------
+    -----+++++++++++++++++++++++++++---------------------------
+    ------+++++++++++++++++++++++++++--------------------------
+    ------++++++++++++++++++++++++++++-------------------------
+    -------+++++++++++++++++++++++++++++-----------------------
+    -------++++++++++++++++++++++++++++++----------------------
+    --------+++++++++++++++++++++++++++++++--------------------
+    --------+++++++++++++++++++++++++++++++++------------------
+    ---------+++++++++++++++++++++++++++++++++-----------------
+    ---------++++++++++++++++++++++++++++++++++----------------
+    ----------+++++++++++++++++++++++++++++++++++--------------
+    ----------++++++++++++++++++++++++++++++++++++-------------
+    -----------++++++++++++++++++++++++++++++++++++------------
+    -----------+++++++++++++++++++++++++++++++++++++-----------
+    ------------+++++++++++++++++++++++++++++++++++++----------
+    ------------++++++++++++++++++++++++++++++++++++++---------
+    -------------++++++++++++++++++++++++++++++++++++++--------
+    -------------+++++++++++++++++++++++++++++++++++++++-------
+    --------------+++++++++++++++++++++++++++++++++++++++------
+    --------------+++++++++++++++++++++++++++++++++++++++------
+    ---------------+++++++++++++++++++++++++++++++++++++++-----
+    ---------------++++++++++++++++++++++++++++++++++++++++----
+    ----------------+++++++++++++++++++++++++++++++++++++++----
+    ----------------++++++++++++++++++++++++++++++++++++++++---
+    -----------------+++++++++++++++++++++++++++++++++++++++---
+    -----------------++++++++++++++++++++++++++++++++++++++++--
+    ------------------+++++++++++++++++++++++++++++++++++++++--
+    ------------------+++++++++++++++++++++++++++++++++++++++--
+    -------------------+++++++++++++++++++++++++++++++++++++++-
+    -------------------+++++++++++++++++++++++++++++++++++++++-
+    --------------------++++++++++++++++++++++++++++++++++++++-
+    --------------------++++++++++++++++++++++++++++++++++++++-
+    ---------------------+++++++++++++++++++++++++++++++++++++-
+    ---------------------++++++++++++++++++++++++++++++++++++++
+    ----------------------+++++++++++++++++++++++++++++++++++++
+    ----------------------++++++++++++++++++++++++++++++++++++-
+    -----------------------+++++++++++++++++++++++++++++++++++-
+    -----------------------+++++++++++++++++++++++++++++++++-+-
+    ------------------------++++++++++++++++++++++++++++++++---
+    ------------------------+++++++++++++++++++++++++++++++----
+    -------------------------++++++++++++++++++++++++++++++----
+    -------------------------++++++++++++++++++++++++++++++----
+    --------------------------+++++++++++++++++++++++++++++----
+  AREA 4
+    NAME q4
+    COLOR 00FF53
+    SHORTCUT 5
+    LINES 112 41 57 59
+    --------++++++++-----------------------------------------
+    -------++++++++++++--------------------------------------
+    ------+++++++++++++++-------++---------------------------
+    ------++++++++++++++++--++++++---------------------------
+    -----++++++++++++++++++++++++++--------------------------
+    -----++++++++++++++++++++++++++--------------------------
+    ----++++++++++++++++++++++++++++-------------------------
+    ----++++++++++++++++++++++++++++-------------------------
+    ----+++++++++++++++++++++++++++++------------------------
+    ----+++++++++++++++++++++++++++++------------------------
+    ----++++++++++++++++++++++++++++++-----------------------
+    ----++++++++++++++++++++++++++++++-----------------------
+    ----+++++++++++++++++++++++++++++++----------------------
+    ----+++++++++++++++++++++++++++++++----------------------
+    ----++++++++++++++++++++++++++++++++---------------------
+    ----++++++++++++++++++++++++++++++++---------------------
+    -----++++++++++++++++++++++++++++++++--------------------
+    -----++++++++++++++++++++++++++++++++--------------------
+    -----+++++++++++++++++++++++++++++++++-------------------
+    --++++++++++++++++++++++++++++++++++++-------------------
+    -++++++++++++++++++++++++++++++++++++++------------------
+    +++++++++++++++++++++++++++++++++++++++------------------
+    ++++++++++++++++++++++++++++++++++++++++-----------------
+    ++++++++++++++++++++++++++++++++++++++++-----------------
+    +++++++++++++++++++++++++++++++++++++++++----------------
+    -++++++++++++++++++++++++++++++++++++++++----------------
+    -+++++++++++++++++++++++++++++++++++++++++---------------
+    -+++++++++++++++++++++++++++++++++++++++++---------------
+    -++++++++++++++++++++++++++++++++++++++++++--------------
+    -++++++++++++++++++++++++++++++++++++++++++--------------
+    --++++++++++++++++++++++++++++++++++++++++++-------------
+    --++++++++++++++++++++++++++++++++++++++++++-------------
+    --+++++++++++++++++++++++++++++++++++++++++++------------
+    --+++++++++++++++++++++++++++++++++++++++++++------------
+    --++++++++++++++++++++++++++++++++++++++++++++-----------
+    --++++++++++++++++++++++++++++++++++++++++++++-----------
+    -++++++++++++++++++++++++++++++++++++++++++++++----------
+    -++++++++++++++++++++++++++++++++++++++++++++++----------
+    -+++++++++++++++++++++++++++++++++++++++++++++++---------
+    -+++++++++++++++++++++++++++++++++++++++++++++++---------
+    -++++++++++++++++++++++++++++++++++++++++++++++++--------
+    -++++++++++++++++++++++++++++++++++++++++++++++++--------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++-------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++-------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    --++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++----
+    ---+++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---+++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----+++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ----+++++++++++++++++++++++++++++++++++++++++++++++++++++
+    -----++++++++++++++++++++++++++++++++++++++++++++++++++++
+    -----+++++++++++++++++++++++++++++++++++++++++++++++++---
+  AREA 5
+    NAME z1
+    COLOR 0000FF
+    LINES 32 36 1 1
+    +
+  AREA 6
+    NAME z2
+    COLOR 0000FF
+    LINES 18 30 1 1
+    +
+  AREA 7
+    NAME z3
+    COLOR 0000FF
+    LINES 39 35 62 20
+    +-------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    --------------------------------------------------------------
+    -------------------------------------------------------------+
+  AREA 8
+    NAME z4
+    COLOR 0000FF
+    LINES 92 40 1 1
+    +
+  AREA 9
+    NAME z5
+    COLOR 0000FF
+    LINES 113 11 1 1
+    +
+  AREA 10
+    NAME z6
+    COLOR 0000FF
+    LINES 27 48 1 1
+    +
+  AREA 11
+    NAME z7
+    COLOR 0000FF
+    LINES 91 68 1 1
+    +
+  AREA 12
+    NAME z8
+    COLOR 0000FF
+    LINES 71 42 1 1
+    +
+  AREA 13
+    NAME z10
+    COLOR 0000FF
+    LINES 91 94 1 1
+    +
+  AREA 14
+    NAME z11
+    COLOR 0000FF
+    LINES 109 76 1 1
+    +
+  AREA 15
+    NAME z13
+    COLOR 0000FF
+    LINES 144 53 1 1
+    +
+  AREA 16
+    NAME z14
+    COLOR 0000FF
+    LINES 129 28 1 1
+    +
+  AREA 17
+    NAME z15
+    COLOR 0000FF
+    LINES 119 50 1 1
+    +
+  AREA 18
+    NAME z16
+    COLOR 0000FF
+    LINES 64 56 1 1
+    +
+  AREA 19
+    NAME z17
+    COLOR 0000FF
+    LINES 76 68 1 1
+    +
+  AREA 20
+    NAME z9
+    COLOR 0000FF
+    LINES 135 96 1 1
+    +
+  AREA 21
+    NAME z12
+    COLOR 0000FF
+    LINES 47 7 1 1
+    +
+  AREA 22
+    NAME z18
+    COLOR 0000FF
+    LINES 85 49 1 1
+    +
+  AREA 23
+    NAME z19
+    COLOR 0000FF
+    LINES 42 48 1 1
+    +
+  AREA 24
+    NAME z20
+    COLOR 0000FF
+    LINES 102 38 1 1
+    +
+  AREA 25
+    NAME zona
+    COLOR 00FFFF
+    LINES 18 7 127 90
+    -----------------------------+-------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------+-------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------------+---------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    +------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ---------------------+---------------------------------------------------------------------------------------------------------
+    --------------+----------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------+------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------+----------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------+-------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ---------+--------------+------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------+-----------------------------------------------------------
+    -----------------------------------------------------------------------------------------------------+-------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------------------------------------+
+    ----------------------------------------------------------------------------------+--------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------+--------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------+--------------+-----------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------+-----------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------+-----------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------------------+---------
+  AREA 26
+    NAME new_people
+    COLOR FF4080
+    LINES 18 7 127 90
+    -----------------------------+-------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------+-------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -----------+++-----------------------------------------------------------------------------------------------------------------
+    ----------++++++++---------------------------------------------------------------------------------------------+---------------
+    ---------+++++++++++-----------------------------------------------------------------------------------------------------------
+    +--------+++++++++++++---------------------------------------------------------------------------------------------------------
+    ---------++++++++++++++--------------------------------------------------------------------------------------------------------
+    ---------++++++++++++++++------------------------------------------------------------------------------------------------------
+    ---------++++++++++++++++++----------------------------------------------------------------------------------------------------
+    ---------+++++++++++++++++++-------------------+++++++++++---------------------------------------------------------------------
+    ---------++++++++++++++++++++-----------------++++++++++++++++-----------------------------------------------------------------
+    ---------+++++++++++++++++++++----------------+++++++++++++++++++--------------------------------------------------------------
+    ---------++++++++++++++++++++++--------------++++++++++++++++++++++------------------------------------------------------------
+    ---------+++++++++++++++++++++++-------------++++++++++++++++++++++++++++++++-------+------------------------------------------
+    ----------+++++++++++++++++++++++------------++++++++++++++++++++++++++++++++++------------------------------------------------
+    ----------++++++++++++++++++++++++---------++++++++++++++++++++++++++++++++++++++----------------------------------------------
+    -----------++++++++++++++++++++++++------++++++++++++++++++++++++++++++++++++++++++--------------------------------------------
+    -----------++++++++++++++++++++++++-+++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------
+    -------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------
+    --------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------
+    ---------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------
+    ---------+-----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------
+    ----------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------
+    -----------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------+-------------------------
+    ------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------
+    --------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------
+    ---------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------+
+    ----------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------
+    ------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------
+    --------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------
+    --------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------
+    ---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------
+    ---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------
+    ----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------
+    ----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------
+    -----------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------
+    ------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    ------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    -------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    --------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    --------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    ---------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    ----------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    -----------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    ------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    -------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+    --------------------------------------------+++++++++++++++++++++++++++++++++++++++++++------+++++++---------------------------
+    ---------------------------------------------+++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+    ----------------------------------------------+++++++++++++++++++++++++++++++++++++++------------------------------------------
+    -----------------------------------------------++++++++++++++++++++++++++++++++------------+-----------------------------------
+    ------------------------------------------------+++++++++++++++++++++++++++++++------------------------------------------------
+    --------------------------------------------------+++++++++++++++++++++++++++++------------------------------------------------
+    ---------------------------------------------------+++++++++++++++++++++++++++++-----------------------------------------------
+    -----------------------------------------------------+++++++++++++++++++++++++++-----------------------------------------------
+    --------------------------------------------------------++++++++++++++++++++++++-----------------------------------------------
+    -----------------------------------------------------------+++++++++++++++++++++-----------------------------------------------
+    -----------------------------------------------------------------+++++++++++++++-----------------------------------------------
+    -------------------------------------------------------------------+++++++++++++-----------------------------------------------
+    ---------------------------------------------------------------------+++++++++++-----------------------------------------------
+    -----------------------------------------------------------------------+++++++++-----------------------------------------------
+    --------------------------------------------------------------------------+++++------------------------------------------------
+    ----------------------------------------------------------------------------+++------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------+-----------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------------------+---------
+  AREA 27
+    NAME Base1
+    COLOR 00FF33
+    SHORTCUT 1
+    LINES 0 0 50 28
+    ++++++++++++++++++++++++++++++++++----------------
+    -++++++++++++++++++++++++++++++++++---------------
+    -++++++++++++++++++++++++++++++++++++-------------
+    --+++++++++++++++++++++++++++++++++++-------------
+    --++++++++++++++++++++++++++++++++++++------------
+    ---++++++++++++++++++++++++++++++++++++-----------
+    ---+++++++++++++++++++++++++++++++++++++----------
+    ----++++++++++++++++++++++++++++++++++++----------
+    ----+++++++++++++++++++++++++++++++++++++---------
+    -----++++++++++++++++++++++++++++++++++++---------
+    -----+++++++++++++++++++++++++++++++++++++--------
+    ------++++++++++++++++++++++++++++++++++++--------
+    ------+++++++++++++++++++++++++++++++++++++-------
+    -------+++++++++++++++++++++++++++++++++++++------
+    -------++++++++++++++++++++++++++++++++++++++-----
+    --------++++++++++++++++++++++++++++++++++++++----
+    --------++++++++++++++++++++++++++++++++++++++----
+    ---------++++++++++++++++++++++++++++++++++++++---
+    ---------+++++++++++++++++++++++++++++++++++++++--
+    ----------++++++++++++++++++++++++++++++++++++++--
+    ----------+++++++++++++++++++++++++++++++++++++++-
+    -----------++++++++++++++++++++++++++++++++++++++-
+    ------------++++++++++++++++++++++++++++++++++++++
+    ----------------++++++++++++++++++++++++++++++++++
+    -------------------+++++++++++++++++++++++++++++++
+    ----------------------+++++++++++++++++++++++++++-
+    -------------------------------+++++++++++++++++--
+    --------------------------------+++++++++++++++---
+  AREA 28
+    NAME Base2
+    COLOR FF4040
+    SHORTCUT 2
+    LINES 46 0 61 27
+    ----------------++++++++++++++++++++++++++++++++++++++++++---
+    ----------------+++++++++++++++++++++++++++++++++++++++++++--
+    ----------------+++++++++++++++++++++++++++++++++++++++++++--
+    ----------------++++++++++++++++++++++++++++++++++++++++++++-
+    -----------------+++++++++++++++++++++++++++++++++++++++++++-
+    -----------------++++++++++++++++++++++++++++++++++++++++++++
+    -----------------++++++++++++++++++++++++++++++++++++++++++++
+    +-----------------+++++++++++++++++++++++++++++++++++++++++++
+    ------------------++++++++++++++++++++++++++++++++++++++++++-
+    -------------------+++++++++++++++++++++++++++++++++++++++++-
+    -------------------+++++++++++++++++++++++++++++++++++++++++-
+    --------------------++++++++++++++++++++++++++++++++++++++++-
+    --------------------++++++++++++++++++++++++++++++++++++++++-
+    ---------------------+++++++++++++++++++++++++++++++++++++++-
+    ----------------------+++++++++++++++++++++++++++++++++++++--
+    ----------------------+++++++++++++++++++++++++++++++++++++--
+    -----------------------++++++++++++++++++++++++++++++++++++--
+    ------------------------++++++++++++++++++++++++++++++++++---
+    ------------------------++++++++++++++++++++++++++++++++++---
+    ------------------------++++++++++++++++++++++++++++++++++---
+    -------------------------+++++++++++++++++++++++++++++++++---
+    --------------------------++++++++++++++++++++++++++++++++---
+    ---------------------------++++++++++++++++++++++++++++++++--
+    ----------------------------+----++++++++++++++++++++++++++--
+    --------------------------------------+++++++++++++++++++++--
+    -------------------------------------------++++++++++++++++--
+    ------------------------------------------------+++++++++++--
+  AREA 29
+    NAME Base3
+    COLOR D2FF44
+    SHORTCUT 3
+    LINES 27 9 55 91
+    ------------------------------------------------------+
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    -------------------------------------------------------
+    +++++++------------------------------------------------
+    ++++++++++++-------------------------------------------
+    -+++++++++++++++++-------------------------------------
+    -+++++++++++++++++++-----------------------------------
+    --+++++++++++++++++++++--------------------------------
+    --+++++++++++++++++++++++------------------------------
+    ---+++++++++++++++++++++++-----------------------------
+    ---+++++++++++++++++++++++++---------------------------
+    ----+++++++++++++++++++++++++--------------------------
+    ----++++++++++++++++++++++++++-------------------------
+    -----+++++++++++++++++++++++++++-----------------------
+    -----++++++++++++++++++++++++++++----------------------
+    ------++++++++++++++++++++++++++++---------------------
+    ------+++++++++++++++++++++++++++++--------------------
+    -------+++++++++++++++++++++++++++++-------------------
+    -------++++++++++++++++++++++++++++++------------------
+    --------++++++++++++++++++++++++++++++-----------------
+    --------+++++++++++++++++++++++++++++++----------------
+    ---------+++++++++++++++++++++++++++++++---------------
+    ---------++++++++++++++++++++++++++++++++--------------
+    ----------++++++++++++++++++++++++++++++++-------------
+    ----------++++++++++++++++++++++++++++++++-------------
+    -----------++++++++++++++++++++++++++++++++------------
+    -----------++++++++++++++++++++++++++++++++------------
+    ------------++++++++++++++++++++++++++++++++-----------
+    ------------++++++++++++++++++++++++++++++++-----------
+    -------------++++++++++++++++++++++++++++++++----------
+    -------------+++++++++++++++++++++++++++++++++---------
+    --------------++++++++++++++++++++++++++++++++---------
+    --------------+++++++++++++++++++++++++++++++++--------
+    ---------------++++++++++++++++++++++++++++++++--------
+    ---------------+++++++++++++++++++++++++++++++++-------
+    ----------------++++++++++++++++++++++++++++++++-------
+    ----------------++++++++++++++++++++++++++++++++-------
+    -----------------++++++++++++++++++++++++++++++++------
+    -----------------++++++++++++++++++++++++++++++++------
+    ------------------++++++++++++++++++++++++++++++++-----
+    ------------------++++++++++++++++++++++++++++++++-----
+    -------------------+++++++++++++++++++++++++++++++-----
+    -------------------+++++++++++++++++++++++++++++++-----
+    --------------------+++++++++++++++++++++++++++++++----
+    --------------------+++++++++++++++++++++++++++++++----
+    ---------------------++++++++++++++++++++++++++++++----
+    ---------------------++++++++++++++++++++++++++++++----
+    ----------------------+++++++++++++++++++++++++++++----
+    ----------------------+++++++++++++++++++++++++++++----
+    -----------------------+++++++++++++++++++++++++++++---
+  AREA 30
+    NAME Base4
+    COLOR 00D9FF
+    SHORTCUT 4
+    LINES 123 54 47 46
+    -------+-+-------------------------------------
+    ------+++++------------------------------------
+    -----++++++++++++++++++------------------------
+    -----+++++++++++++++++++++---------------------
+    -----+++++++++++++++++++++---------------------
+    ----+++++++++++++++++++++++--------------------
+    ----+++++++++++++++++++++++--------------------
+    ++++++++++++++++++++++++++++-------------------
+    ++++++++++++++++++++++++++++-------------------
+    +++++++++++++++++++++++++++++------------------
+    +++++++++++++++++++++++++++++------------------
+    ++++++++++++++++++++++++++++++-----------------
+    -+++++++++++++++++++++++++++++-----------------
+    -++++++++++++++++++++++++++++++----------------
+    -++++++++++++++++++++++++++++++----------------
+    -+++++++++++++++++++++++++++++++---------------
+    -+++++++++++++++++++++++++++++++---------------
+    -++++++++++++++++++++++++++++++++--------------
+    -++++++++++++++++++++++++++++++++--------------
+    --++++++++++++++++++++++++++++++++-------------
+    --++++++++++++++++++++++++++++++++-------------
+    --+++++++++++++++++++++++++++++++++------------
+    --+++++++++++++++++++++++++++++++++------------
+    ---+++++++++++++++++++++++++++++++++-----------
+    ---+++++++++++++++++++++++++++++++++-----------
+    ---++++++++++++++++++++++++++++++++++----------
+    ---++++++++++++++++++++++++++++++++++----------
+    ---+++++++++++++++++++++++++++++++++++---------
+    --++++++++++++++++++++++++++++++++++++---------
+    ---++++++++++++++++++++++++++++++++++++--------
+    ----+++++++++++++++++++++++++++++++++++--------
+    ----++++++++++++++++++++++++++++++++++++-------
+    ----++++++++++++++++++++++++++++++++++++-------
+    ----+++++++++++++++++++++++++++++++++++++------
+    ----+++++++++++++++++++++++++++++++++++++------
+    ----++++++++++++++++++++++++++++++++++++++-----
+    ----++++++++++++++++++++++++++++++++++++++-----
+    -----++++++++++++++++++++++++++++++++++++++----
+    -----++++++++++++++++++++++++++++++++++++++----
+    -----+++++++++++++++++++++++++++++++++++++++---
+    ------++++++++++++++++++++++++++++++++++++++---
+    ------+++++++++++++++++++++++++++++++++++++++--
+    ------+++++++++++++++++++++++++++++++++++++++--
+    -------+++++++++++++++++++++++++++++++++++++++-
+    -------+++++++++++++++++++++++++++++++++++++++-
+    -------++++++++++++++++++++++++++++++++++++++++
+  AREA 31
+    NAME op1
+    COLOR 408080
+    SHORTCUT 1
+    LINES 0 0 66 41
+    +++++++++-----------------------------+++++++++++++++++++---------
+    -++++++++------------------------------++++++++++++++++++---------
+    -++++++++------------------------------+++++++++++++++++++--------
+    --+++++---------------------------------+++++++++++++++++++-------
+    --++++----------------------------------+++++++++++++++++++-------
+    ---+++-----------------------------------+++++++++++++++++++------
+    ---+++-----------------------------------+++++++++++++++++++------
+    ----+++-----------------------------------+++++++++++++++++++-----
+    ----+++------------------------------------++++++++++++++++++-----
+    -----+++-----------------------------------+++++++++++++++++++----
+    -----+++++----------------------------------++++++++++++++++++----
+    ------+++++---------------------------------++++++++++++++++++----
+    ------++++++--------------------------------+++++++++++++++++++---
+    -------++++++++-----------------------------+++++++++++++++++++---
+    -------+++++++++-----------------------------+++++++++++++++++++--
+    --------++++++++++---------------------------+++++++++++++++++++--
+    --------+++++++++++---------------------------++++++++++++++++++--
+    ---------+++++++++++--------------------------+++++++++++++++++++-
+    ---------+++++++++++++-------------------------++++++++++++++++++-
+    ----------+++++++++++++------------------------++++++++++++++++++-
+    ----------++++++++++++++------------------------++++++++++++++++++
+    -----------++++++++++++++-----------------------++++++++++++++++++
+    -----------+++++++++++++++++--------------------++++++++++++++++++
+    ------------+++++++++++++++++++-----------------++++++++++++++++++
+    ------------++++++++++++++++++++++-------------+++++++++++++++++++
+    -------------++++++++++++++++++++++++--------++++++++++++++++++++-
+    -------------++++++++++++++++++++++++++-----+++++++++++++++++++++-
+    --------------++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ---------------+++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------------+++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------------++++++++++++++++++++++++++++++++++++++++++++++++-
+    ---------------------++++++++++++++++++++++++++++++++++++++++++++-
+    -----------------------------------++++++++++++++++++++++++++++++-
+    ------------------------------------------+++++++++++++++++++++++-
+    -------------------------------------------++++++++++++++++++++++-
+    --------------------------------------------++++++++++++++++++++--
+    --------------------------------------------++++++++++++++++++++--
+    --------------------------------------------++++++++++++++++++++--
+    ---------------------------------------------+++++++++++++++++++--
+    -----------------------------------------------++++++++++++++++---
+    ---------------------------------------------------+-----++-------
+  AREA 32
+    NAME op2
+    COLOR 408080
+    SHORTCUT 1
+    LINES 61 0 64 57
+    -+++++++++++++++++++---------------------------+++++++++++------
+    ++++++++++++++++++++--------------------------++++++++++++++----
+    ++++++++++++++++++++--------------------------++++++++++++++----
+    ++++++++++++++++++++--------------------------+++++++++++++++---
+    ++++++++++++++++++++-------------------------++++++++++++++++---
+    -+++++++++++++++++++-------------------------+++++++++++++++++--
+    -+++++++++++++++++++-------------------------+++++++++++++++++--
+    -+++++++++++++++++++------------------------+++++++++++++++++++-
+    --++++++++++++++++++------------------------+++++++++++++++++++-
+    --++++++++++++++++++------------------------++++++++++++++++++++
+    ---+++++++++++++++++------------------------++++++++++++++++++++
+    ---+++++++++++++++++------------------------++++++++++++++++++++
+    ---+++++++++++++++++------------------------++++++++++++++++++++
+    ----++++++++++++++++------------------------++++++++++++++++++++
+    ----++++++++++++++++------------------------+++++++++++++++++++-
+    -----+++++++++++++++------------------------+++++++++++++++++++-
+    -----+++++++++++++++------------------------++++++++++++++++++--
+    ------+++++++++++++++-----------------------++++++++++++++++++--
+    ------++++++++++++++++----------------------+++++++++++++++++---
+    ------+++++++++++++++++---------------------+++++++++++++++++---
+    ------++++++++++++++++++--------------------++++++++++++++++----
+    -------++++++++++++++++++-------------------+++++++++++++++-----
+    -------++++++++++++++++++-------------------++++++++++++++------
+    -------+++++++++++++++++++------------------++++++++++++++------
+    -------+++++++++++++++++++------------------+++++++++++++-------
+    --------+++++++++++++++++++---+++++++-------++++++++++++--------
+    --------++++++++++++++++++++++++++++++++-----+++++++++++--------
+    ---------++++++++++++++++++++++++++++++++++--+++++++++++--------
+    ---------+++++++++++++++++++++++++++++++++++-++++++++++---------
+    ----------+++++++++++++++++++++++++++++++++++++++++++++---------
+    ----------++++++++++++++++++++++++++++++++++++++++++++----------
+    -----------++++++++++++++++++++++++++++++++++++++++++++---------
+    -----------+++++++++++++++++++++++++++++++++++++++++++++--------
+    ------------++++++++++++++++++++++++++++++++++++++++++++--------
+    -------------++++++++++++++++++++++++++++++++++++++++++++-------
+    --------------+++++++++++++++++++++++++++++++++++++++++++-------
+    ---------------+++++++++++++++++++++++++++++++++++++++++++------
+    ----------------++++++++++++++++++++++++++++++++++++++++++------
+    ----------------+++++++++++++++++++++++++++++++++++++++++++-----
+    -----------------++++++++++++++++++++++++++++++++++++++++++-----
+    ------------------+++++++++++++++++++++++++++++++++++++++++-----
+    --------------------++++++++++++++++++++++++++++++++++++++++----
+    ---------------------+++++++++++++++++++++++++++++++++++++++----
+    ----------------------++++++++++++++++++++++++++++++++++++++----
+    -----------------------+++++++++++++++++++++++++++++++++++++----
+    ------------------------+++++++++++++++++++++++++++++++++++-----
+    -------------------------++++++++++++++++++++++++++++++++++-----
+    --------------------------++++++++++++++++++++++++++++++++------
+    ---------------------------+++++++++++++++++++++++++++++++------
+    -----------------------------++++++++++++++++++++++++++++-------
+    ------------------------------+++++++++++++++++++++++++++-------
+    --------------------------------++++++++++++++++++++++++--------
+    ---------------------------------++++++++++++++++++++++---------
+    -----------------------------------++++++++++++++++++++---------
+    -------------------------------------++++++++++++++++-----------
+    -----------------------------------------+++++++++++------------
+    -----------------------------------------------+----------------
+  AREA 33
+    NAME op3
+    COLOR 408080
+    SHORTCUT 2
+    LINES 20 40 62 60
+    +++++++++++++++++++-------------------------------------------
+    -+++++++++++++++++++++----------------------------------------
+    -++++++++++++++++++++++++-------------------------------------
+    --++++++++++++++++++++++++------------------------------------
+    --++++++++++++++++++++++++++----------------------------------
+    ---++++++++++++++++++++++++++---------------------------------
+    ---+++++++++++++++++++++++++++--------------------------------
+    ----+++++++++++++++++++++++++++-------------------------------
+    ----++++++++++++++++++++++++++++------------------------------
+    -----+++++++++++++++++++++++++++++----------------------------
+    -----++++++++++++++++++++++++++++++---------------------------
+    ------++++++++++++++++++++++++++++++--------------------------
+    ------++++++++++++++++++++++++++++++--------------------------
+    -------++++++++++++++++++++++++++++++-------------------------
+    -------+++++++++++++++++++++++++++++++------------------------
+    --------+++++++++++++++++++++++++++++++-----------------------
+    --------++++++++++++++++++++++++++++++++----------------------
+    ---------+++++--------+++++++++++++++++++---------------------
+    ---------++++++----------++++++++++++++++++-------------------
+    ----------+++++------------+++++++++++++++++------------------
+    ----------+++++--------------++++++++++++++++-----------------
+    -----------+++++---------------+++++++++++++++----------------
+    -----------+++++-----------------++++++++++++++---------------
+    ------------++++------------------++++++++++++++--------------
+    ------------+++++-----------------+++++++++++++++-------------
+    -------------++++-----------------++++++++++++++++------------
+    -------------++++-----------------+++++++++++++++++-----------
+    --------------+++------------------+++++++++++++++++----------
+    --------------++++-----------------++++++++++++++++++---------
+    ---------------+++------------------+++++++++++++++++---------
+    ---------------+++------------------++++++++++++++++++--------
+    ----------------++------------------+++++++++++++++++++-------
+    ----------------++-------------------++++++++++++++++++-------
+    -----------------+--------------------++++++++++++++++++------
+    -----------------++-------------------++++++++++++++++++------
+    ------------------+--------------------++++++++++++++++++-----
+    ------------------+++------------------++++++++++++++++++-----
+    -------------------++-------------------++++++++++++++++++----
+    -------------------+++------------------++++++++++++++++++----
+    --------------------+++-----------------+++++++++++++++++++---
+    --------------------+++------------------++++++++++++++++++---
+    ---------------------+++-----------------++++++++++++++++++---
+    ---------------------++++-----------------+++++++++++++++++---
+    ----------------------+++-----------------+++++++++++++++++---
+    ----------------------++++-+--------------++++++++++++++++++--
+    -----------------------+++++---------------+++++++++++++++++--
+    -----------------------++++++--------------+++++++++++++++++--
+    ------------------------+++++---------------++++++++++++++++--
+    ------------------------++++++---------------+++++++++++++++--
+    -------------------------++++++--------------+++++++++++++++--
+    -------------------------+++++++--------------+++++++++++++++-
+    --------------------------++++++++------------+++++++++++++++-
+    --------------------------+++++++++++----------++++++++++++++-
+    ---------------------------+++++++++++++++++++++++++++++++++++
+    ---------------------------+++++++++++++++++++++++++++++++++++
+    ----------------------------++++++++++++++++++++++++++++++++++
+    ----------------------------++++++++++++++++++++++++++++++++++
+    -----------------------------+++++++++++++++++++++++++++++++++
+    -----------------------------++++++++++++++++++++++++++++++++-
+    ------------------------------++++++++++++++++++++++++++++----
+  AREA 34
+    NAME op4
+    COLOR 408080
+    SHORTCUT 3
+    LINES 93 41 68 59
+    --------------------------------+++++++-----------------------------
+    -----------------------------+++++++++++++++++++--------------------
+    ----------------------------+++++++++++++++++++++-------------------
+    ----------------------------+++++++++++++++++++++-------------------
+    ---------------------------+++++++++++++++++++++++------------------
+    --------------------------++++++++++++++++++++++++------------------
+    --------------------------+++++++++++++++++++++++++-----------------
+    -------------------------++++++++++++++++++++++++++-----------------
+    -------------------------+++++++++++++++++++++++++++----------------
+    -------------------------+++++++++++++++++++++++++++----------------
+    ------------------------+++++++++++++++++++++++++++++---------------
+    ------------------------+++++++++++++++++++++++++++++---------------
+    -----------------------+++++++++++++++++++++++++++++++--------------
+    -----------------------+++++++++++++++++++++++++++++++--------------
+    ----------------------+++++++++++++++++++++++++++++++++-------------
+    ---------------------++++++++++++++++++++++++++++++++++-------------
+    --------------------++++++++++++++++++++++++++++++++++++------------
+    --------------------++++++++++++++++++++++++++++++++++++------------
+    -------------------++++++++++++++++++++++++++++++++++++++-----------
+    -------------------++++++++++++++++++++-----+++++++++++++-----------
+    -------------------++++++++++++++++++++-----++++++++++++++----------
+    -------------------+++++++++++++++++++++-------------++++-----------
+    -------------------+++++++++++++++++++++-------------+++++----------
+    -------------------++++++++++++++++++++++------------++++++---------
+    ------------------+++++++++++++++++++++++-------------+++++---------
+    -------------------+++++++++++++++++++++++------------++++++--------
+    ------------------++++++++++++++++++++++++-------------++++++-------
+    ---------------+++++++++++++++++++++++++++-------------++++++-------
+    ----+++++++++++++++++++++++++++++++++++++++-------------++++++------
+    ---++++++++++++++++++++++++++++++++++++++++-------------++++++------
+    ---+++++++++++++++++++++++++++++++++++++++++-------------++++++-----
+    --++++++++++++++++++++++++++++++++++++++++++-------------++++++-----
+    --+++++++++++++++++++++++++++++++++++++++++++-------------++++++----
+    --+++++++++++++++++++++++++++++++++++++++++++-------------++++++----
+    --+++++++++++++++++++++++++++++++++++++++++++--------------++++++---
+    --++++++++++++++++++++++++++++++++++++++++++++-------------++++++---
+    --++++++++++++++++++++++++++++++++++++++++++++--------------++++++--
+    --++++++++++++++++++++++++++++++++++++++++++++---------------+++++--
+    --+++++++++++++++++++++++++++++++++--++++---------------------+++++-
+    --++++++++++++++++++++++++++++++++-----++----------------------++++-
+    -+++++++++++++++++++++++++++++++++------------------------------++++
+    +++++++++++++++++++++++++++++++++-----------------------------------
+    +++++++++++++++++++++++++++++++++-----------------------------------
+    -++++++++++++++++++++++++++++++++-----------------------------------
+    -++++++++++++++++++++++++++++++++-----------------------------------
+    -+++++++++++++++++++++++++++++++++----------------------------------
+    --++++++++++++++++++++++++++++++++----------------------------------
+    --++++++++++++++++++++++++++++++++----------------------------------
+    --+++++++++++++++++++++++++++++++++---------------------------------
+    --++++++++++++++++++++++++++++++++++++------------------------------
+    ---++++++++++++++++++++++++++++++++++++++++-------------------------
+    ---+++++++++++++++++++++++++++++++++++++++++++----------------------
+    ----+++++++++++++++++++++++++++++++++++++++++++---------------------
+    ----++++++++++++++++++++++++++++++++++++++++++++--------------------
+    -----++++++++++++++++++++++++++++++++++++++++++++-------------------
+    -----+++++++++++++++++++++++++++++++++++++++++++++------------------
+    ------+++++++++++++++++++++++++++++++++++++++++++++-----------------
+    ------++++++++++++++++++++++++++++++++++++++++++++++----------------
+    -------+++++++++++++++++++----++----++++++++++++++++----------------
+  AREA 35
+    NAME op5
+    COLOR 408080
+    SHORTCUT 4
+    LINES 52 26 62 74
+    -----+++++++--------------------------------------------------
+    ----++++++++++++----------------------------------------------
+    ---+++++++++++++++-+------------------------------------------
+    ----+++++++++++++++++++---------------------------------------
+    ----++++++++++++++++++++++------------------------------------
+    -----++++++++++++++++++++++-----------------------------------
+    --+++++++++++++++++++++++++++---------------------------------
+    --+++++++++++++++++++++++++++++-------------------------------
+    -+++++++++++++++++++++++++++++++------------------------------
+    -+++++++++++++++++++++++++++++++++----------------------------
+    +++++++++++++++++++++++++++++++++++---------------------------
+    +++++++++++++++++++++++++++++++++++++---++++++++++------------
+    ++++++++++++++++++++++++++++++++++++++--+++++++++++++---------
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    -----+++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ------++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ------++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    -------+++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    --------+++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ----------+++++++++++++++++++++++++++++++++++++++++++++++++---
+    -----------+++++++++++++++++++++++++++++++++++++++++++++++++--
+    -----------+++++++++++++++++++++++++++++++++++++++++++++++++--
+    -----------++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++++-
+    ------------+++++++++++++++++++++++++++++++++++++++++++++++++-
+    -------------++++++++++++++++++++++++++++++++++++++++++++++++-
+    -------------++++++++++++++++++++++++++++++++++++++++++++++++-
+    --------------+++++++++++++++++++++++++++++++++++++++++++++++-
+    --------------+++++++++++++++++++++++++++++++++++++++++++++++-
+    ---------------+++++++++++++++++++++++++++++++++++++++++++++++
+    ----------------++++++++++++++++++++++++++++++++++++++++++++++
+    ----------------++++++++++++++++++++++++++++++++++++++++++++++
+    -----------------++++++++++++++++++++++++++++++++++++++++++++-
+    ------------------+++++++++++++++++++++++++++++++++++++++++++-
+    --------------------++++++++++++++++++++++++++++++++++++++++--
+    ---------------------++++++++++++++++++++++++++++++++++++++---
+    ----------------------+++++++++++++++++++++++++++++-----------
+    -----------------------++++++++++++++++++++++++++++-----------
+    -------------------------++++++++++++++++++++++++++-----------
+    --------------------------+++++++++++++++++++++++++-----------
+    ---------------------------+++++++++++++++++++++++------------
+    ----------------------------++++++++++++++++++++++------------
+    -----------------------------++++++++++++++++++++-------------
+    ------------------------------+++++++++++++++++---------------
+    ------------------------------+++++++++++++++++---------------
+    ------------------------------+++++++++++++++++---------------
+    -------------------------------++++++++++++++++---------------
+    -------------------------------++++++++++++++++---------------
+    --------------------------------+++++++++++++++---------------
+    --------------------------------+++++++++++++++---------------
+    ---------------------------------+++++++++++++----------------
+    ---------------------------------++++++++++-------------------
+    ----------------------------------+++++++++-------------------
+    ----------------------------------++++++++++------------------
+    -----------------------------------+++++++++------------------
+    -----------------------------------+++++++++------------------
+    ------------------------------------+++++++++-----------------
+    ------------------------------------+++++++++-----------------
+    -------------------------------------+++++++++----------------
+    -------------------------------------+++++++++----------------
+    --------------------------------------++++++++----------------
+    --------------------------------------++++++++----------------
+    ---------------------------------------+++++++----------------
+    ----------------------------------------++++++----------------
+END_OF_AREAS
+

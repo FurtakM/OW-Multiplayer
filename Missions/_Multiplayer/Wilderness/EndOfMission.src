@@ -1,0 +1,166 @@
+var was_info,was_end_dialog,losses;
+
+export apeman_killed,radio_dropped,radio_x,radio_y;
+
+function evaluate_escapes;
+  begin
+    if gladstone_escaped and soldier_escaped then
+      Say(Burlak,'D9-Bur-1c')                     
+    else if soldier_escaped and not IsOk(Gladstone) then
+      Say(Burlak,'D9-Bur-1b')
+    else if gladstone_escaped and not IsOk(am1) then
+      Say(Burlak,'D9-Bur-1a')
+    else if not IsOk(am1) and not IsOk(Gladstone) then
+      Say(Burlak,'D9-Bur-1')
+    else
+      enable;
+
+  end;
+
+every 0$1 trigger IsInArea(Gladstone,AmEsc) do
+  begin
+    if not IsOk(Gladstone) then
+      exit;
+    RemoveUnit(Gladstone);
+    gladstone_escaped:=true;
+    evaluate_escapes;
+  end;
+
+every 0$1+0$0.5 trigger IsInArea(am1,AmEsc) do
+  begin
+    if not IsOk(am1) then
+      exit;
+    RemoveUnit(am1);
+    soldier_escaped:=true;
+    evaluate_escapes;
+  end;
+
+
+on UnitGoesToRed(un) do
+  begin
+    if un=Burlak then
+      begin
+        ExclusiveOn;
+        Wait(0$5);
+        YouLost('Burlak');
+        ExclusiveOff;
+        exit;
+      end
+    else if ((un=Gladstone)or(un=am1))and start_to_run then
+      evaluate_escapes
+    else if (un=Gladstone)and not start_to_run then
+      begin
+        start_to_run:=true;
+      end
+    else if un=am_bunker then
+      begin
+        {if IsOk(am1) then
+          Say(am1,'D8-FSol1-2a');}
+        if IsOk(Pokryshkin) then
+          SetLives(Pokryshkin,240);
+      end
+    else if un in wild_apemen then
+      begin
+        if not radio_dropped and (un=wild_apemen[1]) then
+          begin
+            radio_dropped:=true;
+            radio_x:=GetX(un);
+            radio_y:=GetY(un);
+          end;
+        apeman_killed:=true;
+        if pokryshkin_met then
+          soldiers_killed_apeman:=true
+        else
+          burlak_killed_apeman:=true;
+
+        wild_apemen:=wild_apemen diff un;
+        disable(11);
+      end;
+  end;
+
+
+on UnitDestroyed(un) do
+  begin
+    if GetSide(un)=you and un<>pokryshkin then
+      losses:=true
+  end;
+
+
+every 0$1+0$0.45 trigger IsInArea(Burlak,ExitArea) marked 666 do  //edited by jam
+  var posible;
+  begin
+    if FilterAllUnits([[f_side,you],[f_ok]]) diff FilterUnitsInArea(BigExit,[[f_side,you],[f_ok]]) then
+      begin
+        if not was_info then
+          Query('QExit1');
+        was_info:=true;
+        enable;
+        exit;
+      end
+    else
+      begin
+        if not was_end_dialog then
+          begin
+            if IsOk(Belkov) then
+              Say(Belkov,'D12-Bel-1')
+            else
+              begin
+                posible:=FilterAllUnits([[f_side,you],[f_sex,sex_male],[f_ok]]);
+                if posible then
+                  Say(posible[1],'D12-RSol1-1');
+              end;
+            if not gnyevko_met and radio_found then
+              begin
+                Say(Burlak,'D12-Bur-1');
+                if IsOk(Belkov) then
+                  Say(Belkov,'D12-Bel-2');
+              end;
+          end;
+        was_end_dialog:=true;
+        if not gnyevko_met then
+          if Query('QExit2')=1 then
+            mission_ends
+          else
+            begin
+              end_the_mission_allowed:=true;
+              repeat
+                wait(0$2);
+              until FilterUnitsExceptArea(BigExit,[[f_side,you],[f_ok]]);
+              end_the_mission_allowed:=false;
+              enable;
+            end
+        else
+          mission_ends;
+      end;
+  end;
+
+function mission_ends;
+  var gn,kir;
+  begin
+    wait(0$1);
+    AddMedal('NoEscape',1-(gladstone_escaped or soldier_escaped)-soldier_escaped*2-gladstone_escaped);
+    if GetSide(Gnyevko)<>you then
+      SetLives(Gnyevko,0);
+    if GetSide(Kirilenkova)<>you then
+      SetLives(Kirilenkova,0);
+    AddMedal('Gnyevko',1-3*(not IsOk(Gnyevko) or not IsOk(Kirilenkova))-(not IsOk(Gnyevko) and not IsOk(Kirilenkova)));
+    AddMedal('NoLosses',not losses);
+
+    GiveMedals('Main');
+
+    if IsOk(Gnyevko)and(GetSide(Gnyevko)=you) then
+      your_units:=your_units union [Gnyevko];
+    if IsOk(Kirilenkova)and(GetSide(Kirilenkova)=you) then
+      your_units:=your_units union [Kirilenkova];
+
+    RewardPeople(your_units);
+
+    SaveCharacters(Burlak,'Burlak');
+    SaveCharacters(Gnyevko,'Gnyevko');
+    SaveCharacters(Kirilenkova,'Kirilenkova');
+    SaveCharacters(Belkov,'Belkov');
+    SaveCharacters(Pokryshkin,'Pokryshkin');
+    SaveCharacters(your_units diff [Burlak,Gnyevko,Kirilenkova,Belkov,Pokryshkin,0],'survivors1');
+
+    YouWin;
+  end;

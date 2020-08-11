@@ -1,0 +1,164 @@
+export function sheherezade_start_the_fight;
+  var i;
+  begin
+    for i:=1 to 8 do
+      if side_positions[i] then
+        prepare_side_to_the_fight(i,prep_time>0);
+end;
+
+
+function prepare_side_to_the_fight(side,materialization);
+  var x,y,i,sh,sol;
+  begin
+    SetTech(tech_ApeLang,side,state_researched);
+    SetTech(tech_StimDrugs, side, state_researched);
+
+    x:=GetX(Sheherezades[side]);
+    y:=GetY(Sheherezades[side]);
+    coordinates:=Replace(coordinates,side,[x,y]);
+
+    if flags then
+      begin
+        SetBattleFlag(side,x,y,
+        [[bfo_defend_bonus_human,flags],
+         [bfo_defend_bonus_vehicle,flags],
+         [bfo_defend_bonus_building,flags],
+         [bfo_height,flags+25]]);
+      end;
+
+    if nsh > 0 then
+    begin
+      for i := 1 to nsh do
+      begin
+        uc_side:=side;
+        uc_nation:=nation_arabian;
+
+        hc_name:='';
+        hc_class:=class_desert_warior;
+        hc_sex:=sex_male;
+        hc_skills:=sh_skills;
+        hc_attr:=[10,10];
+        hc_importance:=0;
+        hc_gallery:='';
+
+        sh = CreateHuman;
+        PlaceUnitXYR(sh,x,y,5,materialization);
+      end;
+    end;
+
+  if nsol > 0 then
+  begin
+    for i := 1 to nsol do
+    begin
+      hc_name:='';
+      hc_class:=class_soldier;
+      hc_sex:=sex_male;
+      hc_skills:=sol_skills;
+      hc_attr:=[10,10];
+      hc_importance:=0;
+      hc_gallery:='';
+
+      sh:=CreateHuman;
+      PlaceUnitXYR(sh,x,y,5,materialization);
+    end;
+  end;
+end;
+
+export function create_sheherezade(side);
+var s;
+begin
+
+    uc_side:=side;
+    uc_nation:=nation_arabian;
+
+    hc_name='Sheherezade';
+    hc_sex=sex_female;
+    hc_class=class_scientistic;
+    hc_skills=shzd_skills;
+    hc_attr=[10, 10];
+    hc_gallery='multi';
+    hc_face_number=18;
+    hc_importance=105;
+
+    s=CreateHuman;
+
+    PlaceUnitXYR(s,coordinates[side][1],coordinates[side][2],1,false);
+    sheherezades=Replace(sheherezades,side,s);
+end;
+
+
+
+export function create_ape;
+  var coord,i, ape;
+  begin
+
+    if nstart_ape > 0 then
+    begin
+      for i := 1 to nstart_ape do
+      begin
+        uc_nation:=nation_nature;
+        uc_side:=0;
+
+        hc_name:='';
+        hc_class:=class_apeman;
+        hc_sex:=1;
+        hc_basic_skills:=ape_skills;
+        hc_skills:=ape_skills;
+        hc_attr:=[12,12];
+        hc_importance:=0;
+        hc_gallery:='';
+        hc_agressivity:=Rand(-15,15);
+
+        ape:=CreateHuman;
+        PlaceUnitArea(ape, arstart, false);
+      end;
+    end;
+end;
+
+export function create_tiger;
+  var coord,i, tiger;
+  begin
+
+    if ntig > 0 then
+    begin
+      for i := 1 to ntig do
+      begin
+        uc_nation:=nation_nature;
+        uc_side:=0;
+
+        hc_name:='';
+        hc_class:=class_tiger;
+        hc_sex:=1;
+        hc_basic_skills:=[2,2,2,2];
+        hc_skills:=[2,2,2,2];
+        hc_attr:=[12,12];
+        hc_importance:=0;
+        hc_gallery:='';
+        hc_agressivity:=Rand(10,30);
+
+        tiger:=CreateHuman;
+        PlaceUnitArea(tiger, arstart, false);
+      end;
+    end;
+end;
+
+export function create_mastodon;
+var coord,i, mast;
+begin
+
+  if nmast1 > 0 then
+  begin
+    for i := 1 to nmast1 do
+    begin
+      uc_nation:=nation_nature;
+      uc_side:=0;
+
+      vc_chassis:=31;
+      mast:=CreateVehicle;
+      PlaceUnitArea(mast, arstart, false);
+    end;
+  end;
+
+end;
+
+

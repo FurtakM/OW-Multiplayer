@@ -1,0 +1,10 @@
+begin
+? type grass
+ ! rgb 35 28 0
+new
+? not type grass
+ ! add 31 400000
+new
+? type single_tree
+ ! rgb 52 52 0
+end

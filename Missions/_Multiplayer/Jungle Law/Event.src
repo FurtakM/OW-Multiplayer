@@ -1,0 +1,62 @@
+//this is first line
+
+// Rušení pøíkazù pro Game Rules
+on VehicleConstructionStarted(factory, chassis, engine, control, weapon) do
+  RestrictVehicleConstructionStarted(factory, chassis, engine, control, weapon);
+on WeaponPlaced(building, weapon) do
+  RestrictWeaponPlaced(building, weapon);
+
+// Jména zákldaden a vìci pro Game Rules
+on BuildingStarted(b, h) do
+begin
+  if def_game_rules then
+  begin
+    ExecuteLimits(b, GetBType(b), GetSide(b), 0, 1);
+  end;
+
+  if GetBType (b) in [b_depot,b_warehouse] then
+    NameBuildingStarted(b, h);
+end;
+
+
+On BuildingComplete(b) do
+begin
+  if GetBType (b) in [b_depot,b_warehouse] then
+    NameBuildingComplete(b);
+end;
+
+On BuildingCaptured(b,o,e) do
+begin
+  if def_game_rules then
+  begin
+    ExecuteLimits(b, GetBType(b), GetSide(b), 0, 1);
+  end;
+
+  if GetBType (b) in [b_depot,b_warehouse] then
+    NameBuildingCaptured(b,o,e);
+end;
+
+on UnitDestroyed(j) do
+var x,y,pos,dir;
+begin
+
+//  if GetBType(j) in [b_depot, b_warehouse] then
+//    CallKillBattleFlag(j);
+
+  if def_game_rules then
+    CallExecuteLimits(j);
+
+end;
+
+on VehicleCaptured(j, i1, o, i2) do
+begin
+  if def_game_rules and (GetChassis(j) = 25) then
+    ExecuteLimits(j, b_behemoth, GetSide(j), o, 1);
+end;
+
+on HumanDestroyed(identifier, side, nation, x, y, direction, sex, cl) do
+ if def_respawining_type > 1 then
+  RespawnHumanDestroyed(identifier, side, nation, x, y, direction, sex, cl);
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

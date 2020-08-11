@@ -1,0 +1,96 @@
+{every 0$1 trigger artx>=0 do
+  var u;
+  begin
+    if artu=0 then
+      begin
+        for u in FilterUnitsInArea(Battle,[f_ok]) do
+          if GetY(u)<40 then
+            if GetCargo(u,mat_artefact)>0 then
+              begin
+                artu:=u;
+                artx:=GetX(artu);
+                arty:=GetY(artu);
+                EraseResourceArea(Battle,mat_artefact);
+              end;
+      end
+    else
+      if not IsOk(artu) then
+        begin
+          SetCargo(artu,mat_artefact,0);
+//          CreateResourcesXYR(mat_siberit,1,artx,arty,3,false);
+          artu:=0;
+        end
+      else if IsInArea(artu,Stone1out)or IsInArea(artu,Stone2out) then
+          begin
+            SetCargo(artu,mat_artefact,0);
+            if IsInArea(artu,Stone1out) then
+              begin
+                LeftPoints:=LeftPoints+1;
+                TeleportUnit(artu,74,129,4,true);
+//                RemoveUnit(artu);
+//                PlaceUnitArea(artu,Stone1in,false);
+              end
+            else
+              begin
+                RightPoints:=RightPoints+1;
+                TeleportUnit(artu,146,129,4,true);
+//                RemoveUnit(artu);
+//                PlaceUnitArea(artu,Stone2in,false);
+              end;                                   
+
+            artx:=-1;
+            if time2>1 then
+              time2:=1;
+            artu:=0;
+          end
+      else
+        begin
+          artx:=GetX(artu);
+          arty:=GetY(artu);
+        end;
+    enable;
+  end;}
+
+function unit_with_artefact(ar,side);
+  var un;
+  begin
+    for un in FilterUnitsInArea(ar,[f_side,side]) do
+      if GetCargo(un,mat_artefact) then
+        result:=un;
+  end;
+
+every 0$1 do
+  var i,un;
+  begin
+    for i:=1 to Side_Positions do
+      if Side_Positions[i]=1 then
+        begin
+          un:=unit_with_artefact(Stone1out,i);
+          if un then
+            begin
+              TeleportUnit(un,74,129,8,true);
+              SetCargo(un,mat_siberit,0);
+              LeftPoints:=LeftPoints+1;
+            end;
+        end
+      else if Side_Positions[i]=2 then
+        begin
+          un:=unit_with_artefact(Stone2out,i);
+          if un then
+            begin
+              TeleportUnit(un,146,129,8,true);
+              SetCargo(un,mat_siberit,0);
+              RightPoints:=RightPoints+1;
+            end;
+        end;
+    enable;
+  end;
+  
+export function prepare_artefact;
+  begin
+    EraseResourceArea(Battle,mat_artefact);
+    CreateResourcesXY(mat_artefact,1,88,36,false);
+    artu:=0;
+    artx:=88;
+    arty:=36;
+  end;

@@ -1,0 +1,116 @@
+export Side_Comps;
+export nonCombat,siberite_rocket;
+
+every 1 do
+begin
+  if GetMultiplayerSetting(49) or iseditor then
+    fogoff(true);
+  disable(125);
+  Start_VehicleAI;
+end;
+
+function Start_VehicleAI;
+var i, k;
+begin
+  if multiplayer then
+     Side_Comps = mp_sides_comps
+  else
+     side_comps = [1,1,1,1,1,1,1,1];
+
+  k = false;
+  for i in side_comps do
+    if i then
+      k = true;
+
+  nonCombat = [us_radar,us_bulldozer,us_siberium_rocket_remainder,ar_radar,ar_selfpropelled_bomb,ru_bulldozer,ru_siberium_rocket_remainder];
+  Siberite_Rocket = [us_siberium_rocket,ru_siberium_rocket];
+  if k then
+    enable(125);
+end;
+
+function mp_sides_comps;
+var c,i;
+begin
+  c = [];
+  for i=1 to 8 do
+   c = c^Multiplayer_GetPlayerIsComp(i);
+  result = c;
+end;
+
+
+every 0$1 MARKED 125 do
+var units, u, veh,k , c,i , hex;
+begin
+
+  units = filterallunits([[f_placed],[f_ok],[f_type,unit_human]]);
+  k = filterallunits([[f_placed],[f_ok],[f_type,unit_vehicle],[f_empty]]);
+  for u in units do
+    if getSide(u) = 0 then
+      units = units diff u
+    else if not Side_Comps[getSide(u)] then
+      units = units diff u;
+
+
+  for u in units do
+  begin
+
+      if isinunit(u) then
+      begin
+        veh = isinunit(u);
+        if not HasTask(veh) then
+        begin
+          if getWeapon(veh) in nonCombat then
+
+          comMoveToArea(veh,exitarea)
+          //  McMove(1,veh,RandHexArea(exitarea,false),[ mc_move_ownstuck])
+          else
+          if getWeapon(veh) in Siberite_Rocket then
+          begin
+            hex = RandHex(false);
+            ComAttackPlace(veh,hex[1],hex[2]);
+            AddComMoveToArea(veh,exitarea);
+          end
+          else
+          if getLives(veh) <= hranice_zraneni then
+            comMoveToArea(veh,exitarea)
+          else
+          begin
+          //  McMove(1,veh,RandHexArea(exitarea,false),[ mc_move_agressive]);
+            hex = RandHexArea(exitarea,false);
+            comAgressiveMove(veh,hex[1],hex[2]);
+            AddComMoveToArea(veh,exitarea);
+          end;
+
+        end;
+
+      end
+      else
+      begin
+       if not HasTask(u) then
+       begin
+         hex = RandHex(false);
+         ComMoveXY(u,hex[1],hex[2]);
+       end
+       else
+       begin
+         c = [];
+         for i in k do
+           if See(getSide(u), i) then
+              c = c^i;
+         if c+0 > 0 then
+         begin
+           c = NearestUnitToUnit(c, u);
+         
+           if GetDistUnits(u,c) < 10 then
+             comEnterUnit(u,c);
+         end;
+
+       end;
+
+      end;
+    wait(1);
+
+  end;
+  enable;
+end;
+

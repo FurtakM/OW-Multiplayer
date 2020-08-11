@@ -1,0 +1,23 @@
+
+
+export function DA_Triggers;
+begin
+  // CTF game
+  Disable(01);
+  Disable(02);
+  Disable(03);
+  Disable(05);
+
+  // Big Bases game
+{  Disable();
+  Disable();
+  Disable();
+  Disable();
+  Disable();
+  Disable();
+}
+  if Game_Type=2 then          // Big Base game
+    begin
+    end;
+
+end;

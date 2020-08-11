@@ -1,0 +1,55 @@
+
+on ApemanTamed(ape,sci) do
+  begin
+    if game_type=15 then
+      begin
+        if not def_apemen_abilities then
+          disable
+        else
+          begin
+            SetClass(ape,class_apeman_soldier);
+          end;
+      end;
+  end;
+
+On UnitDestroyed(un) Do
+var i, killer, enemy, near;
+begin
+   if game_type=15 and GetClass(un) = 4 and GetType(un) = unit_human then
+   for i in sheherezades do
+      if un = i then
+      begin
+
+           enemy = GetSide(un);
+           near = NearestUnitToUnit(FilterAllUnits([[f_enemy, enemy]]), un);
+           killer = GetSide(near);
+
+           sheherezades = Replace(sheherezades, enemy ,0);
+           ComStop(FilterAllUnits([f_side, killer]));
+           ComStop(FilterAllUnits([f_side, enemy]));
+           SetSide(FilterAllUnits([[f_side,enemy], [f_ok]]) diff [un], killer);
+           SetLives(un,0);
+      end;
+end;  
+
+
+on VehicleCaptured(vehnew, vehold, origside, hum) do
+  begin
+    if game_type=25 then
+      begin
+        if origside=0 then
+          begin
+            SetTag(vehnew,Rand(30,75));
+            to_be_countdowned:=to_be_countdowned^vehnew;
+          end
+        else
+          begin
+            SetUnitDisplayNumber(vehnew,0);
+            SetTag(vehnew,GetTag(vehold));
+            to_be_countdowned:=to_be_countdowned^vehnew;
+          end;
+
+      end
+
+end; 
+

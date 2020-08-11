@@ -1,0 +1,97 @@
+VAR inside;
+EXPORT movecamera;
+VAR ropavez;
+
+EVERY 0$4 DO
+begin
+  ComExitBuilding([e1,e2]);
+  ComBuild(e1,b_oil_mine,81,108,3);
+  ComMoveXY(e2,81,107);
+  upgrade:=1;
+  disable(333);
+end;
+
+EVERY 0$6 DO
+begin
+  CenterOnXY(69,96);
+  ComExitBuilding([e3,e4]);
+  ComUpgrade(arm);
+  upgrade:=2;
+end;
+
+EVERY 0$5 TRIGGER IsConstructed(arm)=0 and upgrade=2 do
+begin
+  ComEnterUnit([e3,e4],sklad);
+end;
+
+EVERY 0$1 TRIGGER FilterUnitsInArea(ropa,[[f_side,1],[f_and],[f_type,unit_building]])>0 do
+begin
+  ropavez:=FilterUnitsInArea(ropa,[[f_side,1],[f_and],[f_type,unit_building]]);
+  enable(333);
+end;
+
+EVERY 0$4 TRIGGER IsConstructed(ropavez)=0 and upgrade=2 marked 333 do
+begin
+  ComEnterUnit([e1,e2],sklad);
+end;
+
+EVERY 0$3 TRIGGER FilterUnitsInArea(tovarna,[[f_side,1],[f_and],[f_type,unit_vehicle]])=2 and pom=1 DO
+begin
+  auta2:=FilterUnitsInArea(tovarna,[[f_side,1],[f_and],[f_type,unit_vehicle]]);
+//  movecamera:=1;
+  ComMoveXY(auta2,62,88);
+  auta1:=FilterUnitsInArea(pauta,[[f_side,1]]);
+end;
+
+EVERY 0$5 TRIGGER FilterUnitsInArea(tovarna,[[f_side,1],[f_and],[f_type,unit_vehicle]])=3 and pom=3 DO
+begin
+  auta3:=FilterUnitsInArea(tovarna,[[f_side,1],[f_and],[f_type,unit_vehicle]]);
+  //inside:=FilterAllUnits([f_inside,fac]);
+  //inside:=[pp1,pp2,pp3,pp4,pp5,pp6];
+  //ComExitBuilding(inside);
+
+  //wait(0$2);
+  //ComMoveXY(inside,66,88);
+  pom:=4;
+end;
+
+EVERY 0$2 TRIGGER FilterUnitsInArea(vyjezd1,[[f_side,1],[f_and],[f_type,unit_vehicle]])>0 DO
+begin
+  movecamera:=1;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

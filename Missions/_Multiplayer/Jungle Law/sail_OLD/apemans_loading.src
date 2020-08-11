@@ -1,0 +1,53 @@
+EXPORT opoce_jmena;
+// Placing apemans on the map
+function apeman_init;
+begin
+  uc_side:=0;
+  uc_nation:=nation_nature;
+
+  hc_class:=class_apeman;
+  hc_basic_skills:=[1,1,1,1];
+  hc_skills:=[1,1,1,1];
+  hc_attr:=[10,12];
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(-20,20);
+  if Prob(50) then hc_name=opoce_jmena[Rand(1,opoce_jmena+0)]
+              else hc_name='';
+end;
+
+function prepare_apemen;
+var i, j, un, ape, first, d1, d2;
+begin
+  if not amount_of_apemen then
+    exit;
+
+  ape:=0;
+  repeat
+//    Wait((ape+1)*Rand(0$10,1$0));
+    apeman_init;
+    for i:=1 to 4 do
+    begin
+      case i of
+        1: PlaceUnitArea(CreateHuman,OpiceJZ,false);
+        2: PlaceUnitArea(CreateHuman,OpiceJV,false);
+        3: PlaceUnitArea(CreateHuman,OpiceSV,false);
+        4: PlaceUnitArea(CreateHuman,OpiceSZ,false);
+      end;
+      Wait(3);
+    end;
+    ape:=ape+1;
+  until ape>=amount_of_apemen;
+end;
+
+EXPORT function prepare_opoce; // calling prepare_apemen
+begin
+  opoce_jmena = ['Tupoun','Opoce','Opka','Butrus','Bubu','Condor','Kuklajs','Dwarfy',
+                 'Simon','Ugh','Urgh','Argh','Aargh','Hrumph','Grumph','Oorg',
+                 'Eghrr','Rrrr','Bark','Wraughrr',':-)','Semik','Hrgh','Hur',
+                 'Yeargh','Marta','Batman','Barkman','Xcenovsk','David Love',
+                 'Freon','Stoupik','Quik','CFC','Kvakous','Quak','Bad Ape','Druss',
+                 'Sumys','Agent','Nazghul','Havran','Vrana','Havranek','Cendicek',
+                 'Pluto','Chmura','Hujaj Kuklaj','Potrus','Pluto','Little Anny','Magdule'];
+  prepare_apemen;
+end;

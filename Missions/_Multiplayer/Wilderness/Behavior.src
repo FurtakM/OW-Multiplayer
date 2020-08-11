@@ -1,0 +1,231 @@
+var
+  apemen_dist,engels_work;
+
+// russians guards, burlak cannot pass
+every 0$1 trigger not SeeXY(russians,86,53) marked 1 do
+  var un;
+  begin
+    if pokryshkin_met then
+      exit;
+    un:=team[Rand(1,team)];
+    ComMoveXY(un,86,53);
+    repeat
+      Wait(0$1);
+    until SeeXY(russians,86,53) or pokryshkin_met;
+    enable;
+  end;
+
+every 0$1 trigger not SeeXY(russians,85,73) marked 1 do
+  var un;
+  begin
+    if pokryshkin_met then
+      exit;
+    un:=team[Rand(1,team)];
+    ComMoveXY(un,85,73);
+    repeat
+      Wait(0$1);
+    until SeeXY(russians,85,73) or pokryshkin_met;
+    ComStop(un);
+    enable;
+  end;
+
+every 0$0.61 trigger IsOk(Pokryshkin) and (GetSide(Attacks(Burlak))=russians) do
+  begin
+    ComAttackUnit(FilterAllUnits([f_side,russians]),Burlak);
+    betrayed:=true;
+    Say(Pokryshkin,'DAttack-Pok-1');
+    repeat
+      wait(0$6);
+      ComAttackUnit(FilterAllUnits([f_side,russians]),Burlak);
+    until not IsOk(Burlak);
+
+  end;
+
+// burlak alone meets apemen
+every 0$1 trigger not pokryshkin_met and not gnyevko_met and UnitFilter(wild_apemen,[f_see,you]) marked 11 do
+  var un;
+  begin
+    async;
+    if not saw_apeman then
+      d_burlak_alone_meets_apemen;
+    sync;
+    saw_apeman:=true;
+    apemen_dist:=10*10;
+    repeat
+//      debug_strings:=apemen_dist;             //rem by jam
+      for un in wild_apemen do
+        begin
+//          debug_strings:=display_strings^GetDistUnits(un,Burlak);   //rem by jam
+          if GetDistUnits(un,Burlak)*10>apemen_dist then
+            ComMoveXY(un,GetX(Burlak),GetY(Burlak))
+          else if GetDistUnits(un,Burlak)*10<apemen_dist-20 then
+            ComMoveXY(un,2*GetX(un)-GetX(Burlak),2*GetY(un)-GetY(Burlak))
+          else           
+            begin
+              ComStop(un);
+              ComWait(un,0$0.6);
+            end;
+        end;
+      wait(0$0.5);
+      apemen_dist:=apemen_dist-1;
+      un:=NearestUnitToUnit(wild_apemen,Burlak);
+      if apeman_killed then exit;
+
+    until (apemen_dist=4*10)or(GetDistUnits(un,Burlak)*10>apemen_dist+apemen_range);
+    wait(apemen_time);                             
+    if apeman_killed then exit;
+    ComMoveXY(wild_apemen,64,88);
+    repeat
+      wait(0$1);
+      if apeman_killed then exit;
+    until FilterUnitsInArea(Cave,[[f_class,class_apeman],[f_ok]])+0=UnitFilter(wild_apemen,[f_ok])+0;
+    apemen_range:=apemen_range+1;
+    apemen_time:=apemen_time*150 div 100;
+    enable;
+  end;
+
+every 0$1 trigger kirilenkova_appears do
+  begin
+    apeman_braveness:=apeman_braveness-1;
+    enable;
+  end;
+
+every 0$1.5+0$0.7 trigger kirilenkova_appears do
+  var un;
+  begin
+    if not wild_apemen then
+      exit;
+    if apeman_braveness>0 then
+      begin
+        for un in wild_apemen do
+          if GetDistUnits(un,Kirilenkova)<6 then
+            ComMoveXY(un,
+              GetX(un)+10*(GetX(un)-GetX(Kirilenkova))div GetDistUnits(un,Kirilenkova),
+              GetY(un)+10*(GetY(un)-GetY(Kirilenkova))div GetDistUnits(un,Kirilenkova));
+        enable;
+      end
+    else
+      ComMoveXY(wild_apemen,GetX(Kirilenkova),GetY(Kirilenkova));
+  end;
+
+every 0$1.8 trigger it_is_your do
+  var un,saved;
+  begin
+    if not wild_apemen then
+      exit;
+
+    if FilterUnitsInArea(CaveEntrance,[f_side,you])>2 then
+      begin
+        ComAttackUnit(wild_apemen[1],NearestUnitToUnit(your_units,wild_apemen[1]));
+        ComMoveToArea(wild_apemen diff wild_apemen[1],InnerCave);
+        AddComWait(wild_apemen diff wild_apemen[1],0$1);
+        repeat
+          wait(0$0.3);
+          saved:=FilterUnitsInArea(InnerCave,[f_side,0]);
+          for un in saved do
+            begin
+              RemoveUnit(un);
+              wild_apemen:=wild_apemen diff un;
+            end;
+        until not wild_apemen;
+      end
+    else
+      enable;
+  end;
+
+
+export function prepare_trap;
+  var un,coord,i;
+  begin
+    coord=[[-2,0],[0,-2],[0,2],[1,0],[-1,1],[-1,-3],[2,1],[2,-2],[3,3],[3,-3]];
+    i=1;
+    for un in [Pokryshkin]^team^[Gnyevko,Belkov] do
+      begin
+        ComMoveXY(un,65+coord[i][1],57+coord[i][2]);
+        i=i+1;
+        AddComCrawl(un);
+      end;
+  end;
+
+every 0$1 trigger follow_pokryshkin and GetDistUnits(Burlak,Pokryshkin)>14 do
+  begin
+    InGameOn;
+    ComStop(team^[Pokryshkin,Gnyevko,Belkov,Brown]);
+    ComStop(Burlak);
+    Say(Pokryshkin,'DSplit-Pok-1');
+    ComMoveUnit(Burlak,Pokryshkin);
+    Say(Burlak,'DSplit-Bur-1');
+    while GetDistUnits(Burlak,Pokryshkin)>7 do
+      wait(0$1);
+    ComStop(Burlak);
+    InGameOff;
+
+    if preparing_trap then
+      begin
+        prepare_trap;
+      end;
+    ComMoveXY(Brown,66,58);
+    enable;
+  end;
+
+function someone_attacks_breastwork;
+  var un;
+  begin
+    result:=false;
+    for un in your_units do
+      if Attacks(un)=am_bunker then
+        result:=true;
+  end;
+
+every 0$1 trigger it_is_your and someone_attacks_breastwork do
+  begin
+    ComWait(gladstones_apemen,0$5);
+    AddComAgressiveMove(gladstones_apemen,52,25);
+    Say(am1,'D8-FSol1-1');
+    Say(Gladstone,'D8-Glad-1');
+    repeat
+      wait(0$1);
+    until UnitFilter(gladstones_apemen,[f_see,you]);
+    Say(Burlak,'D8-Bur-1');
+    repeat
+      wait(0$1);
+    until not IsOk(am_bunker);
+    if not start_to_run then
+      Say(am1,'D8-FSol1-2a');
+    start_to_run:=true;
+    if IsOk(Gladstone) then
+      begin
+        Say(Gladstone,'D8-Glad-2');
+        Say(Burlak,'D8-Bur-2');
+      end;
+  end;
+
+every 0$1 trigger it_is_your and not UnitFilter(gladstones_apemen,[f_ok]) do
+  var i;
+  begin
+    if not IsOk(Gladstone) then
+      exit;
+    for i:=1 to 6 do
+      begin
+        if not someone_attacks_breastwork or Attacks(am_bunker) then
+          begin
+            if IsOk(am_bunker) then
+              enable;
+            exit;
+          end;
+        wait(0$0.5);
+      end;
+    if IsOk(am_bunker) then
+      Say(am1,'D8-FSol1-2');
+  end;
+
+
+every 0$1.1 trigger start_to_run do
+  begin
+    wait(gladstones_running_idle);
+    ComMoveXY([Gladstone,am1],59,16);
+    AddComMoveXY([Gladstone,am1],74,15);
+    ComMoveXY([Gladstone,am1],71,1);
+  end;
+
+

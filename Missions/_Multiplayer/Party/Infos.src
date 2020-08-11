@@ -1,0 +1,112 @@
+var
+  infos;
+
+export function init_infos;
+  begin
+    infos=[0,0,0,0,0,0,0,0];
+    real_cost=cost;
+    cost=cost*10;
+  end;
+
+every 0$1 do
+  begin
+    if gametype<>11 then
+      exit;
+       
+      if decr_cost_time=0 then
+         real_cost=(cost div 100)*10
+      else
+         repeat
+            wait(decr_cost_time div 5);
+            cost=cost*1000 div 1149;
+            real_cost=(cost div 100)*10;
+         until real_cost=10;
+  end;
+
+
+every 0$2 do
+begin
+  if gametype<>11 then
+    ShowTimer
+  else
+    ShowInfos;
+  Enable;
+end;
+
+function ShowInfos;
+  var inf,en1,en2,AllStrings;
+  begin
+    if gametype<>11 then exit;
+
+    if not your_side then
+      begin
+        enable;
+        exit;
+      end;
+
+    if Teams[Side_Teams[your_side]][1]=your_side then
+      begin
+        en1=Teams[3-Side_Teams[your_side]][2];
+        en2=Teams[3-Side_Teams[your_side]][1];
+      end
+    else
+      begin
+        en1=Teams[3-Side_Teams[your_side]][1];
+        en2=Teams[3-Side_Teams[your_side]][2];
+      end;
+
+    AllStrings:= ['#Multi1x1-Time', tick];
+    if 0<=siberite_bomb_Delay-tick then AllStrings:= AllStrings ^ ['#allowedsibbomb',siberite_bomb_Delay-tick];
+
+
+    case infos[your_side] of
+      0:begin
+          display_strings=AllStrings ^ ['#MultiParty-Bid1',real_cost];
+          enable;
+        end;
+      1:begin
+          display_strings=AllStrings ^ ['#MultiParty-Info1',en1,en1,-1,'#MultiParty-Bid2',real_cost];
+          enable;
+        end;
+      2:begin
+          display_strings=AllStrings ^ ['#MultiParty-Info2',en1,en1,-1,en2,en2,-1];
+          enable;
+        end;
+    end;
+    
+  end;
+
+function ShowTimer;
+var AllStrings;
+begin
+  AllStrings:= ['#Multi1x1-Time', tick];
+  if 0<=siberite_bomb_Delay-tick then AllStrings:= AllStrings ^ ['#allowedsibbomb',siberite_bomb_Delay-tick]; 
+
+  Display_Strings:= AllStrings;
+end;
+
+function check_area(side,area);
+  begin
+    if infos[side]=2 then
+      exit;
+    if GetResourceArea(area,mat_cans)*10>=real_cost then
+      begin
+        EraseResourceArea(area,mat_cans);
+        infos=Replace(infos,side,infos[side]+1);
+      end;
+  end;
+
+every 0$5 do
+  var i;
+  begin
+    for i:=1 to Side_Positions do
+      case Side_Positions[i] of
+        1:check_area(i,exit1);
+        2:check_area(i,exit2);
+        3:check_area(i,exit3);
+        4:check_area(i,exit4);
+      end;
+    enable;
+    exit;
+  end;
+ 

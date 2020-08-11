@@ -1,0 +1,65 @@
+export function new_crate(mat);
+  var coord;
+  begin
+    result:=false;
+    coord:=RandHexArea(Land,false);
+
+    CreateCratesXY(5,coord[1],coord[2],false);
+    if GetResourceAmountXY(coord[1],coord[2])<>5 then
+      exit;
+
+    CreateCratesXY(5,coord[1]+dx,coord[2]+dy,false);
+    if GetResourceAmountXY(coord[1]+dx,coord[2]+dy)<>5 then
+      begin
+        ChangeResourceAmountXY(coord[1],coord[2],0);
+        exit;
+      end;
+    result:=true;
+    if mat then
+      begin
+        ChangeResourceAmountXY(coord[1],coord[2],0);
+        ChangeResourceAmountXY(coord[1]+dx,coord[2]+dy,0);
+        CreateCratesXY(5,coord[1],coord[2],true);
+        CreateCratesXY(5,coord[1]+dx,coord[2]+dy,true);
+      end;
+    crates:=crates^[coord];
+  end;
+
+every 0$0.5 trigger crates do
+  var cr,n1,n2,del;
+  begin
+    del:=[];
+    for cr in crates do
+      begin
+        n1:=GetResourceAmountXY(cr[1],cr[2]);
+        n2:=GetResourceAmountXY(cr[1]+dx,cr[2]+dy);
+        if n1>n2 then
+          ChangeResourceAmountXY(cr[1],cr[2],n2)
+        else if n1<n2 then
+          ChangeResourceAmountXY(cr[1]+dx,cr[2]+dy,n1);
+        if (n1=0)or(n2=0) then
+          del:=del^[cr];
+      end;
+    crates:=crates diff del;
+    enable;
+  end;
+{
+every 0$0.5 do
+  begin
+    repeat
+      shipment_index:=shipment_index+1;
+      if shipment_index<shipments then
+        shipment_count:=shipments[shipment_index];
+      wait(3$0);
+    until false;
+  end;
+
+every 0$0.5 trigger shipment_count>0 do
+  begin
+    shipment_count:=shipment_count-1;
+    enable;
+    wait(rand(1,3$0));
+    new_crate(true);
+  end;
+
+}

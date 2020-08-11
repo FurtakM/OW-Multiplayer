@@ -1,0 +1,17 @@
+every 0$2 do
+begin
+  if not FilterAllUnits([[f_side, your_side], [f_type, unit_human]]) then
+  begin
+    if IAmServer then
+       wait(0$1);
+    YouLostInMultiplayer;
+  end;
+  if not MultiplayerSideAlive(barvy[enemy_position]) then
+  begin
+    if IAmServer then
+      wait(0$1);
+    SA_Win(Side_Nations[Your_side]);
+    YouWinInMultiplayer;
+  end;
+  Enable;
+end;

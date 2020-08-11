@@ -1,0 +1,197 @@
+EXPORT narodnosti,
+       barvy,
+       your_position,
+       enemy_position,
+       stav,
+       pocet_lidi,
+       rozvitost_zakladny,
+       resources,
+       levely_unitu,
+       technologie,
+       shipments_density,
+       opoce_nahore,
+       opoce_dole,
+       respawn_opoce,
+       goals_to_win,
+       time_of_game,
+       new_people,
+       Base_Positions;
+
+EXPORT Side_Positions,
+       Side_Nations,
+       Game_Type;
+
+EXPORT def_base_level,
+       def_amount_of_people,
+       def_skill_level,
+       def_technologies,
+       def_starting_resources,
+       def_shipments_density,
+       def_amount_apes,
+       def_respawn_apes,
+       def_goals,
+       def_time,
+       def_new_humen;
+
+starting
+begin
+  Base_Positions:= [[39, 51], [179, 57]];
+  stav:= [0,0];
+
+  read_multiplayer_and_game_parameters;
+  place_buildings;
+  set_resource_na_zacatku;
+  placni_lidi;
+  placni_opoce_na_mapu;
+  zpristupni_technologie;
+
+  SetAreaMapShow(branka1, 1);
+  SetAreaMapShow(branka2, 1);
+
+  RevealFogArea(barvy[1], base1);
+  RevealFogArea(barvy[2], base2);
+
+  TeleportExit(tel1,61,38);
+  TeleportExit(tel2,169,93);
+
+  SetSide(tel1, barvy[1]);
+  SetSide(tel2, barvy[2]);
+
+  CenterNowOnXY(Base_Positions[your_position][1], Base_Positions[your_position][2]);
+
+  case Game_Type of
+    1: Display_Strings:= CurrentScore;
+    2: Display_Strings:= TimeLeft ^ CurrentScore;
+  end;
+end;
+
+// reads definitons of multiplayer game
+// (or simulate it in editor version)
+function read_multiplayer_and_game_parameters;
+var i;
+begin
+  if MultiPlayer then
+    begin // sides and teams definitions for real Multiplayer
+      Your_Side:= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+
+      Side_Positions:= mp_sides_positions;  // =[1,0,0,0,0,2,0,0]; ... pro kazdou stranu jeji pozice, 0 - neucastni se
+      Side_Nations:=   mp_sides_nations;    // =[1,0,0,0,0,3,0,0]; ... pro kazdou stranu jeji narod
+
+      Game_Type:= GetMultiplayerSetting(17)+1;
+    end
+  else
+    begin // sides and teams definitions for testing in editor
+      Your_Side:= 3;
+
+      Side_Positions:= [0,0,1,0,0,2,0,0];
+      Side_Nations:=   [0,0,3,0,0,3,0,0];
+
+      Game_Type:= 2;
+    end;
+
+  
+  for i:=1 to 8 do
+    if Side_Positions[i] then
+      begin
+        barvy:= Replace(barvy, Side_Positions[i], i);
+        narodnosti:= Replace(narodnosti, Side_Positions[i], Side_Nations[i]);
+
+        if (i = your_side) then
+          your_position:= Side_Positions[i]
+        else
+          enemy_position:= Side_Positions[i];
+      end;
+
+
+  if MultiPlayer then
+    begin // game settings for real Multiplayer
+      def_base_level         = GetMultiplayerSetting(0);
+      def_amount_of_people   = GetMultiplayerSetting(1);
+      def_skill_level        = GetMultiplayerSetting(2);
+      def_technologies       = GetMultiplayerSetting(21);
+      def_starting_resources = GetMultiplayerSetting(3);
+      def_shipments_density  = GetMultiplayerSetting(4);
+      def_amount_apes        = GetMultiplayerSetting(14);
+      def_respawn_apes       = GetMultiplayerSetting(15);
+      def_new_humen          = GetMultiplayerSetting(16);
+      def_goals              = GetMultiplayerSetting(18);
+      def_time               = GetMultiplayerSetting(19);
+    end
+  else
+    begin // game settings for testing in editor
+      RandomizeAll;
+
+      def_base_level         = 3;
+      def_amount_of_people   = 2;
+      def_skill_level        = 1;
+      def_technologies       = 3;
+      def_starting_resources = 1;
+      def_shipments_density  = 1;
+      def_amount_apes        = 2;
+      def_respawn_apes       = 0;
+      def_new_humen          = 1;
+      def_goals              = 4;
+      def_time               = 0;
+    end;
+
+  rozvitost_zakladny:= def_base_level;
+  pocet_lidi:= [6,8,11,13,16] [def_amount_of_people+1];
+  levely_unitu:= [1,3,5,7] [def_skill_level+1];
+  technologie:= def_technologies;
+  resources:= [[0,0,0],[100,20,5],[250,70,50],[500,250,100]] [def_starting_resources+1];
+  shipments_density:= [150,125,100] [def_shipments_density+1];
+  opoce_nahore:= [0,1,2,3,4] [def_amount_apes+1];
+  opoce_dole:= [0,5,10,15,25] [def_amount_apes+1];
+  respawn_opoce:= def_respawn_apes;
+  new_people:= def_new_humen;
+  goals_to_win:= [1,2,3,4,5,10,15,20] [def_goals+1];
+  time_of_game:= [5$0,10$0,20$0,30$0,45$0,60$0,90$0] [def_time+1];
+end;
+
+function zpristupni_technologie;
+VAR tech1;
+VAR tech2;
+VAR i;
+begin
+  case technologie of
+   1:begin
+       tech1=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang];
+       tech2=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang];
+       if narodnosti[1]<>nation_russian then tech1=tech1^[tech_SolPow,tech_SolEng];
+       if narodnosti[2]<>nation_russian then tech2=tech2^[tech_SolPow,tech_SolEng];
+     end;
+   2:begin
+       tech1=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang,tech_Gun,tech_SibPow,tech_SibEng,tech_Tech1,tech_Weap1];
+       tech2=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang,tech_Gun,tech_SibPow,tech_SibEng,tech_Tech1,tech_Weap1];
+       case narodnosti[1] of
+        nation_american:tech1=tech1^[tech_SolPow,tech_SolEng,tech_ApePsych,tech_Radar,tech_RemCont,tech_MatDet,tech_AI];
+        nation_arabian:tech1=tech1^[tech_SolPow,tech_SolEng,tech_ApeAgres,tech_ApeNeural,tech_Radar,tech_RemCont,tech_MatDet,tech_Mortar];
+        nation_russian:tech1=tech1^[tech_ApePsych,tech_ApeAgres,tech_MatPred,tech_SibLoc,tech_TauRad,tech_LimTeleport,tech_AI,tech_Bazooka];
+       end;
+       case narodnosti[2] of
+        nation_american:tech2=tech2^[tech_SolPow,tech_SolEng,tech_ApePsych,tech_Radar,tech_RemCont,tech_MatDet,tech_AI];
+        nation_arabian:tech2=tech2^[tech_SolPow,tech_SolEng,tech_ApeAgres,tech_ApeNeural,tech_Radar,tech_RemCont,tech_MatDet,tech_Mortar];
+        nation_russian:tech2=tech2^[tech_ApePsych,tech_ApeAgres,tech_MatPred,tech_SibLoc,tech_TauRad,tech_LimTeleport,tech_AI,tech_Bazooka];
+       end;
+     end;
+   3:begin
+       tech1=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang,tech_Gun,tech_SibPow,tech_SibEng,tech_Tech1,tech_Weap1,tech_SibPow,tech_SibEng,tech_Rocket];
+       tech2=[tech_SibDet,tech_Gatling,tech_OilPow,tech_OilEng,tech_ApeLang,tech_Gun,tech_SibPow,tech_SibEng,tech_Tech1,tech_Weap1,tech_SibPow,tech_SibEng,tech_Rocket];
+       case narodnosti[1] of
+        nation_american:tech1=tech1^[tech_SolPow,tech_SolEng,tech_ApePsych,tech_Radar,tech_RemCont,tech_MatDet,tech_AI,tech_LasSight,tech_PartInvis,tech_Soporific,tech_Laser,tech_AdvAI,tech_AdvMet,tech_Opto1,tech_Comp1];
+        nation_arabian:tech1=tech1^[tech_SolPow,tech_SolEng,tech_ApeAgres,tech_ApeNeural,tech_Radar,tech_RemCont,tech_MatDet,tech_Mortar,tech_ApeBrain,tech_Flame,tech_RemCharge,tech_HidCam,tech_BioDet,tech_Explos,tech_Bio1,tech_Opto1];
+        nation_russian:tech1=tech1^[tech_ApePsych,tech_ApeAgres,tech_MatPred,tech_SibLoc,tech_TauRad,tech_LimTeleport,tech_AI,tech_Bazooka,tech_TauRad,tech_SpacAnom,tech_TauField,tech_AdvAI,tech_AdvMet,tech_Comp1,tech_ST1];
+       end;
+       case narodnosti[2] of
+        nation_american:tech2=tech2^[tech_SolPow,tech_SolEng,tech_ApePsych,tech_Radar,tech_RemCont,tech_MatDet,tech_AI,tech_LasSight,tech_PartInvis,tech_Soporific,tech_Laser,tech_AdvAI,tech_AdvMet,tech_Opto1,tech_Comp1];
+        nation_arabian:tech2=tech2^[tech_SolPow,tech_SolEng,tech_ApeAgres,tech_ApeNeural,tech_Radar,tech_RemCont,tech_MatDet,tech_Mortar,tech_ApeBrain,tech_Flame,tech_RemCharge,tech_HidCam,tech_BioDet,tech_Explos,tech_Bio1,tech_Opto1];
+        nation_russian:tech2=tech2^[tech_ApePsych,tech_ApeAgres,tech_MatPred,tech_SibLoc,tech_TauRad,tech_LimTeleport,tech_AI,tech_Bazooka,tech_TauRad,tech_SpacAnom,tech_TauField,tech_AdvAI,tech_AdvMet,tech_Comp1,tech_ST1];
+       end;
+     end;
+  end;
+  for i in tech1 do SetTech(i, barvy[1], state_researched);
+  for i in tech2 do SetTech(i, barvy[2], state_researched);
+end;
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

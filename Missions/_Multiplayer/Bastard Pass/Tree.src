@@ -1,0 +1,30 @@
+var activated;
+var hadziove;
+every 0$1 do
+  begin
+    wait(Rand(3$0,10$0));
+    SetAreaMapShow(Tree,1);
+    activated:=true;
+  end;
+
+every 0$1 trigger activated do
+  var i,un;
+  begin
+    if not def_tree_function then
+      exit;
+
+    ExtraStrings:=['#MultiSmall-Tree'&def_tree_function];
+
+    for un in FilterUnitsInArea(Tree,[f_type,unit_human]) diff hadziove do
+      begin
+        if GetClass(un) in [class_soldier,class_engineer,class_mechanic,class_scientistic,class_sniper,class_bazooker,class_mortar] then
+          for i:=1 to 4 do
+            GiveSkillBonus(un,i,tree_function[i])
+        else if un in [class_apeman,class_apeman_engineer,class_apeman_kamikaze,class_apeman_soldier] then
+          for i:=1 to 4 do
+            GiveSkillBonus(un,i,tree_function[5]);
+      end;                   
+
+    hadziove:=hadziove^un;
+    enable;
+  end;

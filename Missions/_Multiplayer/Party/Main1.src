@@ -1,0 +1,6 @@
+starting
+  begin
+    repeat
+      new_treasure;
+    until false;
+  end;

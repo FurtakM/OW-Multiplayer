@@ -1,0 +1,15 @@
+begin
+? type grass
+ ! hue -21
+new
+? type single_tree
+ ! sat 55
+ ! add 21 0080FF
+ ! contr 135
+new
+ ! rgb 60 60 68
+ ! add 9 800000
+ ! contr 102
+ ! sat 65
+ ! all 85
+end

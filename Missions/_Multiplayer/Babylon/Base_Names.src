@@ -1,0 +1,11 @@
+//Rumunuv pokus
+
+export function DisplayNames;
+var i;
+begin
+ for i in FilterAllUnits([f_or,[f_btype,b_depot],[f_btype,b_warehouse]]) do
+   SetBName(i,'@' & GetSide(i));
+end;
+
+every 0$2 do
+  DisplayNames;

@@ -1,0 +1,103 @@
+var view_data,                // pomocna promenna pro deaktivaci artefaktovniho oka
+    human_changed;            // pomocna promenna pro zmenu cloveka na puvodni stranu
+
+//---------------------------------//
+//-----  ARTEFAKTOVNI FUNKCE  -----//
+
+//-----  Artefact num. 1  -----//
+export function Show_me_map(side,x,y);
+var vysledek,station;
+begin
+  vysledek:=true;
+  station:=GetBase(GetTag(side*10+15));
+  if station and (GetResources(station)[3] >= GetTag(06)) then
+    begin
+      PlaceSeeing(x,y,side,-15);
+      SetResourceType(station,mat_siberit,GetResources(station)[3]-GetTag(06));
+      view_data:=[x,y,side];
+      Enable(1);
+    end
+  else
+    vysledek:=false;
+  result:=vysledek;
+end;
+
+//------
+every 0$2 trigger view_data Marked 1 do
+begin
+  wait(0$30);
+  RemoveSeeing(view_data[1],view_data[2],view_data[3]);
+  view_data:=0;
+end;
+
+
+//-----  Artefact num. 2  -----//
+export function Destroy_siberite(side,un);
+var vysledek,station,v_can,b_can,it_can,
+    building_list,            // seznam budov, ktere je mozno znicit
+    vehicle_list;             // seznam vozidel, ktere je mozno znicit
+begin
+  vysledek:=true;
+  it_can:=false;
+
+  building_list:=[ b_siberite_mine, b_siberite_power ];
+  vehicle_list:=[ us_siberium_rocket, ru_siberium_rocket, ar_selfpropelled_bomb, ru_time_lapser, us_double_laser ];
+
+  b_can:=(GetType(un)=unit_building) and ((GetBType(un) in building_list) or (GetBWeapon(un) in vehicle_list));
+  v_can:=(GetType(un)=unit_vehicle) and ((GetWeapon(un) in vehicle_list) or (GetEngine(un)=engine_siberite));
+
+    case def_artefact_two of
+  1: if b_can then it_can:=true;
+  2: if v_can then it_can:=true;
+  3: if b_can or v_can then it_can:=true;
+    end;
+
+  station:=GetBase(GetTag(100+side*10+15));
+  if station and it_can and (GetResources(station)[3] >= GetTag(106)) then
+    begin
+      KillUnit(un);
+      SetResourceType(station,mat_siberit,GetResources(station)[3]-GetTag(106));
+    end
+  else
+    vysledek:=false;
+  result:=vysledek;
+end;
+
+
+//-----  Artefact num. 3  -----//
+export function Contamine(side,p1,p2);
+var vysledek,old_side,
+    station;
+begin
+  vysledek:=true;
+  station:=GetBase(GetTag(200+side*10+15));
+
+  if station and (GetResources(station)[3] >= GetTag(206)) then
+    begin
+      ArtContamination(p1,p2,15);
+      SetResourceType(station,mat_siberit,GetResources(station)[3]-GetTag(206));
+    end
+  else
+    vysledek:=false;
+
+  result:=vysledek;
+end;
+
+//----------------------------------//
+//-----  RECHARGING  TRIGGERS  -----//
+every 0$5 Marked 20 do
+var art,side,recharge;
+begin
+  for art=0 to artefact_number do
+    for side=1 to Side_Positions do
+      begin
+        recharge:=art*100+side*10+13;
+        if Side_Positions[side] and (GetTag(recharge)>0) then
+          begin
+            SetTag(recharge,GetTag(recharge)-1);
+            if not GetTag(recharge) then
+              Highlight_Artefact(side,art+1);
+          end;
+      end;
+  enable;
+end;

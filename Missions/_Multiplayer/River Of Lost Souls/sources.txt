@@ -1,0 +1,12 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED bedny
+  ENABLED events
+  ENABLED lidi
+  DISABLED DayNight
+  ENABLED winlost
+  ENABLED battle_flags
+  ENABLED game_modes
+  ENABLED clock
+  ENABLED apemen
+END_OF_SOURCE_CODES

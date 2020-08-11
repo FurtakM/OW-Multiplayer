@@ -1,0 +1,33 @@
+every 0$1 marked 15 do
+  var t,red;
+  begin
+      if not prep_time then exit;
+
+    if tick>=prep_time then
+      begin
+        display_strings=[];
+        sheherezade_start_the_fight;
+      end
+    else
+      begin
+        t=prep_time-tick;
+        if t<=0$5.5 then
+          red:=t mod 0$1<0$0.5
+        else
+          red:=false;
+        if red then
+          display_strings=['#Sheherezade-Time2',t]
+        else
+          display_strings=['#Sheherezade-Time1',t];
+        enable;
+      end;
+  end;
+
+every 0$1 marked 15 do
+  begin
+    if tick<prep_time then
+      begin
+        SetLives(FilterAllUnits([[f_type, unit_human], [f_class, 4]]),1000);
+        enable;
+      end;
+  end;

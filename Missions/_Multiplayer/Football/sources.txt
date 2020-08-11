@@ -1,0 +1,9 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED jednotky
+  ENABLED goly
+  ENABLED bedny
+  ENABLED jmena_bazi
+  ENABLED winlost
+  ENABLED opoce
+END_OF_SOURCE_CODES

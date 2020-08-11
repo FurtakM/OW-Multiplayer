@@ -1,0 +1,315 @@
+var time;
+export lidi,krabice,opoce;
+export cper,cperiode;
+var depot1,depot2;
+var vlajka1,vlajka2;
+export depotpositions,areas;
+var podvozky,zbrane;
+export pos1side,pos2side;
+var pos1base,pos2base;
+var left_score,right_score;
+export debug,ctf;
+export mp_sides_teams_,mp_sides_nations_,mp_sides_positions_,mp_sides_players_counts_;
+//marked konstanty
+var cft_01,cft_02,cft_03,cft_04,cft_05,cft_06,cft_07;
+export nonctf_10,nonctf_11,nonctf_12,nonctf_13;
+
+var stmp,stmp2,cl;
+export function starting_ctf;
+begin
+  cft_01=01;cft_02=02;cft_03=03;cft_04=04;cft_05=05;cft_06=06;cft_07=07;
+  nonctf_10=10;nonctf_11=11;nonctf_12=12;nonctf_13=13;
+  disable(cft_01);
+  disable(cft_02);
+  disable(cft_03);
+  disable(cft_04);
+  disable(cft_05);
+  disable(cft_06);
+  disable(cft_07);
+  disable(nonctf_10);
+  disable(nonctf_11);
+  disable(nonctf_12);
+  disable(nonctf_13);
+  debug=false;//true;
+  if not multiplayer then begin
+    mp_sides_teams_=[0,0,0,0,0,0,0,0];
+    mp_sides_nations_=[1,2,0,0,0,0,0,0];
+    mp_sides_positions_=[1,2,0,0,0,0,0,0];
+    mp_sides_players_counts_=[1,1,0,0,0,0,0,0];
+  end
+  else begin
+    mp_sides_teams_=mp_sides_teams;
+    mp_sides_nations_=mp_sides_nations;
+    mp_sides_positions_=mp_sides_positions;
+    mp_sides_players_counts_=mp_sides_players_counts;
+  end;
+  if debug then begin
+    debuglog(['side',your_side]);
+    debuglog(['teams',mp_sides_teams_]);
+    debuglog(['nations',mp_sides_nations_]);
+    debuglog(['positions',mp_sides_positions_]);
+    debuglog(['pl. counts',mp_sides_players_counts_]);
+  end;
+
+  depotpositions=[[34,60,1],[185,60,4]];
+  areas=[vlevo,vpravo];
+//  areasex=[vlevoex,vpravoex];
+
+  if mp_game_type=3 then begin other_game;exit;end;
+  ctf=true;
+  enable(cft_01);
+  enable(cft_02);
+  //enable(cft_04);    // on unit destroyed event
+  enable(cft_05);
+  enable(cft_06);
+  enable(cft_07);
+
+  podvozky=[us_medium_wheeled,ar_medium_trike,ru_medium_wheeled];
+  zbrane=[us_cargo_bay,ar_cargo_bay,ru_cargo_bay];
+  left_score=0;
+  right_score=0;
+  if multiplayer then begin
+    lidi=getmultiplayersetting(1);
+    krabice=getmultiplayersetting(2);
+    opoce=getmultiplayersetting(3);
+    time=getmultiplayersetting(4);
+  end
+  else begin
+    lidi=1;
+    krabice=1;
+    opoce=3;
+    time=2;
+  end;
+  case lidi of
+    0:lidi=9;
+    1:lidi=13;
+    2:lidi=19;
+    3:lidi=23;
+    4:lidi=29;
+  end;
+  case krabice of
+    0:cperiode=1$30;
+    1:cperiode=1$00;
+    2:cperiode=0$30;
+  end;
+  cper=0$10;
+  case opoce of
+    0:opoce=0;
+    1:opoce=3;
+    2:opoce=7;
+    3:opoce=11;
+    4:opoce=15;
+    5:opoce=19;
+    6:opoce=23;
+  end;
+  case time of
+    0:time=30*60;
+    1:time=40*60;
+    2:time=50*60;
+    3:time=60*60;
+    4:time=90*60;
+    5:time=120*60;
+  end;
+  enable(cft_03);
+  refresh;
+
+  for stmp=1 to 8 do
+    if mp_sides_nations_[stmp] then begin
+      if mp_sides_positions_[stmp]=1 then pos1side=stmp
+      else pos2side=stmp;
+      uc_side=stmp;
+      uc_nation=mp_sides_nations_[stmp];
+      bc_type=b_depot;
+      bc_level=1;
+      createandplacebuildingxyd(depotpositions[mp_sides_positions_[stmp]][1],depotpositions[mp_sides_positions_[stmp]][2],depotpositions[mp_sides_positions_[stmp]][3]);
+      setbattleflag(stmp,depotpositions[mp_sides_positions_[stmp]][1],depotpositions[mp_sides_positions_[stmp]][2],[[bfo_defend_bonus_human,150],[bfo_defend_bonus_vehicle,10],[bfo_defend_bonus_building,0],[bfo_range,17],[bfo_height,100]]);
+      cl=class_engineer;
+      for stmp2=1 to lidi do begin
+        if stmp2>=lidi/2 then cl=class_soldier;
+        preparehuman(0,cl,1);
+        placeunitarea(createhuman,areas[mp_sides_positions_[stmp]],false);
+      end;
+
+    end;
+  depot1=filterunitsinarea(vlevo,[[f_type,unit_building],[f_btype,b_depot]])[1];
+  depot2=filterunitsinarea(vpravo,[[f_type,unit_building],[f_btype,b_depot]])[1];
+  pos1base=getbase(depot1);
+  pos2base=getbase(depot2);
+
+  uc_side=0;
+  uc_nation=nation_nature;
+  for stmp=1 to opoce do begin
+    preparehuman(0,class_apeman,0);
+    placeunitarea(createhuman,les,false);
+  end;
+
+  uc_side=pos2side;
+  uc_nation=mp_sides_nations_[pos2side];
+  vc_chassis=podvozky[uc_nation];
+  vc_control=control_manual;
+  vc_engine=engine_siberite;
+  vc_weapon=zbrane[uc_nation];
+  vlajka1=createvehicle;
+  placeunitxy(vlajka1,76,60,false);  //80,60 is completly safe
+  uc_side=pos1side;
+  uc_nation=mp_sides_nations_[pos1side];
+  vc_chassis=podvozky[uc_nation];
+  vc_weapon=zbrane[uc_nation];
+  vlajka2=createvehicle;
+  placeunitxy(vlajka2,143,60,false);  //139,60 is completly safe
+
+  case mp_sides_positions_[your_side] of
+    1:centernowonxy(44,60);
+    2:centernowonxy(175,60);
+  end;
+
+end;
+
+function refresh;
+var tmp,tmp1,tmp2,tmp3,tmp4;
+begin
+  tmp=time div 60;
+  if tmp<10 then tmp1='0'&tmp else tmp1=''&tmp;
+  tmp=time mod 60;
+  if tmp<10 then tmp2='0'&tmp else tmp2=''&tmp;
+  if left_score<10 then tmp3='0'&left_score else tmp3=''&left_score;
+  if right_score<10 then tmp4='0'&right_score else tmp4=''&right_score;
+  display_strings=['Score: '&tmp3&' to '&tmp4,'Time left: '&tmp1&':'&tmp2];
+end;
+
+//time
+every 0$1 marked 03 do
+begin
+  time=time-1;
+  refresh;
+  if not time then
+    if mp_sides_positions_[your_side]=1 then
+      if left_score>=right_score then youwininmultiplayer
+      else youlostinmultiplayer
+    else
+      if right_score>=left_score then youwininmultiplayer
+      else youlostinmultiplayer
+  else enable;
+end;
+
+
+//krabice
+every 0$10 Marked 19 do
+begin
+  cper=cper-0$10;
+  if cper=0 then begin
+    createcratesarea(5,vlevoex,true);
+    createcratesarea(5,vpravoex,true);
+    cper=cperiode;
+  end;
+  enable;
+end;
+
+
+//ctf
+every 5 trigger getlives(depot1)<500 marked 01 do begin setlives(depot1,750);enable;end;
+every 5 trigger getlives(depot2)<500 marked 02 do begin setlives(depot2,750);enable;end;
+
+on unitdestroyed(un) do
+var radius;
+begin
+  if GetSide(un) = 0 AND GetClass(un) = class_apeman then
+    CheckApemenAmount;
+
+  if mp_game_type<>1 then
+    exit;
+
+  if un=vlajka1 then begin
+    uc_side=pos2side;
+    uc_nation=mp_sides_nations_[pos2side];
+    vc_chassis=podvozky[uc_nation];
+    vc_control=control_manual;
+    vc_engine=engine_siberite;
+    vc_weapon=zbrane[uc_nation];
+    vlajka1=createvehicle;
+    radius=2;
+    while not placeunitxyr(vlajka1,76,60,radius,false) do radius=radius+1;
+  end
+  else if un=vlajka2 then begin
+    uc_side=pos1side;
+    uc_nation=mp_sides_nations_[pos1side];
+    vc_chassis=podvozky[uc_nation];
+    vc_control=control_manual;
+    vc_engine=engine_siberite;
+    vc_weapon=zbrane[uc_nation];
+    vlajka2=createvehicle;
+    radius=2;
+    while not placeunitxyr(vlajka2,143,60,radius,false) do radius=radius+1;
+  end;
+end;
+
+on vehiclecaptured(vehnew,vehold,origside,hum) marked 05 do
+var radius;
+  if (vehold=vlajka1) then begin
+    vlajka1=vehnew;
+    comexitvehicle(vlajka1);
+    while isdrivenby(vlajka1) do wait(2);
+//    setlives(hum,hranice_umirani+1);
+    if getdistunitxy(vlajka1,76,60)>4 then begin
+      removeunit(vlajka1);
+      setside(vlajka1,origside);
+      radius=2;
+      while not placeunitxyr(vlajka1,76,60,radius,false) do radius=radius+1;
+    end
+    else setside(vlajka1,origside);
+
+  end
+  else if (vehold=vlajka2) then begin
+    vlajka2=vehnew;
+    comexitvehicle(vlajka2);
+    while isdrivenby(vlajka2) do wait(2);
+//    setlives(hum,hranice_umirani+1);
+    if getdistunitxy(vlajka2,143,60)>4 then begin
+      removeunit(vlajka2);
+      setside(vlajka2,origside);
+      radius=2;
+      while not placeunitxyr(vlajka2,143,60,radius,false) do radius=radius+1;
+    end
+    else setside(vlajka2,origside);
+  end;
+
+
+every 10+1 trigger getdistunitxy(vlajka1,185,60)<6 marked 06 do
+var radius,tmp;
+begin
+  right_score=right_score+1;
+  refresh;
+  comexitvehicle(vlajka1);
+  while isdrivenby(vlajka1) do wait(2);
+  removeunit(vlajka1);
+  for radius in [mat_cans,mat_oil,mat_siberit] do begin
+    tmp=getcargo(vlajka1,radius);
+    if tmp then begin
+      addresourcetype(pos2base,radius,tmp);
+      setcargo(vlajka1,radius,0);
+    end;
+  end;
+  radius=2;
+  while not placeunitxyr(vlajka1,76,60,radius,false) do radius=radius+1;
+  enable;
+end;
+
+every 10 trigger getdistunitxy(vlajka2,34,60)<6 marked 07 do
+var radius,tmp;
+begin
+  left_score=left_score+1;
+  refresh;
+  comexitvehicle(vlajka2);
+  while isdrivenby(vlajka2) do wait(2);
+  removeunit(vlajka2);
+  for radius in [mat_cans,mat_oil,mat_siberit] do begin
+    tmp=getcargo(vlajka2,radius);
+    if tmp then begin
+      addresourcetype(pos1base,radius,tmp);
+      setcargo(vlajka2,radius,0);
+    end;
+  end;
+  radius=2;
+  while not placeunitxyr(vlajka2,143,60,radius,false) do radius=radius+1;
+  enable;
+end;

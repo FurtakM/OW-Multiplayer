@@ -1,0 +1,71 @@
+every 1 do
+var drv, pom, i;
+begin
+  for i := 1 to 2 do
+    begin
+      pom:= FilterUnitsInArea([branka1, branka2] [i], [[f_side, barvy[i]], [f_type, unit_vehicle]]);
+      if pom then
+        begin
+          drv:= IsDrivenBy(pom[1]);
+          if drv then RemoveUnit(drv);
+          DestroyUnit(pom[1]);
+          stav:= Replace(stav, i, stav[i] + 1);
+          novy_vojak(i, drv);
+        end;
+    end;
+
+  case Game_Type of
+    1: begin
+         Display_Strings:= CurrentScore;
+
+         if (stav[1] >= goals_to_win) or (stav[2] >= goals_to_win) then
+           if (stav[your_position] >= goals_to_win) then
+             EndMatch(1)
+           else
+             EndMatch(0);
+       end;
+    2: if Time_Of_Game then
+         begin
+           time_of_game:=    time_of_game - 1;
+           Display_Strings:= CurrentScore ^ TimeLeft;
+         end
+       else
+         begin
+           if (stav[1] <> stav[2]) then
+             if (stav[your_position] > stav[enemy_position]) then
+               EndMatch(1)
+             else
+               EndMatch(0);
+
+           Display_Strings:= CurrentScore ^ ['#Football-overtime'];
+         end;
+  end;
+
+  Enable;
+end;
+
+function EndMatch(win);
+begin
+  ExclusiveOn;
+  Display_Strings:= CurrentScore ^ '#Football-end';
+  Wait(0$3);
+  if IAmServer then
+    wait(0$1);
+  case win of
+    0: YouLostInMultiplayer;
+    1: begin
+         SA_Win(Side_Nations[Your_side]);
+         YouWinInMultiplayer;
+       end;
+  end;
+end;
+
+export function CurrentScore;
+begin
+  Result:= ['#Football-score',-1,barvy[1],stav[1],-1,barvy[2],stav[2]];
+end;
+
+export function TimeLeft;
+begin
+  Result:= ['#Football-time',-1,7,time_of_game];
+end;

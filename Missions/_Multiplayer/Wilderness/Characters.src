@@ -1,0 +1,289 @@
+export
+  burlak, pokryshkin, belkov, gnyevko, kirilenkova, kurin, team,
+  brown, gladstone, am1, am_bunker,
+  wild_apemen, gladstones_apemen,
+
+  trappers,your_units;
+
+function prepare_burlak;
+  begin
+    uc_side:=you;
+    Burlak:=NewCharacter('Burlak');
+    exit;
+
+
+    uc_nation:=nation_russian;
+    hc_importance=110;
+    hc_sex=sex_male;
+    hc_class=class_mechanic;
+    hc_basic_skills=[0,1,2,0];
+    hc_skills=[0,1,2,0];
+    hc_attr=[12,11];
+    hc_name:='Y. I. Gorky';
+
+    burlak:=CreateHuman;
+  end;
+
+function prepare_pokryshkin;
+  begin
+    uc_side:=russians;
+    Pokryshkin:=NewCharacter('Pokryshkin');
+    SetAttr(Pokryshkin,attr_speed,12);
+    SetAttr(Pokryshkin,attr_stamina,8);
+    exit;              
+
+    uc_nation:=nation_russian;
+    hc_sex=sex_male;
+    hc_class=class_soldier;
+    hc_basic_skills=[2,0,0,0];
+    hc_skills=[4,1,2,0];
+    hc_attr=[10,10];
+    hc_importance=0;
+    hc_name:='Pokryshkin';
+
+    pokryshkin:=CreateHuman;
+  end;
+
+function prepare_belkov;
+  begin
+    uc_side:=russians;
+    Belkov:=NewCharacter('Belkov');
+    exit;
+
+    uc_nation:=nation_russian;
+    hc_sex=sex_male;
+    hc_class=class_soldier;
+    hc_basic_skills=[1,1,1,0];
+    hc_skills=[2,1,1,0];
+    hc_attr=[10,10];
+    hc_importance=40;
+    hc_name:='Petr Belkov';
+
+    belkov:=CreateHuman;
+  end;
+
+function prepare_gnyevko;
+  begin
+    uc_side:=russians;
+    Gnyevko:=NewCharacter('Gnyevko');
+    exit;
+
+    hc_sex=sex_male;
+    hc_class=class_soldier;
+    hc_basic_skills=[1,2,0,0];
+    hc_skills=[1,2,0,0];
+    hc_attr=[10,10];
+    hc_importance=40;
+    hc_name:='Gnyevko';
+
+    gnyevko:=CreateHuman;
+  end;
+
+function prepare_kurin;
+  begin
+    uc_side:=russians;
+    Kurin:=NewCharacter('Kurin');
+    exit;
+
+    uc_nation:=nation_russian;
+
+    hc_sex=sex_male;
+    hc_class=class_soldier;
+    hc_basic_skills=[2,0,1,0];
+    hc_skills=[4,2,2,1];
+    hc_attr=[12,11];
+    hc_importance=60;
+    hc_name:='Kurin';
+
+    kurin:=CreateHuman;
+  end;
+
+function prepare_kirilenkova;
+  begin
+    uc_side:=russians;
+    Kirilenkova:=NewCharacter('Kirilenkova');
+    exit;
+
+    uc_nation:=nation_russian;
+    hc_sex=sex_female;
+    hc_class=class_scientistic;
+    hc_basic_skills=[1,0,0,2];
+    hc_skills=[1,0,0,2];
+    hc_attr=[10,10];
+    hc_importance=40;
+    hc_name:='Kirilenkova';
+
+    kirilenkova:=CreateHuman;
+  end;
+
+function prepare_team;
+  var l,s;
+  begin
+    uc_side:=russians;
+    uc_nation:=nation_russian;
+    s:=2;
+    team:=[];
+    hc_name:='';
+    hc_gallery:='';
+    hc_importance=30;
+
+    for l in rus_soldiers do
+      begin
+        PrepareSoldier(s,l);
+        team:=team^CreateHuman;
+        hc_importance=20;
+        s:=1;
+      end;
+    hc_importance=0;
+
+  end;
+
+function prepare_brown;
+  begin
+    uc_side:=americans2;
+    uc_nation:=nation_american;
+
+    hc_sex=sex_male;
+    hc_class=class_soldier;
+    hc_basic_skills=[browns_combat_level,0,1,1];
+    hc_skills=[browns_combat_level,0,1,1];
+    hc_attr=[10,10];
+    hc_name:='Charles Brown';
+
+    Brown:=CreateHuman;
+  end;
+
+function prepare_am1;
+  begin
+    uc_side:=americans;
+    uc_nation:=nation_american;
+
+    hc_sex=sex_female;
+    hc_class=class_soldier;
+    hc_basic_skills=[am1_combat_skill,1,0,0];
+    hc_skills=[am1_combat_skill,1,0,0];
+    hc_attr=[10,10];
+    hc_name:='';
+
+    am1:=CreateHuman;
+  end;
+
+function prepare_gladstone;
+  begin
+    uc_side:=americans;
+    Gladstone:=NewCharacter('Gladstone');
+    exit;
+
+    uc_nation:=nation_american;
+    hc_sex=sex_male;
+    hc_class=class_scientistic;
+    hc_basic_skills=[1,0,0,1];
+    hc_skills=[2,1,0,3];
+    hc_attr=[10,gladstone_speed];
+    hc_name:='Timothy Gladstone';
+
+    gladstone:=CreateHuman;
+  end;
+
+function prepare_gladstones_apemen;
+  var i,s;
+  begin
+    uc_side:=americans;
+    uc_nation:=nation_nature;
+    gladstones_apemen:=[];
+
+    hc_name:='';
+    hc_basic_skills:=[0,0,0,0];
+    hc_skills:=[0,0,0,0];
+    hc_agressivity:=20;
+    hc_attr:=[10,12];
+    hc_class:=class_apeman;
+    hc_sex:=sex_male;
+
+    for i:=1 to number_of_gladstones_apemen do
+      gladstones_apemen:=gladstones_apemen^CreateHuman;
+  end;
+
+function prepare_wild_apemen;
+  var i,s;
+  begin
+    uc_side:=0;
+    uc_nation:=nation_nature;
+    wild_apemen:=[];
+
+    hc_name:='';
+    hc_basic_skills:=[0,0,0,0];
+    hc_skills:=[0,0,0,0];
+    hc_agressivity:=20;
+    hc_attr:=[10,12];
+    hc_class:=class_apeman;
+    hc_sex:=sex_male;
+
+    for i:=1 to number_of_wild_apemen do
+      wild_apemen:=wild_apemen^CreateHuman;
+  end;
+
+export function prepare_people;
+  begin
+    prepare_burlak;
+    prepare_pokryshkin;
+    prepare_belkov;
+    prepare_gnyevko;
+    prepare_kurin;
+    prepare_kirilenkova;
+    prepare_team;
+
+    prepare_brown;
+    prepare_gladstone;
+    prepare_am1;
+    prepare_gladstones_apemen;
+
+    prepare_wild_apemen;
+  end;
+
+
+export function place_team;
+  var un;
+  begin
+    PlaceUnitXY(Pokryshkin,90,66,false);
+    PlaceUnitXY(Belkov,87,66,false);
+    for un in team do
+      PlaceUnitXYR(un,85,63,3,false);
+  end;
+
+export function place_gnyevko(x,y);
+  begin
+    SetLives(Gnyevko,450);
+    PlaceUnitXY(Gnyevko,x,y,false);
+    ComHold(Gnyevko);
+  end;
+
+export function place_wild_apemen;
+  var un;
+  begin
+    for un in wild_apemen do
+      PlaceUnitArea(un,CaveEntrance,false);
+  end;
+
+export function place_americans;
+  var un;
+  begin
+    uc_side:=americans;
+    uc_nation:=nation_american;
+    bc_type:=b_breastwork;
+    bc_level:=bunker_level;
+    am_bunker:=CreateAndPlaceBuildingXYD(54,25,5);
+    SetLives(am_bunker,bunker_lives);
+
+
+    PlaceUnitXYR(Gladstone,40,7,2,false);
+    for un in gladstones_apemen do
+      PlaceUnitXYR(un,37,9,5,false);
+    PlaceUnitXYR(Am1,51,22,2,false);
+    ComEnterUnit(Am1,am_bunker);
+  end;
+
+export function place_brown;
+  begin
+    PlaceUnitXY(Brown,28,53,true);
+  end;

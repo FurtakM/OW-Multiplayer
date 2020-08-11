@@ -1,0 +1,194 @@
+var zakladna,skilly,start_res,extra_oil,extra_sib,zakl_plus,batt_fl,sib_det,people_resp,siberitofka;
+var fortpos,areasdiff,directions;
+var resp_cnt1,resp_cnt2;
+
+export function other_game;
+var tmp,tmp2,tmp3,cl;
+begin
+  ctf=false;
+  resp_cnt1=0;
+  resp_cnt2=0;
+  enable(nonctf_13);
+  for tmp=1 to 8 do begin
+    setrestrict(b_depot,tmp,state_enabled);
+    if sib_det then settech(tech_sibdet,tmp,state_researched);
+    if siberitofka then settech(tech_sibfiss,tmp,state_enabled);
+  end;
+
+  if multiplayer then begin
+    zakladna=getmultiplayersetting(0);
+    lidi=getmultiplayersetting(1);
+    skilly=getmultiplayersetting(2);
+    start_res=getmultiplayersetting(3);
+    krabice=getmultiplayersetting(4);
+    extra_oil=getmultiplayersetting(5);
+    extra_sib=getmultiplayersetting(6);
+    zakl_plus=getmultiplayersetting(7);
+    batt_fl=getmultiplayersetting(11);
+    sib_det=getmultiplayersetting(12);
+    opoce=getmultiplayersetting(13);
+    people_resp=getmultiplayersetting(14);
+    siberitofka=getmultiplayersetting(15);
+  end
+  else begin  //defaults
+    zakladna=1;
+    lidi=1;
+    skilly=1;
+    start_res=2;
+    krabice=1;
+    extra_oil=1;
+    extra_sib=1;
+    zakl_plus=2;
+    batt_fl=0;
+    sib_det=0;
+    opoce=3;
+    people_resp=0;
+    siberitofka=0;
+  end;
+
+  if people_resp then begin enable(nonctf_10);enable(nonctf_11);enable(nonctf_12);end;
+  if people_resp=1 then people_resp=3;
+  if people_resp=2 then people_resp=1;
+  case lidi of
+    0:lidi=9;
+    1:lidi=13;
+    2:lidi=19;
+    3:lidi=23;
+    4:lidi=29;
+  end;
+  skilly=skilly+1;
+  case start_res of
+    0:start_res=0;
+    1:start_res=50;
+    2:start_res=100;
+    3:start_res=200;
+  end;
+  case krabice of
+    0:cperiode=1$30;
+    1:cperiode=1$00;
+    2:cperiode=0$30;
+  end;
+  case opoce of
+    0:opoce=0;
+    1:opoce=3;
+    2:opoce=7;
+    3:opoce=11;
+    4:opoce=15;
+    5:opoce=19;
+    6:opoce=23;
+  end;
+
+  fortpos=[[[46,53,4],[51,62,4]],[[167,53,1],[173,64,1]]];
+  areasdiff=[vlevodiff,vpravodiff];
+  directions=[4,1];
+
+  for tmp=1 to 8 do
+    if mp_sides_nations_[tmp] then begin
+      if mp_sides_positions_[tmp]=1 then pos1side=tmp
+      else pos2side=tmp;
+      uc_side=tmp;
+      uc_nation=mp_sides_nations_[tmp];
+      bc_type=b_depot;
+      bc_level=1;
+      tmp2=createandplacebuildingxyd(depotpositions[mp_sides_positions_[tmp]][1],depotpositions[mp_sides_positions_[tmp]][2],depotpositions[mp_sides_positions_[tmp]][3]);
+      if batt_fl then setbattleflag(tmp,depotpositions[mp_sides_positions_[tmp]][1],depotpositions[mp_sides_positions_[tmp]][2],[[bfo_defend_bonus_human,80],[bfo_defend_bonus_vehicle,40],[bfo_defend_bonus_building,0],[bfo_range,17],[bfo_height,100]]);
+      if zakladna then begin
+        bc_type=b_breastwork;
+        createandplacebuildingxyd(fortpos[mp_sides_positions_[tmp]][1][1],fortpos[mp_sides_positions_[tmp]][1][2],fortpos[mp_sides_positions_[tmp]][1][3]);
+        createandplacebuildingxyd(fortpos[mp_sides_positions_[tmp]][2][1],fortpos[mp_sides_positions_[tmp]][2][2],fortpos[mp_sides_positions_[tmp]][2][3]);
+      end;
+      addresourcetype(getbase(tmp2),mat_cans,start_res);
+
+      if extra_oil then begin
+        tmp2=randhexarea(areasdiff[mp_sides_positions_[tmp]],false);
+        while not createdepositxy(tmp2[1],tmp2[2],mat_oil) do tmp2=randhexarea(areasdiff[mp_sides_positions_[tmp]],false);
+      end;
+      if extra_sib then begin
+        tmp2=randhexarea(areasdiff[mp_sides_positions_[tmp]],false);
+        while not createdepositxy(tmp2[1],tmp2[2],mat_siberit) do tmp2=randhexarea(areasdiff[mp_sides_positions_[tmp]],false);
+      end;
+      if zakl_plus>0 then begin
+        bc_type=b_lab;
+        uc_direction=directions[mp_sides_positions_[tmp]];
+        tmp3=createbuilding;
+        tmp2=randhexarea(areas[mp_sides_positions_[tmp]],false);
+        while not placeunitxy(tmp3,tmp2[1],tmp2[2],false) do tmp2=randhexarea(areas[mp_sides_positions_[tmp]],false);
+        if zakl_plus>1 then begin
+          bc_type=b_workshop;
+          tmp3=createbuilding;
+          tmp2=randhexarea(areas[mp_sides_positions_[tmp]],false);
+          while not placeunitxy(tmp3,tmp2[1],tmp2[2],false) do tmp2=randhexarea(areas[mp_sides_positions_[tmp]],false);
+        end;
+      end;
+      if batt_fl then setbattleflag(tmp,depotpositions[mp_sides_positions_[tmp]][1],depotpositions[mp_sides_positions_[tmp]][2],[[bfo_defend_bonus_human,80],[bfo_defend_bonus_vehicle,40],[bfo_defend_bonus_building,0],[bfo_range,17],[bfo_height,100]]);
+
+      cl=class_scientistic;
+      for tmp2=1 to lidi do begin
+        if tmp2>=lidi/2 then cl=class_soldier;
+        preparehuman(0,cl,skilly);
+        if tmp2=1 then cl=class_engineer;
+        placeunitarea(createhuman,areas[mp_sides_positions_[tmp]],false);
+      end;
+
+    end;
+
+  uc_side=0;
+  uc_nation=nation_nature;
+  for tmp=1 to opoce do begin
+    preparehuman(0,class_apeman,0);
+    placeunitarea(createhuman,les,false);
+  end;
+
+  case mp_sides_positions_[your_side] of
+    1:centernowonxy(44,60);
+    2:centernowonxy(175,60);
+  end;
+
+end;
+
+
+//respawning a ending conditions
+on humandestroyed(un,side,nat,x,y,dir,sex,cl) marked 10 do
+  if mp_sides_positions_[side]=1 then resp_cnt1=resp_cnt1+1
+  else resp_cnt2=resp_cnt2+1;
+
+every 0$30 trigger resp_cnt1>=people_resp marked 11 do
+begin
+  resp_cnt1=resp_cnt1-people_resp;
+  if not filterallunits([[f_side,pos1side],[f_or,[f_btype,b_depot],[f_class,class_engineer]]]) then begin enable;exit;end;
+  uc_side=pos1side;
+  uc_nation=mp_sides_nations_[pos1side];
+  preparehuman(0,class_soldier,skilly);
+  wait(0$10);
+  placeunitarea(createhuman,areas[mp_sides_positions_[pos1side]],true);
+  enable;
+end;
+
+every 0$30 trigger resp_cnt2>=people_resp marked 12 do
+begin
+  resp_cnt2=resp_cnt2-people_resp;
+  if not filterallunits([[f_side,pos2side],[f_or,[f_btype,b_depot],[f_class,class_engineer]]]) then begin enable;exit;end;
+  uc_side=pos2side;
+  uc_nation=mp_sides_nations_[pos2side];
+  preparehuman(0,class_soldier,skilly);
+  wait(0$10);
+  placeunitarea(createhuman,areas[mp_sides_positions_[pos2side]],true);
+  enable;
+end;
+
+every 0$1 marked 13 do
+begin
+  if not filterallunits([[f_side,pos1side],[f_type,unit_human]]) then
+    if pos1side=your_side then youlostinmultiplayer
+    else youwininmultiplayer;
+  if not filterallunits([[f_side,pos2side],[f_type,unit_human]]) then
+    if pos2side=your_side then youlostinmultiplayer
+    else youwininmultiplayer;
+end;
+
+
+
+
+
+
+

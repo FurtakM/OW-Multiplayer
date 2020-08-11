@@ -1,0 +1,38 @@
+ListBox 0 "Base Level" count 4 items "No Base" "Depot Only" "Small Base" "Advanced Base" default 2 "There is no main base" "There is only depot" "Some basic buildings" "Full base with upgraded buildings" 
+
+
+ListBox 1 "Amount of People" count 5 items "6" "8" "11" "13" "16" default 2 "" "" "" "" 
+
+
+ListBox 2 "Skill Level" count 4 items "Unexperienced" "Little experienced" "Experienced" "More experienced" default 1 "Average level in main skill is 1" "Average level in main skill is 3" "Average level in main skill is 5" "Average level in main skill is 7" 
+
+ListBox 21 "Technologies" count 4 items "No technologies" "Few technologies" "Medium technologies" "Most technologies" default 0 "No technologies" "Few technologies invented" "Medium technologies invented" "Most of technologies already invented"
+
+ListBox 3 "Starting Resources" count 4 items "None" "Few" "Medium" "Lots" default 2 "" "" "" "" 
+
+ListBox 4 "Shipments Density" count 3 items "Low" "Medium" "High" default 1 "" "" "" 
+
+ListBox 14 "Amount of Apemen" count 5 items "None" "Few" "Medium" "Lots" "Land of apes" default 2 "No apes on the map" "Just few apes" "Medium apes on the map" "Lots of apes placed" "Apes are everywhere" 
+Listbox 141 "Apemen Respawning" count 2 items "Yes" "No" default 0 "When ape dies new one will be born" "No new apes during the game" 
+
+ListBox 99 "New people after scoring" count 5 items "No" "Return human" "New man after human scoring" "New man after every scoring" "Random man returned" default 2 "No new people after scoring goal" "Only drivers of scoring car are returnen" "New human when some human driven car scores" "Ater scoring player gets new human" "After scoring player can get random class human or ape"
+
+gametype 1
+
+ListBox 151 "Goals to win" count 8 items "1 goal" "2 goals" "3 goals" "4 goals" "5 goals" "10 goals" "15 goals" "20 goals" default 4 "When one player scores one goal, the game ends." "When one player scores two goals, the game ends." "When one player scores three goals, the game ends." "When one player scores four goals, the game ends." "When one player scores five goals, the game ends." "When one player scores five ten, the game ends." "When one player scores 15 goals, the game ends." "When one player scores 20 goals, the game ends." 
+
+gametype 2
+
+listbox 152 "Time for play" count 7 items "5 minutes" "10 minutes" "20 minutes" "30 minutes" "45 minutes" "1 hour" "1 hour 30 minutes" default 3 "" "" "" "" "" "" ""
+
+
++ countery
+
+Football-score
+  %cScore: %c%d%c:%c%d
+
+Football-overtime
+  ^FF0000Overtime! Player who scores first goal will win whole game.
+
+Football-time
+  %cTime to end of the game: %c%t

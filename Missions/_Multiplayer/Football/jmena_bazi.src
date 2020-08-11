@@ -1,0 +1,7 @@
+on BuildingStarted(b,h) do
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b,'@' & GetSide(b));
+
+on BuildingCaptured(b,o,e) do
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b,'@' & GetSide(b));

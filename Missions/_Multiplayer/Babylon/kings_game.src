@@ -1,0 +1,118 @@
+var final_count;            // last of Age
+
+var win;
+
+// Tag definition for counters for each of sides
+//  01 - player (team) 1
+//  02 - .
+//  03 - .
+//  04 - player (team) 4
+
+export function init_kings_counting;
+var i;
+begin
+  mp_with_score:=true;
+  ResetMultiScore;
+
+    case def_kings_age of           // seting time of the Age
+  0: final_count:=   500 ;
+  1: final_count:=  1000 ;
+  2: final_count:=  1500 ;
+  3: final_count:=  2000 ;
+    end;
+
+  Enable(2);
+end;
+
+
+// Displays players score for him only
+function show_your_points;
+begin
+  ExtraStrings:=['#Babylon-Private',Your_Side,(GetTag(Your_Side) div 10)];
+end;
+
+// Displays all scores for all players
+function show_public_points;
+var side,vypis;
+begin
+  vypis:=[];
+  for side=1 to Side_Positions do
+    if Side_Positions[side] then
+      vypis:=vypis ^ ['#Babylon-Public',side,side,(GetTag(side) div 10)];
+
+  ExtraStrings:=vypis;
+end;
+
+// Checking for people in the island
+function count_king;
+var side,list,un;
+begin
+  side:=[];
+  list:=FilterUnitsInArea( king_territory, [ [f_type,unit_human], f_not, [f_inside] ]);
+  for un in list do
+    side:=side union GetSide(un);
+
+  if side<>1 then
+    exit;
+  side:=side[1];
+
+  SetTag(side, GetTag(side)+1);
+  SetMultiScore(side, GetTag(side) div 10);
+  if GetTag(side)>=final_count then
+    Enable(3);
+end;
+
+
+//--------------------------//
+//-----  Main trigger  -----//
+every 0$1 Marked 2 do
+begin
+  count_king;
+
+  if def_public_score then
+    show_your_points
+  else
+    show_public_points;
+
+  enable;
+end;
+
+
+//-----  Checking Win Conditions  -----//
+every 0$1 Marked 3 do
+var side;
+begin
+  win:=[];
+  for side=1 to 8 do
+    if GetTag(side) >= final_count then
+      win:=win ^ side;
+  if win then
+    Enable(4)
+  else
+    enable;
+end;
+
+
+
+//----------------------------//
+//-----  Win Conditions  -----//
+every 0$1 Marked 4 do
+begin
+  if IAmServer then
+    wait(0$1);
+
+  if Your_Side in win then
+    begin
+      wait(0$2);
+      YouWinInMultiplayer;
+      //enable(401);
+      exit;
+    end
+  else
+    begin
+      wait(0$2);
+      YouLostInMultiplayer;
+      //enable(400);
+      exit;
+    end;
+end;

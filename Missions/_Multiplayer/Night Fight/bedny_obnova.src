@@ -1,0 +1,111 @@
+var shipment1,shipment2,respawn,inqueue;
+
+// vybrani prvního kvadrátu
+export function init_zasilky_a_obnova;
+  begin
+    shipment1:=[];
+    shipment2:=[];
+    respawn:=Rand(1,8);
+    inqueue:=[0,0,0,0,0,0,0,0];
+  end;
+
+every 0$1+0$0.5 do
+  var n,dep,aktresp;
+  begin
+    if obnovovaci_cas_max =0 then
+      exit;
+
+    if respawn=8 then respawn:=1
+    else respawn:=respawn+1;
+
+    if Side_Positions[respawn] and not inqueue[respawn] then
+      begin
+        n:=FilterAllUnits([ [f_type, unit_human],                      // units - people
+                            [f_side, respawn],                         // side - respawning side
+                            f_not, [f_nation,nation_nature]            // not tamed apeman
+                          ]);
+        if n<pocet_lidi then
+          begin
+            dep:=FilterAllUnits([[f_type,unit_building],[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ok],[f_side,respawn]]);
+            if dep then
+              begin
+                aktresp:=respawn;
+                inqueue:=Replace(inqueue,aktresp,true);
+                enable;
+                wait(rand(obnovovaci_cas_min,obnovovaci_cas_max));
+                inqueue:=Replace(inqueue,aktresp,false);
+                hc_name:='';
+                hc_importance:=0;
+                PrepareHuman(0,0,priblizna_uroven div 2);
+                uc_nation:=Side_Nations[aktresp];
+                uc_side:=aktresp;
+                dep:=dep[Rand(1,dep)];
+                PlaceUnitXYR(CreateHuman,GetX(dep),GetY(dep),7,true);
+              end
+            else
+              enable;
+          end
+        else
+          enable;
+      end
+    else
+      enable;
+  end;
+
+// shipment1
+every 0$5+0$1.1 do
+  var d,q;
+  begin
+    case tick of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=70;
+     20$0+1..30$0:d:=60;
+     30$0+1..50$0:d:=35;
+     50$0+1..300$0:d:=20;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*cetnost_zasilek div 2 then
+      begin
+        wait(Rand(1,0$4));
+        if shipment1=[] then
+          shipment1:=[all,all,all,ring3,ring1,ring4,ring2,all];
+
+        q:=shipment1[Rand(1,shipment1)];
+        shipment1:=shipment1 diff [q];
+
+        CreateCratesArea(5,q,true);
+      end;
+    enable;
+  end;
+
+// shipment1
+every 0$5+0$1.1 do
+  var d,q;
+  begin
+    case tick of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=80;
+     20$0+1..30$0:d:=70;
+     30$0+1..50$0:d:=55;
+     50$0+1..300$0:d:=40;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*cetnost_zasilek*2 div 3 then
+      begin
+        wait(Rand(1,0$4));
+        if shipment2=[] then
+         shipment2:=[all,all,all,ring1,ring3,ring2,ring4,all];
+
+        q:=shipment2[Rand(1,shipment2)];
+        shipment2:=shipment2 diff [q];
+
+        CreateCratesArea(5,q,true);
+      end;
+    enable;
+  end;

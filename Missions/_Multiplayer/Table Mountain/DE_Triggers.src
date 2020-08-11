@@ -1,0 +1,13 @@
+export function DE_Triggers;
+begin
+  // Triggers from Time Wars and others strange games
+  Disable(44);
+  Disable(45);
+
+  // Triggers from standard multiplayer Game
+  Disable(98);
+  Disable(99);
+end;
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

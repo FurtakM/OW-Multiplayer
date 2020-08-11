@@ -1,0 +1,66 @@
+VAR opoce_jmena;
+function apeman_init;
+begin
+  uc_side:=   0;
+  uc_nation:= nation_nature;
+
+  hc_class:=        class_apeman;
+  hc_basic_skills:= [Rand(0,3),Rand(0,3),Rand(0,3),Rand(0,3)];
+  hc_skills:=       [Rand(0,3),Rand(0,3),Rand(0,3),Rand(0,3)];
+  hc_attr:=         [Rand(7,16),Rand(7,15)];
+  hc_sex:=          Prob(20);
+  hc_importance:=   0;
+  hc_agressivity:=  Rand(-30,30);
+
+  if (hc_sex = 0) and Prob(50) then
+    hc_name:= opoce_jmena[Rand(1,opoce_jmena+0)]
+  else
+    hc_name:= '';
+end;
+
+EXPORT function placni_opoce_na_mapu; // Placing apemans on the map
+var apes;
+begin
+  opoce_jmena = ['Tupoun','Opoce','Opka','Butrus','Bubu','Condor','Kuklajs',
+                 'Simon','Ugh','Urgh','Argh','Aargh','Hrumph','Grumph','Oorg',
+                 'Eghrr','Rrrr','Bark','Wraughrr',':-)','Semik','Hrgh','Hur',
+                 'Yeargh','Marta','Batman','Barkman','Xcenovsk','David Love',
+                 'Freon','Stoupik','Quik','CFC','Kvakous','Quak','Bad Ape','Druss',
+                 'Sumys','Agent','Nazghul','Havran','Vrana','Havranek','Cendicek',
+                 'Pluto','Chmura','Hujaj Kuklaj','Potrus','HZ','Furious Ape',
+                 'Tapik','Mgr Zobak','Paja','Katcha','Dwarfy','Chrump','Shorty','Prcek',
+                 'Charonorach','Steve','Just Ape'];
+
+  // opoce umistene u zakladen
+  apes:=0;
+  while apes<opoce_nahore do
+    begin
+      apeman_init;
+      PlaceUnitArea(CreateHuman,base1,false);
+      apeman_init;
+      PlaceUnitArea(CreateHuman,base2,false);
+      apes=apes+1;
+    end;
+
+  // opoce umistene primo na mape
+  apes:=0;
+  while apes<opoce_dole do
+    begin
+      apeman_init;
+      PlaceUnitArea(CreateHuman,mapa,false);
+      apes=apes+1;
+    end;
+end;
+
+EVERY 2$1 TRIGGER respawn_opoce DO
+begin
+  wait(Rand(0$1,1$0));
+
+  if FilterAllUnits([f_or,[f_class,class_apeman],[f_class,class_apeman_engineer],[f_class,class_apeman_kamikaze],[f_class,class_apeman_soldier],[f_control,control_apeman]]) < (opoce_nahore * 2 + opoce_dole) then
+    begin
+      apeman_init;
+      PlaceUnitArea(CreateHuman,[OpoceR1,OpoceR2,OpoceR3,OpoceR4][Rand(1,4)],false);
+    end;
+
+  enable;
+end;

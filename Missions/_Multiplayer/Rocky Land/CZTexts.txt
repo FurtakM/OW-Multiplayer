@@ -1,0 +1,315 @@
+@ It's only you and her
+% Vıvoj siberitové zbranì byl úspìšnì ukonèen a John byl povolán zpìt do základny Alfa - jistì proto, e se schyluje k finální konfrontaci.
+& On road from XXX to base Alpha; March 21, ERA + 2
+
+// Dialogue 1 (JMM enters scene with Morphling)
+$ D1-Pow-1
+- Generál Powell volá Macmillana.
+$ D1-JMM-1
+- (zastaví, vystoupí) John Macmillan, slyším tì, Arthure. Jsem na cestì k vám.
+$ D1-Pow-2
+- Kde pøesnì teï jsi?
+$ D1-JMM-2
+- Jedu po druhé vıchodozápadní, teï budu asi pøímo na sever od základny Delta.
+$ D1-Pow-3
+- Dávej si pozor. Stáhli jsme odtud skoro všechny lidi sem k nám, take oblast kolem Delty nemáme pod kontrolou.
+$ D1-JMM-3
+- Rozumím, dám si pozor. Konèím.
+
+# M1
+Add Main reach
+- reach the Right Upper corner of map with JMM in a vehicle
+#
+
+// Query 1
+? Q1
+Odpovíš na volání o pomoc?
+- Ano
+- Ne
+?
+
+// Dialogue 2J (call for help)
+$ D2J-Joan-1
+- (roztøesenım hlasem) Joan Fergussonová všem jednotkám, všem jednotkám. Základna Delta je v ohroení. Opakuji, základna Delta pod útokem, potøebujeme posily. Sakra, pøijïte sem nìkdo.
+$ D2J-JMM-1
+- Joan? Tady John. Jsem na cestì, na sever od Delty.
+$ D2J-Joan-2
+- Johne? Já... nezvládám to tady.
+$ D2J-JMM-2
+- Ty jsi velitelka Delty?
+$ D2J-Joan-3
+- Velitelka? Asi ano, Johne... jsem jediná, která ještì ije.
+$ D2J-JMM-3
+- A do háje.
+$ D2J-Joan-4
+- Johne... pomoz mi, prosím.
+
+// Query 2J
+? Q2J
+Joan potøebuje pomoc.
+- Slíbíš, e jí pomùeš.
+- Omluvíš se, e máš jinı úkol
+- Neodpovíš
+?
+
+// Dialogue 2Ja 
+$ D2Ja-JMM-1
+- Vydr, Joan, jedu za tebou.
+$ D2Ja-Joan-1
+- Ach... díky bohu... poèkej! Johne, po cestì jet nemùeš! Tu kontrolují Rusové.
+$ D2Ja-JMM-2
+- OK. Nìjak se k tobì dostanu.
+
+// Dialogue 2Jb 
+$ D2Jb-JMM-1
+- Promiò, Joan. Ale Delta teï není dùleitá. Musím jet tam, kde se rozhoduje o všem.
+$ D2Jb-Joan-1
+- Ale... jasnì, chápu to, Johne.
+$ D2Jb-JMM-2
+- Vykašli se na Deltu, Joan. Nìkam se schovej nebo uteè. Vrátím se, jakmile to pùjde.
+$ D2Jb-Joan-2
+- Johne... kdybychom se u nevidìli... miluju tì.
+
+// Dialogue 2Jc 
+$ D2Jc-Joan-1
+- Johne? Slyšíš mì ještì? (šeptem) Johne...
+
+// Dialogue 2L (call for help)
+$ D2L-Lisa-1
+- Co si myslíte vy pitomci? (on edge of hysteria) e to tady zvládnu všechno sama? (klidnìji) Tady kapitán Lawsonová, základna Delta! Potøebuju pomoc, a potøebuju ji, kurva, hned!
+$ D2L-JMM-1
+- Liso slyšíš mì? Tady major Macmillan. Jsem na cestì, na sever od Delty.
+$ D2L-Lisa-2
+- Macmillan? Díky bohu. Mùeš mi tady helfnout?
+$ D2L-JMM-2
+- Nemám tu ádnı lidi, jsem tu sám Liso.
+$ D2L-Lisa-3
+- Tak pøijï, zdvojnásobíš naše øady.
+$ D2L-JMM-3
+- Do háje! Chceš øíci, e jsi tam sama?
+$ D2L-Lisa-4
+- Jo, Johne. Kdy nepoèítám mrtvá tìla.
+
+// Query 2L
+? Q2L
+Joan potøebuje pomoc.
+- Slíbíš, e jí pomùeš.
+- Øekneš, e máš jinı úkol
+- Neodpovíš
+?
+
+// Dialogue 2La 
+$ D2La-JMM-1
+- OK. Liso. Jedu tam. I kdy vìøím, e ty bys jim nakopala prdel i sama.
+$ D2La-Lisa-1
+- Nech si hloupé kecy a radši dej pozor. Po cestì jet nemùeš, kontrolují ji Rusové.
+$ D2La-JMM-2
+- Nìjak se tam dostanu.
+
+// Dialogue 2Lb 
+$ D2Lb-JMM-1
+- Delta teï není dùleitá, kapitánko. Musím jet tam, kde se rozhoduje o všem.
+$ D2Lb-Lisa-1
+- Sakra, Johne, a mì tady necháš zdechnout?
+$ D2Lb-JMM-2
+- Liso, tohle je válka.
+$ D2Lb-Lisa-2
+- Chápu, Johne... Budu tì chodit strašit.
+
+// Dialogue 2Lc 
+$ D2Lc-Lisa-1
+- Macmillane? Slyšíš mì? Sakra, Johne! Tak si táhni, ty parchante...
+
+// Dialogue 3J (when John arrives)
+$ D3J-Joan-1
+- (if present) Díky bohu, e jsi tady Johne. U jsem ani nedoufala... Jsi tu sám?
+$ D3J-JMM-1
+- Bohuel.
+$ D3J-Joan-2
+- To nevadí. Jsi nejlepší. Já... u nemùu. Všechny ty kybernetické mozky kolem... jde z toho hrùza.
+$ D3J-JMM-2
+- Uklidni se, Joan. Jsi profesionálka. Zvládneme to.
+
+// Dialogue 3L (when John arrives)
+$ D3L-Lisa-1
+- (if present) U bylo na èase, Johne. Kde sis válel šunky, kdy tì potøebuju?
+$ D3L-JMM-1
+- Díky za uvítání, Liso.
+$ D3L-Lisa-2
+- Promiò. Jsem fakt ráda, e jsi tady. Podívej se, všechny ty zasranı poèítaèovı krámy kolem. Sakra, jsem vojaèka, ne nìjaká programátorka, nerozumím tomu.
+$ D3L-JMM-2
+- No, teï se to budeš muset nauèit.
+$ D3L-Lisa-3
+- Jasnì, ta tvoje doktorka by to...
+$ D3L-JMM-3
+- Kurva, Liso, ještì slovo o Joan, a nechám tì tady samotnou zdechnout!
+
+# M2J
+Add Optional base
+- ubraò základnu  a eliminuj ruské síly v oblasti
+Add Secondary protect
+- chraò Joan
+#
+
+# M2L
+Add Optional base
+- ubraò základnu  a eliminuj ruské síly v oblasti
+Add Secondary protect
+- chraò Lisu (pokud nebude znovu mluvit o Joan)
+#
+
+# M2a
+Del protect
+#
+
+// Dialogue 4 
+$ D4-JMM-1
+- Tak do práce. Nejprve se porozhlédnu, co tu vlastnì máte...
+$ D4-Joan-1
+- Perfektnì vybavené laboratoøe i továrnu... a spoustu materiálu.
+$ D4-Lisa-1
+- Jako kadá naše základna, laboratoøe a továrny vymakanı do detailù, a v obranì díry. Je tady spousta materiálu.
+$ D4-JMM-2
+- Jak je to se siberitem a ropou?
+$ D4-Joan-2
+- To je horší... vìtšinu ropy naši odvezli, a tìní vìe stály v Kappì 2, ne ji Rusové znièili. Máme nìjakı siberit, ale loisko tu není.
+$ D4-Lisa-2
+- To si myslíš, e nám tu Powell nìco nechal? Je tu pár kusù siberitu a skoro ádná ropu. V téhle základnì se nikdy netìilo... k tìbì slouila Kappa 2, ne ji Rusáci vypálili.
+$ D4-JMM-3
+- Opravdu strategicky postavená základna. Pøece se, do háje, nevrátíme k solárním panelùm! No nic, spojím se s Powellem.
+
+// Dialogue 5 (when player selects one of remote controlled vehicles)
+$ D5-JMM-1
+- Hele, támhle ta vozidla jsou dálkovì øízená. Kde je øídící vì?
+$ D5-Joan-1
+- Stála támhle... nerada na to vzpomínám. Kdy zaèala hoøet, naši mechanici vybíhali ven a Rusové je všechny postøíleli.
+$ D5-Lisa-1
+- Vidíš támhle to spáleništì? Bylo to k vzteku, naši øidièi vybíhali z toho hoøícího vìzení a pøed vchodem stál ruskej tank s gatlingem. Postøílel je jako králíky.
+
+// Dialogue 6J (when player selects opto lab)
+$ D6J-JMM-1
+- Skvìle vybavená optoelektronická laboratoø.
+$ D6J-Joan-1
+- [Denis alive: var a1] Jo, Denis Peterson tam vedl vıvoj nìjaké nové zbranì na bázi laseru. Mìla pouívat k zamìøení dvì vozidla a nepøítele mìla vyøadit jedinou ranou.
+$ D6J-JMM-2
+- [reply: var a1] Denis? Ten je taky po smrti?
+$ D6J-Joan-2
+- [reply: var a1] Ale ne, toho si vzal Powell sebou, chtìl mít u sebe nìjakoho fakt dobrıho, kdy Roth je v tahu a Huckleberga jsi mìl ty...
+$ D6J-Joan-2a
+- [var a2] Jo, Jack Northon tam vedl vıvoj nìjaké nové zbranì na bázi laseru. Mìla pouívat k zamìøení dvì vozidla a nepøítele mìla vyøadit jedinou ranou.
+$ D6J-JMM-3
+- Myslíš, e by ses vyznala v jejich poznámkách a e bychom vıvoj dokázali dokonèit?
+$ D6J-Joan-3
+- No, nevím... zkusit to mùeme.
+
+// Dialogue 6L (when player selects opto lab)
+$ D6L-JMM-1
+- Skvìle vybavená optoelektronická laboratoø.
+$ D6L-Lisa-1
+- Jo, zrovna tam pøipravovali novou zbraò. Z taktického hlediska dost zajímavé: zbranì mìly pracovat v páru, a kdyby se nìkdo dostal mezi nì, šlehli by po nìm takovou energií, e se prostì vypaøí.
+$ D6L-JMM-2
+- Mìli bychom se na to mrknout. Konec koncù, jsme tady dva, taková zbraò by se nám hodila, ne?
+$ D6L-Lisa-2
+- Pokud ti nevadí bıt v páru se mnou... zkusit to mùeme.
+
+# M3
+Add Secondary doublelaser
+- postav dvì vozidla s double-laserem
+#
+
+# M3a
+Out doublelaser
+#
+
+// Dialogue 7 (some time after John's arrival)
+$ D7-Pow-1
+- Johne, kde jsi? Co se dìje?
+$ D7-JMM-1
+- Základna Delta potøebovala moji okamitou asistenci, generále.
+$ D7-Pow-2
+- Øíkal jsem ti, a sem pøijedeš co nejdøív, musíme pøejít do útoku!
+$ D7-JMM-2
+- [woman alive: var a1] Hele, Arthure, mùu vzít tady tu jedinou enskou, která ten masakr pøeila, a pøijet tøeba teï hned. Ale tady je spousta materiálu, a a si z nìj Rusové postaví tanky a vjedou nám do zad, tak nám moc veselo nebude!
+$ D7-JMM-2a
+- [else: var a2] Hele, Arthure, mùu se sbalit a pøijet tøeba teï hned. Ale tady je spousta materiálu, a a si z nìj Rusové postaví tanky a vjedou nám do zad, tak nám moc veselo nebude!
+$ D7-Pow-3
+- Co navrhuješ?
+$ D7-JMM-3
+- Zajistím obranyschopnost základny a zkusím eliminovat ruské síly. Potom co nejrychleji pøijedu. OK?
+$ D7-Pow-4
+- Jak myslíš... Ale jestli to nepùjde, tak radši oba pøijeïte sem.
+
+// Dialogue 8 (an Russian soldier arives with JMM's vehicle)
+$ D8-JMM-1
+- Vy svinì zlodìjskı! Tohle je byl mùj auák...
+
+// Query 3a
+? Q3a
+Potøebuješ auto, abys mohl odjet
+- OK
+?
+
+// Query 3aJ
+? Q3aJ
+Joan potøebuje auto, aby mohla odjet
+- OK
+?
+
+// Query 3aL
+? Q3aL
+Lisa potøebuje auto, aby mohla odjet
+- OK
+?
+
+// Query 3b
+? Q3b
+Neeliminoval jsi všechny ruské síly v oblasti
+- odjedeš
+- neodjedeš
+?
+
+// Query 3bJ
+? Q3bJ
+Neeliminoval jsi všechny ruské síly v oblasti
+- odjedeš a necháš tady Joan samotnou
+- neodjedeš
+?
+
+// Query 3bL
+? Q3bL
+Neeliminoval jsi všechny ruské síly v oblasti
+- odjedeš a necháš tady Lisu samotnou
+- neodjedeš
+?
+
+^ Reach
+Cíl dosaen
+
+^ Eliminate
+Nepøátelé eliminováni
+
+| JMM
+John Macmillan zahynul.
+
+* protect
++ Joan zachránìna
++ Lisa zachránìna
++ XY zachránìna
+- Však ty víš, zbabìlèe!
+- neuchránil jsi Joan
+- neuchránil jsi Lisu
+*
+
+* doublelaser
++ Double-laser
+- Však ty víš, zbabìlèe!
+- Nezajímal ses vùbec o laboratoø.
+- Nepostavil jsi ádné double-lasery.
+- Postavil jsi jen jeden double-laser.
+*
+
+* base
++ Základna uchránìna
+- Však ty víš, zbabìlèe!
+- Neeliminoval jsi ruské síly v oblasti.
+*

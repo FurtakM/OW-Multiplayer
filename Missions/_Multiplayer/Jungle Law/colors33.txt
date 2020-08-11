@@ -1,0 +1,31 @@
+begin
+? type terrain
+ ! rgb 115 145 205
+ ! all 98
+new
+? type grass
+ ! sat 18
+ ! all 160
+new
+? type single_tree
+ ! all 126
+ ! sat 31
+new
+? type building
+ ! all 108
+ ! sat 38
+new
+? type vehicle
+ ! all 108
+ ! sat 38
+new
+? type human
+ ! sat 38
+ ! all 115
+new
+ ! rgb 71 71 68
+ ! add 2 800000
+ ! contr 101
+ ! sat 90
+ ! all 95
+end

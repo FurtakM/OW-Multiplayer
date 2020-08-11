@@ -1,0 +1,47 @@
+every 0$3+0$0.8 do // bedny do 2 bazi
+var i;
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$45));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$45,1$0));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$0,1$15));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$15,1$30));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$30,1$45));
+    50$0+1..200$0: Wait(shipments_density/100*Rand(1$45,2$0));
+    else  Wait(shipments_density/100*Rand(2$0,2$30));
+  end;
+
+  if Prob(50) then begin
+                     CreateCratesArea(Rand(3,5),base1,true);
+                     wait(Rand(0$0.1,0$20));
+                     CreateCratesArea(Rand(3,5),base2,true);
+                   end
+              else begin
+                     CreateCratesArea(Rand(3,5),base2,true);
+                     wait(Rand(0$0.1,0$20));
+                     CreateCratesArea(Rand(3,5),base1,true);
+                   end;
+
+  wait(0$5);
+  enable;
+end;
+
+every 0$6 do  // crates anywhere on map
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$5,0$15));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$15,0$22));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$23,0$30));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(0$30,0$42));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(0$42,1$00));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$00,1$30));
+    50$0+1..200$0: Wait(shipments_density/100*Rand(1$30,2$0));
+    else  Wait(shipments_density/100*Rand(2$0,2$30));
+  end;
+
+
+  CreateCratesArea(Rand(1,5),mapa,true);
+
+  enable;
+end;

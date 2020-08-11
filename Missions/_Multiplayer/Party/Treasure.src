@@ -1,0 +1,35 @@
+function prepare_treasure(x,y);
+  var sm,i;
+  begin
+    sm:=rand(0,6);
+    for i:=0 to 15 do
+      begin
+        MoveAreaXY(p1+i,x,y);
+        if prob(30) then
+          sm:=rand(0,6);
+        x:=ShiftX(x-1,sm,1);
+        y:=ShiftY(y-1,sm,1);
+      end;
+  end;
+
+function show_treasure;
+  var i;
+  begin
+    SetAreaMapShow(p16,1);
+    for i:=1 to 15 do
+      begin
+        wait(0$10);
+        SetAreaMapShow(p16-i+1,0);
+        SetAreaMapShow(p16-i,1);
+      end;
+    wait(0$30);
+    SetAreaMapShow(p1,0);
+  end;
+
+export function new_treasure;
+  var xy;
+  begin
+    xy:=RandHexArea(All,false);
+    prepare_treasure(xy[1],xy[2]);
+    show_treasure;
+  end;

@@ -1,0 +1,283 @@
+VAR delay1, delay2;
+
+EXPORT function place_buildings;
+VAR budovy, b, i;
+begin
+  InitUc;
+  InitHc;
+  InitVc;
+
+  bc_kind1:= b_lab_basic;
+  bc_kind2:= b_lab_basic;
+
+  bc_level:= levely_unitu;
+
+  for i := 1 to 2 do
+    begin
+      uc_side:=   barvy[i];
+      uc_nation:= narodnosti[i];
+
+      budovy:= GetBudovy(i);
+                      
+      for b in budovy do
+        begin
+          bc_type:=  b[1];
+          CreateAndPlaceBuildingXYD(b[2], b[3], b[4]);
+        end;
+    end;
+end;
+
+every 10 do
+begin
+  SetLives(tel1, 1000);
+  SetLives(tel2, 1000);
+  Enable;
+end;
+
+{ // Radzio commented this out
+// doplnovani opoci
+EVERY 4$0 TRIGGER FilterAllUnits([[f_nation,nation_nature],[f_class,class_apeman]])<7 DO
+VAR w;
+VAR pom;
+begin
+  uc_side=0;
+  uc_nation=nation_nature;
+  PrepareHuman(sex_male,class_apeman,Rand(0,6));
+
+  pom=CreateHuman;
+  PlaceUnitXYR(pom,75,10,5,false);
+  wait(0$1);
+  w=Randhex(false);
+  ComMoveXY(pom,w[1],w[2]);
+  enable;
+end;
+}
+
+// ZPET !!!!!!!!
+// base 1
+EVERY 0$1 TRIGGER not delay1 DO
+VAR pom, un;
+begin
+  pom:= FilterUnitsInArea(Zpet1, [[f_side, barvy[1]]]);
+  if pom then
+    begin
+      un:= pom[1];
+      ComStop(un);
+      TeleportUnit(un, Base_Positions[1][1], Base_Positions[1][2], 5, false);
+      delay1:= true;
+    end;
+  enable;
+end;
+
+// base 2
+EVERY 0$1 TRIGGER not delay2 DO
+VAR pom, un;
+begin
+  pom:= FilterUnitsInArea(Zpet2, [[f_side, barvy[2]]]);
+  if pom then
+    begin
+      un:= pom[1];
+      ComStop(un);
+      TeleportUnit(un, Base_Positions[2][1], Base_Positions[2][2], 5, false);
+      delay2:= true;
+    end;
+  enable;
+end;
+
+// zpristupneni teleportu zpet pro hrace 1
+EVERY 0$5 TRIGGER delay1 DO
+begin
+  wait(Rand(1,0$20));
+  delay1=false;
+  enable;
+end;
+
+// zpristupneni teleportu zpet pro hrace 2
+EVERY 0$5 TRIGGER delay2 DO
+begin
+  wait(Rand(1,0$20));
+  delay2=false;
+  enable;
+end;
+
+EXPORT function placni_lidi;
+VAR pom, pompocet;
+VAR n, un;
+begin
+  for n := 1 to 2 do
+    begin
+      uc_side:=   barvy[n];
+      uc_nation:= narodnosti[n];
+
+      pom:= [];
+      
+      hc_importance:= 100;
+      hc_sex:=        get_sex;
+
+      if Multiplayer then
+        begin
+          hc_sex:=         Multiplayer_GetPlayerSex(uc_side);
+          hc_gallery:=     'MULTIAVATARS';
+          hc_face_number:= Multiplayer_GetPlayerSideNum(uc_side);
+        end;
+
+      pom:= pom ^ get_human(hc_sex, class_soldier, levely_unitu + 1, mp_sides_players_names[uc_side]);
+
+      hc_gallery:=    '';
+      hc_importance:= 0;
+
+      pom:= pom ^ get_human(get_sex, class_scientistic, levely_unitu, '');
+      pom:= pom ^ get_human(get_sex, class_mechanic, levely_unitu, '');
+      pom:= pom ^ get_human(get_sex, class_engineer, levely_unitu, '');
+
+      pompocet:= pocet_lidi - 4;
+
+      while (pompocet) do
+        begin
+          pompocet:= pompocet - 1;
+          pom:= pom ^ get_human(get_sex, Rand(1, 4), levely_unitu, '');
+        end;
+
+      for un in pom do
+        PlaceUnitXYR(un, Base_Positions[n][1], Base_Positions[n][2], 5, false);
+    end;
+end;
+
+function Get_Human(sex, clas, level, name);
+begin
+  PrepareHuman(sex, clas, level);
+  hc_name:= name;
+
+  Result:= CreateHuman;
+end;
+
+function get_sex;
+begin
+  if Prob(20) then
+    Result:= sex_female
+  else
+    Result:= sex_male;
+end;
+
+EXPORT function novy_vojak(strana, ridic);
+VAR i, cla;
+begin
+  case new_people of
+   0:exit;
+
+   1:if ridic then
+       PlaceUnitArea(ridic, [base1, base2] [strana], true);
+
+   2:if ridic then
+       i=Rand(1,4);
+
+   3:i=Rand(1,4);
+
+   4:i=Rand(1,10);
+  end;
+
+  if not i then exit;
+
+  cla:= [class_soldier,
+         class_engineer,
+         class_mechanic,
+         class_scientistic,
+         class_sniper,
+         class_mortar,
+         class_bazooker,
+         class_apeman_soldier,
+         class_apeman_engineer,
+         class_apeman_kamikaze] [i];
+
+  if (i < 8) then
+    uc_nation:= narodnosti[strana]
+  else
+    uc_nation:= nation_nature;
+
+  uc_side:= barvy[strana];
+
+  PlaceUnitArea(Get_Human(get_sex, cla, Rand(1,7), ''), [base1, base2] [strana], true);
+end;
+
+// ZPET - potrestani za vjeti
+// base 1
+EVERY 0$3 DO
+VAR pom, un;
+begin
+  pom:= FilterUnitsInArea(Zpet1, [[f_side, barvy[2]]]);
+  if pom then
+    begin
+      un:= pom[1];
+      ComStop(un);
+      TeleportUnit(un, 109, 59, 10, false);
+      SetLives(un, GetLives(un) div 6);
+    end;
+  enable;
+end;
+
+// base 2
+EVERY 0$3 DO
+VAR pom, un;
+begin
+  pom:= FilterUnitsInArea(Zpet2, [[f_side, barvy[1]]]);
+  if pom then
+    begin
+      un:= pom[1];
+      ComStop(un);
+      TeleportUnit(un, 109, 59, 10, false);
+      SetLives(un, GetLives(un) div 6);
+    end;
+  enable;
+end;
+
+// vzeti budov
+function getbudovy(side);
+begin
+  case side of
+    1: case rozvitost_zakladny of
+         1: Result:= [[b_depot,33,48,2]];
+         2: begin
+              SetResourceVisibility(33,54,barvy[1]);
+              Result:= [[b_depot,33,48,2],[b_oil_mine,33,54,0],[b_lab,42,63,0],[b_workshop,29,37,2],[b_armoury,48,50,4],[b_breastwork,48,44,5],[b_breastwork,57,67,4]];
+            end;
+         3: begin
+              SetResourceVisibility(33,54,barvy[1]);
+              SetResourceVisibility(33,33,barvy[1]);
+              Result:= [[b_warehouse,33,48,2],[b_oil_mine,33,54,0],[b_lab,42,63,0],[b_factory,29,37,2],[b_barracks,48,50,4],[b_bunker,48,44,5],[b_bunker,57,67,4],[b_lab,51,82,0],[b_siberite_mine,33,33,0],[b_bunker,30,27,3],[b_bunker,61,81,4]];
+            end;
+       end;
+    2: case rozvitost_zakladny of
+         1: Result:= [[b_depot,183,55,3]];
+         2: begin
+              SetResourceVisibility(174,38,barvy[2]);
+              Result:= [[b_depot,183,55,3],[b_oil_mine,174,38,0],[b_lab,170,33,3],[b_workshop,185,66,5],[b_armoury,176,66,1],[b_breastwork,174,59,1],[b_breastwork,179,75,1]];
+            end;
+         3: begin
+              SetResourceVisibility(174,38,barvy[2]);
+              SetResourceVisibility(184,84,barvy[2]);
+              Result:= [[b_warehouse,183,55,3],[b_oil_mine,174,38,0],[b_lab,170,33,3],[b_factory,185,66,5],[b_barracks,176,66,1],[b_bunker,174,59,1],[b_bunker,179,75,1],[b_lab,162,30,3],[b_siberite_mine,184,84,3],[b_bunker,183,87,1],[b_bunker,158,33,2]];
+            end;
+      end;
+  end;
+end;
+
+// nastaveni resource na zacatku
+EXPORT function set_resource_na_zacatku;
+VAR pom;
+begin
+  pom:= FilterAllUnits([[f_side, barvy[1]],[f_type, unit_building]]);
+  if pom then
+    begin
+      SetResourceType(GetBase(pom[1]),mat_cans,resources[1]);
+      SetResourceType(GetBase(pom[1]),mat_oil,resources[2]);
+      SetResourceType(GetBase(pom[1]),mat_siberit,resources[3]);
+    end;
+
+  pom:= FilterAllUnits([[f_side, barvy[2]],[f_type, unit_building]]);
+  if pom then
+    begin
+      SetResourceType(GetBase(pom[1]),mat_cans,resources[1]);
+      SetResourceType(GetBase(pom[1]),mat_oil,resources[2]);
+      SetResourceType(GetBase(pom[1]),mat_siberit,resources[3]);
+    end;
+end;

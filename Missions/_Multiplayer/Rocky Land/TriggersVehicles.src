@@ -1,0 +1,131 @@
+export
+  to_be_countdowned;
+
+every 0$0.2 trigger to_be_countdowned marked 25 do
+  var who,timer;
+  begin
+    enable;
+
+    who:=to_be_countdowned[1];
+    to_be_countdowned:=Delete(to_be_countdowned,1);
+
+    repeat
+      timer:=GetTag(who);
+      if GetSide(who)=your_side then
+        SetUnitDisplayNumber(who,timer);
+      timer:=timer-1;
+      SetTag(who,timer);
+      wait(0$1);
+    until not IsLive(who) or not GetTag(who);
+
+    if not GetTag(who) then
+      SetLives(who,0);
+  end;
+
+every 0$0.5+0$0.05 marked 25 do
+  var un,veh;
+  begin
+    veh:=FilterUnitsInArea(exitarea,[[f_type,unit_vehicle],f_not,[f_empty],f_not,[f_side,0]]);
+    for un in veh do
+      ComExitVehicle(veh);
+
+    veh:=FilterUnitsInArea(exitarea,[[f_type,unit_vehicle],[f_empty],f_not,[f_side,0]]);
+    for un in veh do
+      begin
+        SetMultiScore(GetSide(un),GetMultiScore(GetSide(un))+1);
+        RemoveUnit(un);
+        DestroyUnit(un);
+      end;
+    enable;
+  end;
+
+
+every 0$1+0$0.1 marked 25 do
+  var i,best,nbest,lastbest,s,first,n;
+  begin
+    lastbest:=99999;
+    s:=[];
+    n:=1;
+    repeat
+      best:=-99999;
+      nbest:=0;
+      for i:=1 to 8 do
+        if Side_Positions[i] then
+          begin
+            if (GetMultiScore(i)>best)and(GetMultiScore(i)<lastbest) then
+              begin
+                best:=GetMultiScore(i);
+                nbest:=1;
+              end
+            else if GetMultiScore(i)=best then
+              begin
+                nbest:=nbest+1;
+              end;
+          end;
+      first:=true;
+      if nbest>0 then
+        for i:=1 to 8 do
+          if Side_Positions[i] then
+            if GetMultiScore(i)=best then
+              if nbest=1 then
+                s:=s^['#Multi-score',n,i,i,i,best]
+              else
+                s:=s^['#Multi-score-range',n,n+nbest-1,i,i,i,best];
+      n:=n+nbest;
+      lastbest:=best;
+    until nbest=0;
+    if game_time then s:=['#Hunt-Limit',0,game_time-tick]^s;
+    display_strings:=s;
+    enable;
+  end;
+
+every 0$1 marked 25 do
+  var veh;
+  begin
+    repeat
+      repeat
+        veh:=FilterAllUnits([f_type,unit_vehicle]);
+        wait(0$3);
+      until veh<vehmax;
+
+      wait(Rand(vehresp[1] div side_count,vehresp[2] div side_count));
+
+      vehicles_create_vehicle(false);
+    until false;
+  end;
+
+
+every 3 marked 25 do
+  var side,peop;
+  begin
+    if not to_resp then
+      exit;
+
+    enable;
+
+    side:=to_resp[1];
+    to_resp:=Delete(to_resp,1);
+
+    repeat
+      repeat
+        peop:=FilterAllUnits([[f_type,unit_human],[f_side,side],[f_ok]]);
+        wait(0$5);
+      until peop<npeop;
+
+      wait(Rand(peopresp[1],peopresp[2]));
+
+      uc_side:=side;
+      uc_nation:=side_nations[side];
+
+      hc_name:='';
+      PrepareMechanic(0,4);
+      hc_importance:=0;
+      hc_gallery:='';
+      PlaceUnitArea(CreateHuman,arstartveh,true);
+
+    until false;
+
+  end;
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

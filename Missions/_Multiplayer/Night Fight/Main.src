@@ -1,0 +1,565 @@
+{7 siberit - [[112 117],[131 86],[207 145],[180 86],[118 36],[103 65],[54 54]]
+9 ropy - [[91 110],[107 84],[210 125],[147 113],[144 46],[91 42],[39 68],[128 147],[136 3]]
+
+dvojice
+S 112 117 + R 91 110
+S 131 86 + R 107 84
+S 207 145 + R 210 125
+S 180 86 + R 147 113
+S 118 36 + R 144 46
+S 103 65 + R 91 42
+S 54 54 + R 39 68
+                 
+ostatní ropa
+R 128 147
+R 136 3    }
+EXPORT Def_pocet_lidi,         
+       Def_uroven_konvoje,
+       def_priblizna_uroven,
+       def_cetnost_zasilek,
+       def_mnozstvi_lozisek,
+       def_nahodnost_lozisek,
+       deF_viditelnost_stran,
+       def_sib_detekce,
+       def_obnovovaci_cas,
+       def_pocet_opicaku,
+       def_pocet_tygru,
+       def_arab,
+       def_sib_bomb;
+
+export  pocet_lidi,
+        priblizna_uroven, initial_level,
+        cetnost_zasilek,
+        obnova_opic,
+        obnova_tygru,
+        obnovovaci_cas_min,
+        obnovovaci_cas_max,
+        respawning_time_delay_min,
+        respawning_time_delay_max,
+        pozice_ropy,
+        pozice_sib,
+        pozice_beden,
+        start_def;
+
+export  Game_Type,Player_Side,Player_Team,Side_Positions,Side_Nations,Side_Teams,Teams,Side_Count,team_Count,Team_Game;
+
+export  commander;
+
+var global_units,
+    global_defined,
+    soldiers_created;
+
+function cteni_multiplayeru_a_hernich_parametru;
+var strana,un,i,stran,sib,oil,loziska_ropy,loziska_sib,pozice,souradnice;
+begin
+
+  if MultiPlayer then                      // definice pro multiplayer
+    begin
+
+      Player_Side= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+      Player_Team= mp_player_team;         // cislo tymu, za ktery hrac hraje
+
+      Side_Positions= mp_sides_positions;  // pro kazdou stranu jeji pozice, 0 - neucastni se
+      Side_Teams=  mp_sides_teams;         // pro kazou stranu jeji tym
+      Side_Nations= mp_sides_nations;      // pro každou stranu jeji národ
+
+      {Positions= mp_positions;}           // ... seznam stran na jednotlivych pozicich, 0 - zadna
+      Teams= mp_teams;                     // ... seznam seznamu clenu tymu
+    end
+  else
+    begin                                  // stranové a týmové definice pro editor
+      Game_Type=1;
+
+      Player_Side    = 4;
+      Player_Team    = 2;
+
+      Side_Positions = [2,0,0,1,5,3,0,4];
+      Side_Teams     = [2,0,0,1,1,1,0,2];
+      Side_Nations   = [2,0,0,1,3,2,0,2];
+
+      {Positions   = [4,0,2,7];}
+//      Teams          = [[2,7],[6,4]];
+      Teams          = [[4,6,5],[1,8]];
+    end;
+
+  // odvozene stranové a týmové definice
+  Side_Count=(Side_Positions diff [0])+0;
+  Team_Count=(Side_Teams diff [0])+0;
+
+  // herní nastavení pro pravý mutiplayer
+  if MultiPlayer then
+    begin
+      def_pocet_lidi=         GetMultiplayerSetting(1);
+      def_priblizna_uroven=   GetMultiplayerSetting(2);
+      def_cetnost_zasilek=    GetMultiplayerSetting(4);
+      def_mnozstvi_lozisek=   GetMultiplayerSetting(5);
+      def_nahodnost_lozisek=  GetMultiplayerSetting(6);
+      def_uroven_konvoje=     GetMultiplayerSetting(7);
+      deF_viditelnost_stran=  GetMultiplayerSetting(10);
+      def_sib_detekce=        GetMultiplayerSetting(12);
+      def_sib_bomb=           GetMultiplayerSetting(15);
+      def_pocet_opicaku=      GetMultiplayerSetting(13);
+      def_pocet_tygru=        GetMultiplayerSetting(18);
+      def_obnovovaci_cas=     GetMultiplayerSetting(14);
+    end
+  else
+    begin                                  // herni nastaveni pro editor
+      randomize;
+
+      def_pocet_lidi=         3;
+      def_priblizna_uroven=   2;
+      def_cetnost_zasilek=    1;
+      def_mnozstvi_lozisek=   0;
+      def_nahodnost_lozisek=  0;
+      deF_viditelnost_stran=  1;
+      def_sib_detekce=        1;
+      def_sib_bomb=           1;
+      def_pocet_opicaku=      2;
+      def_pocet_tygru=        2;
+      def_obnovovaci_cas=     1;
+      def_uroven_konvoje=     3;
+    end;
+
+    if isSGUI then
+       setMpTechs();
+
+  pocet_lidi                  = [6,9,12,15,18,21,24] [def_pocet_lidi+1];
+  priblizna_uroven            = [2,3,4,5] [def_priblizna_uroven+1];
+  cetnost_zasilek             = [ 20, 30, 40 ] [def_cetnost_zasilek+1];
+
+  obnova_opic                 = [0, 165,140,115] [def_pocet_opicaku+1];
+  obnova_tygru                = [0, 165,140,115] [def_pocet_tygru+1];
+  obnovovaci_cas_min         = [0$0,  4$00, 0$50] [def_obnovovaci_cas+1];
+  obnovovaci_cas_max         = [0$0, 10$00, 2$00] [def_obnovovaci_cas+1];
+  respawning_time_delay_min   := [0$0, 0$30, 0$15] [def_obnovovaci_cas+1];
+  respawning_time_delay_max   := [0$0, 1$00, 0$45] [def_obnovovaci_cas+1];
+
+  initial_level = priblizna_uroven ;
+  pozice_sib:=[[112, 117],[131, 86],[207, 145],[180, 86],[118, 36],[103, 65],[54, 54]];
+  pozice_ropy:=[[91, 110],[107, 84],[210, 125],[147, 113],[144, 46],[91, 42],[39, 68],[128, 147],[136, 3]];
+  pozice_beden:=[Bedny1,Bedny2,Bedny3,Bedny4,Bedny5,Bedny6,Bedny7,Bedny8,Bedny9];
+
+  pozice=NahodneIndexy([1,2,3,4,5,6,7]);
+  souradnice=[[38,51], [77,17], [155,21], [79,141], [176,142], [193,105]];
+  start_def:= [souradnice[pozice[1]], souradnice[pozice[2]], souradnice[pozice[3]], souradnice[pozice[4]], souradnice[pozice[5]], souradnice[pozice[6]]  ] ;
+
+ stran=[];
+ for i=1 to Side_Positions do
+  if Side_Positions[i] then
+   stran=stran^i;
+
+loziska_ropy=NahodneIndexy([1,2,3,4,5,6,7,8,9,10]);
+loziska_sib=NahodneIndexy([1,2,3,4,5,6,7,8]);
+ case def_mnozstvi_lozisek of
+   0: begin
+      oil=stran+0;
+      sib=(stran/2)+0.8;
+      end;
+   1: begin
+      oil=stran+0;
+      sib=stran+0;
+      end;
+   2: begin
+      oil=9;
+      sib=7;
+     end;
+ end;
+
+ if def_nahodnost_lozisek and not def_mnozstvi_lozisek=2 then
+   begin
+      for i=1 to sib do
+      begin
+        CreateDepositXY(pozice_ropy[loziska_sib[i]][1],pozice_ropy[loziska_sib[i]][2],mat_oil);
+        loziska_ropy := loziska_ropy diff loziska_sib[i];
+      end;
+      if sib <> oil then
+      for i=1 to (oil-sib) do
+        CreateDepositXY(pozice_ropy[loziska_ropy[i]][1],pozice_ropy[loziska_ropy[i]][2],mat_oil);
+    end
+ else
+   for i=1 to oil do
+        CreateDepositXY(pozice_ropy[loziska_ropy[i]][1],pozice_ropy[loziska_ropy[i]][2],mat_oil);
+
+  for i=1 to sib do
+        CreateDepositXY(pozice_sib[loziska_sib[i]][1],pozice_sib[loziska_sib[i]][2],mat_siberit);
+
+ // display_strings=[stran] ^''^ [loziska_sib] ^''^ [loziska_ropy];
+end;
+
+function NahodneIndexy(arr);
+var i, x, n;
+var novy;
+begin
+     x:=arr;
+     for i:=1 to arr do
+     begin
+          n:=x[rand(1,arr-i)];
+          novy:=novy^[arr[n]];
+          x:=x diff n;
+     end;
+
+     result:=novy diff [0];
+end;
+
+//spoleèný fog
+function nastav_viditelnost_stran_a_alianci;
+var i, j;
+begin
+  Team_Game:=0;
+  for i=1 to 8 do
+    Team_Game:=Team_Game + Side_Teams[i];
+
+  if not Team_Game then
+    Team_Game:=false
+  else
+    Team_Game:=true;
+
+  if not Team_Game then
+    begin
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if i<>j then
+            SetAttitude(i,j,att_neutral,true)
+          else
+            SetAttitude(i,j,att_friend,true);
+    end
+  else
+    begin
+      if deF_viditelnost_stran then
+        begin
+          for i in Teams do
+            for j=2 to i do
+              ChangeSideFog( i[j], i[1] );
+        end;
+
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if Side_Teams[i]=Side_Teams[j] then
+            SetAttitude(i,j,att_friend,true)
+          else
+            SetAttitude(i,j,att_enemy,true);
+    end;
+end;
+
+
+// vytvoøí poèet lidí s tøídou cl až r hexù od bodu x, y
+// pokud velitel je nastaven na hodnotu true, pak první z nich má vìtší význam a úroveò
+// vrátí seznam vytvoøených jednotek
+export function priprava_lidi(side,count,cl,x,y,r,var commander);
+var i,j,un;
+begin
+  result:=[];
+  for i:=1 to count do
+    begin
+      uc_direction:=Rand(0,5);
+      if commander then
+        begin
+          hc_name := mp_sides_players_names[side];
+          PrepareHuman(Rand(1,2),cl,priblizna_uroven+2);
+          hc_importance:=105;
+          commander:=false;
+          If Multiplayer then
+          begin
+           hc_gallery:= 'MULTIAVATARS';
+           hc_face_number:=Multiplayer_GetPlayerSideNum(Side);
+           hc_sex := Multiplayer_GetPlayerSex(Side);
+          end;
+        end
+      else
+        begin
+          hc_name := '';
+          PrepareHuman(rand(1,2),cl,priblizna_uroven);
+          hc_importance:=0;
+          If Multiplayer then
+          begin
+           hc_gallery:= '';
+           hc_face_number:=0;
+          end;
+        end;
+
+      un:=CreateHuman;
+
+      if global_defined then
+        begin
+          j:=i;
+          if cl=class_soldier then
+            j:=i+soldiers_created;
+          CopySkills(global_units[cl][j],un);
+          SetAttr(un, attr_speed,   GetAttr( global_units[cl][j], attr_speed)   );
+          SetAttr(un, attr_stamina, GetAttr( global_units[cl][j], attr_stamina) );
+        end;
+
+      PlaceUnitXYR(un,x,y,r,false);
+      result:=result ^ [un];
+    end;
+
+  if not global_defined then
+    if cl=class_soldier and global_units then
+      global_units:=[ global_units[1] ^ result ]
+    else
+      global_units:=global_units ^ [result]
+end;
+
+
+// pøíprava jednotek dané strany
+function priprava_strany(side);
+var pos,x,y,i,r,
+    sol,br,dep,
+    neng,nsci,nmech,nsol,pocet_bunkru_obsazenych;
+begin
+  // pozice strany
+  pos:=Side_Positions[side];
+
+  // nastavení globálních parametrù
+  uc_nation:=Side_Nations[side];
+  uc_side:=side;
+
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+
+   neng:=pocet_lidi;
+
+
+  nsol:=0;
+  if nsol<neng div 4 then
+    nsol:=neng div 4;
+
+  neng:=neng-nsol;
+
+  // at least one scientist...
+  nsci:=neng div 3;
+  if nsci<1 then
+    nsci:=1;
+  neng:=neng-nsci;
+
+  nmech:=neng div 2;
+  neng:=neng-nmech;
+
+  if neng<1 then neng:=1;
+
+  // at least one engineer (even if this means to incease amount of people)
+
+
+  // first will be the commander
+  commander:=true;
+
+
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+
+  // place remaining soldiers and other people to the flag
+  priprava_lidi(side,nsol,class_soldier,x,y,5,commander);
+  priprava_lidi(side,neng,class_engineer,x,y,5,commander);
+  priprava_lidi(side,nmech,class_mechanic,x,y,5,commander);
+  priprava_lidi(side,nsci,class_scientistic,x,y,5,commander);
+
+  if not global_defined then
+    global_defined:=true;
+
+  if def_sib_detekce then
+    SetTech(tech_SibDet,side,state_researched);
+
+  priprava_vozidla(side,def_uroven_konvoje,x,y,5);
+
+end;
+
+function priprava_vozidla(side,k,x,y,r);
+var i,un;
+begin
+  uc_nation:=Side_Nations[side];
+  uc_side:=side;
+
+case uc_nation of
+  1: Case k of
+     1: begin
+          vc_weapon=us_cargo_bay;
+          vc_chassis=us_medium_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+       end;
+     2: begin
+          vc_weapon=us_cargo_bay;
+          vc_chassis=us_medium_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+          vc_weapon=us_light_gun;
+          vc_chassis=us_medium_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+        end;
+     3: Begin
+          vc_weapon=us_cargo_bay;
+          vc_chassis=us_medium_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+          for i=1 to 2 do
+          begin
+          vc_weapon=us_light_gun;
+          vc_chassis=us_medium_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+          end;
+     end;end;
+  2: Case k of
+     1: begin
+          vc_weapon=ar_cargo_bay;
+          vc_chassis=ar_half_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+       end;
+     2: begin
+          vc_weapon=ar_cargo_bay;
+          vc_chassis=ar_half_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+
+          vc_weapon=ar_light_gun;
+          vc_chassis=ar_half_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+        end;
+     3: Begin
+          vc_weapon=ar_cargo_bay;
+          vc_chassis=ar_half_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+
+          for i=1 to 2 do
+          begin
+          vc_weapon=ar_light_gun;
+          vc_chassis=ar_half_tracked;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          end;
+     end;end;
+  3: Case k of
+     1: begin
+          vc_weapon=ru_cargo_bay;
+          vc_chassis=ru_medium_wheeled;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+       end;
+     2: begin
+          vc_weapon=ru_cargo_bay;
+          vc_chassis=ru_medium_wheeled;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+
+          vc_weapon=ru_gun;
+          vc_chassis=ru_medium_wheeled;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+        end;
+     3: Begin
+          vc_weapon=ru_cargo_bay;
+          vc_chassis=ru_medium_wheeled;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          setcargo(un,mat_oil,20);
+          addcargo(un,mat_cans,70);
+          addcargo(un,mat_siberit,10);
+
+          for i=1 to 2 do
+          begin
+          vc_weapon=ru_gun;
+          vc_chassis=ru_medium_wheeled;
+          un:=createvehicle;
+          PlaceUnitXYR(un,x,y,r,false);
+          end;
+     end;
+ end;end;
+end;
+       
+
+
+
+// pøíprava všech stran vèetnì nulových
+function priprava_stran;
+var i;
+begin
+  global_units:=[];
+  global_defined:=false;
+
+  for i:=1 to Side_Positions do
+    if Side_Positions[i] then
+      priprava_strany(i);
+end;
+
+
+starting
+begin
+  enable_human_prediction:=true;
+
+  Vypni_vsechny_Markety;
+  mp_selectmsg:=true;
+
+  cteni_multiplayeru_a_hernich_parametru;
+  nastav_viditelnost_stran_a_alianci;
+      
+  ResetFog;
+  ClearAllFogForSide(Player_Side);
+
+  priprava_stran;
+  Init_Podminky_Vyhry;
+  InitMultiplayerTime;
+  //    prepare_apemen;
+  //init_zasilky_a_obnova;
+  Oblasti_Bedny;
+  init_respawn;
+
+  your_side:=Player_Side;
+  music_nat:=Side_Nations[your_side];
+  //ResetFog;
+  CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
+
+
+end;
+
+every 0$1 do
+var i;
+begin
+  for i=1 to 8 do
+  begin
+    SetTech(tech_SibFiss,i,state_disabled);
+    SetTech(73,i,state_disabled);
+  end;
+  case def_sib_bomb of
+    0:exit;
+    2:wait(30$0);
+    3:wait(60$0);
+    4:wait(90$0);
+    5:wait(120$0);
+  end;
+  for i=1 to 8 do
+  begin
+    SetTech(tech_SibFiss,i,state_enabled);
+    SetTech(73,i,state_enabled);
+  end;
+end;

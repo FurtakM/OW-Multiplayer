@@ -1,0 +1,6 @@
+begin
+? type grass
+? subtype 4
+ ! rgb 90 70 50
+ ! sat 40
+end

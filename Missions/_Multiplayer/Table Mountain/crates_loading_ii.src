@@ -1,0 +1,50 @@
+var shipment,tictac;
+
+// selection of first kvadrant
+export function init_shipments;
+begin
+  shipment:=Rand(0,3);
+  tictac:=0;
+end;
+
+
+
+every 0$5+0$1.1 Marked 66 do
+var d;
+begin
+                case tick of
+       1.. 1$0:  d:=150;
+   1$0+1.. 5$0:  d:=100;
+   5$0+1..10$0:  d:=90;
+  10$0+1..20$0:  d:=70;
+  20$0+1..30$0:  d:=60;
+  30$0+1..50$0:  d:=35;
+  50$0+1..300$0: d:=20;
+           else  d:=0;
+               end;
+
+  if rand(1,10000)<=d*shipments_density then
+    begin
+      wait(Rand(1,0$4));
+      shipment:=(shipment+1) mod 4;
+//      CreateCratesArea(5,nw+shipment,true);
+    end;
+  enable;
+end;
+
+
+
+every 0$10 trigger TICK>( (3$0*tictac) + tictac * (1$30 - shipments_density*(0$2)) ) Marked 66 do
+var i,amount,is_in;
+begin
+  tictac:=tictac+1;
+  amount:=Rand(3,5);
+
+  for i=0 to 3 do
+    begin
+//      is_in:=GetResourceArea(north_west+i,mat_cans);
+//      if (is_in<500) or (Rand(1,10)>(is_in div 100)) then
+//        CreateCratesArea(amount,north_west+i,true);
+    end;
+  enable;
+end;

@@ -1,0 +1,13 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED Crates
+  ENABLED Respawn
+  ENABLED Apemens
+  ENABLED Events
+  DISABLED DayNight
+  DISABLED Win
+  ENABLED battle_flags
+  ENABLED BuildUp
+  ENABLED game_modes
+  ENABLED clock
+END_OF_SOURCE_CODES

@@ -1,0 +1,22 @@
+// Keep this module last!
+
+export ExtraStrings;
+export WaitServerStrings;
+
+
+export function ShowTimer;
+var AllStrings;
+begin
+  AllStrings:= ['#Multi1x1-Time', tick];
+  if WaitServerStrings then AllStrings = AllStrings ^ WaitServerStrings;
+  if 0<=siberite_bomb_Delay-tick then AllStrings:= AllStrings ^ ['#allowedsibbomb',siberite_bomb_Delay-tick];
+  if (ExtraStrings) then AllStrings:= AllStrings ^ '' ^ ExtraStrings;
+  if (LimitsStrings) then AllStrings:= AllStrings ^ '' ^ LimitsStrings;
+  Display_Strings:= AllStrings;
+end;
+
+every 0$1 do
+begin
+  ShowTimer;
+  Enable;
+end;

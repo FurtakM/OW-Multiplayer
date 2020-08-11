@@ -1,0 +1,351 @@
+export artefact_number,            // numbers of artefact in the game
+       artefact_num,               // transform table for artefact
+       artefact_size;              // transform table for artefact
+
+export labs_in_use;                // list of labs where research is in progress
+
+// Tag definition for artefact using (each artefact starts at art_number*100+
+//  01 - icon for artefact research
+//  02 - icon for artefact use
+//  03 - artefact event on click
+//  04 -
+//  05 - research difficulty     (number)
+//  06 - siberite to use         (number)
+//  07 - recharge difficulty     (number)
+//  08 - is researching          (boolean)
+//  09 - is loaded               (boolean)
+//  10 - recharging artefact     (boolean)               <- not in use
+// *11 - active lab              (building no.)
+//  12 - artefact researching    (boolean)
+//  13 - unit in which is loaded (number)
+
+//  21 - artefact researched     (boolean)
+//  22 - research progress       (number)
+//  23 - recharging status       (number)
+//  25 - lab with permanent icon (number)
+
+
+// Main artefact definitions
+export function init_alien_research;
+var art_icons,         // list of icons
+    art_events,        // list of artefact events
+    art_difficulty,    // list of difficulties for each artefacts
+    art_cost,          // list of siberite costs
+    art_recharge;      // list of recharging delays
+begin
+  artefact_number:= 3;
+  artefact_num:=    [ 1, 0, 2, 0, 3 ];         // artefact of size 3 is artefact num 2, etc.
+  artefact_size:=   [ 1, 3, 5 ];
+
+  // icons for       research         using
+  art_icons:=   [  [ art_exp_left,    art_use_eye ],
+                   [ art_exp_mid,     art_use_sibexplosion ],
+                   [ art_exp_right,   art_use_power ]
+                ];
+
+  // artefact          1           2          3
+  art_events:=  [  art_place,  art_unit,  art_place  ];
+                                   
+  // artefact           1    2      3
+  art_difficulty:=  [  150,  250,  400 ];
+  art_cost:=        [    2,   10,   20 ];
+  art_recharge:=    [    6,   18,   50 ];     // count of 5-seconds intervals
+
+  Get_Init_Artefacts(art_icons, art_events, art_difficulty, art_cost, art_recharge);
+
+  // DOPLNIT SPRAVNE FCE NA RADCE 180
+end;
+
+
+// Initialize artefact from defined values
+function Get_Init_Artefacts(art_icons, art_events, art_difficulty, art_cost, art_recharge);
+var un,i,side,base;
+begin
+  Disable(1);
+  Disable(5);
+  Disable(6);
+  Disable(7);
+
+  // allow research alien technology
+  for side=1 to 8 do
+    SetArtifactRes(side,state_enabled);
+
+  // artefact definition
+  for un=0 to (artefact_number-1) do
+    begin
+      base:=un*100;
+      SetTag(base+01, art_icons[un+1][1]   );
+      SetTag(base+02, art_icons[un+1][2]   );
+      SetTag(base+03, art_events[un+1]     );
+//    SetTag(base+04,                      );
+      SetTag(base+05, art_difficulty[un+1] );
+      SetTag(base+06, art_cost[un+1]       );
+      SetTag(base+07, art_recharge[un+1]   );
+      SetTag(base+08, false                );    // is researching
+      SetTag(base+09, false                );    // is loaded
+      SetTag(base+11, 0                    );
+      SetTag(base+12, false                );
+      SetTag(base+13, false                );
+
+      for i=0 to 7 do
+        begin
+          SetTag(base+i*10+21, false);
+          SetTag(base+i*10+22, 0);
+          SetTag(base+i*10+23, 0);
+          SetTag(base+i*10+25, 0);
+        end;
+    end;
+
+  Enable(20);
+
+  labs_in_use:=[];
+
+  if def_artefact_one then
+    begin
+      CreateResourcesArea(mat_artefact,artefact_size[1],artefact_area,false);
+      Enable(5);
+    end;
+  if def_artefact_two then
+    begin
+      CreateResourcesArea(mat_artefact,artefact_size[2],artefact_area,false);
+      Enable(6);
+    end;
+  if def_artefact_three then
+    begin
+      CreateResourcesArea(mat_artefact,artefact_size[3],artefact_area,false);
+      Enable(7);
+    end;
+end;
+
+
+
+
+
+//----------------------------------------------//
+//-----  MAIN EVENTS FOR ARTEFACTS ENGINE  -----//
+
+// Inicialization and deinicialization of artefact research in labs
+on ArtifactUnloaded(un,size) do
+var art,base;
+begin
+  art:=artefact_num[size];
+  base:=(art-1)*100;
+  SetTag(base+09, false);
+  SetTag(base+13, false);
+  Init_Lab(art);
+end;
+
+on ArtifactLoaded(un,size) do
+var art,base,side;
+begin
+  art:=artefact_num[size];
+  base:=(art-1)*100;
+  SetTag(base+09, true);
+  SetTag(base+13, un);
+  If GetTag(base+11) then
+    begin
+      side:=GetSide(GetTag(base+11));
+      if GetTag(base+12) then
+        begin
+          ComCancel(GetTag(base+11));
+          wait(5);
+          labs_in_use:=labs_in_use diff GetTag(base+11);
+          SetTag(base+12,false);
+        end;
+      if not GetTag(base+side*10+11) then
+        DeInit_Lab(side,art);               // deleting icon from lab when art isn't researched yet
+      SetTag(base+11,0);
+    end;
+end;
+
+// update of icons when main artefact technology is researched
+on ArtifactResearchComplete(lab) do
+var un,side;
+begin
+  side:=GetSide(lab)-1;
+  for un=0 to (artefact_number-1) do
+    if lab=GetTag(un*100+11) then
+      Init_Lab(un+1);
+end;
+
+// canceling artefact research
+on SpecResearchCancel(lab,progress) do
+var un,side;
+begin
+  side:=GetSide(lab)-1;
+  for un=0 to (artefact_number-1) do
+    if (GetTag(un*100+11)=lab) and GetTag(un*100+12) then
+      begin
+        SetTag(un*100+side*10+22,progress);      // saving research progress
+        SetTag(un*100+12,false);
+        labs_in_use:=labs_in_use diff lab;
+        break;
+      end;
+
+  Update_Artefact(lab);
+end;
+
+// Vyzkum artefaktu dokoncen
+on SpecResearchComplete(lab) do
+var un,side;
+begin
+  side:=GetSide(lab)-1;
+
+  for un=0 to (artefact_number-1) do
+    if (GetTag(un*100+11)=lab) and GetTag(un*100+12) then
+      begin
+        SetTag(un*100+12,false);            // artefact is no longer researching
+        SetTag(un*100+side*10+21,true);     // side finish research of artefact
+        SetTag(un*100+side*10+25,lab);      // permament icon for this lab
+        labs_in_use:=labs_in_use diff lab;
+      end;
+
+  Update_Artefact(lab);
+end;
+
+// artefact usage
+on ArtifactUsed(side,number,p1,p2) do
+var un,succes,art,base;
+begin
+  art:=((number-1) mod 3) + 1;
+  base:=(art-1)*100;
+
+  if number<=3 then
+    begin
+      SetSpecResearch(GetTag(base+11),GetTag(base+05),true);
+      SetWorkingProgress(GetTag(base+11),GetTag(base+side*10+12));
+      SetTag(base+12,true);                                             // artefact researching  (boolean)
+      labs_in_use:=labs_in_use ^ GetTag(base+11);
+      for un=0 to (artefact_number-1) do                                // removing all artefact icons in labs
+        if GetTag(base+11) in [GetTag(un*100+11),GetTag(un*100+side*10+15)] then
+          DeInit_Lab(side,un+1);
+    end
+  else
+    begin
+      succes:=false;
+        case art of                                                     // calling artefact functions
+      1: succes:=Show_me_map(side,p1,p2);                               // DOPLNIT SPRAVNE FCE
+      2: succes:=Destroy_siberite(side,p1);
+      3: succes:=Contamine(side,p1,p2);
+        end;     
+
+      if succes then
+        begin
+          SetTag(base+side*10+13,GetTag(base+07));                      // recharging artefact (icon goes to gray)
+
+          Shadow_Artefact(side,art);                                    // icon goes to gray
+        end;
+    end;
+end;
+
+// Shadow icon when artefact was used
+export function Shadow_Artefact(side,art);
+var base,lab;
+begin
+  base:=(art-1)*100;
+  lab:=GetTag(base+side*10+15);
+  if lab and (not lab in labs_in_use) then
+    SetArtifactUse(side,GetTag(base+01 + GetTag(base+ side*10+11)),art_gray,lab);
+end;
+
+// Highlight artefact when recharged
+export function Highlight_Artefact(side,art);
+var base,lab;
+begin
+  base:=(art-1)*100;
+  lab:=GetTag(base+side*10+15);
+  if lab and (not lab in labs_in_use) and UnitsInside(lab) then
+    SetArtifactUse(side,GetTag(base+01 + GetTag(base+ side*10+11)),GetTag(base+03),lab);
+end;
+
+// Setting icons in laboratories
+export function Init_Lab(art);
+var list,side,base,
+    dist,           // distance of nearest lab to artefact
+    state,          // state of icon
+    art_hex,        // souradnice artefaktu
+    nearest_lab;    // nearest lab to artefact
+begin
+  art_hex:=FindArtifact(artefact_size[art]);
+
+  if not art_hex then
+    exit;
+  list:=FilterAllUnits([ [f_or, [f_btype,b_lab], [f_btype,b_lab_half], [f_btype,b_lab_full]] ]);
+  nearest_lab:=NearestUnitToXY(list,art_hex[1],art_hex[2]);
+  dist:=GetDistUnitXY(nearest_lab,art_hex[1],art_hex[2]);
+
+  if dist<9 then
+    begin
+      side:=GetSide(nearest_lab);
+      DeInit_Lab(side,art);
+      base:=(art-1)*100;
+
+      if (GetTech(tech_Artifact,side)=state_researched) and              // main artefact technology is researched
+         (UnitsInside(nearest_lab)) then
+        begin
+          if GetTag(base+side*10+11) then                                // artefact researched
+            begin
+              if not GetTag(base+side*10+13) then                        // artefact is not recharging
+                state:=GetTag(base+03)
+              else
+                state:=art_gray;
+              if GetTag(base+side*10+15) and                             // removing icon from old lab
+                (GetTag(base+side*10+15)<>nearest_lab) then
+                DeInit_Lab(side,art);
+              SetTag(base+side*10+15,nearest_lab);                       // setting permanent icon for new lab
+            end
+          else
+            state:=art_instant;
+        end
+      else
+        state:=art_gray;
+
+      SetTag(base+11,nearest_lab);
+      if not (nearest_lab in labs_in_use) then
+        SetArtifactUse(side,GetTag(base+01 + GetTag(base+ side*10+11)),state,nearest_lab);
+    end;
+end;
+
+// Deleting Icons from laboratories
+export function DeInit_Lab(side,art);
+var base,lab;
+begin
+  base:=(art-1)*100;
+  lab:=GetTag(base+side*10+15);
+  if not lab then
+    lab:=GetTag(base+11);
+  SetArtifactUse(side,GetTag(base+01 + GetTag(base+ side*10+11)),art_no,lab);
+end;
+
+// Update icons when research (or cancel) is done
+export function Update_Artefact(lab);
+var art,side,base;
+begin
+  side:=GetSide(lab);
+  for art=1 to artefact_number do                                    // removing all artefact icons in labs
+    begin
+      base:=(art-1)*100;
+      if GetTag(base+11)=lab then                                    // art stoji u labu
+        Init_Lab(art)
+      else
+        begin
+          if lab=GetTag(base+side*10+15) then                        // art je vynalezeny v labu
+            begin
+              if (GetTag(base+side*10+13)>0) or (not UnitsInside(lab)) then
+                Shadow_Artefact(side,art)
+              else
+                Highlight_Artefact(side,art);
+            end;
+        end;
+    end;
+end;
+
+// Updating artefact
+{every 0$2 Marked 20 do
+var list,lab;
+begin
+  list:=FilterAllUnits([ [f_or, [f_btype,b_lab], [f_btype,b_lab_half], [f_btype,b_lab_full]] ]);
+  for lab in list do
+    Update_Artefact(lab);
+  enable;
+end;}

@@ -1,0 +1,7 @@
+export function Vypni_vsechny_Markety;
+begin
+
+  Disable(350);
+  Disable(400);
+  Disable(401);
+end;

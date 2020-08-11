@@ -1,0 +1,31 @@
+
+
+export function DE_Triggers;
+begin
+  // CTF game
+  Disable(01);
+  Disable(02);
+  Disable(03);
+  Disable(04);
+  Disable(05);
+  Disable(06);
+  Disable(07);
+
+  Disable(10);
+  Disable(11);
+  Disable(12);
+  Disable(13);
+
+  Disable(19);
+
+
+  // Big Bases game
+  Disable(40);
+  Disable(41);
+  Disable(98);
+  Disable(99);
+  Disable(55);
+
+  Disable(400); // SuddenLost
+  Disable(401); // SuddenWin
+end;

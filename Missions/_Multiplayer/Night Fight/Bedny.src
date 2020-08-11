@@ -1,0 +1,63 @@
+export function Oblasti_Bedny;
+var i, pocet_hracu;
+begin
+  pocet_hracu := 0;
+
+  for i:=1 to 8 do
+    if Side_Positions[i] <> 0 then
+       pocet_hracu := pocet_hracu + 1;
+
+  if pocet_hracu = 2 then
+    case cetnost_zasilek of
+      20: cetnost_zasilek := 8;
+      30: cetnost_zasilek := 16;
+      40: cetnost_zasilek := 24;
+    end
+  else if pocet_hracu <= 4 then
+    case cetnost_zasilek of
+      20: cetnost_zasilek := 12;
+      30: cetnost_zasilek := 24;
+      40: cetnost_zasilek := 37;
+    end
+  else
+    case cetnost_zasilek of
+      20: cetnost_zasilek := 16;
+      30: cetnost_zasilek := 32;
+      40: cetnost_zasilek := 49;
+    end;
+end;
+
+every 1$0+0$1 do  // crates anywhere on map
+begin
+ CreateCratesAnywhere(Rand(1,5),true);
+ enable;
+end;
+
+every 0$20 do // create crates only on occupied bases
+var i,d,tictac;
+begin
+   tictac:=0;
+   case tick of
+        1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=140;
+      5$0+1..10$0:d:=120;
+     10$0+1..20$0:d:=100;
+     20$0+1..30$0:d:=85;
+     30$0+1..50$0:d:=70;
+            else  d:=60;
+               end;
+
+    if GetResourceArea(all,mat_cans)<(cetnost_zasilek*2.6) then
+      if rand(1,10000)<=d*cetnost_zasilek then
+      begin
+        for i := 1 to 9 do
+          begin
+            wait(Rand(1,0$4));
+            CreateCratesArea(Rand(3,5), pozice_beden[i], true);
+            Wait(2);
+          end;
+       end;
+
+
+  enable;
+end;

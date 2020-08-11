@@ -1,0 +1,12 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED MainSheherezad
+  ENABLED MainVehicles
+  ENABLED TriggersSheherezade
+  ENABLED CommonEvents
+  ENABLED Win
+  ENABLED MainHunt
+  ENABLED TriggersVehicles
+  ENABLED VehicleAI
+  ENABLED sync
+END_OF_SOURCE_CODES

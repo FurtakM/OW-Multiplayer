@@ -1,0 +1,364 @@
+EXPORT
+  def_victory_conditions,
+  def_number_of_people,
+  def_people_respawning,
+  def_vehicles_at_start,
+  def_vehicles_respawning,
+  def_vehicles_nations,
+  def_siberite_rocket,
+  def_vehicles_durability;
+
+EXPORT
+  game_time,point_limit,
+
+  vehresp,
+  vehmax1,vehmax2,vehmax,
+  startvehperc,startveh,
+  vehdur,
+
+  npeop,
+  peopresp,
+  
+  vehnats,
+  sibrock,
+
+  to_resp;
+
+
+
+// reads definitons of multiplayer game (or simulate it in editor version)
+function read_multiplayer_and_game_parameters;
+  var i;
+  begin
+// sides and teams definitions for real Multiplayer
+    if MultiPlayer then
+      begin
+        Player_Side= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+        Player_Team= mp_player_team;         // cislo tymu, za ktery hrac hraje
+
+        Side_Positions= mp_sides_positions;  // =[1,0,3,2,0,4,0,0]; ... pro kazdou stranu jeji pozice, 0 - neucastni se
+        Side_Teams=  mp_sides_teams;         // =[1,0,1,2,0,2,0,0]; ... pro kazou stranu jeji tym
+        Side_Nations= mp_sides_nations;      // =[1,0,1,2,0,1,0,0]; ... pro kazdou stranu jeji narod
+
+        {Positions= mp_positions;}          // =[1,4,3,6];         ... seznam stran na jednotlivych pozicich, 0 - zadna (redundantni, not yet)
+        Teams= mp_teams;                     // =[[1,3],[4,6]];     ... seznam seznamu clenu tymu (redundantni)
+      end
+    else
+// sides and teams definitions for testing in editor
+      begin
+        randomize;
+
+        Player_Side    = 1;
+        Player_Team    = 0;
+
+        Side_Positions = [1,3,6,0,0,0,0,7];
+        Side_Teams     = [0,0,0,0,0,0,0,0];
+        Side_Nations   = [1,3,1,2,2,2,2,2];
+
+        {Positions   = [4,0,2,7];}
+        Teams          = [];
+      end;
+
+// derived sides and teams informations
+    Side_Count=(Side_Positions diff [0])+0;
+    Team_Count=(Side_Teams diff [0])+0;
+
+// game settings for real Multiplayer
+    if MultiPlayer then
+      begin
+        def_victory_conditions=  GetMultiplayerSetting(0);
+        def_number_of_people=    GetMultiplayerSetting(1);
+        def_people_respawning=   GetMultiplayerSetting(2);
+        def_vehicles_at_start=   GetMultiplayerSetting(3);
+        def_vehicles_respawning= GetMultiplayerSetting(4);
+        def_vehicles_nations=    GetMultiplayerSetting(5);
+        def_siberite_rocket=     GetMultiplayerSetting(6);
+        def_vehicles_durability= GetMultiplayerSetting(7);
+      end
+    else
+// game settings for testing in editor
+      begin
+// not in multiplayer!!!
+        randomize;
+
+        def_victory_conditions=  2;
+        def_number_of_people=    1;
+        def_people_respawning=   1;
+        def_vehicles_at_start=   1;
+        def_vehicles_respawning= 2;
+        def_vehicles_nations=    0;
+        def_siberite_rocket=     1;
+        def_vehicles_durability= 1;
+      end;
+
+// derived game settings
+    game_time     = [5$0,10$0,15$0,20$0,30$0,0,0,0,0,0,0] [def_victory_conditions+1];
+    point_limit   = [0,0,0,0,0,0,5,10,15,20,30,50] [def_victory_conditions+1];
+
+    npeop         = [4,6,8,10] [def_number_of_people+1];
+    peopresp      = [ false, [0$40,1$20], [0$20,0$40], [0$10,0$20] ] [def_people_respawning+1];
+
+    vehmax1       = [3,6,9] [def_vehicles_respawning+1];
+    vehmax2       = [2,4,6] [def_vehicles_respawning+1];
+    vehmax        = vehmax1+side_count*vehmax2;
+
+    vehdur        = [[40,80],[60,120],[100,200]][def_vehicles_durability+1];
+
+    vehresp       = [ [0$40,2$00],[0$20,1$00],[0$10,0$30] ] [def_vehicles_respawning+1];
+    startvehperc  = [0,10,20,40] [def_vehicles_at_start+1];
+    startveh      = vehmax*startvehperc div 100;
+
+    vehnats       = [ [1,2,3], [1], [3], [2], [1,3], [3,2], [2,1] ] [def_vehicles_nations+1];
+
+    sibrock       = [0,3,7] [def_siberite_rocket+1];
+
+    for i=1 to 8 do
+      if Side_Positions[i] then
+        to_resp:=to_resp^i;
+  end;
+
+export
+  chassis,weapons,
+  areas_wheeled,
+  areas_tracked;
+
+function prepare_map_coordinates;
+  var best,c,bestc,minv,i,j,n;
+  begin
+    areas_wheeled=[aw1,aw2,aw3,aw4];
+    areas_tracked=[at1,at2,at3,at4];
+
+    best=0;
+
+    for n=1 to 200 do
+      begin
+        c=[];
+        for i=1 to side_count do
+          c:=c^[RandHexArea(arstartveh,false)];
+
+        minv=10000;
+        for i=1 to side_count do
+          for j=1 to side_count do
+            if i<>j then
+              begin
+                if GetDistXY(c[i][1],c[i][2],c[j][1],c[j][2])<minv then
+                  minv:=GetDistXY(c[i][1],c[i][2],c[j][1],c[j][2]);
+              end;
+        if minv>best then
+          begin
+            best:=minv;
+            bestc:=c;
+          end;
+      end;
+    coordinates:=[];
+    for i=1 to 8 do
+      if side_positions[i]=0 then
+        coordinates:=coordinates^[[0,0]]
+      else
+        begin
+          coordinates:=coordinates^[bestc[1]];
+          bestc:=delete(bestc,1);
+        end;
+  end;
+
+function prepare_constants;
+  begin
+    
+     chassis=
+       [ [ [ [us_light_wheeled],[] ],
+           [ [us_medium_wheeled],[us_medium_tracked] ],
+           [ [],[us_heavy_tracked,us_morphling] ]
+         ],
+         [ [ [ar_light_trike,ar_hovercraft],[] ],
+           [ [ar_medium_trike],[ar_half_tracked] ],
+           [ [], [] ]
+         ],
+         [ [ [], [] ],
+           [ [ru_medium_wheeled],[ru_medium_tracked] ],
+           [ [ru_heavy_wheeled],[ru_heavy_tracked] ]
+         ]
+       ];
+     weapons=
+       [ [ [us_machine_gun,          1, 100],
+           [us_light_gun,            1, 100],
+           [us_radar,                1, 100],
+           [us_gatling_gun,          2, 100],
+           [us_double_gun,           2, 100],
+           [us_rocket_launcher,      2, 100],
+           [us_laser,                2, 100],
+           [us_heavy_gun,            3, 100],
+           [us_bulldozer,            3, 100],
+           [us_double_laser,         3, 100]
+         ],
+         [ [ar_multimissile_ballista,1, 100],
+           [ar_double_machine_gun,   1, 100],
+           [ar_light_gun,            1, 100],
+           [ar_radar,                1, 100],
+           [ar_gatling_gun,          2, 100],
+           [ar_gun,                  2, 100],
+           [ar_rocket_launcher,      2, 100],
+           [ar_selfpropelled_bomb,   2, 100],
+           [ar_flame_thrower,        2, 100]
+         ],
+         [ [ru_heavy_machine_gun,    2, 100],
+           [ru_gatling_gun,          2, 100],
+           [ru_gun,                  2, 100],
+           [ru_rocket_launcher,      2, 100],
+           [ru_heavy_gun,            3, 100],
+           [ru_rocket,               3, 100],
+           [ru_bulldozer,            3, 100]
+         ]
+       ];
+  end;
+
+var is_tracked;
+function random_vehicle(sibrockprob);
+  var nat,wpset,suma,tmp,i,
+      weap,wwght,wght,chs,trck;
+  begin
+    nat:=vehnats[rand(1,vehnats)];
+    if (nat in [nation_russian,nation_american])and(Rand(1,1000)<=sibrockprob) then
+      begin
+        wght:=3;
+        case nat of
+          nation_russian:weap:=ru_siberium_rocket;
+          nation_american:weap:=us_siberium_rocket;
+        end;
+      end
+    else
+      begin
+        wpset:=weapons[nat];
+        suma:=0;
+        for i:=1 to wpset do
+          suma:=suma+wpset[i][3];
+        tmp:=rand(1,suma);
+        i:=1;
+        while wpset[i][3]<tmp do
+          begin
+            tmp:=tmp-wpset[i][3];
+            i:=i+1;
+          end;
+        weap:=wpset[i][1];
+        wwght:=wpset[i][2];
+      end;
+    repeat
+      trck:=Rand(1,2);
+      case wwght of
+        3:wght:=3;
+        2:if Rand(1,100)<=80 then
+            wght:=2
+          else
+            wght:=3;
+        1:if Rand(1,100)<=80 then
+            wght:=1
+          else if Rand(1,100)<=80 then
+            wght:=2
+          else 
+            wght:=3;
+      end;
+//      msg('nat:'&nat&' weap:'&weap&' track:'&trck&' wght:'&wght);
+      if chassis[nat][wght][trck] then
+        chs:=chassis[nat][wght][trck] [Rand(1,chassis[nat][wght][trck])]
+      else
+        chs:=0;
+    until chs;
+    uc_side:=0;
+    uc_nation:=nat;
+    uc_direction:=rand(0,5);
+    vc_chassis:=chs;
+    vc_weapon:=weap;
+    vc_control:=control_manual;
+    case wght of
+      1:vc_engine:=engine_solar;
+      2,3:vc_engine:=engine_siberite;
+    end;
+    is_tracked:=trck=2;
+  end;
+
+export function vehicles_create_vehicle(atstart);
+  var v,ar;
+  begin
+    if atstart then
+      random_vehicle(0)
+    else
+      random_vehicle(sibrock);
+
+    v:=CreateVehicle;
+
+    if is_tracked then
+      ar:=areas_tracked[Rand(1,areas_tracked)]
+    else
+      ar:=areas_wheeled[Rand(1,areas_wheeled)];
+
+    PlaceUnitArea(v,ar,not atstart);
+  end;
+
+function prepare_vehicles;
+  var i;
+  begin
+    for i:=1 to startveh do
+      begin
+        vehicles_create_vehicle(true);
+      end;
+  end;
+
+function set_attitudes;
+var i, j;
+begin
+  if not Team_Game then
+    begin
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if i<>j then
+            SetAttitude(i,j,att_neutral,true)
+          else
+            SetAttitude(i,j,att_friend,true)
+    end;
+end;
+
+function prepare_side(side);
+  var i;
+  begin
+    for i:=1 to npeop do
+      begin
+        uc_side:=side;
+        uc_nation:=side_nations[side];
+
+        hc_name:='';
+        PrepareMechanic(0,4);
+        hc_importance:=0;
+        hc_gallery:='';
+        PlaceUnitXYR(CreateHuman,coordinates[side][1],coordinates[side][2],4,false);
+      end;
+  end;
+
+function prepare_sides;
+  var i;
+  begin
+    for i:=1 to 8 do
+      if side_positions[i] then
+        prepare_side(i);
+  end;
+
+
+export function starting_vehicles;
+  begin
+    mp_with_score:=true;
+    mp_selectmsg:=true;
+
+    read_multiplayer_and_game_parameters;
+    prepare_map_coordinates;
+    prepare_constants;
+    set_attitudes;
+    prepare_sides;
+    prepare_vehicles;
+
+    SetAreaMapShow(exitarea,1);
+
+    your_side:=Player_Side;
+    ResetFog;
+    music_nat:=Side_Nations[your_side];
+    CenterNowOnXY(coordinates[your_side][1],coordinates[your_side][2]);
+
+  end;
+

@@ -1,0 +1,17 @@
+SOURCE_CODES
+  ENABLED main
+  ENABLED crates_loading
+  ENABLED poeple_respawn
+  ENABLED apeman_loading
+  ENABLED events
+  DISABLED DayNight
+  ENABLED DE_Triggers
+  ENABLED win_conditions
+  ENABLED CTF
+  DISABLED Base_Names
+  DISABLED synch
+  ENABLED other_game
+  ENABLED battle_flags
+  ENABLED game_modes
+  ENABLED clock
+END_OF_SOURCE_CODES

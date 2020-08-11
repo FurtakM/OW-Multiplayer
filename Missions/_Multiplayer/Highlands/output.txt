@@ -1,0 +1,9268 @@
+// export is_depot , number_of_breastworks , number_of_people , initial_level , starting_crates , starting_resources , shipments_density , morale_decreasing_time , respawning_time_min , respawning_time_max , amount_of_apemen , siberite_bomb_Delay , def_win_rules ; export Side_Teams , Teams ; export Side_Positions , Side_Nations , Team_Game ; export depot_def , breastworks_def , start_def , extra_oil_deposits_locations , battle_flags_id , Side_Comps ; export heroes ; var commander ; var global_units , global_defined , soldiers_created ; var neng , nsci , nmech , nsol ; function init_map ; var i ; begin
+   0: LD_INT 0
+   2: PPUSH
+   3: PPUSH
+// extra_oil_deposits_locations := [ [ 35 , 55 ] , [ 189 , 74 ] , [ 214 , 123 ] , [ 83 , 154 ] ] ;
+   4: LD_ADDR_EXP 22
+   8: PUSH
+   9: LD_INT 35
+  11: PUSH
+  12: LD_INT 55
+  14: PUSH
+  15: EMPTY
+  16: LIST
+  17: LIST
+  18: PUSH
+  19: LD_INT 189
+  21: PUSH
+  22: LD_INT 74
+  24: PUSH
+  25: EMPTY
+  26: LIST
+  27: LIST
+  28: PUSH
+  29: LD_INT 214
+  31: PUSH
+  32: LD_INT 123
+  34: PUSH
+  35: EMPTY
+  36: LIST
+  37: LIST
+  38: PUSH
+  39: LD_INT 83
+  41: PUSH
+  42: LD_INT 154
+  44: PUSH
+  45: EMPTY
+  46: LIST
+  47: LIST
+  48: PUSH
+  49: EMPTY
+  50: LIST
+  51: LIST
+  52: LIST
+  53: LIST
+  54: ST_TO_ADDR
+// depot_def := [ [ 54 , 45 , 3 ] , [ 161 , 55 , 5 ] , [ 98 , 142 , 4 ] , [ 194 , 133 , 1 ] ] ;
+  55: LD_ADDR_EXP 19
+  59: PUSH
+  60: LD_INT 54
+  62: PUSH
+  63: LD_INT 45
+  65: PUSH
+  66: LD_INT 3
+  68: PUSH
+  69: EMPTY
+  70: LIST
+  71: LIST
+  72: LIST
+  73: PUSH
+  74: LD_INT 161
+  76: PUSH
+  77: LD_INT 55
+  79: PUSH
+  80: LD_INT 5
+  82: PUSH
+  83: EMPTY
+  84: LIST
+  85: LIST
+  86: LIST
+  87: PUSH
+  88: LD_INT 98
+  90: PUSH
+  91: LD_INT 142
+  93: PUSH
+  94: LD_INT 4
+  96: PUSH
+  97: EMPTY
+  98: LIST
+  99: LIST
+ 100: LIST
+ 101: PUSH
+ 102: LD_INT 194
+ 104: PUSH
+ 105: LD_INT 133
+ 107: PUSH
+ 108: LD_INT 1
+ 110: PUSH
+ 111: EMPTY
+ 112: LIST
+ 113: LIST
+ 114: LIST
+ 115: PUSH
+ 116: EMPTY
+ 117: LIST
+ 118: LIST
+ 119: LIST
+ 120: LIST
+ 121: ST_TO_ADDR
+// start_def := [ [ 53 , 52 ] , [ 152 , 45 ] , [ 91 , 140 ] , [ 200 , 132 ] ] ;
+ 122: LD_ADDR_EXP 21
+ 126: PUSH
+ 127: LD_INT 53
+ 129: PUSH
+ 130: LD_INT 52
+ 132: PUSH
+ 133: EMPTY
+ 134: LIST
+ 135: LIST
+ 136: PUSH
+ 137: LD_INT 152
+ 139: PUSH
+ 140: LD_INT 45
+ 142: PUSH
+ 143: EMPTY
+ 144: LIST
+ 145: LIST
+ 146: PUSH
+ 147: LD_INT 91
+ 149: PUSH
+ 150: LD_INT 140
+ 152: PUSH
+ 153: EMPTY
+ 154: LIST
+ 155: LIST
+ 156: PUSH
+ 157: LD_INT 200
+ 159: PUSH
+ 160: LD_INT 132
+ 162: PUSH
+ 163: EMPTY
+ 164: LIST
+ 165: LIST
+ 166: PUSH
+ 167: EMPTY
+ 168: LIST
+ 169: LIST
+ 170: LIST
+ 171: LIST
+ 172: ST_TO_ADDR
+// breastworks_def := [ [ [ 76 , 75 , 5 ] , [ 72 , 34 , 4 ] , [ 81 , 60 , 5 ] , [ 31 , 31 , 2 ] ] , [ [ 170 , 79 , 5 ] , [ 139 , 42 , 1 ] , [ 171 , 58 , 4 ] , [ 149 , 25 , 3 ] ] , [ [ 114 , 163 , 5 ] , [ 114 , 138 , 4 ] , [ 97 , 116 , 3 ] , [ 81 , 135 , 1 ] ] , [ [ 179 , 116 , 2 ] , [ 175 , 145 , 1 ] , [ 217 , 149 , 4 ] , [ 202 , 158 , 0 ] ] ] ;
+ 173: LD_ADDR_EXP 20
+ 177: PUSH
+ 178: LD_INT 76
+ 180: PUSH
+ 181: LD_INT 75
+ 183: PUSH
+ 184: LD_INT 5
+ 186: PUSH
+ 187: EMPTY
+ 188: LIST
+ 189: LIST
+ 190: LIST
+ 191: PUSH
+ 192: LD_INT 72
+ 194: PUSH
+ 195: LD_INT 34
+ 197: PUSH
+ 198: LD_INT 4
+ 200: PUSH
+ 201: EMPTY
+ 202: LIST
+ 203: LIST
+ 204: LIST
+ 205: PUSH
+ 206: LD_INT 81
+ 208: PUSH
+ 209: LD_INT 60
+ 211: PUSH
+ 212: LD_INT 5
+ 214: PUSH
+ 215: EMPTY
+ 216: LIST
+ 217: LIST
+ 218: LIST
+ 219: PUSH
+ 220: LD_INT 31
+ 222: PUSH
+ 223: LD_INT 31
+ 225: PUSH
+ 226: LD_INT 2
+ 228: PUSH
+ 229: EMPTY
+ 230: LIST
+ 231: LIST
+ 232: LIST
+ 233: PUSH
+ 234: EMPTY
+ 235: LIST
+ 236: LIST
+ 237: LIST
+ 238: LIST
+ 239: PUSH
+ 240: LD_INT 170
+ 242: PUSH
+ 243: LD_INT 79
+ 245: PUSH
+ 246: LD_INT 5
+ 248: PUSH
+ 249: EMPTY
+ 250: LIST
+ 251: LIST
+ 252: LIST
+ 253: PUSH
+ 254: LD_INT 139
+ 256: PUSH
+ 257: LD_INT 42
+ 259: PUSH
+ 260: LD_INT 1
+ 262: PUSH
+ 263: EMPTY
+ 264: LIST
+ 265: LIST
+ 266: LIST
+ 267: PUSH
+ 268: LD_INT 171
+ 270: PUSH
+ 271: LD_INT 58
+ 273: PUSH
+ 274: LD_INT 4
+ 276: PUSH
+ 277: EMPTY
+ 278: LIST
+ 279: LIST
+ 280: LIST
+ 281: PUSH
+ 282: LD_INT 149
+ 284: PUSH
+ 285: LD_INT 25
+ 287: PUSH
+ 288: LD_INT 3
+ 290: PUSH
+ 291: EMPTY
+ 292: LIST
+ 293: LIST
+ 294: LIST
+ 295: PUSH
+ 296: EMPTY
+ 297: LIST
+ 298: LIST
+ 299: LIST
+ 300: LIST
+ 301: PUSH
+ 302: LD_INT 114
+ 304: PUSH
+ 305: LD_INT 163
+ 307: PUSH
+ 308: LD_INT 5
+ 310: PUSH
+ 311: EMPTY
+ 312: LIST
+ 313: LIST
+ 314: LIST
+ 315: PUSH
+ 316: LD_INT 114
+ 318: PUSH
+ 319: LD_INT 138
+ 321: PUSH
+ 322: LD_INT 4
+ 324: PUSH
+ 325: EMPTY
+ 326: LIST
+ 327: LIST
+ 328: LIST
+ 329: PUSH
+ 330: LD_INT 97
+ 332: PUSH
+ 333: LD_INT 116
+ 335: PUSH
+ 336: LD_INT 3
+ 338: PUSH
+ 339: EMPTY
+ 340: LIST
+ 341: LIST
+ 342: LIST
+ 343: PUSH
+ 344: LD_INT 81
+ 346: PUSH
+ 347: LD_INT 135
+ 349: PUSH
+ 350: LD_INT 1
+ 352: PUSH
+ 353: EMPTY
+ 354: LIST
+ 355: LIST
+ 356: LIST
+ 357: PUSH
+ 358: EMPTY
+ 359: LIST
+ 360: LIST
+ 361: LIST
+ 362: LIST
+ 363: PUSH
+ 364: LD_INT 179
+ 366: PUSH
+ 367: LD_INT 116
+ 369: PUSH
+ 370: LD_INT 2
+ 372: PUSH
+ 373: EMPTY
+ 374: LIST
+ 375: LIST
+ 376: LIST
+ 377: PUSH
+ 378: LD_INT 175
+ 380: PUSH
+ 381: LD_INT 145
+ 383: PUSH
+ 384: LD_INT 1
+ 386: PUSH
+ 387: EMPTY
+ 388: LIST
+ 389: LIST
+ 390: LIST
+ 391: PUSH
+ 392: LD_INT 217
+ 394: PUSH
+ 395: LD_INT 149
+ 397: PUSH
+ 398: LD_INT 4
+ 400: PUSH
+ 401: EMPTY
+ 402: LIST
+ 403: LIST
+ 404: LIST
+ 405: PUSH
+ 406: LD_INT 202
+ 408: PUSH
+ 409: LD_INT 158
+ 411: PUSH
+ 412: LD_INT 0
+ 414: PUSH
+ 415: EMPTY
+ 416: LIST
+ 417: LIST
+ 418: LIST
+ 419: PUSH
+ 420: EMPTY
+ 421: LIST
+ 422: LIST
+ 423: LIST
+ 424: LIST
+ 425: PUSH
+ 426: EMPTY
+ 427: LIST
+ 428: LIST
+ 429: LIST
+ 430: LIST
+ 431: ST_TO_ADDR
+// if not def_extra_oil_deposits then
+ 432: LD_EXP 33
+ 436: NOT
+ 437: IFFALSE 478
+// for i in extra_oil_deposits_locations do
+ 439: LD_ADDR_VAR 0 2
+ 443: PUSH
+ 444: LD_EXP 22
+ 448: PUSH
+ 449: FOR_IN
+ 450: IFFALSE 476
+// RemoveDepositXY ( i [ 1 ] , i [ 2 ] ) ;
+ 452: LD_VAR 0 2
+ 456: PUSH
+ 457: LD_INT 1
+ 459: ARRAY
+ 460: PPUSH
+ 461: LD_VAR 0 2
+ 465: PUSH
+ 466: LD_INT 2
+ 468: ARRAY
+ 469: PPUSH
+ 470: CALL_OW 63
+ 474: GO 449
+ 476: POP
+ 477: POP
+// end ;
+ 478: LD_VAR 0 1
+ 482: RET
+// function read_multiplayer_and_game_parameters ; var side , dep , br1 , br2 , br3 , un , i , tech_level ; begin
+ 483: LD_INT 0
+ 485: PPUSH
+ 486: PPUSH
+ 487: PPUSH
+ 488: PPUSH
+ 489: PPUSH
+ 490: PPUSH
+ 491: PPUSH
+ 492: PPUSH
+ 493: PPUSH
+// if MultiPlayer then
+ 494: LD_OWVAR 4
+ 498: IFFALSE 562
+// begin Game_Type = mp_game_type ;
+ 500: LD_ADDR_EXP 26
+ 504: PUSH
+ 505: LD_OWVAR 6
+ 509: ST_TO_ADDR
+// Your_Side = mp_player_side ;
+ 510: LD_ADDR_OWVAR 2
+ 514: PUSH
+ 515: LD_OWVAR 7
+ 519: ST_TO_ADDR
+// Side_Positions = mp_sides_positions ;
+ 520: LD_ADDR_EXP 16
+ 524: PUSH
+ 525: LD_OWVAR 17
+ 529: ST_TO_ADDR
+// Side_Teams = mp_sides_teams ;
+ 530: LD_ADDR_EXP 14
+ 534: PUSH
+ 535: LD_OWVAR 15
+ 539: ST_TO_ADDR
+// Side_Nations = mp_sides_nations ;
+ 540: LD_ADDR_EXP 17
+ 544: PUSH
+ 545: LD_OWVAR 16
+ 549: ST_TO_ADDR
+// Teams = mp_teams ;
+ 550: LD_ADDR_EXP 15
+ 554: PUSH
+ 555: LD_OWVAR 12
+ 559: ST_TO_ADDR
+// end else
+ 560: GO 724
+// begin Game_Type = 2 ;
+ 562: LD_ADDR_EXP 26
+ 566: PUSH
+ 567: LD_INT 2
+ 569: ST_TO_ADDR
+// Your_Side = 4 ;
+ 570: LD_ADDR_OWVAR 2
+ 574: PUSH
+ 575: LD_INT 4
+ 577: ST_TO_ADDR
+// Side_Positions = [ 0 , 3 , 0 , 1 , 0 , 0 , 4 , 0 ] ;
+ 578: LD_ADDR_EXP 16
+ 582: PUSH
+ 583: LD_INT 0
+ 585: PUSH
+ 586: LD_INT 3
+ 588: PUSH
+ 589: LD_INT 0
+ 591: PUSH
+ 592: LD_INT 1
+ 594: PUSH
+ 595: LD_INT 0
+ 597: PUSH
+ 598: LD_INT 0
+ 600: PUSH
+ 601: LD_INT 4
+ 603: PUSH
+ 604: LD_INT 0
+ 606: PUSH
+ 607: EMPTY
+ 608: LIST
+ 609: LIST
+ 610: LIST
+ 611: LIST
+ 612: LIST
+ 613: LIST
+ 614: LIST
+ 615: LIST
+ 616: ST_TO_ADDR
+// Side_Teams = [ 0 , 1 , 0 , 2 , 0 , 1 , 2 , 0 ] ;
+ 617: LD_ADDR_EXP 14
+ 621: PUSH
+ 622: LD_INT 0
+ 624: PUSH
+ 625: LD_INT 1
+ 627: PUSH
+ 628: LD_INT 0
+ 630: PUSH
+ 631: LD_INT 2
+ 633: PUSH
+ 634: LD_INT 0
+ 636: PUSH
+ 637: LD_INT 1
+ 639: PUSH
+ 640: LD_INT 2
+ 642: PUSH
+ 643: LD_INT 0
+ 645: PUSH
+ 646: EMPTY
+ 647: LIST
+ 648: LIST
+ 649: LIST
+ 650: LIST
+ 651: LIST
+ 652: LIST
+ 653: LIST
+ 654: LIST
+ 655: ST_TO_ADDR
+// Side_Nations = [ 0 , 3 , 0 , 1 , 0 , 1 , 3 , 0 ] ;
+ 656: LD_ADDR_EXP 17
+ 660: PUSH
+ 661: LD_INT 0
+ 663: PUSH
+ 664: LD_INT 3
+ 666: PUSH
+ 667: LD_INT 0
+ 669: PUSH
+ 670: LD_INT 1
+ 672: PUSH
+ 673: LD_INT 0
+ 675: PUSH
+ 676: LD_INT 1
+ 678: PUSH
+ 679: LD_INT 3
+ 681: PUSH
+ 682: LD_INT 0
+ 684: PUSH
+ 685: EMPTY
+ 686: LIST
+ 687: LIST
+ 688: LIST
+ 689: LIST
+ 690: LIST
+ 691: LIST
+ 692: LIST
+ 693: LIST
+ 694: ST_TO_ADDR
+// Teams = [ [ 2 , 7 ] , [ 6 , 4 ] ] ;
+ 695: LD_ADDR_EXP 15
+ 699: PUSH
+ 700: LD_INT 2
+ 702: PUSH
+ 703: LD_INT 7
+ 705: PUSH
+ 706: EMPTY
+ 707: LIST
+ 708: LIST
+ 709: PUSH
+ 710: LD_INT 6
+ 712: PUSH
+ 713: LD_INT 4
+ 715: PUSH
+ 716: EMPTY
+ 717: LIST
+ 718: LIST
+ 719: PUSH
+ 720: EMPTY
+ 721: LIST
+ 722: LIST
+ 723: ST_TO_ADDR
+// end ; for i := 1 to 8 do
+ 724: LD_ADDR_VAR 0 8
+ 728: PUSH
+ 729: DOUBLE
+ 730: LD_INT 1
+ 732: DEC
+ 733: ST_TO_ADDR
+ 734: LD_INT 8
+ 736: PUSH
+ 737: FOR_TO
+ 738: IFFALSE 825
+// if Multiplayer_GetPlayerIsSpec ( i ) then
+ 740: LD_VAR 0 8
+ 744: PPUSH
+ 745: CALL_OW 530
+ 749: IFFALSE 823
+// begin Side_Positions := Replace ( Side_Positions , i , 0 ) ;
+ 751: LD_ADDR_EXP 16
+ 755: PUSH
+ 756: LD_EXP 16
+ 760: PPUSH
+ 761: LD_VAR 0 8
+ 765: PPUSH
+ 766: LD_INT 0
+ 768: PPUSH
+ 769: CALL_OW 1
+ 773: ST_TO_ADDR
+// Teams := Replace ( Teams , Side_Teams [ i ] , Teams [ Side_Teams [ i ] ] diff i ) ;
+ 774: LD_ADDR_EXP 15
+ 778: PUSH
+ 779: LD_EXP 15
+ 783: PPUSH
+ 784: LD_EXP 14
+ 788: PUSH
+ 789: LD_VAR 0 8
+ 793: ARRAY
+ 794: PPUSH
+ 795: LD_EXP 15
+ 799: PUSH
+ 800: LD_EXP 14
+ 804: PUSH
+ 805: LD_VAR 0 8
+ 809: ARRAY
+ 810: ARRAY
+ 811: PUSH
+ 812: LD_VAR 0 8
+ 816: DIFF
+ 817: PPUSH
+ 818: CALL_OW 1
+ 822: ST_TO_ADDR
+// end ;
+ 823: GO 737
+ 825: POP
+ 826: POP
+// if MultiPlayer then
+ 827: LD_OWVAR 4
+ 831: IFFALSE 1004
+// begin def_base_level = GetMultiplayerSetting ( 0 ) ;
+ 833: LD_ADDR_EXP 28
+ 837: PUSH
+ 838: LD_INT 0
+ 840: PPUSH
+ 841: CALL_OW 426
+ 845: ST_TO_ADDR
+// def_amount_of_people = GetMultiplayerSetting ( 1 ) ;
+ 846: LD_ADDR_EXP 29
+ 850: PUSH
+ 851: LD_INT 1
+ 853: PPUSH
+ 854: CALL_OW 426
+ 858: ST_TO_ADDR
+// def_skill_level = GetMultiplayerSetting ( 2 ) ;
+ 859: LD_ADDR_EXP 30
+ 863: PUSH
+ 864: LD_INT 2
+ 866: PPUSH
+ 867: CALL_OW 426
+ 871: ST_TO_ADDR
+// def_starting_resources = GetMultiplayerSetting ( 3 ) ;
+ 872: LD_ADDR_EXP 31
+ 876: PUSH
+ 877: LD_INT 3
+ 879: PPUSH
+ 880: CALL_OW 426
+ 884: ST_TO_ADDR
+// def_shipments_density = GetMultiplayerSetting ( 4 ) ;
+ 885: LD_ADDR_EXP 32
+ 889: PUSH
+ 890: LD_INT 4
+ 892: PPUSH
+ 893: CALL_OW 426
+ 897: ST_TO_ADDR
+// def_extra_oil_deposits = GetMultiplayerSetting ( 5 ) ;
+ 898: LD_ADDR_EXP 33
+ 902: PUSH
+ 903: LD_INT 5
+ 905: PPUSH
+ 906: CALL_OW 426
+ 910: ST_TO_ADDR
+// def_shared_vision = GetMultiplayerSetting ( 10 ) ;
+ 911: LD_ADDR_EXP 35
+ 915: PUSH
+ 916: LD_INT 10
+ 918: PPUSH
+ 919: CALL_OW 426
+ 923: ST_TO_ADDR
+// def_morale_flags = GetMultiplayerSetting ( 11 ) ;
+ 924: LD_ADDR_EXP 36
+ 928: PUSH
+ 929: LD_INT 11
+ 931: PPUSH
+ 932: CALL_OW 426
+ 936: ST_TO_ADDR
+// def_siberite_detection = GetMultiplayerSetting ( 12 ) ;
+ 937: LD_ADDR_EXP 37
+ 941: PUSH
+ 942: LD_INT 12
+ 944: PPUSH
+ 945: CALL_OW 426
+ 949: ST_TO_ADDR
+// def_amount_of_apemen = GetMultiplayerSetting ( 13 ) ;
+ 950: LD_ADDR_EXP 39
+ 954: PUSH
+ 955: LD_INT 13
+ 957: PPUSH
+ 958: CALL_OW 426
+ 962: ST_TO_ADDR
+// def_people_respawning = GetMultiplayerSetting ( 14 ) ;
+ 963: LD_ADDR_EXP 38
+ 967: PUSH
+ 968: LD_INT 14
+ 970: PPUSH
+ 971: CALL_OW 426
+ 975: ST_TO_ADDR
+// def_siberite_bomb = GetMultiplayerSetting ( 15 ) ;
+ 976: LD_ADDR_EXP 40
+ 980: PUSH
+ 981: LD_INT 15
+ 983: PPUSH
+ 984: CALL_OW 426
+ 988: ST_TO_ADDR
+// tech_level = GetMultiplayerSetting ( 22 ) ;
+ 989: LD_ADDR_VAR 0 9
+ 993: PUSH
+ 994: LD_INT 22
+ 996: PPUSH
+ 997: CALL_OW 426
+1001: ST_TO_ADDR
+// end else
+1002: GO 1112
+// begin randomize ;
+1004: CALL_OW 10
+// def_base_level = 2 ;
+1008: LD_ADDR_EXP 28
+1012: PUSH
+1013: LD_INT 2
+1015: ST_TO_ADDR
+// def_amount_of_people = 1 ;
+1016: LD_ADDR_EXP 29
+1020: PUSH
+1021: LD_INT 1
+1023: ST_TO_ADDR
+// def_skill_level = 1 ;
+1024: LD_ADDR_EXP 30
+1028: PUSH
+1029: LD_INT 1
+1031: ST_TO_ADDR
+// def_starting_resources = 2 ;
+1032: LD_ADDR_EXP 31
+1036: PUSH
+1037: LD_INT 2
+1039: ST_TO_ADDR
+// def_shipments_density = 1 ;
+1040: LD_ADDR_EXP 32
+1044: PUSH
+1045: LD_INT 1
+1047: ST_TO_ADDR
+// def_extra_oil_deposits = 0 ;
+1048: LD_ADDR_EXP 33
+1052: PUSH
+1053: LD_INT 0
+1055: ST_TO_ADDR
+// def_shared_vision = 1 ;
+1056: LD_ADDR_EXP 35
+1060: PUSH
+1061: LD_INT 1
+1063: ST_TO_ADDR
+// def_morale_flags = 2 ;
+1064: LD_ADDR_EXP 36
+1068: PUSH
+1069: LD_INT 2
+1071: ST_TO_ADDR
+// def_siberite_detection = 1 ;
+1072: LD_ADDR_EXP 37
+1076: PUSH
+1077: LD_INT 1
+1079: ST_TO_ADDR
+// def_amount_of_apemen = 3 ;
+1080: LD_ADDR_EXP 39
+1084: PUSH
+1085: LD_INT 3
+1087: ST_TO_ADDR
+// def_people_respawning = 2 ;
+1088: LD_ADDR_EXP 38
+1092: PUSH
+1093: LD_INT 2
+1095: ST_TO_ADDR
+// def_siberite_bomb = 0 ;
+1096: LD_ADDR_EXP 40
+1100: PUSH
+1101: LD_INT 0
+1103: ST_TO_ADDR
+// tech_level = 4 ;
+1104: LD_ADDR_VAR 0 9
+1108: PUSH
+1109: LD_INT 4
+1111: ST_TO_ADDR
+// end ; InitGameRules ;
+1112: CALL 6465 0 0
+// if def_game_rules = 0 then
+1116: LD_EXP 27
+1120: PUSH
+1121: LD_INT 0
+1123: EQUAL
+1124: IFFALSE 1151
+// begin if isSGUI then
+1126: LD_OWVAR 83
+1130: IFFALSE 1138
+// setMpTechs ( ) else
+1132: CALL 11300 0 0
+1136: GO 1151
+// begin SetMpTechLevel ( tech_level + 1 ) ;
+1138: LD_VAR 0 9
+1142: PUSH
+1143: LD_INT 1
+1145: PLUS
+1146: PPUSH
+1147: CALL 11447 0 1
+// end ; end ; is_depot = [ 0 , 1 , 1 , 1 ] [ def_base_level + 1 ] ;
+1151: LD_ADDR_EXP 1
+1155: PUSH
+1156: LD_INT 0
+1158: PUSH
+1159: LD_INT 1
+1161: PUSH
+1162: LD_INT 1
+1164: PUSH
+1165: LD_INT 1
+1167: PUSH
+1168: EMPTY
+1169: LIST
+1170: LIST
+1171: LIST
+1172: LIST
+1173: PUSH
+1174: LD_EXP 28
+1178: PUSH
+1179: LD_INT 1
+1181: PLUS
+1182: ARRAY
+1183: ST_TO_ADDR
+// number_of_breastworks = [ 0 , 0 , 2 , 4 ] [ def_base_level + 1 ] ;
+1184: LD_ADDR_EXP 2
+1188: PUSH
+1189: LD_INT 0
+1191: PUSH
+1192: LD_INT 0
+1194: PUSH
+1195: LD_INT 2
+1197: PUSH
+1198: LD_INT 4
+1200: PUSH
+1201: EMPTY
+1202: LIST
+1203: LIST
+1204: LIST
+1205: LIST
+1206: PUSH
+1207: LD_EXP 28
+1211: PUSH
+1212: LD_INT 1
+1214: PLUS
+1215: ARRAY
+1216: ST_TO_ADDR
+// initial_level = [ 2 , 3 , 4 , 5 ] [ def_skill_level + 1 ] ;
+1217: LD_ADDR_EXP 4
+1221: PUSH
+1222: LD_INT 2
+1224: PUSH
+1225: LD_INT 3
+1227: PUSH
+1228: LD_INT 4
+1230: PUSH
+1231: LD_INT 5
+1233: PUSH
+1234: EMPTY
+1235: LIST
+1236: LIST
+1237: LIST
+1238: LIST
+1239: PUSH
+1240: LD_EXP 30
+1244: PUSH
+1245: LD_INT 1
+1247: PLUS
+1248: ARRAY
+1249: ST_TO_ADDR
+// starting_resources = [ [ 0 , 0 , 0 ] , [ 30 , 0 , 0 ] , [ 50 , 20 , 0 ] , [ 80 , 40 , 20 ] ] [ def_starting_resources + 1 ] ;
+1250: LD_ADDR_EXP 6
+1254: PUSH
+1255: LD_INT 0
+1257: PUSH
+1258: LD_INT 0
+1260: PUSH
+1261: LD_INT 0
+1263: PUSH
+1264: EMPTY
+1265: LIST
+1266: LIST
+1267: LIST
+1268: PUSH
+1269: LD_INT 30
+1271: PUSH
+1272: LD_INT 0
+1274: PUSH
+1275: LD_INT 0
+1277: PUSH
+1278: EMPTY
+1279: LIST
+1280: LIST
+1281: LIST
+1282: PUSH
+1283: LD_INT 50
+1285: PUSH
+1286: LD_INT 20
+1288: PUSH
+1289: LD_INT 0
+1291: PUSH
+1292: EMPTY
+1293: LIST
+1294: LIST
+1295: LIST
+1296: PUSH
+1297: LD_INT 80
+1299: PUSH
+1300: LD_INT 40
+1302: PUSH
+1303: LD_INT 20
+1305: PUSH
+1306: EMPTY
+1307: LIST
+1308: LIST
+1309: LIST
+1310: PUSH
+1311: EMPTY
+1312: LIST
+1313: LIST
+1314: LIST
+1315: LIST
+1316: PUSH
+1317: LD_EXP 31
+1321: PUSH
+1322: LD_INT 1
+1324: PLUS
+1325: ARRAY
+1326: ST_TO_ADDR
+// starting_crates = [ [ 10 ] , [ 7 , 14 ] , [ 6 , 12 , 18 ] , [ 5 , 10 , 15 , 20 ] ] [ def_starting_resources + 1 ] ;
+1327: LD_ADDR_EXP 5
+1331: PUSH
+1332: LD_INT 10
+1334: PUSH
+1335: EMPTY
+1336: LIST
+1337: PUSH
+1338: LD_INT 7
+1340: PUSH
+1341: LD_INT 14
+1343: PUSH
+1344: EMPTY
+1345: LIST
+1346: LIST
+1347: PUSH
+1348: LD_INT 6
+1350: PUSH
+1351: LD_INT 12
+1353: PUSH
+1354: LD_INT 18
+1356: PUSH
+1357: EMPTY
+1358: LIST
+1359: LIST
+1360: LIST
+1361: PUSH
+1362: LD_INT 5
+1364: PUSH
+1365: LD_INT 10
+1367: PUSH
+1368: LD_INT 15
+1370: PUSH
+1371: LD_INT 20
+1373: PUSH
+1374: EMPTY
+1375: LIST
+1376: LIST
+1377: LIST
+1378: LIST
+1379: PUSH
+1380: EMPTY
+1381: LIST
+1382: LIST
+1383: LIST
+1384: LIST
+1385: PUSH
+1386: LD_EXP 31
+1390: PUSH
+1391: LD_INT 1
+1393: PLUS
+1394: ARRAY
+1395: ST_TO_ADDR
+// number_of_people := def_amount_of_people + 4 ;
+1396: LD_ADDR_EXP 3
+1400: PUSH
+1401: LD_EXP 29
+1405: PUSH
+1406: LD_INT 4
+1408: PLUS
+1409: ST_TO_ADDR
+// shipments_density := 20 + ( def_shipments_density ) * 28 ;
+1410: LD_ADDR_EXP 7
+1414: PUSH
+1415: LD_INT 20
+1417: PUSH
+1418: LD_EXP 32
+1422: PUSH
+1423: LD_INT 28
+1425: MUL
+1426: PLUS
+1427: ST_TO_ADDR
+// amount_of_apemen := [ 0 , 3 , 6 , 9 ] [ def_amount_of_apemen + 1 ] ;
+1428: LD_ADDR_EXP 11
+1432: PUSH
+1433: LD_INT 0
+1435: PUSH
+1436: LD_INT 3
+1438: PUSH
+1439: LD_INT 6
+1441: PUSH
+1442: LD_INT 9
+1444: PUSH
+1445: EMPTY
+1446: LIST
+1447: LIST
+1448: LIST
+1449: LIST
+1450: PUSH
+1451: LD_EXP 39
+1455: PUSH
+1456: LD_INT 1
+1458: PLUS
+1459: ARRAY
+1460: ST_TO_ADDR
+// respawning_time_min = [ 0 0$0 , 4 4$00 , 0 0$50 ] [ def_people_respawning + 1 ] ;
+1461: LD_ADDR_EXP 9
+1465: PUSH
+1466: LD_INT 0
+1468: PUSH
+1469: LD_INT 8400
+1471: PUSH
+1472: LD_INT 1750
+1474: PUSH
+1475: EMPTY
+1476: LIST
+1477: LIST
+1478: LIST
+1479: PUSH
+1480: LD_EXP 38
+1484: PUSH
+1485: LD_INT 1
+1487: PLUS
+1488: ARRAY
+1489: ST_TO_ADDR
+// respawning_time_max = [ 0 0$0 , 10 10$00 , 2 2$00 ] [ def_people_respawning + 1 ] ;
+1490: LD_ADDR_EXP 10
+1494: PUSH
+1495: LD_INT 0
+1497: PUSH
+1498: LD_INT 21000
+1500: PUSH
+1501: LD_INT 4200
+1503: PUSH
+1504: EMPTY
+1505: LIST
+1506: LIST
+1507: LIST
+1508: PUSH
+1509: LD_EXP 38
+1513: PUSH
+1514: LD_INT 1
+1516: PLUS
+1517: ARRAY
+1518: ST_TO_ADDR
+// morale_decreasing_time = [ - 1 , 0 0$10 , 0 0$20 , 0 0$40 , 0 0$0 ] [ def_morale_flags + 1 ] ;
+1519: LD_ADDR_EXP 8
+1523: PUSH
+1524: LD_INT 1
+1526: NEG
+1527: PUSH
+1528: LD_INT 350
+1530: PUSH
+1531: LD_INT 700
+1533: PUSH
+1534: LD_INT 1400
+1536: PUSH
+1537: LD_INT 0
+1539: PUSH
+1540: EMPTY
+1541: LIST
+1542: LIST
+1543: LIST
+1544: LIST
+1545: LIST
+1546: PUSH
+1547: LD_EXP 36
+1551: PUSH
+1552: LD_INT 1
+1554: PLUS
+1555: ARRAY
+1556: ST_TO_ADDR
+// battle_flags_id = [ ] ;
+1557: LD_ADDR_EXP 23
+1561: PUSH
+1562: EMPTY
+1563: ST_TO_ADDR
+// siberite_bomb_Delay := [ 0 , 1 , 30 30$00 , 60 60$00 , 90 90$00 , 120 120$00 ] [ def_siberite_bomb + 1 ] ;
+1564: LD_ADDR_EXP 12
+1568: PUSH
+1569: LD_INT 0
+1571: PUSH
+1572: LD_INT 1
+1574: PUSH
+1575: LD_INT 63000
+1577: PUSH
+1578: LD_INT 126000
+1580: PUSH
+1581: LD_INT 189000
+1583: PUSH
+1584: LD_INT 252000
+1586: PUSH
+1587: EMPTY
+1588: LIST
+1589: LIST
+1590: LIST
+1591: LIST
+1592: LIST
+1593: LIST
+1594: PUSH
+1595: LD_EXP 40
+1599: PUSH
+1600: LD_INT 1
+1602: PLUS
+1603: ARRAY
+1604: ST_TO_ADDR
+// if not def_builduptime then
+1605: LD_EXP 41
+1609: NOT
+1610: IFFALSE 1615
+// disable ( 600 ) ;
+1612: LD_INT 600
+1614: DISABLE_MARKED
+// end ;
+1615: LD_VAR 0 1
+1619: RET
+// function set_shared_visions_and_alliances ; var i , j ; begin
+1620: LD_INT 0
+1622: PPUSH
+1623: PPUSH
+1624: PPUSH
+// Team_Game := Side_Teams [ your_side ] ;
+1625: LD_ADDR_EXP 18
+1629: PUSH
+1630: LD_EXP 14
+1634: PUSH
+1635: LD_OWVAR 2
+1639: ARRAY
+1640: ST_TO_ADDR
+// if not Team_Game then
+1641: LD_EXP 18
+1645: NOT
+1646: IFFALSE 1744
+// begin for i = 1 to 8 do
+1648: LD_ADDR_VAR 0 2
+1652: PUSH
+1653: DOUBLE
+1654: LD_INT 1
+1656: DEC
+1657: ST_TO_ADDR
+1658: LD_INT 8
+1660: PUSH
+1661: FOR_TO
+1662: IFFALSE 1740
+// for j = 1 to 8 do
+1664: LD_ADDR_VAR 0 3
+1668: PUSH
+1669: DOUBLE
+1670: LD_INT 1
+1672: DEC
+1673: ST_TO_ADDR
+1674: LD_INT 8
+1676: PUSH
+1677: FOR_TO
+1678: IFFALSE 1736
+// if i <> j then
+1680: LD_VAR 0 2
+1684: PUSH
+1685: LD_VAR 0 3
+1689: NONEQUAL
+1690: IFFALSE 1714
+// SetAttitude ( i , j , att_neutral , true ) else
+1692: LD_VAR 0 2
+1696: PPUSH
+1697: LD_VAR 0 3
+1701: PPUSH
+1702: LD_INT 0
+1704: PPUSH
+1705: LD_INT 1
+1707: PPUSH
+1708: CALL_OW 80
+1712: GO 1734
+// SetAttitude ( i , j , att_friend , true ) ;
+1714: LD_VAR 0 2
+1718: PPUSH
+1719: LD_VAR 0 3
+1723: PPUSH
+1724: LD_INT 1
+1726: PPUSH
+1727: LD_INT 1
+1729: PPUSH
+1730: CALL_OW 80
+1734: GO 1677
+1736: POP
+1737: POP
+1738: GO 1661
+1740: POP
+1741: POP
+// end else
+1742: GO 1919
+// begin if def_shared_vision then
+1744: LD_EXP 35
+1748: IFFALSE 1813
+// begin for i in Teams do
+1750: LD_ADDR_VAR 0 2
+1754: PUSH
+1755: LD_EXP 15
+1759: PUSH
+1760: FOR_IN
+1761: IFFALSE 1811
+// for j = 2 to i do
+1763: LD_ADDR_VAR 0 3
+1767: PUSH
+1768: DOUBLE
+1769: LD_INT 2
+1771: DEC
+1772: ST_TO_ADDR
+1773: LD_VAR 0 2
+1777: PUSH
+1778: FOR_TO
+1779: IFFALSE 1807
+// ChangeSideFog ( i [ j ] , i [ 1 ] ) ;
+1781: LD_VAR 0 2
+1785: PUSH
+1786: LD_VAR 0 3
+1790: ARRAY
+1791: PPUSH
+1792: LD_VAR 0 2
+1796: PUSH
+1797: LD_INT 1
+1799: ARRAY
+1800: PPUSH
+1801: CALL_OW 343
+1805: GO 1778
+1807: POP
+1808: POP
+1809: GO 1760
+1811: POP
+1812: POP
+// end ; for i = 1 to 8 do
+1813: LD_ADDR_VAR 0 2
+1817: PUSH
+1818: DOUBLE
+1819: LD_INT 1
+1821: DEC
+1822: ST_TO_ADDR
+1823: LD_INT 8
+1825: PUSH
+1826: FOR_TO
+1827: IFFALSE 1917
+// for j = 1 to 8 do
+1829: LD_ADDR_VAR 0 3
+1833: PUSH
+1834: DOUBLE
+1835: LD_INT 1
+1837: DEC
+1838: ST_TO_ADDR
+1839: LD_INT 8
+1841: PUSH
+1842: FOR_TO
+1843: IFFALSE 1913
+// if Side_Teams [ i ] = Side_Teams [ j ] then
+1845: LD_EXP 14
+1849: PUSH
+1850: LD_VAR 0 2
+1854: ARRAY
+1855: PUSH
+1856: LD_EXP 14
+1860: PUSH
+1861: LD_VAR 0 3
+1865: ARRAY
+1866: EQUAL
+1867: IFFALSE 1891
+// SetAttitude ( i , j , att_friend , true ) else
+1869: LD_VAR 0 2
+1873: PPUSH
+1874: LD_VAR 0 3
+1878: PPUSH
+1879: LD_INT 1
+1881: PPUSH
+1882: LD_INT 1
+1884: PPUSH
+1885: CALL_OW 80
+1889: GO 1911
+// SetAttitude ( i , j , att_enemy , true ) ;
+1891: LD_VAR 0 2
+1895: PPUSH
+1896: LD_VAR 0 3
+1900: PPUSH
+1901: LD_INT 2
+1903: PPUSH
+1904: LD_INT 1
+1906: PPUSH
+1907: CALL_OW 80
+1911: GO 1842
+1913: POP
+1914: POP
+1915: GO 1826
+1917: POP
+1918: POP
+// end ; end ;
+1919: LD_VAR 0 1
+1923: RET
+// function prepare_people ( count , cl , x , y , r , building ) ; var i , j , un ; begin
+1924: LD_INT 0
+1926: PPUSH
+1927: PPUSH
+1928: PPUSH
+1929: PPUSH
+// result := [ ] ;
+1930: LD_ADDR_VAR 0 7
+1934: PUSH
+1935: EMPTY
+1936: ST_TO_ADDR
+// for i := 1 to count do
+1937: LD_ADDR_VAR 0 8
+1941: PUSH
+1942: DOUBLE
+1943: LD_INT 1
+1945: DEC
+1946: ST_TO_ADDR
+1947: LD_VAR 0 1
+1951: PUSH
+1952: FOR_TO
+1953: IFFALSE 2371
+// begin uc_direction := Rand ( 0 , 5 ) ;
+1955: LD_ADDR_OWVAR 24
+1959: PUSH
+1960: LD_INT 0
+1962: PPUSH
+1963: LD_INT 5
+1965: PPUSH
+1966: CALL_OW 12
+1970: ST_TO_ADDR
+// if commander then
+1971: LD_LOC 1
+1975: IFFALSE 2084
+// begin hc_name := mp_sides_players_names [ uc_side ] ;
+1977: LD_ADDR_OWVAR 26
+1981: PUSH
+1982: LD_OWVAR 19
+1986: PUSH
+1987: LD_OWVAR 20
+1991: ARRAY
+1992: ST_TO_ADDR
+// PrepareHuman ( Rand ( 1 , 2 ) , cl , initial_level + 2 ) ;
+1993: LD_INT 1
+1995: PPUSH
+1996: LD_INT 2
+1998: PPUSH
+1999: CALL_OW 12
+2003: PPUSH
+2004: LD_VAR 0 2
+2008: PPUSH
+2009: LD_EXP 4
+2013: PUSH
+2014: LD_INT 2
+2016: PLUS
+2017: PPUSH
+2018: CALL_OW 380
+// hc_importance := 105 ;
+2022: LD_ADDR_OWVAR 32
+2026: PUSH
+2027: LD_INT 105
+2029: ST_TO_ADDR
+// commander := false ;
+2030: LD_ADDR_LOC 1
+2034: PUSH
+2035: LD_INT 0
+2037: ST_TO_ADDR
+// if Multiplayer then
+2038: LD_OWVAR 4
+2042: IFFALSE 2082
+// begin hc_gallery := MULTIAVATARS ;
+2044: LD_ADDR_OWVAR 33
+2048: PUSH
+2049: LD_STRING MULTIAVATARS
+2051: ST_TO_ADDR
+// hc_face_number := Multiplayer_GetPlayerSideNum ( uc_side ) ;
+2052: LD_ADDR_OWVAR 34
+2056: PUSH
+2057: LD_OWVAR 20
+2061: PPUSH
+2062: CALL_OW 525
+2066: ST_TO_ADDR
+// hc_sex := Multiplayer_GetPlayerSex ( uc_side ) ;
+2067: LD_ADDR_OWVAR 27
+2071: PUSH
+2072: LD_OWVAR 20
+2076: PPUSH
+2077: CALL_OW 526
+2081: ST_TO_ADDR
+// end ; end else
+2082: GO 2147
+// begin hc_name :=  ;
+2084: LD_ADDR_OWVAR 26
+2088: PUSH
+2089: LD_STRING 
+2091: ST_TO_ADDR
+// PrepareHuman ( rand ( 1 , 2 ) , cl , initial_level ) ;
+2092: LD_INT 1
+2094: PPUSH
+2095: LD_INT 2
+2097: PPUSH
+2098: CALL_OW 12
+2102: PPUSH
+2103: LD_VAR 0 2
+2107: PPUSH
+2108: LD_EXP 4
+2112: PPUSH
+2113: CALL_OW 380
+// hc_importance := 0 ;
+2117: LD_ADDR_OWVAR 32
+2121: PUSH
+2122: LD_INT 0
+2124: ST_TO_ADDR
+// if Multiplayer then
+2125: LD_OWVAR 4
+2129: IFFALSE 2147
+// begin hc_gallery :=  ;
+2131: LD_ADDR_OWVAR 33
+2135: PUSH
+2136: LD_STRING 
+2138: ST_TO_ADDR
+// hc_face_number := 0 ;
+2139: LD_ADDR_OWVAR 34
+2143: PUSH
+2144: LD_INT 0
+2146: ST_TO_ADDR
+// end ; end ; un := CreateHuman ;
+2147: LD_ADDR_VAR 0 10
+2151: PUSH
+2152: CALL_OW 44
+2156: ST_TO_ADDR
+// if global_defined then
+2157: LD_LOC 3
+2161: IFFALSE 2301
+// begin if ( cl = class_soldier ) then
+2163: LD_VAR 0 2
+2167: PUSH
+2168: LD_INT 1
+2170: EQUAL
+2171: IFFALSE 2191
+// j := i + soldiers_created else
+2173: LD_ADDR_VAR 0 9
+2177: PUSH
+2178: LD_VAR 0 8
+2182: PUSH
+2183: LD_LOC 4
+2187: PLUS
+2188: ST_TO_ADDR
+2189: GO 2201
+// j := i ;
+2191: LD_ADDR_VAR 0 9
+2195: PUSH
+2196: LD_VAR 0 8
+2200: ST_TO_ADDR
+// CopySkills ( global_units [ cl ] [ j ] , un ) ;
+2201: LD_LOC 2
+2205: PUSH
+2206: LD_VAR 0 2
+2210: ARRAY
+2211: PUSH
+2212: LD_VAR 0 9
+2216: ARRAY
+2217: PPUSH
+2218: LD_VAR 0 10
+2222: PPUSH
+2223: CALL_OW 510
+// SetAttr ( un , attr_speed , GetAttr ( global_units [ cl ] [ j ] , attr_speed ) ) ;
+2227: LD_VAR 0 10
+2231: PPUSH
+2232: LD_INT 2
+2234: PPUSH
+2235: LD_LOC 2
+2239: PUSH
+2240: LD_VAR 0 2
+2244: ARRAY
+2245: PUSH
+2246: LD_VAR 0 9
+2250: ARRAY
+2251: PPUSH
+2252: LD_INT 2
+2254: PPUSH
+2255: CALL_OW 260
+2259: PPUSH
+2260: CALL_OW 239
+// SetAttr ( un , attr_stamina , GetAttr ( global_units [ cl ] [ j ] , attr_stamina ) ) ;
+2264: LD_VAR 0 10
+2268: PPUSH
+2269: LD_INT 1
+2271: PPUSH
+2272: LD_LOC 2
+2276: PUSH
+2277: LD_VAR 0 2
+2281: ARRAY
+2282: PUSH
+2283: LD_VAR 0 9
+2287: ARRAY
+2288: PPUSH
+2289: LD_INT 1
+2291: PPUSH
+2292: CALL_OW 260
+2296: PPUSH
+2297: CALL_OW 239
+// end ; if building then
+2301: LD_VAR 0 6
+2305: IFFALSE 2323
+// PlaceHumanInUnit ( un , building ) else
+2307: LD_VAR 0 10
+2311: PPUSH
+2312: LD_VAR 0 6
+2316: PPUSH
+2317: CALL_OW 52
+2321: GO 2350
+// PlaceUnitXYR ( un , x , y , r , false ) ;
+2323: LD_VAR 0 10
+2327: PPUSH
+2328: LD_VAR 0 3
+2332: PPUSH
+2333: LD_VAR 0 4
+2337: PPUSH
+2338: LD_VAR 0 5
+2342: PPUSH
+2343: LD_INT 0
+2345: PPUSH
+2346: CALL_OW 50
+// result := result ^ [ un ] ;
+2350: LD_ADDR_VAR 0 7
+2354: PUSH
+2355: LD_VAR 0 7
+2359: PUSH
+2360: LD_VAR 0 10
+2364: PUSH
+2365: EMPTY
+2366: LIST
+2367: ADD
+2368: ST_TO_ADDR
+// end ;
+2369: GO 1952
+2371: POP
+2372: POP
+// if not global_defined then
+2373: LD_LOC 3
+2377: NOT
+2378: IFFALSE 2456
+// if ( global_units >= cl ) then
+2380: LD_LOC 2
+2384: PUSH
+2385: LD_VAR 0 2
+2389: GREATEREQUAL
+2390: IFFALSE 2431
+// global_units := Replace ( global_units , cl , global_units [ cl ] ^ result ) else
+2392: LD_ADDR_LOC 2
+2396: PUSH
+2397: LD_LOC 2
+2401: PPUSH
+2402: LD_VAR 0 2
+2406: PPUSH
+2407: LD_LOC 2
+2411: PUSH
+2412: LD_VAR 0 2
+2416: ARRAY
+2417: PUSH
+2418: LD_VAR 0 7
+2422: ADD
+2423: PPUSH
+2424: CALL_OW 1
+2428: ST_TO_ADDR
+2429: GO 2456
+// global_units := Replace ( global_units , cl , result ) ;
+2431: LD_ADDR_LOC 2
+2435: PUSH
+2436: LD_LOC 2
+2440: PPUSH
+2441: LD_VAR 0 2
+2445: PPUSH
+2446: LD_VAR 0 7
+2450: PPUSH
+2451: CALL_OW 1
+2455: ST_TO_ADDR
+// end ;
+2456: LD_VAR 0 7
+2460: RET
+// function prepare_side ( side ) ; var pos , x , y , dir , i , r , br , dep ; begin
+2461: LD_INT 0
+2463: PPUSH
+2464: PPUSH
+2465: PPUSH
+2466: PPUSH
+2467: PPUSH
+2468: PPUSH
+2469: PPUSH
+2470: PPUSH
+2471: PPUSH
+// pos := Side_Positions [ side ] ;
+2472: LD_ADDR_VAR 0 3
+2476: PUSH
+2477: LD_EXP 16
+2481: PUSH
+2482: LD_VAR 0 1
+2486: ARRAY
+2487: ST_TO_ADDR
+// uc_nation := Side_Nations [ side ] ;
+2488: LD_ADDR_OWVAR 21
+2492: PUSH
+2493: LD_EXP 17
+2497: PUSH
+2498: LD_VAR 0 1
+2502: ARRAY
+2503: ST_TO_ADDR
+// uc_side := side ;
+2504: LD_ADDR_OWVAR 20
+2508: PUSH
+2509: LD_VAR 0 1
+2513: ST_TO_ADDR
+// x := depot_def [ pos ] [ 1 ] ;
+2514: LD_ADDR_VAR 0 4
+2518: PUSH
+2519: LD_EXP 19
+2523: PUSH
+2524: LD_VAR 0 3
+2528: ARRAY
+2529: PUSH
+2530: LD_INT 1
+2532: ARRAY
+2533: ST_TO_ADDR
+// y := depot_def [ pos ] [ 2 ] ;
+2534: LD_ADDR_VAR 0 5
+2538: PUSH
+2539: LD_EXP 19
+2543: PUSH
+2544: LD_VAR 0 3
+2548: ARRAY
+2549: PUSH
+2550: LD_INT 2
+2552: ARRAY
+2553: ST_TO_ADDR
+// dir := depot_def [ pos ] [ 3 ] ;
+2554: LD_ADDR_VAR 0 6
+2558: PUSH
+2559: LD_EXP 19
+2563: PUSH
+2564: LD_VAR 0 3
+2568: ARRAY
+2569: PUSH
+2570: LD_INT 3
+2572: ARRAY
+2573: ST_TO_ADDR
+// if is_depot then
+2574: LD_EXP 1
+2578: IFFALSE 2711
+// begin bc_type = b_depot ;
+2580: LD_ADDR_OWVAR 42
+2584: PUSH
+2585: LD_INT 0
+2587: ST_TO_ADDR
+// dep := CreateAndPlaceBuildingXYD ( x , y , dir ) ;
+2588: LD_ADDR_VAR 0 10
+2592: PUSH
+2593: LD_VAR 0 4
+2597: PPUSH
+2598: LD_VAR 0 5
+2602: PPUSH
+2603: LD_VAR 0 6
+2607: PPUSH
+2608: CALL_OW 47
+2612: ST_TO_ADDR
+// SetBName ( dep , @ & side ) ;
+2613: LD_VAR 0 10
+2617: PPUSH
+2618: LD_STRING @
+2620: PUSH
+2621: LD_VAR 0 1
+2625: STR
+2626: PPUSH
+2627: CALL_OW 500
+// SetResourceType ( GetBase ( dep ) , mat_cans , starting_resources [ mat_cans ] ) ;
+2631: LD_VAR 0 10
+2635: PPUSH
+2636: CALL_OW 274
+2640: PPUSH
+2641: LD_INT 1
+2643: PPUSH
+2644: LD_EXP 6
+2648: PUSH
+2649: LD_INT 1
+2651: ARRAY
+2652: PPUSH
+2653: CALL_OW 277
+// SetResourceType ( GetBase ( dep ) , mat_oil , starting_resources [ mat_oil ] ) ;
+2657: LD_VAR 0 10
+2661: PPUSH
+2662: CALL_OW 274
+2666: PPUSH
+2667: LD_INT 2
+2669: PPUSH
+2670: LD_EXP 6
+2674: PUSH
+2675: LD_INT 2
+2677: ARRAY
+2678: PPUSH
+2679: CALL_OW 277
+// SetResourceType ( GetBase ( dep ) , mat_siberit , starting_resources [ mat_siberit ] ) ;
+2683: LD_VAR 0 10
+2687: PPUSH
+2688: CALL_OW 274
+2692: PPUSH
+2693: LD_INT 3
+2695: PPUSH
+2696: LD_EXP 6
+2700: PUSH
+2701: LD_INT 3
+2703: ARRAY
+2704: PPUSH
+2705: CALL_OW 277
+// end else
+2709: GO 2855
+// begin for i := 1 to 3 do
+2711: LD_ADDR_VAR 0 7
+2715: PUSH
+2716: DOUBLE
+2717: LD_INT 1
+2719: DEC
+2720: ST_TO_ADDR
+2721: LD_INT 3
+2723: PUSH
+2724: FOR_TO
+2725: IFFALSE 2853
+// begin r := starting_resources [ i ] ;
+2727: LD_ADDR_VAR 0 8
+2731: PUSH
+2732: LD_EXP 6
+2736: PUSH
+2737: LD_VAR 0 7
+2741: ARRAY
+2742: ST_TO_ADDR
+// while r >= 10 do
+2743: LD_VAR 0 8
+2747: PUSH
+2748: LD_INT 10
+2750: GREATEREQUAL
+2751: IFFALSE 2851
+// if r > 50 then
+2753: LD_VAR 0 8
+2757: PUSH
+2758: LD_INT 50
+2760: GREATER
+2761: IFFALSE 2807
+// begin CreateResourcesXYR ( i , 5 , x , y , 4 , false ) ;
+2763: LD_VAR 0 7
+2767: PPUSH
+2768: LD_INT 5
+2770: PPUSH
+2771: LD_VAR 0 4
+2775: PPUSH
+2776: LD_VAR 0 5
+2780: PPUSH
+2781: LD_INT 4
+2783: PPUSH
+2784: LD_INT 0
+2786: PPUSH
+2787: CALL_OW 60
+// r := r - 50 ;
+2791: LD_ADDR_VAR 0 8
+2795: PUSH
+2796: LD_VAR 0 8
+2800: PUSH
+2801: LD_INT 50
+2803: MINUS
+2804: ST_TO_ADDR
+// end else
+2805: GO 2849
+// begin CreateResourcesXYR ( i , r div 10 , x , y , 4 , false ) ;
+2807: LD_VAR 0 7
+2811: PPUSH
+2812: LD_VAR 0 8
+2816: PUSH
+2817: LD_INT 10
+2819: DIV
+2820: PPUSH
+2821: LD_VAR 0 4
+2825: PPUSH
+2826: LD_VAR 0 5
+2830: PPUSH
+2831: LD_INT 4
+2833: PPUSH
+2834: LD_INT 0
+2836: PPUSH
+2837: CALL_OW 60
+// r := 0 ;
+2841: LD_ADDR_VAR 0 8
+2845: PUSH
+2846: LD_INT 0
+2848: ST_TO_ADDR
+// end ;
+2849: GO 2743
+// end ;
+2851: GO 2724
+2853: POP
+2854: POP
+// end ; for r in starting_crates do
+2855: LD_ADDR_VAR 0 8
+2859: PUSH
+2860: LD_EXP 5
+2864: PUSH
+2865: FOR_IN
+2866: IFFALSE 2898
+// CreateResourcesXYR ( mat_cans , 5 , x , y , r , false ) ;
+2868: LD_INT 1
+2870: PPUSH
+2871: LD_INT 5
+2873: PPUSH
+2874: LD_VAR 0 4
+2878: PPUSH
+2879: LD_VAR 0 5
+2883: PPUSH
+2884: LD_VAR 0 8
+2888: PPUSH
+2889: LD_INT 0
+2891: PPUSH
+2892: CALL_OW 60
+2896: GO 2865
+2898: POP
+2899: POP
+// if def_morale_flags then
+2900: LD_EXP 36
+2904: IFFALSE 3043
+// begin x := start_def [ pos ] [ 1 ] ;
+2906: LD_ADDR_VAR 0 4
+2910: PUSH
+2911: LD_EXP 21
+2915: PUSH
+2916: LD_VAR 0 3
+2920: ARRAY
+2921: PUSH
+2922: LD_INT 1
+2924: ARRAY
+2925: ST_TO_ADDR
+// y := start_def [ pos ] [ 2 ] ;
+2926: LD_ADDR_VAR 0 5
+2930: PUSH
+2931: LD_EXP 21
+2935: PUSH
+2936: LD_VAR 0 3
+2940: ARRAY
+2941: PUSH
+2942: LD_INT 2
+2944: ARRAY
+2945: ST_TO_ADDR
+// PlaceEnvironment ( x , y , 12 , 2 ) ;
+2946: LD_VAR 0 4
+2950: PPUSH
+2951: LD_VAR 0 5
+2955: PPUSH
+2956: LD_INT 12
+2958: PPUSH
+2959: LD_INT 2
+2961: PPUSH
+2962: CALL_OW 349
+// battle_flags_id := battle_flags_id ^ SetBattleFlag ( side , x , y , [ [ bfo_defend_bonus_human , 100 ] , [ bfo_defend_bonus_vehicle , 50 ] , [ bfo_defend_bonus_building , 20 ] , [ bfo_height , 100 ] ] ) ;
+2966: LD_ADDR_EXP 23
+2970: PUSH
+2971: LD_EXP 23
+2975: PUSH
+2976: LD_VAR 0 1
+2980: PPUSH
+2981: LD_VAR 0 4
+2985: PPUSH
+2986: LD_VAR 0 5
+2990: PPUSH
+2991: LD_INT 1
+2993: PUSH
+2994: LD_INT 100
+2996: PUSH
+2997: EMPTY
+2998: LIST
+2999: LIST
+3000: PUSH
+3001: LD_INT 2
+3003: PUSH
+3004: LD_INT 50
+3006: PUSH
+3007: EMPTY
+3008: LIST
+3009: LIST
+3010: PUSH
+3011: LD_INT 3
+3013: PUSH
+3014: LD_INT 20
+3016: PUSH
+3017: EMPTY
+3018: LIST
+3019: LIST
+3020: PUSH
+3021: LD_INT 20
+3023: PUSH
+3024: LD_INT 100
+3026: PUSH
+3027: EMPTY
+3028: LIST
+3029: LIST
+3030: PUSH
+3031: EMPTY
+3032: LIST
+3033: LIST
+3034: LIST
+3035: LIST
+3036: PPUSH
+3037: CALL_OW 418
+3041: ADD
+3042: ST_TO_ADDR
+// end ; commander := true ;
+3043: LD_ADDR_LOC 1
+3047: PUSH
+3048: LD_INT 1
+3050: ST_TO_ADDR
+// soldiers_created := 0 ;
+3051: LD_ADDR_LOC 4
+3055: PUSH
+3056: LD_INT 0
+3058: ST_TO_ADDR
+// for i := 1 to number_of_breastworks do
+3059: LD_ADDR_VAR 0 7
+3063: PUSH
+3064: DOUBLE
+3065: LD_INT 1
+3067: DEC
+3068: ST_TO_ADDR
+3069: LD_EXP 2
+3073: PUSH
+3074: FOR_TO
+3075: IFFALSE 3228
+// begin x := breastworks_def [ pos ] [ i ] [ 1 ] ;
+3077: LD_ADDR_VAR 0 4
+3081: PUSH
+3082: LD_EXP 20
+3086: PUSH
+3087: LD_VAR 0 3
+3091: ARRAY
+3092: PUSH
+3093: LD_VAR 0 7
+3097: ARRAY
+3098: PUSH
+3099: LD_INT 1
+3101: ARRAY
+3102: ST_TO_ADDR
+// y := breastworks_def [ pos ] [ i ] [ 2 ] ;
+3103: LD_ADDR_VAR 0 5
+3107: PUSH
+3108: LD_EXP 20
+3112: PUSH
+3113: LD_VAR 0 3
+3117: ARRAY
+3118: PUSH
+3119: LD_VAR 0 7
+3123: ARRAY
+3124: PUSH
+3125: LD_INT 2
+3127: ARRAY
+3128: ST_TO_ADDR
+// dir := breastworks_def [ pos ] [ i ] [ 3 ] ;
+3129: LD_ADDR_VAR 0 6
+3133: PUSH
+3134: LD_EXP 20
+3138: PUSH
+3139: LD_VAR 0 3
+3143: ARRAY
+3144: PUSH
+3145: LD_VAR 0 7
+3149: ARRAY
+3150: PUSH
+3151: LD_INT 3
+3153: ARRAY
+3154: ST_TO_ADDR
+// bc_type := b_breastwork ;
+3155: LD_ADDR_OWVAR 42
+3159: PUSH
+3160: LD_INT 31
+3162: ST_TO_ADDR
+// br := CreateAndPlaceBuildingXYD ( x , y , dir ) ;
+3163: LD_ADDR_VAR 0 9
+3167: PUSH
+3168: LD_VAR 0 4
+3172: PPUSH
+3173: LD_VAR 0 5
+3177: PPUSH
+3178: LD_VAR 0 6
+3182: PPUSH
+3183: CALL_OW 47
+3187: ST_TO_ADDR
+// prepare_people ( 1 , class_soldier , 0 , 0 , 0 , br ) ;
+3188: LD_INT 1
+3190: PPUSH
+3191: LD_INT 1
+3193: PPUSH
+3194: LD_INT 0
+3196: PPUSH
+3197: LD_INT 0
+3199: PPUSH
+3200: LD_INT 0
+3202: PPUSH
+3203: LD_VAR 0 9
+3207: PPUSH
+3208: CALL 1924 0 6
+// soldiers_created := soldiers_created + 1 ;
+3212: LD_ADDR_LOC 4
+3216: PUSH
+3217: LD_LOC 4
+3221: PUSH
+3222: LD_INT 1
+3224: PLUS
+3225: ST_TO_ADDR
+// end ;
+3226: GO 3074
+3228: POP
+3229: POP
+// x := start_def [ pos ] [ 1 ] ;
+3230: LD_ADDR_VAR 0 4
+3234: PUSH
+3235: LD_EXP 21
+3239: PUSH
+3240: LD_VAR 0 3
+3244: ARRAY
+3245: PUSH
+3246: LD_INT 1
+3248: ARRAY
+3249: ST_TO_ADDR
+// y := start_def [ pos ] [ 2 ] ;
+3250: LD_ADDR_VAR 0 5
+3254: PUSH
+3255: LD_EXP 21
+3259: PUSH
+3260: LD_VAR 0 3
+3264: ARRAY
+3265: PUSH
+3266: LD_INT 2
+3268: ARRAY
+3269: ST_TO_ADDR
+// prepare_people ( nsol - number_of_breastworks , class_soldier , x , y , 5 , 0 ) ;
+3270: LD_LOC 8
+3274: PUSH
+3275: LD_EXP 2
+3279: MINUS
+3280: PPUSH
+3281: LD_INT 1
+3283: PPUSH
+3284: LD_VAR 0 4
+3288: PPUSH
+3289: LD_VAR 0 5
+3293: PPUSH
+3294: LD_INT 5
+3296: PPUSH
+3297: LD_INT 0
+3299: PPUSH
+3300: CALL 1924 0 6
+// prepare_people ( neng , class_engineer , x , y , 5 , 0 ) ;
+3304: LD_LOC 5
+3308: PPUSH
+3309: LD_INT 2
+3311: PPUSH
+3312: LD_VAR 0 4
+3316: PPUSH
+3317: LD_VAR 0 5
+3321: PPUSH
+3322: LD_INT 5
+3324: PPUSH
+3325: LD_INT 0
+3327: PPUSH
+3328: CALL 1924 0 6
+// prepare_people ( nmech , class_mechanic , x , y , 5 , 0 ) ;
+3332: LD_LOC 7
+3336: PPUSH
+3337: LD_INT 3
+3339: PPUSH
+3340: LD_VAR 0 4
+3344: PPUSH
+3345: LD_VAR 0 5
+3349: PPUSH
+3350: LD_INT 5
+3352: PPUSH
+3353: LD_INT 0
+3355: PPUSH
+3356: CALL 1924 0 6
+// prepare_people ( nsci , class_scientistic , x , y , 5 , 0 ) ;
+3360: LD_LOC 6
+3364: PPUSH
+3365: LD_INT 4
+3367: PPUSH
+3368: LD_VAR 0 4
+3372: PPUSH
+3373: LD_VAR 0 5
+3377: PPUSH
+3378: LD_INT 5
+3380: PPUSH
+3381: LD_INT 0
+3383: PPUSH
+3384: CALL 1924 0 6
+// if def_siberite_detection and GetTech ( tech_sibdet , side ) = state_enabled then
+3388: LD_EXP 37
+3392: PUSH
+3393: LD_INT 20
+3395: PPUSH
+3396: LD_VAR 0 1
+3400: PPUSH
+3401: CALL_OW 321
+3405: PUSH
+3406: LD_INT 1
+3408: EQUAL
+3409: AND
+3410: IFFALSE 3427
+// SetTech ( tech_SibDet , side , state_researched ) ;
+3412: LD_INT 20
+3414: PPUSH
+3415: LD_VAR 0 1
+3419: PPUSH
+3420: LD_INT 2
+3422: PPUSH
+3423: CALL_OW 322
+// if def_siberite_bomb = 1 then
+3427: LD_EXP 40
+3431: PUSH
+3432: LD_INT 1
+3434: EQUAL
+3435: IFFALSE 3469
+// begin SetTech ( tech_SibFiss , side , state_enabled ) ;
+3437: LD_INT 25
+3439: PPUSH
+3440: LD_VAR 0 1
+3444: PPUSH
+3445: LD_INT 1
+3447: PPUSH
+3448: CALL_OW 322
+// SetTech ( 73 , side , state_enabled ) ;
+3452: LD_INT 73
+3454: PPUSH
+3455: LD_VAR 0 1
+3459: PPUSH
+3460: LD_INT 1
+3462: PPUSH
+3463: CALL_OW 322
+// end else
+3467: GO 3499
+// begin SetTech ( tech_SibFiss , side , state_disabled ) ;
+3469: LD_INT 25
+3471: PPUSH
+3472: LD_VAR 0 1
+3476: PPUSH
+3477: LD_INT 0
+3479: PPUSH
+3480: CALL_OW 322
+// SetTech ( 73 , side , state_disabled ) ;
+3484: LD_INT 73
+3486: PPUSH
+3487: LD_VAR 0 1
+3491: PPUSH
+3492: LD_INT 0
+3494: PPUSH
+3495: CALL_OW 322
+// end ; SetTech ( tech_artifact , side , state_disabled ) ;
+3499: LD_INT 24
+3501: PPUSH
+3502: LD_VAR 0 1
+3506: PPUSH
+3507: LD_INT 0
+3509: PPUSH
+3510: CALL_OW 322
+// global_defined := true ;
+3514: LD_ADDR_LOC 3
+3518: PUSH
+3519: LD_INT 1
+3521: ST_TO_ADDR
+// end ;
+3522: LD_VAR 0 2
+3526: RET
+// every 0 0$1 do
+3527: GO 3529
+3529: DISABLE
+// if ( def_siberite_bomb > 1 ) then
+3530: LD_EXP 40
+3534: PUSH
+3535: LD_INT 1
+3537: GREATER
+3538: IFFALSE 3553
+// begin wait ( siberite_bomb_Delay ) ;
+3540: LD_EXP 12
+3544: PPUSH
+3545: CALL_OW 67
+// EnableSibFiss ;
+3549: CALL 3554 0 0
+// end ;
+3553: END
+// function EnableSibFiss ; var i ; begin
+3554: LD_INT 0
+3556: PPUSH
+3557: PPUSH
+// for i := 1 to 8 do
+3558: LD_ADDR_VAR 0 2
+3562: PUSH
+3563: DOUBLE
+3564: LD_INT 1
+3566: DEC
+3567: ST_TO_ADDR
+3568: LD_INT 8
+3570: PUSH
+3571: FOR_TO
+3572: IFFALSE 3618
+// if Side_Positions [ i ] then
+3574: LD_EXP 16
+3578: PUSH
+3579: LD_VAR 0 2
+3583: ARRAY
+3584: IFFALSE 3616
+// begin SetTech ( tech_SibFiss , i , state_enabled ) ;
+3586: LD_INT 25
+3588: PPUSH
+3589: LD_VAR 0 2
+3593: PPUSH
+3594: LD_INT 1
+3596: PPUSH
+3597: CALL_OW 322
+// SetTech ( 73 , i , state_enabled ) ;
+3601: LD_INT 73
+3603: PPUSH
+3604: LD_VAR 0 2
+3608: PPUSH
+3609: LD_INT 1
+3611: PPUSH
+3612: CALL_OW 322
+// end ;
+3616: GO 3571
+3618: POP
+3619: POP
+// end ;
+3620: LD_VAR 0 1
+3624: RET
+// function prepare_sides ; var i ; begin
+3625: LD_INT 0
+3627: PPUSH
+3628: PPUSH
+// global_units := [ ] ;
+3629: LD_ADDR_LOC 2
+3633: PUSH
+3634: EMPTY
+3635: ST_TO_ADDR
+// global_defined := false ;
+3636: LD_ADDR_LOC 3
+3640: PUSH
+3641: LD_INT 0
+3643: ST_TO_ADDR
+// CountClassMembers ;
+3644: CALL 3694 0 0
+// for i := 1 to 8 do
+3648: LD_ADDR_VAR 0 2
+3652: PUSH
+3653: DOUBLE
+3654: LD_INT 1
+3656: DEC
+3657: ST_TO_ADDR
+3658: LD_INT 8
+3660: PUSH
+3661: FOR_TO
+3662: IFFALSE 3687
+// if Side_Positions [ i ] then
+3664: LD_EXP 16
+3668: PUSH
+3669: LD_VAR 0 2
+3673: ARRAY
+3674: IFFALSE 3685
+// prepare_side ( i ) ;
+3676: LD_VAR 0 2
+3680: PPUSH
+3681: CALL 2461 0 1
+3685: GO 3661
+3687: POP
+3688: POP
+// end ;
+3689: LD_VAR 0 1
+3693: RET
+// function CountClassMembers ; var Mode ; begin
+3694: LD_INT 0
+3696: PPUSH
+3697: PPUSH
+// if No_Mechs then
+3698: LD_EXP 42
+3702: IFFALSE 3714
+// Mode := 2 else
+3704: LD_ADDR_VAR 0 2
+3708: PUSH
+3709: LD_INT 2
+3711: ST_TO_ADDR
+3712: GO 3722
+// Mode := 1 ;
+3714: LD_ADDR_VAR 0 2
+3718: PUSH
+3719: LD_INT 1
+3721: ST_TO_ADDR
+// neng := number_of_people ;
+3722: LD_ADDR_LOC 5
+3726: PUSH
+3727: LD_EXP 3
+3731: ST_TO_ADDR
+// nsol := neng div [ 4 , 3 ] [ Mode ] ;
+3732: LD_ADDR_LOC 8
+3736: PUSH
+3737: LD_LOC 5
+3741: PUSH
+3742: LD_INT 4
+3744: PUSH
+3745: LD_INT 3
+3747: PUSH
+3748: EMPTY
+3749: LIST
+3750: LIST
+3751: PUSH
+3752: LD_VAR 0 2
+3756: ARRAY
+3757: DIV
+3758: ST_TO_ADDR
+// if ( nsol < number_of_breastworks ) then
+3759: LD_LOC 8
+3763: PUSH
+3764: LD_EXP 2
+3768: LESS
+3769: IFFALSE 3781
+// nsol := number_of_breastworks ;
+3771: LD_ADDR_LOC 8
+3775: PUSH
+3776: LD_EXP 2
+3780: ST_TO_ADDR
+// neng := neng - nsol ;
+3781: LD_ADDR_LOC 5
+3785: PUSH
+3786: LD_LOC 5
+3790: PUSH
+3791: LD_LOC 8
+3795: MINUS
+3796: ST_TO_ADDR
+// nsci := neng div [ 3 , 2 ] [ Mode ] ;
+3797: LD_ADDR_LOC 6
+3801: PUSH
+3802: LD_LOC 5
+3806: PUSH
+3807: LD_INT 3
+3809: PUSH
+3810: LD_INT 2
+3812: PUSH
+3813: EMPTY
+3814: LIST
+3815: LIST
+3816: PUSH
+3817: LD_VAR 0 2
+3821: ARRAY
+3822: DIV
+3823: ST_TO_ADDR
+// if ( nsci < 1 ) then
+3824: LD_LOC 6
+3828: PUSH
+3829: LD_INT 1
+3831: LESS
+3832: IFFALSE 3842
+// nsci := 1 ;
+3834: LD_ADDR_LOC 6
+3838: PUSH
+3839: LD_INT 1
+3841: ST_TO_ADDR
+// neng := neng - nsci ;
+3842: LD_ADDR_LOC 5
+3846: PUSH
+3847: LD_LOC 5
+3851: PUSH
+3852: LD_LOC 6
+3856: MINUS
+3857: ST_TO_ADDR
+// nmech := [ neng div 2 , 0 ] [ Mode ] ;
+3858: LD_ADDR_LOC 7
+3862: PUSH
+3863: LD_LOC 5
+3867: PUSH
+3868: LD_INT 2
+3870: DIV
+3871: PUSH
+3872: LD_INT 0
+3874: PUSH
+3875: EMPTY
+3876: LIST
+3877: LIST
+3878: PUSH
+3879: LD_VAR 0 2
+3883: ARRAY
+3884: ST_TO_ADDR
+// neng := neng - nmech ;
+3885: LD_ADDR_LOC 5
+3889: PUSH
+3890: LD_LOC 5
+3894: PUSH
+3895: LD_LOC 7
+3899: MINUS
+3900: ST_TO_ADDR
+// if ( neng < 1 ) then
+3901: LD_LOC 5
+3905: PUSH
+3906: LD_INT 1
+3908: LESS
+3909: IFFALSE 3919
+// neng := 1 ;
+3911: LD_ADDR_LOC 5
+3915: PUSH
+3916: LD_INT 1
+3918: ST_TO_ADDR
+// end ;
+3919: LD_VAR 0 1
+3923: RET
+// starting begin disable ( 98 ) ;
+3924: LD_INT 98
+3926: DISABLE_MARKED
+// disable ( 99 ) ;
+3927: LD_INT 99
+3929: DISABLE_MARKED
+// disable ( 400 ) ;
+3930: LD_INT 400
+3932: DISABLE_MARKED
+// disable ( 401 ) ;
+3933: LD_INT 401
+3935: DISABLE_MARKED
+// mp_selectmsg := true ;
+3936: LD_ADDR_OWVAR 13
+3940: PUSH
+3941: LD_INT 1
+3943: ST_TO_ADDR
+// read_multiplayer_and_game_parameters ;
+3944: CALL 483 0 0
+// init_map ;
+3948: CALL 0 0 0
+// set_shared_visions_and_alliances ;
+3952: CALL 1620 0 0
+// ResetFog ;
+3956: CALL_OW 335
+// ClearAllFogForSide ( your_side ) ;
+3960: LD_OWVAR 2
+3964: PPUSH
+3965: CALL_OW 520
+// prepare_sides ;
+3969: CALL 3625 0 0
+// init_shipments_and_respawning ;
+3973: CALL 4589 0 0
+// Init_Win_Condition ;
+3977: CALL 9937 0 0
+// InitLimits ;
+3981: CALL 8597 0 0
+// ShowTimer ;
+3985: CALL 9534 0 0
+// music_nat := Side_Nations [ your_side ] ;
+3989: LD_ADDR_OWVAR 71
+3993: PUSH
+3994: LD_EXP 17
+3998: PUSH
+3999: LD_OWVAR 2
+4003: ARRAY
+4004: ST_TO_ADDR
+// if IAmSpec then
+4005: CALL_OW 531
+4009: IFFALSE 4033
+// begin fogoff ( true ) ;
+4011: LD_INT 1
+4013: PPUSH
+4014: CALL_OW 344
+// CenterNowOnXY ( 104 , 69 ) ;
+4018: LD_INT 104
+4020: PPUSH
+4021: LD_INT 69
+4023: PPUSH
+4024: CALL_OW 86
+// enable ( 400 ) ;
+4028: LD_INT 400
+4030: ENABLE_MARKED
+// end else
+4031: GO 4079
+// begin CenterNowOnXY ( start_def [ Side_Positions [ your_side ] ] [ 1 ] , start_def [ Side_Positions [ your_side ] ] [ 2 ] ) ;
+4033: LD_EXP 21
+4037: PUSH
+4038: LD_EXP 16
+4042: PUSH
+4043: LD_OWVAR 2
+4047: ARRAY
+4048: ARRAY
+4049: PUSH
+4050: LD_INT 1
+4052: ARRAY
+4053: PPUSH
+4054: LD_EXP 21
+4058: PUSH
+4059: LD_EXP 16
+4063: PUSH
+4064: LD_OWVAR 2
+4068: ARRAY
+4069: ARRAY
+4070: PUSH
+4071: LD_INT 2
+4073: ARRAY
+4074: PPUSH
+4075: CALL_OW 86
+// end ; end ; end_of_file
+4079: END
+// on BuildingStarted ( b , u ) do begin if GetBType ( b ) in [ b_depot , b_warehouse ] then
+4080: LD_VAR 0 1
+4084: PPUSH
+4085: CALL_OW 266
+4089: PUSH
+4090: LD_INT 0
+4092: PUSH
+4093: LD_INT 1
+4095: PUSH
+4096: EMPTY
+4097: LIST
+4098: LIST
+4099: IN
+4100: IFFALSE 4125
+// SetBName ( b , @ & GetSide ( b ) ) ;
+4102: LD_VAR 0 1
+4106: PPUSH
+4107: LD_STRING @
+4109: PUSH
+4110: LD_VAR 0 1
+4114: PPUSH
+4115: CALL_OW 255
+4119: STR
+4120: PPUSH
+4121: CALL_OW 500
+// if def_game_rules then
+4125: LD_EXP 27
+4129: IFFALSE 4166
+// ExecuteLimits ( b , GetBType ( b ) , GetSide ( b ) , 0 , 1 ) ;
+4131: LD_VAR 0 1
+4135: PPUSH
+4136: LD_VAR 0 1
+4140: PPUSH
+4141: CALL_OW 266
+4145: PPUSH
+4146: LD_VAR 0 1
+4150: PPUSH
+4151: CALL_OW 255
+4155: PPUSH
+4156: LD_INT 0
+4158: PPUSH
+4159: LD_INT 1
+4161: PPUSH
+4162: CALL 8998 0 5
+// end ;
+4166: PPOPN 2
+4168: END
+// on BuildingCaptured ( b , o , e ) do begin if GetBType ( b ) in [ b_depot , b_warehouse ] then
+4169: LD_VAR 0 1
+4173: PPUSH
+4174: CALL_OW 266
+4178: PUSH
+4179: LD_INT 0
+4181: PUSH
+4182: LD_INT 1
+4184: PUSH
+4185: EMPTY
+4186: LIST
+4187: LIST
+4188: IN
+4189: IFFALSE 4214
+// SetBName ( b , @ & GetSide ( b ) ) ;
+4191: LD_VAR 0 1
+4195: PPUSH
+4196: LD_STRING @
+4198: PUSH
+4199: LD_VAR 0 1
+4203: PPUSH
+4204: CALL_OW 255
+4208: STR
+4209: PPUSH
+4210: CALL_OW 500
+// if def_game_rules then
+4214: LD_EXP 27
+4218: IFFALSE 4257
+// ExecuteLimits ( b , GetBType ( b ) , GetSide ( b ) , o , 1 ) ;
+4220: LD_VAR 0 1
+4224: PPUSH
+4225: LD_VAR 0 1
+4229: PPUSH
+4230: CALL_OW 266
+4234: PPUSH
+4235: LD_VAR 0 1
+4239: PPUSH
+4240: CALL_OW 255
+4244: PPUSH
+4245: LD_VAR 0 2
+4249: PPUSH
+4250: LD_INT 1
+4252: PPUSH
+4253: CALL 8998 0 5
+// end ;
+4257: PPOPN 3
+4259: END
+// on UnitDestroyed ( j ) do var x , y , pos , dir ;
+4260: LD_INT 0
+4262: PPUSH
+4263: PPUSH
+4264: PPUSH
+4265: PPUSH
+// begin if GetSide ( j ) = 0 and GetClass ( j ) = class_apeman then
+4266: LD_VAR 0 1
+4270: PPUSH
+4271: CALL_OW 255
+4275: PUSH
+4276: LD_INT 0
+4278: EQUAL
+4279: PUSH
+4280: LD_VAR 0 1
+4284: PPUSH
+4285: CALL_OW 257
+4289: PUSH
+4290: LD_INT 12
+4292: EQUAL
+4293: AND
+4294: IFFALSE 4300
+// CheckApemenAmount ;
+4296: CALL 5725 0 0
+// if GetBType ( j ) in [ b_depot , b_warehouse ] then
+4300: LD_VAR 0 1
+4304: PPUSH
+4305: CALL_OW 266
+4309: PUSH
+4310: LD_INT 0
+4312: PUSH
+4313: LD_INT 1
+4315: PUSH
+4316: EMPTY
+4317: LIST
+4318: LIST
+4319: IN
+4320: IFFALSE 4402
+// begin pos := Side_Positions [ GetSide ( j ) ] ;
+4322: LD_ADDR_VAR 0 4
+4326: PUSH
+4327: LD_EXP 16
+4331: PUSH
+4332: LD_VAR 0 1
+4336: PPUSH
+4337: CALL_OW 255
+4341: ARRAY
+4342: ST_TO_ADDR
+// x := start_def [ pos ] [ 1 ] ;
+4343: LD_ADDR_VAR 0 2
+4347: PUSH
+4348: LD_EXP 21
+4352: PUSH
+4353: LD_VAR 0 4
+4357: ARRAY
+4358: PUSH
+4359: LD_INT 1
+4361: ARRAY
+4362: ST_TO_ADDR
+// y := start_def [ pos ] [ 2 ] ;
+4363: LD_ADDR_VAR 0 3
+4367: PUSH
+4368: LD_EXP 21
+4372: PUSH
+4373: LD_VAR 0 4
+4377: ARRAY
+4378: PUSH
+4379: LD_INT 2
+4381: ARRAY
+4382: ST_TO_ADDR
+// KillBattleFlag ( FindBattleFlag ( x , y ) ) ;
+4383: LD_VAR 0 2
+4387: PPUSH
+4388: LD_VAR 0 3
+4392: PPUSH
+4393: CALL_OW 420
+4397: PPUSH
+4398: CALL_OW 419
+// end ; if def_game_rules then
+4402: LD_EXP 27
+4406: IFFALSE 4505
+// if ( GetType ( j ) = 3 ) then
+4408: LD_VAR 0 1
+4412: PPUSH
+4413: CALL_OW 247
+4417: PUSH
+4418: LD_INT 3
+4420: EQUAL
+4421: IFFALSE 4461
+// ExecuteLimits ( j , GetBType ( j ) , GetSide ( j ) , 0 , - 1 ) else
+4423: LD_VAR 0 1
+4427: PPUSH
+4428: LD_VAR 0 1
+4432: PPUSH
+4433: CALL_OW 266
+4437: PPUSH
+4438: LD_VAR 0 1
+4442: PPUSH
+4443: CALL_OW 255
+4447: PPUSH
+4448: LD_INT 0
+4450: PPUSH
+4451: LD_INT 1
+4453: NEG
+4454: PPUSH
+4455: CALL 8998 0 5
+4459: GO 4505
+// if ( GetChassis ( j ) = 25 ) then
+4461: LD_VAR 0 1
+4465: PPUSH
+4466: CALL_OW 265
+4470: PUSH
+4471: LD_INT 25
+4473: EQUAL
+4474: IFFALSE 4505
+// ExecuteLimits ( j , b_behemoth , GetSide ( j ) , 0 , - 1 ) ;
+4476: LD_VAR 0 1
+4480: PPUSH
+4481: LD_INT 37
+4483: PPUSH
+4484: LD_VAR 0 1
+4488: PPUSH
+4489: CALL_OW 255
+4493: PPUSH
+4494: LD_INT 0
+4496: PPUSH
+4497: LD_INT 1
+4499: NEG
+4500: PPUSH
+4501: CALL 8998 0 5
+// end ;
+4505: PPOPN 5
+4507: END
+// on VehicleCaptured ( j , i1 , o , i2 ) do begin if def_game_rules and ( GetChassis ( j ) = 25 ) then
+4508: LD_EXP 27
+4512: PUSH
+4513: LD_VAR 0 1
+4517: PPUSH
+4518: CALL_OW 265
+4522: PUSH
+4523: LD_INT 25
+4525: EQUAL
+4526: AND
+4527: IFFALSE 4559
+// ExecuteLimits ( j , b_behemoth , GetSide ( j ) , o , 1 ) ;
+4529: LD_VAR 0 1
+4533: PPUSH
+4534: LD_INT 37
+4536: PPUSH
+4537: LD_VAR 0 1
+4541: PPUSH
+4542: CALL_OW 255
+4546: PPUSH
+4547: LD_VAR 0 3
+4551: PPUSH
+4552: LD_INT 1
+4554: PPUSH
+4555: CALL 8998 0 5
+// end ;
+4559: PPOPN 4
+4561: END
+// on siberiterocketexploded ( un , x , y ) do SA_OnSiberiteRocketExploded ( un , x , y , Your_Side ) ; end_of_file
+4562: LD_VAR 0 1
+4566: PPUSH
+4567: LD_VAR 0 2
+4571: PPUSH
+4572: LD_VAR 0 3
+4576: PPUSH
+4577: LD_OWVAR 2
+4581: PPUSH
+4582: CALL 9698 0 4
+4586: PPOPN 3
+4588: END
+// var shipment , respawn , inqueue ; export function init_shipments_and_respawning ; begin
+4589: LD_INT 0
+4591: PPUSH
+// shipment := Rand ( 0 , 3 ) ;
+4592: LD_ADDR_LOC 9
+4596: PUSH
+4597: LD_INT 0
+4599: PPUSH
+4600: LD_INT 3
+4602: PPUSH
+4603: CALL_OW 12
+4607: ST_TO_ADDR
+// respawn := Rand ( 1 , 8 ) ;
+4608: LD_ADDR_LOC 10
+4612: PUSH
+4613: LD_INT 1
+4615: PPUSH
+4616: LD_INT 8
+4618: PPUSH
+4619: CALL_OW 12
+4623: ST_TO_ADDR
+// inqueue := [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] ;
+4624: LD_ADDR_LOC 11
+4628: PUSH
+4629: LD_INT 0
+4631: PUSH
+4632: LD_INT 0
+4634: PUSH
+4635: LD_INT 0
+4637: PUSH
+4638: LD_INT 0
+4640: PUSH
+4641: LD_INT 0
+4643: PUSH
+4644: LD_INT 0
+4646: PUSH
+4647: LD_INT 0
+4649: PUSH
+4650: LD_INT 0
+4652: PUSH
+4653: EMPTY
+4654: LIST
+4655: LIST
+4656: LIST
+4657: LIST
+4658: LIST
+4659: LIST
+4660: LIST
+4661: LIST
+4662: ST_TO_ADDR
+// end ;
+4663: LD_VAR 0 1
+4667: RET
+// every 0 0$1 + 0 0$0.5 do var n , building_list , aktresp , b ;
+4668: GO 4670
+4670: DISABLE
+4671: LD_INT 0
+4673: PPUSH
+4674: PPUSH
+4675: PPUSH
+4676: PPUSH
+// begin if respawning_time_max = 0 then
+4677: LD_EXP 10
+4681: PUSH
+4682: LD_INT 0
+4684: EQUAL
+4685: IFFALSE 4689
+// exit ;
+4687: GO 5196
+// if respawn = 8 then
+4689: LD_LOC 10
+4693: PUSH
+4694: LD_INT 8
+4696: EQUAL
+4697: IFFALSE 4709
+// respawn := 1 else
+4699: LD_ADDR_LOC 10
+4703: PUSH
+4704: LD_INT 1
+4706: ST_TO_ADDR
+4707: GO 4723
+// respawn := respawn + 1 ;
+4709: LD_ADDR_LOC 10
+4713: PUSH
+4714: LD_LOC 10
+4718: PUSH
+4719: LD_INT 1
+4721: PLUS
+4722: ST_TO_ADDR
+// if Side_Positions [ respawn ] and not inqueue [ respawn ] then
+4723: LD_EXP 16
+4727: PUSH
+4728: LD_LOC 10
+4732: ARRAY
+4733: PUSH
+4734: LD_LOC 11
+4738: PUSH
+4739: LD_LOC 10
+4743: ARRAY
+4744: NOT
+4745: AND
+4746: IFFALSE 5195
+// begin n := FilterAllUnits ( [ [ f_type , unit_human ] , [ f_side , respawn ] , f_not , [ f_nation , nation_nature ] ] ) ;
+4748: LD_ADDR_VAR 0 1
+4752: PUSH
+4753: LD_INT 21
+4755: PUSH
+4756: LD_INT 1
+4758: PUSH
+4759: EMPTY
+4760: LIST
+4761: LIST
+4762: PUSH
+4763: LD_INT 22
+4765: PUSH
+4766: LD_LOC 10
+4770: PUSH
+4771: EMPTY
+4772: LIST
+4773: LIST
+4774: PUSH
+4775: LD_INT 3
+4777: PUSH
+4778: LD_INT 23
+4780: PUSH
+4781: LD_INT 0
+4783: PUSH
+4784: EMPTY
+4785: LIST
+4786: LIST
+4787: PUSH
+4788: EMPTY
+4789: LIST
+4790: LIST
+4791: LIST
+4792: LIST
+4793: PPUSH
+4794: CALL_OW 69
+4798: ST_TO_ADDR
+// if n < number_of_people then
+4799: LD_VAR 0 1
+4803: PUSH
+4804: LD_EXP 3
+4808: LESS
+4809: IFFALSE 5192
+// begin aktresp := respawn ;
+4811: LD_ADDR_VAR 0 3
+4815: PUSH
+4816: LD_LOC 10
+4820: ST_TO_ADDR
+// inqueue := Replace ( inqueue , aktresp , true ) ;
+4821: LD_ADDR_LOC 11
+4825: PUSH
+4826: LD_LOC 11
+4830: PPUSH
+4831: LD_VAR 0 3
+4835: PPUSH
+4836: LD_INT 1
+4838: PPUSH
+4839: CALL_OW 1
+4843: ST_TO_ADDR
+// enable ;
+4844: ENABLE
+// wait ( rand ( respawning_time_min , respawning_time_max ) ) ;
+4845: LD_EXP 9
+4849: PPUSH
+4850: LD_EXP 10
+4854: PPUSH
+4855: CALL_OW 12
+4859: PPUSH
+4860: CALL_OW 67
+// inqueue := Replace ( inqueue , aktresp , false ) ;
+4864: LD_ADDR_LOC 11
+4868: PUSH
+4869: LD_LOC 11
+4873: PPUSH
+4874: LD_VAR 0 3
+4878: PPUSH
+4879: LD_INT 0
+4881: PPUSH
+4882: CALL_OW 1
+4886: ST_TO_ADDR
+// building_list = FilterAllUnits ( [ [ f_type , unit_building ] , [ f_or , [ f_btype , b_depot ] , [ f_btype , b_warehouse ] ] , [ f_ok ] , [ f_side , aktresp ] ] ) ;
+4887: LD_ADDR_VAR 0 2
+4891: PUSH
+4892: LD_INT 21
+4894: PUSH
+4895: LD_INT 3
+4897: PUSH
+4898: EMPTY
+4899: LIST
+4900: LIST
+4901: PUSH
+4902: LD_INT 2
+4904: PUSH
+4905: LD_INT 30
+4907: PUSH
+4908: LD_INT 0
+4910: PUSH
+4911: EMPTY
+4912: LIST
+4913: LIST
+4914: PUSH
+4915: LD_INT 30
+4917: PUSH
+4918: LD_INT 1
+4920: PUSH
+4921: EMPTY
+4922: LIST
+4923: LIST
+4924: PUSH
+4925: EMPTY
+4926: LIST
+4927: LIST
+4928: LIST
+4929: PUSH
+4930: LD_INT 50
+4932: PUSH
+4933: EMPTY
+4934: LIST
+4935: PUSH
+4936: LD_INT 22
+4938: PUSH
+4939: LD_VAR 0 3
+4943: PUSH
+4944: EMPTY
+4945: LIST
+4946: LIST
+4947: PUSH
+4948: EMPTY
+4949: LIST
+4950: LIST
+4951: LIST
+4952: LIST
+4953: PPUSH
+4954: CALL_OW 69
+4958: ST_TO_ADDR
+// if building_list = 0 then
+4959: LD_VAR 0 2
+4963: PUSH
+4964: LD_INT 0
+4966: EQUAL
+4967: IFFALSE 5012
+// building_list = FilterAllUnits ( [ [ f_type , unit_building ] , [ f_ok ] , [ f_side , aktresp ] ] ) ;
+4969: LD_ADDR_VAR 0 2
+4973: PUSH
+4974: LD_INT 21
+4976: PUSH
+4977: LD_INT 3
+4979: PUSH
+4980: EMPTY
+4981: LIST
+4982: LIST
+4983: PUSH
+4984: LD_INT 50
+4986: PUSH
+4987: EMPTY
+4988: LIST
+4989: PUSH
+4990: LD_INT 22
+4992: PUSH
+4993: LD_VAR 0 3
+4997: PUSH
+4998: EMPTY
+4999: LIST
+5000: LIST
+5001: PUSH
+5002: EMPTY
+5003: LIST
+5004: LIST
+5005: LIST
+5006: PPUSH
+5007: CALL_OW 69
+5011: ST_TO_ADDR
+// if building_list = 0 then
+5012: LD_VAR 0 2
+5016: PUSH
+5017: LD_INT 0
+5019: EQUAL
+5020: IFFALSE 5024
+// exit ;
+5022: GO 5196
+// hc_name :=  ;
+5024: LD_ADDR_OWVAR 26
+5028: PUSH
+5029: LD_STRING 
+5031: ST_TO_ADDR
+// hc_importance := 0 ;
+5032: LD_ADDR_OWVAR 32
+5036: PUSH
+5037: LD_INT 0
+5039: ST_TO_ADDR
+// PrepareHuman ( 0 , 0 , initial_level div 2 ) ;
+5040: LD_INT 0
+5042: PPUSH
+5043: LD_INT 0
+5045: PPUSH
+5046: LD_EXP 4
+5050: PUSH
+5051: LD_INT 2
+5053: DIV
+5054: PPUSH
+5055: CALL_OW 380
+// uc_nation := Side_Nations [ aktresp ] ;
+5059: LD_ADDR_OWVAR 21
+5063: PUSH
+5064: LD_EXP 17
+5068: PUSH
+5069: LD_VAR 0 3
+5073: ARRAY
+5074: ST_TO_ADDR
+// uc_side := aktresp ;
+5075: LD_ADDR_OWVAR 20
+5079: PUSH
+5080: LD_VAR 0 3
+5084: ST_TO_ADDR
+// b := building_list [ Rand ( 1 , building_list + 0 ) ] ;
+5085: LD_ADDR_VAR 0 4
+5089: PUSH
+5090: LD_VAR 0 2
+5094: PUSH
+5095: LD_INT 1
+5097: PPUSH
+5098: LD_VAR 0 2
+5102: PUSH
+5103: LD_INT 0
+5105: PLUS
+5106: PPUSH
+5107: CALL_OW 12
+5111: ARRAY
+5112: ST_TO_ADDR
+// if GetBType ( b ) in [ b_depot , b_warehouse ] then
+5113: LD_VAR 0 4
+5117: PPUSH
+5118: CALL_OW 266
+5122: PUSH
+5123: LD_INT 0
+5125: PUSH
+5126: LD_INT 1
+5128: PUSH
+5129: EMPTY
+5130: LIST
+5131: LIST
+5132: IN
+5133: IFFALSE 5145
+// n = 25 else
+5135: LD_ADDR_VAR 0 1
+5139: PUSH
+5140: LD_INT 25
+5142: ST_TO_ADDR
+5143: GO 5153
+// n = 10 ;
+5145: LD_ADDR_VAR 0 1
+5149: PUSH
+5150: LD_INT 10
+5152: ST_TO_ADDR
+// PlaceUnitXYR ( CreateHuman , GetX ( b ) , GetY ( b ) , n , true ) ;
+5153: CALL_OW 44
+5157: PPUSH
+5158: LD_VAR 0 4
+5162: PPUSH
+5163: CALL_OW 250
+5167: PPUSH
+5168: LD_VAR 0 4
+5172: PPUSH
+5173: CALL_OW 251
+5177: PPUSH
+5178: LD_VAR 0 1
+5182: PPUSH
+5183: LD_INT 1
+5185: PPUSH
+5186: CALL_OW 50
+// end else
+5190: GO 5193
+// enable ;
+5192: ENABLE
+// end else
+5193: GO 5196
+// enable ;
+5195: ENABLE
+// end ;
+5196: PPOPN 4
+5198: END
+// every 0 0$5 + 0 0$1.1 do var d ;
+5199: GO 5201
+5201: DISABLE
+5202: LD_INT 0
+5204: PPUSH
+// begin case tick of 1 .. 1 1$0 :
+5205: LD_OWVAR 1
+5209: PUSH
+5210: LD_INT 1
+5212: DOUBLE
+5213: GREATEREQUAL
+5214: IFFALSE 5222
+5216: LD_INT 2100
+5218: DOUBLE
+5219: LESSEQUAL
+5220: IFTRUE 5224
+5222: GO 5235
+5224: POP
+// d := 150 ; 1 1$0 + 1 .. 5 5$0 :
+5225: LD_ADDR_VAR 0 1
+5229: PUSH
+5230: LD_INT 150
+5232: ST_TO_ADDR
+5233: GO 5418
+5235: LD_INT 2100
+5237: PUSH
+5238: LD_INT 1
+5240: PLUS
+5241: DOUBLE
+5242: GREATEREQUAL
+5243: IFFALSE 5251
+5245: LD_INT 10500
+5247: DOUBLE
+5248: LESSEQUAL
+5249: IFTRUE 5253
+5251: GO 5264
+5253: POP
+// d := 100 ; 5 5$0 + 1 .. 10 10$0 :
+5254: LD_ADDR_VAR 0 1
+5258: PUSH
+5259: LD_INT 100
+5261: ST_TO_ADDR
+5262: GO 5418
+5264: LD_INT 10500
+5266: PUSH
+5267: LD_INT 1
+5269: PLUS
+5270: DOUBLE
+5271: GREATEREQUAL
+5272: IFFALSE 5280
+5274: LD_INT 21000
+5276: DOUBLE
+5277: LESSEQUAL
+5278: IFTRUE 5282
+5280: GO 5293
+5282: POP
+// d := 90 ; 10 10$0 + 1 .. 20 20$0 :
+5283: LD_ADDR_VAR 0 1
+5287: PUSH
+5288: LD_INT 90
+5290: ST_TO_ADDR
+5291: GO 5418
+5293: LD_INT 21000
+5295: PUSH
+5296: LD_INT 1
+5298: PLUS
+5299: DOUBLE
+5300: GREATEREQUAL
+5301: IFFALSE 5309
+5303: LD_INT 42000
+5305: DOUBLE
+5306: LESSEQUAL
+5307: IFTRUE 5311
+5309: GO 5322
+5311: POP
+// d := 70 ; 20 20$0 + 1 .. 30 30$0 :
+5312: LD_ADDR_VAR 0 1
+5316: PUSH
+5317: LD_INT 70
+5319: ST_TO_ADDR
+5320: GO 5418
+5322: LD_INT 42000
+5324: PUSH
+5325: LD_INT 1
+5327: PLUS
+5328: DOUBLE
+5329: GREATEREQUAL
+5330: IFFALSE 5338
+5332: LD_INT 63000
+5334: DOUBLE
+5335: LESSEQUAL
+5336: IFTRUE 5340
+5338: GO 5351
+5340: POP
+// d := 60 ; 30 30$0 + 1 .. 50 50$0 :
+5341: LD_ADDR_VAR 0 1
+5345: PUSH
+5346: LD_INT 60
+5348: ST_TO_ADDR
+5349: GO 5418
+5351: LD_INT 63000
+5353: PUSH
+5354: LD_INT 1
+5356: PLUS
+5357: DOUBLE
+5358: GREATEREQUAL
+5359: IFFALSE 5367
+5361: LD_INT 105000
+5363: DOUBLE
+5364: LESSEQUAL
+5365: IFTRUE 5369
+5367: GO 5380
+5369: POP
+// d := 35 ; 50 50$0 + 1 .. 300 300$0 :
+5370: LD_ADDR_VAR 0 1
+5374: PUSH
+5375: LD_INT 35
+5377: ST_TO_ADDR
+5378: GO 5418
+5380: LD_INT 105000
+5382: PUSH
+5383: LD_INT 1
+5385: PLUS
+5386: DOUBLE
+5387: GREATEREQUAL
+5388: IFFALSE 5396
+5390: LD_INT 630000
+5392: DOUBLE
+5393: LESSEQUAL
+5394: IFTRUE 5398
+5396: GO 5409
+5398: POP
+// d := 20 ; else
+5399: LD_ADDR_VAR 0 1
+5403: PUSH
+5404: LD_INT 20
+5406: ST_TO_ADDR
+5407: GO 5418
+5409: POP
+// d := 0 ; end ;
+5410: LD_ADDR_VAR 0 1
+5414: PUSH
+5415: LD_INT 0
+5417: ST_TO_ADDR
+// if rand ( 1 , 10000 ) <= d * shipments_density then
+5418: LD_INT 1
+5420: PPUSH
+5421: LD_INT 10000
+5423: PPUSH
+5424: CALL_OW 12
+5428: PUSH
+5429: LD_VAR 0 1
+5433: PUSH
+5434: LD_EXP 7
+5438: MUL
+5439: LESSEQUAL
+5440: IFFALSE 5494
+// begin wait ( Rand ( 1 , 0 0$4 ) ) ;
+5442: LD_INT 1
+5444: PPUSH
+5445: LD_INT 140
+5447: PPUSH
+5448: CALL_OW 12
+5452: PPUSH
+5453: CALL_OW 67
+// shipment := ( shipment + 1 ) mod 4 ;
+5457: LD_ADDR_LOC 9
+5461: PUSH
+5462: LD_LOC 9
+5466: PUSH
+5467: LD_INT 1
+5469: PLUS
+5470: PUSH
+5471: LD_INT 4
+5473: MOD
+5474: ST_TO_ADDR
+// CreateCratesArea ( 5 , nw + shipment , true ) ;
+5475: LD_INT 5
+5477: PPUSH
+5478: LD_INT 3
+5480: PUSH
+5481: LD_LOC 9
+5485: PLUS
+5486: PPUSH
+5487: LD_INT 1
+5489: PPUSH
+5490: CALL_OW 55
+// end ; enable ;
+5494: ENABLE
+// end ;
+5495: PPOPN 1
+5497: END
+// every 1 1$0 trigger def_shipments_density do
+5498: LD_EXP 32
+5502: IFFALSE 5538
+5504: GO 5506
+5506: DISABLE
+// begin CreateCratesArea ( 5 , map_center , true ) ;
+5507: LD_INT 5
+5509: PPUSH
+5510: LD_INT 7
+5512: PPUSH
+5513: LD_INT 1
+5515: PPUSH
+5516: CALL_OW 55
+// wait ( 3 3$0 - ( 1 1$0 * def_shipments_density ) ) ;
+5520: LD_INT 6300
+5522: PUSH
+5523: LD_INT 2100
+5525: PUSH
+5526: LD_EXP 32
+5530: MUL
+5531: MINUS
+5532: PPUSH
+5533: CALL_OW 67
+// enable ;
+5537: ENABLE
+// end ; end_of_file
+5538: END
+// var _isDay ; every 0 0$10 do
+5539: GO 5541
+5541: DISABLE
+// begin _isDay := true ;
+5542: LD_ADDR_LOC 12
+5546: PUSH
+5547: LD_INT 1
+5549: ST_TO_ADDR
+// end ;
+5550: END
+// every 10 10$00 do
+5551: GO 5553
+5553: DISABLE
+// begin _isDay := not _isDay ;
+5554: LD_ADDR_LOC 12
+5558: PUSH
+5559: LD_LOC 12
+5563: NOT
+5564: ST_TO_ADDR
+// if _isDay then
+5565: LD_LOC 12
+5569: IFFALSE 5588
+// begin solar_recharge_percent := 100 ;
+5571: LD_ADDR_OWVAR 79
+5575: PUSH
+5576: LD_INT 100
+5578: ST_TO_ADDR
+// LoadColorsTXT ( colors.txt ) ;
+5579: LD_STRING colors.txt
+5581: PPUSH
+5582: CALL_OW 544
+// end else
+5586: GO 5603
+// begin solar_recharge_percent := 0 ;
+5588: LD_ADDR_OWVAR 79
+5592: PUSH
+5593: LD_INT 0
+5595: ST_TO_ADDR
+// LoadColorsTXT ( colors_night.txt ) ;
+5596: LD_STRING colors_night.txt
+5598: PPUSH
+5599: CALL_OW 544
+// end ; enable ;
+5603: ENABLE
+// end ; end_of_file
+5604: END
+// var _apemenIncrement , _apemenMaximum , _apemenSkillLevel , _apemenThreshold , _isSpawning , _wildApemenAmount ; every 0 0$15 do var i ;
+5605: GO 5607
+5607: DISABLE
+5608: LD_INT 0
+5610: PPUSH
+// begin _apemenIncrement := 0 ;
+5611: LD_ADDR_LOC 13
+5615: PUSH
+5616: LD_INT 0
+5618: ST_TO_ADDR
+// _apemenSkillLevel := 0 ;
+5619: LD_ADDR_LOC 15
+5623: PUSH
+5624: LD_INT 0
+5626: ST_TO_ADDR
+// _isSpawning := true ;
+5627: LD_ADDR_LOC 17
+5631: PUSH
+5632: LD_INT 1
+5634: ST_TO_ADDR
+// _wildApemenAmount := 0 ;
+5635: LD_ADDR_LOC 18
+5639: PUSH
+5640: LD_INT 0
+5642: ST_TO_ADDR
+// for i in ( Side_Positions diff [ 0 ] ) do
+5643: LD_ADDR_VAR 0 1
+5647: PUSH
+5648: LD_EXP 16
+5652: PUSH
+5653: LD_INT 0
+5655: PUSH
+5656: EMPTY
+5657: LIST
+5658: DIFF
+5659: PUSH
+5660: FOR_IN
+5661: IFFALSE 5679
+// _apemenIncrement := _apemenIncrement + 1 ;
+5663: LD_ADDR_LOC 13
+5667: PUSH
+5668: LD_LOC 13
+5672: PUSH
+5673: LD_INT 1
+5675: PLUS
+5676: ST_TO_ADDR
+5677: GO 5660
+5679: POP
+5680: POP
+// _apemenMaximum := _apemenIncrement * amount_of_apemen ;
+5681: LD_ADDR_LOC 14
+5685: PUSH
+5686: LD_LOC 13
+5690: PUSH
+5691: LD_EXP 11
+5695: MUL
+5696: ST_TO_ADDR
+// _apemenThreshold := _apemenMaximum / 2 ;
+5697: LD_ADDR_LOC 16
+5701: PUSH
+5702: LD_LOC 14
+5706: PUSH
+5707: LD_INT 2
+5709: DIVREAL
+5710: ST_TO_ADDR
+// prepare_apemen ;
+5711: CALL 5803 0 0
+// end ;
+5715: PPOPN 1
+5717: END
+// on ApemanTamed ( tamedApeman , tamerUnit ) do begin CheckApemenAmount ;
+5718: CALL 5725 0 0
+// end ;
+5722: PPOPN 2
+5724: END
+// export function CheckApemenAmount ; begin
+5725: LD_INT 0
+5727: PPUSH
+// _wildApemenAmount := _wildApemenAmount - 1 ;
+5728: LD_ADDR_LOC 18
+5732: PUSH
+5733: LD_LOC 18
+5737: PUSH
+5738: LD_INT 1
+5740: MINUS
+5741: ST_TO_ADDR
+// if _isSpawning then
+5742: LD_LOC 17
+5746: IFFALSE 5750
+// exit ;
+5748: GO 5798
+// if _wildApemenAmount <= ( _apemenThreshold ) then
+5750: LD_LOC 18
+5754: PUSH
+5755: LD_LOC 16
+5759: LESSEQUAL
+5760: IFFALSE 5798
+// begin if _apemenSkillLevel < 8 then
+5762: LD_LOC 15
+5766: PUSH
+5767: LD_INT 8
+5769: LESS
+5770: IFFALSE 5786
+// _apemenSkillLevel := _apemenSkillLevel + 1 ;
+5772: LD_ADDR_LOC 15
+5776: PUSH
+5777: LD_LOC 15
+5781: PUSH
+5782: LD_INT 1
+5784: PLUS
+5785: ST_TO_ADDR
+// _isSpawning := true ;
+5786: LD_ADDR_LOC 17
+5790: PUSH
+5791: LD_INT 1
+5793: ST_TO_ADDR
+// prepare_apemen ;
+5794: CALL 5803 0 0
+// end ; end ;
+5798: LD_VAR 0 1
+5802: RET
+// function prepare_apemen ; var i ; begin
+5803: LD_INT 0
+5805: PPUSH
+5806: PPUSH
+// if not amount_of_apemen then
+5807: LD_EXP 11
+5811: NOT
+5812: IFFALSE 5816
+// exit ;
+5814: GO 5995
+// repeat Wait ( Rand ( 0 0$30 , 1 1$30 ) ) ;
+5816: LD_INT 1050
+5818: PPUSH
+5819: LD_INT 3150
+5821: PPUSH
+5822: CALL_OW 12
+5826: PPUSH
+5827: CALL_OW 67
+// apeman_init ;
+5831: CALL 6000 0 0
+// for i in ( Side_Positions diff [ 0 ] ) do
+5835: LD_ADDR_VAR 0 2
+5839: PUSH
+5840: LD_EXP 16
+5844: PUSH
+5845: LD_INT 0
+5847: PUSH
+5848: EMPTY
+5849: LIST
+5850: DIFF
+5851: PUSH
+5852: FOR_IN
+5853: IFFALSE 5957
+// begin if i = 1 then
+5855: LD_VAR 0 2
+5859: PUSH
+5860: LD_INT 1
+5862: EQUAL
+5863: IFFALSE 5880
+// PlaceUnitArea ( CreateHuman , north_apeman , false ) ;
+5865: CALL_OW 44
+5869: PPUSH
+5870: LD_INT 1
+5872: PPUSH
+5873: LD_INT 0
+5875: PPUSH
+5876: CALL_OW 49
+// if i = 2 then
+5880: LD_VAR 0 2
+5884: PUSH
+5885: LD_INT 2
+5887: EQUAL
+5888: IFFALSE 5905
+// PlaceUnitArea ( CreateHuman , north_apeman , false ) ;
+5890: CALL_OW 44
+5894: PPUSH
+5895: LD_INT 1
+5897: PPUSH
+5898: LD_INT 0
+5900: PPUSH
+5901: CALL_OW 49
+// if i = 3 then
+5905: LD_VAR 0 2
+5909: PUSH
+5910: LD_INT 3
+5912: EQUAL
+5913: IFFALSE 5930
+// PlaceUnitArea ( CreateHuman , south_apeman , false ) ;
+5915: CALL_OW 44
+5919: PPUSH
+5920: LD_INT 2
+5922: PPUSH
+5923: LD_INT 0
+5925: PPUSH
+5926: CALL_OW 49
+// if i = 4 then
+5930: LD_VAR 0 2
+5934: PUSH
+5935: LD_INT 4
+5937: EQUAL
+5938: IFFALSE 5955
+// PlaceUnitArea ( CreateHuman , south_apeman , false ) ;
+5940: CALL_OW 44
+5944: PPUSH
+5945: LD_INT 2
+5947: PPUSH
+5948: LD_INT 0
+5950: PPUSH
+5951: CALL_OW 49
+// end ;
+5955: GO 5852
+5957: POP
+5958: POP
+// _wildApemenAmount := _wildApemenAmount + _apemenIncrement ;
+5959: LD_ADDR_LOC 18
+5963: PUSH
+5964: LD_LOC 18
+5968: PUSH
+5969: LD_LOC 13
+5973: PLUS
+5974: ST_TO_ADDR
+// until _wildApemenAmount >= _apemenMaximum ;
+5975: LD_LOC 18
+5979: PUSH
+5980: LD_LOC 14
+5984: GREATEREQUAL
+5985: IFFALSE 5816
+// _isSpawning := false ;
+5987: LD_ADDR_LOC 17
+5991: PUSH
+5992: LD_INT 0
+5994: ST_TO_ADDR
+// end ;
+5995: LD_VAR 0 1
+5999: RET
+// function apeman_init ; begin
+6000: LD_INT 0
+6002: PPUSH
+// uc_side := 0 ;
+6003: LD_ADDR_OWVAR 20
+6007: PUSH
+6008: LD_INT 0
+6010: ST_TO_ADDR
+// uc_nation := nation_nature ;
+6011: LD_ADDR_OWVAR 21
+6015: PUSH
+6016: LD_INT 0
+6018: ST_TO_ADDR
+// hc_class := class_apeman ;
+6019: LD_ADDR_OWVAR 28
+6023: PUSH
+6024: LD_INT 12
+6026: ST_TO_ADDR
+// hc_basic_skills := [ 2 , 2 , 2 , 2 ] ;
+6027: LD_ADDR_OWVAR 30
+6031: PUSH
+6032: LD_INT 2
+6034: PUSH
+6035: LD_INT 2
+6037: PUSH
+6038: LD_INT 2
+6040: PUSH
+6041: LD_INT 2
+6043: PUSH
+6044: EMPTY
+6045: LIST
+6046: LIST
+6047: LIST
+6048: LIST
+6049: ST_TO_ADDR
+// hc_skills := [ Rand ( 0 , 2 ) + _apemenSkillLevel , Rand ( 0 , 2 ) + _apemenSkillLevel , Rand ( 0 , 2 ) + _apemenSkillLevel , Rand ( 0 , 2 ) + _apemenSkillLevel ] ;
+6050: LD_ADDR_OWVAR 31
+6054: PUSH
+6055: LD_INT 0
+6057: PPUSH
+6058: LD_INT 2
+6060: PPUSH
+6061: CALL_OW 12
+6065: PUSH
+6066: LD_LOC 15
+6070: PLUS
+6071: PUSH
+6072: LD_INT 0
+6074: PPUSH
+6075: LD_INT 2
+6077: PPUSH
+6078: CALL_OW 12
+6082: PUSH
+6083: LD_LOC 15
+6087: PLUS
+6088: PUSH
+6089: LD_INT 0
+6091: PPUSH
+6092: LD_INT 2
+6094: PPUSH
+6095: CALL_OW 12
+6099: PUSH
+6100: LD_LOC 15
+6104: PLUS
+6105: PUSH
+6106: LD_INT 0
+6108: PPUSH
+6109: LD_INT 2
+6111: PPUSH
+6112: CALL_OW 12
+6116: PUSH
+6117: LD_LOC 15
+6121: PLUS
+6122: PUSH
+6123: EMPTY
+6124: LIST
+6125: LIST
+6126: LIST
+6127: LIST
+6128: ST_TO_ADDR
+// hc_attr := [ 10 , 12 ] ;
+6129: LD_ADDR_OWVAR 29
+6133: PUSH
+6134: LD_INT 10
+6136: PUSH
+6137: LD_INT 12
+6139: PUSH
+6140: EMPTY
+6141: LIST
+6142: LIST
+6143: ST_TO_ADDR
+// hc_sex := sex_male ;
+6144: LD_ADDR_OWVAR 27
+6148: PUSH
+6149: LD_INT 1
+6151: ST_TO_ADDR
+// hc_importance := 0 ;
+6152: LD_ADDR_OWVAR 32
+6156: PUSH
+6157: LD_INT 0
+6159: ST_TO_ADDR
+// hc_agressivity := Rand ( - 20 , 20 ) ;
+6160: LD_ADDR_OWVAR 35
+6164: PUSH
+6165: LD_INT 20
+6167: NEG
+6168: PPUSH
+6169: LD_INT 20
+6171: PPUSH
+6172: CALL_OW 12
+6176: ST_TO_ADDR
+// end ; end_of_file
+6177: LD_VAR 0 1
+6181: RET
+// var strength , lastxwin , lastywin , lastxlost , lastylost ; function Update_Flags ; var un ; begin
+6182: LD_INT 0
+6184: PPUSH
+6185: PPUSH
+// for un in battle_flags_id do
+6186: LD_ADDR_VAR 0 2
+6190: PUSH
+6191: LD_EXP 23
+6195: PUSH
+6196: FOR_IN
+6197: IFFALSE 6272
+// ChangeBattleFlagOptions ( un , [ [ bfo_defend_bonus_human , strength ] , [ bfo_defend_bonus_vehicle , strength div 2 ] , [ bfo_defend_bonus_building , strength div 5 ] , [ bfo_height , strength ] ] ) ;
+6199: LD_VAR 0 2
+6203: PPUSH
+6204: LD_INT 1
+6206: PUSH
+6207: LD_LOC 19
+6211: PUSH
+6212: EMPTY
+6213: LIST
+6214: LIST
+6215: PUSH
+6216: LD_INT 2
+6218: PUSH
+6219: LD_LOC 19
+6223: PUSH
+6224: LD_INT 2
+6226: DIV
+6227: PUSH
+6228: EMPTY
+6229: LIST
+6230: LIST
+6231: PUSH
+6232: LD_INT 3
+6234: PUSH
+6235: LD_LOC 19
+6239: PUSH
+6240: LD_INT 5
+6242: DIV
+6243: PUSH
+6244: EMPTY
+6245: LIST
+6246: LIST
+6247: PUSH
+6248: LD_INT 20
+6250: PUSH
+6251: LD_LOC 19
+6255: PUSH
+6256: EMPTY
+6257: LIST
+6258: LIST
+6259: PUSH
+6260: EMPTY
+6261: LIST
+6262: LIST
+6263: LIST
+6264: LIST
+6265: PPUSH
+6266: CALL_OW 423
+6270: GO 6196
+6272: POP
+6273: POP
+// end ;
+6274: LD_VAR 0 1
+6278: RET
+// every 0 0$0.1 do var un ;
+6279: GO 6281
+6281: DISABLE
+6282: LD_INT 0
+6284: PPUSH
+// begin if not def_morale_flags then
+6285: LD_EXP 36
+6289: NOT
+6290: IFFALSE 6294
+// exit ;
+6292: GO 6371
+// if not morale_decreasing_time then
+6294: LD_EXP 8
+6298: NOT
+6299: IFFALSE 6303
+// exit ;
+6301: GO 6371
+// strength = 100 ;
+6303: LD_ADDR_LOC 19
+6307: PUSH
+6308: LD_INT 100
+6310: ST_TO_ADDR
+// repeat wait ( morale_decreasing_time ) ;
+6311: LD_EXP 8
+6315: PPUSH
+6316: CALL_OW 67
+// strength := strength - 1 ;
+6320: LD_ADDR_LOC 19
+6324: PUSH
+6325: LD_LOC 19
+6329: PUSH
+6330: LD_INT 1
+6332: MINUS
+6333: ST_TO_ADDR
+// Update_Flags ;
+6334: CALL 6182 0 0
+// until not strength ;
+6338: LD_LOC 19
+6342: NOT
+6343: IFFALSE 6311
+// for un in battle_flags_id do
+6345: LD_ADDR_VAR 0 1
+6349: PUSH
+6350: LD_EXP 23
+6354: PUSH
+6355: FOR_IN
+6356: IFFALSE 6369
+// KillBattleFlag ( un ) ;
+6358: LD_VAR 0 1
+6362: PPUSH
+6363: CALL_OW 419
+6367: GO 6355
+6369: POP
+6370: POP
+// end ; end_of_file
+6371: PPOPN 1
+6373: END
+// export Game_Type , def_game_rules ; export def_base_level , def_amount_of_people , def_skill_level , def_starting_resources , def_shipments_density , def_extra_oil_deposits , def_extra_sib_deposits , def_shared_vision , def_morale_flags , def_siberite_detection , def_people_respawning , def_amount_of_apemen , def_siberite_bomb , def_builduptime ; export No_Mechs ; var Restricted_Builds , Restricted_Builds_Amount ; var Banned_Weapons , Banned_Chassis , Banned_Controls , Banned_Engines ; var Already_Built ; var Limits_Info , Cheaters ; export function LimitsStrings ; var i ; begin
+6374: LD_INT 0
+6376: PPUSH
+6377: PPUSH
+// if ( not IAmSpec ) then
+6378: CALL_OW 531
+6382: NOT
+6383: IFFALSE 6399
+// Result := Limits_Info ^  ;
+6385: LD_ADDR_VAR 0 1
+6389: PUSH
+6390: LD_LOC 31
+6394: PUSH
+6395: LD_STRING 
+6397: ADD
+6398: ST_TO_ADDR
+// for i := 1 to 8 do
+6399: LD_ADDR_VAR 0 2
+6403: PUSH
+6404: DOUBLE
+6405: LD_INT 1
+6407: DEC
+6408: ST_TO_ADDR
+6409: LD_INT 8
+6411: PUSH
+6412: FOR_TO
+6413: IFFALSE 6458
+// if Cheaters [ i ] then
+6415: LD_LOC 32
+6419: PUSH
+6420: LD_VAR 0 2
+6424: ARRAY
+6425: IFFALSE 6456
+// Result := Result ^ [ #Cheater , i , i ] ;
+6427: LD_ADDR_VAR 0 1
+6431: PUSH
+6432: LD_VAR 0 1
+6436: PUSH
+6437: LD_STRING #Cheater
+6439: PUSH
+6440: LD_VAR 0 2
+6444: PUSH
+6445: LD_VAR 0 2
+6449: PUSH
+6450: EMPTY
+6451: LIST
+6452: LIST
+6453: LIST
+6454: ADD
+6455: ST_TO_ADDR
+6456: GO 6412
+6458: POP
+6459: POP
+// end ;
+6460: LD_VAR 0 1
+6464: RET
+// export function InitGameRules ; var Unavailable_Techs , Unavailable_Builds ; var i , j ; begin
+6465: LD_INT 0
+6467: PPUSH
+6468: PPUSH
+6469: PPUSH
+6470: PPUSH
+6471: PPUSH
+// case Game_Type of 10 :
+6472: LD_EXP 26
+6476: PUSH
+6477: LD_INT 10
+6479: DOUBLE
+6480: EQUAL
+6481: IFTRUE 6485
+6483: GO 6496
+6485: POP
+// def_game_rules := 1 ; 11 :
+6486: LD_ADDR_EXP 27
+6490: PUSH
+6491: LD_INT 1
+6493: ST_TO_ADDR
+6494: GO 6516
+6496: LD_INT 11
+6498: DOUBLE
+6499: EQUAL
+6500: IFTRUE 6504
+6502: GO 6515
+6504: POP
+// def_game_rules := 3 ; end ;
+6505: LD_ADDR_EXP 27
+6509: PUSH
+6510: LD_INT 3
+6512: ST_TO_ADDR
+6513: GO 6516
+6515: POP
+// case def_game_rules of 0 :
+6516: LD_EXP 27
+6520: PUSH
+6521: LD_INT 0
+6523: DOUBLE
+6524: EQUAL
+6525: IFTRUE 6529
+6527: GO 6534
+6529: POP
+// exit ; 1 :
+6530: GO 8592
+6532: GO 8492
+6534: LD_INT 1
+6536: DOUBLE
+6537: EQUAL
+6538: IFTRUE 6542
+6540: GO 6758
+6542: POP
+// begin def_base_level := 2 ;
+6543: LD_ADDR_EXP 28
+6547: PUSH
+6548: LD_INT 2
+6550: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+6551: LD_ADDR_EXP 29
+6555: PUSH
+6556: LD_INT 2
+6558: ST_TO_ADDR
+// def_skill_level := 1 ;
+6559: LD_ADDR_EXP 30
+6563: PUSH
+6564: LD_INT 1
+6566: ST_TO_ADDR
+// def_starting_resources := 2 ;
+6567: LD_ADDR_EXP 31
+6571: PUSH
+6572: LD_INT 2
+6574: ST_TO_ADDR
+// def_shipments_density := 1 ;
+6575: LD_ADDR_EXP 32
+6579: PUSH
+6580: LD_INT 1
+6582: ST_TO_ADDR
+// def_extra_oil_deposits := 0 ;
+6583: LD_ADDR_EXP 33
+6587: PUSH
+6588: LD_INT 0
+6590: ST_TO_ADDR
+// def_extra_sib_deposits := 1 ;
+6591: LD_ADDR_EXP 34
+6595: PUSH
+6596: LD_INT 1
+6598: ST_TO_ADDR
+// def_shared_vision := 1 ;
+6599: LD_ADDR_EXP 35
+6603: PUSH
+6604: LD_INT 1
+6606: ST_TO_ADDR
+// def_morale_flags := 3 ;
+6607: LD_ADDR_EXP 36
+6611: PUSH
+6612: LD_INT 3
+6614: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+6615: LD_ADDR_EXP 37
+6619: PUSH
+6620: LD_INT 1
+6622: ST_TO_ADDR
+// def_people_respawning := 1 ;
+6623: LD_ADDR_EXP 38
+6627: PUSH
+6628: LD_INT 1
+6630: ST_TO_ADDR
+// def_amount_of_apemen := 1 ;
+6631: LD_ADDR_EXP 39
+6635: PUSH
+6636: LD_INT 1
+6638: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+6639: LD_ADDR_EXP 40
+6643: PUSH
+6644: LD_INT 0
+6646: ST_TO_ADDR
+// def_builduptime := 2 ;
+6647: LD_ADDR_EXP 41
+6651: PUSH
+6652: LD_INT 2
+6654: ST_TO_ADDR
+// Unavailable_Techs := [ ] ;
+6655: LD_ADDR_VAR 0 2
+6659: PUSH
+6660: EMPTY
+6661: ST_TO_ADDR
+// Unavailable_Builds := [ ] ;
+6662: LD_ADDR_VAR 0 3
+6666: PUSH
+6667: EMPTY
+6668: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+6669: LD_ADDR_LOC 26
+6673: PUSH
+6674: EMPTY
+6675: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+6676: LD_ADDR_LOC 27
+6680: PUSH
+6681: EMPTY
+6682: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+6683: LD_ADDR_LOC 28
+6687: PUSH
+6688: EMPTY
+6689: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+6690: LD_ADDR_LOC 29
+6694: PUSH
+6695: EMPTY
+6696: ST_TO_ADDR
+// Restricted_Builds := [ [ b_Behemoth ] , [ b_Armoury , b_Barracks ] , [ b_Breastwork , b_Bunker , b_Turret ] ] ;
+6697: LD_ADDR_LOC 24
+6701: PUSH
+6702: LD_INT 37
+6704: PUSH
+6705: EMPTY
+6706: LIST
+6707: PUSH
+6708: LD_INT 4
+6710: PUSH
+6711: LD_INT 5
+6713: PUSH
+6714: EMPTY
+6715: LIST
+6716: LIST
+6717: PUSH
+6718: LD_INT 31
+6720: PUSH
+6721: LD_INT 32
+6723: PUSH
+6724: LD_INT 33
+6726: PUSH
+6727: EMPTY
+6728: LIST
+6729: LIST
+6730: LIST
+6731: PUSH
+6732: EMPTY
+6733: LIST
+6734: LIST
+6735: LIST
+6736: ST_TO_ADDR
+// Restricted_Builds_Amount := [ 2 , 2 , 4 ] ;
+6737: LD_ADDR_LOC 25
+6741: PUSH
+6742: LD_INT 2
+6744: PUSH
+6745: LD_INT 2
+6747: PUSH
+6748: LD_INT 4
+6750: PUSH
+6751: EMPTY
+6752: LIST
+6753: LIST
+6754: LIST
+6755: ST_TO_ADDR
+// end ; 2 :
+6756: GO 8492
+6758: LD_INT 2
+6760: DOUBLE
+6761: EQUAL
+6762: IFTRUE 6766
+6764: GO 6975
+6766: POP
+// begin def_base_level := 1 ;
+6767: LD_ADDR_EXP 28
+6771: PUSH
+6772: LD_INT 1
+6774: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+6775: LD_ADDR_EXP 29
+6779: PUSH
+6780: LD_INT 2
+6782: ST_TO_ADDR
+// def_skill_level := 3 ;
+6783: LD_ADDR_EXP 30
+6787: PUSH
+6788: LD_INT 3
+6790: ST_TO_ADDR
+// def_starting_resources := 3 ;
+6791: LD_ADDR_EXP 31
+6795: PUSH
+6796: LD_INT 3
+6798: ST_TO_ADDR
+// def_shipments_density := 2 ;
+6799: LD_ADDR_EXP 32
+6803: PUSH
+6804: LD_INT 2
+6806: ST_TO_ADDR
+// def_extra_oil_deposits := 1 ;
+6807: LD_ADDR_EXP 33
+6811: PUSH
+6812: LD_INT 1
+6814: ST_TO_ADDR
+// def_extra_sib_deposits := 2 ;
+6815: LD_ADDR_EXP 34
+6819: PUSH
+6820: LD_INT 2
+6822: ST_TO_ADDR
+// def_shared_vision := 1 ;
+6823: LD_ADDR_EXP 35
+6827: PUSH
+6828: LD_INT 1
+6830: ST_TO_ADDR
+// def_morale_flags := 0 ;
+6831: LD_ADDR_EXP 36
+6835: PUSH
+6836: LD_INT 0
+6838: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+6839: LD_ADDR_EXP 37
+6843: PUSH
+6844: LD_INT 1
+6846: ST_TO_ADDR
+// def_people_respawning := 0 ;
+6847: LD_ADDR_EXP 38
+6851: PUSH
+6852: LD_INT 0
+6854: ST_TO_ADDR
+// def_amount_of_apemen := 0 ;
+6855: LD_ADDR_EXP 39
+6859: PUSH
+6860: LD_INT 0
+6862: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+6863: LD_ADDR_EXP 40
+6867: PUSH
+6868: LD_INT 0
+6870: ST_TO_ADDR
+// def_builduptime := 2 ;
+6871: LD_ADDR_EXP 41
+6875: PUSH
+6876: LD_INT 2
+6878: ST_TO_ADDR
+// Unavailable_Techs := [ tech_ApeLang ] ;
+6879: LD_ADDR_VAR 0 2
+6883: PUSH
+6884: LD_INT 1
+6886: PUSH
+6887: EMPTY
+6888: LIST
+6889: ST_TO_ADDR
+// Unavailable_Builds := [ ] ;
+6890: LD_ADDR_VAR 0 3
+6894: PUSH
+6895: EMPTY
+6896: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+6897: LD_ADDR_LOC 26
+6901: PUSH
+6902: EMPTY
+6903: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+6904: LD_ADDR_LOC 27
+6908: PUSH
+6909: EMPTY
+6910: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+6911: LD_ADDR_LOC 28
+6915: PUSH
+6916: EMPTY
+6917: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+6918: LD_ADDR_LOC 29
+6922: PUSH
+6923: EMPTY
+6924: ST_TO_ADDR
+// Restricted_Builds := [ [ b_Armoury , b_Barracks ] , [ b_Breastwork , b_Bunker , b_Turret ] ] ;
+6925: LD_ADDR_LOC 24
+6929: PUSH
+6930: LD_INT 4
+6932: PUSH
+6933: LD_INT 5
+6935: PUSH
+6936: EMPTY
+6937: LIST
+6938: LIST
+6939: PUSH
+6940: LD_INT 31
+6942: PUSH
+6943: LD_INT 32
+6945: PUSH
+6946: LD_INT 33
+6948: PUSH
+6949: EMPTY
+6950: LIST
+6951: LIST
+6952: LIST
+6953: PUSH
+6954: EMPTY
+6955: LIST
+6956: LIST
+6957: ST_TO_ADDR
+// Restricted_Builds_Amount := [ 1 , 2 ] ;
+6958: LD_ADDR_LOC 25
+6962: PUSH
+6963: LD_INT 1
+6965: PUSH
+6966: LD_INT 2
+6968: PUSH
+6969: EMPTY
+6970: LIST
+6971: LIST
+6972: ST_TO_ADDR
+// end ; 3 :
+6973: GO 8492
+6975: LD_INT 3
+6977: DOUBLE
+6978: EQUAL
+6979: IFTRUE 6983
+6981: GO 7226
+6983: POP
+// begin def_base_level := 1 ;
+6984: LD_ADDR_EXP 28
+6988: PUSH
+6989: LD_INT 1
+6991: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+6992: LD_ADDR_EXP 29
+6996: PUSH
+6997: LD_INT 2
+6999: ST_TO_ADDR
+// def_skill_level := 3 ;
+7000: LD_ADDR_EXP 30
+7004: PUSH
+7005: LD_INT 3
+7007: ST_TO_ADDR
+// def_starting_resources := 3 ;
+7008: LD_ADDR_EXP 31
+7012: PUSH
+7013: LD_INT 3
+7015: ST_TO_ADDR
+// def_shipments_density := 1 ;
+7016: LD_ADDR_EXP 32
+7020: PUSH
+7021: LD_INT 1
+7023: ST_TO_ADDR
+// def_extra_oil_deposits := 0 ;
+7024: LD_ADDR_EXP 33
+7028: PUSH
+7029: LD_INT 0
+7031: ST_TO_ADDR
+// def_extra_sib_deposits := 1 ;
+7032: LD_ADDR_EXP 34
+7036: PUSH
+7037: LD_INT 1
+7039: ST_TO_ADDR
+// def_shared_vision := 1 ;
+7040: LD_ADDR_EXP 35
+7044: PUSH
+7045: LD_INT 1
+7047: ST_TO_ADDR
+// def_morale_flags := 0 ;
+7048: LD_ADDR_EXP 36
+7052: PUSH
+7053: LD_INT 0
+7055: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+7056: LD_ADDR_EXP 37
+7060: PUSH
+7061: LD_INT 1
+7063: ST_TO_ADDR
+// def_people_respawning := 0 ;
+7064: LD_ADDR_EXP 38
+7068: PUSH
+7069: LD_INT 0
+7071: ST_TO_ADDR
+// def_amount_of_apemen := 2 ;
+7072: LD_ADDR_EXP 39
+7076: PUSH
+7077: LD_INT 2
+7079: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+7080: LD_ADDR_EXP 40
+7084: PUSH
+7085: LD_INT 0
+7087: ST_TO_ADDR
+// def_builduptime := 1 ;
+7088: LD_ADDR_EXP 41
+7092: PUSH
+7093: LD_INT 1
+7095: ST_TO_ADDR
+// Unavailable_Techs := [ tech_Behemoth ] ;
+7096: LD_ADDR_VAR 0 2
+7100: PUSH
+7101: LD_INT 23
+7103: PUSH
+7104: EMPTY
+7105: LIST
+7106: ST_TO_ADDR
+// Unavailable_Builds := [ b_Workshop , b_Behemoth , b_Bunker , b_Turret , b_Control_Tower , b_ext_track , b_ext_stitch , b_ext_siberium , b_ext_rocket , b_ext_radio , b_ext_radar , b_ext_noncombat , b_ext_laser , b_ext_gun , b_ext_computer ] ;
+7107: LD_ADDR_VAR 0 3
+7111: PUSH
+7112: LD_INT 2
+7114: PUSH
+7115: LD_INT 37
+7117: PUSH
+7118: LD_INT 32
+7120: PUSH
+7121: LD_INT 33
+7123: PUSH
+7124: LD_INT 36
+7126: PUSH
+7127: LD_INT 16
+7129: PUSH
+7130: LD_INT 23
+7132: PUSH
+7133: LD_INT 21
+7135: PUSH
+7136: LD_INT 18
+7138: PUSH
+7139: LD_INT 22
+7141: PUSH
+7142: LD_INT 20
+7144: PUSH
+7145: LD_INT 19
+7147: PUSH
+7148: LD_INT 25
+7150: PUSH
+7151: LD_INT 17
+7153: PUSH
+7154: LD_INT 24
+7156: PUSH
+7157: EMPTY
+7158: LIST
+7159: LIST
+7160: LIST
+7161: LIST
+7162: LIST
+7163: LIST
+7164: LIST
+7165: LIST
+7166: LIST
+7167: LIST
+7168: LIST
+7169: LIST
+7170: LIST
+7171: LIST
+7172: LIST
+7173: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+7174: LD_ADDR_LOC 26
+7178: PUSH
+7179: EMPTY
+7180: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+7181: LD_ADDR_LOC 27
+7185: PUSH
+7186: EMPTY
+7187: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+7188: LD_ADDR_LOC 28
+7192: PUSH
+7193: EMPTY
+7194: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+7195: LD_ADDR_LOC 29
+7199: PUSH
+7200: EMPTY
+7201: ST_TO_ADDR
+// Restricted_Builds := [ ] ;
+7202: LD_ADDR_LOC 24
+7206: PUSH
+7207: EMPTY
+7208: ST_TO_ADDR
+// Restricted_Builds_Amount := [ ] ;
+7209: LD_ADDR_LOC 25
+7213: PUSH
+7214: EMPTY
+7215: ST_TO_ADDR
+// No_Mechs := true ;
+7216: LD_ADDR_EXP 42
+7220: PUSH
+7221: LD_INT 1
+7223: ST_TO_ADDR
+// end ; 4 :
+7224: GO 8492
+7226: LD_INT 4
+7228: DOUBLE
+7229: EQUAL
+7230: IFTRUE 7234
+7232: GO 7409
+7234: POP
+// begin def_base_level := 1 ;
+7235: LD_ADDR_EXP 28
+7239: PUSH
+7240: LD_INT 1
+7242: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+7243: LD_ADDR_EXP 29
+7247: PUSH
+7248: LD_INT 2
+7250: ST_TO_ADDR
+// def_skill_level := 3 ;
+7251: LD_ADDR_EXP 30
+7255: PUSH
+7256: LD_INT 3
+7258: ST_TO_ADDR
+// def_starting_resources := 3 ;
+7259: LD_ADDR_EXP 31
+7263: PUSH
+7264: LD_INT 3
+7266: ST_TO_ADDR
+// def_shipments_density := 2 ;
+7267: LD_ADDR_EXP 32
+7271: PUSH
+7272: LD_INT 2
+7274: ST_TO_ADDR
+// def_extra_oil_deposits := 1 ;
+7275: LD_ADDR_EXP 33
+7279: PUSH
+7280: LD_INT 1
+7282: ST_TO_ADDR
+// def_extra_sib_deposits := 2 ;
+7283: LD_ADDR_EXP 34
+7287: PUSH
+7288: LD_INT 2
+7290: ST_TO_ADDR
+// def_shared_vision := 1 ;
+7291: LD_ADDR_EXP 35
+7295: PUSH
+7296: LD_INT 1
+7298: ST_TO_ADDR
+// def_morale_flags := 0 ;
+7299: LD_ADDR_EXP 36
+7303: PUSH
+7304: LD_INT 0
+7306: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+7307: LD_ADDR_EXP 37
+7311: PUSH
+7312: LD_INT 1
+7314: ST_TO_ADDR
+// def_people_respawning := 0 ;
+7315: LD_ADDR_EXP 38
+7319: PUSH
+7320: LD_INT 0
+7322: ST_TO_ADDR
+// def_amount_of_apemen := 0 ;
+7323: LD_ADDR_EXP 39
+7327: PUSH
+7328: LD_INT 0
+7330: ST_TO_ADDR
+// def_siberite_bomb := 1 ;
+7331: LD_ADDR_EXP 40
+7335: PUSH
+7336: LD_INT 1
+7338: ST_TO_ADDR
+// def_builduptime := 3 ;
+7339: LD_ADDR_EXP 41
+7343: PUSH
+7344: LD_INT 3
+7346: ST_TO_ADDR
+// Unavailable_Techs := [ tech_ApeLang ] ;
+7347: LD_ADDR_VAR 0 2
+7351: PUSH
+7352: LD_INT 1
+7354: PUSH
+7355: EMPTY
+7356: LIST
+7357: ST_TO_ADDR
+// Unavailable_Builds := [ ] ;
+7358: LD_ADDR_VAR 0 3
+7362: PUSH
+7363: EMPTY
+7364: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+7365: LD_ADDR_LOC 26
+7369: PUSH
+7370: EMPTY
+7371: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+7372: LD_ADDR_LOC 27
+7376: PUSH
+7377: EMPTY
+7378: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+7379: LD_ADDR_LOC 28
+7383: PUSH
+7384: EMPTY
+7385: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+7386: LD_ADDR_LOC 29
+7390: PUSH
+7391: EMPTY
+7392: ST_TO_ADDR
+// Restricted_Builds := [ ] ;
+7393: LD_ADDR_LOC 24
+7397: PUSH
+7398: EMPTY
+7399: ST_TO_ADDR
+// Restricted_Builds_Amount := [ ] ;
+7400: LD_ADDR_LOC 25
+7404: PUSH
+7405: EMPTY
+7406: ST_TO_ADDR
+// end ; 5 :
+7407: GO 8492
+7409: LD_INT 5
+7411: DOUBLE
+7412: EQUAL
+7413: IFTRUE 7417
+7415: GO 7666
+7417: POP
+// begin def_base_level := 0 ;
+7418: LD_ADDR_EXP 28
+7422: PUSH
+7423: LD_INT 0
+7425: ST_TO_ADDR
+// def_amount_of_people := 0 ;
+7426: LD_ADDR_EXP 29
+7430: PUSH
+7431: LD_INT 0
+7433: ST_TO_ADDR
+// def_skill_level := 0 ;
+7434: LD_ADDR_EXP 30
+7438: PUSH
+7439: LD_INT 0
+7441: ST_TO_ADDR
+// def_starting_resources := 0 ;
+7442: LD_ADDR_EXP 31
+7446: PUSH
+7447: LD_INT 0
+7449: ST_TO_ADDR
+// def_shipments_density := 0 ;
+7450: LD_ADDR_EXP 32
+7454: PUSH
+7455: LD_INT 0
+7457: ST_TO_ADDR
+// def_extra_oil_deposits := 0 ;
+7458: LD_ADDR_EXP 33
+7462: PUSH
+7463: LD_INT 0
+7465: ST_TO_ADDR
+// def_extra_sib_deposits := 0 ;
+7466: LD_ADDR_EXP 34
+7470: PUSH
+7471: LD_INT 0
+7473: ST_TO_ADDR
+// def_shared_vision := 1 ;
+7474: LD_ADDR_EXP 35
+7478: PUSH
+7479: LD_INT 1
+7481: ST_TO_ADDR
+// def_morale_flags := 0 ;
+7482: LD_ADDR_EXP 36
+7486: PUSH
+7487: LD_INT 0
+7489: ST_TO_ADDR
+// def_siberite_detection := 0 ;
+7490: LD_ADDR_EXP 37
+7494: PUSH
+7495: LD_INT 0
+7497: ST_TO_ADDR
+// def_people_respawning := 1 ;
+7498: LD_ADDR_EXP 38
+7502: PUSH
+7503: LD_INT 1
+7505: ST_TO_ADDR
+// def_amount_of_apemen := 1 ;
+7506: LD_ADDR_EXP 39
+7510: PUSH
+7511: LD_INT 1
+7513: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+7514: LD_ADDR_EXP 40
+7518: PUSH
+7519: LD_INT 0
+7521: ST_TO_ADDR
+// def_builduptime := 0 ;
+7522: LD_ADDR_EXP 41
+7526: PUSH
+7527: LD_INT 0
+7529: ST_TO_ADDR
+// Unavailable_Techs := [ tech_Laser , tech_ApeNeural ] ;
+7530: LD_ADDR_VAR 0 2
+7534: PUSH
+7535: LD_INT 10
+7537: PUSH
+7538: LD_INT 3
+7540: PUSH
+7541: EMPTY
+7542: LIST
+7543: LIST
+7544: ST_TO_ADDR
+// Unavailable_Builds := [ b_Lab_Computer , b_Lab_Siberium , b_Lab_Spacetime , b_Lab_Biological , b_Barracks , b_ext_Computer , b_ext_Siberium , b_Turret , b_Control_Tower ] ;
+7545: LD_ADDR_VAR 0 3
+7549: PUSH
+7550: LD_INT 12
+7552: PUSH
+7553: LD_INT 11
+7555: PUSH
+7556: LD_INT 14
+7558: PUSH
+7559: LD_INT 13
+7561: PUSH
+7562: LD_INT 5
+7564: PUSH
+7565: LD_INT 24
+7567: PUSH
+7568: LD_INT 21
+7570: PUSH
+7571: LD_INT 33
+7573: PUSH
+7574: LD_INT 36
+7576: PUSH
+7577: EMPTY
+7578: LIST
+7579: LIST
+7580: LIST
+7581: LIST
+7582: LIST
+7583: LIST
+7584: LIST
+7585: LIST
+7586: LIST
+7587: ST_TO_ADDR
+// Banned_Weapons := [ ar_Control_Tower ] ;
+7588: LD_ADDR_LOC 26
+7592: PUSH
+7593: LD_INT 31
+7595: PUSH
+7596: EMPTY
+7597: LIST
+7598: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+7599: LD_ADDR_LOC 27
+7603: PUSH
+7604: EMPTY
+7605: ST_TO_ADDR
+// Banned_Controls := [ control_Remote ] ;
+7606: LD_ADDR_LOC 28
+7610: PUSH
+7611: LD_INT 2
+7613: PUSH
+7614: EMPTY
+7615: LIST
+7616: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+7617: LD_ADDR_LOC 29
+7621: PUSH
+7622: EMPTY
+7623: ST_TO_ADDR
+// Restricted_Builds := [ [ b_Armoury ] , [ b_Breastwork , b_Bunker ] ] ;
+7624: LD_ADDR_LOC 24
+7628: PUSH
+7629: LD_INT 4
+7631: PUSH
+7632: EMPTY
+7633: LIST
+7634: PUSH
+7635: LD_INT 31
+7637: PUSH
+7638: LD_INT 32
+7640: PUSH
+7641: EMPTY
+7642: LIST
+7643: LIST
+7644: PUSH
+7645: EMPTY
+7646: LIST
+7647: LIST
+7648: ST_TO_ADDR
+// Restricted_Builds_Amount := [ 1 , 1 ] ;
+7649: LD_ADDR_LOC 25
+7653: PUSH
+7654: LD_INT 1
+7656: PUSH
+7657: LD_INT 1
+7659: PUSH
+7660: EMPTY
+7661: LIST
+7662: LIST
+7663: ST_TO_ADDR
+// end ; 6 :
+7664: GO 8492
+7666: LD_INT 6
+7668: DOUBLE
+7669: EQUAL
+7670: IFTRUE 7674
+7672: GO 7877
+7674: POP
+// begin def_base_level := 1 ;
+7675: LD_ADDR_EXP 28
+7679: PUSH
+7680: LD_INT 1
+7682: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+7683: LD_ADDR_EXP 29
+7687: PUSH
+7688: LD_INT 2
+7690: ST_TO_ADDR
+// def_skill_level := 3 ;
+7691: LD_ADDR_EXP 30
+7695: PUSH
+7696: LD_INT 3
+7698: ST_TO_ADDR
+// def_starting_resources := 3 ;
+7699: LD_ADDR_EXP 31
+7703: PUSH
+7704: LD_INT 3
+7706: ST_TO_ADDR
+// def_shipments_density := 1 ;
+7707: LD_ADDR_EXP 32
+7711: PUSH
+7712: LD_INT 1
+7714: ST_TO_ADDR
+// def_extra_oil_deposits := 0 ;
+7715: LD_ADDR_EXP 33
+7719: PUSH
+7720: LD_INT 0
+7722: ST_TO_ADDR
+// def_extra_sib_deposits := 1 ;
+7723: LD_ADDR_EXP 34
+7727: PUSH
+7728: LD_INT 1
+7730: ST_TO_ADDR
+// def_shared_vision := 1 ;
+7731: LD_ADDR_EXP 35
+7735: PUSH
+7736: LD_INT 1
+7738: ST_TO_ADDR
+// def_morale_flags := 0 ;
+7739: LD_ADDR_EXP 36
+7743: PUSH
+7744: LD_INT 0
+7746: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+7747: LD_ADDR_EXP 37
+7751: PUSH
+7752: LD_INT 1
+7754: ST_TO_ADDR
+// def_people_respawning := 2 ;
+7755: LD_ADDR_EXP 38
+7759: PUSH
+7760: LD_INT 2
+7762: ST_TO_ADDR
+// def_amount_of_apemen := 1 ;
+7763: LD_ADDR_EXP 39
+7767: PUSH
+7768: LD_INT 1
+7770: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+7771: LD_ADDR_EXP 40
+7775: PUSH
+7776: LD_INT 0
+7778: ST_TO_ADDR
+// def_builduptime := 1 ;
+7779: LD_ADDR_EXP 41
+7783: PUSH
+7784: LD_INT 1
+7786: ST_TO_ADDR
+// Unavailable_Techs := [ tech_Behemoth ] ;
+7787: LD_ADDR_VAR 0 2
+7791: PUSH
+7792: LD_INT 23
+7794: PUSH
+7795: EMPTY
+7796: LIST
+7797: ST_TO_ADDR
+// Unavailable_Builds := [ b_Workshop , b_Behemoth , b_Breastwork , b_Bunker , b_Turret ] ;
+7798: LD_ADDR_VAR 0 3
+7802: PUSH
+7803: LD_INT 2
+7805: PUSH
+7806: LD_INT 37
+7808: PUSH
+7809: LD_INT 31
+7811: PUSH
+7812: LD_INT 32
+7814: PUSH
+7815: LD_INT 33
+7817: PUSH
+7818: EMPTY
+7819: LIST
+7820: LIST
+7821: LIST
+7822: LIST
+7823: LIST
+7824: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+7825: LD_ADDR_LOC 26
+7829: PUSH
+7830: EMPTY
+7831: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+7832: LD_ADDR_LOC 27
+7836: PUSH
+7837: EMPTY
+7838: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+7839: LD_ADDR_LOC 28
+7843: PUSH
+7844: EMPTY
+7845: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+7846: LD_ADDR_LOC 29
+7850: PUSH
+7851: EMPTY
+7852: ST_TO_ADDR
+// Restricted_Builds := [ ] ;
+7853: LD_ADDR_LOC 24
+7857: PUSH
+7858: EMPTY
+7859: ST_TO_ADDR
+// Restricted_Builds_Amount := [ ] ;
+7860: LD_ADDR_LOC 25
+7864: PUSH
+7865: EMPTY
+7866: ST_TO_ADDR
+// No_Mechs := true ;
+7867: LD_ADDR_EXP 42
+7871: PUSH
+7872: LD_INT 1
+7874: ST_TO_ADDR
+// end ; 7 :
+7875: GO 8492
+7877: LD_INT 7
+7879: DOUBLE
+7880: EQUAL
+7881: IFTRUE 7885
+7883: GO 8083
+7885: POP
+// begin def_base_level := 1 ;
+7886: LD_ADDR_EXP 28
+7890: PUSH
+7891: LD_INT 1
+7893: ST_TO_ADDR
+// def_amount_of_people := 2 ;
+7894: LD_ADDR_EXP 29
+7898: PUSH
+7899: LD_INT 2
+7901: ST_TO_ADDR
+// def_skill_level := 3 ;
+7902: LD_ADDR_EXP 30
+7906: PUSH
+7907: LD_INT 3
+7909: ST_TO_ADDR
+// def_starting_resources := 3 ;
+7910: LD_ADDR_EXP 31
+7914: PUSH
+7915: LD_INT 3
+7917: ST_TO_ADDR
+// def_shipments_density := 1 ;
+7918: LD_ADDR_EXP 32
+7922: PUSH
+7923: LD_INT 1
+7925: ST_TO_ADDR
+// def_extra_oil_deposits := 1 ;
+7926: LD_ADDR_EXP 33
+7930: PUSH
+7931: LD_INT 1
+7933: ST_TO_ADDR
+// def_extra_sib_deposits := 2 ;
+7934: LD_ADDR_EXP 34
+7938: PUSH
+7939: LD_INT 2
+7941: ST_TO_ADDR
+// def_shared_vision := 1 ;
+7942: LD_ADDR_EXP 35
+7946: PUSH
+7947: LD_INT 1
+7949: ST_TO_ADDR
+// def_morale_flags := 0 ;
+7950: LD_ADDR_EXP 36
+7954: PUSH
+7955: LD_INT 0
+7957: ST_TO_ADDR
+// def_siberite_detection := 1 ;
+7958: LD_ADDR_EXP 37
+7962: PUSH
+7963: LD_INT 1
+7965: ST_TO_ADDR
+// def_people_respawning := 0 ;
+7966: LD_ADDR_EXP 38
+7970: PUSH
+7971: LD_INT 0
+7973: ST_TO_ADDR
+// def_amount_of_apemen := 1 ;
+7974: LD_ADDR_EXP 39
+7978: PUSH
+7979: LD_INT 1
+7981: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+7982: LD_ADDR_EXP 40
+7986: PUSH
+7987: LD_INT 0
+7989: ST_TO_ADDR
+// def_builduptime := 3 ;
+7990: LD_ADDR_EXP 41
+7994: PUSH
+7995: LD_INT 3
+7997: ST_TO_ADDR
+// Unavailable_Techs := [ tech_Behemoth ] ;
+7998: LD_ADDR_VAR 0 2
+8002: PUSH
+8003: LD_INT 23
+8005: PUSH
+8006: EMPTY
+8007: LIST
+8008: ST_TO_ADDR
+// Unavailable_Builds := [ b_Behemoth ] ;
+8009: LD_ADDR_VAR 0 3
+8013: PUSH
+8014: LD_INT 37
+8016: PUSH
+8017: EMPTY
+8018: LIST
+8019: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+8020: LD_ADDR_LOC 26
+8024: PUSH
+8025: EMPTY
+8026: ST_TO_ADDR
+// Banned_Chassis := [ ] ;
+8027: LD_ADDR_LOC 27
+8031: PUSH
+8032: EMPTY
+8033: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+8034: LD_ADDR_LOC 28
+8038: PUSH
+8039: EMPTY
+8040: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+8041: LD_ADDR_LOC 29
+8045: PUSH
+8046: EMPTY
+8047: ST_TO_ADDR
+// Restricted_Builds := [ [ b_Breastwork , b_Bunker , b_Turret ] ] ;
+8048: LD_ADDR_LOC 24
+8052: PUSH
+8053: LD_INT 31
+8055: PUSH
+8056: LD_INT 32
+8058: PUSH
+8059: LD_INT 33
+8061: PUSH
+8062: EMPTY
+8063: LIST
+8064: LIST
+8065: LIST
+8066: PUSH
+8067: EMPTY
+8068: LIST
+8069: ST_TO_ADDR
+// Restricted_Builds_Amount := [ 10 ] ;
+8070: LD_ADDR_LOC 25
+8074: PUSH
+8075: LD_INT 10
+8077: PUSH
+8078: EMPTY
+8079: LIST
+8080: ST_TO_ADDR
+// end ; 8 :
+8081: GO 8492
+8083: LD_INT 8
+8085: DOUBLE
+8086: EQUAL
+8087: IFTRUE 8091
+8089: GO 8491
+8091: POP
+// begin def_base_level := 0 ;
+8092: LD_ADDR_EXP 28
+8096: PUSH
+8097: LD_INT 0
+8099: ST_TO_ADDR
+// def_amount_of_people := Rand ( 0 , 1 ) ;
+8100: LD_ADDR_EXP 29
+8104: PUSH
+8105: LD_INT 0
+8107: PPUSH
+8108: LD_INT 1
+8110: PPUSH
+8111: CALL_OW 12
+8115: ST_TO_ADDR
+// def_skill_level := 0 ;
+8116: LD_ADDR_EXP 30
+8120: PUSH
+8121: LD_INT 0
+8123: ST_TO_ADDR
+// def_starting_resources := 2 ;
+8124: LD_ADDR_EXP 31
+8128: PUSH
+8129: LD_INT 2
+8131: ST_TO_ADDR
+// def_shipments_density := 1 ;
+8132: LD_ADDR_EXP 32
+8136: PUSH
+8137: LD_INT 1
+8139: ST_TO_ADDR
+// def_extra_oil_deposits := 0 ;
+8140: LD_ADDR_EXP 33
+8144: PUSH
+8145: LD_INT 0
+8147: ST_TO_ADDR
+// def_extra_sib_deposits := 0 ;
+8148: LD_ADDR_EXP 34
+8152: PUSH
+8153: LD_INT 0
+8155: ST_TO_ADDR
+// def_shared_vision := 1 ;
+8156: LD_ADDR_EXP 35
+8160: PUSH
+8161: LD_INT 1
+8163: ST_TO_ADDR
+// def_morale_flags := Rand ( 0 , 2 ) ;
+8164: LD_ADDR_EXP 36
+8168: PUSH
+8169: LD_INT 0
+8171: PPUSH
+8172: LD_INT 2
+8174: PPUSH
+8175: CALL_OW 12
+8179: ST_TO_ADDR
+// def_siberite_detection := 0 ;
+8180: LD_ADDR_EXP 37
+8184: PUSH
+8185: LD_INT 0
+8187: ST_TO_ADDR
+// def_people_respawning := 0 ;
+8188: LD_ADDR_EXP 38
+8192: PUSH
+8193: LD_INT 0
+8195: ST_TO_ADDR
+// def_amount_of_apemen := 2 ;
+8196: LD_ADDR_EXP 39
+8200: PUSH
+8201: LD_INT 2
+8203: ST_TO_ADDR
+// def_siberite_bomb := 0 ;
+8204: LD_ADDR_EXP 40
+8208: PUSH
+8209: LD_INT 0
+8211: ST_TO_ADDR
+// def_builduptime := 0 ;
+8212: LD_ADDR_EXP 41
+8216: PUSH
+8217: LD_INT 0
+8219: ST_TO_ADDR
+// Unavailable_Techs := [ tech_Behemoth , tech_SibDet , tech_Rocket , tech_OilEng , tech_OilPow , tech_Gun , tech_AdvRocket , tech_AdvMet , tech_Mortar , tech_Bazooka , tech_HidCam , tech_PartInvis ] ;
+8220: LD_ADDR_VAR 0 2
+8224: PUSH
+8225: LD_INT 23
+8227: PUSH
+8228: LD_INT 20
+8230: PUSH
+8231: LD_INT 40
+8233: PUSH
+8234: LD_INT 47
+8236: PUSH
+8237: LD_INT 46
+8239: PUSH
+8240: LD_INT 39
+8242: PUSH
+8243: LD_INT 71
+8245: PUSH
+8246: LD_INT 34
+8248: PUSH
+8249: LD_INT 41
+8251: PUSH
+8252: LD_INT 44
+8254: PUSH
+8255: LD_INT 17
+8257: PUSH
+8258: LD_INT 16
+8260: PUSH
+8261: EMPTY
+8262: LIST
+8263: LIST
+8264: LIST
+8265: LIST
+8266: LIST
+8267: LIST
+8268: LIST
+8269: LIST
+8270: LIST
+8271: LIST
+8272: LIST
+8273: LIST
+8274: ST_TO_ADDR
+// Unavailable_Builds := [ b_Behemoth , b_Barracks , b_Lab_Biological , b_Teleport , b_Lab_Computer , b_Lab_Opto , b_Lab_Siberium , b_Lab_Spacetime , b_Oil_Mine , b_Siberite_Mine , b_Siberite_Power , b_Ext_Computer , b_Ext_Laser , b_Ext_Radar , b_Ext_Siberium , b_Ext_Radio , b_Control_Tower ] ;
+8275: LD_ADDR_VAR 0 3
+8279: PUSH
+8280: LD_INT 37
+8282: PUSH
+8283: LD_INT 5
+8285: PUSH
+8286: LD_INT 13
+8288: PUSH
+8289: LD_INT 34
+8291: PUSH
+8292: LD_INT 12
+8294: PUSH
+8295: LD_INT 15
+8297: PUSH
+8298: LD_INT 11
+8300: PUSH
+8301: LD_INT 14
+8303: PUSH
+8304: LD_INT 29
+8306: PUSH
+8307: LD_INT 30
+8309: PUSH
+8310: LD_INT 28
+8312: PUSH
+8313: LD_INT 24
+8315: PUSH
+8316: LD_INT 25
+8318: PUSH
+8319: LD_INT 20
+8321: PUSH
+8322: LD_INT 21
+8324: PUSH
+8325: LD_INT 22
+8327: PUSH
+8328: LD_INT 36
+8330: PUSH
+8331: EMPTY
+8332: LIST
+8333: LIST
+8334: LIST
+8335: LIST
+8336: LIST
+8337: LIST
+8338: LIST
+8339: LIST
+8340: LIST
+8341: LIST
+8342: LIST
+8343: LIST
+8344: LIST
+8345: LIST
+8346: LIST
+8347: LIST
+8348: LIST
+8349: ST_TO_ADDR
+// Banned_Weapons := [ ] ;
+8350: LD_ADDR_LOC 26
+8354: PUSH
+8355: EMPTY
+8356: ST_TO_ADDR
+// Banned_Chassis := [ ar_half_tracked ] ;
+8357: LD_ADDR_LOC 27
+8361: PUSH
+8362: LD_INT 14
+8364: PUSH
+8365: EMPTY
+8366: LIST
+8367: ST_TO_ADDR
+// Banned_Controls := [ ] ;
+8368: LD_ADDR_LOC 28
+8372: PUSH
+8373: EMPTY
+8374: ST_TO_ADDR
+// Banned_Engines := [ ] ;
+8375: LD_ADDR_LOC 29
+8379: PUSH
+8380: EMPTY
+8381: ST_TO_ADDR
+// Restricted_Builds := [ [ b_Breastwork , b_Bunker ] , [ b_Armoury ] ] ;
+8382: LD_ADDR_LOC 24
+8386: PUSH
+8387: LD_INT 31
+8389: PUSH
+8390: LD_INT 32
+8392: PUSH
+8393: EMPTY
+8394: LIST
+8395: LIST
+8396: PUSH
+8397: LD_INT 4
+8399: PUSH
+8400: EMPTY
+8401: LIST
+8402: PUSH
+8403: EMPTY
+8404: LIST
+8405: LIST
+8406: ST_TO_ADDR
+// Restricted_Builds_Amount := [ 2 , 1 ] ;
+8407: LD_ADDR_LOC 25
+8411: PUSH
+8412: LD_INT 2
+8414: PUSH
+8415: LD_INT 1
+8417: PUSH
+8418: EMPTY
+8419: LIST
+8420: LIST
+8421: ST_TO_ADDR
+// for i := 1 to 8 do
+8422: LD_ADDR_VAR 0 4
+8426: PUSH
+8427: DOUBLE
+8428: LD_INT 1
+8430: DEC
+8431: ST_TO_ADDR
+8432: LD_INT 8
+8434: PUSH
+8435: FOR_TO
+8436: IFFALSE 8487
+// if ( Side_Nations [ i ] = 3 ) then
+8438: LD_EXP 17
+8442: PUSH
+8443: LD_VAR 0 4
+8447: ARRAY
+8448: PUSH
+8449: LD_INT 3
+8451: EQUAL
+8452: IFFALSE 8485
+// Side_Nations := Replace ( Side_Nations , i , Rand ( 1 , 2 ) ) ;
+8454: LD_ADDR_EXP 17
+8458: PUSH
+8459: LD_EXP 17
+8463: PPUSH
+8464: LD_VAR 0 4
+8468: PPUSH
+8469: LD_INT 1
+8471: PPUSH
+8472: LD_INT 2
+8474: PPUSH
+8475: CALL_OW 12
+8479: PPUSH
+8480: CALL_OW 1
+8484: ST_TO_ADDR
+8485: GO 8435
+8487: POP
+8488: POP
+// end ; end ;
+8489: GO 8492
+8491: POP
+// for i := 1 to 8 do
+8492: LD_ADDR_VAR 0 4
+8496: PUSH
+8497: DOUBLE
+8498: LD_INT 1
+8500: DEC
+8501: ST_TO_ADDR
+8502: LD_INT 8
+8504: PUSH
+8505: FOR_TO
+8506: IFFALSE 8590
+// if Side_Positions [ i ] then
+8508: LD_EXP 16
+8512: PUSH
+8513: LD_VAR 0 4
+8517: ARRAY
+8518: IFFALSE 8588
+// begin for j in Unavailable_Techs do
+8520: LD_ADDR_VAR 0 5
+8524: PUSH
+8525: LD_VAR 0 2
+8529: PUSH
+8530: FOR_IN
+8531: IFFALSE 8552
+// SetTech ( j , i , 0 ) ;
+8533: LD_VAR 0 5
+8537: PPUSH
+8538: LD_VAR 0 4
+8542: PPUSH
+8543: LD_INT 0
+8545: PPUSH
+8546: CALL_OW 322
+8550: GO 8530
+8552: POP
+8553: POP
+// for j in Unavailable_Builds do
+8554: LD_ADDR_VAR 0 5
+8558: PUSH
+8559: LD_VAR 0 3
+8563: PUSH
+8564: FOR_IN
+8565: IFFALSE 8586
+// SetRestrict ( j , i , 0 ) ;
+8567: LD_VAR 0 5
+8571: PPUSH
+8572: LD_VAR 0 4
+8576: PPUSH
+8577: LD_INT 0
+8579: PPUSH
+8580: CALL_OW 324
+8584: GO 8564
+8586: POP
+8587: POP
+// end ;
+8588: GO 8505
+8590: POP
+8591: POP
+// end ;
+8592: LD_VAR 0 1
+8596: RET
+// export function InitLimits ; var i , j , k , amount , btype , list ; begin
+8597: LD_INT 0
+8599: PPUSH
+8600: PPUSH
+8601: PPUSH
+8602: PPUSH
+8603: PPUSH
+8604: PPUSH
+8605: PPUSH
+// for i := 1 to Restricted_Builds do
+8606: LD_ADDR_VAR 0 2
+8610: PUSH
+8611: DOUBLE
+8612: LD_INT 1
+8614: DEC
+8615: ST_TO_ADDR
+8616: LD_LOC 24
+8620: PUSH
+8621: FOR_TO
+8622: IFFALSE 8932
+// begin case Restricted_Builds [ i ] [ 1 ] of b_Breastwork , b_Bunker , b_Turret :
+8624: LD_LOC 24
+8628: PUSH
+8629: LD_VAR 0 2
+8633: ARRAY
+8634: PUSH
+8635: LD_INT 1
+8637: ARRAY
+8638: PUSH
+8639: LD_INT 31
+8641: DOUBLE
+8642: EQUAL
+8643: IFTRUE 8659
+8645: LD_INT 32
+8647: DOUBLE
+8648: EQUAL
+8649: IFTRUE 8659
+8651: LD_INT 33
+8653: DOUBLE
+8654: EQUAL
+8655: IFTRUE 8659
+8657: GO 8670
+8659: POP
+// btype := #Turrets ; b_Armoury , b_Barracks :
+8660: LD_ADDR_VAR 0 6
+8664: PUSH
+8665: LD_STRING #Turrets
+8667: ST_TO_ADDR
+8668: GO 8715
+8670: LD_INT 4
+8672: DOUBLE
+8673: EQUAL
+8674: IFTRUE 8684
+8676: LD_INT 5
+8678: DOUBLE
+8679: EQUAL
+8680: IFTRUE 8684
+8682: GO 8695
+8684: POP
+// btype := #Armouries ; b_Behemoth :
+8685: LD_ADDR_VAR 0 6
+8689: PUSH
+8690: LD_STRING #Armouries
+8692: ST_TO_ADDR
+8693: GO 8715
+8695: LD_INT 37
+8697: DOUBLE
+8698: EQUAL
+8699: IFTRUE 8703
+8701: GO 8714
+8703: POP
+// btype := #Behemoths ; end ;
+8704: LD_ADDR_VAR 0 6
+8708: PUSH
+8709: LD_STRING #Behemoths
+8711: ST_TO_ADDR
+8712: GO 8715
+8714: POP
+// list := [ ] ;
+8715: LD_ADDR_VAR 0 7
+8719: PUSH
+8720: EMPTY
+8721: ST_TO_ADDR
+// for j := 1 to 8 do
+8722: LD_ADDR_VAR 0 3
+8726: PUSH
+8727: DOUBLE
+8728: LD_INT 1
+8730: DEC
+8731: ST_TO_ADDR
+8732: LD_INT 8
+8734: PUSH
+8735: FOR_TO
+8736: IFFALSE 8829
+// if Side_Positions [ j ] then
+8738: LD_EXP 16
+8742: PUSH
+8743: LD_VAR 0 3
+8747: ARRAY
+8748: IFFALSE 8827
+// begin amount := 0 ;
+8750: LD_ADDR_VAR 0 5
+8754: PUSH
+8755: LD_INT 0
+8757: ST_TO_ADDR
+// for k in Restricted_Builds [ i ] do
+8758: LD_ADDR_VAR 0 4
+8762: PUSH
+8763: LD_LOC 24
+8767: PUSH
+8768: LD_VAR 0 2
+8772: ARRAY
+8773: PUSH
+8774: FOR_IN
+8775: IFFALSE 8823
+// amount := amount + FilterAllUnits ( [ [ f_side , j ] , [ f_btype , k ] ] ) ;
+8777: LD_ADDR_VAR 0 5
+8781: PUSH
+8782: LD_VAR 0 5
+8786: PUSH
+8787: LD_INT 22
+8789: PUSH
+8790: LD_VAR 0 3
+8794: PUSH
+8795: EMPTY
+8796: LIST
+8797: LIST
+8798: PUSH
+8799: LD_INT 30
+8801: PUSH
+8802: LD_VAR 0 4
+8806: PUSH
+8807: EMPTY
+8808: LIST
+8809: LIST
+8810: PUSH
+8811: EMPTY
+8812: LIST
+8813: LIST
+8814: PPUSH
+8815: CALL_OW 69
+8819: PLUS
+8820: ST_TO_ADDR
+8821: GO 8774
+8823: POP
+8824: POP
+// break ;
+8825: GO 8829
+// end ;
+8827: GO 8735
+8829: POP
+8830: POP
+// list := [ ] ;
+8831: LD_ADDR_VAR 0 7
+8835: PUSH
+8836: EMPTY
+8837: ST_TO_ADDR
+// for j := 1 to 8 do
+8838: LD_ADDR_VAR 0 3
+8842: PUSH
+8843: DOUBLE
+8844: LD_INT 1
+8846: DEC
+8847: ST_TO_ADDR
+8848: LD_INT 8
+8850: PUSH
+8851: FOR_TO
+8852: IFFALSE 8872
+// list := list ^ amount ;
+8854: LD_ADDR_VAR 0 7
+8858: PUSH
+8859: LD_VAR 0 7
+8863: PUSH
+8864: LD_VAR 0 5
+8868: ADD
+8869: ST_TO_ADDR
+8870: GO 8851
+8872: POP
+8873: POP
+// Already_Built := Already_Built ^ [ list ] ;
+8874: LD_ADDR_LOC 30
+8878: PUSH
+8879: LD_LOC 30
+8883: PUSH
+8884: LD_VAR 0 7
+8888: PUSH
+8889: EMPTY
+8890: LIST
+8891: ADD
+8892: ST_TO_ADDR
+// Limits_Info := Limits_Info ^ [ btype , amount , Restricted_Builds_Amount [ i ] ] ;
+8893: LD_ADDR_LOC 31
+8897: PUSH
+8898: LD_LOC 31
+8902: PUSH
+8903: LD_VAR 0 6
+8907: PUSH
+8908: LD_VAR 0 5
+8912: PUSH
+8913: LD_LOC 25
+8917: PUSH
+8918: LD_VAR 0 2
+8922: ARRAY
+8923: PUSH
+8924: EMPTY
+8925: LIST
+8926: LIST
+8927: LIST
+8928: ADD
+8929: ST_TO_ADDR
+// end ;
+8930: GO 8621
+8932: POP
+8933: POP
+// Cheaters := [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] ;
+8934: LD_ADDR_LOC 32
+8938: PUSH
+8939: LD_INT 0
+8941: PUSH
+8942: LD_INT 0
+8944: PUSH
+8945: LD_INT 0
+8947: PUSH
+8948: LD_INT 0
+8950: PUSH
+8951: LD_INT 0
+8953: PUSH
+8954: LD_INT 0
+8956: PUSH
+8957: LD_INT 0
+8959: PUSH
+8960: LD_INT 0
+8962: PUSH
+8963: EMPTY
+8964: LIST
+8965: LIST
+8966: LIST
+8967: LIST
+8968: LIST
+8969: LIST
+8970: LIST
+8971: LIST
+8972: ST_TO_ADDR
+// if Limits_Info then
+8973: LD_LOC 31
+8977: IFFALSE 8993
+// Limits_Info := #Limits ^ Limits_Info ;
+8979: LD_ADDR_LOC 31
+8983: PUSH
+8984: LD_STRING #Limits
+8986: PUSH
+8987: LD_LOC 31
+8991: ADD
+8992: ST_TO_ADDR
+// end ;
+8993: LD_VAR 0 1
+8997: RET
+// export function ExecuteLimits ( un , BType , side , old_side , count ) ; var i , j , Is_Cheater ; begin
+8998: LD_INT 0
+9000: PPUSH
+9001: PPUSH
+9002: PPUSH
+9003: PPUSH
+// for i := 1 to Restricted_Builds do
+9004: LD_ADDR_VAR 0 7
+9008: PUSH
+9009: DOUBLE
+9010: LD_INT 1
+9012: DEC
+9013: ST_TO_ADDR
+9014: LD_LOC 24
+9018: PUSH
+9019: FOR_TO
+9020: IFFALSE 9443
+// if BType in Restricted_Builds [ i ] then
+9022: LD_VAR 0 2
+9026: PUSH
+9027: LD_LOC 24
+9031: PUSH
+9032: LD_VAR 0 7
+9036: ARRAY
+9037: IN
+9038: IFFALSE 9441
+// begin if old_side then
+9040: LD_VAR 0 4
+9044: IFFALSE 9170
+// if Already_Built [ i ] [ side ] + count > Restricted_Builds_Amount [ i ] then
+9046: LD_LOC 30
+9050: PUSH
+9051: LD_VAR 0 7
+9055: ARRAY
+9056: PUSH
+9057: LD_VAR 0 3
+9061: ARRAY
+9062: PUSH
+9063: LD_VAR 0 5
+9067: PLUS
+9068: PUSH
+9069: LD_LOC 25
+9073: PUSH
+9074: LD_VAR 0 7
+9078: ARRAY
+9079: GREATER
+9080: IFFALSE 9106
+// begin SetSide ( un , old_side ) ;
+9082: LD_VAR 0 1
+9086: PPUSH
+9087: LD_VAR 0 4
+9091: PPUSH
+9092: CALL_OW 235
+// count := 0 ;
+9096: LD_ADDR_VAR 0 5
+9100: PUSH
+9101: LD_INT 0
+9103: ST_TO_ADDR
+// end else
+9104: GO 9170
+// Already_Built := Replace ( Already_Built , i , Replace ( Already_Built [ i ] , old_side , Already_Built [ i ] [ old_side ] - count ) ) ;
+9106: LD_ADDR_LOC 30
+9110: PUSH
+9111: LD_LOC 30
+9115: PPUSH
+9116: LD_VAR 0 7
+9120: PPUSH
+9121: LD_LOC 30
+9125: PUSH
+9126: LD_VAR 0 7
+9130: ARRAY
+9131: PPUSH
+9132: LD_VAR 0 4
+9136: PPUSH
+9137: LD_LOC 30
+9141: PUSH
+9142: LD_VAR 0 7
+9146: ARRAY
+9147: PUSH
+9148: LD_VAR 0 4
+9152: ARRAY
+9153: PUSH
+9154: LD_VAR 0 5
+9158: MINUS
+9159: PPUSH
+9160: CALL_OW 1
+9164: PPUSH
+9165: CALL_OW 1
+9169: ST_TO_ADDR
+// Already_Built := Replace ( Already_Built , i , Replace ( Already_Built [ i ] , side , Already_Built [ i ] [ side ] + count ) ) ;
+9170: LD_ADDR_LOC 30
+9174: PUSH
+9175: LD_LOC 30
+9179: PPUSH
+9180: LD_VAR 0 7
+9184: PPUSH
+9185: LD_LOC 30
+9189: PUSH
+9190: LD_VAR 0 7
+9194: ARRAY
+9195: PPUSH
+9196: LD_VAR 0 3
+9200: PPUSH
+9201: LD_LOC 30
+9205: PUSH
+9206: LD_VAR 0 7
+9210: ARRAY
+9211: PUSH
+9212: LD_VAR 0 3
+9216: ARRAY
+9217: PUSH
+9218: LD_VAR 0 5
+9222: PLUS
+9223: PPUSH
+9224: CALL_OW 1
+9228: PPUSH
+9229: CALL_OW 1
+9233: ST_TO_ADDR
+// if count <> 0 and ( side = your_side ) then
+9234: LD_VAR 0 5
+9238: PUSH
+9239: LD_INT 0
+9241: NONEQUAL
+9242: PUSH
+9243: LD_VAR 0 3
+9247: PUSH
+9248: LD_OWVAR 2
+9252: EQUAL
+9253: AND
+9254: IFFALSE 9297
+// Limits_Info := Replace ( Limits_Info , 3 * i , Already_Built [ i ] [ side ] ) ;
+9256: LD_ADDR_LOC 31
+9260: PUSH
+9261: LD_LOC 31
+9265: PPUSH
+9266: LD_INT 3
+9268: PUSH
+9269: LD_VAR 0 7
+9273: MUL
+9274: PPUSH
+9275: LD_LOC 30
+9279: PUSH
+9280: LD_VAR 0 7
+9284: ARRAY
+9285: PUSH
+9286: LD_VAR 0 3
+9290: ARRAY
+9291: PPUSH
+9292: CALL_OW 1
+9296: ST_TO_ADDR
+// if Already_Built [ i ] [ side ] > Restricted_Builds_Amount [ i ] then
+9297: LD_LOC 30
+9301: PUSH
+9302: LD_VAR 0 7
+9306: ARRAY
+9307: PUSH
+9308: LD_VAR 0 3
+9312: ARRAY
+9313: PUSH
+9314: LD_LOC 25
+9318: PUSH
+9319: LD_VAR 0 7
+9323: ARRAY
+9324: GREATER
+9325: IFFALSE 9352
+// begin Cheaters := Replace ( Cheaters , side , 1 ) ;
+9327: LD_ADDR_LOC 32
+9331: PUSH
+9332: LD_LOC 32
+9336: PPUSH
+9337: LD_VAR 0 3
+9341: PPUSH
+9342: LD_INT 1
+9344: PPUSH
+9345: CALL_OW 1
+9349: ST_TO_ADDR
+// end else
+9350: GO 9439
+// begin for j := 1 to Restricted_Builds do
+9352: LD_ADDR_VAR 0 8
+9356: PUSH
+9357: DOUBLE
+9358: LD_INT 1
+9360: DEC
+9361: ST_TO_ADDR
+9362: LD_LOC 24
+9366: PUSH
+9367: FOR_TO
+9368: IFFALSE 9412
+// if Already_Built [ j ] [ side ] > Restricted_Builds_Amount [ j ] then
+9370: LD_LOC 30
+9374: PUSH
+9375: LD_VAR 0 8
+9379: ARRAY
+9380: PUSH
+9381: LD_VAR 0 3
+9385: ARRAY
+9386: PUSH
+9387: LD_LOC 25
+9391: PUSH
+9392: LD_VAR 0 8
+9396: ARRAY
+9397: GREATER
+9398: IFFALSE 9410
+// begin Is_Cheater := true ;
+9400: LD_ADDR_VAR 0 9
+9404: PUSH
+9405: LD_INT 1
+9407: ST_TO_ADDR
+// break ;
+9408: GO 9412
+// end ;
+9410: GO 9367
+9412: POP
+9413: POP
+// Cheaters := Replace ( Cheaters , side , Is_Cheater ) ;
+9414: LD_ADDR_LOC 32
+9418: PUSH
+9419: LD_LOC 32
+9423: PPUSH
+9424: LD_VAR 0 3
+9428: PPUSH
+9429: LD_VAR 0 9
+9433: PPUSH
+9434: CALL_OW 1
+9438: ST_TO_ADDR
+// end ; break ;
+9439: GO 9443
+// end ;
+9441: GO 9019
+9443: POP
+9444: POP
+// end ;
+9445: LD_VAR 0 6
+9449: RET
+// on VehicleConstructionStarted ( factory , chassis , engine , control , weapon ) do begin if ( weapon in Banned_Weapons ) or ( chassis in Banned_Chassis ) or ( control in Banned_Controls ) or ( engine in Banned_Engines ) then
+9450: LD_VAR 0 5
+9454: PUSH
+9455: LD_LOC 26
+9459: IN
+9460: PUSH
+9461: LD_VAR 0 2
+9465: PUSH
+9466: LD_LOC 27
+9470: IN
+9471: OR
+9472: PUSH
+9473: LD_VAR 0 4
+9477: PUSH
+9478: LD_LOC 28
+9482: IN
+9483: OR
+9484: PUSH
+9485: LD_VAR 0 3
+9489: PUSH
+9490: LD_LOC 29
+9494: IN
+9495: OR
+9496: IFFALSE 9507
+// ComCancel ( factory ) ;
+9498: LD_VAR 0 1
+9502: PPUSH
+9503: CALL_OW 127
+// end ;
+9507: PPOPN 5
+9509: END
+// on WeaponPlaced ( building , weapon ) do begin if ( weapon in Banned_Weapons ) then
+9510: LD_VAR 0 2
+9514: PUSH
+9515: LD_LOC 26
+9519: IN
+9520: IFFALSE 9531
+// ComCancel ( building ) ;
+9522: LD_VAR 0 1
+9526: PPUSH
+9527: CALL_OW 127
+// end ; end_of_file
+9531: PPOPN 2
+9533: END
+// export ExtraStrings ; export WaitServerStrings ; export function ShowTimer ; var AllStrings ; begin
+9534: LD_INT 0
+9536: PPUSH
+9537: PPUSH
+// AllStrings := [ #Multi1x1-Time , tick ] ;
+9538: LD_ADDR_VAR 0 2
+9542: PUSH
+9543: LD_STRING #Multi1x1-Time
+9545: PUSH
+9546: LD_OWVAR 1
+9550: PUSH
+9551: EMPTY
+9552: LIST
+9553: LIST
+9554: ST_TO_ADDR
+// if WaitServerStrings then
+9555: LD_EXP 44
+9559: IFFALSE 9577
+// AllStrings = AllStrings ^ WaitServerStrings ;
+9561: LD_ADDR_VAR 0 2
+9565: PUSH
+9566: LD_VAR 0 2
+9570: PUSH
+9571: LD_EXP 44
+9575: ADD
+9576: ST_TO_ADDR
+// if 0 <= siberite_bomb_Delay - tick then
+9577: LD_INT 0
+9579: PUSH
+9580: LD_EXP 12
+9584: PUSH
+9585: LD_OWVAR 1
+9589: MINUS
+9590: LESSEQUAL
+9591: IFFALSE 9622
+// AllStrings := AllStrings ^ [ #allowedsibbomb , siberite_bomb_Delay - tick ] ;
+9593: LD_ADDR_VAR 0 2
+9597: PUSH
+9598: LD_VAR 0 2
+9602: PUSH
+9603: LD_STRING #allowedsibbomb
+9605: PUSH
+9606: LD_EXP 12
+9610: PUSH
+9611: LD_OWVAR 1
+9615: MINUS
+9616: PUSH
+9617: EMPTY
+9618: LIST
+9619: LIST
+9620: ADD
+9621: ST_TO_ADDR
+// if ( ExtraStrings ) then
+9622: LD_EXP 43
+9626: IFFALSE 9648
+// AllStrings := AllStrings ^  ^ ExtraStrings ;
+9628: LD_ADDR_VAR 0 2
+9632: PUSH
+9633: LD_VAR 0 2
+9637: PUSH
+9638: LD_STRING 
+9640: ADD
+9641: PUSH
+9642: LD_EXP 43
+9646: ADD
+9647: ST_TO_ADDR
+// if ( LimitsStrings ) then
+9648: CALL 6374 0 0
+9652: IFFALSE 9674
+// AllStrings := AllStrings ^  ^ LimitsStrings ;
+9654: LD_ADDR_VAR 0 2
+9658: PUSH
+9659: LD_VAR 0 2
+9663: PUSH
+9664: LD_STRING 
+9666: ADD
+9667: PUSH
+9668: CALL 6374 0 0
+9672: ADD
+9673: ST_TO_ADDR
+// Display_Strings := AllStrings ;
+9674: LD_ADDR_OWVAR 47
+9678: PUSH
+9679: LD_VAR 0 2
+9683: ST_TO_ADDR
+// end ;
+9684: LD_VAR 0 1
+9688: RET
+// every 0 0$1 do
+9689: GO 9691
+9691: DISABLE
+// begin ShowTimer ;
+9692: CALL 9534 0 0
+// enable ;
+9696: ENABLE
+// end ; end_of_file
+9697: END
+// export function SA_OnSiberiteRocketExploded ( siberite_rocket_vehicle , target_x , target_y , requestSide ) ; begin
+9698: LD_INT 0
+9700: PPUSH
+// if GetSide ( siberite_rocket_vehicle ) = requestSide then
+9701: LD_VAR 0 1
+9705: PPUSH
+9706: CALL_OW 255
+9710: PUSH
+9711: LD_VAR 0 4
+9715: EQUAL
+9716: IFFALSE 9735
+// begin SetAchievement ( ACH_RAD ) ;
+9718: LD_STRING ACH_RAD
+9720: PPUSH
+9721: CALL_OW 543
+// SetAchievementEx ( ACH_NL , 1 ) ;
+9725: LD_STRING ACH_NL
+9727: PPUSH
+9728: LD_INT 1
+9730: PPUSH
+9731: CALL_OW 564
+// end end ;
+9735: LD_VAR 0 5
+9739: RET
+// export function SA_Win ( side ) ; begin
+9740: LD_INT 0
+9742: PPUSH
+// case side of 1 :
+9743: LD_VAR 0 1
+9747: PUSH
+9748: LD_INT 1
+9750: DOUBLE
+9751: EQUAL
+9752: IFTRUE 9756
+9754: GO 9769
+9756: POP
+// SetAchievementEx ( ACH_AH , 1 ) ; 2 :
+9757: LD_STRING ACH_AH
+9759: PPUSH
+9760: LD_INT 1
+9762: PPUSH
+9763: CALL_OW 564
+9767: GO 9932
+9769: LD_INT 2
+9771: DOUBLE
+9772: EQUAL
+9773: IFTRUE 9777
+9775: GO 9790
+9777: POP
+// SetAchievementEx ( ACH_E , 1 ) ; 3 :
+9778: LD_STRING ACH_E
+9780: PPUSH
+9781: LD_INT 1
+9783: PPUSH
+9784: CALL_OW 564
+9788: GO 9932
+9790: LD_INT 3
+9792: DOUBLE
+9793: EQUAL
+9794: IFTRUE 9798
+9796: GO 9811
+9798: POP
+// SetAchievementEx ( ACH_OOL , 1 ) ; [ 1 , 2 ] :
+9799: LD_STRING ACH_OOL
+9801: PPUSH
+9802: LD_INT 1
+9804: PPUSH
+9805: CALL_OW 564
+9809: GO 9932
+9811: LD_INT 1
+9813: PUSH
+9814: LD_INT 2
+9816: PUSH
+9817: EMPTY
+9818: LIST
+9819: LIST
+9820: DOUBLE
+9821: EQUAL
+9822: IFTRUE 9826
+9824: GO 9851
+9826: POP
+// begin SetAchievementEx ( ACH_AH , 0.5 ) ;
+9827: LD_STRING ACH_AH
+9829: PPUSH
+9830: LD_REAL  5.00000000000000E-0001
+9833: PPUSH
+9834: CALL_OW 564
+// SetAchievementEx ( ACH_E , 0.5 ) ;
+9838: LD_STRING ACH_E
+9840: PPUSH
+9841: LD_REAL  5.00000000000000E-0001
+9844: PPUSH
+9845: CALL_OW 564
+// end ; [ 2 , 3 ] :
+9849: GO 9932
+9851: LD_INT 2
+9853: PUSH
+9854: LD_INT 3
+9856: PUSH
+9857: EMPTY
+9858: LIST
+9859: LIST
+9860: DOUBLE
+9861: EQUAL
+9862: IFTRUE 9866
+9864: GO 9891
+9866: POP
+// begin SetAchievementEx ( ACH_OOL , 0.5 ) ;
+9867: LD_STRING ACH_OOL
+9869: PPUSH
+9870: LD_REAL  5.00000000000000E-0001
+9873: PPUSH
+9874: CALL_OW 564
+// SetAchievementEx ( ACH_E , 0.5 ) ;
+9878: LD_STRING ACH_E
+9880: PPUSH
+9881: LD_REAL  5.00000000000000E-0001
+9884: PPUSH
+9885: CALL_OW 564
+// end ; [ 3 , 1 ] :
+9889: GO 9932
+9891: LD_INT 3
+9893: PUSH
+9894: LD_INT 1
+9896: PUSH
+9897: EMPTY
+9898: LIST
+9899: LIST
+9900: DOUBLE
+9901: EQUAL
+9902: IFTRUE 9906
+9904: GO 9931
+9906: POP
+// begin SetAchievementEx ( ACH_AH , 0.5 ) ;
+9907: LD_STRING ACH_AH
+9909: PPUSH
+9910: LD_REAL  5.00000000000000E-0001
+9913: PPUSH
+9914: CALL_OW 564
+// SetAchievementEx ( ACH_OOL , 0.5 ) ;
+9918: LD_STRING ACH_OOL
+9920: PPUSH
+9921: LD_REAL  5.00000000000000E-0001
+9924: PPUSH
+9925: CALL_OW 564
+// end ; end ;
+9929: GO 9932
+9931: POP
+// end ; end_of_file
+9932: LD_VAR 0 2
+9936: RET
+// var defaited , GameEnded , unfoged ; export function Init_Win_Condition ; var i ; begin
+9937: LD_INT 0
+9939: PPUSH
+9940: PPUSH
+// enable ( 98 ) ;
+9941: LD_INT 98
+9943: ENABLE_MARKED
+// GameEnded = false ;
+9944: LD_ADDR_LOC 34
+9948: PUSH
+9949: LD_INT 0
+9951: ST_TO_ADDR
+// defaited = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] ;
+9952: LD_ADDR_LOC 33
+9956: PUSH
+9957: LD_INT 0
+9959: PUSH
+9960: LD_INT 0
+9962: PUSH
+9963: LD_INT 0
+9965: PUSH
+9966: LD_INT 0
+9968: PUSH
+9969: LD_INT 0
+9971: PUSH
+9972: LD_INT 0
+9974: PUSH
+9975: LD_INT 0
+9977: PUSH
+9978: LD_INT 0
+9980: PUSH
+9981: EMPTY
+9982: LIST
+9983: LIST
+9984: LIST
+9985: LIST
+9986: LIST
+9987: LIST
+9988: LIST
+9989: LIST
+9990: ST_TO_ADDR
+// unfoged = false ;
+9991: LD_ADDR_LOC 35
+9995: PUSH
+9996: LD_INT 0
+9998: ST_TO_ADDR
+// for i = 1 to side_positions do
+9999: LD_ADDR_VAR 0 2
+10003: PUSH
+10004: DOUBLE
+10005: LD_INT 1
+10007: DEC
+10008: ST_TO_ADDR
+10009: LD_EXP 16
+10013: PUSH
+10014: FOR_TO
+10015: IFFALSE 10055
+// if not side_positions [ i ] then
+10017: LD_EXP 16
+10021: PUSH
+10022: LD_VAR 0 2
+10026: ARRAY
+10027: NOT
+10028: IFFALSE 10053
+// defaited = replace ( defaited , i , true ) ;
+10030: LD_ADDR_LOC 33
+10034: PUSH
+10035: LD_LOC 33
+10039: PPUSH
+10040: LD_VAR 0 2
+10044: PPUSH
+10045: LD_INT 1
+10047: PPUSH
+10048: CALL_OW 1
+10052: ST_TO_ADDR
+10053: GO 10014
+10055: POP
+10056: POP
+// end ;
+10057: LD_VAR 0 1
+10061: RET
+// function CanWinLoose ; begin
+10062: LD_INT 0
+10064: PPUSH
+// Result := true ;
+10065: LD_ADDR_VAR 0 1
+10069: PUSH
+10070: LD_INT 1
+10072: ST_TO_ADDR
+// if IAmServer and PlayerCount > 0 then
+10073: CALL_OW 518
+10077: PUSH
+10078: CALL_OW 519
+10082: PUSH
+10083: LD_INT 0
+10085: GREATER
+10086: AND
+10087: IFFALSE 10097
+// Result := false ;
+10089: LD_ADDR_VAR 0 1
+10093: PUSH
+10094: LD_INT 0
+10096: ST_TO_ADDR
+// if IAmSpec and PlayerCount > 1 then
+10097: CALL_OW 531
+10101: PUSH
+10102: CALL_OW 519
+10106: PUSH
+10107: LD_INT 1
+10109: GREATER
+10110: AND
+10111: IFFALSE 10121
+// Result := false ;
+10113: LD_ADDR_VAR 0 1
+10117: PUSH
+10118: LD_INT 0
+10120: ST_TO_ADDR
+// end ;
+10121: LD_VAR 0 1
+10125: RET
+// export function HasPower ( i ) ; var k , h ; begin
+10126: LD_INT 0
+10128: PPUSH
+10129: PPUSH
+10130: PPUSH
+// if not MultiplayerSideAlive ( i ) and not Side_Comps [ i ] and MultiPlayer then
+10131: LD_VAR 0 1
+10135: PPUSH
+10136: CALL_OW 108
+10140: NOT
+10141: PUSH
+10142: LD_EXP 24
+10146: PUSH
+10147: LD_VAR 0 1
+10151: ARRAY
+10152: NOT
+10153: AND
+10154: PUSH
+10155: LD_OWVAR 4
+10159: AND
+10160: IFFALSE 10172
+// begin result = false ;
+10162: LD_ADDR_VAR 0 2
+10166: PUSH
+10167: LD_INT 0
+10169: ST_TO_ADDR
+// end else
+10170: GO 10467
+// case def_win_rules of 0 :
+10172: LD_EXP 13
+10176: PUSH
+10177: LD_INT 0
+10179: DOUBLE
+10180: EQUAL
+10181: IFTRUE 10185
+10183: GO 10348
+10185: POP
+// if def_people_respawning then
+10186: LD_EXP 38
+10190: IFFALSE 10281
+// Result := FilterAllUnits ( [ [ f_side , i ] , [ f_or , [ f_type , unit_human ] , [ f_control , control_computer ] , [ f_control , control_apeman ] , [ f_btype , b_depot ] , [ f_btype , b_warehouse ] ] ] ) else
+10192: LD_ADDR_VAR 0 2
+10196: PUSH
+10197: LD_INT 22
+10199: PUSH
+10200: LD_VAR 0 1
+10204: PUSH
+10205: EMPTY
+10206: LIST
+10207: LIST
+10208: PUSH
+10209: LD_INT 2
+10211: PUSH
+10212: LD_INT 21
+10214: PUSH
+10215: LD_INT 1
+10217: PUSH
+10218: EMPTY
+10219: LIST
+10220: LIST
+10221: PUSH
+10222: LD_INT 33
+10224: PUSH
+10225: LD_INT 3
+10227: PUSH
+10228: EMPTY
+10229: LIST
+10230: LIST
+10231: PUSH
+10232: LD_INT 33
+10234: PUSH
+10235: LD_INT 5
+10237: PUSH
+10238: EMPTY
+10239: LIST
+10240: LIST
+10241: PUSH
+10242: LD_INT 30
+10244: PUSH
+10245: LD_INT 0
+10247: PUSH
+10248: EMPTY
+10249: LIST
+10250: LIST
+10251: PUSH
+10252: LD_INT 30
+10254: PUSH
+10255: LD_INT 1
+10257: PUSH
+10258: EMPTY
+10259: LIST
+10260: LIST
+10261: PUSH
+10262: EMPTY
+10263: LIST
+10264: LIST
+10265: LIST
+10266: LIST
+10267: LIST
+10268: LIST
+10269: PUSH
+10270: EMPTY
+10271: LIST
+10272: LIST
+10273: PPUSH
+10274: CALL_OW 69
+10278: ST_TO_ADDR
+10279: GO 10346
+// Result := FilterAllUnits ( [ [ f_side , i ] , [ f_or , [ f_type , unit_human ] , [ f_control , control_computer ] , [ f_control , control_apeman ] ] ] ) ; 1 :
+10281: LD_ADDR_VAR 0 2
+10285: PUSH
+10286: LD_INT 22
+10288: PUSH
+10289: LD_VAR 0 1
+10293: PUSH
+10294: EMPTY
+10295: LIST
+10296: LIST
+10297: PUSH
+10298: LD_INT 2
+10300: PUSH
+10301: LD_INT 21
+10303: PUSH
+10304: LD_INT 1
+10306: PUSH
+10307: EMPTY
+10308: LIST
+10309: LIST
+10310: PUSH
+10311: LD_INT 33
+10313: PUSH
+10314: LD_INT 3
+10316: PUSH
+10317: EMPTY
+10318: LIST
+10319: LIST
+10320: PUSH
+10321: LD_INT 33
+10323: PUSH
+10324: LD_INT 5
+10326: PUSH
+10327: EMPTY
+10328: LIST
+10329: LIST
+10330: PUSH
+10331: EMPTY
+10332: LIST
+10333: LIST
+10334: LIST
+10335: LIST
+10336: PUSH
+10337: EMPTY
+10338: LIST
+10339: LIST
+10340: PPUSH
+10341: CALL_OW 69
+10345: ST_TO_ADDR
+10346: GO 10467
+10348: LD_INT 1
+10350: DOUBLE
+10351: EQUAL
+10352: IFTRUE 10356
+10354: GO 10395
+10356: POP
+// Result = FilterAllUnits ( [ [ f_side , i ] , [ f_type , unit_human ] ] ) ; 2 :
+10357: LD_ADDR_VAR 0 2
+10361: PUSH
+10362: LD_INT 22
+10364: PUSH
+10365: LD_VAR 0 1
+10369: PUSH
+10370: EMPTY
+10371: LIST
+10372: LIST
+10373: PUSH
+10374: LD_INT 21
+10376: PUSH
+10377: LD_INT 1
+10379: PUSH
+10380: EMPTY
+10381: LIST
+10382: LIST
+10383: PUSH
+10384: EMPTY
+10385: LIST
+10386: LIST
+10387: PPUSH
+10388: CALL_OW 69
+10392: ST_TO_ADDR
+10393: GO 10467
+10395: LD_INT 2
+10397: DOUBLE
+10398: EQUAL
+10399: IFTRUE 10403
+10401: GO 10466
+10403: POP
+// begin h = false ;
+10404: LD_ADDR_VAR 0 4
+10408: PUSH
+10409: LD_INT 0
+10411: ST_TO_ADDR
+// for k in heroes [ i ] do
+10412: LD_ADDR_VAR 0 3
+10416: PUSH
+10417: LD_EXP 25
+10421: PUSH
+10422: LD_VAR 0 1
+10426: ARRAY
+10427: PUSH
+10428: FOR_IN
+10429: IFFALSE 10452
+// if IsLive ( k ) then
+10431: LD_VAR 0 3
+10435: PPUSH
+10436: CALL_OW 300
+10440: IFFALSE 10450
+// h = true ;
+10442: LD_ADDR_VAR 0 4
+10446: PUSH
+10447: LD_INT 1
+10449: ST_TO_ADDR
+10450: GO 10428
+10452: POP
+10453: POP
+// Result := h ;
+10454: LD_ADDR_VAR 0 2
+10458: PUSH
+10459: LD_VAR 0 4
+10463: ST_TO_ADDR
+// end ; end ;
+10464: GO 10467
+10466: POP
+// end ;
+10467: LD_VAR 0 2
+10471: RET
+// function AlliedSides ( i , j ) ; begin
+10472: LD_INT 0
+10474: PPUSH
+// Result := false ;
+10475: LD_ADDR_VAR 0 3
+10479: PUSH
+10480: LD_INT 0
+10482: ST_TO_ADDR
+// if ( GetAttitude ( i , j ) = att_friend ) and ( GetAttitude ( j , i ) = att_friend ) and GetAlliedVictory ( i ) and GetAlliedVictory ( j ) then
+10483: LD_VAR 0 1
+10487: PPUSH
+10488: LD_VAR 0 2
+10492: PPUSH
+10493: CALL_OW 81
+10497: PUSH
+10498: LD_INT 1
+10500: EQUAL
+10501: PUSH
+10502: LD_VAR 0 2
+10506: PPUSH
+10507: LD_VAR 0 1
+10511: PPUSH
+10512: CALL_OW 81
+10516: PUSH
+10517: LD_INT 1
+10519: EQUAL
+10520: AND
+10521: PUSH
+10522: LD_VAR 0 1
+10526: PPUSH
+10527: CALL_OW 83
+10531: AND
+10532: PUSH
+10533: LD_VAR 0 2
+10537: PPUSH
+10538: CALL_OW 83
+10542: AND
+10543: IFFALSE 10553
+// Result := true ;
+10545: LD_ADDR_VAR 0 3
+10549: PUSH
+10550: LD_INT 1
+10552: ST_TO_ADDR
+// end ;
+10553: LD_VAR 0 3
+10557: RET
+// every 100 trigger CanWinLoose and not GameEnded marked 400 do
+10558: CALL 10062 0 0
+10562: PUSH
+10563: LD_LOC 34
+10567: NOT
+10568: AND
+10569: IFFALSE 10585
+10571: GO 10573
+10573: DISABLE
+// WaitServerStrings = [ #Player-Ended ] ;
+10574: LD_ADDR_EXP 44
+10578: PUSH
+10579: LD_STRING #Player-Ended
+10581: PUSH
+10582: EMPTY
+10583: LIST
+10584: ST_TO_ADDR
+10585: END
+// every 100 trigger CanWinLoose and GameEnded marked 400 do
+10586: CALL 10062 0 0
+10590: PUSH
+10591: LD_LOC 34
+10595: AND
+10596: IFFALSE 10605
+10598: GO 10600
+10600: DISABLE
+// YouLostInMultiplayer ;
+10601: CALL_OW 107
+10605: END
+// every 100 trigger not CanWinLoose and not IAmSpec marked 400 do
+10606: CALL 10062 0 0
+10610: NOT
+10611: PUSH
+10612: CALL_OW 531
+10616: NOT
+10617: AND
+10618: IFFALSE 10634
+10620: GO 10622
+10622: DISABLE
+// WaitServerStrings = [ #server-wait ] ;
+10623: LD_ADDR_EXP 44
+10627: PUSH
+10628: LD_STRING #server-wait
+10630: PUSH
+10631: EMPTY
+10632: LIST
+10633: ST_TO_ADDR
+10634: END
+// every 100 trigger IAmSpec do
+10635: CALL_OW 531
+10639: IFFALSE 10655
+10641: GO 10643
+10643: DISABLE
+// WaitServerStrings = [ #Player-IAmSpec ] ;
+10644: LD_ADDR_EXP 44
+10648: PUSH
+10649: LD_STRING #Player-IAmSpec
+10651: PUSH
+10652: EMPTY
+10653: LIST
+10654: ST_TO_ADDR
+10655: END
+// every 100 trigger GameEnded and IAmSpec do
+10656: LD_LOC 34
+10660: PUSH
+10661: CALL_OW 531
+10665: AND
+10666: IFFALSE 10675
+10668: GO 10670
+10670: DISABLE
+// YouLostInMultiplayer ;
+10671: CALL_OW 107
+10675: END
+// every 100 trigger CanWinLoose and not GameEnded marked 401 do
+10676: CALL 10062 0 0
+10680: PUSH
+10681: LD_LOC 34
+10685: NOT
+10686: AND
+10687: IFFALSE 10703
+10689: GO 10691
+10691: DISABLE
+// WaitServerStrings = [ $player-win ] ;
+10692: LD_ADDR_EXP 44
+10696: PUSH
+10697: LD_STRING $player-win
+10699: PUSH
+10700: EMPTY
+10701: LIST
+10702: ST_TO_ADDR
+10703: END
+// every 100 trigger CanWinLoose and GameEnded marked 401 do
+10704: CALL 10062 0 0
+10708: PUSH
+10709: LD_LOC 34
+10713: AND
+10714: IFFALSE 10738
+10716: GO 10718
+10718: DISABLE
+// begin SA_Win ( Side_Nations [ Your_side ] ) ;
+10719: LD_EXP 17
+10723: PUSH
+10724: LD_OWVAR 2
+10728: ARRAY
+10729: PPUSH
+10730: CALL 9740 0 1
+// YouWinInMultiplayer ;
+10734: CALL_OW 106
+// end ;
+10738: END
+// every 100 trigger isEditor marked 401 do
+10739: LD_OWVAR 84
+10743: IFFALSE 10759
+10745: GO 10747
+10747: DISABLE
+// Debug_Strings = [ You won ] ;
+10748: LD_ADDR_OWVAR 48
+10752: PUSH
+10753: LD_STRING You won
+10755: PUSH
+10756: EMPTY
+10757: LIST
+10758: ST_TO_ADDR
+10759: END
+// every 100 trigger isEditor marked 400 do
+10760: LD_OWVAR 84
+10764: IFFALSE 10780
+10766: GO 10768
+10768: DISABLE
+// Debug_Strings = [ You loss ] ;
+10769: LD_ADDR_OWVAR 48
+10773: PUSH
+10774: LD_STRING You loss
+10776: PUSH
+10777: EMPTY
+10778: LIST
+10779: ST_TO_ADDR
+10780: END
+// every 100 marked 98 do var i , un ;
+10781: GO 10783
+10783: DISABLE
+10784: LD_INT 0
+10786: PPUSH
+10787: PPUSH
+// begin for i = 1 to side_positions do
+10788: LD_ADDR_VAR 0 1
+10792: PUSH
+10793: DOUBLE
+10794: LD_INT 1
+10796: DEC
+10797: ST_TO_ADDR
+10798: LD_EXP 16
+10802: PUSH
+10803: FOR_TO
+10804: IFFALSE 10927
+// if side_positions [ i ] then
+10806: LD_EXP 16
+10810: PUSH
+10811: LD_VAR 0 1
+10815: ARRAY
+10816: IFFALSE 10925
+// if not HasPower ( i ) and not Defaited [ i ] then
+10818: LD_VAR 0 1
+10822: PPUSH
+10823: CALL 10126 0 1
+10827: NOT
+10828: PUSH
+10829: LD_LOC 33
+10833: PUSH
+10834: LD_VAR 0 1
+10838: ARRAY
+10839: NOT
+10840: AND
+10841: IFFALSE 10925
+// begin un = filterallunits ( [ f_side , i ] ) ;
+10843: LD_ADDR_VAR 0 2
+10847: PUSH
+10848: LD_INT 22
+10850: PUSH
+10851: LD_VAR 0 1
+10855: PUSH
+10856: EMPTY
+10857: LIST
+10858: LIST
+10859: PPUSH
+10860: CALL_OW 69
+10864: ST_TO_ADDR
+// if un then
+10865: LD_VAR 0 2
+10869: IFFALSE 10883
+// SetSide ( un , 0 ) ;
+10871: LD_VAR 0 2
+10875: PPUSH
+10876: LD_INT 0
+10878: PPUSH
+10879: CALL_OW 235
+// Defaited = replace ( Defaited , i , true ) ;
+10883: LD_ADDR_LOC 33
+10887: PUSH
+10888: LD_LOC 33
+10892: PPUSH
+10893: LD_VAR 0 1
+10897: PPUSH
+10898: LD_INT 1
+10900: PPUSH
+10901: CALL_OW 1
+10905: ST_TO_ADDR
+// if i = your_side then
+10906: LD_VAR 0 1
+10910: PUSH
+10911: LD_OWVAR 2
+10915: EQUAL
+10916: IFFALSE 10925
+// begin Multiplayer_Loose_Message ;
+10918: CALL_OW 521
+// enable ( 400 ) ;
+10922: LD_INT 400
+10924: ENABLE_MARKED
+// end ; end ;
+10925: GO 10803
+10927: POP
+10928: POP
+// if not Unfoged and defaited [ your_side ] then
+10929: LD_LOC 35
+10933: NOT
+10934: PUSH
+10935: LD_LOC 33
+10939: PUSH
+10940: LD_OWVAR 2
+10944: ARRAY
+10945: AND
+10946: IFFALSE 10952
+// Unfog ;
+10948: CALL 11138 0 0
+// DidGameEnd ;
+10952: CALL 10967 0 0
+// if not GameEnded then
+10956: LD_LOC 34
+10960: NOT
+10961: IFFALSE 10964
+// enable ;
+10963: ENABLE
+// end ;
+10964: PPOPN 2
+10966: END
+// function DidGameEnd ; var i , k , enemy ; begin
+10967: LD_INT 0
+10969: PPUSH
+10970: PPUSH
+10971: PPUSH
+10972: PPUSH
+// enemy = [ ] ;
+10973: LD_ADDR_VAR 0 4
+10977: PUSH
+10978: EMPTY
+10979: ST_TO_ADDR
+// for i = 1 to side_positions do
+10980: LD_ADDR_VAR 0 2
+10984: PUSH
+10985: DOUBLE
+10986: LD_INT 1
+10988: DEC
+10989: ST_TO_ADDR
+10990: LD_EXP 16
+10994: PUSH
+10995: FOR_TO
+10996: IFFALSE 11100
+// if not defaited [ i ] then
+10998: LD_LOC 33
+11002: PUSH
+11003: LD_VAR 0 2
+11007: ARRAY
+11008: NOT
+11009: IFFALSE 11098
+// for k = 1 to side_positions do
+11011: LD_ADDR_VAR 0 3
+11015: PUSH
+11016: DOUBLE
+11017: LD_INT 1
+11019: DEC
+11020: ST_TO_ADDR
+11021: LD_EXP 16
+11025: PUSH
+11026: FOR_TO
+11027: IFFALSE 11096
+// if not defaited [ k ] then
+11029: LD_LOC 33
+11033: PUSH
+11034: LD_VAR 0 3
+11038: ARRAY
+11039: NOT
+11040: IFFALSE 11094
+// if GetAttitude ( i , k ) in [ att_enemy , att_neutral ] then
+11042: LD_VAR 0 2
+11046: PPUSH
+11047: LD_VAR 0 3
+11051: PPUSH
+11052: CALL_OW 81
+11056: PUSH
+11057: LD_INT 2
+11059: PUSH
+11060: LD_INT 0
+11062: PUSH
+11063: EMPTY
+11064: LIST
+11065: LIST
+11066: IN
+11067: IFFALSE 11094
+// enemy = enemy ^ [ i , k ] ;
+11069: LD_ADDR_VAR 0 4
+11073: PUSH
+11074: LD_VAR 0 4
+11078: PUSH
+11079: LD_VAR 0 2
+11083: PUSH
+11084: LD_VAR 0 3
+11088: PUSH
+11089: EMPTY
+11090: LIST
+11091: LIST
+11092: ADD
+11093: ST_TO_ADDR
+11094: GO 11026
+11096: POP
+11097: POP
+11098: GO 10995
+11100: POP
+11101: POP
+// if not enemy then
+11102: LD_VAR 0 4
+11106: NOT
+11107: IFFALSE 11133
+// begin GameEnded = true ;
+11109: LD_ADDR_LOC 34
+11113: PUSH
+11114: LD_INT 1
+11116: ST_TO_ADDR
+// if not defaited [ your_side ] then
+11117: LD_LOC 33
+11121: PUSH
+11122: LD_OWVAR 2
+11126: ARRAY
+11127: NOT
+11128: IFFALSE 11133
+// enable ( 401 ) ;
+11130: LD_INT 401
+11132: ENABLE_MARKED
+// end ; end ;
+11133: LD_VAR 0 1
+11137: RET
+// function unfog ; var k , friends ; begin
+11138: LD_INT 0
+11140: PPUSH
+11141: PPUSH
+11142: PPUSH
+// for k = 1 to side_positions do
+11143: LD_ADDR_VAR 0 2
+11147: PUSH
+11148: DOUBLE
+11149: LD_INT 1
+11151: DEC
+11152: ST_TO_ADDR
+11153: LD_EXP 16
+11157: PUSH
+11158: FOR_TO
+11159: IFFALSE 11215
+// if not defaited [ k ] then
+11161: LD_LOC 33
+11165: PUSH
+11166: LD_VAR 0 2
+11170: ARRAY
+11171: NOT
+11172: IFFALSE 11213
+// if GetAttitude ( your_side , k ) in [ att_friend ] then
+11174: LD_OWVAR 2
+11178: PPUSH
+11179: LD_VAR 0 2
+11183: PPUSH
+11184: CALL_OW 81
+11188: PUSH
+11189: LD_INT 1
+11191: PUSH
+11192: EMPTY
+11193: LIST
+11194: IN
+11195: IFFALSE 11213
+// friends = friends ^ k ;
+11197: LD_ADDR_VAR 0 3
+11201: PUSH
+11202: LD_VAR 0 3
+11206: PUSH
+11207: LD_VAR 0 2
+11211: ADD
+11212: ST_TO_ADDR
+11213: GO 11158
+11215: POP
+11216: POP
+// if not friends then
+11217: LD_VAR 0 3
+11221: NOT
+11222: IFFALSE 11239
+// begin fogoff ( true ) ;
+11224: LD_INT 1
+11226: PPUSH
+11227: CALL_OW 344
+// unfoged = true ;
+11231: LD_ADDR_LOC 35
+11235: PUSH
+11236: LD_INT 1
+11238: ST_TO_ADDR
+// end ; end ;
+11239: LD_VAR 0 1
+11243: RET
+// export function MakeGameEnd ; begin
+11244: LD_INT 0
+11246: PPUSH
+// fogoff ( true ) ;
+11247: LD_INT 1
+11249: PPUSH
+11250: CALL_OW 344
+// unfoged = true ;
+11254: LD_ADDR_LOC 35
+11258: PUSH
+11259: LD_INT 1
+11261: ST_TO_ADDR
+// wait ( 0 0$5 ) ;
+11262: LD_INT 175
+11264: PPUSH
+11265: CALL_OW 67
+// GameEnded = true ;
+11269: LD_ADDR_LOC 34
+11273: PUSH
+11274: LD_INT 1
+11276: ST_TO_ADDR
+// end ;
+11277: LD_VAR 0 1
+11281: RET
+// export function GetGameEnded ; begin
+11282: LD_INT 0
+11284: PPUSH
+// result = GameEnded ;
+11285: LD_ADDR_VAR 0 1
+11289: PUSH
+11290: LD_LOC 34
+11294: ST_TO_ADDR
+// end ; end_of_file
+11295: LD_VAR 0 1
+11299: RET
+// export function SetMpTechs ( ) ; var side , i ; begin
+11300: LD_INT 0
+11302: PPUSH
+11303: PPUSH
+11304: PPUSH
+// for side = 1 to 8 do
+11305: LD_ADDR_VAR 0 2
+11309: PUSH
+11310: DOUBLE
+11311: LD_INT 1
+11313: DEC
+11314: ST_TO_ADDR
+11315: LD_INT 8
+11317: PUSH
+11318: FOR_TO
+11319: IFFALSE 11440
+// begin for i = 1 to 72 do
+11321: LD_ADDR_VAR 0 3
+11325: PUSH
+11326: DOUBLE
+11327: LD_INT 1
+11329: DEC
+11330: ST_TO_ADDR
+11331: LD_INT 72
+11333: PUSH
+11334: FOR_TO
+11335: IFFALSE 11366
+// SetTech ( i , side , GetRestrictions ( false , i ) ) ;
+11337: LD_VAR 0 3
+11341: PPUSH
+11342: LD_VAR 0 2
+11346: PPUSH
+11347: LD_INT 0
+11349: PPUSH
+11350: LD_VAR 0 3
+11354: PPUSH
+11355: CALL_OW 565
+11359: PPUSH
+11360: CALL_OW 322
+11364: GO 11334
+11366: POP
+11367: POP
+// SetTech ( 73 , side , GetRestrictions ( false , 25 ) ) ;
+11368: LD_INT 73
+11370: PPUSH
+11371: LD_VAR 0 2
+11375: PPUSH
+11376: LD_INT 0
+11378: PPUSH
+11379: LD_INT 25
+11381: PPUSH
+11382: CALL_OW 565
+11386: PPUSH
+11387: CALL_OW 322
+// for i = 0 to 40 do
+11391: LD_ADDR_VAR 0 3
+11395: PUSH
+11396: DOUBLE
+11397: LD_INT 0
+11399: DEC
+11400: ST_TO_ADDR
+11401: LD_INT 40
+11403: PUSH
+11404: FOR_TO
+11405: IFFALSE 11436
+// SetRestrict ( i , side , GetRestrictions ( true , i ) ) ;
+11407: LD_VAR 0 3
+11411: PPUSH
+11412: LD_VAR 0 2
+11416: PPUSH
+11417: LD_INT 1
+11419: PPUSH
+11420: LD_VAR 0 3
+11424: PPUSH
+11425: CALL_OW 565
+11429: PPUSH
+11430: CALL_OW 324
+11434: GO 11404
+11436: POP
+11437: POP
+// end ;
+11438: GO 11318
+11440: POP
+11441: POP
+// end ;
+11442: LD_VAR 0 1
+11446: RET
+// export function SetMpTechLevel ( level ) ; var side , i ; begin
+11447: LD_INT 0
+11449: PPUSH
+11450: PPUSH
+11451: PPUSH
+// for side = 1 to 8 do
+11452: LD_ADDR_VAR 0 3
+11456: PUSH
+11457: DOUBLE
+11458: LD_INT 1
+11460: DEC
+11461: ST_TO_ADDR
+11462: LD_INT 8
+11464: PUSH
+11465: FOR_TO
+11466: IFFALSE 15462
+// begin for i = 1 to 73 do
+11468: LD_ADDR_VAR 0 4
+11472: PUSH
+11473: DOUBLE
+11474: LD_INT 1
+11476: DEC
+11477: ST_TO_ADDR
+11478: LD_INT 73
+11480: PUSH
+11481: FOR_TO
+11482: IFFALSE 11503
+// SetTech ( i , side , state_disabled ) ;
+11484: LD_VAR 0 4
+11488: PPUSH
+11489: LD_VAR 0 3
+11493: PPUSH
+11494: LD_INT 0
+11496: PPUSH
+11497: CALL_OW 322
+11501: GO 11481
+11503: POP
+11504: POP
+// for i = 0 to 40 do
+11505: LD_ADDR_VAR 0 4
+11509: PUSH
+11510: DOUBLE
+11511: LD_INT 0
+11513: DEC
+11514: ST_TO_ADDR
+11515: LD_INT 40
+11517: PUSH
+11518: FOR_TO
+11519: IFFALSE 11540
+// SetRestrict ( i , side , false ) ;
+11521: LD_VAR 0 4
+11525: PPUSH
+11526: LD_VAR 0 3
+11530: PPUSH
+11531: LD_INT 0
+11533: PPUSH
+11534: CALL_OW 324
+11538: GO 11518
+11540: POP
+11541: POP
+// case level of 1 :
+11542: LD_VAR 0 1
+11546: PUSH
+11547: LD_INT 1
+11549: DOUBLE
+11550: EQUAL
+11551: IFTRUE 11555
+11553: GO 11708
+11555: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+11556: LD_INT 35
+11558: PPUSH
+11559: LD_VAR 0 3
+11563: PPUSH
+11564: LD_INT 1
+11566: PPUSH
+11567: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+11571: LD_INT 45
+11573: PPUSH
+11574: LD_VAR 0 3
+11578: PPUSH
+11579: LD_INT 1
+11581: PPUSH
+11582: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+11586: LD_INT 46
+11588: PPUSH
+11589: LD_VAR 0 3
+11593: PPUSH
+11594: LD_INT 1
+11596: PPUSH
+11597: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+11601: LD_INT 47
+11603: PPUSH
+11604: LD_VAR 0 3
+11608: PPUSH
+11609: LD_INT 1
+11611: PPUSH
+11612: CALL_OW 322
+// SetRestrict ( b_depot , side , true ) ;
+11616: LD_INT 0
+11618: PPUSH
+11619: LD_VAR 0 3
+11623: PPUSH
+11624: LD_INT 1
+11626: PPUSH
+11627: CALL_OW 324
+// SetRestrict ( b_workshop , side , true ) ;
+11631: LD_INT 2
+11633: PPUSH
+11634: LD_VAR 0 3
+11638: PPUSH
+11639: LD_INT 1
+11641: PPUSH
+11642: CALL_OW 324
+// SetRestrict ( b_armoury , side , true ) ;
+11646: LD_INT 4
+11648: PPUSH
+11649: LD_VAR 0 3
+11653: PPUSH
+11654: LD_INT 1
+11656: PPUSH
+11657: CALL_OW 324
+// SetRestrict ( b_lab , side , true ) ;
+11661: LD_INT 6
+11663: PPUSH
+11664: LD_VAR 0 3
+11668: PPUSH
+11669: LD_INT 1
+11671: PPUSH
+11672: CALL_OW 324
+// SetRestrict ( b_oil_mine , side , true ) ;
+11676: LD_INT 29
+11678: PPUSH
+11679: LD_VAR 0 3
+11683: PPUSH
+11684: LD_INT 1
+11686: PPUSH
+11687: CALL_OW 324
+// SetRestrict ( b_breastwork , side , true ) ;
+11691: LD_INT 31
+11693: PPUSH
+11694: LD_VAR 0 3
+11698: PPUSH
+11699: LD_INT 1
+11701: PPUSH
+11702: CALL_OW 324
+// end ; 2 :
+11706: GO 15460
+11708: LD_INT 2
+11710: DOUBLE
+11711: EQUAL
+11712: IFTRUE 11716
+11714: GO 11914
+11716: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+11717: LD_INT 35
+11719: PPUSH
+11720: LD_VAR 0 3
+11724: PPUSH
+11725: LD_INT 1
+11727: PPUSH
+11728: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+11732: LD_INT 45
+11734: PPUSH
+11735: LD_VAR 0 3
+11739: PPUSH
+11740: LD_INT 1
+11742: PPUSH
+11743: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+11747: LD_INT 46
+11749: PPUSH
+11750: LD_VAR 0 3
+11754: PPUSH
+11755: LD_INT 1
+11757: PPUSH
+11758: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+11762: LD_INT 47
+11764: PPUSH
+11765: LD_VAR 0 3
+11769: PPUSH
+11770: LD_INT 1
+11772: PPUSH
+11773: CALL_OW 322
+// SetTech ( tech_apelang , side , state_enabled ) ;
+11777: LD_INT 1
+11779: PPUSH
+11780: LD_VAR 0 3
+11784: PPUSH
+11785: LD_INT 1
+11787: PPUSH
+11788: CALL_OW 322
+// SetTech ( tech_apepsych , side , state_enabled ) ;
+11792: LD_INT 2
+11794: PPUSH
+11795: LD_VAR 0 3
+11799: PPUSH
+11800: LD_INT 1
+11802: PPUSH
+11803: CALL_OW 322
+// SetTech ( tech_apeagres , side , state_enabled ) ;
+11807: LD_INT 11
+11809: PPUSH
+11810: LD_VAR 0 3
+11814: PPUSH
+11815: LD_INT 1
+11817: PPUSH
+11818: CALL_OW 322
+// SetRestrict ( b_depot , side , true ) ;
+11822: LD_INT 0
+11824: PPUSH
+11825: LD_VAR 0 3
+11829: PPUSH
+11830: LD_INT 1
+11832: PPUSH
+11833: CALL_OW 324
+// SetRestrict ( b_workshop , side , true ) ;
+11837: LD_INT 2
+11839: PPUSH
+11840: LD_VAR 0 3
+11844: PPUSH
+11845: LD_INT 1
+11847: PPUSH
+11848: CALL_OW 324
+// SetRestrict ( b_armoury , side , true ) ;
+11852: LD_INT 4
+11854: PPUSH
+11855: LD_VAR 0 3
+11859: PPUSH
+11860: LD_INT 1
+11862: PPUSH
+11863: CALL_OW 324
+// SetRestrict ( b_lab , side , true ) ;
+11867: LD_INT 6
+11869: PPUSH
+11870: LD_VAR 0 3
+11874: PPUSH
+11875: LD_INT 1
+11877: PPUSH
+11878: CALL_OW 324
+// SetRestrict ( b_oil_mine , side , true ) ;
+11882: LD_INT 29
+11884: PPUSH
+11885: LD_VAR 0 3
+11889: PPUSH
+11890: LD_INT 1
+11892: PPUSH
+11893: CALL_OW 324
+// SetRestrict ( b_breastwork , side , true ) ;
+11897: LD_INT 31
+11899: PPUSH
+11900: LD_VAR 0 3
+11904: PPUSH
+11905: LD_INT 1
+11907: PPUSH
+11908: CALL_OW 324
+// end ; 3 :
+11912: GO 15460
+11914: LD_INT 3
+11916: DOUBLE
+11917: EQUAL
+11918: IFTRUE 11922
+11920: GO 12375
+11922: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+11923: LD_INT 35
+11925: PPUSH
+11926: LD_VAR 0 3
+11930: PPUSH
+11931: LD_INT 1
+11933: PPUSH
+11934: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+11938: LD_INT 45
+11940: PPUSH
+11941: LD_VAR 0 3
+11945: PPUSH
+11946: LD_INT 1
+11948: PPUSH
+11949: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+11953: LD_INT 46
+11955: PPUSH
+11956: LD_VAR 0 3
+11960: PPUSH
+11961: LD_INT 1
+11963: PPUSH
+11964: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+11968: LD_INT 47
+11970: PPUSH
+11971: LD_VAR 0 3
+11975: PPUSH
+11976: LD_INT 1
+11978: PPUSH
+11979: CALL_OW 322
+// SetTech ( tech_apelang , side , state_enabled ) ;
+11983: LD_INT 1
+11985: PPUSH
+11986: LD_VAR 0 3
+11990: PPUSH
+11991: LD_INT 1
+11993: PPUSH
+11994: CALL_OW 322
+// SetTech ( tech_apepsych , side , state_enabled ) ;
+11998: LD_INT 2
+12000: PPUSH
+12001: LD_VAR 0 3
+12005: PPUSH
+12006: LD_INT 1
+12008: PPUSH
+12009: CALL_OW 322
+// SetTech ( tech_apeagres , side , state_enabled ) ;
+12013: LD_INT 11
+12015: PPUSH
+12016: LD_VAR 0 3
+12020: PPUSH
+12021: LD_INT 1
+12023: PPUSH
+12024: CALL_OW 322
+// SetTech ( tech_tech1 , side , state_enabled ) ;
+12028: LD_INT 48
+12030: PPUSH
+12031: LD_VAR 0 3
+12035: PPUSH
+12036: LD_INT 1
+12038: PPUSH
+12039: CALL_OW 322
+// SetTech ( tech_gatling , side , state_enabled ) ;
+12043: LD_INT 69
+12045: PPUSH
+12046: LD_VAR 0 3
+12050: PPUSH
+12051: LD_INT 1
+12053: PPUSH
+12054: CALL_OW 322
+// SetTech ( tech_gun , side , state_enabled ) ;
+12058: LD_INT 39
+12060: PPUSH
+12061: LD_VAR 0 3
+12065: PPUSH
+12066: LD_INT 1
+12068: PPUSH
+12069: CALL_OW 322
+// SetTech ( tech_selfdest , side , state_enabled ) ;
+12073: LD_INT 43
+12075: PPUSH
+12076: LD_VAR 0 3
+12080: PPUSH
+12081: LD_INT 1
+12083: PPUSH
+12084: CALL_OW 322
+// SetTech ( tech_weap1 , side , state_enabled ) ;
+12088: LD_INT 51
+12090: PPUSH
+12091: LD_VAR 0 3
+12095: PPUSH
+12096: LD_INT 1
+12098: PPUSH
+12099: CALL_OW 322
+// SetTech ( tech_radar , side , state_enabled ) ;
+12103: LD_INT 6
+12105: PPUSH
+12106: LD_VAR 0 3
+12110: PPUSH
+12111: LD_INT 1
+12113: PPUSH
+12114: CALL_OW 322
+// SetRestrict ( b_depot , side , true ) ;
+12118: LD_INT 0
+12120: PPUSH
+12121: LD_VAR 0 3
+12125: PPUSH
+12126: LD_INT 1
+12128: PPUSH
+12129: CALL_OW 324
+// SetRestrict ( b_workshop , side , true ) ;
+12133: LD_INT 2
+12135: PPUSH
+12136: LD_VAR 0 3
+12140: PPUSH
+12141: LD_INT 1
+12143: PPUSH
+12144: CALL_OW 324
+// SetRestrict ( b_factory , side , true ) ;
+12148: LD_INT 3
+12150: PPUSH
+12151: LD_VAR 0 3
+12155: PPUSH
+12156: LD_INT 1
+12158: PPUSH
+12159: CALL_OW 324
+// SetRestrict ( b_armoury , side , true ) ;
+12163: LD_INT 4
+12165: PPUSH
+12166: LD_VAR 0 3
+12170: PPUSH
+12171: LD_INT 1
+12173: PPUSH
+12174: CALL_OW 324
+// SetRestrict ( b_lab , side , true ) ;
+12178: LD_INT 6
+12180: PPUSH
+12181: LD_VAR 0 3
+12185: PPUSH
+12186: LD_INT 1
+12188: PPUSH
+12189: CALL_OW 324
+// SetRestrict ( b_lab_half , side , true ) ;
+12193: LD_INT 7
+12195: PPUSH
+12196: LD_VAR 0 3
+12200: PPUSH
+12201: LD_INT 1
+12203: PPUSH
+12204: CALL_OW 324
+// SetRestrict ( b_lab_full , side , true ) ;
+12208: LD_INT 8
+12210: PPUSH
+12211: LD_VAR 0 3
+12215: PPUSH
+12216: LD_INT 1
+12218: PPUSH
+12219: CALL_OW 324
+// SetRestrict ( b_lab_weapon , side , true ) ;
+12223: LD_INT 10
+12225: PPUSH
+12226: LD_VAR 0 3
+12230: PPUSH
+12231: LD_INT 1
+12233: PPUSH
+12234: CALL_OW 324
+// SetRestrict ( b_lab_opto , side , true ) ;
+12238: LD_INT 15
+12240: PPUSH
+12241: LD_VAR 0 3
+12245: PPUSH
+12246: LD_INT 1
+12248: PPUSH
+12249: CALL_OW 324
+// SetRestrict ( b_ext_track , side , true ) ;
+12253: LD_INT 16
+12255: PPUSH
+12256: LD_VAR 0 3
+12260: PPUSH
+12261: LD_INT 1
+12263: PPUSH
+12264: CALL_OW 324
+// SetRestrict ( b_ext_gun , side , true ) ;
+12268: LD_INT 17
+12270: PPUSH
+12271: LD_VAR 0 3
+12275: PPUSH
+12276: LD_INT 1
+12278: PPUSH
+12279: CALL_OW 324
+// SetRestrict ( b_ext_radar , side , true ) ;
+12283: LD_INT 20
+12285: PPUSH
+12286: LD_VAR 0 3
+12290: PPUSH
+12291: LD_INT 1
+12293: PPUSH
+12294: CALL_OW 324
+// SetRestrict ( b_oil_power , side , true ) ;
+12298: LD_INT 26
+12300: PPUSH
+12301: LD_VAR 0 3
+12305: PPUSH
+12306: LD_INT 1
+12308: PPUSH
+12309: CALL_OW 324
+// SetRestrict ( b_solar_power , side , true ) ;
+12313: LD_INT 27
+12315: PPUSH
+12316: LD_VAR 0 3
+12320: PPUSH
+12321: LD_INT 1
+12323: PPUSH
+12324: CALL_OW 324
+// SetRestrict ( b_oil_mine , side , true ) ;
+12328: LD_INT 29
+12330: PPUSH
+12331: LD_VAR 0 3
+12335: PPUSH
+12336: LD_INT 1
+12338: PPUSH
+12339: CALL_OW 324
+// SetRestrict ( b_breastwork , side , true ) ;
+12343: LD_INT 31
+12345: PPUSH
+12346: LD_VAR 0 3
+12350: PPUSH
+12351: LD_INT 1
+12353: PPUSH
+12354: CALL_OW 324
+// SetRestrict ( b_bunker , side , true ) ;
+12358: LD_INT 32
+12360: PPUSH
+12361: LD_VAR 0 3
+12365: PPUSH
+12366: LD_INT 1
+12368: PPUSH
+12369: CALL_OW 324
+// end ; 4 :
+12373: GO 15460
+12375: LD_INT 4
+12377: DOUBLE
+12378: EQUAL
+12379: IFTRUE 12383
+12381: GO 13331
+12383: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+12384: LD_INT 35
+12386: PPUSH
+12387: LD_VAR 0 3
+12391: PPUSH
+12392: LD_INT 1
+12394: PPUSH
+12395: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+12399: LD_INT 45
+12401: PPUSH
+12402: LD_VAR 0 3
+12406: PPUSH
+12407: LD_INT 1
+12409: PPUSH
+12410: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+12414: LD_INT 46
+12416: PPUSH
+12417: LD_VAR 0 3
+12421: PPUSH
+12422: LD_INT 1
+12424: PPUSH
+12425: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+12429: LD_INT 47
+12431: PPUSH
+12432: LD_VAR 0 3
+12436: PPUSH
+12437: LD_INT 1
+12439: PPUSH
+12440: CALL_OW 322
+// SetTech ( tech_apelang , side , state_enabled ) ;
+12444: LD_INT 1
+12446: PPUSH
+12447: LD_VAR 0 3
+12451: PPUSH
+12452: LD_INT 1
+12454: PPUSH
+12455: CALL_OW 322
+// SetTech ( tech_apepsych , side , state_enabled ) ;
+12459: LD_INT 2
+12461: PPUSH
+12462: LD_VAR 0 3
+12466: PPUSH
+12467: LD_INT 1
+12469: PPUSH
+12470: CALL_OW 322
+// SetTech ( tech_apeagres , side , state_enabled ) ;
+12474: LD_INT 11
+12476: PPUSH
+12477: LD_VAR 0 3
+12481: PPUSH
+12482: LD_INT 1
+12484: PPUSH
+12485: CALL_OW 322
+// SetTech ( tech_sibdet , side , state_enabled ) ;
+12489: LD_INT 20
+12491: PPUSH
+12492: LD_VAR 0 3
+12496: PPUSH
+12497: LD_INT 1
+12499: PPUSH
+12500: CALL_OW 322
+// SetTech ( tech_tech1 , side , state_enabled ) ;
+12504: LD_INT 48
+12506: PPUSH
+12507: LD_VAR 0 3
+12511: PPUSH
+12512: LD_INT 1
+12514: PPUSH
+12515: CALL_OW 322
+// SetTech ( tech_tech2 , side , state_enabled ) ;
+12519: LD_INT 49
+12521: PPUSH
+12522: LD_VAR 0 3
+12526: PPUSH
+12527: LD_INT 1
+12529: PPUSH
+12530: CALL_OW 322
+// SetTech ( tech_gatling , side , state_enabled ) ;
+12534: LD_INT 69
+12536: PPUSH
+12537: LD_VAR 0 3
+12541: PPUSH
+12542: LD_INT 1
+12544: PPUSH
+12545: CALL_OW 322
+// SetTech ( tech_gun , side , state_enabled ) ;
+12549: LD_INT 39
+12551: PPUSH
+12552: LD_VAR 0 3
+12556: PPUSH
+12557: LD_INT 1
+12559: PPUSH
+12560: CALL_OW 322
+// SetTech ( tech_advmet , side , state_enabled ) ;
+12564: LD_INT 34
+12566: PPUSH
+12567: LD_VAR 0 3
+12571: PPUSH
+12572: LD_INT 1
+12574: PPUSH
+12575: CALL_OW 322
+// SetTech ( tech_explos , side , state_enabled ) ;
+12579: LD_INT 42
+12581: PPUSH
+12582: LD_VAR 0 3
+12586: PPUSH
+12587: LD_INT 1
+12589: PPUSH
+12590: CALL_OW 322
+// SetTech ( tech_bazooka , side , state_enabled ) ;
+12594: LD_INT 44
+12596: PPUSH
+12597: LD_VAR 0 3
+12601: PPUSH
+12602: LD_INT 1
+12604: PPUSH
+12605: CALL_OW 322
+// SetTech ( tech_mortar , side , state_enabled ) ;
+12609: LD_INT 41
+12611: PPUSH
+12612: LD_VAR 0 3
+12616: PPUSH
+12617: LD_INT 1
+12619: PPUSH
+12620: CALL_OW 322
+// SetTech ( tech_selfdest , side , state_enabled ) ;
+12624: LD_INT 43
+12626: PPUSH
+12627: LD_VAR 0 3
+12631: PPUSH
+12632: LD_INT 1
+12634: PPUSH
+12635: CALL_OW 322
+// SetTech ( tech_flame , side , state_enabled ) ;
+12639: LD_INT 70
+12641: PPUSH
+12642: LD_VAR 0 3
+12646: PPUSH
+12647: LD_INT 1
+12649: PPUSH
+12650: CALL_OW 322
+// SetTech ( tech_weap1 , side , state_enabled ) ;
+12654: LD_INT 51
+12656: PPUSH
+12657: LD_VAR 0 3
+12661: PPUSH
+12662: LD_INT 1
+12664: PPUSH
+12665: CALL_OW 322
+// SetTech ( tech_weap2 , side , state_enabled ) ;
+12669: LD_INT 52
+12671: PPUSH
+12672: LD_VAR 0 3
+12676: PPUSH
+12677: LD_INT 1
+12679: PPUSH
+12680: CALL_OW 322
+// SetTech ( tech_radar , side , state_enabled ) ;
+12684: LD_INT 6
+12686: PPUSH
+12687: LD_VAR 0 3
+12691: PPUSH
+12692: LD_INT 1
+12694: PPUSH
+12695: CALL_OW 322
+// SetTech ( tech_remcont , side , state_enabled ) ;
+12699: LD_INT 15
+12701: PPUSH
+12702: LD_VAR 0 3
+12706: PPUSH
+12707: LD_INT 1
+12709: PPUSH
+12710: CALL_OW 322
+// SetTech ( tech_matdet , side , state_enabled ) ;
+12714: LD_INT 7
+12716: PPUSH
+12717: LD_VAR 0 3
+12721: PPUSH
+12722: LD_INT 1
+12724: PPUSH
+12725: CALL_OW 322
+// SetTech ( tech_lassight , side , state_enabled ) ;
+12729: LD_INT 12
+12731: PPUSH
+12732: LD_VAR 0 3
+12736: PPUSH
+12737: LD_INT 1
+12739: PPUSH
+12740: CALL_OW 322
+// SetTech ( tech_remcharge , side , state_enabled ) ;
+12744: LD_INT 18
+12746: PPUSH
+12747: LD_VAR 0 3
+12751: PPUSH
+12752: LD_INT 1
+12754: PPUSH
+12755: CALL_OW 322
+// SetTech ( tech_opto1 , side , state_enabled ) ;
+12759: LD_INT 60
+12761: PPUSH
+12762: LD_VAR 0 3
+12766: PPUSH
+12767: LD_INT 1
+12769: PPUSH
+12770: CALL_OW 322
+// SetTech ( tech_matpred , side , state_enabled ) ;
+12774: LD_INT 9
+12776: PPUSH
+12777: LD_VAR 0 3
+12781: PPUSH
+12782: LD_INT 1
+12784: PPUSH
+12785: CALL_OW 322
+// SetTech ( tech_taufield , side , state_enabled ) ;
+12789: LD_INT 30
+12791: PPUSH
+12792: LD_VAR 0 3
+12796: PPUSH
+12797: LD_INT 1
+12799: PPUSH
+12800: CALL_OW 322
+// SetTech ( tech_limteleport , side , state_enabled ) ;
+12804: LD_INT 37
+12806: PPUSH
+12807: LD_VAR 0 3
+12811: PPUSH
+12812: LD_INT 1
+12814: PPUSH
+12815: CALL_OW 322
+// SetTech ( tech_stimdrugs , side , state_enabled ) ;
+12819: LD_INT 5
+12821: PPUSH
+12822: LD_VAR 0 3
+12826: PPUSH
+12827: LD_INT 1
+12829: PPUSH
+12830: CALL_OW 322
+// SetTech ( tech_bio1 , side , state_enabled ) ;
+12834: LD_INT 66
+12836: PPUSH
+12837: LD_VAR 0 3
+12841: PPUSH
+12842: LD_INT 1
+12844: PPUSH
+12845: CALL_OW 322
+// SetTech ( tech_sibpow , side , state_enabled ) ;
+12849: LD_INT 21
+12851: PPUSH
+12852: LD_VAR 0 3
+12856: PPUSH
+12857: LD_INT 1
+12859: PPUSH
+12860: CALL_OW 322
+// SetTech ( tech_sibeng , side , state_enabled ) ;
+12864: LD_INT 22
+12866: PPUSH
+12867: LD_VAR 0 3
+12871: PPUSH
+12872: LD_INT 1
+12874: PPUSH
+12875: CALL_OW 322
+// SetTech ( tech_sib1 , side , state_enabled ) ;
+12879: LD_INT 54
+12881: PPUSH
+12882: LD_VAR 0 3
+12886: PPUSH
+12887: LD_INT 1
+12889: PPUSH
+12890: CALL_OW 322
+// SetRestrict ( b_depot , side , true ) ;
+12894: LD_INT 0
+12896: PPUSH
+12897: LD_VAR 0 3
+12901: PPUSH
+12902: LD_INT 1
+12904: PPUSH
+12905: CALL_OW 324
+// SetRestrict ( b_warehouse , side , true ) ;
+12909: LD_INT 1
+12911: PPUSH
+12912: LD_VAR 0 3
+12916: PPUSH
+12917: LD_INT 1
+12919: PPUSH
+12920: CALL_OW 324
+// SetRestrict ( b_workshop , side , true ) ;
+12924: LD_INT 2
+12926: PPUSH
+12927: LD_VAR 0 3
+12931: PPUSH
+12932: LD_INT 1
+12934: PPUSH
+12935: CALL_OW 324
+// SetRestrict ( b_factory , side , true ) ;
+12939: LD_INT 3
+12941: PPUSH
+12942: LD_VAR 0 3
+12946: PPUSH
+12947: LD_INT 1
+12949: PPUSH
+12950: CALL_OW 324
+// SetRestrict ( b_armoury , side , true ) ;
+12954: LD_INT 4
+12956: PPUSH
+12957: LD_VAR 0 3
+12961: PPUSH
+12962: LD_INT 1
+12964: PPUSH
+12965: CALL_OW 324
+// SetRestrict ( b_barracks , side , true ) ;
+12969: LD_INT 5
+12971: PPUSH
+12972: LD_VAR 0 3
+12976: PPUSH
+12977: LD_INT 1
+12979: PPUSH
+12980: CALL_OW 324
+// SetRestrict ( b_lab , side , true ) ;
+12984: LD_INT 6
+12986: PPUSH
+12987: LD_VAR 0 3
+12991: PPUSH
+12992: LD_INT 1
+12994: PPUSH
+12995: CALL_OW 324
+// SetRestrict ( b_lab_half , side , true ) ;
+12999: LD_INT 7
+13001: PPUSH
+13002: LD_VAR 0 3
+13006: PPUSH
+13007: LD_INT 1
+13009: PPUSH
+13010: CALL_OW 324
+// SetRestrict ( b_lab_full , side , true ) ;
+13014: LD_INT 8
+13016: PPUSH
+13017: LD_VAR 0 3
+13021: PPUSH
+13022: LD_INT 1
+13024: PPUSH
+13025: CALL_OW 324
+// SetRestrict ( b_lab_weapon , side , true ) ;
+13029: LD_INT 10
+13031: PPUSH
+13032: LD_VAR 0 3
+13036: PPUSH
+13037: LD_INT 1
+13039: PPUSH
+13040: CALL_OW 324
+// SetRestrict ( b_lab_siberium , side , true ) ;
+13044: LD_INT 11
+13046: PPUSH
+13047: LD_VAR 0 3
+13051: PPUSH
+13052: LD_INT 1
+13054: PPUSH
+13055: CALL_OW 324
+// SetRestrict ( b_lab_computer , side , true ) ;
+13059: LD_INT 12
+13061: PPUSH
+13062: LD_VAR 0 3
+13066: PPUSH
+13067: LD_INT 1
+13069: PPUSH
+13070: CALL_OW 324
+// SetRestrict ( b_lab_biological , side , true ) ;
+13074: LD_INT 13
+13076: PPUSH
+13077: LD_VAR 0 3
+13081: PPUSH
+13082: LD_INT 1
+13084: PPUSH
+13085: CALL_OW 324
+// SetRestrict ( b_lab_spacetime , side , true ) ;
+13089: LD_INT 14
+13091: PPUSH
+13092: LD_VAR 0 3
+13096: PPUSH
+13097: LD_INT 1
+13099: PPUSH
+13100: CALL_OW 324
+// SetRestrict ( b_lab_opto , side , true ) ;
+13104: LD_INT 15
+13106: PPUSH
+13107: LD_VAR 0 3
+13111: PPUSH
+13112: LD_INT 1
+13114: PPUSH
+13115: CALL_OW 324
+// SetRestrict ( b_ext_track , side , true ) ;
+13119: LD_INT 16
+13121: PPUSH
+13122: LD_VAR 0 3
+13126: PPUSH
+13127: LD_INT 1
+13129: PPUSH
+13130: CALL_OW 324
+// SetRestrict ( b_ext_gun , side , true ) ;
+13134: LD_INT 17
+13136: PPUSH
+13137: LD_VAR 0 3
+13141: PPUSH
+13142: LD_INT 1
+13144: PPUSH
+13145: CALL_OW 324
+// SetRestrict ( b_ext_noncombat , side , true ) ;
+13149: LD_INT 19
+13151: PPUSH
+13152: LD_VAR 0 3
+13156: PPUSH
+13157: LD_INT 1
+13159: PPUSH
+13160: CALL_OW 324
+// SetRestrict ( b_ext_radar , side , true ) ;
+13164: LD_INT 20
+13166: PPUSH
+13167: LD_VAR 0 3
+13171: PPUSH
+13172: LD_INT 1
+13174: PPUSH
+13175: CALL_OW 324
+// SetRestrict ( b_ext_siberium , side , true ) ;
+13179: LD_INT 21
+13181: PPUSH
+13182: LD_VAR 0 3
+13186: PPUSH
+13187: LD_INT 1
+13189: PPUSH
+13190: CALL_OW 324
+// SetRestrict ( b_ext_stitch , side , true ) ;
+13194: LD_INT 23
+13196: PPUSH
+13197: LD_VAR 0 3
+13201: PPUSH
+13202: LD_INT 1
+13204: PPUSH
+13205: CALL_OW 324
+// SetRestrict ( b_oil_power , side , true ) ;
+13209: LD_INT 26
+13211: PPUSH
+13212: LD_VAR 0 3
+13216: PPUSH
+13217: LD_INT 1
+13219: PPUSH
+13220: CALL_OW 324
+// SetRestrict ( b_solar_power , side , true ) ;
+13224: LD_INT 27
+13226: PPUSH
+13227: LD_VAR 0 3
+13231: PPUSH
+13232: LD_INT 1
+13234: PPUSH
+13235: CALL_OW 324
+// SetRestrict ( b_siberite_power , side , true ) ;
+13239: LD_INT 28
+13241: PPUSH
+13242: LD_VAR 0 3
+13246: PPUSH
+13247: LD_INT 1
+13249: PPUSH
+13250: CALL_OW 324
+// SetRestrict ( b_oil_mine , side , true ) ;
+13254: LD_INT 29
+13256: PPUSH
+13257: LD_VAR 0 3
+13261: PPUSH
+13262: LD_INT 1
+13264: PPUSH
+13265: CALL_OW 324
+// SetRestrict ( b_siberite_mine , side , true ) ;
+13269: LD_INT 30
+13271: PPUSH
+13272: LD_VAR 0 3
+13276: PPUSH
+13277: LD_INT 1
+13279: PPUSH
+13280: CALL_OW 324
+// SetRestrict ( b_breastwork , side , true ) ;
+13284: LD_INT 31
+13286: PPUSH
+13287: LD_VAR 0 3
+13291: PPUSH
+13292: LD_INT 1
+13294: PPUSH
+13295: CALL_OW 324
+// SetRestrict ( b_bunker , side , true ) ;
+13299: LD_INT 32
+13301: PPUSH
+13302: LD_VAR 0 3
+13306: PPUSH
+13307: LD_INT 1
+13309: PPUSH
+13310: CALL_OW 324
+// SetRestrict ( b_control_tower , side , true ) ;
+13314: LD_INT 36
+13316: PPUSH
+13317: LD_VAR 0 3
+13321: PPUSH
+13322: LD_INT 1
+13324: PPUSH
+13325: CALL_OW 324
+// end ; 5 :
+13329: GO 15460
+13331: LD_INT 5
+13333: DOUBLE
+13334: EQUAL
+13335: IFTRUE 13339
+13337: GO 14452
+13339: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+13340: LD_INT 35
+13342: PPUSH
+13343: LD_VAR 0 3
+13347: PPUSH
+13348: LD_INT 1
+13350: PPUSH
+13351: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+13355: LD_INT 45
+13357: PPUSH
+13358: LD_VAR 0 3
+13362: PPUSH
+13363: LD_INT 1
+13365: PPUSH
+13366: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+13370: LD_INT 46
+13372: PPUSH
+13373: LD_VAR 0 3
+13377: PPUSH
+13378: LD_INT 1
+13380: PPUSH
+13381: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+13385: LD_INT 47
+13387: PPUSH
+13388: LD_VAR 0 3
+13392: PPUSH
+13393: LD_INT 1
+13395: PPUSH
+13396: CALL_OW 322
+// SetTech ( tech_apelang , side , state_enabled ) ;
+13400: LD_INT 1
+13402: PPUSH
+13403: LD_VAR 0 3
+13407: PPUSH
+13408: LD_INT 1
+13410: PPUSH
+13411: CALL_OW 322
+// SetTech ( tech_apepsych , side , state_enabled ) ;
+13415: LD_INT 2
+13417: PPUSH
+13418: LD_VAR 0 3
+13422: PPUSH
+13423: LD_INT 1
+13425: PPUSH
+13426: CALL_OW 322
+// SetTech ( tech_apeagres , side , state_enabled ) ;
+13430: LD_INT 11
+13432: PPUSH
+13433: LD_VAR 0 3
+13437: PPUSH
+13438: LD_INT 1
+13440: PPUSH
+13441: CALL_OW 322
+// SetTech ( tech_sibdet , side , state_enabled ) ;
+13445: LD_INT 20
+13447: PPUSH
+13448: LD_VAR 0 3
+13452: PPUSH
+13453: LD_INT 1
+13455: PPUSH
+13456: CALL_OW 322
+// SetTech ( tech_tech1 , side , state_enabled ) ;
+13460: LD_INT 48
+13462: PPUSH
+13463: LD_VAR 0 3
+13467: PPUSH
+13468: LD_INT 1
+13470: PPUSH
+13471: CALL_OW 322
+// SetTech ( tech_tech2 , side , state_enabled ) ;
+13475: LD_INT 49
+13477: PPUSH
+13478: LD_VAR 0 3
+13482: PPUSH
+13483: LD_INT 1
+13485: PPUSH
+13486: CALL_OW 322
+// SetTech ( tech_gatling , side , state_enabled ) ;
+13490: LD_INT 69
+13492: PPUSH
+13493: LD_VAR 0 3
+13497: PPUSH
+13498: LD_INT 1
+13500: PPUSH
+13501: CALL_OW 322
+// SetTech ( tech_gun , side , state_enabled ) ;
+13505: LD_INT 39
+13507: PPUSH
+13508: LD_VAR 0 3
+13512: PPUSH
+13513: LD_INT 1
+13515: PPUSH
+13516: CALL_OW 322
+// SetTech ( tech_advmet , side , state_enabled ) ;
+13520: LD_INT 34
+13522: PPUSH
+13523: LD_VAR 0 3
+13527: PPUSH
+13528: LD_INT 1
+13530: PPUSH
+13531: CALL_OW 322
+// SetTech ( tech_explos , side , state_enabled ) ;
+13535: LD_INT 42
+13537: PPUSH
+13538: LD_VAR 0 3
+13542: PPUSH
+13543: LD_INT 1
+13545: PPUSH
+13546: CALL_OW 322
+// SetTech ( tech_bazooka , side , state_enabled ) ;
+13550: LD_INT 44
+13552: PPUSH
+13553: LD_VAR 0 3
+13557: PPUSH
+13558: LD_INT 1
+13560: PPUSH
+13561: CALL_OW 322
+// SetTech ( tech_mortar , side , state_enabled ) ;
+13565: LD_INT 41
+13567: PPUSH
+13568: LD_VAR 0 3
+13572: PPUSH
+13573: LD_INT 1
+13575: PPUSH
+13576: CALL_OW 322
+// SetTech ( tech_rocket , side , state_enabled ) ;
+13580: LD_INT 40
+13582: PPUSH
+13583: LD_VAR 0 3
+13587: PPUSH
+13588: LD_INT 1
+13590: PPUSH
+13591: CALL_OW 322
+// SetTech ( tech_selfdest , side , state_enabled ) ;
+13595: LD_INT 43
+13597: PPUSH
+13598: LD_VAR 0 3
+13602: PPUSH
+13603: LD_INT 1
+13605: PPUSH
+13606: CALL_OW 322
+// SetTech ( tech_flame , side , state_enabled ) ;
+13610: LD_INT 70
+13612: PPUSH
+13613: LD_VAR 0 3
+13617: PPUSH
+13618: LD_INT 1
+13620: PPUSH
+13621: CALL_OW 322
+// SetTech ( tech_weap1 , side , state_enabled ) ;
+13625: LD_INT 51
+13627: PPUSH
+13628: LD_VAR 0 3
+13632: PPUSH
+13633: LD_INT 1
+13635: PPUSH
+13636: CALL_OW 322
+// SetTech ( tech_weap2 , side , state_enabled ) ;
+13640: LD_INT 52
+13642: PPUSH
+13643: LD_VAR 0 3
+13647: PPUSH
+13648: LD_INT 1
+13650: PPUSH
+13651: CALL_OW 322
+// SetTech ( tech_radar , side , state_enabled ) ;
+13655: LD_INT 6
+13657: PPUSH
+13658: LD_VAR 0 3
+13662: PPUSH
+13663: LD_INT 1
+13665: PPUSH
+13666: CALL_OW 322
+// SetTech ( tech_remcont , side , state_enabled ) ;
+13670: LD_INT 15
+13672: PPUSH
+13673: LD_VAR 0 3
+13677: PPUSH
+13678: LD_INT 1
+13680: PPUSH
+13681: CALL_OW 322
+// SetTech ( tech_matdet , side , state_enabled ) ;
+13685: LD_INT 7
+13687: PPUSH
+13688: LD_VAR 0 3
+13692: PPUSH
+13693: LD_INT 1
+13695: PPUSH
+13696: CALL_OW 322
+// SetTech ( tech_lassight , side , state_enabled ) ;
+13700: LD_INT 12
+13702: PPUSH
+13703: LD_VAR 0 3
+13707: PPUSH
+13708: LD_INT 1
+13710: PPUSH
+13711: CALL_OW 322
+// SetTech ( tech_hidcam , side , state_enabled ) ;
+13715: LD_INT 17
+13717: PPUSH
+13718: LD_VAR 0 3
+13722: PPUSH
+13723: LD_INT 1
+13725: PPUSH
+13726: CALL_OW 322
+// SetTech ( tech_remcharge , side , state_enabled ) ;
+13730: LD_INT 18
+13732: PPUSH
+13733: LD_VAR 0 3
+13737: PPUSH
+13738: LD_INT 1
+13740: PPUSH
+13741: CALL_OW 322
+// SetTech ( tech_opto1 , side , state_enabled ) ;
+13745: LD_INT 60
+13747: PPUSH
+13748: LD_VAR 0 3
+13752: PPUSH
+13753: LD_INT 1
+13755: PPUSH
+13756: CALL_OW 322
+// SetTech ( tech_ai , side , state_enabled ) ;
+13760: LD_INT 32
+13762: PPUSH
+13763: LD_VAR 0 3
+13767: PPUSH
+13768: LD_INT 1
+13770: PPUSH
+13771: CALL_OW 322
+// SetTech ( tech_matpred , side , state_enabled ) ;
+13775: LD_INT 9
+13777: PPUSH
+13778: LD_VAR 0 3
+13782: PPUSH
+13783: LD_INT 1
+13785: PPUSH
+13786: CALL_OW 322
+// SetTech ( tech_comp1 , side , state_enabled ) ;
+13790: LD_INT 57
+13792: PPUSH
+13793: LD_VAR 0 3
+13797: PPUSH
+13798: LD_INT 1
+13800: PPUSH
+13801: CALL_OW 322
+// SetTech ( tech_taufield , side , state_enabled ) ;
+13805: LD_INT 30
+13807: PPUSH
+13808: LD_VAR 0 3
+13812: PPUSH
+13813: LD_INT 1
+13815: PPUSH
+13816: CALL_OW 322
+// SetTech ( tech_limteleport , side , state_enabled ) ;
+13820: LD_INT 37
+13822: PPUSH
+13823: LD_VAR 0 3
+13827: PPUSH
+13828: LD_INT 1
+13830: PPUSH
+13831: CALL_OW 322
+// SetTech ( tech_st1 , side , state_enabled ) ;
+13835: LD_INT 63
+13837: PPUSH
+13838: LD_VAR 0 3
+13842: PPUSH
+13843: LD_INT 1
+13845: PPUSH
+13846: CALL_OW 322
+// SetTech ( tech_apeneural , side , state_enabled ) ;
+13850: LD_INT 3
+13852: PPUSH
+13853: LD_VAR 0 3
+13857: PPUSH
+13858: LD_INT 1
+13860: PPUSH
+13861: CALL_OW 322
+// SetTech ( tech_apebrain , side , state_enabled ) ;
+13865: LD_INT 4
+13867: PPUSH
+13868: LD_VAR 0 3
+13872: PPUSH
+13873: LD_INT 1
+13875: PPUSH
+13876: CALL_OW 322
+// SetTech ( tech_stimdrugs , side , state_enabled ) ;
+13880: LD_INT 5
+13882: PPUSH
+13883: LD_VAR 0 3
+13887: PPUSH
+13888: LD_INT 1
+13890: PPUSH
+13891: CALL_OW 322
+// SetTech ( tech_bio1 , side , state_enabled ) ;
+13895: LD_INT 66
+13897: PPUSH
+13898: LD_VAR 0 3
+13902: PPUSH
+13903: LD_INT 1
+13905: PPUSH
+13906: CALL_OW 322
+// SetTech ( tech_sibpow , side , state_enabled ) ;
+13910: LD_INT 21
+13912: PPUSH
+13913: LD_VAR 0 3
+13917: PPUSH
+13918: LD_INT 1
+13920: PPUSH
+13921: CALL_OW 322
+// SetTech ( tech_sibeng , side , state_enabled ) ;
+13925: LD_INT 22
+13927: PPUSH
+13928: LD_VAR 0 3
+13932: PPUSH
+13933: LD_INT 1
+13935: PPUSH
+13936: CALL_OW 322
+// SetTech ( tech_sibloc , side , state_enabled ) ;
+13940: LD_INT 19
+13942: PPUSH
+13943: LD_VAR 0 3
+13947: PPUSH
+13948: LD_INT 1
+13950: PPUSH
+13951: CALL_OW 322
+// SetTech ( tech_sib1 , side , state_enabled ) ;
+13955: LD_INT 54
+13957: PPUSH
+13958: LD_VAR 0 3
+13962: PPUSH
+13963: LD_INT 1
+13965: PPUSH
+13966: CALL_OW 322
+// SetTech ( tech_sib2 , side , state_enabled ) ;
+13970: LD_INT 55
+13972: PPUSH
+13973: LD_VAR 0 3
+13977: PPUSH
+13978: LD_INT 1
+13980: PPUSH
+13981: CALL_OW 322
+// SetRestrict ( b_depot , side , true ) ;
+13985: LD_INT 0
+13987: PPUSH
+13988: LD_VAR 0 3
+13992: PPUSH
+13993: LD_INT 1
+13995: PPUSH
+13996: CALL_OW 324
+// SetRestrict ( b_warehouse , side , true ) ;
+14000: LD_INT 1
+14002: PPUSH
+14003: LD_VAR 0 3
+14007: PPUSH
+14008: LD_INT 1
+14010: PPUSH
+14011: CALL_OW 324
+// SetRestrict ( b_workshop , side , true ) ;
+14015: LD_INT 2
+14017: PPUSH
+14018: LD_VAR 0 3
+14022: PPUSH
+14023: LD_INT 1
+14025: PPUSH
+14026: CALL_OW 324
+// SetRestrict ( b_factory , side , true ) ;
+14030: LD_INT 3
+14032: PPUSH
+14033: LD_VAR 0 3
+14037: PPUSH
+14038: LD_INT 1
+14040: PPUSH
+14041: CALL_OW 324
+// SetRestrict ( b_armoury , side , true ) ;
+14045: LD_INT 4
+14047: PPUSH
+14048: LD_VAR 0 3
+14052: PPUSH
+14053: LD_INT 1
+14055: PPUSH
+14056: CALL_OW 324
+// SetRestrict ( b_barracks , side , true ) ;
+14060: LD_INT 5
+14062: PPUSH
+14063: LD_VAR 0 3
+14067: PPUSH
+14068: LD_INT 1
+14070: PPUSH
+14071: CALL_OW 324
+// SetRestrict ( b_lab , side , true ) ;
+14075: LD_INT 6
+14077: PPUSH
+14078: LD_VAR 0 3
+14082: PPUSH
+14083: LD_INT 1
+14085: PPUSH
+14086: CALL_OW 324
+// SetRestrict ( b_lab_half , side , true ) ;
+14090: LD_INT 7
+14092: PPUSH
+14093: LD_VAR 0 3
+14097: PPUSH
+14098: LD_INT 1
+14100: PPUSH
+14101: CALL_OW 324
+// SetRestrict ( b_lab_full , side , true ) ;
+14105: LD_INT 8
+14107: PPUSH
+14108: LD_VAR 0 3
+14112: PPUSH
+14113: LD_INT 1
+14115: PPUSH
+14116: CALL_OW 324
+// SetRestrict ( b_lab_weapon , side , true ) ;
+14120: LD_INT 10
+14122: PPUSH
+14123: LD_VAR 0 3
+14127: PPUSH
+14128: LD_INT 1
+14130: PPUSH
+14131: CALL_OW 324
+// SetRestrict ( b_lab_siberium , side , true ) ;
+14135: LD_INT 11
+14137: PPUSH
+14138: LD_VAR 0 3
+14142: PPUSH
+14143: LD_INT 1
+14145: PPUSH
+14146: CALL_OW 324
+// SetRestrict ( b_lab_computer , side , true ) ;
+14150: LD_INT 12
+14152: PPUSH
+14153: LD_VAR 0 3
+14157: PPUSH
+14158: LD_INT 1
+14160: PPUSH
+14161: CALL_OW 324
+// SetRestrict ( b_lab_biological , side , true ) ;
+14165: LD_INT 13
+14167: PPUSH
+14168: LD_VAR 0 3
+14172: PPUSH
+14173: LD_INT 1
+14175: PPUSH
+14176: CALL_OW 324
+// SetRestrict ( b_lab_spacetime , side , true ) ;
+14180: LD_INT 14
+14182: PPUSH
+14183: LD_VAR 0 3
+14187: PPUSH
+14188: LD_INT 1
+14190: PPUSH
+14191: CALL_OW 324
+// SetRestrict ( b_lab_opto , side , true ) ;
+14195: LD_INT 15
+14197: PPUSH
+14198: LD_VAR 0 3
+14202: PPUSH
+14203: LD_INT 1
+14205: PPUSH
+14206: CALL_OW 324
+// SetRestrict ( b_ext_track , side , true ) ;
+14210: LD_INT 16
+14212: PPUSH
+14213: LD_VAR 0 3
+14217: PPUSH
+14218: LD_INT 1
+14220: PPUSH
+14221: CALL_OW 324
+// SetRestrict ( b_ext_gun , side , true ) ;
+14225: LD_INT 17
+14227: PPUSH
+14228: LD_VAR 0 3
+14232: PPUSH
+14233: LD_INT 1
+14235: PPUSH
+14236: CALL_OW 324
+// SetRestrict ( b_ext_rocket , side , true ) ;
+14240: LD_INT 18
+14242: PPUSH
+14243: LD_VAR 0 3
+14247: PPUSH
+14248: LD_INT 1
+14250: PPUSH
+14251: CALL_OW 324
+// SetRestrict ( b_ext_noncombat , side , true ) ;
+14255: LD_INT 19
+14257: PPUSH
+14258: LD_VAR 0 3
+14262: PPUSH
+14263: LD_INT 1
+14265: PPUSH
+14266: CALL_OW 324
+// SetRestrict ( b_ext_radar , side , true ) ;
+14270: LD_INT 20
+14272: PPUSH
+14273: LD_VAR 0 3
+14277: PPUSH
+14278: LD_INT 1
+14280: PPUSH
+14281: CALL_OW 324
+// SetRestrict ( b_ext_siberium , side , true ) ;
+14285: LD_INT 21
+14287: PPUSH
+14288: LD_VAR 0 3
+14292: PPUSH
+14293: LD_INT 1
+14295: PPUSH
+14296: CALL_OW 324
+// SetRestrict ( b_ext_stitch , side , true ) ;
+14300: LD_INT 23
+14302: PPUSH
+14303: LD_VAR 0 3
+14307: PPUSH
+14308: LD_INT 1
+14310: PPUSH
+14311: CALL_OW 324
+// SetRestrict ( b_oil_power , side , true ) ;
+14315: LD_INT 26
+14317: PPUSH
+14318: LD_VAR 0 3
+14322: PPUSH
+14323: LD_INT 1
+14325: PPUSH
+14326: CALL_OW 324
+// SetRestrict ( b_solar_power , side , true ) ;
+14330: LD_INT 27
+14332: PPUSH
+14333: LD_VAR 0 3
+14337: PPUSH
+14338: LD_INT 1
+14340: PPUSH
+14341: CALL_OW 324
+// SetRestrict ( b_siberite_power , side , true ) ;
+14345: LD_INT 28
+14347: PPUSH
+14348: LD_VAR 0 3
+14352: PPUSH
+14353: LD_INT 1
+14355: PPUSH
+14356: CALL_OW 324
+// SetRestrict ( b_oil_mine , side , true ) ;
+14360: LD_INT 29
+14362: PPUSH
+14363: LD_VAR 0 3
+14367: PPUSH
+14368: LD_INT 1
+14370: PPUSH
+14371: CALL_OW 324
+// SetRestrict ( b_siberite_mine , side , true ) ;
+14375: LD_INT 30
+14377: PPUSH
+14378: LD_VAR 0 3
+14382: PPUSH
+14383: LD_INT 1
+14385: PPUSH
+14386: CALL_OW 324
+// SetRestrict ( b_breastwork , side , true ) ;
+14390: LD_INT 31
+14392: PPUSH
+14393: LD_VAR 0 3
+14397: PPUSH
+14398: LD_INT 1
+14400: PPUSH
+14401: CALL_OW 324
+// SetRestrict ( b_bunker , side , true ) ;
+14405: LD_INT 32
+14407: PPUSH
+14408: LD_VAR 0 3
+14412: PPUSH
+14413: LD_INT 1
+14415: PPUSH
+14416: CALL_OW 324
+// SetRestrict ( b_turret , side , true ) ;
+14420: LD_INT 33
+14422: PPUSH
+14423: LD_VAR 0 3
+14427: PPUSH
+14428: LD_INT 1
+14430: PPUSH
+14431: CALL_OW 324
+// SetRestrict ( b_control_tower , side , true ) ;
+14435: LD_INT 36
+14437: PPUSH
+14438: LD_VAR 0 3
+14442: PPUSH
+14443: LD_INT 1
+14445: PPUSH
+14446: CALL_OW 324
+// end ; 6 :
+14450: GO 15460
+14452: LD_INT 6
+14454: DOUBLE
+14455: EQUAL
+14456: IFTRUE 14460
+14458: GO 15385
+14460: POP
+// begin SetTech ( tech_solpow , side , state_enabled ) ;
+14461: LD_INT 35
+14463: PPUSH
+14464: LD_VAR 0 3
+14468: PPUSH
+14469: LD_INT 1
+14471: PPUSH
+14472: CALL_OW 322
+// SetTech ( tech_soleng , side , state_enabled ) ;
+14476: LD_INT 45
+14478: PPUSH
+14479: LD_VAR 0 3
+14483: PPUSH
+14484: LD_INT 1
+14486: PPUSH
+14487: CALL_OW 322
+// SetTech ( tech_oilpow , side , state_enabled ) ;
+14491: LD_INT 46
+14493: PPUSH
+14494: LD_VAR 0 3
+14498: PPUSH
+14499: LD_INT 1
+14501: PPUSH
+14502: CALL_OW 322
+// SetTech ( tech_oileng , side , state_enabled ) ;
+14506: LD_INT 47
+14508: PPUSH
+14509: LD_VAR 0 3
+14513: PPUSH
+14514: LD_INT 1
+14516: PPUSH
+14517: CALL_OW 322
+// SetTech ( tech_apelang , side , state_enabled ) ;
+14521: LD_INT 1
+14523: PPUSH
+14524: LD_VAR 0 3
+14528: PPUSH
+14529: LD_INT 1
+14531: PPUSH
+14532: CALL_OW 322
+// SetTech ( tech_apepsych , side , state_enabled ) ;
+14536: LD_INT 2
+14538: PPUSH
+14539: LD_VAR 0 3
+14543: PPUSH
+14544: LD_INT 1
+14546: PPUSH
+14547: CALL_OW 322
+// SetTech ( tech_apeagres , side , state_enabled ) ;
+14551: LD_INT 11
+14553: PPUSH
+14554: LD_VAR 0 3
+14558: PPUSH
+14559: LD_INT 1
+14561: PPUSH
+14562: CALL_OW 322
+// SetTech ( tech_sibdet , side , state_enabled ) ;
+14566: LD_INT 20
+14568: PPUSH
+14569: LD_VAR 0 3
+14573: PPUSH
+14574: LD_INT 1
+14576: PPUSH
+14577: CALL_OW 322
+// SetTech ( tech_tech1 , side , state_enabled ) ;
+14581: LD_INT 48
+14583: PPUSH
+14584: LD_VAR 0 3
+14588: PPUSH
+14589: LD_INT 1
+14591: PPUSH
+14592: CALL_OW 322
+// SetTech ( tech_tech2 , side , state_enabled ) ;
+14596: LD_INT 49
+14598: PPUSH
+14599: LD_VAR 0 3
+14603: PPUSH
+14604: LD_INT 1
+14606: PPUSH
+14607: CALL_OW 322
+// SetTech ( tech_tech3 , side , state_enabled ) ;
+14611: LD_INT 50
+14613: PPUSH
+14614: LD_VAR 0 3
+14618: PPUSH
+14619: LD_INT 1
+14621: PPUSH
+14622: CALL_OW 322
+// SetTech ( tech_gatling , side , state_enabled ) ;
+14626: LD_INT 69
+14628: PPUSH
+14629: LD_VAR 0 3
+14633: PPUSH
+14634: LD_INT 1
+14636: PPUSH
+14637: CALL_OW 322
+// SetTech ( tech_gun , side , state_enabled ) ;
+14641: LD_INT 39
+14643: PPUSH
+14644: LD_VAR 0 3
+14648: PPUSH
+14649: LD_INT 1
+14651: PPUSH
+14652: CALL_OW 322
+// SetTech ( tech_advmet , side , state_enabled ) ;
+14656: LD_INT 34
+14658: PPUSH
+14659: LD_VAR 0 3
+14663: PPUSH
+14664: LD_INT 1
+14666: PPUSH
+14667: CALL_OW 322
+// SetTech ( tech_explos , side , state_enabled ) ;
+14671: LD_INT 42
+14673: PPUSH
+14674: LD_VAR 0 3
+14678: PPUSH
+14679: LD_INT 1
+14681: PPUSH
+14682: CALL_OW 322
+// SetTech ( tech_bazooka , side , state_enabled ) ;
+14686: LD_INT 44
+14688: PPUSH
+14689: LD_VAR 0 3
+14693: PPUSH
+14694: LD_INT 1
+14696: PPUSH
+14697: CALL_OW 322
+// SetTech ( tech_mortar , side , state_enabled ) ;
+14701: LD_INT 41
+14703: PPUSH
+14704: LD_VAR 0 3
+14708: PPUSH
+14709: LD_INT 1
+14711: PPUSH
+14712: CALL_OW 322
+// SetTech ( tech_soporific , side , state_enabled ) ;
+14716: LD_INT 13
+14718: PPUSH
+14719: LD_VAR 0 3
+14723: PPUSH
+14724: LD_INT 1
+14726: PPUSH
+14727: CALL_OW 322
+// SetTech ( tech_rocket , side , state_enabled ) ;
+14731: LD_INT 40
+14733: PPUSH
+14734: LD_VAR 0 3
+14738: PPUSH
+14739: LD_INT 1
+14741: PPUSH
+14742: CALL_OW 322
+// SetTech ( tech_selfdest , side , state_enabled ) ;
+14746: LD_INT 43
+14748: PPUSH
+14749: LD_VAR 0 3
+14753: PPUSH
+14754: LD_INT 1
+14756: PPUSH
+14757: CALL_OW 322
+// SetTech ( tech_flame , side , state_enabled ) ;
+14761: LD_INT 70
+14763: PPUSH
+14764: LD_VAR 0 3
+14768: PPUSH
+14769: LD_INT 1
+14771: PPUSH
+14772: CALL_OW 322
+// SetTech ( tech_behemoth , side , state_enabled ) ;
+14776: LD_INT 23
+14778: PPUSH
+14779: LD_VAR 0 3
+14783: PPUSH
+14784: LD_INT 1
+14786: PPUSH
+14787: CALL_OW 322
+// SetTech ( tech_weap1 , side , state_enabled ) ;
+14791: LD_INT 51
+14793: PPUSH
+14794: LD_VAR 0 3
+14798: PPUSH
+14799: LD_INT 1
+14801: PPUSH
+14802: CALL_OW 322
+// SetTech ( tech_weap2 , side , state_enabled ) ;
+14806: LD_INT 52
+14808: PPUSH
+14809: LD_VAR 0 3
+14813: PPUSH
+14814: LD_INT 1
+14816: PPUSH
+14817: CALL_OW 322
+// SetTech ( tech_radar , side , state_enabled ) ;
+14821: LD_INT 6
+14823: PPUSH
+14824: LD_VAR 0 3
+14828: PPUSH
+14829: LD_INT 1
+14831: PPUSH
+14832: CALL_OW 322
+// SetTech ( tech_remcont , side , state_enabled ) ;
+14836: LD_INT 15
+14838: PPUSH
+14839: LD_VAR 0 3
+14843: PPUSH
+14844: LD_INT 1
+14846: PPUSH
+14847: CALL_OW 322
+// SetTech ( tech_matdet , side , state_enabled ) ;
+14851: LD_INT 7
+14853: PPUSH
+14854: LD_VAR 0 3
+14858: PPUSH
+14859: LD_INT 1
+14861: PPUSH
+14862: CALL_OW 322
+// SetTech ( tech_lassight , side , state_enabled ) ;
+14866: LD_INT 12
+14868: PPUSH
+14869: LD_VAR 0 3
+14873: PPUSH
+14874: LD_INT 1
+14876: PPUSH
+14877: CALL_OW 322
+// SetTech ( tech_laser , side , state_enabled ) ;
+14881: LD_INT 10
+14883: PPUSH
+14884: LD_VAR 0 3
+14888: PPUSH
+14889: LD_INT 1
+14891: PPUSH
+14892: CALL_OW 322
+// SetTech ( tech_hidcam , side , state_enabled ) ;
+14896: LD_INT 17
+14898: PPUSH
+14899: LD_VAR 0 3
+14903: PPUSH
+14904: LD_INT 1
+14906: PPUSH
+14907: CALL_OW 322
+// SetTech ( tech_remcharge , side , state_enabled ) ;
+14911: LD_INT 18
+14913: PPUSH
+14914: LD_VAR 0 3
+14918: PPUSH
+14919: LD_INT 1
+14921: PPUSH
+14922: CALL_OW 322
+// SetTech ( tech_opto1 , side , state_enabled ) ;
+14926: LD_INT 60
+14928: PPUSH
+14929: LD_VAR 0 3
+14933: PPUSH
+14934: LD_INT 1
+14936: PPUSH
+14937: CALL_OW 322
+// SetTech ( tech_opto2 , side , state_enabled ) ;
+14941: LD_INT 61
+14943: PPUSH
+14944: LD_VAR 0 3
+14948: PPUSH
+14949: LD_INT 1
+14951: PPUSH
+14952: CALL_OW 322
+// SetTech ( tech_ai , side , state_enabled ) ;
+14956: LD_INT 32
+14958: PPUSH
+14959: LD_VAR 0 3
+14963: PPUSH
+14964: LD_INT 1
+14966: PPUSH
+14967: CALL_OW 322
+// SetTech ( tech_advai , side , state_enabled ) ;
+14971: LD_INT 27
+14973: PPUSH
+14974: LD_VAR 0 3
+14978: PPUSH
+14979: LD_INT 1
+14981: PPUSH
+14982: CALL_OW 322
+// SetTech ( tech_advchassis , side , state_enabled ) ;
+14986: LD_INT 36
+14988: PPUSH
+14989: LD_VAR 0 3
+14993: PPUSH
+14994: LD_INT 1
+14996: PPUSH
+14997: CALL_OW 322
+// SetTech ( tech_virus , side , state_enabled ) ;
+15001: LD_INT 33
+15003: PPUSH
+15004: LD_VAR 0 3
+15008: PPUSH
+15009: LD_INT 1
+15011: PPUSH
+15012: CALL_OW 322
+// SetTech ( tech_matpred , side , state_enabled ) ;
+15016: LD_INT 9
+15018: PPUSH
+15019: LD_VAR 0 3
+15023: PPUSH
+15024: LD_INT 1
+15026: PPUSH
+15027: CALL_OW 322
+// SetTech ( tech_targteleport , side , state_enabled ) ;
+15031: LD_INT 38
+15033: PPUSH
+15034: LD_VAR 0 3
+15038: PPUSH
+15039: LD_INT 1
+15041: PPUSH
+15042: CALL_OW 322
+// SetTech ( tech_comp1 , side , state_enabled ) ;
+15046: LD_INT 57
+15048: PPUSH
+15049: LD_VAR 0 3
+15053: PPUSH
+15054: LD_INT 1
+15056: PPUSH
+15057: CALL_OW 322
+// SetTech ( tech_comp2 , side , state_enabled ) ;
+15061: LD_INT 58
+15063: PPUSH
+15064: LD_VAR 0 3
+15068: PPUSH
+15069: LD_INT 1
+15071: PPUSH
+15072: CALL_OW 322
+// SetTech ( tech_taurad , side , state_enabled ) ;
+15076: LD_INT 28
+15078: PPUSH
+15079: LD_VAR 0 3
+15083: PPUSH
+15084: LD_INT 1
+15086: PPUSH
+15087: CALL_OW 322
+// SetTech ( tech_spacanom , side , state_enabled ) ;
+15091: LD_INT 29
+15093: PPUSH
+15094: LD_VAR 0 3
+15098: PPUSH
+15099: LD_INT 1
+15101: PPUSH
+15102: CALL_OW 322
+// SetTech ( tech_taufield , side , state_enabled ) ;
+15106: LD_INT 30
+15108: PPUSH
+15109: LD_VAR 0 3
+15113: PPUSH
+15114: LD_INT 1
+15116: PPUSH
+15117: CALL_OW 322
+// SetTech ( tech_limteleport , side , state_enabled ) ;
+15121: LD_INT 37
+15123: PPUSH
+15124: LD_VAR 0 3
+15128: PPUSH
+15129: LD_INT 1
+15131: PPUSH
+15132: CALL_OW 322
+// SetTech ( tech_st1 , side , state_enabled ) ;
+15136: LD_INT 63
+15138: PPUSH
+15139: LD_VAR 0 3
+15143: PPUSH
+15144: LD_INT 1
+15146: PPUSH
+15147: CALL_OW 322
+// SetTech ( tech_st2 , side , state_enabled ) ;
+15151: LD_INT 64
+15153: PPUSH
+15154: LD_VAR 0 3
+15158: PPUSH
+15159: LD_INT 1
+15161: PPUSH
+15162: CALL_OW 322
+// SetTech ( tech_apeneural , side , state_enabled ) ;
+15166: LD_INT 3
+15168: PPUSH
+15169: LD_VAR 0 3
+15173: PPUSH
+15174: LD_INT 1
+15176: PPUSH
+15177: CALL_OW 322
+// SetTech ( tech_apebrain , side , state_enabled ) ;
+15181: LD_INT 4
+15183: PPUSH
+15184: LD_VAR 0 3
+15188: PPUSH
+15189: LD_INT 1
+15191: PPUSH
+15192: CALL_OW 322
+// SetTech ( tech_stimdrugs , side , state_enabled ) ;
+15196: LD_INT 5
+15198: PPUSH
+15199: LD_VAR 0 3
+15203: PPUSH
+15204: LD_INT 1
+15206: PPUSH
+15207: CALL_OW 322
+// SetTech ( tech_biodet , side , state_enabled ) ;
+15211: LD_INT 8
+15213: PPUSH
+15214: LD_VAR 0 3
+15218: PPUSH
+15219: LD_INT 1
+15221: PPUSH
+15222: CALL_OW 322
+// SetTech ( tech_bio1 , side , state_enabled ) ;
+15226: LD_INT 66
+15228: PPUSH
+15229: LD_VAR 0 3
+15233: PPUSH
+15234: LD_INT 1
+15236: PPUSH
+15237: CALL_OW 322
+// SetTech ( tech_bio2 , side , state_enabled ) ;
+15241: LD_INT 67
+15243: PPUSH
+15244: LD_VAR 0 3
+15248: PPUSH
+15249: LD_INT 1
+15251: PPUSH
+15252: CALL_OW 322
+// SetTech ( tech_sibpow , side , state_enabled ) ;
+15256: LD_INT 21
+15258: PPUSH
+15259: LD_VAR 0 3
+15263: PPUSH
+15264: LD_INT 1
+15266: PPUSH
+15267: CALL_OW 322
+// SetTech ( tech_sibeng , side , state_enabled ) ;
+15271: LD_INT 22
+15273: PPUSH
+15274: LD_VAR 0 3
+15278: PPUSH
+15279: LD_INT 1
+15281: PPUSH
+15282: CALL_OW 322
+// SetTech ( tech_sibloc , side , state_enabled ) ;
+15286: LD_INT 19
+15288: PPUSH
+15289: LD_VAR 0 3
+15293: PPUSH
+15294: LD_INT 1
+15296: PPUSH
+15297: CALL_OW 322
+// SetTech ( tech_sibcontam , side , state_enabled ) ;
+15301: LD_INT 26
+15303: PPUSH
+15304: LD_VAR 0 3
+15308: PPUSH
+15309: LD_INT 1
+15311: PPUSH
+15312: CALL_OW 322
+// SetTech ( tech_sib1 , side , state_enabled ) ;
+15316: LD_INT 54
+15318: PPUSH
+15319: LD_VAR 0 3
+15323: PPUSH
+15324: LD_INT 1
+15326: PPUSH
+15327: CALL_OW 322
+// SetTech ( tech_sib2 , side , state_enabled ) ;
+15331: LD_INT 55
+15333: PPUSH
+15334: LD_VAR 0 3
+15338: PPUSH
+15339: LD_INT 1
+15341: PPUSH
+15342: CALL_OW 322
+// for i = 0 to 39 do
+15346: LD_ADDR_VAR 0 4
+15350: PUSH
+15351: DOUBLE
+15352: LD_INT 0
+15354: DEC
+15355: ST_TO_ADDR
+15356: LD_INT 39
+15358: PUSH
+15359: FOR_TO
+15360: IFFALSE 15381
+// SetRestrict ( i , side , true ) ;
+15362: LD_VAR 0 4
+15366: PPUSH
+15367: LD_VAR 0 3
+15371: PPUSH
+15372: LD_INT 1
+15374: PPUSH
+15375: CALL_OW 324
+15379: GO 15359
+15381: POP
+15382: POP
+// end ; else
+15383: GO 15460
+15385: POP
+// begin for i = 1 to 73 do
+15386: LD_ADDR_VAR 0 4
+15390: PUSH
+15391: DOUBLE
+15392: LD_INT 1
+15394: DEC
+15395: ST_TO_ADDR
+15396: LD_INT 73
+15398: PUSH
+15399: FOR_TO
+15400: IFFALSE 15421
+// SetTech ( i , side , state_enabled ) ;
+15402: LD_VAR 0 4
+15406: PPUSH
+15407: LD_VAR 0 3
+15411: PPUSH
+15412: LD_INT 1
+15414: PPUSH
+15415: CALL_OW 322
+15419: GO 15399
+15421: POP
+15422: POP
+// for i = 0 to 39 do
+15423: LD_ADDR_VAR 0 4
+15427: PUSH
+15428: DOUBLE
+15429: LD_INT 0
+15431: DEC
+15432: ST_TO_ADDR
+15433: LD_INT 39
+15435: PUSH
+15436: FOR_TO
+15437: IFFALSE 15458
+// SetRestrict ( i , side , true ) ;
+15439: LD_VAR 0 4
+15443: PPUSH
+15444: LD_VAR 0 3
+15448: PPUSH
+15449: LD_INT 1
+15451: PPUSH
+15452: CALL_OW 324
+15456: GO 15436
+15458: POP
+15459: POP
+// end ; end ; end ;
+15460: GO 11465
+15462: POP
+15463: POP
+// end ;
+15464: LD_VAR 0 2
+15468: RET

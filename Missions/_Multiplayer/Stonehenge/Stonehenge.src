@@ -1,0 +1,110 @@
+function set_strings;
+var s;
+begin
+  if time1>0 then
+    begin
+      display_strings:=['#timegate', (time1 div 60), (time1 mod 60)];
+
+      if time1<2*60 then
+        if time1 mod 2 then
+          display_strings:=display_strings ^ '#opengate1'
+        else
+          display_strings:=display_strings ^ '#opengate2';
+    end
+  else
+    display_strings:= ['#gatefuture'];
+
+
+    display_strings:=display_strings ^ ''
+      ^ ['#stonehenge-score', Positions[1], Positions[1], LeftPoints, PointsToWin]
+      ^ ['#stonehenge-score', Positions[2], Positions[2], RightPoints, PointsToWin];
+end;
+
+function teleport(area1,x1,y1,area2,x2,y2,xm,ym);
+  var un,all,x,y;
+  begin            
+    all=FilterUnitsInArea(area1,[f_not,[f_type,unit_building],f_not,[f_inside],f_not,[f_driving]]);
+    for un in all do
+      begin
+        SetCargo(un,mat_cans,0);
+        SetCargo(un,mat_oil,0);
+        SetCargo(un,mat_siberit,0);
+        if IsDrivenBy(un) then
+          begin
+            SetCargo(un,mat_cans,0);
+            SetCargo(un,mat_oil,0);
+            SetCargo(un,mat_siberit,0);
+          end;
+
+        x=GetX(un)-x1+x2;
+        y=GetY(un)-y1+y2;
+
+{       TeleportUnitun);
+        PlaceUnitXY(un,x,y,false);}
+        TeleportUnit(un,x,y,0,false);
+      end;
+  end;
+
+
+function destroy_remaining_units;
+  var un;
+  begin
+    for un in all_units do
+      if GetY(un)<40 then
+        KillUnit(un);
+  end;
+
+
+every 0$1 do
+  var i;
+  begin
+    enable;
+    if time_index=0 then
+      begin
+        time_index:=1;
+        time1:=interval div 0$1;
+        time2:=0;
+        set_strings;
+        exit;
+      end;
+    if (time1=0)and(time2=0) then
+      begin
+        disable;
+        exit;
+      end;
+
+    if time1>0 then
+      begin
+        time1:=time1-1;
+        set_strings;
+        if time1=0 then
+          begin
+            prepare_artefact;
+            // reveal artefact and areas
+            for i=1 to side_positions do
+              if side_positions[i] then
+                begin
+                  RevealFogArea(i,ArtArea);
+                end;
+
+            teleport(Stone1in,67,122,Stone1out,28,15,51,32);
+            teleport(Stone2in,139,122,Stone2out,120,15,117,32);
+
+            if Side_Positions[your_side]=1 then
+              CenterOnXY(28,15)
+            else 
+              CenterOnXY(120,15);
+
+            time2:=interval div 0$1 - 5;
+            time_index:=time_index+1;
+            time1:=interval div 0$1;
+          end;
+      end;
+    if time2>0 then
+      begin
+        time2:=time2-1;
+        if time2=0 then
+          destroy_remaining_units;
+      end;
+    set_strings;
+  end;

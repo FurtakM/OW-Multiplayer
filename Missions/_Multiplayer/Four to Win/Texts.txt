@@ -1,0 +1,154 @@
+@ Právem silnìjšího - Jungle Law
+% Pod vedením Heike se podaøilo žoldákùm získat od Amerièanù jejich poznatky o pøedcích èlovìka. Nyní nastává èas pokusit se jich využít.
+% Pod vedením Heike se podaøilo žoldákùm získat od Amerièanù jejich poznatky o pøedcích èlovìka. Nepodaøilo však se zlikvidovat všechny jejich vìdce, takže patrnì zaène boj o ovládnutí opolidí.
+
+// Dialog 1 - Aviradze jde na lov opièákù
+$ D1Av1
+- ... A to je ... a to je ... a to je .... KONEC
+$ D1Os1
+- Ten Aviradze je takovej studenej èumák... nevìøím, že ho nechají k sobì vùbec pøiblížit.
+$ D1H1
+- Nesuï ho, dokud ho dobøe neznáš... možná je tak upjatý jenom mezi lidmi. Vidìls, jak záøil, když jsme se dostali k tìm americkým vìdeckým záznamùm?
+$ D1Os2
+- Mì se prostì nelíbí... a klidnì bych se vsadil, že neuspìje.
+$ D1H2
+- Psst... podívej... (vidí, jak se k Aviradzemu blíží opièák... v tom pøijede auto a opièák utíká).
+$ D1Av2
+- Sakra!
+$ D1Po2
+- (vystoupí z auta) Kdo z vás je Steinerová?
+$ D1Av3
+- (s pøemáháním klidnì) Chlape, nevím, kdo jsi, ale rád bych tì upozornil, že jsi právì zkazil historický okamžik. Nevhodnìjší chvíli pro své entré sis vybrat nemohl... myslím, že ten samec se již nikdy nevrátí.
+$ D1H3
+- Heike Steinerová jsem já. O co jde?
+$ D1Po3
+- Posílají mì šejkové. Našli snad nìjakou špatnì hlídanou americkou základnu... prý koneènì šance dostat se k hromadì kovù a plastù. 
+$ D1Av4
+- Kovy a plasty? Tady se nabízí možnost navázat kontakt s primitivními pøedchùdci èlovìka!
+$ D1Po4
+- Jenže ti vaši primitivové ruskej tank nezastaví... 
+$ D1Av5
+- (zamyšlenì) Abyste se nedivili...
+$ D1H5
+- Tak co se po nás chce?
+$ D1Po5
+- Pojïte za mnou, spojíte se s další jednotkou. (odcházejí)
+
+// Dialog 2 - pøíchod na místo akce
+$ D2H1
+- Jsem Heike Steinerová. O co tady jde?
+$ D2Ko1
+- Kowalski. Máte prý velet operaci. 
+$ D2H2
+- Situace?
+$ D2Ko2
+- Základna na západì. Skoro nehlídaná - Amerièani mají nìjaký problémy na frontì, tak tam poslali, co mohli.
+$ D2H3
+- Úkol?
+$ D2Ko3
+- Dobýt jejich skladištì. Prý je plné zásilek z budoucnosti - prefabrikáty, souèástky...
+$ D2H4
+- Dobýt a udržet?
+$ D2Ko4
+- To spíš ne... budeme muset pobrat, co dokážeme, a zmizet, než se Amerièani vrátí.
+$ D2Av4
+- Mám takovou ideu... øeknu vám to pozdìji, ještì to nemám promyšlené...
+
+# M1
+Hlavní cíl:
+- Obsadit co nejrychleji americké skladištì.
+Vedlejší cíl:
+- Zkus neztratit Aviradzeho, aby si svùj nápad nevzal do hrobu.
+#
+
+// Dialog 3 - pøi útoku
+$ D3Am1
+- Kdo zatracenì jste? O co vám jde?
+$ D3H1
+- Zabíráme vaši základnu... právem silnìjšího.
+$ D3Am2
+- Je jich moc... ustupujte!
+
+// Dialog 4 - po obsazení skladištì
+$ D4De1
+- Skladištì je naše, lady. Je tu obrovské množství zásob.
+$ D4Ko1
+- Výbornì! Pøevleète se a jdeme to odnosit na cestu.
+$ D4H1
+- Nìkdo to tady ale musí hlídat. Ti, co utekli, asi co nevidìt nìkoho pøivedou. Možná bychom mohli postavit aspoò zbrojnici...
+$ D4H1a
+- Nìkdo to tady ale musí hlídat. Èasem si asi Amerièani všimnou, že jim chybí základna. Možná bychom mohli postavit aspoò zbrojnici...
+$ D4Av1
+- Ehm... kdybychom mìli laboratoø, myslím, že bychom mohli zamìstnat místní pracovní síly... aspoò na to pøenášení...
+$ D4De2
+- A kdybychom postavili dílnu, možná bychom tady z tìch dílù mohli zkusit smontovat nìjaké jednoduché pøibližovadlo.
+$ D4H2
+- Jasnì... a kdybychom mìli palác, mohli bychom poøádat plesy. Konec øeèí, do práce.
+
+# M2a
+Hlavní cíl:
+- Odnosit X materiálu do jihovýchodního rohu ... a nakonec tam pøijít i s Heike a ostatními
+Vedlejší cíl:
+- Odnosit Y materiálu do jihovýchodního rohu
+Vedlejší cíl:
+- Postavit jednoduchou základnu, nechat doktory ochoèit opièáky a udìlat z nich v depotu dìlníky
+Vedlejší cíl:
+- Pøece jen ještì zkus nechat pøežít Aviradzeho
+#
+
+# M2b
+Hlavní cíl:
+- Odnosit X materiálu do jihovýchodního rohu ... a nakonec tam pøijít i s Heike a ostatními.
+Vedlejší cíl:
+- Odnosit Y materiálu do jihovýchodního rohu.
+Vedlejší cíl:
+- Postavit jednoduchou základnu, nechat doktory ochoèit opièáky a udìlat z nich v depotu dìlníky.
+#
+
+// Dialog 5 - pøi prvním útoku Amerièanù
+$ D5H1
+- A do háje. Už jsou tady.
+
+// Dialog 6 - pøi druhém útoku Amerièanù
+$ D6H1
+- Je jich víc než minule...
+
+// Dialog 7 - po druhém útoku Amerièanù
+$ D7H1
+- Obávám se, že další útok už bychom nemuseli odrazit...
+
+// Dialog 8 - po tøetím útoku Amerièanù
+$ D8H1
+- Tak to bylo o fous. Na další útok už èekat nesmíme.
+
+// Dialog 9 - pøi prvním materializaèním tøesku
+$ D9H1
+- Co to, do háje, bylo za ránu?
+$ D9Ko1
+- Materializaèní tøesk, to jsi ještì neslyšela?
+$ D9H2
+- Ale jo, jenže se mi tehdy nechtìlo ptát tìch Rusákù, co byli všude kolem.
+$ D9Ko2
+- Tu ránu dìlají zásilky z budoucnosti.
+$ D9H3
+- Takže sem pøišel nìkdo nový?
+$ D9Ko3
+- Možná. Ale spíš to byly bedny s materiálem, co si sem posílají Rusové a hlavnì Amíci. Obèas na nì narazíš, jak se válí nìkde v trávì.
+
+// Dialog 10 - pøi materializaèním tøesku u Heike
+$ D10H1
+- Do prdele, to jsem se lekla. Tak jsem to koneènì vidìla na vlastní oèi...
+
+// Query 1 - Heike v rohu (málo materiálu)
+? Q1
+Ještì nemáš dost materiálu. Pokud Heike odejde, v misi neuspìla.
+- Pøesto není jiná možnost, musíme se stáhnout.
+- Pak tedy zùstaneme.
+?
+
+// Query 2 - Heike v rohu (dost materiálu)
+? Q2
+Má Heike odejít z mapy a ukonèit tak misi? Její muži dostanou pøíkaz ji následovat.
+- Odejít
+- Zatím zùstat
+?

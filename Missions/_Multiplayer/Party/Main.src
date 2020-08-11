@@ -1,0 +1,570 @@
+// Positions on the map
+//   1 2
+//   3 4
+
+// game parameters
+EXPORT  gametype,
+
+        def_base_level,          // (0) 0 - no base, 1 - depot, 2 - fortified, 3 - extra fortified [2]
+        def_amount_of_people,    // (1) 0 - few, 1 - medium, 2 - more, 3 - lots
+        def_initial_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
+        def_starting_resources,  // (3) 0 - low, 1 - medium, 2 - high [1]
+        def_shipments_density,   // (4) 0 - low, 1 - medium, 2 - high [1]
+        def_oil_deposits,        // (5) 0 - close, 1 - far, 2 - both
+        def_sib_deposits,        // (6) 0 - close, 1 - far, 2 - both
+
+        def_shared_vision,       // (10) bool [true]
+        def_morale_flags,        // (11) bool [true]
+        def_siberite_detection,  // (12) bool [true]
+        def_amount_of_apemen,    // (13) 0 - none, 1 - few, 2 - medium, 3 - lots [1]
+        def_people_respawning,   // (14) 0 - no, 1 - rare, 2 - common [1]
+        def_siberite_bomb,       // (15) 0 - no, 1 - yes {bool [true]}
+
+        def_cost,                // (16)
+        def_cost_decreasing;     // (17)
+
+// derived game parameters
+EXPORT  is_depot,
+        number_of_breastworks,
+        number_of_people,
+        initial_level,
+        starting_crates,
+        starting_resources,
+        shipments_density,
+        morale_decreasing_time,
+
+
+        respawning_time_min,respawning_time_max,
+        cost,decr_cost_time,real_cost,
+        oil_dep,sib_dep,
+        amount_of_apemen,
+        siberite_bomb_Delay;
+
+
+
+// multiplayer parameters
+EXPORT  Side_Count, Team_Count, Player_Side, Player_Team, Side_Teams, Teams;
+EXPORT  Side_Positions, Side_Nations, Side_Names, Team_Names, Team_Game;
+
+// map parameters                    
+EXPORT  depot_def, breastworks_def, start_def, deposits_def,
+        battle_flags_id;                         // list of flags id
+
+var commander;
+
+var global_units,
+    global_defined,
+    soldiers_created;
+
+
+// reads definitons of multiplayer game
+// (or simulate it in editor version)
+function read_multiplayer_and_game_parameters;
+var sides,s1,s2,s3, tech_level;
+begin
+  {Side_Names= mp_side_nations;    // not implemented yet
+  Team_Names= mp_side_nations;}
+
+// sides and teams definitions for real Multiplayer
+  if MultiPlayer then
+    begin
+      gametype = mp_game_type;
+
+      Player_Side= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+      Player_Team= mp_player_team;         // cislo tymu, za ktery hrac hraje
+     
+      Side_Positions= mp_sides_positions;  // =[1,0,3,2,0,4,0,0]; ... pro kazdou stranu jeji pozice, 0 - neucastni se
+      Side_Teams=  mp_sides_teams;         // =[1,0,1,2,0,2,0,0]; ... pro kazou stranu jeji tym
+      Side_Nations= mp_sides_nations;      // =[1,0,1,2,0,1,0,0]; ... pro kazdou stranu jeji narod
+
+      {Positions= mp_positions;}          // =[1,4,3,6];         ... seznam stran na jednotlivych pozicich, 0 - zadna (redundantni, not yet)
+      Teams= mp_teams;                     // =[[1,3],[4,6]];     ... seznam seznamu clenu tymu (redundantni)
+    end
+  else
+// sides and teams definitions for testing in editor
+    begin
+      gametype       = 11;
+
+      Player_Side    = 4;
+      Player_Team    = 2;
+
+      Side_Positions = [0,3,0,1,0,2,4,0];
+      Side_Teams     = [0,1,0,2,0,1,2,0];
+      Side_Nations   = [0,3,0,1,0,1,3,0];
+  
+      {Positions   = [4,0,2,7];}
+      Teams          = [[2,7],[6,4]];
+    end;
+
+
+// derived sides and teams informations
+  Side_Count=(Side_Positions diff [0])+0;
+  Team_Count=(Side_Teams diff [0])+0;
+
+// game settings for real Multiplayer
+  if MultiPlayer then
+    begin
+      def_base_level=         GetMultiplayerSetting(0);
+      def_amount_of_people=   GetMultiplayerSetting(1);
+      def_initial_level=      GetMultiplayerSetting(2);
+      def_starting_resources= GetMultiplayerSetting(3);
+      def_shipments_density=  GetMultiplayerSetting(4);
+      def_oil_deposits=       GetMultiplayerSetting(5);
+      def_sib_deposits=       GetMultiplayerSetting(6);
+
+      if gametype=11 then
+        def_shared_vision=0
+      else
+        def_shared_vision=    GetMultiplayerSetting(10);
+
+      def_morale_flags=       GetMultiplayerSetting(11);
+      def_siberite_detection= GetMultiplayerSetting(12);
+      def_amount_of_apemen=   GetMultiplayerSetting(13);
+      def_people_respawning=  GetMultiplayerSetting(14);
+      def_siberite_bomb=      GetMultiplayerSetting(15);
+
+      def_cost=               GetMultiplayerSetting(16);
+      def_cost_decreasing=    GetMultiplayerSetting(17);
+
+      tech_level =            GetMultiplayerSetting(22);
+    end
+  else
+// game settings for testing in editor
+    begin
+// not in multiplayer!!!
+      randomize;
+
+      def_base_level=         0;
+      def_amount_of_people=   4;
+      def_initial_level=      3;
+      def_starting_resources= 3;
+      def_shipments_density=  2;
+      def_oil_deposits=       2;
+      def_sib_deposits=       2;
+
+      def_shared_vision=      1;
+      def_morale_flags=       4;
+      def_siberite_detection= 1;
+      def_amount_of_apemen=   3;
+      def_people_respawning=  0;
+      def_siberite_bomb=      0;
+
+      def_cost=               4;
+      def_cost_decreasing=    0;
+
+      tech_level =            4;
+    end;
+
+    if isSGUI then
+       setMpTechs()
+    else
+    begin
+      SetMpTechLevel(tech_level + 1);
+    end;
+
+  if gametype=11 then
+    begin
+      sides=[];
+      for s1=1 to Side_Positions do
+        if Side_Positions[s1] then
+          sides=sides^s1;
+
+      if sides<4 then
+        begin
+          YouLostInMultiplayer;
+          wait(0$1);
+          exit;
+        end;
+      s1=sides[Rand(1,4)];
+      sides=sides diff s1;
+      s2=sides[Rand(1,3)];
+      sides=sides diff s2;
+      s3=sides[Rand(1,2)];
+      sides=sides diff s3;
+      Teams=[[s1,s2],[s3,sides[1]]];
+
+      Side_Teams=[0,0,0,0,0,0,0,0];
+      Side_Teams=Replace(Replace(Replace(Replace(Side_Teams,s1,1),s2,1),s3,2),sides[1],2);
+    end;
+
+
+// derived game settings
+  is_depot                    = [0,1,1,1] [def_base_level+1];
+  number_of_breastworks       = [0,0,2,4] [def_base_level+1];
+//  number_of_people            = [6,9,12,15,24] [def_amount_of_people+1];
+  initial_level               = [2,3,4,5] [def_initial_level+1];
+  starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
+  starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
+//  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
+  number_of_people            := def_amount_of_people+4 ;
+  shipments_density           := 20 + (def_shipments_density)*28;
+
+  amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
+  respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
+  respawning_time_max         = [0$0, 10$00, 2$00] [def_people_respawning+1];
+
+  morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
+  battle_flags_id             = [];
+
+  cost                        = [200, 300, 400, 600, 800] [def_cost+1];
+  decr_cost_time              = [0, 20$0, 10$0, 5$0] [def_cost_decreasing+1];
+
+  oil_dep                     = [ [1],[4],[1,4] ] [def_oil_deposits+1];
+  sib_dep                     = [ [2],[3],[2,3] ] [def_sib_deposits+1];
+  siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+end;
+
+function prepare_map_coordinates;
+var side,dep,br1,br2,br3,br4,un,i,coord;
+begin
+  depot_def=[];
+  breastworks_def=[];
+
+  for side:=1 to 4 do
+    begin
+// first 16 units on map are on this map: depot1,breast1_1,breast1_2,breast1_3, depot2,breast2_1, ... , breast4_3]
+      dep:=side*5-4;
+      br1:=side*5-3;
+      br2:=side*5-2;
+      br3:=side*5-1;
+      br4:=side*5;
+
+// reads positions and orientation of depots and breastworks from map 
+      depot_def:=depot_def^[[GetX(dep),GetY(dep),GetDir(dep)]];
+      start_def:=start_def^[[ShiftX(GetX(Dep),GetDir(Dep) mod 6,6),ShiftY(GetY(Dep),GetDir(Dep) mod 6,6)]];
+      breastworks_def:=breastworks_def^
+        [ [ [GetX(br1),GetY(br1),GetDir(br1)],
+            [GetX(br2),GetY(br2),GetDir(br2)],
+            [GetX(br3),GetY(br3),GetDir(br3)],
+            [GetX(br4),GetY(br4),GetDir(br4)] ] ];
+
+// then destroys it
+      DestroyUnit(dep);
+      DestroyUnit(br1);
+      DestroyUnit(br2);
+      DestroyUnit(br3);
+      DestroyUnit(br4);
+    end;
+
+// if not required extra oil deposits, then destroy them
+{    if not def_extra_oil_deposits then
+    for i in [ [52,44], [84,37], [74,81], [106,77] ] do
+      begin
+        RemoveDepositXY(i[1],i[2]);
+      end;}
+
+  deposits_def=[[[30,22],[60,42],[29,2],[73,57]],
+                [[148,24],[119,20],[172,36],[133,50]],
+                [[84,122],[101,111],[74,126],[109,102]],
+                [[196,117],[166,94],[197,133],[156,83]]];
+
+  for i:=1 to 4 do
+    for coord in oil_dep do
+      begin
+        CreateDepositXY(deposits_def[i][coord][1],deposits_def[i][coord][2],mat_oil);
+      end;
+  for i:=1 to 4 do
+    for coord in sib_dep do
+      begin
+        CreateDepositXY(deposits_def[i][coord][1],deposits_def[i][coord][2],mat_siberit);
+      end;
+end;
+
+function set_shared_visions_and_alliances;
+var i, j;
+begin
+  Team_Game:=0;
+  for i=1 to 8 do
+    Team_Game:=Team_Game + Side_Teams[i];
+
+  if not Team_Game then
+    Team_Game:=false
+  else
+    Team_Game:=true;
+
+  if not Team_Game then
+    begin
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if i<>j then
+            SetAttitude(i,j,att_neutral,true)
+          else
+            SetAttitude(i,j,att_friend,true);
+    end
+  else
+    begin
+      if def_shared_vision and (gametype<>11) then
+        begin
+          for i in Teams do
+            for j=2 to i do
+              ChangeSideFog(i[j], i[1]);
+        end;
+
+      for i:=1 to 8 do
+        for j:=1 to 8 do
+          if i<>j then
+            if gametype=11 then
+              SetAttitude(i,j,att_neutral,true)
+            else
+              if Side_Teams[i]=Side_Teams[j] then
+                SetAttitude(i,j,att_friend,true)
+              else
+                SetAttitude(i,j,att_enemy,true);
+    end;
+end;
+
+
+// creates count people with class cl up to r hexes from point x,y
+// if commander is set to true, then the first of them has higher importance and level
+// returns list of created units
+function prepare_people(count,cl,x,y,r);
+var i,j,un;
+begin
+  result:=[];
+  for i:=1 to count do
+    begin
+      uc_direction:=Rand(0,5);
+      if commander then
+        begin
+          hc_name := mp_sides_players_names[uc_side];
+          PrepareHuman(Rand(1,2),cl,initial_level+2);
+          hc_importance:=105;
+          commander:=false;
+          If Multiplayer then
+          begin
+           hc_gallery:= 'MULTIAVATARS';
+           hc_face_number:=Multiplayer_GetPlayerSideNum(uc_side);
+           hc_sex := Multiplayer_GetPlayerSex(uc_side);
+          end;
+        end
+      else
+        begin
+          hc_name := '';
+          PrepareHuman(rand(1,2),cl,initial_level);
+          hc_importance:=0;
+          If Multiplayer then
+          begin
+           hc_gallery:= '';
+           hc_face_number:=0;
+          end;
+        end;
+
+      un:=CreateHuman;
+
+      if global_defined then
+        begin
+          j:=i;
+          if cl=class_soldier then
+            j:=i+soldiers_created;
+          CopySkills(global_units[cl][j],un);
+          SetAttr(un, attr_speed,   GetAttr( global_units[cl][j], attr_speed)   );
+          SetAttr(un, attr_stamina, GetAttr( global_units[cl][j], attr_stamina) );
+        end;
+
+      PlaceUnitXYR(un,x,y,r,false);
+      result:=result ^ [un];
+    end;
+
+  if not global_defined then
+    if cl=class_soldier and global_units then
+      global_units:=[ global_units[1] ^ result ]
+    else
+      global_units:=global_units ^ [result];
+
+
+end;
+
+
+// prepares units of specified side
+function prepare_side(side);
+var pos,x,y,i,r,
+    sol,br,dep,
+    neng,nsci,nmech,nsol;
+
+begin
+// position of side
+  pos:=Side_Positions[side];
+
+// sets global uc parameters
+  uc_nation:=Side_Nations[side];
+  uc_side:=side;
+
+  x:=depot_def[pos][1];
+  y:=depot_def[pos][2];
+
+  if is_depot then
+// create depot and place starting resources to it
+    begin
+      bc_type=b_depot;
+      dep:=CreateAndPlaceBuildingXYD(x,y,Depot_Def[pos][3]);
+      SetBName(dep, '@' & side);
+
+      SetResourceType(GetBase(dep),mat_cans,starting_resources[mat_cans]);
+      SetResourceType(GetBase(dep),mat_oil,starting_resources[mat_oil]);
+      SetResourceType(GetBase(result),mat_siberit,starting_resources[mat_siberit]);
+    end
+  else
+// eventualy only place starting resources
+    begin
+      for i:=1 to 3 do
+        begin
+          r:=starting_resources[i];
+          while r>=10 do
+            if r>50 then
+              begin
+                CreateResourcesXYR(i,5,x,y,4,false);
+                r:=r-50;
+              end
+            else
+              begin
+                CreateResourcesXYR(i,r div 10,x,y,4,false);
+                r:=0;
+              end;
+         end;
+
+    end;                
+
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+
+// create starting crates, in starting_crates are distances from starting position
+  for r in starting_crates do
+    CreateResourcesXYR(mat_cans,5,x,y,r,false);
+
+// eventualy place flag
+  if def_morale_flags then
+    battle_flags_id:=battle_flags_id ^ SetBattleFlag(side,x,y,[ [bfo_defend_bonus_human,100],
+                                                                [bfo_defend_bonus_vehicle,50],
+                                                                [bfo_defend_bonus_building,20],
+                                                                [bfo_height,100] ]);
+
+// this is common algorithm to divide any amount of people
+  neng:=number_of_people;
+
+// there must be soldier for each breastwork...
+  nsol:=number_of_breastworks;
+  if nsol<neng div 4 then
+    nsol:=neng div 4;
+
+  neng:=neng-nsol;
+
+// at least one scientist...
+  nsci:=neng div 3;
+  if nsci<1 then
+    nsci:=1;
+  neng:=neng-nsci;
+
+  nmech:=neng div 2;
+  neng:=neng-nmech;
+
+// at least one engineer (even if this means to incease amount of people)
+  if neng<1 then neng:=1;
+
+  // first will be the commander
+  commander:=true;
+
+  // place breastworks and put soldiers to them
+  soldiers_created:=0;
+  for i:=1 to number_of_breastworks do
+    begin
+      // place breastwork
+      x:=breastworks_def[pos][i][1];
+      y:=breastworks_def[pos][i][2];
+      bc_type:=b_breastwork;
+      br:=CreateAndPlaceBuildingXYD(x,y,breastworks_def[pos][i][3]);
+
+      // select place before breastwork
+      x:=ShiftX(x,breastworks_def[pos][i][3],2);
+      y:=ShiftY(y,breastworks_def[pos][i][3],2);
+
+      // place soldier on this place
+      sol:=prepare_people(1,class_soldier,x,y,0)[1];
+      soldiers_created:=soldiers_created+1;
+
+      // soldier enters the breastwork
+      ComEnterUnit(sol,br);
+    end;
+
+
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+// place remaining soldiers and other people to the flag
+  prepare_people(nsol-number_of_breastworks,class_soldier,x,y,5);
+  prepare_people(neng,class_engineer,x,y,5);
+  prepare_people(nmech,class_mechanic,x,y,5);
+  prepare_people(nsci,class_scientistic,x,y,5);
+
+  if not global_defined then
+    global_defined:=true;
+
+  if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
+    SetTech(tech_SibDet,side,state_researched);
+
+  if def_siberite_bomb = 1 then
+  begin
+    SetTech(tech_SibFiss,side,state_enabled);
+    SetTech(73,side,state_enabled);
+  end
+  else
+  begin
+    SetTech(tech_SibFiss,side,state_disabled);
+    SetTech(73,side,state_disabled);
+  end;
+
+  SetTech(tech_artifact,side,state_disabled);
+end;
+
+every 0$1 do
+if (def_siberite_bomb > 1) then
+begin
+    wait( siberite_bomb_Delay );  // can't be 0
+    EnableSibFiss;
+end;
+
+function EnableSibFiss;
+var i;
+begin
+  for i:=1 to 8 do
+    if Side_Positions[i] then
+    begin
+      SetTech(tech_SibFiss,i,state_enabled);
+      SetTech(73,i,state_enabled);
+    end;
+end;
+
+// prepare all sides with nonzero position
+function prepare_sides;
+var i;
+begin
+  global_units:=[];
+  global_defined:=false;
+
+  for i:=1 to 8 do
+    if Side_Positions[i] then
+      prepare_side(i);
+end;
+            
+starting
+begin
+  Disable(400);
+  Disable(401);
+
+  mp_selectmsg:=true;
+  read_multiplayer_and_game_parameters;
+  prepare_map_coordinates;
+  set_shared_visions_and_alliances;
+  prepare_sides;
+  Init_Win_Condition;
+
+  //    prepare_apemen;
+  init_shipments_and_respawning;
+  init_infos;
+  your_side:=Player_Side;
+  music_nat:=Side_Nations[your_side];
+  ResetFog;
+  CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
+{    repeat
+    new_treasure;
+  until false;}
+end;
+

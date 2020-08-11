@@ -1,0 +1,20 @@
+on BuildingStarted(b,u) do
+begin
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b, '@' & GetSide(b));
+end;
+
+on BuildingCaptured(b,o,e) do
+begin
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b, '@' & GetSide(b));
+end;
+
+on UnitDestroyed(j) do
+begin
+  if GetSide(j) = 0 AND GetClass(j) = class_apeman then
+    CheckApemenAmount;
+end;
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

@@ -1,0 +1,149 @@
+var shipment1,shipment2,shipment3,respawn,inqueue;
+
+// selection of first kvadrant
+export function init_shipments_and_respawning;
+  begin
+    shipment1:=[];
+    shipment2:=[];
+    shipment3:=[];
+{  respawn:=Rand(1,8);
+    inqueue:=[0,0,0,0,0,0,0,0];}
+  end;
+
+{every 0$1+0$0.5 do
+  var n,building_list,aktresp,b;
+  begin
+    if respawning_time_max=0 then
+      exit;
+
+    if respawn=8 then respawn:=1
+    else respawn:=respawn+1;
+
+    if Side_Positions[respawn] and not inqueue[respawn] then
+      begin
+        n:=FilterAllUnits([ [f_type, unit_human],                      // units - people
+                          [f_side, respawn],                         // side - respawning side
+                          f_not, [f_nation,nation_nature]            // not tamed apeman
+                        ]);
+        if n<number_of_people then
+          begin
+            aktresp:=respawn;
+            inqueue:=Replace(inqueue,aktresp,true);
+            enable;
+
+            wait(rand(respawning_time_min,respawning_time_max));
+            inqueue:=Replace(inqueue,aktresp,false);
+
+            building_list = FilterAllUnits([[f_type,unit_building],[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ok],[f_side,aktresp]]);
+            if building_list = 0 then
+                 building_list = FilterAllUnits([[f_type,unit_building],[f_ok],[f_side,aktresp]]);
+            if building_list = 0 then
+                 exit;  //won't respawn
+
+            hc_name:='';
+            hc_importance:=0;
+            PrepareHuman(0,0,skill_level div 2);
+            uc_nation:=Side_Nations[aktresp];
+            uc_side:=aktresp;
+
+            b:=building_list[Rand(1,building_list+0)];
+            if GetBType(b) in [b_depot,b_warehouse] then
+                 n = 25
+            else
+                 n = 10;
+
+            PlaceUnitXYR(CreateHuman,GetX(b),GetY(b),n,true);
+          end
+        else
+          enable;
+      end
+    else
+      enable;
+  end;}
+
+// shipment1
+every 0$5+0$1.1 do
+  var d,q;
+  begin
+    case tick of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=70;
+     20$0+1..30$0:d:=60;
+     30$0+1..50$0:d:=35;
+     50$0+1..300$0:d:=20;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*shipments_density div 3 then
+      begin
+        wait(Rand(1,0$4));
+        if shipment1=[] then
+          shipment1:=[Ar1Base1,Ar1Base2,Ar2Base1,Ar2Base2,Ar1Between,Ar2Between];
+
+        q:=shipment1[Rand(1,shipment1)];
+        shipment1:=shipment1 diff [q];
+
+        CreateCratesArea(5,q,true);
+      end;
+    enable;
+  end;
+
+// shipment2
+every 0$5+0$1.1 do
+  var d,q;
+  begin
+    case tick of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=70;
+     20$0+1..30$0:d:=60;
+     30$0+1..50$0:d:=35;
+     50$0+1..300$0:d:=20;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*shipments_density div 4 then
+      begin
+        wait(Rand(1,0$4));
+        if shipment2=[] then
+          shipment2:=[Ar1Out1,Ar1Out2,Ar1Out3,Ar2Out1,Ar2Out2,Ar2Out3];
+
+        q:=shipment2[Rand(1,shipment2)];
+        shipment2:=shipment2 diff [q];
+
+        CreateCratesArea(5,q,true);
+      end;
+    enable;
+  end;
+// shipment 3
+every 0$5+0$1.1 do
+  var d,q;
+  begin
+    case tick of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=70;
+     20$0+1..30$0:d:=60;
+     30$0+1..50$0:d:=35;
+     50$0+1..300$0:d:=20;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*shipments_density div 5 then
+      begin
+        wait(Rand(1,0$4));
+        if shipment3=[] then
+          shipment3:=[valley];
+
+        q:=shipment3[Rand(1,shipment3)];
+        shipment3:=shipment3 diff [q];
+
+        CreateCratesArea(5,q,true);
+      end;
+    enable;
+  end;
+

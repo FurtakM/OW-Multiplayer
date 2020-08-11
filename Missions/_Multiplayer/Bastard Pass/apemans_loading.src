@@ -1,0 +1,74 @@
+var _apemenSkillLevel,             // How skilled will new apemen be.
+    _isSpawning,                           
+    _wildApemenAmount;             // Current amount of wild apemen in game.
+
+
+
+every 0$15 do            
+begin
+  _apemenSkillLevel := 0;
+  _isSpawning       := true;
+  _wildApemenAmount := 0;      
+  prepare_apemen;    
+end;
+
+
+
+on ApemanTamed(tamedApeman, tamerUnit) do   
+begin
+  CheckApemenAmount;
+end;
+           
+
+
+export function CheckApemenAmount;
+begin
+  _wildApemenAmount := _wildApemenAmount - 1;
+
+  if _isSpawning then
+    exit;
+
+  if _wildApemenAmount <= (amount_of_apemen) then   // Start spawning when there is half of apemen left.  
+  begin     
+    if _apemenSkillLevel < 8 then    
+      _apemenSkillLevel := _apemenSkillLevel + 1;       // Increase apemen skill to keep them relevant in game.
+                                    
+    _isSpawning := true;   
+    prepare_apemen;       
+  end;                    
+end;
+
+function prepare_apemen;
+var i, j, un, first, d1, d2;
+begin
+  if not amount_of_apemen then
+    exit;
+
+  repeat
+    Wait(Rand(0$30,1$30));
+    apeman_init;
+
+    PlaceUnitArea(CreateHuman,Ar1Out3,false);
+    PlaceUnitArea(CreateHuman,Ar2Out3,false);
+        
+    _wildApemenAmount := _wildApemenAmount + 2;
+  until _wildApemenAmount >= (amount_of_apemen * 2);
+  _isSpawning := false;  
+end;
+
+function apeman_init;
+begin
+  uc_side:=0;
+  uc_nation:=nation_nature;             
+
+  hc_class:=class_apeman;
+  hc_basic_skills := [2,2,2,2];      
+  hc_skills       := [Rand(0, 2) + _apemenSkillLevel,  
+                      Rand(0, 2) + _apemenSkillLevel,      
+                      Rand(0, 2) + _apemenSkillLevel,       
+                      Rand(0, 2) + _apemenSkillLevel ];
+  hc_attr:=[10,12];
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(-20,20);
+end;

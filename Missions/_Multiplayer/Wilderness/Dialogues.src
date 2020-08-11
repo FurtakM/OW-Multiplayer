@@ -1,0 +1,707 @@
+var getting_up,kirilenkova_spoke;
+export function burlak_appears;
+  begin
+{    CenterNowOnXY(108,100);
+    InGameOn;
+    DWait(0$1);
+    PlaceUnitXY(Burlak,108,100,true);
+    Wait(0$2);
+    ComWait(Burlak,0$0.5);
+    AddComMoveXY(Burlak,105,95);
+    Say(Burlak,'D1-Bur-1');
+    DWait(0$1);
+    ComWait(Burlak,0$1);
+    AddComMoveXY(Burlak,104,98);
+    Say(Burlak,'D1-Bur-1a');
+    DWait(0$0.5);
+    ComMoveXY(Burlak,104,100);
+    Say(Burlak,'D1-Bur-1b');
+    InGameOff;
+    SaveForQuickRestart;
+    Wait(0$0.5);
+    ChangeMissionObjectives('M1');
+    Hint('Selection');}
+    InGameOn;
+    CenterNowOnXY(82,87);
+    DWait(0$1);
+    PlaceUnitXY(Burlak,82,87,true);
+    Wait(0$3);
+    ComWait(Burlak,0$2);
+    AddComMoveXY(Burlak,91,88);
+    Say(Burlak,'D1-Bur-1');
+    CenterOnUnits(Burlak);
+    DWait(0$2);
+    ComWait(Burlak,0$1);
+    AddComMoveXY(Burlak,104,96);
+    Say(Burlak,'D1-Bur-1a');
+    CenterOnUnits(Burlak);
+    DWait(0$2);
+    ComMoveXY(Burlak,103,90);
+    Say(Burlak,'D1-Bur-1b');
+    CenterOnUnits(Burlak);
+    Wait(0$0.5);
+    InGameOff;
+    SaveForQuickRestart;
+    Wait(0$0.5);
+    ChangeMissionObjectives('M1');
+    Hint('Selection');
+  end;
+
+every 0$1.5 trigger SeeXY(you,71,85)and SeeXY(you,73,83) do
+  begin
+    if (GetDistUnitXY(Burlak,72,85)<=15) and (GetY(Burlak)>75) then
+      Say(Burlak,'DWaterfall-Bur-1');
+  end;
+
+every 0$1.5+0$0.75 trigger SeeXY(you,126,94)and SeeXY(you,127,92) do
+  begin
+    if (GetDistUnitXY(Burlak,126,93)<=15) and (GetY(Burlak)>73) then
+      Say(Burlak,'DCorpse-Bur-1');
+  end;
+
+every 0$1.1 trigger GetLives(Burlak)<940 do
+  begin
+    Hint('Wound');
+  end;
+
+// meets gnyevko
+every 0$0.5 trigger SeeXY(you,134,83) do
+  var un,un1;
+  begin
+    place_gnyevko(134,83);
+    if your_units<=0 then
+      un:=Burlak
+    else
+      begin
+        un:=NearestUnitToUnit(your_units,Gnyevko);
+        if GetDistUnits(un,Gnyevko)<GetDistUnits(Burlak,Gnyevko)+6 then
+          un:=Burlak;
+      end;
+
+//    InGameOn;
+    CenterOnUnits(Gnyevko);
+{    ComMoveXY(Gnyevko,(GetX(un)+GetX(Gnyevko))div 2,(GetY(un)+GetY(Gnyevko))div 2);
+    for un1 in your_units union Burlak do
+      if GetDistUnits(un1,Gnyevko)<20 then
+        ComStop(un1);
+    ComHold(un);}
+    DialogueOn;
+    interface_hidden:=true;
+
+    if un=Burlak then
+      Say(Burlak,'D3-Bur-1')
+    else if GetSex(un)=sex_male then
+      Say(un,'D3-RSol1-1')
+    else 
+      Say(un,'D3-RFSol1-1');
+
+    Say(Gnyevko,'D3-Gny-1');
+
+    if burlak_killed_apeman then
+      Say(Burlak,'D3-Bur-2')
+    else if soldiers_killed_apeman then
+      Say(Burlak,'D3-Bur-2a');
+
+    if un=Burlak then
+      Say(Burlak,'D3-Bur-2b');
+
+    if not pokryshkin_met then
+      begin
+        Say(Burlak,'D3-Bur-2c');
+        Say(Gnyevko,'D3-Gny-2');
+      end
+    else
+      begin
+        if not returning then
+          Say(Burlak,'D3-Bur-2d')
+        else
+          begin
+            if un=Burlak then
+              Say(Burlak,'D3-Bur-2e')
+            else if GetSex(un)=sex_male then
+              Say(un,'D3-RSol1-2')
+            else
+              Say(un,'D3-RFSol1-2')
+          end;
+        Say(Gnyevko,'D3-Gny-2a');
+      end;
+    SetSide(Gnyevko,you);
+    interface_hidden:=false;
+    DialogueOff;
+
+    if not pokryshkin_met then
+      Hint('selection2');
+    gnyevko_met:=true;
+  end;
+
+every 0$1+0$0.16 do
+  var un;
+  begin
+    if not wild_apemen then
+      exit;
+    for un in wild_apemen do
+      if Attacks(un) then
+        if GetSide(Attacks(un))=you then
+          begin
+            Say(Burlak,'D2-Bur-1a');
+            exit;
+          end;
+    enable;
+  end;
+
+every 0$2.7 trigger radio_dropped and SeeXY(you,radio_x,radio_y) do
+  var un;
+  begin
+    wait(0$2);
+    if not SeeXY(you,radio_x,radio_y) then
+      begin
+        enable;
+        exit;
+      end
+    else
+      begin
+        if not pokryshkin_met then
+          begin
+            DialogueOn;
+            Say(Burlak,'D2a-Bur-1');
+            Say(Burlak,'D2a-Bur-2');
+            DialogueOff;
+            radio_found:=true;
+            exit;
+          end;
+
+        un:=NearestUnitToXY(your_units union [Gnyevko,Burlak,Kirilenkova] ,radio_x,radio_y);
+        ComMoveXY(un,(GetX(un)+radio_x)div 2,(GetY(un)+radio_y)div 2);
+        wait(0$2);
+        DialogueOn;
+        case un of
+          Burlak:Say(Burlak,'D2a-Bur-1');
+          Belkov:Say(Belkov,'D2a-Bel-1');
+          Kirilenkova:Say(Kirilenkova,'D2a-Kir-1');
+          Gnyevko:Say(Gnyevko,'D2a-Gny-1');
+          else
+            if GetSex(un)=sex_male then
+              Say(un,'D2a-RSol1-1')
+            else
+              Say(un,'D2a-RFSol1-1');
+        end;
+        if gnyevko_met and (un<>Gnyevko) then
+          begin
+            Say(Gnyevko,'D2a-Gny-1');
+          end;
+        if not gnyevko_met then
+          Say(Burlak,'D2a-Bur-2');
+        radio_found:=true;
+        DialogueOff;
+      end;
+
+    
+  end;
+
+export function d_burlak_alone_meets_apemen;
+  begin
+    Say(Burlak,'D2-Bur-1');
+  end;
+
+function d_burlak_and_gnyevko_meet_pokryshkin;
+  var x,y,d,un;
+  var gn,gn_before;
+  begin
+    disable(1); // guarding
+    ComMoveToArea(wild_apemen,CaveEntrance);
+
+    InGameOn;
+    gn:=gnyevko_met and IsOk(Gnyevko) and GetSide(Gnyevko)=you;
+    gn_before:=gnyevko_met and GetSide(Gnyevko)=russians;
+  
+    ComHold([gnyevko,Burlak]);
+
+    if gn and (GetDistUnits(Pokryshkin,Gnyevko)+4<GetDistUnits(Pokryshkin,Burlak)) then
+      ComMoveXY(Pokryshkin,(GetX(Pokryshkin)*7+GetX(Gnyevko)*3)div 10,(GetY(Pokryshkin)*7+GetY(Gnyevko)*3)div 10)
+    else
+      begin
+        ComMoveXY(Pokryshkin,(GetX(Pokryshkin)*7+GetX(Burlak)*3)div 10,(GetY(Pokryshkin)*7+GetY(Burlak)*3)div 10);
+        if gn_before then
+          begin
+            ComMoveXY(Gnyevko,(GetX(Gnyevko)*7+GetX(Burlak)*3)div 10,(GetY(Gnyevko)*7+GetY(Burlak)*3)div 10);
+            AddComHold(Gnyevko);
+          end;
+      end;
+    AddComHold(Pokryshkin);
+
+    if gn_before then
+      begin
+        CenterOnUnits(Gnyevko);
+        Say(Gnyevko,'D4-Gny-3');
+      end
+    else
+      begin
+        CenterOnUnits(Pokryshkin);
+        Say(Pokryshkin,'D4-Pok-1');
+      end;
+
+    ChangeSideFog(russians,you);
+    RevealFogArea(you,RusFog);
+
+    d:=GetDistUnits(Burlak,Pokryshkin);
+    if d>6 then
+      begin
+        ComMoveXY(Burlak,(GetX(Burlak)*6+GetX(Pokryshkin)*(d-6))div d,(GetY(Burlak)*6+GetY(Pokryshkin)*(d-6))div d);
+        AddComHold(Burlak);
+      end;
+
+    if gn then
+      begin
+        d:=GetDistUnits(Gnyevko,Pokryshkin);
+        if d>6 then
+          begin
+            ComMoveXY(Gnyevko,(GetX(Gnyevko)*6+GetX(Pokryshkin)*(d-6))div d,(GetY(Gnyevko)*6+GetY(Pokryshkin)*(d-6))div d);
+            AddComHold(Gnyevko);
+          end;
+      end;
+
+    if gn then
+      begin
+        if GetDistUnits(Gnyevko, Pokryshkin)<20 then
+          begin
+            CenterOnUnits(Gnyevko);
+            Say(Gnyevko,'D4-Gny-1');
+          end;
+        SetSide(Gnyevko,russians);
+      end;
+
+    CenterOnUnits([Burlak,Pokryshkin]);
+    Say(Burlak,'D4-Bur-3');
+    Say(Pokryshkin,'D4-Pok-4');
+    place_brown;
+    wait(0$3);
+    Say(Burlak,'D4-Bur-4');
+    Say(Pokryshkin,'D4-Pok-5');
+    DWait(0$3);
+    SayRadio(Brown,'D4-Sol1-5');
+    Say(Pokryshkin,'D4-Pok-6');
+    Say(Pokryshkin,'D4-Pok-6a');
+    Say(Burlak,'D4-Bur-6');
+    Say(Pokryshkin,'D4-Pok-7');
+
+    InGameOff;
+
+    ChangeMissionObjectives('M2');
+    Hint('Follow');
+
+    pokryshkin_met:=true;
+    follow_pokryshkin:=true;
+    preparing_trap:=true;
+    trappers:=[Pokryshkin]^team^[Belkov];
+    if gnyevko_met then
+      trappers:=trappers^[Gnyevko];
+
+    Wait(0$2);
+    prepare_trap;
+    ComWait(Brown,0$6);
+    AddComMoveXY(Brown,66,58);
+  end;
+
+function d_gnyevko_alone_meets_pokryshkin;
+  begin
+    InGameOn;
+    ComRemember(Pokryshkin);
+    CenterNowOnUnits(Pokryshkin);
+    ComHold(Gnyevko);
+    ComHold(Burlak);
+    ComMoveXY(Pokryshkin,(GetX(Pokryshkin)*7+GetX(Gnyevko)*3)div 10,(GetY(Pokryshkin)*7+GetY(Gnyevko)*3)div 10);
+
+    Say(Pokryshkin,'D4-Pok-1');
+    Say(Gnyevko,'D4-Gny-1');
+    Say(Pokryshkin,'D4-Pok-2');
+    Say(Gnyevko,'D4-Gny-2');
+    Say(Pokryshkin,'D4-Pok-3');
+    ComReturn(Pokryshkin);
+    ComMoveXY(Gnyevko,GetRememberedX(Pokryshkin)+2,GetRememberedY(Pokryshkin)+2);
+    wait(0$1);
+    InGameOff;
+    CenterNowOnUnits(Burlak);
+    SetSide(Gnyevko,russians);
+  end;
+
+every 0$0.5 trigger See(russians,burlak) marked 1 do
+  begin
+    d_burlak_and_gnyevko_meet_pokryshkin;
+  end;
+
+every 0$0.5+0$0.25 trigger gnyevko_met and See(russians,Gnyevko) marked 1 do
+  begin
+    if GetDistUnits(Burlak,Pokryshkin)<25 then
+      d_burlak_and_gnyevko_meet_pokryshkin
+    else
+      d_gnyevko_alone_meets_pokryshkin;
+  end;
+
+every 0$0.2 trigger getting_up do
+  var un;
+  begin
+    for un in trappers do
+      begin
+        ComWalk(un);
+        wait(Rand(1,6));
+      end;
+  end;
+
+function d_trap_sprung;
+  begin
+    follow_pokryshkin:=false;
+
+    ComStop(Brown);
+    Say(Brown,'D5-Sol1-1');
+    Say(Pokryshkin,'D5-Pok-1');
+    SetAttitude(americans2,russians,att_enemy,true);
+    SetAttitude(americans2,you,att_enemy,true);
+    getting_up:=true;
+    ForceSay(Brown,'D5-Sol1-2');
+
+    while IsLive(Brown) do
+      wait(0$1);
+    preparing_trap:=false;
+  end;
+
+function d_after_trap(x,y);
+  var un;
+  begin
+    InGameOn;
+    for un in trappers^[Burlak] do
+      begin
+        ComWalk(un);
+        ComMoveXY(un,x+rand(-3,3),y+rand(-3,3));
+      end;
+    wait(0$1);
+
+    Say(Burlak,'D5-Bur-2');
+    Say(Pokryshkin,'D5-Pok-2');
+    Say(Belkov,'D5-Bel-2');
+    Say(Pokryshkin,'D5-Pok-3');
+    if gnyevko_met then
+      Say(Gnyevko,'D5-Gny-3');
+    Say(Burlak,'D5-Bur-3');
+    InGameOff;
+    follow_pokryshkin:=true;
+  end;
+
+function d_message_about_gladstone;
+  var ok,un;
+  begin
+    follow_pokryshkin:=false;
+    InGameOn;
+    CenterOnUnits(Pokryshkin);
+    ComStop(Burlak);
+    Say(Pokryshkin,'D6-Pok-1');
+    ComMoveXY(Burlak,GetX(Pokryshkin),GetY(Pokryshkin));
+    CenterOnUnits(Pokryshkin);
+    Say(Burlak,'D6-Bur-1');
+    CenterOnUnits(Pokryshkin);
+    ComMoveXY(trappers^[Burlak],94,68);
+    Say(Pokryshkin,'D6-Pok-2');
+    CenterOnUnits(Pokryshkin);
+    Say(Belkov,'D6-Bel-2');
+    CenterOnUnits(Pokryshkin);
+    Say(Burlak,'D6-Bur-2');
+    CenterOnUnits(Pokryshkin);
+    Say(Pokryshkin,'D6-Pok-3');
+    CenterOnUnits(Pokryshkin);
+    ComStop(trappers^[Burlak]);
+    SayRadio(Kurin,'D6-Kur-3');
+    CenterOnUnits(Pokryshkin);
+    Say(Pokryshkin,'D6-Pok-4');
+    CenterOnUnits(Pokryshkin);
+    SetAttitude(americans,russians,att_enemy,true);
+    SetAttitude(americans,you,att_enemy,true);
+    InGameOff;
+    async;
+    Say(Belkov,'D6-Bel-4');
+    sync;
+    wait(0$1);
+    ComAttackUnit(Pokryshkin,am_bunker);
+    repeat
+      wait(0$1);
+      ok:=true;
+      for un in trappers do
+        if GetY(un)+GetX(un)<GetY(Pokryshkin)+GetX(Pokryshkin) then
+          ok:=false;
+    until ok;
+    wait(0$1);
+    ComAttackUnit(trappers diff Pokryshkin,am_bunker);
+    attacking_bunker:=true;
+  end;
+
+every 0$0.6 trigger preparing_trap and UnitFilter(trappers,[f_see,americans2]) do
+  var x,y;
+  begin
+    x:=GetX(Brown)+3;
+    y:=GetY(Brown);
+    d_trap_sprung;
+    wait(0$1);
+    d_after_trap(x,y);
+    wait(0$5);
+    d_message_about_gladstone;
+  end;
+
+every 0$0.4 trigger attacking_bunker and See(you,am_bunker) do
+  begin
+    music_class=music_combat;
+    wait(0$1);
+    Say(Pokryshkin,'D7-Pok-1');
+    Say(am1,'D7-FSol1-1');
+  end;
+every 0$0.4 trigger attacking_bunker and See(you,am_bunker) do
+  begin
+    while IsOk(Pokryshkin) do
+      begin
+        ComAttackUnit(am_bunker,Pokryshkin);
+        wait(0$1);
+      end;
+    wait(0$3);
+    music_class=music_auto;
+  end;
+
+every 0$0.3+0$0.15 trigger attacking_bunker do
+  var un;
+  begin
+    for un in trappers diff [Burlak,pokryshkin] do
+      begin
+        if GetLives(un)<500 then
+          DoNotAttack(americans,un);
+      end;
+    enable;
+  end;
+
+every 0$0.2+0$0.1 trigger attacking_bunker and not IsOk(Pokryshkin) do
+  var posible;
+  begin
+    ComWait(trappers,0$3);
+    AddComMoveXY(trappers,76,53);
+    retreating:=true;
+    Say(Belkov,'D7a-Bel-1');
+    posible:=UnitFilter(team^[Gnyevko,Belkov],[[f_ok],[f_sex,sex_male],[f_side,russians]]);
+    if posible then
+      say(posible[1],'D7a-RSol1-1');
+    Say(am1,'D7a-FSol1-1');
+  end;
+
+function all_near(x,y,r);
+  var un;
+  begin
+    result:=true;
+    for un in trappers do
+      if IsOk(un) then
+        if GetDistUnitXY(un,x,y)>r then
+          result:=false;
+  end;
+
+every 0$2+0$0.3 trigger retreating and all_near(76,53,5) do
+  var posible,un;
+  begin
+    if betrayed then
+      exit;
+
+    music_class=music_auto;
+
+    attacking_bunker:=false;
+    for un in trappers do
+      NormalAttack(americans,un);
+
+    Say(Belkov,'D7b-Bel-1');
+    Say(team[1],'D7b-FSol1-1');
+    Say(Belkov,'D7b-Bel-2');
+
+    posible:=UnitFilter(team^[Gnyevko],[[f_ok],[f_sex,sex_male],[f_side,russians]]);
+    if posible then
+      say(posible[1],'D7b-RSol1-2');
+
+    if GetDistUnitXY(Burlak,76,53)>15 then
+      begin
+        Say(Belkov,'D7b-Bel-3');
+        repeat
+          wait(0$2);
+        until GetDistUnits(Burlak,Belkov)<10;
+        Say(Belkov,'D7b-Bel-3a');
+      end;
+    InGameOn;
+    ComMoveXY(Burlak,71,48);
+    Say(Burlak,'D7b-Bur-3');
+    CenterOnUnits(Burlak);
+    Say(Belkov,'D7b-Bel-4');
+    Say(Burlak,'D7b-Bur-4');
+    Say(Belkov,'D7b-Bel-5');
+    if team then
+      if GetSex(team[1])=sex_female then
+        begin
+          Say(team[1],'D7b-FSol1-5');
+          Say(Belkov,'D7b-Bel-6');
+        end;
+    Say(Burlak,'D7b-Bur-6');
+
+    if posible then
+      say(posible[1],'D7b-RSol1-6');
+    InGameOff;
+
+    SetSide(trappers,you);
+    your_units:=trappers ^ [Burlak] diff 0;
+    ChangeMissionObjectives('M3');
+    it_is_your:=true;
+    if gnyevko_met then
+      Hint('selection2a')
+    else
+      Hint('selection2b');
+    wait(0$5);
+    Hint('visibility');
+  end;
+
+every 0$1 trigger it_is_your and not IsOk(am_depot) and not IsOk(am_bunker) and not IsOk(Gladstone) and not IsOk(am1) do
+  var un;
+  begin
+    DialogueOn;
+    if IsOk(Belkov) then
+      begin
+        Say(Belkov,'D10-Bel-1');
+        Say(Burlak,'D10-Bur-1');
+        Say(Belkov,'D10-Bel-1a');
+      end
+    else
+      begin
+        Say(Burlak,'D10-Bur-1');
+        un:=UnitFilter(trappers,[[f_sex,sex_male],[f_ok]]);
+        if un then
+          Say(un[1],'D10-RSol1-1');
+      end;
+    Say(Burlak,'D10-Bur-2');
+
+    if gladstone_escaped or soldier_escaped then
+      ChangeMissionObjectives('M4b')
+    else
+      ChangeMissionObjectives('M4a');
+
+    SetAreaMapShow(ExitArea,1);
+    enable(666);   ///by jam
+    Hint('ExitArea');
+    DialogueOff;
+    returning:=true;
+  end;
+
+every 0$5 trigger returning do
+  begin
+    wait(Rand(0$30,1$00));
+    kirilenkova_appears:=true;
+  end;
+
+every 0$3.1 trigger returning and not kirilenkova_appears do
+  var un;
+  begin
+    for un in FilterAllUnits([[f_ok],[f_side,you]]) do
+      if GetY(un)<110 then
+        begin
+          enable;
+          exit;
+        end;
+    kirilenkova_appears:=true;
+  end;
+
+every 0$2.1 trigger kirilenkova_appears do
+  var un;
+  begin
+    ChangeSideFog(russians,russians);
+    PlaceUnitXYR(kirilenkova,74,110,2,true);
+    wait(0$3);
+    ComMoveXY(kirilenkova,64,110);
+    un:=NearestUnitToUnit(FilterAllUnits([[f_ok],[f_side,you]]),kirilenkova);
+    kirilenkova_spoke:=true;
+    if GetDistUnits(un,Kirilenkova)<=15 then
+      begin
+        SetSide(Kirilenkova,you);
+        kirilenkova_met:=true;
+        wait(0$2);
+        DialogueOn;
+        Say(Kirilenkova,'D11a-Kir-1');
+        if GetDistUnits(Kirilenkova,Belkov)<25 then
+          begin
+            Say(Belkov,'D11a-Bel-1');
+            Say(Kirilenkova,'D11a-Kir-2');
+            Say(Belkov,'D11a-Bel-2');
+          end
+        else if GetSex(un)=sex_male then
+          Say(un,'D11a-RSol1-2')
+        else
+          Say(un,'D11a-RFSol1-2');
+        DialogueOff;
+      end
+    else
+      begin
+        DialogueOn;
+        SayRadio(Kirilenkova,'D11b-Kir-1');
+        if IsOk(Belkov) then
+          begin
+            Say(Belkov,'D11b-Bel-1');
+            Say(Belkov,'D11b-Bel-1a');
+          end
+        else
+          begin
+            un:=FilterAllUnits([[f_ok],[f_side,you]])diff Burlak;
+            if un then
+              un:=un[Rand(1,un)]
+            else
+              un:=Burlak;
+
+            if GetSex(un)=sex_male then
+              Say(un,'D11b-RSol1-1')
+            else
+              Say(un,'D11b-RFSol1-1');
+          end;
+        if SeeArea(you,Lake) or not UnitFilter(wild_apemen,[f_ok]) then
+          begin
+            SayRadio(Kirilenkova,'D11b2-Kir-1');
+            if not UnitFilter(wild_apemen,[f_ok]) then
+              ComMoveXY(Kirilenkova,69,98)
+            else
+              ComStop(Kirilenkova);
+
+            if IsOk(Belkov) then
+              Say(Belkov,'D11b2-Bel-1')
+            else
+              if GetSex(un)=sex_male then
+                Say(un,'D11b1-RSol1-1')
+              else
+                Say(un,'D11b1-RFSol1-1');
+          end
+        else
+          begin
+            SayRadio(Kirilenkova,'D11b1-Kir-1');
+            if saw_apeman then
+              Say(Burlak,'D11b1-Bur-1')
+            else
+              Say(Burlak,'D11b1-Bur-1a');
+            if IsOk(Belkov) then
+              Say(Belkov,'D11b1-Bel-1')
+            else
+              if GetSex(un)=sex_male then
+                Say(un,'D11b1-RSol1-1')
+              else
+                Say(un,'D11b1-RFSol1-1');
+           end;
+        DialogueOff;
+      end;
+  end;
+
+every 0$2+0$0.31 trigger not kirilenkova_met and kirilenkova_spoke and See(you,kirilenkova) do
+  begin
+    DialogueOn;
+    SetSide(Kirilenkova,you);
+    Say(Kirilenkova,'D11c-Kir-1');
+    Say(Burlak,'D11c-Bur-1');
+    DialogueOff;
+    Hint('Healing');
+    kirilenkova_met:=true;
+  end;
+
+
+
+
+
+

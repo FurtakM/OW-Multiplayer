@@ -1,0 +1,79 @@
+export function Init_Win_Condition;
+begin
+  if Team_Game then
+    Enable(98)
+  else
+    Enable(99);
+end;
+
+
+// Team Game
+every 0$2 Marked 98 do
+var win,i;
+begin
+  if your_side then
+    if not FilterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then
+      begin
+        wait(0$3);
+        YouLostInMultiplayer;
+        exit;
+      end
+    else
+      begin
+        win:=true;
+        for i=1 to Side_positions do
+          if Side_positions[i] and (i<>your_side) and MultiplayerSideAlive(i) then
+            begin
+              if not Side_Teams[i] or (Side_Teams[i]<>Side_Teams[your_side]) then
+                win:=false;
+            end;
+        if win then
+          begin
+            wait(0$3);
+            YouWinInMultiplayer;
+            exit;
+          end;
+      end;
+  enable;
+end;
+
+
+// (All for Free)
+every 0$3 Marked 99 do
+var win,i;
+begin
+  if not FilterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then
+    begin
+      wait(0$3);
+      YouLostInMultiplayer;
+      exit;
+    end
+  else
+    begin
+      win:=true;
+      for i=1 to Side_Positions do
+        if Side_Positions[i] and (i<>your_side) and MultiplayerSideAlive(i) then
+          if not AlliedSides(i,your_side) then
+            win:=false;
+      if win then
+        begin
+          wait(0$3);
+          YouWinInMultiplayer;
+          exit;
+        end;
+    end;
+  enable;
+end;
+
+
+function AlliedSides(i,j);
+var vysledek;
+begin
+  vysledek:=false;
+
+  if (GetAttitude(i,j)=att_friend) and (GetAttitude(j,i)=att_friend) and
+      GetAlliedVictory(i) and GetAlliedVictory(j) then
+    vysledek:=true;
+
+  result:=vysledek;
+end;

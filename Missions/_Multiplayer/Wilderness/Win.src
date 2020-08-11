@@ -1,0 +1,80 @@
+every 0$1 Marked 25 do
+  var i,ends,best;
+  begin
+    ends:=false;
+
+    best:=0;
+    for i:=1 to 8 do
+      if GetMultiScore(i)>best then
+        best:=GetMultiScore(i);
+
+    if point_limit then
+      if best>point_limit then
+        ends:=true;
+
+
+    if game_time then
+      if game_time<=tick then
+        ends:=true;
+
+    if ends then
+      begin
+        if GetMultiScore(your_side)=best then
+          begin
+            wait(0$1);
+            if IAmServer then
+               wait(0$1);
+            YouWinInMultiplayer;
+          end
+        else
+          begin
+            wait(0$1);
+            if IAmServer then
+               wait(0$1);
+            YouLostInMultiplayer;
+          end;
+      end
+    else
+      enable;
+
+
+
+
+  end;
+
+
+// (All for Free)
+every 0$3 Marked 15 do
+var win,i;
+begin
+  win:=true;
+  for i=1 to Side_Positions do
+    if Side_Positions[i] and (i<>your_side) and MultiplayerSideAlive(i) then
+      if not AlliedSides(i,your_side) then
+        win:=false;
+  if win then
+    begin
+      wait(0$3);
+{      if not multiplayer then
+        msg('You Win')
+      else}
+        YouWinInMultiplayer;
+        if IAmServer then
+          wait(0$1);
+      exit;
+    end;
+  enable;
+end;
+
+
+function AlliedSides(i,j);
+var vysledek;
+begin
+  vysledek:=false;
+
+  if (GetAttitude(i,j)=att_friend) and (GetAttitude(j,i)=att_friend) and
+      GetAlliedVictory(i) and GetAlliedVictory(j) then
+    vysledek:=true;
+
+  result:=vysledek;
+end;

@@ -1,0 +1,10 @@
+Every 0$1 trigger gametype = 25 or gametype = 35 or gametype = 36 do
+begin
+  if IAmSpec then
+    begin
+      Resetfog;
+      FogOff(true);
+      CenterOnXY(81, 60);
+    end
+
+end;

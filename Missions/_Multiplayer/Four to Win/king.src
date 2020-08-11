@@ -1,0 +1,61 @@
+{ King of the Hill }
+export score;
+
+every 0$1 trigger Game_Type=3 do
+begin
+  SetAreaMapShow(KopecStred,True);
+end;
+
+
+every 0$1 trigger Game_Type=3 do
+var un,filter,output,side,new_score;
+begin
+  filter:=FilterUnitsInArea(KopecStred,[[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ready]]);
+
+  if filter then
+    for un in filter do
+    begin
+      new_score:=score[GetSide(un)]+1;
+      score:=Replace(score,GetSide(un),new_score);
+    end;
+
+  if NOT def_public_score then
+  begin
+    output:=[];
+    for side=1 to Side_Positions do
+      if Side_Positions[side] then
+        output:=output^(mp_sides_players_names[side] & ': ' & score[side] & '/ ' & amount_score);
+    ExtraStrings:=output;
+  end
+  else
+    ExtraStrings:=['#KingoftheHill-Private',your_side,score[Your_Side],amount_score];
+
+  enable;
+end;
+
+every 0$1 marked 100 do // King of the Hill
+var side;
+begin
+  for side=1 to Side_Positions do
+    if Side_Positions[side] then
+      if score[side]>=amount_score then
+        show_that_you_are_winner_or_looser;
+  enable;
+end;
+
+function show_that_you_are_winner_or_looser; // auxiliary function for King of the Hill
+var i;
+begin
+  if score[your_side]>=amount_score then
+  begin
+    wait(0$3);
+    YouWinInMultiplayer;
+    exit;
+  end
+  else
+  begin
+    wait(0$3);
+    YouLostInMultiplayer;
+    exit;
+  end;
+end;

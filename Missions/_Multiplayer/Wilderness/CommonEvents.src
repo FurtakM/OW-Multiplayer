@@ -1,0 +1,66 @@
+
+on ApemanTamed(ape,sci) do
+  begin
+    if gametype=15 then
+      begin
+        if not def_apemen_abilities then
+          disable
+        else
+          begin
+            SetClass(ape,class_apeman_soldier);
+          end;
+      end;
+  end;
+
+on UnitGoesToRed(un) do
+  var killer, victim, near;
+  begin
+    if gametype=15 then
+      if un in sheherezades then
+        begin
+          victim:=GetSide(un);
+
+          // killer:=StranaPostrelila(un);
+          near:=NearestUnitToUnit(FilterAllUnits([f_not,[f_side,victim],f_not,[f_side,0]]),un);
+          killer:=GetSide(near);
+
+          if your_side and (your_side=victim) then
+            begin
+              wait(0$3);
+              if not multiplayer then
+                msg('You Lost')
+              else
+                YouLostInMultiplayer;
+            end;
+          sheherezades:=Replace(sheherezades,victim,0);
+          SetSide(FilterAllUnits([f_side,victim]),killer);
+          ComStop(FilterAllUnits([f_side,killer]));
+          SetLives(un,0);
+        end;
+  end;
+
+
+on VehicleCaptured(vehnew, vehold, origside, hum) do
+  begin
+    if gametype=25 then
+      begin
+        if origside=0 then
+          begin
+            SetTag(vehnew,Rand(30,75));
+            to_be_countdowned:=to_be_countdowned^vehnew;
+          end
+        else
+          begin
+            SetUnitDisplayNumber(vehnew,0);
+            SetTag(vehnew,GetTag(vehold));
+            to_be_countdowned:=to_be_countdowned^vehnew;
+          end;
+
+      end
+  
+
+
+  end;
+
+
+

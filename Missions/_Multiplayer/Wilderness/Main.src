@@ -1,0 +1,35 @@
+export gametype;
+
+starting
+  begin
+    if multiplayer then
+      gametype=mp_game_type
+    else
+      gametype=25;
+
+    case gametype of 
+      15: // sheherezad
+        begin
+          enable(15);
+          disable(25);
+          disable(35);
+          starting_sheherezad;
+        end;
+      25: // vehicles
+        begin
+          enable(25);
+          disable(15);
+          disable(35);
+          starting_vehicles;
+        end;
+      35,36: // hunt
+        begin
+          enable(35);
+          disable(15);
+          disable(25);
+          starting_hunt;
+        end;
+    end;
+
+
+  end;

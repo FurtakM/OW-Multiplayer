@@ -1,0 +1,277 @@
+//This if first line
+starting
+begin
+  GT_DoubleNat = [];
+  GT_DoublePeople = [];
+  GT_TripleNat = [];
+  GT_Survival = [24,23,22,21];
+  GT_Mine = [];
+  GT_RankedGames = [10,11];
+
+  enable_human_prediction:=true;
+  Disable_All_Games;
+
+  mp_selectmsg = true;
+
+  read_multiplayer_and_game_parameters;
+  specialParameters;
+  standartSets;
+  prepare_map_coordinates;
+
+  InitGameRules;
+
+  set_shared_visions_and_alliances;
+  ResetFog;
+  ClearAllFogForSide(Player_Side);
+
+  init_map;
+
+  if Game_Type in GT_DoubleNat^GT_TripleNat then
+    modify_nations;
+
+  if not def_game_rules then
+  begin
+    Start_tech_ur;
+    enable(30);
+  end;
+
+  prepare_sides;
+  InitLimits;
+
+  if def_kings_age or def_warForTerritory then
+    InitPoints;
+  if  def_kings_age then
+    init_kings_counting;
+
+  init_respawn;
+  Init_Win_Condition;
+
+  mastodonti;
+  Start_Zvirata;
+
+  init_Daily;
+
+  your_side:=Player_Side;
+  music_nat:=Side_Nations[your_side];
+
+  if IAmSpec then
+    begin
+      FogOff(true);
+      CenterNowOnXY(120,80);
+      Enable(400);
+    end
+  else
+    begin
+      //for i=1 to 8 do
+      //ClearAllFogForSide(your_side);
+      CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
+      Init_Win_Condition;
+    end;
+
+  if def_builduptime then
+    BeginBuildUp;
+
+  if def_warForTerritory then
+    Init_WarForTerritory;
+
+  InitDisplayNames;
+  //wait(35);
+  InitMultiplayerTime;
+
+end;
+
+function Disable_All_Games;
+begin
+  Disable_Standard_Games;
+end;
+
+function specialParameters;
+var d;
+begin
+  if not isSGUI then
+  begin
+
+    if not game_type in GT_Survival then
+    begin
+
+    end;
+  end
+  else
+  begin
+
+
+  end;
+
+end;
+
+function prepare_map_coordinates;
+begin
+  depot_def:=[ [12,8,2], [156,9,3], [83,146,0], [225,149,5]  ] ;
+  oil_deposits_locations:=     [ [20,4], [141,4], [93,153], [220,155],  ];
+  siberite_deposits_locations:=[ [18,27],  [169,29],  [70,133], [221,130], ];
+  extra_oil_deposits_locations:=[ [53,26],  [129,20], [187,139], [106,135] ];
+  extra_sib_deposits_locations:=[ [51,53], [155,53], [183,107], [80,106] ];
+
+  for_show_near_resources = [ [ [oil_deposits_locations[1]]      ,[siberite_deposits_locations[1]] ],
+                              [ [oil_deposits_locations[2]]      ,[siberite_deposits_locations[2]] ],
+                              [ [oil_deposits_locations[3]]      ,[siberite_deposits_locations[3]] ],
+                              [ [oil_deposits_locations[4]]      ,[siberite_deposits_locations[4]] ],
+                            ];
+  case def_base_level of
+   0:begin // nothing
+       buildings_def=[[],[],[],[],[],[],[],[]];
+     end;
+   1:begin // depot only
+       buildings_def=[[],[],[],[],[],[],[],[]];
+     end;
+   2:begin  // small fortification
+       buildings_def=[
+                     [[b_oil_mine,oil_deposits_locations[1][1],oil_deposits_locations[1][2],4],
+                     [b_breastwork,31,34,5],[b_breastwork,40,16,4]],
+
+                     [[b_oil_mine,oil_deposits_locations[2][1],oil_deposits_locations[2][2],0],
+                     [b_breastwork,133,16,1],[b_breastwork,161,34,0]],
+                                                         
+                     [[b_oil_mine,oil_deposits_locations[3][1],oil_deposits_locations[3][2],4],
+                     [b_breastwork,77,125,3],[b_breastwork,77,126,4]],
+
+                     [[b_oil_mine,oil_deposits_locations[4][1],oil_deposits_locations[4][2],0],
+                     [b_breastwork,200,144,2],[b_breastwork,210,126,2]]
+
+                     ];
+     end;
+  end;
+
+  Cela_mapa = celamapa;
+  king_territory = stred;
+  oblasti_beden := [ctverec1,ctverec2,ctverec3,ctverec4];
+  dalsi_oblasti_beden := [map_center];
+  koof_bedny = 1.5;
+  
+  BuildUpAreas:= [AR_ZaklLH,AR_ZaklPH,AR_ZaklLD,AR_ZaklPD];
+
+  //d = rand(1,3);
+  DailyPhase = [
+             ['colors1.txt','colors2.txt','colors3.txt','colors4.txt','colors5.txt','colors6.txt'],
+             ['colors21.txt','colors22.txt','colors23.txt','colors24.txt','colors25.txt','colors26.txt'],
+             ['colors31.txt','colors32.txt','colors33.txt','colors34.txt','colors35.txt','colors36.txt']
+             ] [rand(1,3)];
+
+  WFT_Points_MP = 2;
+  FLAGY_AREA = [f1,f2,f3,f4,f5,f6,f7,f8,f9];
+  FLAGY_XY = [[118,73],[147,55],[78,30],[86,99],[157,124],[106,19],[172,98],[133,140],[70,61],];
+  FLAGY_AREA1= [ff1,ff2,ff3,ff4,ff5,ff6,ff7,ff8,ff9];
+  MaxFlags = 9;
+  WarForTerritory_flags       = [0,5,7,9,0,0,0,0,0,0,0];
+  WarForTerritory_Points      = [0,0,0,0,300,500,700,1000,1500,2000,3000];
+end;
+
+export function SimMPDefinition;
+begin
+      Game_Type=1;
+
+      Player_Side    = 3;
+      Player_Team    = 2;
+
+      Side_Positions = [1,2,3,4,0,0,0,0];
+      Side_Teams     = [0,0,0,0,0,0,0,0];
+      Side_Nations   = [1,2,2,1,0,0,0,0];
+      Side_Comps     = [0,0,0,0,0,0,0,0];
+      Teams          = [];
+end;
+
+export function SimMPOptions;
+begin
+      def_game_rules                   =0;
+      def_base_level                   =2;
+      def_amount_of_people             =5;
+      def_amount_of_apemen_in_team     =2;
+      def_initial_level                =1;
+      def_classes                      =0;
+      def_starting_resources           =2;
+      def_shipments_density            =2;
+      def_extra_oil_deposits           =1;
+      def_extra_sib_deposits           =1;
+      def_shared_vision                =1;
+      def_morale_flags                 =1;
+      def_win_rules                    =2;
+      def_amount_of_apemen             =1;
+      def_amount_of_tiger              =1;
+      def_respawining_type             =1;
+      def_people_respawning            =1;
+      def_tech_level                   =8;
+      def_upgrade_tl                   =1;
+      def_siberite_detection           =1;
+      def_siberite_bomb                =3;
+      def_builduptime                  =1;
+      def_desert_warior                =2;
+      def_daily_start                  =2;
+      def_daily_speed                  =3;
+      def_public_score                 =1;
+      def_kings_age                    =1;
+      def_warForTerritory              =5;
+
+end;
+
+
+export function Hustota_Zasilek;
+var i;
+begin
+
+  if def_game_rules then
+     tech_level=8;
+
+ { pocet_hracu := 0;
+
+  for i:=1 to 8 do
+    if Side_Positions[i] <> 0 then
+       pocet_hracu := pocet_hracu + 1;
+  if game_type in GT_doublenat^GT_doublepeople then
+    pocet_hracu = pocet_hracu * 2
+  else if game_type = GT_TripleNat then
+    pocet_hracu = pocet_hracu * 3;
+
+
+  if pocet_hracu = 2 then
+    case def_shipments_density of
+      0: shipments_density := Tech_Level*1.5 + 4;
+      1: shipments_density := Tech_Level*2 + 6;
+      2: shipments_density := Tech_Level*3 + 8;
+    end
+  else if pocet_hracu <= 4 then
+    case def_shipments_density of
+      0: shipments_density := Tech_Level*2.75 + 6;
+      1: shipments_density := Tech_Level*4.25 + 8;
+      2: shipments_density := Tech_Level*6 + 9;
+    end
+  else if pocet_hracu <= 6 then
+    case def_shipments_density of
+      0: shipments_density := Tech_Level*3.75 + 8;
+      1: shipments_density := Tech_Level*6 + 9;
+      2: shipments_density := Tech_Level*8.25 + 10;
+    end
+  else if pocet_hracu <= 8 then
+    case def_shipments_density of
+      0: shipments_density := Tech_Level*4.5 + 9;
+      1: shipments_density := Tech_Level*7.25 + 10;
+      2: shipments_density := Tech_Level*11.25 + 12;
+    end;            }
+
+  case def_shipments_density of
+    0: shipments_density := 40;       // hrubý odhad, nahradit lepšími èísly
+    1: shipments_density := 60;
+    2: shipments_density := 90;
+  end;
+
+  if tech_level < 7 then
+    shipments_density := shipments_density * 0.85
+  else if tech_level < 5 then
+    shipments_density := shipments_density * 0.7
+  else if tech_level < 3 then
+    shipments_density := shipments_density * 0.6;
+end;
+
+
+
+
+

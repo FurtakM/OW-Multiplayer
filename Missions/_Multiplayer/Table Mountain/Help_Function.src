@@ -1,0 +1,116 @@
+//Showing resources
+//  ShowResources(FullMap,def_siberite_detection,20);
+
+// FullMapArea - Area of Full Map
+// EnableSiberitResurces - set true for showing siberite resources
+// Range = Range  (0 for everywhere)
+export MaxFlags;
+
+export function ShowResources(FullMapArea,EnableSiberitResurces,Range);
+var k,k2,i,d,r,u;
+begin
+  if range = 0 then
+    range = 400;
+
+  r = range;
+
+  d = GetListOfResourcesInArea(FullMapArea);
+  for k = 1 to (d/3) do
+  begin
+    k2 = k*3;
+    for i = 1 to 8 do
+    begin
+      if d[k2] = 1 or ( d[k2] = 2 and EnableSiberitResurces ) then
+      begin
+        u = filterAllUnits([[f_side,i], [f_distxy,d[k2-2],d[k2-1],r] ]);
+        if u then
+          SetResourceVisibility(d[k2-2],d[k2-1],i);
+      end;
+    end;
+  end;
+end;
+
+// Random stats for new humans
+export function randomHumanStats(init_level);
+var cl,combat,eng,mech,sci,skills,base_skills,attr;
+var i,k,base,n,def,speed;
+begin
+   cl = rand(1,4);
+   base = init_level;
+
+   case tick of
+     0      .. 5$00   : i = 1;
+     5$01   .. 9$00   : i = 2;
+     9$01   .. 15$00  : i = 3;
+     15$01  .. 22$00  : i = 4;
+     22$01  .. 30$00  : i = 5;
+     30$01  .. 40$00  : i = 6;
+     40$01  .. 52$00  : i = 7;
+     52$01  .. 66$00  : i = 8;
+     66$01  .. 88$00  : i = 9;
+     88$01  .. 100$00  : i = 10;
+     100$01 .. 120$00  : i = 11;
+     else i = 12;
+   end;
+   i = i - base div 2;
+   if i < 0 then
+     i = 0;
+
+   if cl = 1 then
+     combat = rand( base + i -1, base + i )
+   else combat = rand(base + i - 4, base + i -1);
+
+   if cl = 2 then
+     eng = rand( base + i -1, base + i )
+   else eng = rand(base + i - 4, base + i -1);
+
+   if cl = 3 then
+     mech = rand( base + i -1, base + i )
+   else mech = rand(base + i - 4, base + i -1);
+
+   if cl = 4 then
+     sci = rand( base + i -1, base + i )
+   else sci = rand(base + i - 4, base + i -1);
+
+   skills = [combat,eng,mech,sci];
+
+   for i = 1 to 4 do
+   begin
+     //když je level menší než 0 tak se nastavý na 0
+     if skills[i] < 0 then
+       skills = replace(skills,i,0);
+     // 60% = 0, 30 = 1%, 10% = 2
+     n = [0,1,0,1,0,2,0,0,1,0][rand(1,10)];
+     //Kdyby byl vygenerovaný Base Level vìtší než Level, aby se snižil na Level
+     if n > skills[i] then
+       n = skills[i];
+
+       replace(base_skills, i, n);
+   end;
+
+
+   //First Defense 32% = 10, 22% = 9 + 11, 12% = 8+12, next Speed  44% = 10, 32% = 9, 18% = 11, 6% 12
+   n = rand(1,100);
+   case n of
+     1..32: def =10;
+     31..54: def = 9;
+     55..76: def = 11;
+     77..88: def = 8;
+     89..100: def = 12;
+   end;
+
+   n = rand(1,100);
+   case n of
+     1..44: speed = 10;
+     45..76: speed = 9;
+     77..94: speed = 11;
+     95..100: speed = 12;
+   end;
+
+   hc_attr = [def,speed];
+
+   hc_basic_skills = base_skills;
+   hc_skills:=skills;
+
+   hc_class = cl;
+end;

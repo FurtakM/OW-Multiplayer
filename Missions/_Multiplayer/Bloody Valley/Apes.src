@@ -1,0 +1,95 @@
+var _apemenIncrement,
+    _apemenMaximum,
+    _apemenSkillLevel,             // How skilled will new apemen be.
+    _apemenThreshold,
+    _isSpawning,
+    _wildApemenAmount;             // Current amount of wild apemen in game.
+
+
+
+every 0$15 do
+var i;
+begin
+  _apemenIncrement  := 0;
+  _apemenSkillLevel := 0;
+  _isSpawning       := true;
+  _wildApemenAmount := 0;
+
+  for i in (Side_Positions diff [0]) do
+    _apemenIncrement := _apemenIncrement + 1;
+
+  _apemenMaximum    := _apemenIncrement * amount_of_apemen;
+  _apemenThreshold  := _apemenMaximum / 2;
+
+  prepare_apemen;
+end;
+
+
+
+on ApemanTamed(tamedApeman, tamerUnit) do
+begin
+  CheckApemenAmount;
+end;
+
+
+
+export function CheckApemenAmount;
+begin
+  _wildApemenAmount := _wildApemenAmount - 1;
+
+  if _isSpawning then
+    exit;
+
+  if _wildApemenAmount <= (_apemenThreshold) then   // Start spawning when there is half of apemen left.
+  begin
+    if _apemenSkillLevel < 8 then
+      _apemenSkillLevel := _apemenSkillLevel + 1;       // Increase apemen skill to keep them relevant in game.
+
+    _isSpawning := true;
+    prepare_apemen;
+  end;
+end;
+
+function prepare_apemen;
+var i;
+begin
+  if not amount_of_apemen then
+    exit;
+
+  repeat
+    Wait(Rand(0$30,1$30));
+    apeman_init;
+
+    for i in (Side_Positions diff [0]) do
+    begin
+    if i = 1 then
+      PlaceUnitArea(CreateHuman,NorthApes,false);
+    if i = 2 then
+      PlaceUnitArea(CreateHuman,NorthApes,false);
+    if i = 3 then
+      PlaceUnitArea(CreateHuman,southapes,false);
+    if i = 4 then
+      PlaceUnitArea(CreateHuman,southapes,false);
+    end;
+
+    _wildApemenAmount := _wildApemenAmount + _apemenIncrement;
+  until _wildApemenAmount >= _apemenMaximum;
+  _isSpawning := false;
+end;
+
+function apeman_init;
+begin
+  uc_side:=0;
+  uc_nation:=nation_nature;
+
+  hc_class:=class_apeman;
+  hc_basic_skills := [2,2,2,2];
+  hc_skills       := [Rand(0, 2) + _apemenSkillLevel,
+                      Rand(0, 2) + _apemenSkillLevel,
+                      Rand(0, 2) + _apemenSkillLevel,
+                      Rand(0, 2) + _apemenSkillLevel ];
+  hc_attr:=[10,12];
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(-20,20);
+end;

@@ -1,0 +1,12 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED Mat
+  ENABLED events
+  ENABLED apemans_loading
+  DISABLED DayNight
+  DISABLED Win
+  ENABLED Arriving
+  ENABLED builduptime
+  ENABLED game_modes
+  ENABLED clock
+END_OF_SOURCE_CODES

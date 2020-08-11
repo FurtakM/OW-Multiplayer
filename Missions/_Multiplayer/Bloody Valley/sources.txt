@@ -1,0 +1,13 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED Apes
+  ENABLED Mat
+  ENABLED Tree
+  DISABLED DayNight
+  DISABLED Win
+  ENABLED events
+  ENABLED battle_flags
+  DISABLED builduptime
+  ENABLED game_modes
+  ENABLED clock
+END_OF_SOURCE_CODES

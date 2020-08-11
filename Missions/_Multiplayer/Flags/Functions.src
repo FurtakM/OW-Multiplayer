@@ -1,0 +1,170 @@
+EXPORT Function Natural(number);
+ begin
+   if number >= 0 then result= number
+                  else result= 0;
+ end;
+
+EXPORT Function SetArray(base, ref, number);
+ begin
+   SetTag(base+ref, number);
+ end;
+
+
+EXPORT Function GetArray(base, ref);
+ begin
+   result= GetTag(base+ref);
+ end;
+
+
+// Waits until no of units from list_of_units is busy
+EXPORT Function WaitJob(list_of_units, reaction);
+var i, busy;
+ begin
+  wait(2);
+  repeat
+   busy= false;
+   for i in list_of_units do
+    if IsOk(i) then
+     if IsBusy(i) then busy= true;
+   if busy then wait(0$1*reaction);
+  until not(busy);
+ end;
+
+EXPORT Function WaitResources(typ_of_resources, number_of_resources, reaction);
+var resources, i;
+ begin
+   wait(2);
+   resources= true;
+   repeat
+     for i=1 to typ_of_resources do
+       if GetResourceType(GetBase(My_depot), typ_of_resources[i]) < number_of_resources[i] then
+         resources= false;
+     if not(resources) then Wait(0$1*reaction);
+   until resources;
+ end;
+
+EXPORT Function WaitPos(x_pos, y_pos, dist, list_of_units, reaction);
+var i, are_at_position;
+ begin
+  wait(2);
+  repeat
+   are_at_position= true;
+   for i in list_of_units do
+    if IsOk(i) then
+     if GetDistUnitXY(i, x_pos, y_pos) > dist then are_at_position= false;
+   if not(are_at_position) then wait(0$1*reaction);
+  until are_at_position;
+ end;
+
+EXPORT Function WaitArea(area, list_of_units, reaction);
+var i, are_at_area;
+ begin
+  wait(2);
+  repeat
+   are_at_area= true;
+   for i in list_of_units do
+    if IsOk(i) then
+     if not(IsInArea(area, i)) then are_at_area= false;
+   if not(are_at_area) then wait(0$1*reaction);
+  until are_at_area;
+ end;
+
+// Waits until units from list_of_units are near then dist from target_unit
+EXPORT Function WaitNearUnit(target_unit, dist, list_of_units, reaction);
+var i, are_near;
+ begin
+   wait(2);
+   repeat
+     are_near= true;
+     for i in list_of_units do
+       if IsOk(i) and IsOk(target_unit) then
+         if GetDistUnits(target_unit, i) > dist then are_near= false;
+     if not(are_near) then wait(0$1*reaction);
+   until are_near;
+ end;
+
+
+// Waits until a building process starts.
+EXPORT Function WaitForStartOfBuilding;
+ begin
+ end;
+
+EXPORT Function Round(real);
+ begin
+   result= (100*real + 50) div 100;
+//   (real+0.5)div 1;
+ end;
+
+EXPORT Function GetState(Un);
+var i;
+ begin
+   result= -1;
+   for i in My_Units_states do
+     if i[1] = Un then
+       begin
+         result= i[2];
+         exit;
+       end;
+ end;
+
+EXPORT Function SetState(Un, state);
+var hlp, i;
+ begin
+   hlp= [];
+   for i in My_Units_states do
+     if i[1] = Un then hlp= hlp ^ [[i[1], state]]
+                         else hlp= hlp ^ [i];
+   My_Units_states= hlp;
+ end;
+
+EXPORT Function ExploreResources(parameters);
+var Res_places, i,
+    explorer, typ_of_resources, area;
+ begin
+   explorer= parameters[1];
+   typ_of_resources= parameters[2];
+   area= parameters[3];
+
+   if GetState(explorer) = 0 then SetState(explorer, 1);
+   SetState(explorer, 10 + GetState(explorer));   // special task
+   Res_places= GetListOfResourcesInArea(area);
+   for i =1 to Res_Places div 3 do
+     if (Res_Places[(i-1)*3 + 3] = typ_of_resources) and GetState(explorer) > 10 then
+       begin
+         ComMoveXY(explorer, Res_Places[(i-1)*3 +1], Res_Places[(i-1)*3 + 2]);
+         while not(GetResourceVisibility(Res_Places[(i-1)*3 +1], Res_Places[(i-1)*3 + 2], My_side)) and
+               GetState(explorer) > 10 and
+               HasTask(explorer) do
+           wait(0$0.5);
+       end;
+
+   if GetState(explorer) > 10 then
+     begin
+       SetState(explorer, GetState(explorer) - 10);
+       if GetState(explorer) = 1 then ComMoveUnit(explorer, My_lab1)
+       else ComMoveUnit(explorer, My_lab2);
+     end;
+ end;
+
+EXPORT Function SetVariable(position, number);
+var hlp, i;
+ begin
+   if position < Number_of_Base_Variables then
+     begin
+       hlp= [];
+
+       for i = 1 to Number_of_Base_Variables do
+         if i = position then
+           hlp= hlp ^ number
+         else hlp= hlp ^ Base_Variables[i];
+
+       Base_Variables= hlp;
+     end;
+ end;
+
+EXPORT Function GetVariable(position);
+ begin
+   if Number_of_Base_Variables >= position then
+     result= Base_Variables[position]
+   else result= -1;
+ end;

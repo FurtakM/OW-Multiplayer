@@ -1,0 +1,30 @@
+on ResearchComplete(tech,lab) do
+begin
+  wait(10);
+  if not IsBusy(lab) then
+    begin
+      labs_in_use:=labs_in_use diff lab;
+      Update_Artefact(lab);
+    end;
+end;
+
+on ResearchStarted(tech,lab) do
+var un,side;
+begin
+  labs_in_use:=labs_in_use ^ lab;
+  side:=GetSide(lab);
+
+  for un=0 to (artefact_number-1) do                                    // removing all artefact icons in labs
+    if lab in [GetTag(un*100+11),GetTag(un*100+side*10+15)] then
+      DeInit_Lab(side,un+1);
+end;
+
+on ResearchCancel(tech,lab) do
+begin
+  wait(10);
+  if not IsBusy(lab) then
+    begin
+      labs_in_use:=labs_in_use diff lab;
+      Update_Artefact(lab);
+    end;
+end;

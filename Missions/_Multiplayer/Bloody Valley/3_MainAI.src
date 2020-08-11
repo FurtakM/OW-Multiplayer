@@ -1,0 +1,56 @@
+var
+  en,side,pos,nat,team;
+
+export function switch_on(onside);
+  begin
+    en:=true;
+    side:=onside;
+    pos:=Side_Positions[side];
+    nat:=Side_Nations[side];
+    team:=Side_Teams[side];
+  end;
+
+var
+
+  
+// resource
+  oil_only,oil_veh,sib_veh,
+// weapon level (0 - no, 1 - few, 2 - lots, 3 - only)
+  mguns, gatlings, dguns, guns, hguns, launchers, rockets, lasers, fthrowers,
+// control type (0 - no, 1 - yes, 2 - only)
+  manctrl,remctrl,compctrl,
+// first attack (0 - no, 1 - slow, 2 - normal, 3 - fast)
+  first_attack,
+  first_attack_size,
+// defense
+  defense_level,
+
+  all;
+  
+
+function prepare_strategy;
+  begin
+    case 1 of
+      1:begin
+          oil_only:=false;
+          oil_veh:=true;
+          sib_veh:=false;
+
+          mguns:=1;
+          dguns:=2;
+          launchers:=2;
+
+          manctrl:=1;
+          compctrl:=1;
+
+          first_attack:=3;
+          first_attack_size:=2;
+
+          defense_level:=0;
+        end;
+    end;
+  end;
+
+function def_bases;
+  begin
+  end;

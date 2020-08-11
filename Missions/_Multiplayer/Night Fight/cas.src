@@ -1,0 +1,21 @@
+Export MultiplayerTimeEnabled;
+
+export function GetMultiplayerTime;
+begin
+Result = ['#gamespeed', game_speed-4] ^ ['#Multi1x1-Time', tick];
+end;
+
+export function InitMultiplayerTime;
+begin
+
+MultiplayerTimeEnabled := True;
+display_strings=GetMultiplayerTime;
+end;
+
+every 0$1+0$0.1 trigger MultiplayerTimeEnabled do
+begin
+display_strings=GetMultiplayerTime;
+if (WaitServerStrings) then display_strings:= display_strings ^ '' ^ WaitServerStrings;
+enable;
+end;
+

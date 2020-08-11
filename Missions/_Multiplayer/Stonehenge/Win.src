@@ -1,0 +1,50 @@
+every 0$1 do
+  var u1,u2,i;
+  begin
+    u1:=[];
+    u2:=[];
+    for i:=1 to side_positions do
+      if side_positions[i]=1 then
+        if not multiplayer or MultiplayerSideAlive(i) then
+          u1:=FilterAllUnits([[f_type,unit_human],[f_side,i]])
+        else
+          u1:=[]
+      else if side_positions[i]=2 then
+        if not multiplayer or MultiplayerSideAlive(i) then
+          u2:=FilterAllUnits([[f_type,unit_human],[f_side,i]])
+        else
+          u2:=[];
+
+    if not u1 and not u2 then
+      begin
+        wait(0$3);
+        if IAmServer then
+          wait(0$1);
+        YouLostInMultiplayer;
+        exit;
+      end
+    else if (u1=0)or(RightPoints=PointsToWin) then
+      begin
+        wait(0$5);
+        if IAmServer then
+          wait(0$1);
+        if side_positions[your_side]=1 then
+          YouLostInMultiplayer
+        else
+          YouWinInMultiplayer;
+        exit;
+      end
+    else if (u2=0)or(LeftPoints=PointsToWin) then
+      begin
+        wait(0$5);
+        if IAmServer then
+          wait(0$1);
+        if side_positions[your_side]=2 then
+          YouLostInMultiplayer
+        else
+          YouWinInMultiplayer;
+        exit;
+      end;
+    enable;
+
+  end;

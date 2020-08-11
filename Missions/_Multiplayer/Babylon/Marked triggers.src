@@ -1,0 +1,20 @@
+// List of Marked triggers
+export function Disable_All_Games;
+begin
+  Disable(1);              //   1 - Remove Seeing (1. artefact function)
+
+  Disable(2);              //   2 - Main Kings triger
+  Disable(3);              //   3 - Checking Win conditions in Kings game
+  Disable(4);              //   4 - Win conditions in Kings game
+
+  Disable(5);              //   5 - Teleport artefact 1 trigger
+  Disable(6);              //   6 - Teleport artefact 1 trigger
+  Disable(7);              //   7 - Teleport artefact 1 trigger
+
+  Disable(10);             //  10 - Respawning people
+
+  Disable(20);             //  21 - Recharging artefact 1 trigger
+
+  Disable(98);             //  win conditions for team game
+  Disable(99);             //  win conditions for non team game
+end;

@@ -1,0 +1,20 @@
+Export MultiplayerTimeEnabled;
+
+export function GetMultiplayerTime;
+begin
+Result = ['#Multi1x1-Time',tick];
+end;
+
+export function InitMultiplayerTime;
+begin
+
+MultiplayerTimeEnabled := True;
+display_strings=GetMultiplayerTime;
+
+end;
+
+every 0$1+0$0.1 trigger MultiplayerTimeEnabled do
+begin
+display_strings=GetMultiplayerTime;
+enable;
+end;

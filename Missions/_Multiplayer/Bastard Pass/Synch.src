@@ -1,0 +1,33 @@
+{var a;
+every 1 do
+  begin
+    if not multiplayer then
+      exit;
+
+    if (tick>=100) then
+      if tick mod 10=0 then
+        MultiplayerCRC;
+    if (tick>=100) then
+      if tick mod 10=0 then
+        DebugLogAll;
+//      while true do
+//            Com(a, 25,25);
+    enable;
+  end;    }
+{every 10 do // Log and MultiplayerCRC
+begin
+  if not multiplayer then
+    exit;
+
+  if (tick>=100) then
+    if tick mod 20=0 then
+      MultiplayerCRC;
+
+  if (tick>=100) then
+    if tick mod 30=0 then
+      DebugLogAll;
+
+  enable;
+end;      }
+
+

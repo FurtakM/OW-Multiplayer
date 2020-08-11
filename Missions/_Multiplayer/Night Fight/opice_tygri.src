@@ -1,0 +1,169 @@
+////////////////////////// opice ///////////////////////
+function apeman_init;
+var ape_names;
+begin
+  uc_side:=0;
+  uc_nation:=nation_nature;
+
+   ape_names = ['Fredy','Montana','Pishkot','Riko','Kowalrski','Neo','Kessi',
+                   'Riko','Lulu','Edie','Edy','Roxy','Roxas','Beast','Drago','Draco',
+                   'Ali','Lessie','White Fang','Chess','Nora','Shriek','Bílí Tesák',
+                   'Barkman','Meuznenapadazadnejmeno','Ihavenotthinkofanyname','Hiro','Scooby',
+                   'Fantasy','Troll','Baltazar','Pamella','Kleopatra','Ceasar','Gimmy','Scooby Dooby Doo',
+                   'Yogi','Brutal','Brutus','Janina','Crazy','Jen','Jenova','Kiosuke','Akamaru' ];
+
+  hc_name=ape_names[Rand(1,ape_names)];
+  randomHumanStats(priblizna_uroven-2);
+
+  hc_class:=class_apeman;
+  if hc_attr[2] < 12 then
+    hc_attr = [hc_attr[1]+5,hc_attr[2]+1]
+  else hc_attr = [hc_attr[1]+5,hc_attr[2]];
+
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(-20,20);
+end;
+
+function prepare_apemen;
+var i, j, area, hex, see_it, un,
+    ape, delay, first, d1, d2;
+begin
+  if not obnova_opic then
+    exit;
+  delay:=2$0;
+
+  repeat
+    d1:=Rand(delay div 2, delay);
+    d2:=Rand(0, delay div 2);
+    delay:=delay*obnova_opic div 100;
+    first:=Rand(1,2);
+    wait(d1);
+    for i:=1 to 2 do
+      begin
+        for j=1 to 2 do
+          begin
+            apeman_init;
+            ape:=CreateHuman;
+
+            if i=first then
+                case j of
+              1: area:=Opice1;
+              2: area:=Opice2;
+              3: area:=all;
+                end
+            else
+                case j of
+              1: area:=Opice3;
+              2: area:=Opice4;
+              3: area:=all;
+                end;
+              hex:=RandHexArea(area,true);
+            // placing apeman on the hex which any side don't see
+        {    repeat
+
+              see_it:=false;
+              for un=1 to 8 do
+                if SeeXY(un,hex[1],hex[2]) then
+                  begin
+                    see_it:=true;
+                    break;
+                  end;
+              if see_it then
+                wait(30);
+            until not see_it;   }
+
+            PlaceUnitXY(ape,hex[1],hex[2],false);
+          end;
+
+        if i=1 then
+          wait(d2);
+      end;
+  until false;
+end;
+
+every 0$15 do
+begin
+  prepare_apemen;
+end;
+
+
+///////////////////////tygøi /////////////////////
+function tiger_init;
+var tiger_names;
+begin
+
+  uc_side:=0;
+  uc_nation:=nation_nature;
+
+  randomHumanStats(priblizna_uroven-2);
+
+  hc_class:=class_tiger;
+  hc_attr = [hc_attr[1]+2,hc_attr[2]+1];
+
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(10,50);
+end;
+
+function prepare_tiger;
+var i, j, area, hex, see_it, un,
+    tiger, delay, first, d1, d2;
+begin
+  if not obnova_tygru then
+    exit;
+  delay:=4$0;
+
+  repeat
+    d1:=Rand(delay div 4, delay);
+    d2:=Rand(0, delay div 4);
+    delay:=delay*obnova_tygru div 100;
+    first:=Rand(1,2);
+    wait(d1);
+    for i:=1 to 2 do
+      begin
+        for j=1 to 2 do
+          begin
+            tiger_init;
+            tiger:=CreateHuman;
+
+            if i=first then
+                case j of
+              1: area:=Tygri1;
+              2: area:=Tygri2;
+              3: area:=all;
+                end
+            else
+                case j of
+              1: area:=Tygri3;
+              2: area:=Tygri4;
+              3: area:=all;
+                end;
+            hex:=RandHexArea(area,true);
+            // placing apeman on the hex which any side don't see
+          {  repeat
+
+              see_it:=false;
+              for un=1 to 8 do
+                if SeeXY(un,hex[1],hex[2]) then
+                  begin
+                    see_it:=true;
+                    break;
+                  end;
+              if see_it then
+                wait(30);
+            until not see_it;    }
+
+            PlaceUnitXY(tiger,hex[1],hex[2],true);
+          end;
+
+        if i=1 then
+          wait(d2);
+      end;
+  until false;
+end;
+
+every 0$15 do
+begin
+  prepare_tiger;
+end;

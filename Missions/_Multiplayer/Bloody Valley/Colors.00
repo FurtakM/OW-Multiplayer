@@ -1,0 +1,5 @@
+begin
+ ? type grass
+ ? subtype 4
+ ! all 80
+end

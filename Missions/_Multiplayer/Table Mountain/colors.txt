@@ -1,0 +1,16 @@
+begin
+? type terrain
+ ! contr 118
+new
+? type grass
+? subtype 4
+ ! hue -14
+ ! sat 82
+ ! contr 78
+new
+? inident "STree: ker-rosti"
+ ! hue -29
+ ! sat 89
+ ! add 9 0080FF
+ ! contr 117
+end

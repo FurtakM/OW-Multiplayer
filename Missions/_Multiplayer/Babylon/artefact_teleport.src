@@ -1,0 +1,142 @@
+
+//-----------------------------------------------------//
+//-----  RETURNING ARTEFACT TO THE ARTEFACT AREA  -----//
+
+function DestroyArtefact(hex,art);
+var base,side;
+begin
+  MoveAreaXY(artefact_end,hex[1],hex[2]);
+  EffectTeleport(hex[1],hex[2]);
+  Wait(30);
+  EraseResourceArea(artefact_end,mat_artefact);
+
+  base:=(art-1)*100;
+  If GetTag(base+11) then
+    begin
+      side:=GetSide(GetTag(base+11));
+      if GetTag(base+12) then
+        begin
+          ComCancel(GetTag(base+11));
+          Wait(10);
+          SetTag(base+12,false);
+        end;
+      if not GetTag(base+side*10+11) then
+        DeInit_Lab(side,art);               // deleting icon from lab
+      SetTag(base+11,0);
+    end;
+end;
+
+
+//----- Returning of the 1. artefact -----//
+every 0$5 Marked 5 do
+var hex,un;
+begin
+  wait(3$0);
+  if GetTag(09) then
+    hex:=[ GetX(GetTag(13)), GetY(GetTag(13)) ]
+  else
+    hex:=FindArtifact(artefact_size[1]);
+
+  if not InArea(hex[1],hex[2],artefact_area) then
+    begin
+      if GetTag(09) then
+        begin
+          SetCargo(GetTag(13),mat_artefact,-artefact_size[1]);
+          SetTag(09,0);
+          SetTag(13,0);
+        end;
+      DestroyArtefact(hex,1);
+      wait(5);
+      repeat
+        hex:=RandHexArea(artefact_area,false);
+        un:=HexInfo(hex[1],hex[2]);
+        if (un>0) and (GetType(un)=unit_building) then
+          begin
+            KillUnit(un);
+            while HexInfo(hex[1],hex[2]) do
+              wait(10);
+          end;
+      until not HexInfo(hex[1],hex[2]);
+      EffectTeleport(hex[1],hex[2]);
+      wait(30);
+      CreateResourcesXY(mat_artefact,artefact_size[1],hex[1],hex[2],false);
+    end;
+
+  enable;
+end;
+
+//----- Returning of the 2. artefact -----//
+every 0$5 Marked 6 do
+var hex,un;
+begin
+  wait(3$30);
+  if GetTag(109) then
+    hex:=[ GetX(GetTag(113)), GetY(GetTag(113)) ]
+  else
+    hex:=FindArtifact(artefact_size[2]);
+
+  if not InArea(hex[1],hex[2],artefact_area) then
+    begin
+      if GetTag(109) then
+        begin
+          SetCargo(GetTag(113),mat_artefact,-artefact_size[1]);
+          SetTag(109,0);
+          SetTag(113,0);
+        end;
+      DestroyArtefact(hex,2);
+      wait(5);
+      repeat
+        hex:=RandHexArea(artefact_area,false);
+        un:=HexInfo(hex[1],hex[2]);
+        if (un>0) and (GetType(un)=unit_building) then
+          begin
+            KillUnit(un);
+            while HexInfo(hex[1],hex[2]) do
+              wait(10);
+          end;
+      until not HexInfo(hex[1],hex[2]);
+      EffectTeleport(hex[1],hex[2]);
+      wait(30);
+      CreateResourcesXY(mat_artefact,artefact_size[2],hex[1],hex[2],false);
+    end;
+
+  enable;
+end;
+
+//----- Returning of the 3. artefact -----//
+every 0$5 Marked 7 do
+var hex,un;
+begin
+  wait(4$0);
+  if GetTag(209) then
+    hex:=[ GetX(GetTag(213)), GetY(GetTag(213)) ]
+  else
+    hex:=FindArtifact(artefact_size[3]);
+
+  if not InArea(hex[1],hex[2],artefact_area) then
+    begin
+      if GetTag(209) then
+        begin
+          SetCargo(GetTag(213),mat_artefact,-artefact_size[1]);
+          SetTag(209,0);
+          SetTag(213,0);
+        end;
+      DestroyArtefact(hex,3);
+      wait(5);
+      repeat
+        hex:=RandHexArea(artefact_area,false);
+        un:=HexInfo(hex[1],hex[2]);
+        if (un>0) and (GetType(un)=unit_building) then
+          begin
+            KillUnit(un);
+            while HexInfo(hex[1],hex[2]) do
+              wait(10);
+          end;
+      until not HexInfo(hex[1],hex[2]);
+      EffectTeleport(hex[1],hex[2]);
+      wait(30);
+      CreateResourcesXY(mat_artefact,artefact_size[3],hex[1],hex[2],false);
+    end;
+
+  enable;
+end;

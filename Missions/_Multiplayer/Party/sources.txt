@@ -1,0 +1,11 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED Mat
+  ENABLED Treasure
+  ENABLED Win
+  ENABLED DayNight
+  ENABLED Infos
+  ENABLED battle_flags
+  ENABLED Events
+  ENABLED apemen
+END_OF_SOURCE_CODES

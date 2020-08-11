@@ -1,0 +1,14 @@
+0.1:
+Alien Base:
+- New apeman respawn script
+
+0.2:
+Alien Base:
+- Apeman respawn script improve
+- Deposits only on player starting positions
+
+Wilderness:
+- Colors.txt fix
+
+Rocky Land:
+- Waterfall animations fix

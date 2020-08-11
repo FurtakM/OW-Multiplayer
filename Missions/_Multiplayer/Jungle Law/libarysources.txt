@@ -1,0 +1,19 @@
+SOURCE_CODES
+  ENABLED US_MP_Inicialization
+  ENABLED US_Crates
+  ENABLED US_Init_Resp
+  ENABLED US_Win
+  ENABLED US_Animals
+  ENABLED US_Names
+  ENABLED US_Flags
+  ENABLED US_MP_Time
+  ENABLED US_SharedFuncs
+  ENABLED US_TechLevels
+  ENABLED US_King
+  ENABLED US_DailySystem
+  ENABLED US_BuildUp
+  ENABLED US_Rules
+  ENABLED US_WarForTerritory
+  ENABLED SharedAchievements
+  ENABLED US_PointsGameFunc
+END_OF_SOURCE_CODES

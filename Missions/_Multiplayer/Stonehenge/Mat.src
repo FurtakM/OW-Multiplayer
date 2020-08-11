@@ -1,0 +1,25 @@
+
+// shipment
+every 0$5+0$1.1 do
+  var d;
+  begin
+    case tick-1$00 of
+          1.. 1$0:d:=150;
+      1$0+1.. 5$0:d:=100;
+      5$0+1..10$0:d:=90;
+     10$0+1..20$0:d:=70;
+     20$0+1..30$0:d:=60;
+     30$0+1..50$0:d:=35;
+     50$0+1..300$0:d:=20;
+    300$0+1..900$0:d:=5;
+      else d:=0;
+    end;
+
+    if rand(1,10000)<=d*shipments_density div 2 then
+      begin
+        wait(Rand(1,0$4));
+        new_crate(true);
+      end;
+    enable;
+  end;
+

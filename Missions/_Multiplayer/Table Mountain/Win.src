@@ -1,0 +1,145 @@
+var strength,
+    lastxwin,lastywin,
+    lastxlost,lastylost;
+
+
+function Update_Flags;
+var un;
+begin
+  for un in battle_flags_id do
+    ChangeBattleFlagOptions(un,[ [bfo_defend_bonus_human,strength],
+                                 [bfo_defend_bonus_vehicle,strength div 2],
+                                 [bfo_defend_bonus_building,strength div 5],
+                                 [bfo_height,strength] ]);
+end;
+
+every 0$0.1 Marked 45 do
+var un;
+begin
+  if not def_morale_flags then
+    exit;
+  if not morale_decreasing_time then
+    exit;
+  strength=100;
+  repeat
+    wait(morale_decreasing_time);
+    strength:=strength-1;
+    Update_Flags;
+  until not strength;
+
+  for un in battle_flags_id do
+    KillBattleFlag(un);
+end;
+
+
+// scientists
+every 0$1 Marked 44 do
+var l1,l2;
+begin
+  if not (game_type in [11,12]) then
+    exit;
+
+  if not your_side then
+    begin
+      enable;
+      exit;
+    end;
+
+  l1:=UnitFilter(sci1,[f_alive]);
+  l2:=UnitFilter(sci2,[f_alive]);
+
+  if not l1 and not l2 then
+    begin
+      wait(0$3);
+      YouLostInMultiplayer;
+      exit;
+    end
+  else if not l1 then
+    begin
+      if Side_teams[your_side]=1 then
+        begin
+          CenterOnXY(lastxlost,lastylost);
+          wait(0$3);
+          YouLostInMultiplayer;
+        end
+      else
+        begin
+          CenterOnXY(lastxwin,lastywin);
+          wait(0$3);
+          YouWinInMultiplayer;
+        end
+    end
+  else if not l2 then
+    begin
+      if Side_teams[your_side]=2 then
+        begin
+          CenterOnXY(lastxlost,lastylost);
+          wait(0$3);
+          YouLostInMultiplayer;
+        end
+      else
+        begin
+          CenterOnXY(lastxwin,lastywin);
+          wait(0$3);
+          YouWinInMultiplayer;
+        end
+    end
+  else
+    if Side_teams[your_side]=1 then
+      begin
+        lastxwin:=GetX(l2[1]);
+        lastywin:=GetY(l2[1]);
+        lastxlost:=GetX(l1[1]);
+        lastylost:=GetY(l1[1]);
+      end
+    else
+      begin
+        lastxwin:=GetX(l1[1]);
+        lastywin:=GetY(l1[1]);
+        lastxlost:=GetX(l2[1]);
+        lastylost:=GetY(l2[1]);
+      end;
+enable;
+end;
+
+
+// normal battle
+every 0$2 Marked 44 do
+var win,i;
+begin
+  if game_type in [11,12] then
+    exit;
+
+  if your_side then
+    begin
+      if not filterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then
+        begin
+          wait(0$3);
+          if IAmServer then
+            wait(0$1);
+          YouLostInMultiplayer;
+          exit;
+        end
+      else
+        begin
+          win:=true;
+          for i:=1 to Side_positions do
+            if Side_positions[i] and (i<>your_side) then
+              begin
+                if MultiplayerSideAlive(i) then
+                  if not Side_Teams[i] or (Side_Teams[i]<>Side_Teams[your_side]) then
+                    win:=false;
+              end;
+           if win then
+             begin            
+               wait(0$3);
+               if IAmServer then
+                 wait(0$1);
+               SA_Win(Side_Nations[Your_side]);
+               YouWinInMultiplayer;
+               exit;
+             end;
+        end;
+    end;
+  enable;
+end;
