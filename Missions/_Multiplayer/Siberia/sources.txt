@@ -4,7 +4,6 @@ SOURCE_CODES
   ENABLED apemans_loading
   ENABLED people_respawning
   ENABLED events
-  DISABLED DayNight
   ENABLED win
   ENABLED mine
   ENABLED battle_flag

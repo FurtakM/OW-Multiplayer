@@ -13,7 +13,7 @@ new
  ! add 7 4080FF
 new
 ? type terrain
- ! contr 115
+ ! contr 100
 new
 ? inident "STree: list-akatojerab"
  ! sat 70

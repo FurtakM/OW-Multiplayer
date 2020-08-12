@@ -4,7 +4,6 @@ SOURCE_CODES
   ENABLED Respawn
   ENABLED Apemens
   ENABLED Events
-  DISABLED DayNight
   DISABLED Win
   ENABLED battle_flags
   ENABLED BuildUp

@@ -161,7 +161,7 @@ begin
   shipments_density           := [150, 125, 100] [def_shipments_density+1];
   respawning_time_min         := [0$0, 5$00, 3$0] [def_people_respawning+1];
   respawning_time_max         := [0$0, 15$00, 5$0] [def_people_respawning+1];
-  amount_of_apemen            := [0, 3, 6, 9] [def_amount_of_apemen+1];
+  amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             = [];
   siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
@@ -212,20 +212,31 @@ begin
                       [ [ 87,102, 4], [ 63, 83, 3], [ 79,120, 0] ]
                     ];
 
-  for i=1 to 8 do
-    if def_extra_oil_deposits then
-      for j in extra_oil_deposits_locations[i] do
-        CreateDepositXY(j[1],j[2],mat_oil)
-    else
-      CreateDepositXY(normal_oil_deposits_locations[i][1],normal_oil_deposits_locations[i][2],mat_oil);
+
+  for i = 1 to Side_Positions do
+      begin
+      if not Side_Positions[i] then
+         continue;
+
+      if def_extra_oil_deposits then
+         for j in extra_oil_deposits_locations[Side_Positions[i]] do
+             CreateDepositXY(j[1], j[2], mat_oil)
+      else
+         CreateDepositXY(normal_oil_deposits_locations[Side_Positions[i]][1], normal_oil_deposits_locations[Side_Positions[i]][2], mat_oil);
+      end;
 
   if def_extra_sib_deposits then
-    for i=1 to 8 do
-      if def_extra_sib_deposits=2 then
-        for j in extra_sib_deposits_locations[i] do
-          CreateDepositXY(j[1],j[2],mat_siberit)
-      else
-        CreateDepositXY(normal_sib_deposits_locations[i][1],normal_sib_deposits_locations[i][2],mat_siberit);
+     for i = 1 to Side_Positions do
+         begin
+         if not Side_Positions[i] then
+            continue;
+
+         if def_extra_sib_deposits = 2 then
+            for j in extra_sib_deposits_locations[Side_Positions[i]] do
+                CreateDepositXY(j[1], j[2], mat_siberit)
+         else
+            CreateDepositXY(normal_sib_deposits_locations[Side_Positions[i]][1], normal_sib_deposits_locations[Side_Positions[i]][2], mat_siberit);
+         end;
 end;
 
 function set_shared_visions_and_alliances;
@@ -515,6 +526,8 @@ begin
 
       CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
     end;
+
+  InitApeman;
 
   if def_builduptime then
     BeginBuildUp;

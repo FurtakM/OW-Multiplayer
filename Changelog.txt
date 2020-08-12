@@ -1,14 +1,33 @@
 0.1:
 Alien Base:
-- New apeman respawn script
+- New apeman respawn script added
 
 0.2:
 Alien Base:
-- Apeman respawn script improve
+- Apeman respawn script improved
 - Deposits only on player starting positions
 
 Wilderness:
-- Colors.txt fix
+- Colors.txt fixed
 
 Rocky Land:
-- Waterfall animations fix
+- Waterfall animations fixed
+
+0.3:
+Flags:
+- Removed Free For All (4 Teams) game mode
+- Added spectator for all game modes
+- New apeman respawn script added
+- Deposits only on player starting positions
+- Crates spawn ratio increased
+- Apeman amount setting added
+
+Siberia:
+- Removed Arabian Wars and East vs West game modes
+- New apeman respawn script addded
+- Waterfall animations fixed
+- Map structure changed
+- New GBI (in png) added
+- Player positions changed
+- Depostis positions fixed
+- Deposits only on player starting positions
