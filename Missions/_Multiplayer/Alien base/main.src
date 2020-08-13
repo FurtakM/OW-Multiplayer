@@ -214,7 +214,7 @@ begin
     else
       buildUpTime_Delay           := 4$00 + 1$00*def_builduptime;
 
-    amount_of_siberit =  30+def_amount_of_siberit*5;
+    amount_of_siberit =  30 + def_amount_of_siberit * 5;
 {  end
   else
   begin      
