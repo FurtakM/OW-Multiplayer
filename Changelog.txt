@@ -37,3 +37,7 @@ Bloody Valley:
 - Crates spawn ratio decreased
 - New apeman respawn script addded
 - Added "custom spectator" [Only in one game mode in polish language for test]
+
+0.5:
+Bastard Pass:
+- Added spectator
