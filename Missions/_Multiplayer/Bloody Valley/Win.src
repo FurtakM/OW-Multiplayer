@@ -1,3 +1,24 @@
+var defaited,GameEnded,unfoged;
+
+export function Init_Win_Condition;
+var i;
+begin
+{  if Team_Game then
+    Enable(98)
+  else
+    Enable(99);    }
+  Enable(98);
+  GameEnded = false;
+  defaited=[0,0,0,0,0,0,0,0];
+  unfoged= false;
+
+  for i=1 to side_positions do
+    if not side_positions[i] then
+      defaited = replace(defaited,i,true);
+end;
+
+// FUNCTIONS \\
+
 function CanWinLoose;
 begin
   Result := True;
@@ -5,16 +26,35 @@ begin
   if IAmServer and PlayerCount > 0 then
     Result := False;
 
-  if IAmSpec and PlayerCount > 1 then
+  if IAmSpec or your_side in customSpectator and PlayerCount > 1 then
     Result := False;
+
 end;
 
-function HasPower(i);
+export function HasPower(i);
+var k,h;
 begin
-  if def_people_respawning then
-    Result := FilterAllUnits([[f_side, i], [f_or, [f_type, unit_human], [f_control, control_computer], [f_control, control_apeman], [f_btype, b_depot], [f_btype, b_warehouse]]])
+  if not MultiplayerSideAlive(i) and not Side_Comps[i] and MultiPlayer then
+  begin
+    result = false;
+  end
   else
-    Result := FilterAllUnits([[f_side, i], [f_or, [f_type, unit_human], [f_control, control_computer], [f_control, control_apeman]]]);
+  case def_win_rules of
+    0: if def_people_respawning then
+         Result := FilterAllUnits([[f_side, i], [f_or, [f_type, unit_human], [f_control, control_computer], [f_control, control_apeman], [f_btype, b_depot], [f_btype, b_warehouse]]])
+       else
+         Result := FilterAllUnits([[f_side, i], [f_or, [f_type, unit_human], [f_control, control_computer], [f_control, control_apeman]]]);
+    1: Result = FilterAllUnits([ [f_side, i], [f_type, unit_human] ]);
+    2: begin
+         h= false;
+         for k in heroes[i] do
+           if IsLive(k) then
+             h = true;
+         Result :=h;
+       end;
+  end;
+ { if i = 4 then
+    extraStrings = Result;   }
 end;
 
 function AlliedSides(i, j);
@@ -25,67 +65,114 @@ begin
     Result := True;
 end;
 
-every 0$3 trigger CanWinLoose marked 400 do
+
+
+// EVERYS \\
+
+every 100 trigger CanWinLoose and not GameEnded marked 400 do
+  WaitServerStrings = ['#Player-Ended'];
+
+every 100 trigger CanWinLoose and GameEnded marked 400 do
   YouLostInMultiplayer;
 
-every 0$3 trigger CanWinLoose marked 401 do
-begin
+every 100 trigger not CanWinLoose and not IAmSpec marked 400 do
+  WaitServerStrings = ['#server-wait'];
+
+every 100 trigger IAmSpec do
+  WaitServerStrings = ['#Player-IAmSpec'];
+
+every 100 trigger GameEnded and (IAmSpec or your_side in customSpectator) do
+  YouLostInMultiplayer;
+
+every 100 trigger CanWinLoose and not GameEnded marked 401 do
+  WaitServerStrings = ['$player-win'];
+
+every 100 trigger CanWinLoose and GameEnded marked 401 do
+ begin
   SA_Win(Side_Nations[Your_side]);
   YouWinInMultiplayer;
 end;
 
-every 0$3 marked 98 do // Team Game
-var i, CanWin;
+//test
+every 100 trigger isEditor marked 401 do
+ Debug_Strings = ['You won'];
+
+every 100 trigger isEditor marked 400 do
+ Debug_Strings = ['You loss'];
+
+every 100 marked 98 do
+var i,un;
 begin
-  if not HasPower(your_side) then
-    begin
-      Multiplayer_Loose_Message;
-      Enable(400);
-    end
-  else
-    begin
-      CanWin := True;
+  For i=1 to side_positions do
+    if side_positions[i] then
+      if not HasPower(i) and not Defaited[i] then
+      begin
+        un = filterallunits([f_side,i]);
+        if un then
+          SetSide(un,0);
 
-      for i := 1 to 8 do
-        if Side_Positions[i] and MultiplayerSideAlive(i) and (i<>your_side) then
-          if not Side_Teams[i] or (Side_Teams[i]<>Side_Teams[your_side]) then
-            if HasPower(i) then
-              begin
-                CanWin := False;
-                break;
-              end;
+        Defaited = replace(Defaited, i, true);
+        if i = your_side then
+        begin
+          Multiplayer_Loose_Message;
+          enable(400);
+        end;
 
-      if CanWin then
-        Enable(401)
-      else
-        Enable;
-    end;
+      end;
+  If not Unfoged and defaited[your_side] then
+    Unfog;
+  DidGameEnd;
+
+  if not GameEnded then
+    enable;
 end;
 
-every 0$3 marked 99 do // Kill 'em all
-var i, CanWin;
+function DidGameEnd;
+var i, k, enemy;
 begin
-  if not HasPower(your_side) then
-    begin
-      Multiplayer_Loose_Message;
-      Enable(400);
-    end
-  else
-    begin
-      CanWin := True;
+  enemy = [];
+  for i=1 to side_positions do
+   if not defaited[i] then
+     for k=1 to side_positions do
+       if not defaited[k] then
+         if GetAttitude(i,k) in [att_enemy, att_neutral] then
+           enemy = enemy ^ [i,k];
 
-      for i := 1 to 8 do
-        if Side_Positions[i] and MultiplayerSideAlive(i) and (i<>your_side) then
-          if not AlliedSides(i, your_side) then
-            if HasPower(i) then
-              begin
-                CanWin := False;
-                break;
-              end;
+  if not enemy then
+  begin
+    GameEnded = true;
+    if not defaited[your_side] then
+      enable(401);
+  end;
 
-      if CanWin then
-        Enable(401)
-      else
-        Enable;
-    end;
+end;
+
+function unfog;
+var k,friends ;
+begin
+  for k=1 to side_positions do
+    if not defaited[k] then
+      if GetAttitude(your_side,k) in [att_friend] then
+        friends = friends ^ k;
+
+  if not friends then
+  begin
+    fogoff(true);
+    unfoged = true;
+  end ;
+end;
+
+
+Export function MakeGameEnd;
+begin
+    fogoff(true);
+    unfoged = true;
+    wait(0$5);
+    GameEnded = true;
+end;
+
+
+Export Function GetGameEnded;
+begin
+  result = GameEnded;
 end;

@@ -1,7 +1,7 @@
 begin
 new
 ? type tree
-? building
+? crate
 ? inident lískové
  ! rgb 100 90 60
  ! sat 60

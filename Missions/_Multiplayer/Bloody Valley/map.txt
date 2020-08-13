@@ -221,7 +221,7 @@ HEXES
   LINE 103 52 151
     t4r6vLsn t2r6vR r6vLsq vIsS vI vIsA r7vJsA r7vJsB r7vJ r7vJ r7vIsB r7vIsB r7vIsA r7vIsA r7vJ r7vJ r7vHsK r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG vG r8vCsahF r8vBsChF r8vAsBhF r8vAsBhF r8v9sDhF r4v4srhF r4v2sLhF r4sbhF r4sWhF r4v4sWhF r8v8hF r8v8hF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsXhF vEsH vG vG vGsI vIsY vM vM vM vKsK vIsK vI vI vGsJ vGsJ vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 104 52 151
-    t4r6vIsP t2r6vLsn r6vR r6vLsp vIsR vIsQ vJsA r7vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG r8vCsahF r8vChF r8vBsBhF r8vBhF r8v9sKhF r4v8sChF r4v2sqhF r4sKhF r4hF r4sXhF r4v4sXhF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vCsXhF vG vG vGsH vIsX vM vMfG vM vKsK vIsK vI vI vI vI vGsJ r6vGsg r6vGsg r6vGsh r6vGsh vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
+    t4r6vIsP t2r6vLsn r6vR r6vLsp vIsR vIsQ vJsA r7vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG r8vCsahF r8vChF r8vBsBhF r8vBhF r8v9sKhF r4v8sChF r4v2sqhF r4sKhF r4hF r4sXhF r4v4sXhF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vCsXhF vG vG vGsH vIsX vM vMfG vM vKsKS vIsK vI vI vI vI vGsJ r6vGsg r6vGsg r6vGsh r6vGsh vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 105 53 152
     t4r6vLsn t2r6vR r6vR r6vLsp r6vLsp vKsA vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vI r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vGsA r7vGsA r7vGsB r7vGsB r7vG r7vG vG vG vG vG vG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG vG vG r8vCsahF r8vChF r8vBsBhF r8vBsBhF r8v9sRhF r4v8sZhF r4v2sphF r4sJhF r4sIhF r4v2snhF r4v8sAhF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vChF r8vChF r8vCsXhF vG vGsH vIsX vM vM vM vM vIsa vI vI vI vI vI r6vIsQ r6vLso r6vLso r6vLsp r6vGsh r6vGsh r6vGsh r6vGsh vG vG vG r2vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 106 53 152
@@ -308,6 +308,9 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
+  SET 53 stone-road
+  SET 54 bonus
+  SET 55 alien1
   ON_HEX 22 0
     sei9
   ON_HEX 34 0
@@ -879,7 +882,15 @@ ATTITUDES
 END_OF_ATTITUDES
 
 TECHS
-  PARAMS 72 8
+  PARAMS 80 8
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
@@ -1060,16 +1071,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 1314160836
-  RANDOM_SEED 2 -149672942
-  RANDOM_SEED 3 -2020210779
+  RANDOM_SEED 1 1073516686
+  RANDOM_SEED 2 1073516686
+  RANDOM_SEED 3 1798011637
   RANDOM_SEED 4 1678921165
   RANDOM_SEED 5 1862181282
   RANDOM_SEED 6 57406484
   RANDOM_SEED 7 -1353857779
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 462005748
-  RANDOM_SEED 10 1314160836
+  RANDOM_SEED 10 379081138
   RANDOM_SEED 11 -443074555
   RANDOM_SEED 12 -650308925
   RANDOM_SEED 13 1128189734
@@ -1528,7 +1539,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW -56 -96 1542 866 1
+  VIEW 1098 1404 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -1557,8 +1568,8 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 1
-  LAST 30
+  ACTIVE 16
+  LAST 34
   AREA 1
     NAME Area04
     COLOR 93FF43
@@ -1911,26 +1922,6 @@ AREAS
     -----------------------------+-------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++-
     --------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++
   AREA 8
-    NAME southapes
-    COLOR FF7344
-    SHORTCUT 1
-    LINES 104 110 23 9
-    ----------+++----------
-    ----------+--++--------
-    ----------+----+-------
-    ----------+-----+------
-    -----++++++------+-----
-    -----+------------+----
-    ----++-------------+---
-    ----+---------------+--
-    +++++---------------+++
-  AREA 9
-    NAME NorthApes
-    COLOR ACFF44
-    SHORTCUT 2
-    LINES 34 1 26 1
-    ++++++++++++++++++++++++++
-  AREA 10
     NAME BuildUp1
     COLOR FF3900
     SHORTCUT 1
@@ -1996,7 +1987,7 @@ AREAS
     -----------------------------+++++++++++++++++++++++++++++++++--------
     ------------------------------++++++++++++++++++++++++++++++++--------
     ------------------------------++++++++++++++++++++++++++++++++--------
-  AREA 11
+  AREA 9
     NAME BuildUp3
     COLOR 00FF6C
     SHORTCUT 1
@@ -2059,7 +2050,7 @@ AREAS
     ----------------------------++++++++++++++++++++++++++++++++++++++++++++++++++-
     ----------------------------++++++++++++++++++++++++++++++++++++++++++++++++++-
     -----------------------------++++++++++++++++++++++++++++++++++++++++++++++++++
-  AREA 12
+  AREA 10
     NAME BuildUp4
     COLOR 33FFFA
     SHORTCUT 3
@@ -2122,7 +2113,7 @@ AREAS
     ------------------+++++++++++++++++++++++++++++++++++++++++++++++++-
     -------------------++++++++++++++++++++++++++++++++++++++++++++++++-
     -------------------+++++++++++++++++++++++++++++++++++++++++++++++++
-  AREA 13
+  AREA 11
     NAME BuildUp2
     COLOR 0033FF
     SHORTCUT 5
@@ -2188,7 +2179,7 @@ AREAS
     ---------------------------------------------++++++++++++++++++++++++++++++++-
     ----------------------------------------------++++++++++++++++++++++++++++++++
     -----------------------------------------------+++++++++++++++++++++++++++++++
-  AREA 14
+  AREA 12
     NAME BuildUpEscape
     COLOR 3940FF
     SHORTCUT 1
@@ -2313,5 +2304,100 @@ AREAS
     ------------------------------------------------------------------------------+---------------------
     ------------------------------------------------------------------------------++--------------------
     -------------------------------------------------------------------------------+--------------------
+  AREA 13
+    NAME Base1ApeArea
+    COLOR 0BFFFF
+    SHORTCUT 6
+    LINES 33 1 16 19
+    -+++++----------
+    +++++++---------
+    -+++++++--------
+    -++++++++-------
+    --+++++++-------
+    --++++++++------
+    ---+++++++------
+    ---++++++++-----
+    ----+++++++-----
+    ----++++++++----
+    ----+++++++++---
+    -----++++++++---
+    ------++++++++--
+    ------++++++++--
+    -------++++++++-
+    -------++++++++-
+    -------+++++++++
+    --------++++++++
+    ---------+++++++
+  AREA 14
+    NAME Base2ApeArea
+    COLOR FF6032
+    SHORTCUT 7
+    LINES 51 1 18 19
+    ++----------------
+    -++++++++---------
+    -++++++++---------
+    --++++++++--------
+    --++++++++--------
+    ---++++++++-------
+    ---++++++++-------
+    ----++++++++------
+    ----+++++++++-----
+    -----++++++++-----
+    -----+++++++++----
+    ------++++++++----
+    ------+++++++++---
+    -------++++++++---
+    -------+++++++++--
+    --------++++++++--
+    --------+++++++++-
+    ---------++++++++-
+    ----------++++++++
+  AREA 15
+    NAME Base3ApeArea
+    COLOR 0BA6FF
+    SHORTCUT 8
+    LINES 83 93 19 23
+    -----++------------
+    ++++++++-----------
+    -+++++++-----------
+    -++++++++----------
+    --+++++++----------
+    --++++++++---------
+    ---+++++++---------
+    ---++++++++--------
+    ----+++++++--------
+    ----++++++++-------
+    -----+++++++-------
+    -----++++++++------
+    ------+++++++------
+    ------++++++++-----
+    -------+++++++-----
+    -------++++++++----
+    --------++++++++---
+    --------++++++++---
+    --------+++++++++--
+    ---------++++++++--
+    ---------+++++++++-
+    ---------------+++-
+    ------------------+
+  AREA 16
+    NAME Base4ApeArea
+    COLOR 0BFF86
+    SHORTCUT 9
+    LINES 117 105 24 14
+    +-----------------------
+    +-----------------------
+    -++---------------------
+    --++--------------------
+    --++++------------------
+    ---++++++---------------
+    ---+++++++++++++++------
+    ----++++++++++++++++----
+    -----++++++++++++++++---
+    -----++++++++++++++++---
+    ------++++++++++++++++--
+    -------++++++++++++++++-
+    ---------++++++++++++++-
+    ----------++++++++++++++
 END_OF_AREAS
 

@@ -31,3 +31,9 @@ Siberia:
 - Player positions changed
 - Depostis positions fixed
 - Deposits only on player starting positions
+
+0.4:
+Bloody Valley:
+- Crates spawn ratio decreased
+- New apeman respawn script addded
+- Added "custom spectator" [Only in one game mode in polish language for test]
