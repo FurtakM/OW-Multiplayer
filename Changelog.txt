@@ -45,3 +45,7 @@ Bastard Pass:
 0.6:
 Bloody Valley:
 - Added "custom spectator" for others languages
+
+0.7:
+Bloody Valley:
+- Removed "custom spectator"

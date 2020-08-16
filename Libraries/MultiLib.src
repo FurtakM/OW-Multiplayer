@@ -1,0 +1,361 @@
+// Multiplayer Library by Michal "Serpent" Furtak 2020
+// Version 0.1 --- 15-08-2020
+Export MultiSides; // Players sides
+Export MultiNations;  // Players nations
+Export MultiActivePlayers; // Active players on map
+Export MultiDefeatedPlayers; // Defeated players on map
+Export MultiSpectators; // Spectators on map
+Export MultiTeams; // Teams
+Export MultiSideTeams; // Side teams
+Export MultiTeamGame; // Team Game
+Export MultiPosition; // Players positions
+Export MultiGameType; // Game type number
+Export MultiBasePositions; // Players base positions
+Export MultiSourcePositions; // Oil/Sib deposit positions
+Export MultiSourceExtraPositions; // Oil/Sib extra deposit positions
+Export MultiBattleFlags; // Battle flags
+Export MultiBattleFlagsMoraleTime; // Battle flags morale time
+Export MultiCenterMapPoint; // Map center point
+
+// Game settings
+// Load these settings outside library!
+Export MultiSettingsBaseLevel, MultiSettingsPeopleAmount, MultiSettingsSkillLevel,
+       MultiSettingsStartingResources, MultiSettingsShipmentsDensity,
+       MultiSettingsOil, MultiSettingsSib, MultiSettingsSharedVision,
+       MultiSettingsApeAmount, MultiSettingsFlag, MultiSettingsSibDetection,
+       MultiSettingsPeopleRespawn, MultiSettingsSibAmount, MultiSettingsPublicScore,
+       MultiSettingsSibBomb, MultiSettingsBuildUpTime, MultiSettingsGameRules, MultiSettingsTechLevel;
+
+// Initialize variables
+Export Function MultiInitGame;
+begin
+MultiSides := [0, 0, 0, 0, 0, 0, 0, 0];
+MultiNations := [0, 0, 0, 0, 0, 0, 0, 0];
+MultiActivePlayers := [0, 0, 0, 0, 0, 0, 0, 0];
+MultiDefeatedPlayers := [0, 0, 0, 0, 0, 0, 0, 0];
+MultiSpectators := [0, 0, 0, 0, 0, 0, 0, 0];
+MultiTeams := [];
+MultiSideTeams := [];
+MultiGameType := 0;
+MultiTeamGame := false;
+MultiBasePositions := [];
+MultiSourcePositions := [];
+MultiBattleFlags := 0;
+MultiBattleFlagsMoraleTime := [];
+MultiCenterMapPoint := [1, 1];
+End;
+
+// Load real multiplayer settings - only in Multiplayer mode
+Export Function MultiLoadGameSettings;
+var i;
+begin
+if not MultiPlayer then
+   exit;
+
+Your_Side := mp_player_side;
+
+MultiGameType := mp_game_type;
+MultiSides := mp_sides_positions;
+MultiNations := mp_sides_nations;
+MultiTeams := mp_teams;
+MultiSideTeams := mp_sides_teams;
+
+for i := 1 to 8 do
+    begin
+    if Multiplayer_GetPlayerIsSpec(i) then
+       begin
+       MultiSides := Replace(MultiSides, i, 0);
+       MultiTeams := Replace(MultiTeams, MultiSideTeams[i], MultiTeams[MultiSideTeams[i]] diff i);
+       MultiSpectators := Replace(MultiSpectators, i, 1);
+       end;
+    end;
+
+MultiTeamGame := MultiSideTeams[Your_Side];
+End;
+
+// Main function which starts game
+Export Function MultiStartGame;
+begin
+// if MultiGameType = X then // TODO
+// ³adowanie ustawieñ dla unikalnych trybów gry
+
+MultiBattleFlagsMoraleTime := [-1, 0$10, 0$20, 0$40, 0$0][MultiSettingsFlag + 1];
+MultiPrepareDeposits;
+MultiPrepareBases;
+MultiPrepareDiplomacy;
+
+ResetFog;
+ClearAllFogForSide(Your_Side);
+End;
+
+Export Function MultiPrepareSpectators;
+var i, j;
+begin
+if not 1 in MultiSpectators then
+   exit;
+
+for i := 1 to 8 do
+    begin
+    PlaceSeeing(1, 1, i, -32763);
+    CenterNowOnXY(MultiCenterMapPoint[1], MultiCenterMapPoint[2]);
+
+    for j := 1 to 8 do
+        if i <> j then
+           SetAttitude(i, j, att_friend, true);
+    end;
+End;
+
+Export Function MultiPrepareDiplomacy;
+var i, j;
+begin
+if not MultiTeamGame then
+   begin
+   for i := 1 to 8 do
+       for j := 1 to 8 do
+           if i <> j then
+              SetAttitude(i, j, att_neutral, true)
+           else
+              SetAttitude(i, j, att_friend, true);
+   end
+else
+   begin
+   if MultiSettingsSharedVision then
+      begin
+      for i in MultiTeams do
+          for j := 2 to i do
+              ChangeSideFog(i[j], i[1]);
+      end;
+
+      for i := 1 to 8 do
+          for j := 1 to 8 do
+              if MultiSideTeams[i] = MultiSideTeams[j] then
+                 SetAttitude(i, j, att_friend, true)
+              else
+                 SetAttitude(i, j, att_enemy, true);
+    end;
+End;
+
+// Prepare whole team with base for each player
+Export Function MultiPrepareBases;
+var i, j, r, x, y, side, nation, skills, resources, amount, copySkill, depot, pos, spawnPos, structures, commander,
+    cl, clLimit, un, tmp, dir;
+begin
+// from 4 to 24
+amount := MultiSettingsPeopleAmount + 4;
+skills := [2, 3, 4, 5][MultiSettingsSkillLevel + 1];
+resources := [ [0, 0, 0], [30, 0, 0], [50, 20, 0], [80, 40, 20] ][MultiSettingsStartingResources + 1];
+copySkill := [];
+
+for i := 1 to 8 do
+    begin
+    if not MultiSides[i] then
+       continue;
+
+    side := i;
+    nation := MultiNations[i];
+    pos := MultiBasePositions[i];
+
+    spawnPos := [ShiftX(pos[1][1], pos[1][3], 10), ShiftY(pos[1][2], pos[1][3], 10)];
+    structures := [];
+
+    uc_side := side;
+    uc_nation := nation;
+
+    // buildings
+    if MultiSettingsBaseLevel then
+       begin
+       bc_type := b_depot;
+       depot := CreateAndPlaceBuildingXYD(pos[1][1], pos[1][2], pos[1][3]);
+       SetBName(depot, '@' & side);
+
+       SetResourceType(GetBase(depot), mat_cans, resources[mat_cans]);
+       SetResourceType(GetBase(depot), mat_oil, resources[mat_oil]);
+       SetResourceType(GetBase(depot), mat_siberit, resources[mat_siberit]);
+
+       if MultiSettingsBaseLevel > 1 then
+          begin
+          for j = 2 to pos do
+              begin
+              bc_type := pos[j][1];
+              structures := structures ^ CreateAndPlaceBuildingXYD(pos[j][2], pos[j][3], pos[j][4]);
+              end;
+          end;
+       end
+    else // resources nearby start point
+       begin
+       for j = 1 to resources do
+           begin
+           r := resources[j];
+
+           while r do
+             begin
+             if r >= 50 then
+                begin
+                CreateResourcesXYR(j, 5, pos[1][1], pos[1][2], 4, false);
+                r := r - 50;
+                end
+             else
+                begin
+                CreateResourcesXYR(j, r div 10, pos[1][1], pos[1][2], 4, false);
+                r := 0;
+                end;
+             end;
+           end;
+       end;
+
+    // battle flag
+    if MultiSettingsFlag then
+       begin
+       x := spawnPos[1];
+       y := spawnPos[2];
+       PlaceEnvironment(x, y, 12, 2);
+       MultiBattleFlags := Replace(MultiBattleFlags, MultiBattleFlags + 1, SetBattleFlag(side, x, y,[
+                                                                              [bfo_defend_bonus_human, 100],
+                                                                              [bfo_defend_bonus_vehicle, 50],
+                                                                              [bfo_defend_bonus_building, 20],
+                                                                              [bfo_height, 100]
+                                                                           ]));
+       end;
+
+    // people            
+    commander := false;
+    clLimit := 1;
+    cl := 1;
+
+    InitHc;
+
+    for j := 1 to amount do
+        begin
+        if clLimit = (amount div 4) + 1 then
+           begin
+           clLimit := 0;
+           cl := cl + 1;
+           end;
+
+        clLimit := clLimit + 1;
+
+        hc_gallery := '';
+        hc_name := '';
+        hc_importance := 0;
+
+        PrepareHuman(rand(1, 2), cl, skills);
+
+        if not commander then
+           begin
+           hc_importance := 100;
+
+           if Multiplayer then
+              begin
+              hc_gallery := 'MULTIAVATARS';
+              hc_face_number := Multiplayer_GetPlayerSideNum(side);
+              hc_sex := Multiplayer_GetPlayerSex(side);
+              end;
+
+           commander := true;
+           end;
+
+        un := CreateHuman;
+
+        if copySkill < j then
+           copySkill := Replace(copySkill, j, un)
+        else
+           begin
+           CopySkills(copySkill[j], un);
+           SetAttr(un, attr_stamina, GetAttr(copySkill[j], attr_stamina));
+           SetAttr(un, attr_speed, GetAttr(copySkill[j], attr_speed));
+           end;
+
+        if UnitFilter(structures, [f_empty]) and cl = 1 then
+           begin
+           tmp := UnitFilter(structures, [f_empty])[1];
+           dir := GetDir(tmp);
+
+           if dir > 2 then
+              dir := dir - 3
+           else
+              dir := dir + 3;
+
+           SetDir(un, dir);
+           PlaceHumanInUnit(un, tmp);
+           end
+        else
+           PlaceUnitXYR(un, pos[1][1], pos[1][2], 8, false);
+        end;
+    end;
+End;
+
+// Prepare deposits on map
+// Array format: [ [oil array coords], [sib array coords] ]
+// Example: [ [ [24, 20], [30, 32] ], [ [10, 20], [3, 2] ] ]
+Export Function MultiPrepareDeposits;
+var deposit, i, j, allowedPos;
+begin
+if not MultiSourcePositions and not MultiSourceExtraPositions then
+   exit;
+
+allowedPos := [];
+
+for i := 1 to 8 do
+    if MultiSides[i] then
+       allowedPos := Replace(allowedPos, allowedPos + 1, MultiSides[i]);
+
+deposit := 0;
+
+case MultiSettingsOil of
+1: deposit := MultiSourcePositions;
+2: deposit := MultiSourceExtraPositions;
+end;
+
+if deposit then
+   begin
+   for i := 1 to deposit[1] do
+       begin
+       if not i in allowedPos then
+          continue;
+
+       for j in deposit[1][i] do
+           CreateDepositXY(j[1], j[2], mat_oil);
+       end;
+   end;
+
+deposit := 0;
+
+case MultiSettingsSib of
+     1: deposit := MultiSourcePositions;
+     2: deposit := MultiSourceExtraPositions;
+end;
+
+if deposit then
+   begin
+   for i := 1 to deposit[2] do
+       begin
+       if not i in allowedPos then
+          continue;
+
+       for j in deposit[2][i] do
+           CreateDepositXY(j[1], j[2], mat_siberit);
+       end;
+   end;
+End;
+
+// Setter's
+Export Function MultiSetBasePositions(positions);
+begin
+MultiBasePositions := positions;
+End;
+
+Export Function MultiSetDeposits(deposits);
+begin
+MultiSourcePositions := deposits;
+End;
+
+Export Function MultiSetExtraDeposits(deposits);
+begin
+MultiSourceExtraPositions := deposits;
+End;
+
+Export Function MultiSetCenterMapPoint(point);
+begin
+MultiCenterMapPoint := point;
+End;
+

@@ -27,7 +27,6 @@ export Side_Teams, Teams, Side_Comps;
 export Side_Positions, Side_Nations, Team_Game;
 
 export Position_Sides;
-export customSpectator;
 
 export depot_def, breastworks_def, start_def,
        battle_flags_id;
@@ -78,16 +77,12 @@ begin
       Teams:=          [[1,2],[3,4]];
     end;
 
-  customSpectator := [];
-  
+
   for i := 1 to 8 do
     if Multiplayer_GetPlayerIsSpec(i) or Side_Positions[i] = 5 then
     begin
       Side_Positions:= Replace(Side_Positions, i, 0);
       Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);
-
-      if Side_Positions[i] = 5 then
-         customSpectator := Replace(customSpectator, customSpectator + 1, i);
     end;
 
   Position_Sides:= [0,0,0,0];
@@ -96,8 +91,7 @@ begin
     if Side_Positions[i] then
       Position_Sides:= Replace(Position_Sides, Side_Positions[i], i);
 
-  if not your_side in customSpectator then
-     Team_Game:= Side_Teams[your_side];
+  Team_Game:= Side_Teams[your_side];
 
   if Multiplayer then
     begin
@@ -506,7 +500,7 @@ begin
   init_shipments_and_respawning;
   music_nat:=Side_Nations[your_side];
 
-  if IAmSpec or your_side in customSpectator then
+  if IAmSpec then
     begin
       //PlaceSeeing(0, 0, Your_Side, -32767);
       fogoff(true);

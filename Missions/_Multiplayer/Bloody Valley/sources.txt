@@ -4,7 +4,7 @@ SOURCE_CODES
   ENABLED Mat
   ENABLED Tree
   DISABLED DayNight
-  ENABLED Win
+  DISABLED Win
   ENABLED events
   ENABLED battle_flags
   DISABLED builduptime
