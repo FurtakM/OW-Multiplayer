@@ -49,3 +49,22 @@ Bloody Valley:
 0.7:
 Bloody Valley:
 - Removed "custom spectator"
+
+0.8:
+Bastard Pass:
+- Fixed crates spawn ratio
+- Added spectator
+- New apeman respawn script addded
+
+Party:
+- New apeman respawn script addded
+
+The Abbys:
+- New apeman respawn script addded
+- Added spectator
+
+Rocky Pass:
+- New apeman respawn script addded
+
+Bloody Valley:
+- PlaceUnitArea bug fixed

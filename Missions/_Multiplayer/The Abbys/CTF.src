@@ -213,8 +213,8 @@ every 5 trigger getlives(depot2)<500 marked 02 do begin setlives(depot2,750);ena
 on unitdestroyed(un) do
 var radius;
 begin
-  if GetSide(un) = 0 AND GetClass(un) = class_apeman then
-    CheckApemenAmount;
+  if GetClass(un) in [class_apeman, class_apeman_soldier, class_apeman_kamikaze, class_apeman_engineer] or GetControl(un) = control_apeman then
+     ApeKilled(un);
 
   if mp_game_type<>1 then
     exit;

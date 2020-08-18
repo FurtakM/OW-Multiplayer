@@ -556,7 +556,7 @@ begin
   prepare_sides;
   Init_Win_Condition;
 
-  //    prepare_apemen;
+  InitApeman;
   init_shipments_and_respawning;
   init_infos;
   your_side:=Player_Side;

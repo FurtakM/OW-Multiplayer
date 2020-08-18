@@ -67,9 +67,9 @@ begin
     end
   else
     begin
-      Your_Side:=      5;
+      Your_Side:=      1;
 
-      Side_Positions:= [1,2,3,4,5,0,0,0];
+      Side_Positions:= [1,2,3,4,0,0,0,0];
       Side_Teams:=     [1,1,2,2,0,0,0,0];
       Side_Nations:=   [1,2,3,1,0,0,0,0];
       Side_Comps =     [0,0,0,0,0,0,0,0];
@@ -79,7 +79,7 @@ begin
 
 
   for i := 1 to 8 do
-    if Multiplayer_GetPlayerIsSpec(i) or Side_Positions[i] = 5 then
+    if Multiplayer_GetPlayerIsSpec(i) then
     begin
       Side_Positions:= Replace(Side_Positions, i, 0);
       Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);

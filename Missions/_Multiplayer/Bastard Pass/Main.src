@@ -236,7 +236,7 @@ begin
   initial_level      = [2,3,4,5] [def_initial_level+1];
   starting_resources = [ [ [0,0,0],[0,0,0] ], [ [50,0,0], [20,0,0] ], [ [150,30,0], [60,0,0] ], [ [250,50,10], [100,30,0] ] ] [def_starting_resources+1];
   //shipments_density  = [ 20, 30, 40 ] [def_shipments_density+1];
-  shipments_density           := 20 + (def_shipments_density)*28;
+  shipments_density        := 190 - (def_shipments_density+1);
   max_arriving_times = [
     [],
     [10, 17, 26, 36, 48, 60],
@@ -783,6 +783,8 @@ begin
 
       CenterNowOnXY(start_def[Side_Positions[your_side]][1][1],start_def[Side_Positions[your_side]][1][2]);
     end;
+
+  InitApeman;
 
   if def_builduptime then
     BeginBuildUp;

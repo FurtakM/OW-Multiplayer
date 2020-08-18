@@ -3,7 +3,6 @@ SOURCE_CODES
   ENABLED Mat
   ENABLED Treasure
   ENABLED Win
-  ENABLED DayNight
   ENABLED Infos
   ENABLED battle_flags
   ENABLED Events

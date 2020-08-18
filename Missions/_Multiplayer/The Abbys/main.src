@@ -582,6 +582,7 @@ begin
 
   init_shipments;
   init_respawn;
+  InitApeman;
 
   music_nat:=Side_Nations[your_side];
 

@@ -523,6 +523,8 @@ begin
       Init_Win_Condition;
     end;
 
+  InitApeman;
+
   if def_builduptime then
     BeginBuildUp;
 end;
