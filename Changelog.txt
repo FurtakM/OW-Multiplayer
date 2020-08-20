@@ -68,3 +68,11 @@ Rocky Pass:
 
 Bloody Valley:
 - PlaceUnitArea bug fixed
+
+0.9:
+Four to win:
+- Added spectator
+- New apeman respawn script added
+
+Alien Base, Bastard Pass, Bloody Valley, Rocky Pass, Four to win, The Abbys, Flags, Siberia:
+- Team Game script fix

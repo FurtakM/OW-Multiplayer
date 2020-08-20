@@ -203,7 +203,7 @@ end;
 function set_shared_visions_and_alliances;
 var i, j;
 begin
-  Team_Game:= Side_Teams[your_side];
+  Team_Game:= (Side_Teams diff [0]) > 1;
 
   if not Team_Game then
     begin
@@ -500,6 +500,7 @@ begin
     init_kings_counting;
   end;
 
+  InitApeman;
   InitLimits;
   ShowTimer;
 
