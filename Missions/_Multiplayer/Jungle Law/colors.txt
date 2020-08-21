@@ -1,9 +1,25 @@
 begin
 ? type grass
- ! hue -21
+? subtype 4
+ ! all 88
+ ! hue -23
+ ! sat 51
+ ! contr 91
 new
-? type single_tree
- ! sat 55
- ! add 21 0080FF
- ! contr 135
+? type terrain
+ ! contr 110
+ ! sat 90
+ ! all 90
+new
+? inident "STree: jehl-smrk"
+ ! add 9 2F7947
+ ! contr 107
+ ! hue -11
+new
+? inident "STree: ker-rosti"
+ ! hue -37
+new
+? inident "STree: list-akat-maly"
+ ! hue -17
+ ! sat 61
 end

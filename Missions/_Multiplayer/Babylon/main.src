@@ -108,7 +108,7 @@ begin
     if Side_Positions[i] then
       Position_Sides:= Replace(Position_Sides, Side_Positions[i], i);
 
-  Team_Game:= (Side_Teams diff [0]) > 1;
+  Team_Game := 1;
 
   if Multiplayer then
     begin
