@@ -76,3 +76,11 @@ Four to win:
 
 Alien Base, Bastard Pass, Bloody Valley, Rocky Pass, Four to win, The Abbys, Flags, Siberia:
 - Team Game script fix
+
+0.10:
+Jungle Law (by Gwrhkhsh):
+- New GBI
+- Terrain fixes
+
+Alien Base, Bastard Pass, Bloody Valley, Rocky Pass, Four to win, The Abbys, Flags, Siberia:
+- Team Game script fix
