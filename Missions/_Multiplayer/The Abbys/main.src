@@ -225,7 +225,7 @@ end;
 function set_shared_visions_and_alliances;
 var i, j;
 begin
-  Team_Game := 1;
+  Team_Game:= (Side_Teams diff [0]) > 1;
 
   if not Team_Game then
     begin
