@@ -56,10 +56,10 @@ begin
   0: exit;
   1: begin // Clan Base
         def_base_level:=         2;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   11;
         def_skill_level:=        1;
         def_starting_resources:= 2;
-        def_shipments_density:=  1;
+        def_shipments_density:=  26;
         def_extra_oil_deposits:= 0;
         def_extra_sib_deposits:= 1;
         def_shared_vision:=      1;
@@ -68,7 +68,7 @@ begin
         def_people_respawning:=  1;
         def_amount_of_apemen:=   1;
         def_siberite_bomb:=      0;
-        def_builduptime:=        2;
+        def_builduptime:=        6;
 
         Unavailable_Techs:=         [];
         Unavailable_Builds:=        [];
@@ -83,10 +83,10 @@ begin
      end;
   2: begin // Clan War
         def_base_level:=         1;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   11;
         def_skill_level:=        3;
         def_starting_resources:= 3;
-        def_shipments_density:=  2;
+        def_shipments_density:=  51;
         def_extra_oil_deposits:= 1;
         def_extra_sib_deposits:= 2;
         def_shared_vision:=      1;
@@ -95,7 +95,7 @@ begin
         def_people_respawning:=  0;
         def_amount_of_apemen:=   0;
         def_siberite_bomb:=      0;
-        def_builduptime:=        2;
+        def_builduptime:=        6;
 
         Unavailable_Techs:=         [tech_ApeLang];
         Unavailable_Builds:=        [];
@@ -110,7 +110,7 @@ begin
      end;
   3: begin // Soldier War
         def_base_level:=         1;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   11;
         def_skill_level:=        3;
         def_starting_resources:= 3;
         def_shipments_density:=  1;
@@ -122,7 +122,7 @@ begin
         def_people_respawning:=  0;
         def_amount_of_apemen:=   2;
         def_siberite_bomb:=      0;
-        def_builduptime:=        1;
+        def_builduptime:=        6;
 
         Unavailable_Techs:=         [tech_Behemoth];
         Unavailable_Builds:=        [b_Workshop, b_Behemoth, b_Bunker, b_Turret, b_Control_Tower,
@@ -141,7 +141,7 @@ begin
      end;
   4: begin // Nuclear War
         def_base_level:=         1;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   11;
         def_skill_level:=        3;
         def_starting_resources:= 3;
         def_shipments_density:=  2;
@@ -153,7 +153,7 @@ begin
         def_people_respawning:=  0;
         def_amount_of_apemen:=   0;
         def_siberite_bomb:=      1;
-        def_builduptime:=        3;
+        def_builduptime:=        11;
 
         Unavailable_Techs:=         [tech_ApeLang];
         Unavailable_Builds:=        [];
@@ -168,7 +168,7 @@ begin
      end;
   5: begin // Hardcore
         def_base_level:=         0;
-        def_amount_of_people:=   0;
+        def_amount_of_people:=   5;
         def_skill_level:=        0;
         def_starting_resources:= 0;
         def_shipments_density:=  0;
@@ -195,7 +195,7 @@ begin
      end;
   6: begin // Dynamic Soldier War
         def_base_level:=         1;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   11;
         def_skill_level:=        3;
         def_starting_resources:= 3;
         def_shipments_density:=  1;
@@ -207,7 +207,7 @@ begin
         def_people_respawning:=  2;
         def_amount_of_apemen:=   1;
         def_siberite_bomb:=      0;
-        def_builduptime:=        1;
+        def_builduptime:=        6;
 
         Unavailable_Techs:=         [tech_Behemoth];
         Unavailable_Builds:=        [b_Workshop, b_Behemoth, b_Breastwork, b_Bunker, b_Turret];
@@ -224,7 +224,7 @@ begin
      end;
   7: begin // Old Rules
         def_base_level:=         1;
-        def_amount_of_people:=   2;
+        def_amount_of_people:=   20;
         def_skill_level:=        3;
         def_starting_resources:= 3;
         def_shipments_density:=  1;
@@ -236,7 +236,7 @@ begin
         def_people_respawning:=  0;
         def_amount_of_apemen:=   1;
         def_siberite_bomb:=      0;
-        def_builduptime:=        3;
+        def_builduptime:=        6;
 
         Unavailable_Techs:=         [tech_Behemoth];
         Unavailable_Builds:=        [b_Behemoth];
@@ -251,7 +251,7 @@ begin
      end;
   8: begin // Eco War
         def_base_level:=         0; 
-        def_amount_of_people:=   Rand(0,1);
+        def_amount_of_people:=   8;
         def_skill_level:=        0;
         def_starting_resources:= 2;
         def_shipments_density:=  1;

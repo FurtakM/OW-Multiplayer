@@ -35,7 +35,7 @@ HEXES
   LINE 10 5 164
     t4r6vU t2r6vSsK r6vMsq r6vGsq vG vG vG vG vG vG vG vG vG vG vG vG vGsO vJsX vNsP vQsP vT vT r6vNsq r6vHsq r6vBsq r6vAsC vA vA vA vA vAsP vD vAsS vA vAsP vD vAsS vA vA vA vA vA vA vA vA vAsP vDsP vGsP vJsP vMsP vPsP vS vS vS vS vS vS vS vS vS vQsJ vOsJ vMsJ vKsJ vIsJ vHsB vH vH vH vH vH vH vH vHs9 vIsH vKsH vMsH vO vO vO vO vO vO vO vO vO vO vO vO vO vO vOsW vOsW vOsW vOsb vO vO vO vO vO vO vO vO vNsB vNsB vLsJ vLsJ vJsR vJsR vJsR vJ vJ vJ vJ vJsO r6vMsm r6vSsm vYsW vc r6vYsa r6vSsq r6vMsq r6vGsr r6vGsG r6vIsm r6vIsm r6vIsm r6vIsm r6vIsr r6vI r6vCsq vAsK vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 11 6 165
-    t4r6vU t2r6vOsq r6vIsq vGsJ vGsJ vG vG vG vG vG vG vG vG vG vG vG vGsP vJsX vNsP vQsX vTs9 r6vOsq r6vIsq r6vCsq r6vAsK vA vA vA vA vAsP vD vD vAsR vAsQ vD vAsS vA vA vA vA vA vA vA vA vAsP vDsP vGsP vJsP vMsP vPsP vS vS vS vS vS vS vS vS vS vS vQsJ vOsJ vMsJ vKsJ vIsJ vHsB vH vH vH vH vH vH vH vHs9 vIsX vM r6vMso r6vOsY r6vOsY r6vOsY r6vOsZ vOsZ vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vOsA vNsJ vNsJ r6vMsp r6vMsp r6vMsp vJsR vJ vJ vJ vJ vJsO r6vMsm r6vSsm r6vXse r6vYsb r6vSsq r6vMsq r6vGsr r6vCsb r6vCsm r6vCsm r6vCsm r6vCsm r6vCsm r6vCsr r6vCsr vAsK vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAf4 vA vA vA t2vA t4vA
+    t4r6vU t2r6vOsq r6vIsq vGsJ vGsJ vG vG vG vG vG vG vG vG vG vG vG vGsP vJsX vNsP vQsX vTs9 r6vOsq r6vIsq r6vCsq r6vAsK vA vA vA vA vAsP vD vD vAsR vAsQ vD vAsS vA vA vA vA vA vA vA vA vAsP vDsP vGsP vJsP vMsP vPsP vS vS vS vS vS vS vS vS vS vS vQsJ vOsJ vMsJ vKsJ vIsJ vHsB vH vH vH vH vH vH vH vHs9 vIsX vM r6vMso r6vOsY r6vOsY r6vOsY r6vOsZ vOsZ vO vO vO vO vO vOS vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vOsA vNsJ vNsJ r6vMsp r6vMsp r6vMsp vJsR vJ vJ vJ vJ vJsO r6vMsm r6vSsm r6vXse r6vYsb r6vSsq r6vMsq r6vGsr r6vCsb r6vCsm r6vCsm r6vCsm r6vCsm r6vCsm r6vCsr r6vCsr vAsK vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAf4 vA vA vA t2vA t4vA
   LINE 12 6 165
     t4r6vU t2r6vU r6vOsq r6vIsq vIsJ vGsJ vGsJ vG vG vG vG vG vG vG vG vG vG vGsX vKsX r6vOsn vU r6vU r6vOsq r6vIsq r6vCsq vAsK vA vA vA vA vAsP vD vD vD vD vAsS vA vA vA vA vA vA vA vA vA vAsP vDsP vGsP vJsP vMsP vPsP vS vS vS vS vS vS vS vS vS vS vQsJ vOsJ vMsJf4 vKsJ vIsJ vHsB vH vH vH vH vH vH vH r6vHsf r6vMso r6vMso r6vSso r6vSso r6vSso r6vSsp r6vSsp vOsZ vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vO vOsI vOsI vPsA vPsI vPsQ r6vSso r6vSsp r6vMsp vJsR vJ vJ vJ vJ vJsO r6vMsm r6vRsm r6vVsO r6vSsr r6vMsq r6vGsq r6vAsr vAsL vAsG vAsG vAsG vAsG vAsG vAsL vAsL vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 13 7 166
@@ -308,6 +308,9 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
+  SET 53 stone-road
+  SET 54 bonus
+  SET 55 alien1
   ON_HEX 16 0
     sdi6
   ON_HEX 18 0
@@ -1689,7 +1692,15 @@ ATTITUDES
 END_OF_ATTITUDES
 
 TECHS
-  PARAMS 72 8
+  PARAMS 80 8
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
@@ -1812,7 +1823,7 @@ END_OF_RESTRICTS
 MISSION_OBJECTIVES_FULL 0
 
 SPECS
-  PARAMS 0 8
+  PARAMS 0 9
   FLAG 0 0
 END_OF_SPECS
 
@@ -1846,16 +1857,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -1510918
-  RANDOM_SEED 2 1003259217
-  RANDOM_SEED 3 -105296773
+  RANDOM_SEED 1 -1191887806
+  RANDOM_SEED 2 -1587159513
+  RANDOM_SEED 3 -1661052689
   RANDOM_SEED 4 -458109257
   RANDOM_SEED 5 -930627568
   RANDOM_SEED 6 -1427881603
   RANDOM_SEED 7 -1188226507
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 1074865947
-  RANDOM_SEED 10 -1510918
+  RANDOM_SEED 10 -1191887806
   RANDOM_SEED 11 1724635388
   RANDOM_SEED 12 -860054764
   RANDOM_SEED 13 312234627
@@ -2094,7 +2105,7 @@ NEW_UNITS
         TYPE 25 LEVEL 1 BASE 1
     END_OF_DEFINITION
     GAME_STATE
-      ACTION 31 T 100 1
+      ACTION 31 T 125 1
       MOVE 53 101 3 6 F
       UNITMODE F 53 101
       STATE 4 24
@@ -2120,7 +2131,7 @@ NEW_UNITS
         TYPE 25 LEVEL 1 BASE 1
     END_OF_DEFINITION
     GAME_STATE
-      ACTION 31 T 100 1
+      ACTION 31 T 125 1
       MOVE 55 104 3 6 F
       UNITMODE F 55 104
       STATE 4 24
@@ -2356,7 +2367,7 @@ NEW_UNITS
         TYPE 25 LEVEL 1 BASE 4
     END_OF_DEFINITION
     GAME_STATE
-      ACTION 31 T 100 1
+      ACTION 31 T 125 1
       MOVE 154 2 0 6 F
       UNITMODE F 154 2
       STATE 4 24
@@ -2382,7 +2393,7 @@ NEW_UNITS
         TYPE 25 LEVEL 1 BASE 4
     END_OF_DEFINITION
     GAME_STATE
-      ACTION 31 T 100 1
+      ACTION 31 T 125 1
       MOVE 153 4 0 6 F
       UNITMODE F 153 4
       STATE 4 24
@@ -2630,7 +2641,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW -56 -96 1542 866 1
+  VIEW 1478 -96 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -2659,7 +2670,7 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 28
+  ACTIVE 10
   LAST 67
   AREA 1
     NAME Area38
@@ -3109,17 +3120,17 @@ AREAS
     SHORTCUT 3
     LINES 112 92 22 25
     ++++------------------
-    -+++------------------
     ----------------------
     ----------------------
     ----------------------
-    ----------++----------
-    ---+-------+++--------
+    ----------------------
+    -----------+----------
+    -----------+++--------
     ---++-------+++-------
     ---+++-------+++------
-    ---+++--------+++-----
-    ----+++--------++-----
-    ----++++--------+-----
+    ----++--------++------
+    ----+++--------+------
+    -----+++--------------
     ----------------------
     ----------------------
     ----------------------
@@ -3213,36 +3224,34 @@ AREAS
     NAME Res221
     COLOR 0DFF44
     SHORTCUT 7
-    LINES 90 9 10 29
-    +++-------
-    +++++-----
-    -+++++----
-    -++++++---
-    --++++++--
-    ---++++++-
-    ---++++++-
-    ----+++++-
-    -----++++-
-    ------+++-
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ----------
-    ---++++++-
-    ---+++++++
-    ---+++++++
-    ----++++++
-    -----+++++
-    -----+++++
+    LINES 61 2 29 27
+    ++---------------------------
+    -++------------------------+-
+    --++-----------------------+-
+    -----------------------------
+    -----------------------------
+    --------------------------++-
+    --------------------------+++
+    --------------------------+++
+    ---------------------------++
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    -----------------------------
+    ---------------++------------
+    ---------------+++++++-------
+    ----------------++++++---++--
+    -------------------------++--
   AREA 11
     NAME Res222
     COLOR 7340FF
@@ -4182,7 +4191,7 @@ AREAS
     ------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------
     -------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------
     --------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
-    ---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+++++++-+++++++++++++++++++++++++++++-----------
+    ---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
     ----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------
     -----------------------------------+++++++++++++++++++++++++++++++++++++++++++++--++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------
     -------------------------------------++++++++++++++++++++++++++++++++++++++++++------------++++++++++++++++++++++++++++++++++++++++++++++++---------

@@ -84,3 +84,14 @@ Jungle Law (by Gwrhkhsh):
 
 Alien Base, Bastard Pass, Bloody Valley, Rocky Pass, Four to win, The Abbys, Flags, Siberia:
 - Team Game script fix
+
+0.11:
+Alien Base:
+- Competition game mode fixed
+
+Bastard Pass:
+- Additional people fixed (MultiDesc changed)
+- Materialization fixed
+- Apeman amount fixed
+- Build-up time fixed
+- Build-up areas fixed

@@ -160,7 +160,6 @@ begin
       def_morale_flags       = GetMultiplayerSetting(15);
       def_siberite_bomb      = GetMultiplayerSetting(16);
       def_amount_of_apemen  := GetMultiplayerSetting(17);
-//        def_amount_of_apemen   = GetMultiplayerSetting(17);
       def_builduptime        = GetMultiplayerSetting(20);
 //      def_game_rules         = GetMultiplayerSetting(21);
       tech_level             = GetMultiplayerSetting(22);
@@ -171,8 +170,8 @@ begin
     begin
       randomize;
 
-      def_main_base          = 4;
-      def_secondary_base     = 2;
+      def_main_base          = 1;
+      def_secondary_base     = 1;
       def_defence_level      = 1;
       def_amount_of_people   = 2;
       def_initial_level      = 1;
@@ -241,11 +240,12 @@ begin
     [],
     [10, 17, 26, 36, 48, 60],
     [6, 10, 15, 20, 26, 32, 38, 45, 52, 60],
-    [4, 6, 9, 12, 16, 20, 24, 28, 32, 36, 40, 45, 50, 55, 60] ] [def_people_arrivals+1];
+    [4, 6, 9, 12, 16, 20, 24, 28, 32, 36, 40, 45, 50, 55, 60]
+  ] [def_people_arrivals+1];
   text_info          = [0, 1, 0, 1] [def_people_info+1];
   fog_info           = [0, 0, 1, 1] [def_people_info+1];
 
-  amount_of_apemen    := [0, 3, 6, 9] [def_amount_of_apemen+1];
+  amount_of_apemen    := [0, 1, 2, 3] [def_amount_of_apemen+1];
   siberite_bomb_Delay := [0,1,30$00,60$00,90$00,120$00] [def_siberite_bomb+1];
 //    number_of_apemen   = [0,6,12,18] [def_amount_of_apemen+1];
 
