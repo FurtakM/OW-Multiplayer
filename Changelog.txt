@@ -111,3 +111,4 @@ Babylon:
 - Apeman amount fixed
 - Builduptime fixed
 - Materialization fixed
+- Artifact game mode fixed

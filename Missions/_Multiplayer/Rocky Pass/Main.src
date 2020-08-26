@@ -320,6 +320,9 @@ end;
 function prepare_side(side);
 var pos,x,y,dir,i,r,br,dep;
 begin
+  if side in [0,9] then
+     exit;
+
   pos:=Side_Positions[side];
 
   uc_nation:=Side_Nations[side];

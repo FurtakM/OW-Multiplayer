@@ -157,7 +157,7 @@ begin
   starting_crates             := [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           := [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 360 - (def_shipments_density * 2);
+  shipments_density           := 720 - (def_shipments_density * 2);
 
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   respawning_time_min         := [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -308,6 +308,9 @@ end;
 function prepare_side(side);
 var pos,x,y,dir,i,r,br,dep;
 begin
+  if side in [0,9] then
+     exit;
+
   pos:=Side_Positions[side];
 
   uc_nation:=Side_Nations[side];
