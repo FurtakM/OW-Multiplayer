@@ -743,16 +743,16 @@
 1167: PLUS
 1168: ARRAY
 1169: ST_TO_ADDR
-// amount_of_apemen := [ 0 , 3 , 6 , 9 ] [ def_amount_of_apemen + 1 ] ;
+// amount_of_apemen := [ 0 , 1 , 2 , 3 ] [ def_amount_of_apemen + 1 ] ;
 1170: LD_ADDR_EXP 6
 1174: PUSH
 1175: LD_INT 0
 1177: PUSH
-1178: LD_INT 3
+1178: LD_INT 1
 1180: PUSH
-1181: LD_INT 6
+1181: LD_INT 2
 1183: PUSH
-1184: LD_INT 9
+1184: LD_INT 3
 1186: PUSH
 1187: EMPTY
 1188: LIST

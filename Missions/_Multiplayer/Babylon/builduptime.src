@@ -38,14 +38,12 @@ begin
   Enable;
 end;
 
-every 5$00 do
-  if (def_builduptime = 1) then
-    EndBuildUp;
+// "¯aden" "5 minut" "6 minut" "7 minut" "8 minut" "9 minut"
+// "10 minut" "11 minut" "12 minut" "13 minut" "14 minut" "15 minut"
 
-every 10$00 do
-  if (def_builduptime = 2) then
-    EndBuildUp;
+every 0$1 trigger def_builduptime do
+begin
+wait(4$00 + (def_builduptime * 1$00));
+EndBuildUp;
+end;
 
-every 15$00 do
-  if (def_builduptime = 3) then
-    EndBuildUp;

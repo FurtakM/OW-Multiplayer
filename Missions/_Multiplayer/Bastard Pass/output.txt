@@ -587,10 +587,10 @@
  974: PUSH
  975: LD_INT 2
  977: ST_TO_ADDR
-// def_shipments_density = 1 ;
+// def_shipments_density = 70 ;
  978: LD_ADDR_EXP 10
  982: PUSH
- 983: LD_INT 1
+ 983: LD_INT 70
  985: ST_TO_ADDR
 // def_people_arrivals = 3 ;
  986: LD_ADDR_EXP 11
@@ -1286,15 +1286,15 @@
 1975: PLUS
 1976: ARRAY
 1977: ST_TO_ADDR
-// shipments_density := 190 - ( def_shipments_density + 1 ) ;
+// shipments_density := 360 - ( def_shipments_density * 2 ) ;
 1978: LD_ADDR_EXP 32
 1982: PUSH
-1983: LD_INT 190
+1983: LD_INT 360
 1985: PUSH
 1986: LD_EXP 10
 1990: PUSH
-1991: LD_INT 1
-1993: PLUS
+1991: LD_INT 2
+1993: MUL
 1994: MINUS
 1995: ST_TO_ADDR
 // max_arriving_times = [ [ ] , [ 10 , 17 , 26 , 36 , 48 , 60 ] , [ 6 , 10 , 15 , 20 , 26 , 32 , 38 , 45 , 52 , 60 ] , [ 4 , 6 , 9 , 12 , 16 , 20 , 24 , 28 , 32 , 36 , 40 , 45 , 50 , 55 , 60 ] ] [ def_people_arrivals + 1 ] ;

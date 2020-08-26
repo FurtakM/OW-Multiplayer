@@ -180,7 +180,7 @@ begin
       def_secondary_deposits = 1;
       def_siberite_detection = 1;
       def_starting_resources = 2;
-      def_shipments_density  = 1;
+      def_shipments_density  = 70;
 
       def_people_arrivals    = 3;
       def_people_loyality    = 1;
@@ -235,7 +235,7 @@ begin
   initial_level      = [2,3,4,5] [def_initial_level+1];
   starting_resources = [ [ [0,0,0],[0,0,0] ], [ [50,0,0], [20,0,0] ], [ [150,30,0], [60,0,0] ], [ [250,50,10], [100,30,0] ] ] [def_starting_resources+1];
   //shipments_density  = [ 20, 30, 40 ] [def_shipments_density+1];
-  shipments_density        := 190 - (def_shipments_density+1);
+  shipments_density        := 360 - (def_shipments_density * 2);
   max_arriving_times = [
     [],
     [10, 17, 26, 36, 48, 60],

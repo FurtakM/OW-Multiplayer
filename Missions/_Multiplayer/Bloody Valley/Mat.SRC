@@ -59,25 +59,30 @@ every 0$1+0$0.5 do
       enable;
   end;
 
-every 0$5+0$1.1 do
-  var d;
-  begin
-    case tick of
-          1.. 1$0:d:=150;
-      1$0+1.. 5$0:d:=100;
-      5$0+1..10$0:d:=90;
-     10$0+1..20$0:d:=70;
-     20$0+1..30$0:d:=60;
-     30$0+1..50$0:d:=35;
-     50$0+1..300$0:d:=20;
-      else d:=0;
-    end;
+every 1$0+0$0.3 do  // crates anywhere on map
+begin
+ CreateCratesAnywhere(Rand(4,5),true);
+ enable;
+end;
 
-    if rand(1,10000)<=d*shipments_density then
-      begin
-        wait(Rand(1,0$4));
-        shipment:=(shipment+1)mod 4;
-        CreateCratesArea(5,q1+shipment,true);
-      end;
-    enable;
+every 0$1+0$0.6 do // create crates only on occupied bases
+var i, amount;
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$20));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$20,0$35));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$35,0$50));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(0$50,1$10));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$20,1$35));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$35,2$0));
+  else  Wait(shipments_density/100*Rand(2$0,2$30));
   end;
+
+  amount:= Rand(1, 5);
+
+  for i = 1 to 2 do
+    CreateCratesArea(amount, BuildUpAreas[i], true);
+
+  enable;
+end;

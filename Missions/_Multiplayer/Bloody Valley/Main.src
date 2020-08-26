@@ -157,7 +157,7 @@ begin
   starting_crates             := [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           := [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 20 + (def_shipments_density) * 20;
+  shipments_density           := 360 - (def_shipments_density * 2);
 
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   respawning_time_min         := [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -167,7 +167,7 @@ begin
   siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
   tree_function               := [ [0,0,0,0,0], [2,0,0,0,0], [0,4,0,0,0], [0,0,2,0,0], [0,0,0,3,0], [1,2,1,2,2], [0,0,0,0,3] ] [def_tree_function+1];
-  buildUpTime_Delay           := [0,5$00,10$00,15$00] [def_builduptime+1];
+  buildUpTime_Delay           := [0,5$00,6$00,7$00,8$00,9$00,10$00,11$00,12$00,13$00,14$00,15$00] [def_builduptime+1];
   BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4];
 end;
 
