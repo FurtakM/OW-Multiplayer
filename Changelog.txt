@@ -95,3 +95,19 @@ Bastard Pass:
 - Apeman amount fixed
 - Build-up time fixed
 - Build-up areas fixed
+
+0.12:
+Bastard Pass:
+- Materialization fixed
+
+Four to Win:
+- Apeman amount fixed
+
+Bloody Valley:
+- Materialization fixed
+- Builduptime fixed
+
+Babylon:
+- Apeman amount fixed
+- Builduptime fixed
+- Materialization fixed
