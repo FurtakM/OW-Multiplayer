@@ -118,3 +118,4 @@ Babylon:
 
 0.14:
 - Buildtime fix issue on Babylon, Bloody Valley, Bastard Pass
+- Jungle Law update
