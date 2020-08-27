@@ -1,9 +1,11 @@
 export BuildUpAreas;
+export buildUpTimeActive;
 
 export function BeginBuildUp;
 var i, j;
 begin
-  Enable(600);
+  buildUpTimeActive := true;
+
   for i:= 1 to BuildUpAreas do
     if Position_Sides[i] then
       for j:= 1 to 8 do
@@ -16,7 +18,8 @@ end;
 export function EndBuildUp;
 var i, j;
 begin
-  Disable(600);
+  buildUpTimeActive := false;
+
   for i:= 1 to BuildUpAreas do
     if Position_Sides[i] then
       for j:= 1 to 8 do
@@ -26,7 +29,7 @@ begin
           SetAreaMapShow(BuildUpAreas[i], 0);
 end;
 
-every 5 marked 600 do
+every 5 trigger buildUpTimeActive do
 var i, un;
 begin
   for i:= 1 to BuildUpAreas do
@@ -36,7 +39,7 @@ begin
           ComMoveToArea(un, BuildUpEscape);
 
   Enable;
-end;
+end; 
 
 // "¯aden" "5 minut" "6 minut" "7 minut" "8 minut" "9 minut"
 // "10 minut" "11 minut" "12 minut" "13 minut" "14 minut" "15 minut" 

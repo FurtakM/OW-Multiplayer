@@ -114,4 +114,7 @@ Babylon:
 - Artifact game mode fixed
 
 0.13:
-- Sali's fixes for lua.
+- Sali's fixes for lua
+
+0.14:
+- Buildtime fix issue on Babylon, Bloody Valley, Bastard Pass
