@@ -1,0 +1,92 @@
+ // For Points Games - Siberite Mine, Kings and War For Territory
+var sharedPoints1, sharedPoints2, sharedPoints3;
+var pointGame;
+export Function InitPoints();
+var i,d;
+begin
+  sharedPoints1 = [];
+  sharedPoints2 = [];
+  sharedPoints3 = [];
+  for i=1 to Side_Positions+0 do
+  begin
+    if not Side_Positions[i] = 0 then
+      SetMultiScore(i, 0);
+  // for sure reset points
+    sharedPoints1 = Replace(sharedPoints1, i, 0);
+    sharedPoints2 = Replace(sharedPoints2, i, 0);
+    sharedPoints3 = Replace(sharedPoints3, i, 0);
+
+  end;
+  pointGame = true;
+end;
+
+every 0$1 trigger pointGame do
+var i,red,blue,yel,green,redN,blueN,yelN,greenN,s,n,p,you;
+begin
+  if isSGUI then
+  begin
+    if Teams[1] then
+      red = true
+    else
+      red = false;
+
+    if Teams[2] then
+      blue = true
+    else
+      blue = false;
+
+    if Teams[3] then
+      yel = true
+    else
+      yel = false;
+
+    if Teams[4] then
+      green = true
+    else
+      green = false;
+
+
+    if def_public_score then
+      p = true
+    else p = false;
+
+
+
+    if team_game then
+    begin
+      you = [3,1,2,7][player_team];
+
+      s = [blue,yel,red,false,false,false,green,false];
+    end
+    else
+    begin
+      you = your_side;
+      s = [];
+      for i = 1 to side_positions+0 do
+      if side_positions[i] then
+        s = s ^ true
+      else s = s ^ false;
+    end;
+    LScore_Init(s,p,you);
+    if def_warForTerritory and WarForTerritory_flags then
+       LScore_Add_Pieces(3,3,WarForTerritory_flags,MaxFlags);
+    if def_warForTerritory and WarForTerritory_Points then
+       LScore_Add_Points(3,3,WarForTerritory_Points);
+    if def_kings_age then
+       LScore_Add_Points(2,2,final_count);
+
+  end;
+end;
+
+Export function SetSharedMultiScore(side ,points ,typ);
+var p;
+begin
+  case typ of
+    1: sharedPoints1 = Replace(sharedPoints1, side, points );
+    2: sharedPoints2 = Replace(sharedPoints2, side, points );
+    3: sharedPoints3 = Replace(sharedPoints3, side, points );
+  end;
+  p = sharedPoints1[side]+sharedPoints2[side]+sharedPoints3[side];
+  SetMultiScore(side, p);
+ // debug_strings = sharedPoints1[3] ^ sharedPoints2[3] ^ sharedPoints3[3];
+end;

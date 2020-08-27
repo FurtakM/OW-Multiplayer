@@ -174,10 +174,10 @@ begin
       Player_Team    = 2;
 
       Side_Positions = [1,2,3,4,0,0,0,0];
-      Side_Teams     = [0,0,0,0,0,0,0,0];
+      Side_Teams     = [1,1,2,2,0,0,0,0];
       Side_Nations   = [1,2,2,1,0,0,0,0];
       Side_Comps     = [0,0,0,0,0,0,0,0];
-      Teams          = [];
+      Teams          = [[1,2],[3,4],[0]] diff [0];
 end;
 
 export function SimMPOptions;

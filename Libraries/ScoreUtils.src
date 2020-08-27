@@ -1,0 +1,202 @@
+// Sides must be field
+export function LScore_Init(sides,ifPScore,yourSide);
+begin
+  LScore_Init2(sides,ifPScore,yourSide,false);
+
+end;
+
+// Sides must be field
+export function LScore_Init2(sides,ifPScore,yourSide,lockTeam);
+begin
+
+  ToLua( 'initScore({' & sides[1] & ',' & sides[2] & ',' & sides[3] & ',' &
+         sides[4] & ',' & sides[5] & ',' & sides[6] & ',' & sides[7] & ',' &
+         sides[8] & '},' & ifPScore & ',' & yourSide & ',' & lockTeam & ');' );
+
+end;
+
+export function LScore_Reset();
+begin
+  ToLua('ResetScorebar();');
+end;
+
+export function LScore_Delete(ID);
+begin
+  ToLua('deleteScore(' & ID & ');');
+end;
+
+//Typ = {
+//      [1] = 'sib',
+//      [2] = 'king',
+//      [3] = 'flag',
+//      [4] = 'football',
+//      [5] = 'hunt',
+//      [6] = 'wheel',
+//      [7] = 'night',
+//      [8] = 'time',
+//      [9] = 'amer',
+//      [10] = 'arab',
+//      [11] = 'rus',
+//      [12] = 'ally',
+//      [13] = 'leg',
+//      [14] = 'reb'
+//};
+// Typ can be also name of icon file without .png   like  ' "sib" '
+
+///////////////////////////////////////// TIMER /////////////////////////
+// send time in seconds
+export function LScore_Add_Timer(ID,typ,totalTime);
+begin
+   ToLua('AST(' & ID &','& typ &',' &totalTime&',);');
+
+end;
+
+export function LScore_Add_Timer2(ID,typ,totalTime,show_total);
+begin
+   ToLua('AST(' & ID &','& typ &',' &totalTime&','&show_total&');');
+
+end;
+
+export function LScore_Add_Timer3(ID,typ,totalTime,show_total,currentTime);
+begin
+   ToLua('AST(' & ID &','& typ &',' &totalTime&','&show_total&','&currentTime&');');
+
+end;
+
+export function LScore_Add_ReverseTimer(ID,typ,totalTime);
+begin
+   ToLua('ASRT(' & ID &','& typ &',' &totalTime&',);');
+
+end;
+
+export function LScore_Add_ReverseTimer2(ID,typ,totalTime,show_total);
+begin
+   ToLua('ASRT(' & ID &','& typ &',' &totalTime&','&show_total&');');
+
+end;
+export function LScore_Add_ReverseTimer3(ID,typ,totalTime,show_total,currentTime);
+begin
+   ToLua('ASRT(' & ID &','& typ &',' &totalTime&','&show_total&','&currentTime&');');
+
+end;
+
+export function LScore_update_Timer(ID,currentTime);
+begin
+       ToLua('UST(' &id&','&currentTime&');');
+
+end;
+// only when you want to change totalTime
+export function LScore_update_Timer2(ID,currentTime,totalTime);
+begin
+       ToLua('UST(' &id&','&currentTime&','&totalTime&');');
+
+end;
+
+//change colour of bar
+// Red,Blue,Green  0 to 255
+export function LScore_Change_TimerColourRGB(id,red,green,blue);
+begin
+  ToLua('CCST('&id&',{'&red&',' &green& ',' &blue&'});');
+end;
+
+//side 0 to 8
+export function LScore_Change_TimerColour(id,side);
+begin
+  ToLua('CCST('&id&','&side&');');
+end;
+
+/////////////////////////////////  points ////////////////////
+export function LScore_Add_SinglePoints(ID,typ,totalPoints);
+begin
+  ToLua('ASSP(' & ID &','& typ &',' &totalPoints&',);');
+
+end;
+
+export function LScore_Add_SinglePoints2(ID,typ,totalPoints,show_total);
+begin
+  ToLua('ASSP(' & ID &','& typ &',' &totalPoints&','&show_total&');');
+
+end;
+
+export function LScore_Add_SinglePoints3(ID,typ,totalPoints,show_total,currentPoints);
+begin
+  ToLua('ASSP(' & ID &','& typ &',' &totalPoints&','&show_total&','&currentPoints&');');
+
+end;
+
+export function LScore_Add_ReverseSinglePoints(ID,typ,totalPoints);
+begin
+  ToLua('ASRSP(' & ID &','& typ &',' &totalPoints&',);');
+
+end;
+
+export function LScore_Add_ReverseSinglePoints2(ID,typ,totalPoints,show_total);
+begin
+  ToLua('ASRSP(' & ID &','& typ &',' &totalPoints&','&show_total&');');
+
+end;
+export function LScore_Add_ReverseSinglePoints3(ID,typ,totalPoints,show_total,currentPoints);
+begin
+  ToLua('ASRSP(' & ID &','& typ &',' &totalPoints&','&show_total&','&currentPoints&');');
+
+end;
+
+export function LScore_update_SinglePoints(ID,currentPoints);
+begin
+  ToLua('USSP(' &id&','&currentPoints&');');
+
+end;
+
+// only when you want to change totalPoints
+export function LScore_update_SinglePoints2(ID,currentPoints,totalPoints);
+begin
+  ToLua('USSP(' &id&','&currentPoints&','&totalPoints&');');
+
+end;
+
+//change colour of bar
+// Red,Blue,Green  0 to 255
+export function LScore_Change_SinglePointsRGB(id,red,green,blue);
+begin
+  ToLua('CCSSP('&id&',{'&red&',' &green&',' &blue& '});');
+end;
+
+//side 0 to 8
+export function LScore_Change_SinglePoints(id,side);
+begin
+  ToLua('CCSSP('&id&','&side&');');
+end;
+
+///////////////////////////////////  points Score (multiple)  ///////////////////////////
+export function LScore_Add_Points(ID,typ,goal);
+begin
+  ToLua('ASP('&id&','&typ&','&goal&');');
+end;
+
+export function LScore_Update_Points(ID,side,points);
+begin
+  ToLua('USP('&id&','&side&','&points&');');
+end;
+
+//score is field, position by sides
+export function LScore_Update_PointsAll(ID,score);
+var i;
+begin
+  for i = 1 to 8 do
+    ToLua('USP('&ID&','&i&','&score[i]&');');
+
+end;
+
+///////////////////////////////  Score Peices /////////////////////////////////
+export function LScore_Add_Pieces(id,typ,goal,total);
+begin
+  ToLua('ASC('&id&','&typ&','&goal&','&total&');');
+end;
+
+//sidesChunks is field, position by sides
+export function LScore_Update_Peices(id,sidesChunks);
+begin
+  ToLua('USC('&id&',{' & sidesChunks[1] & ',' & sidesChunks[2] & ',' & sidesChunks[3] & ',' &
+         sidesChunks[4] & ',' & sidesChunks[5] & ',' & sidesChunks[6] & ',' & sidesChunks[7] & ',' &
+         sidesChunks[8] & '});');
+end;

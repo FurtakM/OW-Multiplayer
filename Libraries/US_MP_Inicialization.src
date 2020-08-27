@@ -1,0 +1,775 @@
+export                 
+  game_type, GT_Mine, GT_doubleNat, GT_doublePeople, GT_tripleNat, GT_Survival, GT_RankedGames,
+  pozice_beden;
+
+export
+       def_game_rules,                   //(0) Pravidla hry
+       def_base_level,                   //(1) Úroveò základny
+       def_amount_of_people,             //(2) Poèet lidí v týmu
+       def_amount_of_apemen_in_team,     //(3) Poèet opièákù v týmu
+       def_initial_level,                //(4) Prùmìrná úroveò
+       def_classes,                      //(5) Náhodné/rovnomìrné klasy
+       def_starting_resources,           //(6) Poèáteèní Suroviny
+       def_shipments_density,            //(7) Èetnost Zásilek
+       def_extra_oil_deposits,           //(8) Extra ložiska ropy
+       def_extra_sib_deposits,           //(9) Extra ložiska Siberitu
+       def_shared_vision,                //(true) Sdílený fog
+       def_morale_flags,                 //(10) Vlajky
+       def_win_rules,                    //(11) Podmínky Vítìztví
+       def_amount_of_apemen,             //(12) Objevování Opièákù
+       def_amount_of_tiger,              //(13) Objevování tygrù
+       def_respawining_type,             //(14) Typ Obnovy
+       def_people_respawning,            //(15) Èas Obnovy
+       def_tech_level,                   //(16) poèáteèní Tech. Úroveò
+       def_upgrade_tl,                   //(17) Rychlost zvyšování TÚ
+       def_siberite_detection,           //(18) Detekce Siberitu
+       def_siberite_bomb,                //(19) Nastavení Sib. Bomby
+       def_builduptime,                  //(20) Èas na rozestavìní
+       def_desert_warior,                //(21) Šejk
+       def_daily_start,                  //(22) Kdy den zaèíná
+       def_daily_speed,                  //(23) Rychlost dne
+       def_public_score,                 //(24) Veøejné skóre
+       def_kings_age,                    //(25) Král Kopce
+       def_WarForTerritory;              //(26) Teritoriální válka
+
+export  base_level,
+        number_of_breastworks,
+        buildings_def,
+        number_of_people,
+        number_of_apemen,
+        initial_level,
+        starting_crates,
+        starting_resources,
+        shipments_density,
+        morale_decreasing_time,
+        spawning_koef_of_apemen,
+        spawning_koef_of_tiger,
+        respawning_time_min,
+        heroes,
+        respawning_time_max,
+        Position_Nations,
+        respawning_time_delay_min,
+        respawning_time_delay_max,
+        commander,
+        tech_level,
+        final_count,
+        daily_start,
+        daily_speed,
+        TimePhase,
+        DailyPhase,
+        Position_Sides,
+        for_show_near_resources,
+        WarForTerritory_Points,
+        WarForTerritory_flags,
+        buildUpTime_Delay,
+        siberite_bomb_Delay;
+
+export  Side_Count, Team_Count, Player_Side, Player_Team, Side_Teams, Teams, Side_IsSpec;
+export  Side_Positions, Side_Nations, Side_Names, Side_Comps, Team_Names, Team_Game;
+
+// map parameters
+export  depot_def, breastworks_def, start_def, pocet_hracu,
+        extra_oil_deposits_locations,oil_deposits_locations,
+        extra_sib_deposits_locations,siberite_deposits_locations,   // list of deposites on map
+        battle_flags_id,                         // list of flags id
+        def_max_sides;                           // max number of sides on this map
+
+
+Export Cela_Mapa,king_territory;
+
+Export global_units,
+    global_defined,
+    soldiers_created,
+    global_count,
+    global_classes;
+
+export function read_multiplayer_and_game_parameters;
+var side,dep,br1,br2,br3,un,i;
+begin
+  {Side_Names= mp_side_nations;    // not implemented yet
+  Team_Names= mp_side_nations;}
+
+  if MultiPlayer then                      // sides and teams definitions for real Multiplayer
+    begin
+      Game_Type=mp_game_type;
+
+      Player_Side= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+      Player_Team= mp_player_team;         // cislo tymu, za ktery hrac hraje
+
+      Side_Positions= mp_sides_positions;  // =[1,0,3,2,0,0,0,0]; ... pro kazdou stranu jeji pozice, 0 - neucastni se
+      Side_Teams=  mp_sides_teams;         // =[1,0,1,2,0,0,0,0]; ... pro kazou stranu jeji tym
+      Side_Nations= mp_sides_nations;      // =[1,0,1,2,0,0,0,0]; ... pro kazdou stranu jeji narod
+      Side_Comps = mp_sides_comps;           // =[0,0,0,0,0,0,0,0]; ... pro každou stranu její poèítaè 0 - èlovìk nebo nic - 1 poèítaè
+      Teams= mp_teams;                     // ... seznam seznamu clenu tymu (redundantni)
+    end
+  else
+    begin                                  // sides and teams definitions for testing in editor
+      SimMPDefinition;
+
+    end;
+
+  // derived sides and teams informations
+  Side_Count=(Side_Positions diff [0])+0;
+  Team_Count=(Side_Teams diff [0])+0;
+
+  // game settings for real Multiplayer
+  if MultiPlayer then
+    begin
+      def_game_rules                   =GetMultiplayerSetting(0);
+      def_base_level                   =GetMultiplayerSetting(1);
+      def_amount_of_people             =GetMultiplayerSetting(2);
+      def_amount_of_apemen_in_team     =GetMultiplayerSetting(3);
+      def_initial_level                =GetMultiplayerSetting(4);
+      def_classes                      =GetMultiplayerSetting(5);
+      def_starting_resources           =GetMultiplayerSetting(6);
+      def_shipments_density            =GetMultiplayerSetting(7);
+      def_extra_oil_deposits           =GetMultiplayerSetting(8);
+      def_extra_sib_deposits           =GetMultiplayerSetting(9);
+      def_morale_flags                 =GetMultiplayerSetting(10);
+      def_win_rules                    =GetMultiplayerSetting(11);
+      def_amount_of_apemen             =GetMultiplayerSetting(12);
+      def_amount_of_tiger              =GetMultiplayerSetting(13);
+      def_respawining_type             =GetMultiplayerSetting(14);
+      def_people_respawning            =GetMultiplayerSetting(15);
+      def_tech_level                   =GetMultiplayerSetting(16);
+      def_upgrade_tl                   =GetMultiplayerSetting(17);
+      def_siberite_detection           =GetMultiplayerSetting(18);
+      def_siberite_bomb                =GetMultiplayerSetting(19);
+      def_builduptime                  =GetMultiplayerSetting(20);
+      def_desert_warior                =GetMultiplayerSetting(21);
+      def_daily_start                  =GetMultiplayerSetting(22);
+      def_daily_speed                  =GetMultiplayerSetting(23);
+      def_public_score                 =GetMultiplayerSetting(24);
+      def_kings_age                    =GetMultiplayerSetting(25);
+      def_warForTerritory              =GetMultiplayerSetting(26);
+      def_shared_vision                =true;
+
+    end
+  else
+    begin                                  // game settings for testing in editor
+      randomizeAll;
+
+      SimMPOptions;
+  end;
+     if Game_Type in GT_RankedGames then
+        def_game_rules = def_game_rules+1;
+
+end;
+
+function mp_sides_comps;
+var c,i;
+begin
+  c = [];
+  for i=1 to 8 do
+   c = c^Multiplayer_GetPlayerIsComp(i);
+  result = c;
+end;
+
+Export function standartSets;
+begin
+
+  if Game_Type in GT_Survival then
+    begin
+      base_level                  = [1,1,1,2];
+      starting_resources          := [[1000,100,100], [2000,200,200], [5000,500,500], [10000,1000,1000], [25000,2500,2500], [50000,5000,5000]];
+      starting_crates             := [[],[],[],[]];
+    end
+  else
+    begin
+      base_level                  = [0,1,1,1,2];
+      starting_resources          := [[0,0,0], [30,0,0], [50,20,0], [80,40,20]] ;
+      starting_crates             := [[10], [7,14], [6,12,18], [5,10,15,20]] ;
+    end;
+
+  number_of_people            = [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
+  number_of_apemen            = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+  initial_level               = [2,3,4,5];
+
+  //shipments_density           = [ 15, 30, 45 ] [def_shipments_density+1];
+  if def_game_rules then
+    tech_level                  = 8
+  else if game_type in GT_mine then
+    tech_level                  = def_tech_level +4
+  else
+    Tech_Level                  = def_tech_level;
+
+  Hustota_Zasilek;
+  // number_of_apemen         = [0,6,12,18] [def_amount_of_apemen+1];
+  spawning_koef_of_apemen     = [0, 5,10,15];
+  spawning_koef_of_tiger      = [0, 5,10,15];
+  respawning_time_min         = [8$0,  3$00, 1$00];
+  respawning_time_max         = [10$10, 6$00, 2$00];
+  respawning_time_delay_min   = [0$45, 0$30, 0$15];
+  respawning_time_delay_max   = [1$00, 0$45, 0$30];
+
+  daily_start                 = [[4$00,7$00],[8$00,12$00],[13$00,17$00],[18$00,22$00],[23$00,27$00]];
+  daily_speed                 = [0$59,0$25,0$9,0$2,0];
+
+  TimePhase = [4$00, 6$00, 7$00, 8$00, 12$00, 17$00 ,18$00 ,19$00 ,20$00, 22$00 ];
+  DailyPhase = ['colors1.txt','colors2.txt','colors3.txt','colors4.txt','colors5.txt','colors6.txt'];
+
+  morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ];
+
+  final_count                 = [0,200,300,500,700,1000,1500,2000];
+  WarForTerritory_flags       = [0,3,4,5,0,0,0,0,0,0,0];
+  WarForTerritory_Points      = [0,0,0,0,200,300,500,700,1000,1500,2000];
+  Position_Sides:= [0,0,0,0,0,0,0,0];
+
+  buildUpTime_Delay           := [0,5$00,10$00,15$00];
+  siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00];
+
+end;
+
+export function init_map;
+var i ;
+begin
+  base_level                  = base_level [def_base_level+1];
+//  number_of_breastworks       = number_of_breastworks [def_base_level+1];
+  number_of_people            = number_of_people   [def_amount_of_people+1];
+  number_of_apemen            = number_of_apemen  [def_amount_of_apemen_in_team+1];
+  initial_level               = initial_level [def_initial_level+1];
+  starting_resources          = starting_resources  [def_starting_resources+1];
+  starting_crates             = starting_crates [def_starting_resources+1];
+
+  Tech_Level                  = def_tech_level;
+  Hustota_Zasilek;
+
+  spawning_koef_of_apemen     = spawning_koef_of_apemen [def_amount_of_apemen+1];
+  spawning_koef_of_tiger      = spawning_koef_of_tiger [def_amount_of_tiger+1];
+  respawning_time_min         = respawning_time_min  [def_people_respawning+1];
+  respawning_time_max         = respawning_time_max  [def_people_respawning+1];
+  respawning_time_delay_min   = respawning_time_delay_min [def_people_respawning+1];
+  respawning_time_delay_max   = respawning_time_delay_max [def_people_respawning+1];
+
+  daily_start                 = daily_start [def_daily_start+1];
+  daily_speed                 = daily_speed [def_daily_speed+1];
+  morale_decreasing_time      = morale_decreasing_time [def_morale_flags+1];
+
+  battle_flags_id             = [];
+
+  heroes                      = [[],[],[],[],[],[],[],[]]  ;
+
+  final_count                 = final_count[def_kings_age+1];
+
+  WarForTerritory_flags       = WarForTerritory_flags [def_warForTerritory+1];
+  WarForTerritory_Points      = WarForTerritory_Points [def_warForTerritory+1];
+
+  buildUpTime_Delay           := buildUpTime_Delay   [def_builduptime+1];
+  siberite_bomb_Delay         := siberite_bomb_Delay  [def_siberite_bomb+1];
+
+  // list of starting people positions
+  for i=1 to depot_def+0 do
+    start_def:=start_def^[[ShiftX(depot_def[i][1],depot_def[i][3] mod 6,6),ShiftY(depot_def[i][2],depot_def[i][3] mod 6,6)]];
+
+  if not Game_Type in GT_Survival then
+  begin
+
+    for i in oil_deposits_locations do
+      CreateDepositXY(i[1],i[2],mat_oil);
+    for i in siberite_deposits_locations do
+      CreateDepositXY(i[1],i[2],mat_siberit);
+
+    if def_extra_oil_deposits then
+      for i in extra_oil_deposits_locations do
+        CreateDepositXY(i[1],i[2],mat_oil);
+    if def_extra_sib_deposits then
+      for i in extra_sib_deposits_locations do
+        CreateDepositXY(i[1],i[2],mat_siberit);
+  end;
+
+
+  for i:= 1 to 8 do
+    if Side_Positions[i] then
+      Position_Sides:= Replace(Position_Sides, Side_Positions[i], i);
+
+end;
+
+export function set_shared_visions_and_alliances;
+var i, j;
+begin
+//  Team_Game:=0;
+//  for i=1 to 8 do
+//  Team_Game:=Team_Game + Side_Teams[i];
+
+  Team_Game:= (Side_Teams diff [0]) > 1;
+
+//  if not Team_Game then
+//    Team_Game:=false
+//  else
+//    Team_Game:=true;
+
+  if not Team_Game then
+    begin
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if i<>j then
+            SetAttitude(i,j,att_neutral,true)
+          else
+            SetAttitude(i,j,att_friend,true);
+    end
+  else
+    begin
+      if def_shared_vision then
+        begin
+          for i in Teams do
+            for j=2 to i do
+              ChangeSideFog( i[j], i[1] );
+        end;
+
+      for i=1 to 8 do
+        for j=1 to 8 do
+          if Side_Teams[i]=Side_Teams[j] then
+            SetAttitude(i,j,att_friend,true)
+          else
+            SetAttitude(i,j,att_enemy,true);
+    end;
+end;
+
+// prepare all sides with nonzero position
+export function prepare_sides;
+var i,pos;
+begin
+  global_units = [];
+  global_classes = [];
+  global_defined:=false;
+  pozice_beden = [[],[],[],[],[],[],[],[]];
+
+  for i:=1 to 8 do
+    if Side_Positions[i] then
+      begin
+        pos:=Side_Positions[i];
+        if Game_Type in GT_DoubleNat^GT_DoublePeople then
+          begin
+            if Game_Type in GT_DoubleNat then
+              begin
+                prepare_side(i,pos,Position_Nations[i][1]);
+                prepare_side(i,pos+1,Position_Nations[i][2]);
+                pozice_beden = replace(pozice_beden,i,[pos,pos+1]);
+                // for respawn
+                //posNations = replace(posNations,pos,[Position_Nations[pos],Position_Nations[pos+1]]);
+              end
+            else
+              begin
+                prepare_side(i,pos,Side_Nations[i]);
+                prepare_side(i,pos+1,Side_Nations[i]);
+                pozice_beden = replace(pozice_beden,i,[pos,pos+1]);
+              end;
+          end
+        else
+        if game_type in GT_TripleNat then
+        begin
+          prepare_side(i,pos,Position_Nations[i][1]);
+          prepare_side(i,pos+1,Position_Nations[i][2]);
+          prepare_side(i,pos+2,Position_Nations[i][3]);
+          pozice_beden = replace(pozice_beden,i,[pos,pos+1,pos+2]);
+        end
+        else
+          prepare_side(i,pos,Side_Nations[i]);
+          pozice_beden = replace(pozice_beden,i,pos);
+      end;
+end;
+
+export function Modify_Nations;
+var i,n;
+begin
+  Position_Nations:=[[],[],[],[],[],[],[],[]];
+  if game_type in GT_doublenat then
+  begin
+    for i=1 to 8 do
+      if side_positions[i] then
+      begin
+        case side_nations[i] of
+          1: n= [1,2];
+          2: n= [2,3];
+          3: n= [3,1];
+        end;
+
+      Position_Nations = replace(position_nations,i,n);
+     end ;
+  end
+  else
+  if game_type in GT_triplenat then
+   begin
+    for i=1 to 8 do
+      if side_positions[i] then
+      begin
+        case side_nations[i] of
+          1: n= [1,2,3];
+          2: n= [2,3,1];
+          3: n= [3,1,2];
+        end;
+
+      Position_Nations = replace(position_nations,i,n);
+     end ;
+  end;
+end;
+
+// prepares units of specified side
+export function prepare_side(side,pos,nation);
+var x,y,i,r,
+    sol,br,dep,
+    neng,nsci,nmech,nsol;
+begin
+  global_count=0;
+  // sets global uc parameters
+  uc_nation:=nation;
+  uc_side:=side;
+
+  x:=depot_def[pos][1];
+  y:=depot_def[pos][2];
+
+  case base_level of
+  0:begin               // eventualy only place starting resources
+      for i:=1 to 3 do
+        begin
+          r:=starting_resources[i];
+          while r>=10 do
+            if r>50 then
+              begin
+                CreateResourcesXYR(i,5,x,y,4,false);
+                r:=r-50;
+              end
+            else
+              begin
+                CreateResourcesXYR(i,r div 10,x,y,4,false);
+                r:=0;
+              end;
+         end;
+    end;
+  1:begin         // create depot and place starting resources to it
+      bc_type=b_depot;
+      dep:=CreateAndPlaceBuildingXYD(x,y,Depot_Def[pos][3]);
+
+      SetResourceType(GetBase(dep),mat_cans,starting_resources[mat_cans]);
+      SetResourceType(GetBase(dep),mat_oil,starting_resources[mat_oil]);
+      SetResourceType(GetBase(dep),mat_siberit,starting_resources[mat_siberit]);
+    end;
+   2:begin         // create depot and place starting resources to it
+      bc_type=b_warehouse;
+      dep:=CreateAndPlaceBuildingXYD(x,y,Depot_Def[pos][3]);
+
+      SetResourceType(GetBase(dep),mat_cans,starting_resources[mat_cans]);
+      SetResourceType(GetBase(dep),mat_oil,starting_resources[mat_oil]);
+      SetResourceType(GetBase(dep),mat_siberit,starting_resources[mat_siberit]);
+    end;
+  end;
+
+
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+
+  // create starting crates, in starting_crates are distances from starting position
+  for r in starting_crates do
+    CreateResourcesXYR(mat_cans,5,x,y,r,false);
+
+  // eventualy place flag
+  if def_morale_flags then
+    if not def_WarForTerritory then
+      battle_flags_id:=battle_flags_id ^ SetBattleFlag(side,x,y,[ [bfo_defend_bonus_human,100],
+                                                                [bfo_defend_bonus_vehicle,50],
+                                                                [bfo_defend_bonus_building,20],
+                                                                [bfo_height,100] ])
+    else
+      battle_flags_id:=battle_flags_id ^ SetBattleFlag(side,x,y,[ [bfo_defend_bonus_human,200],
+                                                                [bfo_defend_bonus_vehicle,100],
+                                                                [bfo_defend_bonus_building,50],
+                                                                [bfo_height,100] ]);
+
+  if for_show_near_resources then
+  begin
+    For i in for_show_near_resources[pos][1] do
+      SetResourceVisibility(i[1],i[2],side);
+//    debugstrings = debugstrings ^ i;
+    if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
+      For i in for_show_near_resources[pos][2] do
+        SetResourceVisibility(i[1],i[2],side);
+  end;
+
+  // staveni budov
+  bc_kind1=b_lab_basic;
+  bc_kind2=b_lab_basic;
+
+  for i in buildings_def[pos] do
+    begin
+     if i[1] in [b_oil_mine,b_siberite_mine] then
+      SetResourceVisibility(i[2],i[3],side);
+
+      bc_type=i[1];
+      CreateAndPlaceBuildingXYD(i[2],i[3],i[4]);
+      x:=buildings_def[pos][1][2];
+      y:=buildings_def[pos][1][2];
+    end;
+
+  // first will be the commander
+  commander:=true;
+
+  // Position for placing people
+  x:=start_def[pos][1];
+  y:=start_def[pos][2];
+  
+  if def_classes then
+  begin
+
+    neng:=number_of_people;
+
+    // there must be soldier for each breastwork...
+    if nsol<neng div 4 then
+      nsol:=neng div 4;
+
+    neng:=neng-nsol;
+
+    // at least one scientist...
+    nsci:=neng div 3;
+    if nsci<1 then
+      nsci:=1;
+    neng:=neng-nsci;
+
+    nmech:=neng div 2;
+    neng:=neng-nmech;
+
+    // at least one engineer (even if this means to incease amount of people)
+    if neng<1 then neng:=1;
+
+
+    // place remaining soldiers and other people to the flag
+
+    prepare_people(side,nsol,class_soldier,x,y,5,commander);
+    prepare_people(side,neng,class_engineer,x,y,5,commander);
+    prepare_people(side,nmech,class_mechanic,x,y,5,commander);
+    prepare_people(side,nsci,class_scientistic,x,y,5,commander);
+  end else
+  begin
+    //zajištìní, aby aspoò jeden èlovek byl inženýr
+    prepare_people(side,number_of_people-1,0,x,y,5,commander);
+    prepare_people(side,1,class_engineer,x,y,5,commander);
+  end;
+
+  if number_of_apemen then
+  begin
+    uc_nation=nation_nature;
+    prepare_people(side,number_of_apemen,class_apeman,x,y,5,commander);
+
+    uc_nation = nation;
+
+    case nation of
+    1: begin
+         if GetTech(tech_ApeLang,side) = state_enabled then
+           SetTech(tech_ApeLang,side,state_researched);
+         if GetTech(tech_ApePsych,side) = state_enabled then
+           SetTech(tech_ApePsych,side,state_researched);
+       end;
+    2: begin
+         if GetTech(tech_ApeLang,side) = state_enabled then
+           SetTech(tech_ApeLang,side,state_researched);
+         if GetTech(tech_ApeAgres,side) = state_enabled then
+           SetTech(tech_ApeAgres,side,state_researched);
+         if GetTech(tech_ApeNeural,side) = state_enabled then
+           SetTech(tech_ApeNeural,side,state_researched);
+       end;
+    3: begin
+         if GetTech(tech_ApeLang,side) = state_enabled then
+           SetTech(tech_ApeLang,side,state_researched);
+         if GetTech(tech_ApePsych,side) = state_enabled then
+           SetTech(tech_ApePsych,side,state_researched);
+         if GetTech(tech_ApeAgres,side) = state_enabled then
+           SetTech(tech_ApeAgres,side,state_researched);
+       end;
+    end;
+  end;
+
+  if def_desert_warior = 2 and nation = nation_arabian then
+    prepare_people(side,1,class_desert_warior,x,y,5,commander);
+
+  if not global_defined then
+    global_defined:=true;
+
+
+  if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
+    SetTech(tech_SibDet,side,state_researched);
+end;
+
+export function prepare_people(side,count,pre_cl,x,y,r, var commander);
+var i,j,un,cl;
+begin
+
+  for i:=1 to count do
+  begin
+    global_count = global_count+1;
+
+    if not def_classes and global_count <= global_classes then
+      cl = global_classes[global_count]
+    else
+    if pre_cl = 0 then
+      cl = rand(1,4)
+    else
+      cl = pre_cl;
+
+
+      uc_direction:=Rand(0,5);
+      if commander then
+        begin
+          hc_name := mp_sides_players_names[side];
+          PrepareHuman(Rand(1,2),cl,initial_level+2);
+
+          if def_desert_warior = 1 and uc_nation = nation_arabian then
+            hc_class= class_desert_warior;
+
+
+          hc_importance:=105;
+          If Multiplayer then
+          begin
+           hc_gallery:= 'MULTIAVATARS';
+           hc_face_number:=Multiplayer_GetPlayerSideNum(Side);
+           hc_sex := Multiplayer_GetPlayerSex(Side);
+          end;
+        end
+      else
+        begin
+          hc_name := '';
+
+          if cl = class_desert_warior then
+          begin
+            PrepareHuman(rand(1,2),class_soldier,initial_level);
+            hc_class = class_desert_warior
+          end else
+            PrepareHuman(rand(1,2),cl,initial_level);
+
+          hc_importance:=0;
+          If Multiplayer then
+          begin
+           hc_gallery:= '';
+           hc_face_number:=0;
+          end;
+        end;
+      if hc_class = class_desert_warior then
+        hc_importance:= 100;
+
+      un:=CreateHuman;
+
+      if global_count <= global_units then
+        begin
+          CopySkills(global_units[global_count],un);
+          SetAttr(un, attr_speed,   GetAttr( global_units[global_count], attr_speed)   );
+          SetAttr(un, attr_stamina, GetAttr( global_units[global_count], attr_stamina) );
+        end;
+
+      PlaceUnitXYR(un,x,y,r,false);
+     { result:=result ^ [un];  }
+
+    if global_classes < global_count then
+      global_classes = global_classes ^ cl;
+    if global_units < global_count then
+      global_units = global_units ^ un;
+
+     if commander then
+     begin
+       heroes = replace(heroes,side,heroes[side]^un);
+       commander:=false;
+     end;
+  end;
+
+
+end;
+
+export function mastodonti;
+var i,c,k;
+begin
+ if def_desert_warior then
+  begin
+    c= FilterAllUnits([[f_class,class_desert_warior]]);
+    if c then
+    for c=1 to c+0 do
+    begin
+      comms_mastodont;
+    end;
+    comms_mastodont;
+  end;
+end;
+
+export function comms_mastodont;
+var un;
+begin
+  uc_nation:=0;
+  uc_side:=nation_nature;
+  vc_chassis=31;
+  un:=createvehicle;
+
+  PlaceUnitArea(un, stred, false);
+end;
+
+every 0$1 MARKED 31 do
+var i;
+begin
+if not tech_level = 8 then
+  exit;
+
+{  for i=1 to 8 do
+    SetTech(tech_SibFiss,i,state_disabled);
+    Tech_Level = 7;
+    case def_siberite_bomb of
+      1:wait(30$0);
+      2:wait(60$0);
+      3:wait(90$0);
+      4:wait(120$0);
+    end;
+    for i=1 to 8 do
+      SetTech(tech_SibFiss,i,state_enabled);
+    Tech_Level = 8;
+}
+  if siberite_bomb_delay then
+    wait( siberite_bomb_Delay );  // can't be 0
+    EnableSibFiss;
+end;
+
+function EnableSibFiss();
+var side,narodnost;
+begin
+  for side =1 to side_positions+0 do
+  begin
+    narodnost:=Side_Nations[side];
+    case narodnost of
+      1,3: SetTech  ( 25, side, GetRestrictions(false, 25));
+      2: SetTech  ( 73, side, GetRestrictions(false, 73));
+    end;
+  end;
+  Tech_Level = 8;
+end;
+
+export Function Start_Zvirata;
+begin
+  if def_amount_of_apemen > 0 then
+    begin
+    StartApe;
+    Enable(493);
+  end;
+
+  if def_amount_of_tiger > 0 then
+    begin
+    StartTig;
+    Enable(494);
+  end;
+
+end;
+
+export function  Disable_Standard_Games;
+begin
+  Disable(2);  //král kopce
+  Disable(3);  //král kopce
+  Disable(4);  //král kopce
+
+  Disable(30); //tech level
+  Disable(31); //Daily
+  Disable(60); //War for Territory
+
+  Disable(98);  // vyhra Team Game
+  Disable(99);  // Výhra solo
+  Disable(100); // kontrola kdo prohrál a pøebarvit mu jednotky
+
+  Disable(400); // Lost
+  Disable(401); // Win
+
+  Disable(493);  // opice
+  Disable(494);  // tygøi
+
+  Disable(600)   // BuildUp
+end;
