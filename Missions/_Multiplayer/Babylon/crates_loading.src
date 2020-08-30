@@ -31,8 +31,11 @@ begin
 
   for i = 1 to 4 do
       begin
+      if not Side_Positions[i] then
+         continue;
+
       wait(0$3);
-      CreateCratesArea(amount, [north_east, north_west, south_east, south_west][i], true);
+      CreateCratesArea(amount, [north_west, north_east, south_west, south_east][i], true);
       end;
 
   enable;

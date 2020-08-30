@@ -211,7 +211,7 @@ begin
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
   shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
 
-  amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
+  amount_of_apemen           := [0, 1, 2, 3] [def_amount_of_apemen+1];
   spawning_koef_of_apemen     = [0, 165,140,115] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
   respawning_time_max         = [0$0, 10$00, 2$00] [def_people_respawning+1];
@@ -536,13 +536,23 @@ begin
   init_shipments;
   init_respawn;
 
+  InitApeman;   
 
   //------
   your_side:=Player_Side;
 
+  
+  if IAmSpec then
+    begin
+      //PlaceSeeing(0, 0, Your_Side, -32767);
+      fogOff(true);
+      CenterNowOnXY(104, 69);
+      Enable(400);
+    end
+  else
+    begin
+      CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
+    end;
+
   music_nat:=Side_Nations[your_side];
-  CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
 end;
-                                         
-on siberiterocketexploded(un,x,y) do
-  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

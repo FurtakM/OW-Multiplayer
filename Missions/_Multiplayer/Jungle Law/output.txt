@@ -229,7 +229,7 @@
 // function prepare_map_coordinates ; begin
  393: LD_INT 0
  395: PPUSH
-// depot_def := [ [ 12 , 8 , 2 ] , [ 156 , 9 , 3 ] , [ 83 , 146 , 0 ] , [ 225 , 149 , 5 ] ] ;
+// depot_def := [ [ 12 , 8 , 2 ] , [ 83 , 146 , 0 ] , [ 156 , 9 , 3 ] , [ 225 , 149 , 5 ] ] ;
  396: LD_ADDR_EXP 81
  400: PUSH
  401: LD_INT 12
@@ -243,22 +243,22 @@
  412: LIST
  413: LIST
  414: PUSH
- 415: LD_INT 156
+ 415: LD_INT 83
  417: PUSH
- 418: LD_INT 9
+ 418: LD_INT 146
  420: PUSH
- 421: LD_INT 3
+ 421: LD_INT 0
  423: PUSH
  424: EMPTY
  425: LIST
  426: LIST
  427: LIST
  428: PUSH
- 429: LD_INT 83
+ 429: LD_INT 156
  431: PUSH
- 432: LD_INT 146
+ 432: LD_INT 9
  434: PUSH
- 435: LD_INT 0
+ 435: LD_INT 3
  437: PUSH
  438: EMPTY
  439: LIST
@@ -282,7 +282,7 @@
  460: LIST
  461: LIST
  462: ST_TO_ADDR
-// oil_deposits_locations := [ [ 20 , 4 ] , [ 141 , 4 ] , [ 93 , 153 ] , [ 220 , 155 ] , ] ;
+// oil_deposits_locations := [ [ 20 , 4 ] , [ 93 , 153 ] , [ 141 , 4 ] , [ 220 , 155 ] , ] ;
  463: LD_ADDR_EXP 86
  467: PUSH
  468: LD_INT 20
@@ -293,17 +293,17 @@
  475: LIST
  476: LIST
  477: PUSH
- 478: LD_INT 141
+ 478: LD_INT 93
  480: PUSH
- 481: LD_INT 4
+ 481: LD_INT 153
  483: PUSH
  484: EMPTY
  485: LIST
  486: LIST
  487: PUSH
- 488: LD_INT 93
+ 488: LD_INT 141
  490: PUSH
- 491: LD_INT 153
+ 491: LD_INT 4
  493: PUSH
  494: EMPTY
  495: LIST
@@ -323,7 +323,7 @@
  511: LIST
  512: LIST
  513: ST_TO_ADDR
-// siberite_deposits_locations := [ [ 18 , 27 ] , [ 169 , 29 ] , [ 70 , 133 ] , [ 221 , 130 ] , ] ;
+// siberite_deposits_locations := [ [ 18 , 27 ] , [ 70 , 133 ] , [ 169 , 29 ] , [ 221 , 130 ] , ] ;
  514: LD_ADDR_EXP 88
  518: PUSH
  519: LD_INT 18
@@ -334,17 +334,17 @@
  526: LIST
  527: LIST
  528: PUSH
- 529: LD_INT 169
+ 529: LD_INT 70
  531: PUSH
- 532: LD_INT 29
+ 532: LD_INT 133
  534: PUSH
  535: EMPTY
  536: LIST
  537: LIST
  538: PUSH
- 539: LD_INT 70
+ 539: LD_INT 169
  541: PUSH
- 542: LD_INT 133
+ 542: LD_INT 29
  544: PUSH
  545: EMPTY
  546: LIST
@@ -364,7 +364,7 @@
  562: LIST
  563: LIST
  564: ST_TO_ADDR
-// extra_oil_deposits_locations := [ [ 53 , 26 ] , [ 129 , 20 ] , [ 187 , 139 ] , [ 106 , 135 ] ] ;
+// extra_oil_deposits_locations := [ [ 53 , 26 ] , [ 187 , 139 ] , [ 129 , 20 ] , [ 106 , 135 ] ] ;
  565: LD_ADDR_EXP 85
  569: PUSH
  570: LD_INT 53
@@ -375,17 +375,17 @@
  577: LIST
  578: LIST
  579: PUSH
- 580: LD_INT 129
+ 580: LD_INT 187
  582: PUSH
- 583: LD_INT 20
+ 583: LD_INT 139
  585: PUSH
  586: EMPTY
  587: LIST
  588: LIST
  589: PUSH
- 590: LD_INT 187
+ 590: LD_INT 129
  592: PUSH
- 593: LD_INT 139
+ 593: LD_INT 20
  595: PUSH
  596: EMPTY
  597: LIST
@@ -405,7 +405,7 @@
  613: LIST
  614: LIST
  615: ST_TO_ADDR
-// extra_sib_deposits_locations := [ [ 51 , 53 ] , [ 155 , 53 ] , [ 183 , 107 ] , [ 80 , 106 ] ] ;
+// extra_sib_deposits_locations := [ [ 51 , 53 ] , [ 183 , 107 ] , [ 155 , 53 ] , [ 80 , 106 ] ] ;
  616: LD_ADDR_EXP 87
  620: PUSH
  621: LD_INT 51
@@ -416,17 +416,17 @@
  628: LIST
  629: LIST
  630: PUSH
- 631: LD_INT 155
+ 631: LD_INT 183
  633: PUSH
- 634: LD_INT 53
+ 634: LD_INT 107
  636: PUSH
  637: EMPTY
  638: LIST
  639: LIST
  640: PUSH
- 641: LD_INT 183
+ 641: LD_INT 155
  643: PUSH
- 644: LD_INT 107
+ 644: LD_INT 53
  646: PUSH
  647: EMPTY
  648: LIST
@@ -618,7 +618,7 @@
  883: IFTRUE 887
  885: GO 1217
  887: POP
-// begin buildings_def = [ [ [ b_oil_mine , oil_deposits_locations [ 1 ] [ 1 ] , oil_deposits_locations [ 1 ] [ 2 ] , 4 ] , [ b_breastwork , 31 , 34 , 5 ] , [ b_breastwork , 40 , 16 , 4 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 2 ] [ 1 ] , oil_deposits_locations [ 2 ] [ 2 ] , 0 ] , [ b_breastwork , 133 , 16 , 1 ] , [ b_breastwork , 161 , 34 , 0 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 3 ] [ 1 ] , oil_deposits_locations [ 3 ] [ 2 ] , 4 ] , [ b_breastwork , 77 , 125 , 3 ] , [ b_breastwork , 77 , 126 , 4 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 4 ] [ 1 ] , oil_deposits_locations [ 4 ] [ 2 ] , 0 ] , [ b_breastwork , 200 , 144 , 2 ] , [ b_breastwork , 210 , 126 , 2 ] ] ] ;
+// begin buildings_def = [ [ [ b_oil_mine , oil_deposits_locations [ 1 ] [ 1 ] , oil_deposits_locations [ 1 ] [ 2 ] , 4 ] , [ b_breastwork , 31 , 34 , 5 ] , [ b_breastwork , 40 , 16 , 4 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 2 ] [ 1 ] , oil_deposits_locations [ 2 ] [ 2 ] , 0 ] , [ b_breastwork , 77 , 125 , 3 ] , [ b_breastwork , 77 , 126 , 4 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 3 ] [ 1 ] , oil_deposits_locations [ 3 ] [ 2 ] , 4 ] , [ b_breastwork , 133 , 16 , 1 ] , [ b_breastwork , 161 , 34 , 0 ] ] , [ [ b_oil_mine , oil_deposits_locations [ 4 ] [ 1 ] , oil_deposits_locations [ 4 ] [ 2 ] , 0 ] , [ b_breastwork , 200 , 144 , 2 ] , [ b_breastwork , 210 , 126 , 2 ] ] ] ;
  888: LD_ADDR_EXP 39
  892: PUSH
  893: LD_INT 29
@@ -708,11 +708,11 @@
 1009: PUSH
 1010: LD_INT 31
 1012: PUSH
-1013: LD_INT 133
+1013: LD_INT 77
 1015: PUSH
-1016: LD_INT 16
+1016: LD_INT 125
 1018: PUSH
-1019: LD_INT 1
+1019: LD_INT 3
 1021: PUSH
 1022: EMPTY
 1023: LIST
@@ -722,11 +722,11 @@
 1027: PUSH
 1028: LD_INT 31
 1030: PUSH
-1031: LD_INT 161
+1031: LD_INT 77
 1033: PUSH
-1034: LD_INT 34
+1034: LD_INT 126
 1036: PUSH
-1037: LD_INT 0
+1037: LD_INT 4
 1039: PUSH
 1040: EMPTY
 1041: LIST
@@ -767,11 +767,11 @@
 1088: PUSH
 1089: LD_INT 31
 1091: PUSH
-1092: LD_INT 77
+1092: LD_INT 133
 1094: PUSH
-1095: LD_INT 125
+1095: LD_INT 16
 1097: PUSH
-1098: LD_INT 3
+1098: LD_INT 1
 1100: PUSH
 1101: EMPTY
 1102: LIST
@@ -781,11 +781,11 @@
 1106: PUSH
 1107: LD_INT 31
 1109: PUSH
-1110: LD_INT 77
+1110: LD_INT 161
 1112: PUSH
-1113: LD_INT 126
+1113: LD_INT 34
 1115: PUSH
-1116: LD_INT 4
+1116: LD_INT 0
 1118: PUSH
 1119: EMPTY
 1120: LIST
@@ -906,14 +906,14 @@
 1272: PUSH
 1273: LD_REAL  1.50000000000000E+0000
 1276: ST_TO_ADDR
-// BuildUpAreas := [ AR_ZaklLH , AR_ZaklPH , AR_ZaklLD , AR_ZaklPD ] ;
+// BuildUpAreas := [ AR_ZaklLH , AR_ZaklLD , AR_ZaklPH , AR_ZaklPD ] ;
 1277: LD_ADDR_EXP 116
 1281: PUSH
 1282: LD_INT 4
 1284: PUSH
-1285: LD_INT 5
+1285: LD_INT 6
 1287: PUSH
-1288: LD_INT 6
+1288: LD_INT 5
 1290: PUSH
 1291: LD_INT 7
 1293: PUSH

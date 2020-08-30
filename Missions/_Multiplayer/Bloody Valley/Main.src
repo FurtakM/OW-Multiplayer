@@ -30,6 +30,7 @@ export Position_Sides;
 
 export depot_def, breastworks_def, start_def,
        battle_flags_id;
+export normal_oil_deposits_locations, extra_oil_deposits_locations, normal_sib_deposits_locations;
 export heroes;
 var commander;
 
@@ -120,7 +121,7 @@ begin
       def_amount_of_people:=   1;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  1;
+      def_shipments_density:=  71;
       def_extra_oil_deposits:= 0;
       def_shared_vision:=      1;
       def_morale_flags:=       1;
@@ -157,7 +158,7 @@ begin
   starting_crates             := [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           := [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 720 - (def_shipments_density * 2);
+  shipments_density           := 350 - (def_shipments_density * 2);
 
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   respawning_time_min         := [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -172,7 +173,7 @@ begin
 end;
 
 function prepare_map_coordinates;
-  var side,dep,br1,br2,br3,un,i;
+  var side,dep,br1,br2,br3,un,i,j;
   begin
     depot_def=[];
     breastworks_def=[];
@@ -200,12 +201,30 @@ function prepare_map_coordinates;
         DestroyUnit(br3);
       end;
 
-// if not required extra oil deposits, then destroy them
-    if not def_extra_oil_deposits then
-      for i in [ [52,44], [84,37], [74,81], [106,77] ] do
-        begin
-          RemoveDepositXY(i[1],i[2]);
-        end;
+  normal_oil_deposits_locations := [ [28,15], [102,17], [50,84], [143,111] ];
+
+  extra_oil_deposits_locations := [ [ [28,15],   [52,44]   ],
+                                    [ [102,17],  [84,37]   ],
+                                    [ [50,84],   [74,81]   ],
+                                    [ [143,111], [106,77]  ],
+                                  ];
+
+  normal_sib_deposits_locations := [ [45,25], [75,22], [87,105], [117,99] ];
+
+
+  for i = 1 to Side_Positions do
+      begin
+      if not Side_Positions[i] then
+         continue;
+
+      CreateDepositXY(normal_sib_deposits_locations[Side_Positions[i]][1], normal_sib_deposits_locations[Side_Positions[i]][2], mat_siberit);
+
+      if def_extra_oil_deposits then
+         for j in extra_oil_deposits_locations[Side_Positions[i]] do
+             CreateDepositXY(j[1], j[2], mat_oil)
+      else
+         CreateDepositXY(normal_oil_deposits_locations[Side_Positions[i]][1], normal_oil_deposits_locations[Side_Positions[i]][2], mat_oil);
+      end;
   end;
 
 function set_shared_visions_and_alliances;

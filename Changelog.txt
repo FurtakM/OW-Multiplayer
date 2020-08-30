@@ -119,3 +119,27 @@ Babylon:
 0.14:
 - Buildtime fix issue on Babylon, Bloody Valley, Bastard Pass
 - Jungle Law update
+
+0.15:
+Bloody Valley:
+- Materialization fixed
+- Siberite bomb setting added
+- Deposits position changed
+
+Babylon:
+- Materialization fixed
+
+Bastard Pass:
+- Materialization fixed
+
+Forest Land:
+- New apeman respawn script addded
+- Spectator added
+
+Alien Base:
+- Nuclear War game rule fixed
+
+Jungle Law:
+- Nefarems fixes:
+	- Fix spawn possitions
+	- Fix map structure

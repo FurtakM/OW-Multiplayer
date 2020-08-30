@@ -169,9 +169,6 @@ begin
       SetMpTechLevel(tech_level + 1);
     end;
   end;
-  
-
-
 
   if (Game_Type = 5) then
     begin
@@ -229,7 +226,12 @@ begin
   end;      }
 
   skill_level                 := [2,3,4,5] [def_skill_level+1];
-  if (Game_Type = 5) then
+
+  if (def_game_rules = 4) then // Nuclear War
+    begin
+      starting_resources          := [10000, 5000, 1000];
+    end
+  else if (Game_Type = 5) then // Survival
     begin
       starting_resources          := [[1000,100,100], [2000,200,200], [5000,500,500], [10000,1000,1000], [25000,2500,2500], [50000,5000,5000]] [def_starting_resources+1];
       starting_crates             := [];

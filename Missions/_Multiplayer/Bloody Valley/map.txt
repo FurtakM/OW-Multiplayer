@@ -187,7 +187,7 @@ HEXES
   LINE 86 43 142
     t4r7vI t2r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vGsK r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vGsG r7vGsL r7vG r7vG r7vG r7vG r7vCsa vAsK v8sK v6sJ v6 v4sJ v4sJ v4sI v4sY r6v7so vDsY vDsY r6vCsh vCsZ vCsY vCsY vG vG vCsZ vCsZ vCsZ vCsZ r6vAsp r6vAsp v9sJ v9sA vA vA v8sK v7sC v7 v7s8 v8 v8s8 v9s9 vAs9 vB vBs9 vC vC vC vC vCsH vEsH vG vG vFsB vEsB vEsA vFs9 vGs9 vHsX vL vL vIsT vIsD vI vI vI vI vHsC vH vGsC vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vGsH t2r2vIsX t4r2vMsO
   LINE 87 44 143
-    t4r7vI t2r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vGsK r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vEsK vCsK vAsK v8sJ v6sJ v6sJ v6sJ v6sI v6sI r6v8sX r6vCsf vH vH vGsB vG vG vG vG vG vG vG vG vG vG r6vBsi r8v9sKhF r8v9s8hF vA vA v8sK v7sB v7 v7s9 v8 v8sH vAs9 vBsA vBs9 vAsH vAsG vC vC vCsH vEsH vG vG vG vFsB vFsA vFsA vGs9 vHsX vL vJsL vHsb vHs8 vI vI vI vI vHsC vH vH vGsC vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vGsH t2r2vIsX t4r2vM
+    t4r7vI t2r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vI r7vGsK r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vEsK vCsK vAsK v8sJ v6sJ v6sJ v6sJ v6sI v6sI r6v8sX r6vCsf vH vH vGsB vG vG vG vG vG vG vG vG vG vG r6vBsi r8v9sKhF r8v9s8hF vA vA v8sK v7sB v7 v7s9 v8 v8sH vAs9 vBsA vBs9 vAsH vAsG vC vC vCsH vEsH vG vG vG vFsB vFsA vFsA vGs9 vHsX vL vJsL vHsb vHs8 vI vI vI vI vHsC vH vH vGsC vGS r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vGsH t2r2vIsX t4r2vM
   LINE 88 44 143
     t4r7vI t2r7vI r7vI r7vI r7vI r7vI vI r7vI r7vI r7vI r7vGsK r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vEsK vCsK vAsJ v8sJ v8sJ v8sJ v8sJ v8sI v8sI vAsH r6vCsf vGs8 vH vGsC vG vG vG vG vG vG vG vG vG vDsS r8v9sahF r4v4sjhF r4v4smhF r4v4smhF vA v8sJ v7sJ v7sA v8 v8s9 v9sH vBs9 vC vAsK vA vAsG vC vC vCsH vEsH vG vG vG vG vG vG vGs8 vHsW vHsb vHsL vH vHs9 vI vI vI vI vHsC vH vGsC vG vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vG r2vGsH t2r2vIsX t4r2vM
   LINE 89 45 144
@@ -221,7 +221,7 @@ HEXES
   LINE 103 52 151
     t4r6vLsn t2r6vR r6vLsq vIsS vI vIsA r7vJsA r7vJsB r7vJ r7vJ r7vIsB r7vIsB r7vIsA r7vIsA r7vJ r7vJ r7vHsK r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG vG r8vCsahF r8vBsChF r8vAsBhF r8vAsBhF r8v9sDhF r4v4srhF r4v2sLhF r4sbhF r4sWhF r4v4sWhF r8v8hF r8v8hF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsXhF vEsH vG vG vGsI vIsY vM vM vM vKsK vIsK vI vI vGsJ vGsJ vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 104 52 151
-    t4r6vIsP t2r6vLsn r6vR r6vLsp vIsR vIsQ vJsA r7vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG r8vCsahF r8vChF r8vBsBhF r8vBhF r8v9sKhF r4v8sChF r4v2sqhF r4sKhF r4hF r4sXhF r4v4sXhF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vCsXhF vG vG vGsH vIsX vM vMfG vM vKsKS vIsK vI vI vI vI vGsJ r6vGsg r6vGsg r6vGsh r6vGsh vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
+    t4r6vIsP t2r6vLsn r6vR r6vLsp vIsR vIsQ vJsA r7vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG vG vG vG vG vG vG r5vEsLhG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG r8vCsahF r8vChF r8vBsBhF r8vBhF r8v9sKhF r4v8sChF r4v2sqhF r4sKhF r4hF r4sXhF r4v4sXhF r8v8hF r8v8hF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vCsXhF vG vG vGsH vIsX vM vMfG vM vKsK vIsK vI vI vI vI vGsJ r6vGsg r6vGsg r6vGsh r6vGsh vG vG vG vG vG vG vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 105 53 152
     t4r6vLsn t2r6vR r6vR r6vLsp r6vLsp vKsA vK r7vJsC r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vJ r7vIsC r7vI r7vHsC r7vGsC r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vG r7vGsA r7vGsA r7vGsB r7vGsB r7vG r7vG vG vG vG vG vG r5vEsLhG r5vEhG r5vEhG r5vEsIhG r5vEsIhG vG vG vG r8vCsahF r8vChF r8vBsBhF r8vBsBhF r8v9sRhF r4v8sZhF r4v2sphF r4sJhF r4sIhF r4v2snhF r4v8sAhF r8v8sIhF r8v8sIhF r8vAsIhF r8vAsIhF r8vChF r8vChF r8vCsXhF vG vGsH vIsX vM vM vM vM vIsa vI vI vI vI vI r6vIsQ r6vLso r6vLso r6vLsp r6vGsh r6vGsh r6vGsh r6vGsh vG vG vG r2vG vG vG vG vG vG vG vG vG t2vG t4vG
   LINE 106 53 152
@@ -1013,31 +1013,7 @@ END_OF_RESTRICTS
 MISSION_OBJECTIVES_FULL 0
 
 SPECS
-  PARAMS 12 8
-    28 15 1
-    T F F F F F F F F
-    45 25 2
-    T F F F F F F F F
-    102 17 1
-    T F F F F F F F F
-    146 98 1
-    T F F F F F F F F
-    50 84 1
-    T F F F F F F F F
-    52 44 1
-    F F F F F F F F F
-    84 37 1
-    F F F F F F F F F
-    74 81 1
-    F F F F F F F F F
-    106 77 1
-    F F F F F F F F F
-    87 105 2
-    F F F F F F F F F
-    117 99 2
-    F F F F F F F F F
-    77 20 2
-    F F F F F F F F F
+  PARAMS 0 9
   FLAG 0 0
 END_OF_SPECS
 
@@ -1071,16 +1047,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 1073516686
+  RANDOM_SEED 1 1265823272
   RANDOM_SEED 2 1073516686
-  RANDOM_SEED 3 1798011637
+  RANDOM_SEED 3 -237747643
   RANDOM_SEED 4 1678921165
   RANDOM_SEED 5 1862181282
   RANDOM_SEED 6 57406484
   RANDOM_SEED 7 -1353857779
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 462005748
-  RANDOM_SEED 10 379081138
+  RANDOM_SEED 10 1265823272
   RANDOM_SEED 11 -443074555
   RANDOM_SEED 12 -650308925
   RANDOM_SEED 13 1128189734
@@ -1539,7 +1515,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 1098 1404 1300 824 1
+  VIEW 1436 -96 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 

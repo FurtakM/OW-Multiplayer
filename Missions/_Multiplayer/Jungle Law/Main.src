@@ -106,11 +106,11 @@ end;
 
 function prepare_map_coordinates;
 begin
-  depot_def:=[ [12,8,2], [156,9,3], [83,146,0], [225,149,5]  ] ;
-  oil_deposits_locations:=     [ [20,4], [141,4], [93,153], [220,155],  ];
-  siberite_deposits_locations:=[ [18,27],  [169,29],  [70,133], [221,130], ];
-  extra_oil_deposits_locations:=[ [53,26],  [129,20], [187,139], [106,135] ];
-  extra_sib_deposits_locations:=[ [51,53], [155,53], [183,107], [80,106] ];
+  depot_def:=[ [12,8,2],[83,146,0],[156,9,3], [225,149,5]  ] ;
+  oil_deposits_locations:=     [ [20,4], [93,153],  [141,4], [220,155],  ];
+  siberite_deposits_locations:=[ [18,27],  [70,133],  [169,29], [221,130], ];
+  extra_oil_deposits_locations:=[ [53,26],  [187,139],  [129,20], [106,135] ];
+  extra_sib_deposits_locations:=[ [51,53], [183,107],  [155,53], [80,106] ];
 
   for_show_near_resources = [ [ [oil_deposits_locations[1]]      ,[siberite_deposits_locations[1]] ],
                               [ [oil_deposits_locations[2]]      ,[siberite_deposits_locations[2]] ],
@@ -130,10 +130,10 @@ begin
                      [b_breastwork,31,34,5],[b_breastwork,40,16,4]],
 
                      [[b_oil_mine,oil_deposits_locations[2][1],oil_deposits_locations[2][2],0],
-                     [b_breastwork,133,16,1],[b_breastwork,161,34,0]],
+                     [b_breastwork,77,125,3],[b_breastwork,77,126,4]],
                                                          
                      [[b_oil_mine,oil_deposits_locations[3][1],oil_deposits_locations[3][2],4],
-                     [b_breastwork,77,125,3],[b_breastwork,77,126,4]],
+                     [b_breastwork,133,16,1],[b_breastwork,161,34,0]],
 
                      [[b_oil_mine,oil_deposits_locations[4][1],oil_deposits_locations[4][2],0],
                      [b_breastwork,200,144,2],[b_breastwork,210,126,2]]
@@ -148,7 +148,7 @@ begin
   dalsi_oblasti_beden := [map_center];
   koof_bedny = 1.5;
   
-  BuildUpAreas:= [AR_ZaklLH,AR_ZaklPH,AR_ZaklLD,AR_ZaklPD];
+  BuildUpAreas:= [AR_ZaklLH,AR_ZaklLD,AR_ZaklPH,AR_ZaklPD];
 
   //d = rand(1,3);
   DailyPhase = [

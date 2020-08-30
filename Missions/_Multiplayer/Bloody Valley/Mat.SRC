@@ -81,8 +81,9 @@ begin
 
   amount:= Rand(1, 5);
 
-  for i = 1 to 2 do
-    CreateCratesArea(amount, BuildUpAreas[i], true);
+  for i = 1 to Side_Positions do
+      if Side_Positions[i] then
+         CreateCratesArea(amount, BuildUpAreas[i], true);
 
   enable;
 end;
