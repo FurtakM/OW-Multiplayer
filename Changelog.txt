@@ -143,3 +143,8 @@ Jungle Law:
 - Nefarems fixes:
 	- Fix spawn possitions
 	- Fix map structure
+
+0.16:
+Football (by Tomasz):
+- Spectator added
+- Counters fix

@@ -1,4 +1,4 @@
-every 0$2 do
+every 0$2 trigger CanWinLoose do
 begin
   if not FilterAllUnits([[f_side, your_side], [f_type, unit_human]]) then
   begin
@@ -14,4 +14,15 @@ begin
     YouWinInMultiplayer;
   end;
   Enable;
+end;
+
+function CanWinLoose;
+begin
+  Result := True;
+
+  if IAmServer and PlayerCount > 0 then
+    Result := False;
+
+  if IAmSpec and PlayerCount > 1 then
+    Result := False;
 end;

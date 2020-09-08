@@ -62,10 +62,10 @@ end;
 
 export function CurrentScore;
 begin
-  Result:= ['#Football-score',-1,barvy[1],stav[1],-1,barvy[2],stav[2]];
-end;
+  Result:= ['#Football-score',barvy[1],stav[1]] ^ ['#Football-score',barvy[2],stav[2]];
+end;       
 
 export function TimeLeft;
 begin
-  Result:= ['#Football-time',-1,7,time_of_game];
+  Result:= ['#Football-time',time_of_game];
 end;
