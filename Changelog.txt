@@ -148,3 +148,10 @@ Jungle Law:
 Football (by Tomasz):
 - Spectator added
 - Counters fix
+
+0.17:
+Alien Base:
+- Survival apeman settings added (multidsc's changes!)
+
+Four to Win:
+- Fixed settings for apemans / people respawn

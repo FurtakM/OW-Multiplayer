@@ -105,8 +105,8 @@ begin
       def_shared_vision=      GetMultiplayerSetting(10);
       def_morale_flags=       GetMultiplayerSetting(11);
       def_siberite_detection= GetMultiplayerSetting(12);
-      def_amount_of_apemen=   GetMultiplayerSetting(13);
-      def_people_respawning=  GetMultiplayerSetting(14);
+      def_people_respawning=  GetMultiplayerSetting(13);
+      def_amount_of_apemen=   GetMultiplayerSetting(14);
       def_siberite_bomb=      GetMultiplayerSetting(15);
       def_public_score=       GetMultiplayerSetting(16);
       def_amount_score=       GetMultiplayerSetting(17);
