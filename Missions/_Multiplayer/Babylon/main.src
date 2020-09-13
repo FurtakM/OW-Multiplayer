@@ -28,6 +28,7 @@ EXPORT
   amount_of_apemen,
   respawning_time_min,
   respawning_time_max,
+  buildUpTime_Delay,
   siberite_bomb_Delay,
   def_win_rules,
   final_count;
@@ -172,7 +173,7 @@ begin
     end;
 
   InitGameRules;
-
+                   
   if def_game_rules = 0 then
   begin
     if isSGUI then
@@ -200,6 +201,32 @@ begin
   siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00] [def_siberite_bomb+1];
 
   final_count                  = [500,1000,1500,2000][def_kings_age+1];
+
+  if def_people_respawning = 0 then
+    begin
+      respawning_time_min = 0;
+      respawning_time_max = 0;
+    end
+    else
+    begin
+      respawning_time_min         := (5$00 /5) * (6-def_people_respawning);
+      respawning_time_max         := (15$00/5) * (6-def_people_respawning);
+    end;
+
+    if not def_amount_of_apemen then
+       amount_of_apemen := 0
+    else
+       amount_of_apemen := def_amount_of_apemen;
+
+    if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+    else
+       siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
+
+    if def_builduptime = 0 then
+      buildUpTime_Delay = 0
+    else
+      buildUpTime_Delay           := 4$00 + 1$00*def_builduptime;
 
   BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4];
 end;
