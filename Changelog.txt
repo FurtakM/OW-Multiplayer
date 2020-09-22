@@ -155,3 +155,11 @@ Alien Base:
 
 Four to Win:
 - Fixed settings for apemans / people respawn
+
+0.18:
+Babylon (by Tomasz):
+- Correct display of BT time
+- Siberite bomb counter fixed
+
+Jungle Law (by Tomasz):
+- Map structure fixed
