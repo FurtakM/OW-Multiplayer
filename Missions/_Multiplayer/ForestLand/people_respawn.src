@@ -7,12 +7,10 @@ begin
 
   // side         1 2 3 4 5 6 7 8
   respawn_queue:=[0,0,0,0,0,0,0,0];      // if side want new character  (0/TIME)
+end;                                         
 
-  Enable(10);
-end;
-
-every 0$10 Marked 10 do
-var un,list,time,side;
+every 0$10 trigger def_people_respawning do
+var un,list,time,side;                             
 begin
   for side=1 to Side_Positions do
     if Side_Positions[side] then
