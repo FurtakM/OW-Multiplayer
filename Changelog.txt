@@ -163,3 +163,10 @@ Babylon (by Tomasz):
 
 Jungle Law (by Tomasz):
 - Map structure fixed
+
+0.19:
+Alien Base:
+- Mine Siberite gamemode - siberit amount to win increased
+
+Football:
+- Grass fixed

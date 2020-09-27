@@ -211,7 +211,13 @@ begin
     else
       buildUpTime_Delay           := 4$00 + 1$00*def_builduptime;
 
-    amount_of_siberit =  30 + def_amount_of_siberit * 5;
+    amount_of_siberit := [
+                          30, 60, 90, 120, 150, 180, 210, 240, 270, 300,
+                          400, 500, 600, 700, 800, 900, 1000,
+                          1250, 1500, 1750, 2000, 2250, 2500,
+                          2750, 3000, 3500, 4000, 4500, 5000,
+                          6000, 7000, 8000, 9000, 10000
+                         ][def_amount_of_siberit+1];
 {  end
   else
   begin      
