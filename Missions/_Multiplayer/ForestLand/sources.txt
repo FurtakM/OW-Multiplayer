@@ -8,4 +8,5 @@ SOURCE_CODES
   ENABLED Battle_Flag
   ENABLED sync
   ENABLED Events
+  ENABLED builduptime
 END_OF_SOURCE_CODES
