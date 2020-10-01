@@ -1,0 +1,59 @@
+export BuildUpAreas;
+export buildUpTimeActive;
+
+export function BeginBuildUp;
+var i, j;
+begin
+  buildUpTime_Delay = 0;
+  if not def_builduptime then
+     exit;
+  buildUpTime_Delay:= 4$00 + 1$00*def_builduptime;
+
+  buildUpTimeActive := true;
+
+  for i:= 1 to 8 do
+  if Side_Positions[i] then
+    begin
+      SetAreaMapShow(BuildUpAreas[Side_Positions[i]], 5);
+      for j:= 1 to 8 do
+        if Side_Positions[j] and ((Side_Teams[i] <> Side_Teams[j]) or (not Team_Game) and (i <> j)) then
+          HideArea(j, BuildUpAreas[Side_Positions[i]]);
+
+    end;
+end;
+
+export function EndBuildUp;
+var i, j;
+begin
+  buildUpTimeActive := false;
+
+  for i:= 1 to 8 do
+    if Side_Positions[i] then
+    begin
+      SetAreaMapShow(BuildUpAreas[Side_Positions[i]], 0);
+      for j:= 1 to 8 do
+        if Side_Positions[j] and ((Side_Teams[i] <> Side_Teams[j]) or (not Team_Game) and (i <> j)) then
+          ShowArea(j, BuildUpAreas[Side_Positions[i]]);
+    end;
+end;
+
+every 5 trigger buildUpTimeActive do
+var i, un;
+begin
+  for i:= 1 to 8 do
+    if Side_Positions[i] then
+      for un in FilterUnitsInArea(BuildUpAreas[Side_Positions[i]], [[f_or, [f_type, unit_human], [f_type, unit_vehicle]], [f_side, Your_Side]]) do
+        if ((Side_Teams[i] <> Side_Teams[Your_Side]) or (not Team_Game) and (i <> Your_Side)) then
+          ComMoveToArea(un, BuildUpEscape);
+
+  Enable;
+end;
+
+// "None" "5 Minutes" "6 Minutes" "7 Minutes" "8 Minutes" "9 Minutes"
+// "10 Minutes" "11 Minutes" "12 Minutes" "13 Minutes" "14 Minutes" "15 Minutes"
+
+every 0$1 trigger def_builduptime do
+begin
+wait(4$00 + (def_builduptime * 1$00));
+EndBuildUp;
+end;
