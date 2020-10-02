@@ -175,3 +175,4 @@ ForestLand (by Tomasz):
 - Build Time added
 - People respawn fixed
 - New code BT
+- Changed names of positions 
