@@ -34,8 +34,7 @@ export  is_depot,
 
         spawning_koef_of_apemen,
         respawning_time_min,respawning_time_max,
-        def_win_rules,
-        buildUpTime_Delay;
+        def_win_rules;
 
 
 // multiplayer parameters
