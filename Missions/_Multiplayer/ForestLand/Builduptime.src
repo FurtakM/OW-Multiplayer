@@ -1,16 +1,16 @@
 export BuildUpAreas;
-export buildUpTimeActive;
-export buildUpTime_Delay;
+export BuildUpTimeActive;
+export BuildUpTime_Delay;
 
 export function BeginBuildUp;
 var i, j;
 begin
-  buildUpTime_Delay = 0;
+  BuildUpTime_Delay = 0;
   if not def_builduptime then
      exit;
-  buildUpTime_Delay:= 4$00 + 1$00*def_builduptime;
+  BuildUpTime_Delay:= 4$00 + 1$00*def_builduptime;
 
-  buildUpTimeActive := true;
+  BuildUpTimeActive := true;
 
   for i:= 1 to 8 do
   if Side_Positions[i] then
@@ -26,7 +26,7 @@ end;
 export function EndBuildUp;
 var i, j;
 begin
-  buildUpTimeActive := false;
+  BuildUpTimeActive := false;
 
   for i:= 1 to 8 do
     if Side_Positions[i] then
@@ -38,7 +38,7 @@ begin
     end;
 end;
 
-every 5 trigger buildUpTimeActive do
+every 5 trigger BuildUpTimeActive do
 var i, un;
 begin
   for i:= 1 to 8 do
@@ -55,6 +55,6 @@ end;
 
 every 0$1 trigger def_builduptime do
 begin
-wait(4$00 + (def_builduptime * 1$00));
-EndBuildUp;
+  wait(4$00 + (def_builduptime * 1$00));
+  EndBuildUp;
 end;

@@ -175,7 +175,7 @@ begin
     begin                                  // game settings for testing in editor
       randomize;
 
-      def_base_level=         0;
+      def_base_level=         1;
       def_amount_of_people=   1;
       def_initial_level=      1;
       def_starting_resources= 2;
@@ -385,6 +385,7 @@ begin
     begin
       bc_type=b_depot;
       dep:=CreateAndPlaceBuildingXYD(x,y,Depot_Def[pos][3]);
+      SetBName(dep,'@' & side);
 
       SetResourceType(GetBase(dep),mat_cans,starting_resources[mat_cans]);
       SetResourceType(GetBase(dep),mat_oil,starting_resources[mat_oil]);

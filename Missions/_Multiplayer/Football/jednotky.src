@@ -1,7 +1,7 @@
 VAR delay1, delay2;
 
 EXPORT function place_buildings;
-VAR budovy, b, i;
+VAR budovy, b, i,dep;
 begin
   InitUc;
   InitHc;
@@ -22,7 +22,9 @@ begin
       for b in budovy do
         begin
           bc_type:=  b[1];
-          CreateAndPlaceBuildingXYD(b[2], b[3], b[4]);
+          dep:=CreateAndPlaceBuildingXYD(b[2], b[3], b[4]);
+          if GetBType(dep) in [b_depot, b_warehouse] then
+             SetBName(dep,'@' & barvy[i]);
         end;
     end;
 end;
