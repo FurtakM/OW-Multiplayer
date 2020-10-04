@@ -170,9 +170,14 @@ Alien Base:
 
 Football:
 - Grass fixed
+- Name main base fixed
 
 ForestLand (by Tomasz):
 - Build Time added
 - People respawn fixed
 - New code BT
 - Changed names of positions 
+- Name main base fixed
+
+The Abbys (by Tomasz):
+- Changed Apeman Area 
