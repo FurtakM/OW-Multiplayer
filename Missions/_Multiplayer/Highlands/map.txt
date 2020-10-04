@@ -101,51 +101,51 @@ HEXES
   LINE 43 22 181
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vFsi r6v9sq r6v9 r6v9 r6v9sn r6vFsf vK vK vK vK vK vK r7vHsT r7vHsT r6vEsr r6vEsr r6vEsm r6vEsm vGsG vGsL vGsL vEsK vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vK r6vFsh r6vEsB r6vEsA r6vFs9 r6vGsg r6vKso r6vKsp r6vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsf r6vPsm r6vQsj r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 44 22 181
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vFsi r6v9sq r6v9 r6v9sn r6vF r6vFse r6vFse r6vFse vK vK vK r7vHsT r7vEsT r7vEsT r6vAsb r6vAsW r6vCsG vEsG vEsG vEsL vEsL vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsA r6vFsp r6vFso r6vFso r6vGsg r6vLsg r6vQ r6vKsp r6vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vPs8 r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3f2 v3f2 v3f2 v3 v3f2 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vFsi r6v9sq r6v9 r6v9sn r6vF r6vFse r6vFse r6vFse vK vK vK r7vHsT r7vEsT r7vEsT r6vAsb r6vAsW r6vCsG vEsG vEsG vEsL vEsL vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsA r6vFsp r6vFso r6vFso r6vGsg r6vLsg r6vQ r6vKsp r6vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vPs8 r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 45 23 182
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsO r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v9 r6v9 r6v9sm r6v9sm r6v9sm r6v9sm r6vEsm r6vEsm r6vGsW r7vGsb r7vEsT r7vAsb r7vAsb vA vAsG vCsG vE vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKs9 r6vLsg r6vLso r6vLsp r6vLsg r6vLsg r6vQ r6vQ r6vKsq r6vEsr r6vEsm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vPs8 r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3f2 v3f2 v3f2 v3f2 v3 v3f2 r6v3sn r6v9 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsO r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v9 r6v9 r6v9sm r6v9sm r6v9sm r6v9sm r6vEsm r6vEsm r6vGsW r7vGsb r7vEsT r7vAsb r7vAsb vA vAsG vCsG vE vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKs9 r6vLsg r6vLso r6vLsp r6vLsg r6vLsg r6vQ r6vQ r6vKsq r6vEsr r6vEsm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vPs8 r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 46 23 182
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9 r6v9 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sr r6v3sm r6v3sm r6v3sm r6v3sm r6v8sm r6v8sm r6vBse r6vG r7vDsT r7vAsb vA vA vA vAsG vCsG vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQs9 r6vR r6vQsC r6vQ r6vKsr r6vKsr r6vKsr r6vEsr r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vOsD r6vKsa r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3 r6v3snf2 r6v9 r6v9 r6v9sn r6vFsn r6vLsn r6vRsnf2 r6vXsP r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sr r6v3sm r6v3sm r6v3sm r6v3sm r6v8sm r6v8sm r6vBse r6vG r7vDsT r7vAsb vA vA vA vAsG vCsG vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQs9 r6vR r6vQsC r6vQ r6vKsr r6vKsr r6vKsr r6vEsr r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKse r6vOsD r6vKsa r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 47 24 183
-    t4v3 t2v3 v3 v3 v3 v3 v3 r6v3sn r6v9 r6v9 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sq v3 v3 v3 v3 r6v3se r6v3se r6v6se r6vAsm r6vAsr r7vAsT vA vA vA vA vAsH vCsH vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQs8 r6vQsD r6vKsr r6vKsr r6vEsr r6vEsr r6vEsr r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL r6vIsm r6vMsL r6vHsi r6vBsq r6v5sq v3sK v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9 r6v9 r6v9sn r6vFsn r6vLsn r6vRsnf2 r6vXsPf2 r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sq v3 v3 v3 v3 r6v3se r6v3se r6v6se r6vAsm r6vAsr r7vAsT vA vA vA vA vAsH vCsH vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQs8 r6vQsD r6vKsr r6vKsr r6vEsr r6vEsr r6vEsr r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL r6vIsm r6vMsL r6vHsi r6vBsq r6v5sq v3sK v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 48 24 183
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 r6v3sm r6v3sm r6v9 r6v9sn r6vFsn r6vLsn r6vRsn r6vUsm r6vUsr r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sq v3 v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vAsH vCsH vE vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsm r6vKsr r6vKsr r6vEsr r6vEsr r6v8sr r6v8sm r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vIsL vGsL r6vGsm r6vKsL r6vHsS r6vBsq r6v5sq v3sK v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3smf2 r6v3sm r6v9 r6v9sn r6vFsn r6vLsnf2 r6vRsnf2 r6vUsmf2 r6vUsr r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v3sq v3 v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vAsH vCsH vE vE vE vE vE vE vCsK vAsK v8sK v6sK v4sK v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsm r6vKsr r6vKsr r6vEsr r6vEsr r6v8sr r6v8sm r6vE r6vE r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vIsL vGsL r6vGsm r6vKsL r6vHsS r6vBsq r6v5sq v3sK v3 v3 v3 v3 t2v3 t4v3
   LINE 49 25 184
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsP r6vU r6vU r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vA vAsH vCsH vE vE vE vE vE vE vCsJ r6vAsZ r6v8sZ r6v6sp r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s9 r6v4sf r6v9sn r6vFsf r6vK r6vEsr r6vEsr r6v8sr r6v8sr r6v8 r6v8sn r6vEso r6vEso vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vGsL vEsL r6vEsm r6vHsT r6vDsa r6v8si r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9sn r6vFsnf2 r6vLsnf2 r6vRsPf2 r6vUf2 r6vUf2 r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vA vAsH vCsH vE vE vE vE vE vE vCsJ r6vAsZ r6v8sZ r6v6sp r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s9 r6v4sf r6v9sn r6vFsf r6vK r6vEsr r6vEsr r6v8sr r6v8sr r6v8 r6v8sn r6vEso r6vEso vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vGsL vEsL r6vEsm r6vHsT r6vDsa r6v8si r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 50 25 184
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vUso r6vUso r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vAsI vAsI vCsH vE vE vE vE vE vE vE vE r6vCsp r6vCsp r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3s9 r6v4sf r6v9sn r6vF r6vFsg r6vEsr r6v8sr r6v8sr r6v8 r6v8 r6v8sn r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vEsL vEsL vCsL r6vBsr r6vBsr r6v7sr r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3sn r6v9snf2 r6vFsnf2 r6vLsnf2 r6vRsnf2 r6vUsof2 r6vUso r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 r7v3sP r7v6sX vA vA vA vA vA vA vAsI vAsI vCsH vE vE vE vE vE vE vE vE r6vCsp r6vCsp r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3s9 r6v4sf r6v9sn r6vF r6vFsg r6vEsr r6v8sr r6v8sr r6v8 r6v8 r6v8sn r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vEsL vEsL vCsL r6vBsr r6vBsr r6v7sr r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 51 26 185
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6vasQ r6vasR r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v8sB r6v3sh r6v3sh r6v3sh r6v3sh r6v3sh r6v3sI r6v5sH r6v7sP vA vA vA vA vA r6vAsY r6vCso r6vCso r6vEsZ r6vEsB vE vE vE vE vE vE r6vEsY r6vI r6vCsq r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3sI r7v4sY r7v8sP r7vBsX r6vFsA r6vEsI r6v8sq r6v8 r6v8so r6v8so r6v8so r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vEsL vCsL vCsL vAsL r6v8sT r6v6sj r6v4sT v3sC v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3sn r6v9snf2 r6vFsnf2 r6vLsnf2 r6vRsnf2 r6vXsP r6vasQ r6vasR r6vUsp r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsi r6v9sq r6v8sB r6v3sh r6v3sh r6v3sh r6v3sh r6v3sh r6v3sI r6v5sH r6v7sP vA vA vA vA vA r6vAsY r6vCso r6vCso r6vEsZ r6vEsB vE vE vE vE vE vE r6vEsY r6vI r6vCsq r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3sI r7v4sY r7v8sP r7vBsX r6vFsA r6vEsI r6v8sq r6v8 r6v8so r6v8so r6v8so r6vEsn vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsL vGsL vEsL vCsL vCsL vAsL r6v8sT r6v6sj r6v4sT v3sC v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 52 26 185
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsn r6vd r6vasR r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsh r6v9sp r6v8sp r6v8sp r6v8sp r6v8sp r6v8sp r6v5sp r6v5sp r6v7sQ vA vA vA vA vA r6vAsX r6vEso r6vIsI r6vIsI r6vFsh r6vEsB vE vE r6vEsg r6vEsg r6vEsg r6vEso r6vIsJ r6vCsq r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3sI r7v5sQ r7v8sQ r7vBsP r7vEsP r6vGsY r6vEsp r6v8sp r6v8so r6vEso r6vEso r6vEso vK vK vK vK vK vK vK vK vK vK r6vEsr r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsK vGsL vEsL vCsL vAsL vAsL v8sL v6sL v4sL v3sD v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9snf2 r6vFsnf2 r6vLsn r6vRsn r6vXsn r6vd r6vasR r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsh r6v9sp r6v8sp r6v8sp r6v8sp r6v8sp r6v8sp r6v5sp r6v5sp r6v7sQ vA vA vA vA vA r6vAsX r6vEso r6vIsI r6vIsI r6vFsh r6vEsB vE vE r6vEsg r6vEsg r6vEsg r6vEso r6vIsJ r6vCsq r6v6sq r6v3sS v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r7v3sI r7v5sQ r7v8sQ r7vBsP r7vEsP r6vGsY r6vEsp r6v8sp r6v8so r6vEso r6vEso r6vEso vK vK vK vK vK vK vK vK vK vK r6vEsr r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsK vGsL vEsL vCsL vAsL vAsL v8sL v6sL v4sL v3sD v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 53 27 186
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsn r6vd r6vasS r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsh r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vBsp r6vBsp r6vAsJ vA vA vA vA vA r6vAsX r6vEsn r6vK r6vKso r6vKsp r6vFsp r6vEsh r6vEsh r6vEsg r6vJsI r6vJsI r6vJsI r6vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3sA v3sI v3sJ v3 v3 v3sA v3sB v3 r7v3sI r7v5sQ r7v8sQ r7vBsQ r7vEsP r7vHsP vK r6vEsp r6vEso r6vEso r6vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vE r6vEsm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vIsK vGsK vEsL vCsL vAsL v8sL v8sL v6sL v4sL v3sD v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsn r6vdf2 r6vasSf2 r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vFsh r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vBsp r6vBsp r6vAsJ vA vA vA vA vA r6vAsX r6vEsn r6vK r6vKso r6vKsp r6vFsp r6vEsh r6vEsh r6vEsg r6vJsI r6vJsI r6vJsI r6vK r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3sA v3sI v3sJ v3 v3 v3sA v3sB v3 r7v3sI r7v5sQ r7v8sQ r7vBsQ r7vEsP r7vHsP vK r6vEsp r6vEso r6vEso r6vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vE r6vEsm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vIsK vGsK vEsL vCsL vAsL v8sL v8sL v6sL v4sL v3sD v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 54 27 186
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsn r6vasT r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vHsR r6vHsR r6vCsi vAsJ vAsJ vAsJ vAsJ vAsI vAsI r6vCsH r6vEsn r6vKsn r6vQ r6vLsh r6vJsp r6vJsp r6vJsh r6vJsg r6vLsg r6vLsh r6vKsC r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v4sQ r6v5sI r6v3sZ r6v3sg r6v3so r6v4sh v3sB r7v3sI r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsP vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vE r6v8sr r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vGsa vEsK vCsK vAsL v8sL v6sL v6sL v4sL v3sD v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9snf2 r6vFsnf2 r6vLsnf2 r6vRsnf2 r6vXsnf2 r6vasTf2 r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vHsR r6vHsR r6vCsi vAsJ vAsJ vAsJ vAsJ vAsI vAsI r6vCsH r6vEsn r6vKsn r6vQ r6vLsh r6vJsp r6vJsp r6vJsh r6vJsg r6vLsg r6vLsh r6vKsC r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v4sQ r6v5sI r6v3sZ r6v3sg r6v3so r6v4sh v3sB r7v3sI r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsP vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vE r6v8sr r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vGsa vEsK vCsK vAsL v8sL v6sL v6sL v4sL v3sD v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 55 28 187
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq vCsJ vCsJ vCsJ vCsJ vCsJ vCsI vCsI r6vEsn r6vKsn r6vQ r6vQ r6vPsZ r6vPsZ r6vOsh r6vOsJ r6vOsI r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v7so r6v7so r6v7so r6v7so r6v8sg r6v9sZ r6v4sh r7v4sA r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vCsK vAsK v8sL v6sL v4sL v4sL v3sD v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9snf2 r6vFsnf2 r6vLsnf2 r6vRsnf2 r6vXsPf2 r6vaf2 r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq vCsJ vCsJ vCsJ vCsJ vCsJ vCsI vCsI r6vEsn r6vKsn r6vQ r6vQ r6vPsZ r6vPsZ r6vOsh r6vOsJ r6vOsI r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v7so r6v7so r6v7so r6v7so r6v8sg r6v9sZ r6v4sh r7v4sA r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vCsK vAsK v8sL v6sL v4sL v4sL v3sD v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 56 28 187
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vGsa vEsJ vEsJ vEsJ vEsJ vEsJ vEsJ vEsI vEsI r6vGsX r6vKsn r6vQ r6vQsP r6vT r6vT r6vQsS r6vKsr r6vKsm r6vKsr r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v7so r6vDso r6vDso r6vDso r6vDso r6vDsp r6v9sZ r6v5sp r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vAsa v8sK v6sK v4sL v3sD v3sD v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9snf2 r6vFsnf2 r6vLsnf2 r6vRsnf2 r6vXsPf2 r6vUsqf2 r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vGsa vEsJ vEsJ vEsJ vEsJ vEsJ vEsJ vEsI vEsI r6vGsX r6vKsn r6vQ r6vQsP r6vT r6vT r6vQsS r6vKsr r6vKsm r6vKsr r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sY r6v7so r6vDso r6vDso r6vDso r6vDso r6vDsp r6v9sZ r6v5sp r7v5sQ r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6vAsa v8sK v6sK v4sL v3sD v3sD v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 57 29 188
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsK vGsJ vGsJ vGsJ vGsJ vGsJ vGsJ vGsJ vGsI vGsI r6vIsn r6vOsn r6vQsX r6vPsX r6vPsW r6vQsT r6vKsr r6vEsr r6vEsr r6vEsr r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJso r6vJso r6vJso r6vJsp r6vDsp r6vBsp r6v8sh r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq v6sK v4sK v3sD v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsqf2 r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsK vGsJ vGsJ vGsJ vGsJ vGsJ vGsJ vGsJ vGsI vGsI r6vIsn r6vOsn r6vQsX r6vPsX r6vPsW r6vQsT r6vKsr r6vEsr r6vEsr r6vEsr r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJso r6vJso r6vJso r6vJsp r6vDsp r6vBsp r6v8sh r7v8sQ r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq v6sK v4sK v3sD v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 58 29 188
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsI r6vIsn r6vOsn r6vU r6vPsi r6vNsL r6vLsj r6vKsr r6vEsr r6v8sr r6v8sr r6v8sr r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vP r6vPso r6vPsp r6vJsp r6vHsp r6vDsp r6vBsh r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v8 r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v4sa v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 r6v3snf2 r6v9snf2 r6vFsn r6vLsn r6vRsn r6vXsP r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsJ vIsI r6vIsn r6vOsn r6vU r6vPsi r6vNsL r6vLsj r6vKsr r6vEsr r6v8sr r6v8sr r6v8sr r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vP r6vPso r6vPsp r6vJsp r6vHsp r6vDsp r6vBsh r7vBsQ r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v8 r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v4sa v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 59 30 189
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsn r6vLsn r6vRsn r6vXsP r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsW r6vPsj r6vJsr r6vHsr r6vFsr r6vEsr r6v8sr r6v3sj r6v3sj r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vPsp r6vNsp r6vJsp r6vGsR r6vEsh r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK r6vKsA r6vFsq r6v9sq r6v4si r6v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3 v3f2 r6v3snf2 r6v9snf2 r6vFsnf2 r6vLsn r6vRsn r6vXsP r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsW r6vPsj r6vJsr r6vHsr r6vFsr r6vEsr r6v8sr r6v3sj r6v3sj r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vPsp r6vNsp r6vJsp r6vGsR r6vEsh r7vEsQ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsq r6v8sq r6v8 r6v8 r6v8sm r6vEsm vK vK vK vK vK vK vK vK vK vK r6vKsA r6vFsq r6v9sq r6v4si r6v3sC v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 60 30 189
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sn r6vFsP r6vIsn r6vOsn r6vUsn r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsm r6vKsr r6vJsr r6vDsr r6vBsr r6v9sr r6v8sr r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vTsJ r6vPsp r6vJsp r6vJsp vHsJ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v8 r6v8 r6v8 r6v8sm r6vEsm r6vEsm vK vK vK vK vK vK vK vK r6vKso r6vLsh r6vFsp r6v9sp r6v4sp r6v3sh r6v3sZ v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3 v3 r6v3snf2 r6v9snf2 r6vFsPf2 r6vIsnf2 r6vOsnf2 r6vUsn r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsm r6vKsr r6vJsr r6vDsr r6vBsr r6v9sr r6v8sr r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vTsJ r6vPsp r6vJsp r6vJsp vHsJ r7vHsQ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsq r6v8sq r6v8 r6v8 r6v8 r6v8sm r6vEsm r6vEsm vK vK vK vK vK vK vK vK r6vKso r6vLsh r6vFsp r6v9sp r6v4sp r6v3sh r6v3sZ v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 61 31 190
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6va r6va r6vUsq r6vOsq r6vKsZ r6vKsZ r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsD r6vHsT r6vFsj r6vDsr r6vBsL r6v9sL r6v7sL r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vV r6vPsp r6vPsp r6vJsp vJsA vK vK vK vK vK vK r6vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsp r6v8sp r6v8sp r6v8 r6v8 r6v8sn r6vE r6vEsm r6vEsm vK vK vK vK vK vK r6vKsn r6vQ r6vLsh r6vFsp r6vAsp r6v8sp r6v7sp r6v3sh v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3 r6v3sP r6v6snf2 r6vCsnf2 r6vIsnf2 r6vOsnf2 r6vUsnf2 r6va r6va r6vUsq r6vOsq r6vKsZ r6vKsZ r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsD r6vHsT r6vFsj r6vDsr r6vBsL r6v9sL r6v7sL r6v3sj v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vV r6vV r6vPsp r6vPsp r6vJsp vJsA vK vK vK vK vK vK r6vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vEsp r6v8sp r6v8sp r6v8 r6v8 r6v8sn r6vE r6vEsm r6vEsm vK vK vK vK vK vK r6vKsn r6vQ r6vLsh r6vFsp r6vAsp r6v8sp r6v7sp r6v3sh v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 62 31 190
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6va r6va r6vUsp r6vOsp r6vOsp r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsn r6vVsY r6vVsZ r6vVsZ r6vPsp r6vKsp vK vK vK vK vK vK r6vK r6vKso r6vKso r6vKsp r6vK vK vK vK vK vK vK vK vK vK vK vK r6vEsp r6vEsp r6v8sp r6v8so r6v8so r6vE r6vE r6vE r6vEsn vK vK vK vK vK vK r6vKsn r6vQsA r6vLsp r6vGsp r6vEsp r6vDsB r6v8si r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3f2 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsnf2 r6vIsnf2 r6vOsnf2 r6vUsn r6va r6va r6vUsp r6vOsp r6vOsp r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsn r6vVsY r6vVsZ r6vVsZ r6vPsp r6vKsp vK vK vK vK vK vK r6vK r6vKso r6vKso r6vKsp r6vK vK vK vK vK vK vK vK vK vK vK vK r6vEsp r6vEsp r6v8sp r6v8so r6v8so r6vE r6vE r6vE r6vEsn vK vK vK vK vK vK r6vKsn r6vQsA r6vLsp r6vGsp r6vEsp r6vDsB r6v8si r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 63 32 191
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6va r6va r6vUsp r6vUsp r6vU r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vVsX r6vZ r6vZ r6vVsZ r6vQsp r6vKsp vK vK vK vK vK vK r6vKsn r6vQ r6vQ r6vKsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsp r6vEsp r6vEso r6vEso r6vEso r6vEso r6vEso vK vK vK vK vK vK r6vKsn r6vQs9 r6vRsA r6vMsp r6vKsp r6vEsp r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3f2 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsnf2 r6vIsnf2 r6vOsn r6vUsn r6va r6va r6vUsp r6vUsp r6vU r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sX r6v7sn r6vDsn r6vJsn r6vPsn r6vVsX r6vZ r6vZ r6vVsZ r6vQsp r6vKsp vK vK vK vK vK vK r6vKsn r6vQ r6vQ r6vKsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK r6vK r6vEsp r6vEsp r6vEso r6vEso r6vEso r6vEso r6vEso vK vK vK vK vK vK r6vKsn r6vQs9 r6vRsA r6vMsp r6vKsp r6vEsp r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 64 32 191
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasQ r6vasR r6va r6vUsq r6vU r6vOsp r6vKsZ r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsn r6vVsW r6vVsW r6vXsL r6vWsC r6vQsp r6vKsp vK vK vK vK vK vK r6vKsn r6vQ r6vQso r6vQsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vSsZ r6vQsp r6vKsp r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3f2 v3f2 v3f2 v3f2 v3f2 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsnf2 r6vIsn r6vOsn r6vUsn r6vasQ r6vasR r6va r6vUsq r6vU r6vOsp r6vKsZ r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsn r6vVsW r6vVsW r6vXsL r6vWsC r6vQsp r6vKsp vK vK vK vK vK vK r6vKsn r6vQ r6vQso r6vQsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vSsZ r6vQsp r6vKsp r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 65 33 192
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasP r6vd r6vasR r6vUsq r6vU r6vU r6vOsp r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsm r6vPsm r6vRsm r6vRsm r6vW r6vQsq r6vKsq vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vQsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vW r6vQsq r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3f2 v3f2 v3f2 v3f2 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasP r6vd r6vasR r6vUsq r6vU r6vU r6vOsp r6vOsp r6vKsZ vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sf r6vDsn r6vJsn r6vPsm r6vPsm r6vRsm r6vRsm r6vW r6vQsq r6vKsq vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vQsp r6vKsp vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vW r6vQsq r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 66 33 192
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasP r6vd r6vasR r6vUsp r6vUsp r6vUsp r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sX r6vDsn r6vJsm r6vJsm r6vLsm r6vLsm r6vRse r6vQsr r6vKsq vK vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vQsq r6vKsq vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vWso r6vWsp r6vQsq r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3f2 v3f2 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasP r6vd r6vasR r6vUsp r6vUsp r6vUsp r6vU r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sX r6vDsn r6vJsm r6vJsm r6vLsm r6vLsm r6vRse r6vQsr r6vKsq vK vK vK vK vK vK vK r6vKsn r6vQsn r6vW r6vQsq r6vKsq vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vWso r6vWsp r6vQsq r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 67 34 193
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sP r6v6sn r6vCsn r6vIsn r6vOsn r6vUsn r6vasP r6vd r6vasR r6vasR r6va r6vUsq r6vOsq r6vKsa vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vJsC vHsK vFsK vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sn r6v9sX r6vDsm r6vDsm r6vFsm r6vFsm r6vLsm r6vMsj r6vKsr vK vK vK vK vK vK vK vK r6vKsn r6vQsm r6vQsr r6vKsq vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK vK r6vKsn r6vQsn r6vWsn r6vc r6vWsq r6vQsq r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 68 34 193
@@ -229,7 +229,7 @@ HEXES
   LINE 107 54 213
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sg r6v8so r6vEso r6vKso r6vQso r6vQso r6vQsp r6vQsp r6vKsp r6vKsp r6vKsp r6vKsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6v8sp r6v8so r6vEso r6vEso r6vKso r6vKsp r6vEsp r6vEsp r6vEsp r6v9sh v9sI vBsI vBsI vDsI vDsI vF vF vF vF vF vF vF vF vF vF vF vF r6vFs8 r6vGsm r6vIsb r6vFsr r6vDsK r6v7sq v5sJ v3sJ v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3sA v4sI v4sI v6sI v6sI v8sI v8sI vAsI vAsI vCsI vCsI vEsI vEsI vGsI vGsI vIsI vIsI r6vKsf r6vP r6vJsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6vEsp r6v8sp r6v3sh r6v3sh r6v3sh r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 108 54 213
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQsn r6vWso r6vWso r6vWsp r6vQsp r6vQsp r6vQsp r6vQsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vEsp r6vEso r6vEso r6vKso r6vKso r6vQ r6vKsp r6vKsp r6vKsp r6vEsp r6vBsR vBsI vDsI vDsI vF vF vF vF vF vF vF vF vF vF vF vF vF vF vFs8 r6vFsO r6vFsT r6vDsK r6v9sa v7sK v5sJ v3sJ v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3sg v3sg r6v4sY v6sI v6sI v8sI v8sI vAsI vAsI vCsI vCsI vEsI vEsI vGsI vGsI vIsI vIsI vK vK r6vKsf r6vP r6vKsh r6vKso r6vKso r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vEsp r6v8sp r6v8sp r6v8sp r6v3sh r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQsn r6vWso r6vWso r6vWsp r6vQsp r6vQsp r6vQsp r6vQsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vKspS r6vKsp r6vEsp r6vEso r6vEso r6vKso r6vKso r6vQ r6vKsp r6vKsp r6vKsp r6vEsp r6vBsR vBsI vDsI vDsI vF vF vF vF vF vF vF vF vF vF vF vF vF vF vFs8 r6vFsO r6vFsT r6vDsK r6v9sa v7sK v5sJ v3sJ v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3sg v3sg r6v4sY v6sI v6sI v8sI v8sI vAsI vAsI vCsI vCsI vEsI vEsI vGsI vGsI vIsI vIsI vK vK r6vKsf r6vP r6vKsh r6vKso r6vKso r6vKsp r6vKsp r6vKsp r6vKsp r6vKsp r6vEsp r6v8sp r6v8sp r6v8sp r6v3sh r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 109 55 214
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 r6v3sf r6v8sn r6vEsn r6vKsn r6vQsn r6vWsn r6vc r6vc r6vWsp r6vWsR r6vW r6vW r6vQsp r6vQso r6vQsp r6vQ r6vQ r6vQ r6vQso r6vQsp r6vKsp r6vKsp r6vKso r6vKso r6vQ r6vQ r6vQ r6vQ r6vQ r6vKsp r6vEsp r6vDsB vDsI vF vF vF vF vF vF vF vF vF vF vF vF vF vF vF vF vF r6vF r6vDsK vBsK v9sK v7sK v5sK v3sK v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sg r6v8so r6v8sp r6v8sh v8sI v8sI vAsI vAsI vCsI vCsI vEsI vEsI vGsI vGsI vIsI vIsI vK vK vK vK r6vKse r6vP r6vPsY r6vQso r6vQso r6vQsp r6vQsp r6vQsp r6vQsp r6vKsp r6vEsp r6vEsp r6vEsp r6v8sp r6v3sh r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 110 55 214
@@ -351,11 +351,11 @@ HEXES
   LINE 168 84 243
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v3se r6v3se r6v4se r7v8sW r7v8sW r7v8sb r7v8sT r7v8sT r7v8sT r7v7sb r7v7sb r7v7sb r6v9sr r6vF r6vAsj r6vAsX r6vEsn vK vK r6vGsa r6vG r6vGsn r6vMsG r6vKsb r6vIsL r6vFso r6vFso r6vGso r6vKso r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v7sn r6vDsn r6vJsm r6vJsm r6vJsm r6vJsr r6vDsr r6vDsr r6vDsr r6v7sr r6v7sr r6v3sb r6v3sb r6v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sO r6v3sO r6v3se r6v8se r6v8se r6vDsn r6vJse r6vLsm r6vMsm r6vSsX r6vW r6vW r6vWsH r6vYsW r6vYsW r6vZsT r6vVsr r6vPsq r6vJsq r6vEsi r6v9si r6v3sq r6v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 169 85 244
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s8 r7v4sW r7v4sW r7v5sO r7v5sT r7v5sT r7v5sT r7v5sT r7v3sb r7v3sb r6v3sm r6v9sm r6v9sr r6v9se r6vEsn vK vK vK r6vEsr r6vEsG r6vGsm r6vIsb r6vIsL r6vJsf r6vLsg r6vLsg r6vMsY r6vQ r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v7sm r6vDsm r6vDsm r6vDsm r6vDsm r6vDsr r6v7sr r6v7sr r6v7sr r6v3sb r6v3sb r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v3se r6v8se r6vDsm r6vGse r6vHse r6vMsm r6vQsm r6vSsW r6vSsW r6vSsm r6vSsm r6vTsm r6vTsr r6vTsL r6vPsa r6vJsq r6vEsi r6v9si r6v3sq v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s8 r7v4sW r7v4sW r7v5sO r7v5sT r7v5sT r7v5sT r7v5sT r7v3sb r7v3sb r6v3sm r6v9sm r6v9sr r6v9se r6vEsn vK vK vK r6vGsa r6vG r6vGsm r6vIsb r6vIsL r6vJsf r6vLsg r6vLsg r6vMsY r6vQ r6vQ r6vKsq r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v7sm r6vDsm r6vDsm r6vDsm r6vDsm r6vDsr r6v7sr r6v7sr r6v7sr r6v3sb r6v3sb r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v3se r6v8se r6vDsm r6vGse r6vHse r6vMsm r6vQsm r6vSsW r6vSsW r6vSsm r6vSsm r6vTsm r6vTsr r6vTsL r6vPsa r6vJsq r6vEsi r6v9si r6v3sq v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 170 85 244
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s8 v3s8 v3sG v3sG v3sL v3sL v3sL v3sL v3 v3 r6v3sm r6v3sm r6v3sm r6v8sm r6vEsm vK vK r6vEsr r6vAsb r6vAsm r6vEsW r6vEsW r6vIsn r6vOsH r6vQ r6vQ r6vKsr r6vKsr r6vKsr r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v7sm r6v7sm r6v7sm r6v7sm r6v7sm r6v7sr r6v3sb r6v3sb r6v3sb r6v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v8se r6vBse r6vCse r6vHse r6vKsm r6vMsm r6vMsm r6vMsm r6vMsm r6vNsm r6vNsm r6vNsm r6vOsj r6vJsr r6vFsa r6v9sq r6v3sq r6v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3s8 v3s8 v3sG v3sG v3sL v3sL v3sL v3sL v3 v3 r6v3sm r6v3sm r6v3sm r6v8sm r6vEsm vK vK r6vEsr r6vAsr r6vAsm r6vDse r6vEsW r6vIsn r6vOsH r6vQ r6vQ r6vKsr r6vKsr r6vKsr r6vEsq r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v7sm r6v7sm r6v7sm r6v7sm r6v7sm r6v7sr r6v3sb r6v3sb r6v3sb r6v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v8se r6vBse r6vCse r6vHse r6vKsm r6vMsm r6vMsm r6vMsm r6vMsm r6vNsm r6vNsm r6vNsm r6vOsj r6vJsr r6vFsa r6v9sq r6v3sq r6v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 171 86 245
-    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v8sm r6vEsm r6vEsm r6vEsr r6v8sr r6v8sL r6v8sm r6v8sm r6vEsn r6vKsW r6vKsm r6vKsm r6vKsr r6vEsr r6vEsr r6vEsr r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v3sW r6v3sW r6v3sW r6v3sW r6v3sW r6v3sb r6v3 v3 v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v7sW r6v7se r6vCse r6vEsm r6vJsO r6vGsr r6vGsm r6vGsm r6vHsm r6vHsm r6vHsm r6vIsm r6vJsj r6vEsj r6vEsD r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
+    t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v8sm r6vEsm r6vEsm r6vEsr r6v8sr r6v8sL r6v8se r6v8sm r6vEsn r6vKsW r6vKsm r6vKsm r6vKsr r6vEsr r6vEsr r6vEsr r6v8sq r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v3sW r6v3sW r6v3sW r6v3sW r6v3sW r6v3sb r6v3 v3 v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v7sW r6v7se r6vCse r6vEsm r6vJsO r6vGsr r6vGsm r6vGsm r6vHsm r6vHsm r6vHsm r6vIsm r6vJsj r6vEsj r6vEsD r6v8sq r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 172 86 245
     t4v3 t2v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3se r6v8sm r6v8sm r6v8sm r6v8sr r6v3sj r6v3se r6v3se r6v8sm r6vEsm r6vEsm r6vEsm r6vEsm r6vEsr r6v8sr r6v8sr r6v8sr r6v3si v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3 r6v3 r6v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 v3 r6v3sW r6v3sW r6v7se r6v8sm r6vEse r6vDsr r6vAsr r6vAsm r6vBsm r6vCse r6vCse r6vCsm r6vDsm r6vDsr r6v8sr r6v8sr r6v3si v3 v3 v3 v3 v3 t2v3 t4v3
   LINE 173 87 246
@@ -428,6 +428,8 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
+  SET 53 snowman
+  SET 54 snowman_small
   ON_HEX 36 1
     sLi4
   ON_HEX 54 1
@@ -2438,39 +2440,7 @@ END_OF_RESTRICTS
 MISSION_OBJECTIVES_FULL 0
 
 SPECS
-  PARAMS 16 8
-    163 169 2
-    F F F F F F F F F
-    90 10 2
-    F F F F F F F F F
-    206 97 2
-    F F F F F F F F F
-    53 92 2
-    F F F F F F F F F
-    65 49 1
-    F F F F F F F F F
-    192 143 1
-    F F F F F F F F F
-    157 62 1
-    F F F F F F F F F
-    109 147 1
-    F F F F F F F F F
-    35 55 1
-    F F F F F F F F F
-    189 74 1
-    F F F F F F F F F
-    214 123 1
-    F F F F F F F F F
-    83 154 1
-    F F F F F F F F F
-    39 18 2
-    F F F F F F F F F
-    138 27 2
-    F F F F F F F F F
-    82 115 2
-    F F F F F F F F F
-    222 157 2
-    F F F F F F F F F
+  PARAMS 0 9
   FLAG 0 0
 END_OF_SPECS
 
@@ -2484,30 +2454,30 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -1295168200
-  RANDOM_SEED 2 1368288020
-  RANDOM_SEED 3 490937985
+  RANDOM_SEED 1 586485236
+  RANDOM_SEED 2 586485236
+  RANDOM_SEED 3 2032694593
   RANDOM_SEED 4 898151057
   RANDOM_SEED 5 -533644338
   RANDOM_SEED 6 1882865670
-  RANDOM_SEED 7 -1515174943
+  RANDOM_SEED 7 1182357350
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 -1051396069
-  RANDOM_SEED 10 -1295168200
+  RANDOM_SEED 10 950029890
   RANDOM_SEED 11 -443074555
   RANDOM_SEED 12 911650
   RANDOM_SEED 13 491173101
   RANDOM_SEED 14 378023
-  RANDOM_SEED 15 1476515094
+  RANDOM_SEED 15 -277099769
   RANDOM_SEED 16 907772
   RANDOM_SEED 17 435943
   RANDOM_SEED 18 1234038047
   RANDOM_SEED 19 -540858674
   RANDOM_SEED 20 1629720349
-  RANDOM_SEED 21 962956100
+  RANDOM_SEED 21 -185939883
   RANDOM_SEED 22 881823119
   WIND_TIME 772309 772353 772381
-  WIND_STRENGTH 36.7606167791381 52 53.3803083895691
+  WIND_STRENGTH 36.7606167791381 52.0 53.3803083895691
   WIND_SCATTER 24.1066377870272
 END_OF_RANDOMS
 
@@ -2536,7 +2506,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 1066 -96 758 406 1
+  VIEW 3216 2644 1222 674 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -2565,8 +2535,8 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 11
-  LAST 14
+  ACTIVE 12
+  LAST 15
   AREA 1
     NAME north_apeman
     COLOR 93FF44
@@ -3027,156 +2997,156 @@ AREAS
   AREA 8
     NAME base_nw
     COLOR 00FFDF
+    VISIBLE
     SHORTCUT 8
-    LINES 28 13 67 68
-    ---------+---------------------------------------------------------
-    ---------+---------------------------------------------------------
-    ----------+--------------------------------------------------------
-    ----------+++------------------------------------------------------
-    ---------++++++----------------------------------------------------
-    ----+++++++++++----------------------------------------------------
-    ----+++++++++++---------------+++----------------------------------
-    ---+++++++++++++-----------+++++++---------------------------------
-    ---+++++++++++++++++---++++++++++++--------------------------------
-    ---++++++++++++++++++++++++++++++++--------------------------------
-    ----+++++++++++++++++++++++++++++++--------------------------------
-    -----+++++++++++++++++++++++++++++++-------------------------------
-    ------+++++++++++++++++++++++++++++++------------------------------
-    ------++++++++++++++++++++++++++++++++-----------------------------
-    ------+++++++++++++++++++++++++++++++++----------------------------
-    -----+++++++++++++++++++++++++++++++++++---------------------------
-    -----++++++++++++++++++++++++++++++++++++--------------------------
-    ++++++++++++++++++++++++++++++++++++++++++-------------------------
-    +++++++++++++++++++++++++++++++++++++++++++------------------------
-    -++++++++++++++++++++++++---+++++++++++++++++----------------------
-    --+++++++++++++++++++++++----++++++++++++++++----------------------
-    ---++++++++++++++++++++++-----++++++++++++++++---------------------
-    ----++++++++++++++++++++++----+++++++++++++++++--------------------
-    -----+++++++++++++++++++++----+++++++++++++++++--------------------
-    -----+++++++++++++++++++++-----++++++++++++++++--------------------
-    ------++++++++++++++++++++------++++++++++++++++-------------------
-    ---------++++++++++++++++++------+++++++++++++++-------------------
-    ----------++++++++++++++++++------+++++++++++++++------------------
-    -----------++++++++++++++++++-----+++++++++++++++------------------
-    ------------+++++++++++++++++------++++++++++++--------------------
-    -------------+++++++++++++++++------++++++-------------------------
-    -------------++++++++++++++++++--------+++-------------------------
-    -------------++++++++++++++++++------------------------------------
-    --------------++++++++++++++++++-----------------------------------
-    ---------------+++++++++++++++++-----------------------------------
-    ----------------++++++++++++++++-----------------------------------
-    ----------------+++++++++++++++++----------------------------------
-    -----------------++++++++++++++++----------------------------------
-    ------------------+++++++++++++++----------------------------------
-    -------------------+++++++++++++++---------------------------------
-    --------------------+++++++++++++++--------------------------------
-    --------------------+++++++++++++++++++++--------------------------
-    --------------------+++++++++++++++++++++++------------------------
-    --------------------+++++++++++++++++++++++------------------------
-    ---------------------++++++++++++++++++++++------------------------
-    ----------------------++++++++++++++++++++++-----------------------
-    ----------------------++++++++++++++++++++++++++++++++-------------
-    -----------------------++++++++++++++++++++++++++++++++------------
-    --------------------------+++++++++++++++++++++++++++++------------
-    ---------------------------++++++++++++++++++++++++++++------------
-    ----------------------------+++++++++++++++++++++++++++------------
-    ------------------------------++++++++++++++++++++++++++-----------
-    -------------------------------+++++++++++++++++++++++++-----------
-    --------------------------------+++++++++++++++++++++++++----------
-    --------------------------------+++++++++++++++++++++++++----------
-    --------------------------------++++++++++++++++++++++++++---------
-    --------------------------------++++++++++++++++++++++++++---------
-    ---------------------------------++++++++++++++++++++++++++--------
-    ----------------------------------+++++++++++++++++++++++++--------
-    -----------------------------------+++++++++++++++++++++++++-------
-    ------------------------------------++++++++++++++++++++++++-------
-    -------------------------------------+++++++++++++++++++++++-------
-    -------------------------------------++++++++++++++++++++++++------
-    --------------------------------------+------------+++++++++++-----
-    ----------------------------------------------------+++++-----+++++
-    ----------------------------------------------------+++------------
-    -----------------------------------------------------++------------
-    -----------------------------------------------------+-------------
+    LINES 28 15 63 65
+    ----------+----------------------------------------------------
+    ----------+++--------------------------------------------------
+    ---------++++++------------------------------------------------
+    ----+++++++++++------------------------------------------------
+    ----+++++++++++---------------+++------------------------------
+    ---+++++++++++++-----------+++++++-----------------------------
+    ---+++++++++++++++++---++++++++++++----------------------------
+    ---+++++++++++++++++++++++++++++++++---------------------------
+    ----+++++++++++++++++++++++++++++++++--------------------------
+    -----+++++++++++++++++++++++++++++++++-------------------------
+    -----++++++++++++++++++++++++++++++++++------------------------
+    -----+++++++++++++++++++++++++++++++++++-----------------------
+    -----++++++++++++++++++++++++++++++++++++----------------------
+    ++++++++++++++++++++++++++++++++++++++++++---------------------
+    +++++++++++++++++++++++++++++++++++++++++++--------------------
+    ++++++++++++++++++++++++++++++++++++++++++++-------------------
+    +++++++++++++++++++++++++++++++++++++++++++++------------------
+    -++++++++++++++++++++++++---++++++++++++++++++-----------------
+    --+++++++++++++++++++++++----++++++++++++++++++----------------
+    ---++++++++++++++++++++++-----+++++++++++++++++----------------
+    ----++++++++++++++++++++++----+++++++++++++++++----------------
+    -----+++++++++++++++++++++----+++++++++++++++++----------------
+    -----+++++++++++++++++++++-----++++++++++++++++----------------
+    ------++++++++++++++++++++------++++++++++++++++---------------
+    --------+++++++++++++++++++------+++++++++++++++---------------
+    ---------+++++++++++++++++++------+++++++++++++++--------------
+    ----------+++++++++++++++++++-----+++++++++++++++--------------
+    -----------++++++++++++++++++------+++++++++++++++-------------
+    ------------++++++++++++++++++------++++++++++++++-------------
+    -------------++++++++++++++++++--------++++++++++++------------
+    -------------++++++++++++++++++----------++++++++++------------
+    --------------++++++++++++++++++----------++++++++++-----------
+    ---------------+++++++++++++++++---++++-----++++++++-----------
+    ----------------++++++++++++++++---++++++++++++++++++----------
+    ----------------+++++++++++++++++---+++++++++++++++++----------
+    -----------------++++++++++++++++---++++++++++++++++++---------
+    ------------------+++++++++++++++--------+++++++++--++---------
+    -------------------+++++++++++++++---------+++++++-------------
+    --------------------+++++++++++++++---------++++++-------------
+    --------------------+++++++++++++++++++++---+++++++------------
+    --------------------+++++++++++++++++++++++-++++++++-----------
+    --------------------+++++++++++++++++++++++++++++++++----------
+    ---------------------+++++++++++++++++++++++++++++++++---------
+    ----------------------+++++++++++++++++++++++++++++++++--------
+    ----------------------++++++++++++++++++++++++++++++++++-------
+    -----------------------+++++++++++++++++++++++++++++++++-------
+    --------------------------++++++++++++++++++++++++++++++-------
+    ---------------------------+++++++++++++++++++++++++++++-------
+    ----------------------------++++++++++++++++++++++++++++-------
+    ------------------------------++++++++++++++++++++++++++-------
+    -------------------------------+++++++++++++++++++++++++-------
+    --------------------------------+++++++++++++++++++++++++------
+    --------------------------------+++++++++++++++++++++++++------
+    --------------------------------++++++++++++++++++++++++++-----
+    --------------------------------++++++++++++++++++++++++++-----
+    ---------------------------------++++++++++++++++++++++++++----
+    ----------------------------------+++++++++++++++++++++++++----
+    -----------------------------------+++++++++++++++++++++++++---
+    ------------------------------------++++++++++++++++++++++++---
+    -------------------------------------++++++++++++++++++++++++--
+    --------------------------------------++++++++++++++++++++++++-
+    ---------------------------------------++++++++++++++++++++++++
+    ----------------------------------------+++++++++++++++++------
+    ----------------------------------------------------+++--------
+    -----------------------------------------------------++--------
   AREA 9
     NAME base_ne
     COLOR FF9344
+    VISIBLE
     SHORTCUT 9
-    LINES 132 20 51 63
-    +--------------------------------------------------
-    -++++----------------------------------------------
-    -++++++++------------------------------------------
-    --+++++++++++++++++--------------------------------
-    --+++++++++++++++++--------------------------------
-    ---++++++++++++++++--------------------------------
-    ---++++++++++++++++--------------------------------
-    ----+++++++++++++++--------------------------------
-    -----+++++++++++++++--++---------------------------
-    ------+++++++++++++++++++--------------------------
-    ------++++++++++++++++++++-------------------------
-    -------+++++++++++++++++++-------------------------
-    --------+++++++++++++++++++------------------------
-    --------++++++++++++++++++++-----------------------
-    ----+---+++++++++++++++++++++----------------------
-    ----++++++++++++++++++++++++++---------------------
-    ----+++++++++++++++++++++++++++--------------------
-    ----++++++++++++++++++++++++++++-------------------
-    ----++++++++++++++++++++++++++++-------------------
-    ----+++++++++++++++++++++++++++++------------------
-    ----+++++++++++++++++++++++++++++------------------
-    ----++++++++++++++++++++++++++++++-----------------
-    ----++++++++++++++++++++++++++++++-----------------
-    ------+++++++++++++++++++++++++++++----------------
-    -------+++++++++++++++++++++++++++++---------------
-    -----------++++++++++++++++++++++++++--------------
-    ------------++++++++++++++++++++++++++-------------
-    ------------++++++++++++++++++++++++++-------------
-    ------------+++++++++++++++++++++++++--------------
-    ------------+++++++++++++++++++++++++--------------
-    -----------++++++++++++++++++++++++++--------------
-    -----------++++++++++++++++++++++++++--------------
-    -----------++++++++++--++++++++++++++--------------
-    -----+---++++++++++++----++++++++++++--------------
-    -----++++++++++++++++-----++++++++++++-------------
-    -----+++++++++++++++++-----++++++++++++------------
-    -----++++++++++++++++++-----++++++++++++-----------
-    -----+++++++++++++++++++-----++++++++++++----------
-    -----+++++++++++++++++++------++++++++++++---------
-    -----++++++++++++++++++++------++++++++++----------
-    -----++++++++++++++++++++--------++++++++----------
-    -----+++++++++++++++++++++---------++++++----------
-    -----+++++++---++++++++++++---------++++++---------
-    ------++++++-----++++++++++++-------++++++---------
-    -------++++++-----+++++++++++++++++++++++++--------
-    --------++++++-----++++++++++++++++++++++++--------
-    --------+++++++-----+++++++++++++++++++++++--------
-    --------++++++++----+++++++++++++++++++++++--------
-    ---------++++++++----+++++++++++++++++++++++-------
-    ----------++++++++---+++++++++++++++++++++++-------
-    -----------++++++++++++++++++++++++++++++++++------
-    ------------+++++++++++++++++++++++++++++++++------
-    -------------+++++++++++++++++++++++++++++++++-----
-    --------------+++++++++++++++++++++++++++++++++----
-    ---------------+++++++++++++++++++++++++++++++++---
-    ----------------+++++++++++++++++++++++++++++++++--
-    -----------------+++++++++++++++++++++++++++++++++-
-    ------------------++++++++++++++++++++++++++++++++-
-    -------------------+++++++++++++++++++++++++++++++-
-    --------------------+++++++++++++++++++++++++++++++
-    ---------------------+++++++++++++++---------------
-    ----------------------+++-----++++++---------------
-    -----------------------++----------+---------------
+    LINES 133 21 50 62
+    ++++++++++++++++++--------------------------------
+    +++++++++++++++++++-------------------------------
+    -++++++++++++++++++-------------------------------
+    -++++++++++++++++++-------------------------------
+    --+++++++++++++++++-------------------------------
+    --++++++++++++++++++------------------------------
+    ---+++++++++++++++++++----------------------------
+    ----+++++++++++++++++++---------------------------
+    -----+++++++++++++++++++--------------------------
+    -----++++++++++++++++++++-------------------------
+    ------+++++++++++++++++++-------------------------
+    -------+++++++++++++++++++------------------------
+    -------++++++++++++++++++++-----------------------
+    ---+---+++++++++++++++++++++----------------------
+    ---++++++++++++++++++++++++++---------------------
+    ---+++++++++++++++++++++++++++--------------------
+    ---++++++++++++++++++++++++++++-------------------
+    ---++++++++++++++++++++++++++++-------------------
+    ---+++++++++++++++++++++++++++++------------------
+    ---+++++++++++++++++++++++++++++------------------
+    ---++++++++++++++++++++++++++++++-----------------
+    ---++++++++++++++++++++++++++++++-----------------
+    -----+++++++++++++++++++++++++++++----------------
+    ------+++++++++++++++++++++++++++++---------------
+    ----------++++++++++++++++++++++++++--------------
+    -----------++++++++++++++++++++++++++-------------
+    -----------++++++++++++++++++++++++++-------------
+    -----------+++++++++++++++++++++++++--------------
+    -----------+++++++++++++++++++++++++--------------
+    ----------++++++++++++++++++++++++++--------------
+    ----------++++++++++++++++++++++++++--------------
+    ----------++++++++++--++++++++++++++--------------
+    ----+---++++++++++++----+++++++++++++-------------
+    ----++++++++++++++++-----+++++++++++++------------
+    ----+++++++++++++++++-----+++++++++++++-----------
+    ----++++++++++++++++++-----+++++++++++++----------
+    ----+++++++++++++++++++-----+++++++++++++---------
+    ----+++++++++++++++++++------++++++++++++---------
+    ----++++++++++++++++++++------+++++++++++---------
+    ----++++++++++++++++++++--------+++++++++---------
+    ----+++++++++++++++++++++---------+++++++---------
+    ----+++++++---++++++++++++---------++++++---------
+    -----++++++-----++++++++++++-------++++++---------
+    ------++++++-----+++++++++++++++++++++++++--------
+    -------++++++-----++++++++++++++++++++++++--------
+    -------+++++++-----+++++++++++++++++++++++--------
+    -------++++++++----+++++++++++++++++++++++--------
+    --------++++++++----+++++++++++++++++++++++-------
+    ---------++++++++---+++++++++++++++++++++++-------
+    ----------++++++++++++++++++++++++++++++++++------
+    -----------+++++++++++++++++++++++++++++++++------
+    ------------+++++++++++++++++++++++++++++++++-----
+    -------------+++++++++++++++++++++++++++++++++----
+    --------------+++++++++++++++++++++++++++++++++---
+    ---------------+++++++++++++++++++++++++++++++++--
+    ----------------+++++++++++++++++++++++++++++++++-
+    -----------------++++++++++++++++++++++++++++++++-
+    ------------------+++++++++++++++++++++++++++++++-
+    -------------------+++++++++++++++++++++++++++++++
+    --------------------++++++++++++++++++++++++++++++
+    ---------------------+++-----+++++++++++++++++++++
+    ----------------------++--------------------------
   AREA 10
     NAME base_sw
     COLOR C0C0C0
+    VISIBLE
     SHORTCUT 0
-    LINES 72 112 55 59
-    ------------------+++++--------------------------------
-    ----+----+-------+++++++-------------------------------
-    ----++---++---+++++++++++------------------------------
-    -+++++++++++++++++++++++++-----------------------------
-    +++++++++++++++++++++++++++----------------------------
+    LINES 72 111 55 60
+    ----------------------++-------------------------------
+    ------------------+++++++------------------------------
+    ----+----+-------+++++++++-----------------------------
+    ----++---++---+++++++++++++----------------------------
     ++++++++++++++++++++++++++++---------------------------
-    -+++++++++++++++++++++++++++++-------------------------
+    +++++++++++++++++++++++++++++--------------------------
+    ++++++++++++++++++++++++++++++-------------------------
+    -++++++++++++++++++++++++++++++------------------------
     --++++++++++++++++++++++++++++++-----------------------
     ---++++++++++++++++++++++++++++++----------------------
     ---+++++++++++++++++++++++++++++++---------------------
@@ -3184,34 +3154,34 @@ AREAS
     -----+++++++++++++++++++++++++++++++-------------------
     ------+++++++++++++++++++++++++++++++------------------
     -------++++++++++++++++++++++++++++++++----------------
-    --------+++++++++++++++++++++++++++++++----------------
-    --------++++++++++++++++++++++++++++++++---------------
-    --------+++++++++++++++++++++++++++++++++--------------
-    --------++++++++++++++++++++++++++++++++++++-----------
-    --------++++++++++++++++++++++++++++++++++++-----------
-    --------+++++++++++++++++++++++++++++++++++++----------
-    --------++++++++++++++++++-----++++++++++++++++----+++-
-    --------++++++++++++++++++------++++++++++++++++++++++-
-    --------++++++++++++++++++------++++++++++++++++++++++-
+    ------+++++++++++++++++++++++++++++++++----------------
+    ------++++++++++++++++++++++++++++++++++---------------
+    ------+++++++++++++++++++++++++++++++++++--------------
+    ------++++++++++++++++++++++++++++++++++++++-----------
+    ------++++++++++++++++++++++++++++++++++++++-----------
+    ------+++++++++++++++++++++++++++++++++++++++----------
+    ------++++++++++++++++++++-----++++++++++++++++----+++-
+    ------++++++++++++++++++++------++++++++++++++++++++++-
+    ------++++++++++++++++++++------++++++++++++++++++++++-
     -------+++++++++++++++++++-------+++++++++++++++++++++-
     --------+++++++++++++++++++------++++++++++++++++++++++
     ---------++++++++++++++++++++-----+++++++++++++++++++++
     ----------+++++++++++++++++++-----+++++++++++++++++++++
     -----------++++++++++++++++++------++++++++++++++++++++
     -----------++++++++++++++++++------+++++++++++++++++++-
-    ------------++++++++++++++++++-----++++++++------------
-    -------------+++++++++++++++++------+++++++------------
-    -------------+++++++++++++++++------+++++++------------
-    --------------++++++++++++++++------+++++++------------
+    ------------++++++++++++++++++-----+++++++++-----------
+    -------------+++++++++++++++++------++++++++-----------
+    -------------+++++++++++++++++------++++++++-----------
+    --------------++++++++++++++++------++++++++-----------
     --------------++++++++++++++++------++++++++-----------
     --------------+++++++++++++++++-----++++++++-----------
     ----------------++++++++++++++++----++++++++-----------
     -----------------++++++++++++++++---++++++++-----------
     -----------------+++++++++++++++++++++++++++-----------
-    ------------------++++++++++++++++++++++++-------------
-    -------------------+++++++++++++++++++++++-------------
-    ---------------------+++++++++++++++++++++-------------
-    ----------------------++++++++++++++++++++-------------
+    ------------------+++++++++++++++++++++++++------------
+    -------------------++++++++++++++++++++++++------------
+    ---------------------++++++++++++++++++++++------------
+    ----------------------+++++++++++++++++++++------------
     ----------------------+++++++++++++++++++++------------
     -----------------------++++++++++++++++++++------------
     ------------------------++++++++++++++++++++-----------
@@ -3222,74 +3192,265 @@ AREAS
     ----------------------------++++++++++++++++++---------
     -----------------------------+++++++++++++++++---------
     ------------------------------++++++++++++++++---------
-    -------------------------------+++++++++--+++++--------
-    -------------------------------+-----------+++++-------
+    -------------------------------++++++++++++++++--------
+    ------------------------------------------++++++-------
+    -------------------------------------------++++++------
     --------------------------------------------+++++------
-    ---------------------------------------------+++-------
-    ----------------------------------------------++-------
+    ---------------------------------------------++++------
     ----------------------------------------------+++------
     -----------------------------------------------++------
   AREA 11
     NAME base_se
     COLOR 0080FF
-    LINES 169 108 57 58
-    ----------------++---------------------------------------
-    ---------------++++--------------------------------------
-    --------------++++++-------------------------------------
-    -------------++++++++------------------------------------
-    ------------++++++++++-----------------------------------
-    -----------+++++++++++++---------------------------------
-    ----------++++++++++++++++--+----------------------------
-    ------+--+++++++++++++++++++++---------------------------
-    -+----++++++++++++++++++++++++++-------------------------
-    --++--+++++++++++++++++++++++++++------------------------
-    --++++++++++++++++++++++++++++++++-----------------------
-    --+++++++++++++++++++++++++++++++++----------------------
-    --++++++++++++++++++++++++++++++++++---------------------
-    --++++++++++++++++++++++++++++++++++---------------------
-    --+++++++++++++++++++++++++++++++++++--------------------
-    --+++++++++++++++++++++++++++++++++++--------------------
-    --++++++++++++++++++++++++++++++++++++-------------------
-    --+++++++++++++++++++++++++++++++++++++------------------
-    -++++++++++++++++++++++++++++++++++++++------------------
-    ---++++++++++++++++++++++++++++++++++++------------------
-    ----+++++++++++++++++++++++++++++++++++------------------
-    -----+++++++++++++++++++++++++++++++++++-----------------
-    -----+++++++++---+++++++++++++++++++++++-----------------
-    -----+++++++++-----++++++++++++++++++++++----------------
-    -----+++++++++------++++++++++++++++++++++---------------
-    ---+++++++++++-------++++++++++++++++++++----------------
-    ++++++++++++++--------+++++++++++++++++++----------------
-    -++++++++++++++--------++++++++++++++++++----------------
-    -++++++++++++++---------+++++++++++++++++----------------
-    --++++++++++++++--------+++++++++++++++++----------------
-    --++++++++++++++++-------++++++++++++++++----------------
-    ---+++++++++++++++++-----++++++++++++++++----------------
-    ---++++++++++++++++++-----+++++++++++++++----------------
-    ----+++++++++++++++++++----+++++++++++++++---------------
-    ----+++++++++++++++++++++--++++++++++++++++--------------
-    ----++++++++++++++++++++++++++++++++++++++++-------------
-    -----++++++++++++++++++++++++++++++++++++++++------------
-    -----+++++++++++++++++++++++++++++++++++++++++-----------
-    ------+++++++++++++++++++++++++++++++++++++++++----------
-    ------++++++++++++++++++++++++++++++++++++++++++---------
-    -------++++++++++++++++++++++++++++++++++++++++++--------
-    -------+++++++++++++++++++++++++++++++++++++++++++-------
-    --------++++++++++++++++++++++++++++++++++++++++++++-----
-    --------++++++++++++++++++++++++++++++++++++++++++++-----
-    ---------+++++++++++++++++++++++++++++++++++++++++++-----
-    ---------+++++++++++++++++++++++++++++++++++++++++++-----
-    ----------+++++++++++++++++++++++++++++++++++++++++++----
-    ----------+++++++++++++++++++++++++++++++++++++++++++----
-    ------------++++++++++++++++++++++++++++++++++++++++++---
-    ---------------+----+++++++++++++++++++++++++++++++++++--
-    ---------------------++++++++++++++++++++++++++++++++++--
-    ----------------------++++++++++++++++++++---++++++++++--
-    -----------------------+++++++++++++++++++----+++++++++--
-    ------------------------++++++-----------------+++++++++-
-    -------------------------++++-----------------------+++++
-    --------------------------+++-------------------------+++
-    ---------------------------+---------------------------+-
-    -------------------------------------------------------+-
+    VISIBLE
+    LINES 168 105 58 63
+    ---------------+------------------------------------------
+    --------------+++-----------------------------------------
+    -------------+++++----------------------------------------
+    ------------+++++++---------------------------------------
+    -----------+++++++++--------------------------------------
+    ----------+++++++++++-------------------------------------
+    ---------+++++++++++++------------------------------------
+    --------+++++++++++++++-----------------------------------
+    --------+++++++++++++++++---------------------------------
+    --------+++++++++++++++++++--+----------------------------
+    -------++++++++++++++++++++++++---------------------------
+    --+----++++++++++++++++++++++++++-------------------------
+    ---++--+++++++++++++++++++++++++++------------------------
+    ---++++++++++++++++++++++++++++++++-----------------------
+    ---+++++++++++++++++++++++++++++++++----------------------
+    ---++++++++++++++++++++++++++++++++++---------------------
+    ---++++++++++++++++++++++++++++++++++---------------------
+    ---+++++++++++++++++++++++++++++++++++--------------------
+    ---+++++++++++++++++++++++++++++++++++--------------------
+    ---++++++++++++++++++++++++++++++++++++-------------------
+    ---+++++++++++++++++++++++++++++++++++++------------------
+    --++++++++++++++++++++++++++++++++++++++------------------
+    ----++++++++++++++++++++++++++++++++++++------------------
+    -----+++++++++++++++++++++++++++++++++++------------------
+    ------+++++++++++++++++++++++++++++++++++-----------------
+    ------+++++++++---+++++++++++++++++++++++-----------------
+    ------+++++++++-----++++++++++++++++++++++----------------
+    ------+++++++++------++++++++++++++++++++++---------------
+    ----+++++++++++-------+++++++++++++++++++++---------------
+    +++++++++++++++--------++++++++++++++++++++---------------
+    ++++++++++++++++--------+++++++++++++++++++---------------
+    -+++++++++++++++---------++++++++++++++++++---------------
+    -++++++++++++++++--------++++++++++++++++++---------------
+    --+++++++++++++++++-------+++++++++++++++++---------------
+    --+++++++++++++++++++-----+++++++++++++++++---------------
+    ---+++++++++++++++++++-----+++++++++++++++++--------------
+    ---+++++++++++++++++++++----+++++++++++++++++-------------
+    ----++++++++++++++++++++++--++++++++++++++++++------------
+    ----+++++++++++++++++++++++++++++++++++++++++++-----------
+    -----+++++++++++++++++++++++++++++++++++++++++++----------
+    -----++++++++++++++++++++++++++++++++++++++++++++---------
+    ------++++++++++++++++++++++++++++++++++++++++++++--------
+    ------+++++++++++++++++++++++++++++++++++++++++++++-------
+    -------+++++++++++++++++++++++++++++++++++++++++++++------
+    -------++++++++++++++++++++++++++++++++++++++++++++++-----
+    --------+++++++++++++++++++++++++++++++++++++++++++++-----
+    --------+++++++++++++++++++++++++++++++++++++++++++++-----
+    ---------++++++++++++++++++++++++++++++++++++++++++++-----
+    ---------++++++++++++++++++++++++++++++++++++++++++++-----
+    ----------++++++++++++++++++++++++++++++++++++++++++++----
+    -----------+++++++++++++++++++++++++++++++++++++++++++----
+    ------------+++++++++++++++++++++++++++++++++++++++++++---
+    --------------------++++++++++++++++++++++++++++++++++++--
+    --------------------+++++++++++++++++++++++++++++++++++++-
+    --------------------+++++++++++++++++++++++---+++++++++++-
+    ---------------------++++++++++++++++++++++----++++++++++-
+    ---------------------++++++++++-----------------++++++++++
+    ---------------------+++++++++-----------------------+++++
+    ---------------------+++++++++-------------------------+++
+    -------------------++++++++++-----------------------------
+    -------------------++++++++-------------------------------
+    --------------------++++++--------------------------------
+    ---------------------+++----------------------------------
+  AREA 12
+    NAME BuildUpEscape
+    COLOR FF0000
+    SHORTCUT 1
+    LINES 0 0 250 180
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------
+    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------
+    --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
+    --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------
+    ---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------
+    ----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------
+    -----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+    -----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+    ------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------
+    ------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------
+    -------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------
+    -------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------
+    --------++++++++++++++++++++++++++++++-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+    --------++++++++++++++++++++++++++++++---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+    ---------++++++++++++++++++++++++++++------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------
+    ---------+++++++++++++++++++++++-----------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------
+    ----------++++++++++++++++++++++-----------+++++++++++++++---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------
+    ----------+++++++++++++++++++++-------------+++++++++++-------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------
+    -----------++++++++++++++++++++-----------------+++------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------++++++++++++++++++++-------------------------------------------------------------------------------
+    -----------++++++++++++++++++++---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------+++++++++++++++++++-------------------------------------------------------------------------------
+    ------------++++++++++++++++++++---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------++++++++++++++++++++------------------------------------------------------------------------------
+    ------------+++++++++++++++++++++---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------++++++++++++++++++++------------------------------------------------------------------------------
+    -------------++++++++++++++++++++----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------+++++++++++++++++++++-----------------------------------------------------------------------------
+    -------------++++++++++++++++++++-----------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------++++++++++++++++++++-----------------------------------------------------------------------------
+    --------------+++++++++++++++++++------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------+++++++++++++++++++----------------------------------------------------------------------------
+    --------------++++++++++++++------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------++++++++++++++++++----------------------------------------------------------------------------
+    ---------------+++++++++++++-------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------++++++++++++++++++---------------------------------------------------------------------------
+    ---------------+++++++++++++--------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------+++++++++++++++++---------------------------------------------------------------------------
+    ----------------++++++++++++---------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------++++++++++++++++++--------------------------------------------------------------------------
+    ----------------+++++++++++++---------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------+++++++++++++++++--------------------------------------------------------------------------
+    -----------------+++++++++++++---------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------+++++++++++++++++-------------------------------------------------------------------------
+    -----------------++++++++++++++--------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+++---------------------++++++++++++++++-------------------------------------------------------------------------
+    ------------------++++++++++++++-------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------++++++++++++++++------------------------------------------------------------------------
+    ------------------+++++++++++++++------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------+++++++++++++++------------------------------------------------------------------------
+    -------------------++++++++++++++------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------+++++++++++++++-----------------------------------------------------------------------
+    -------------------+++++++++++++++------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------+++++++++++++++-----------------------------------------------------------------------
+    --------------------++++++++++++++++----------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------+++++++++++++++----------------------------------------------------------------------
+    --------------------+++++++++++++++++----------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------+++++++++++++++----------------------------------------------------------------------
+    ---------------------+++++++++++++++++---------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------+++++++++++++++---------------------------------------------------------------------
+    ---------------------++++++++++++++++++---------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------+++++++++++++++---------------------------------------------------------------------
+    ----------------------++++++++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------+++++++++++++++--------------------------------------------------------------------
+    ----------------------+++++++++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------++++++++++++++--------------------------------------------------------------------
+    -----------------------++++++++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------++++++++++++++-------------------------------------------------------------------
+    -----------------------+++++++++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------+++++++++++++-------------------------------------------------------------------
+    ------------------------+++++++++++++++++++-------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------++++++++++++++------------------------------------------------------------------
+    ------------------------++++++++++++++++++++-------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------+++++++++++++++------------------------------------------------------------------
+    -------------------------+++++++++++++++++++-------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------++++++++++++++++-----------------------------------------------------------------
+    -------------------------++++++++++++++++++++-------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------++++++++++++++++-----------------------------------------------------------------
+    --------------------------++++++++++++++++++++--------------------------------++--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------+++++++++++++++++----------------------------------------------------------------
+    --------------------------+++++++++++++++++++++-------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------+++++++++++++++++----------------------------------------------------------------
+    ---------------------------+++++++++++++++++++++------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+++-----------------------------+++++++++++++++++---------------------------------------------------------------
+    ---------------------------+++++++++++++++++++++-------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------++++++++++++++++---------------------------------------------------------------
+    ----------------------------++++++++++++++++++++--------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++--------------------------------------------------------------
+    ----------------------------++++++++++++++++++++---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------+++++++++++++++--------------------------------------------------------------
+    -----------------------------++++++++++++++++++++---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------+++++++++++++++-------------------------------------------------------------
+    -----------------------------+++++++++++++++++++++---------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------+++++++++++++++-------------------------------------------------------------
+    ------------------------------++++++++++++++++++++----------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------++++++++++++++++------------------------------------------------------------
+    ------------------------------+++++++++++++++++++++---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------++++++++++++++++------------------------------------------------------------
+    -------------------------------+++++++++++++++++++++++------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------+++++++++++++++++-----------------------------------------------------------
+    -------------------------------++++++++++++++++++++++++-----------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------+++++++++++++++++-----------------------------------------------------------
+    --------------------------------++++++++++++++++++++++++----------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------++++++++++++++++++----------------------------------------------------------
+    --------------------------------++++++++++++++++++++++++++--------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------+++++++++++++++++----------------------------------------------------------
+    ---------------------------------++++++++++++++++++++++++++-------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++++---------------------------------------------------------
+    ---------------------------------+++++++++++++++++++++++++++-------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++++---------------------------------------------------------
+    ----------------------------------++++++++++++++++++++++++++-------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------+++++++++++++++++++--------------------------------------------------------
+    ----------------------------------++++++++++++++++++++++++++--------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++++--------------------------------------------------------
+    -----------------------------------+++++++++++++++++++++++++--------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------+++++++++++++++++++-------------------------------------------------------
+    -----------------------------------++++++++++++++++++++++++++--------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------++++++++++++++++++-------------------------------------------------------
+    ------------------------------------++++++++++++++++++++++++++-------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------+++++++++++++++++++------------------------------------------------------
+    ------------------------------------+++++++++++++++++++++++++++-------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------++++++++++++++++++------------------------------------------------------
+    -------------------------------------+++++++++++++++++++++++++++------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------++++++++++++++++++-----------------------------------------------------
+    -------------------------------------++++++++++++++++++++++++++++------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------+++++++++++++++++-----------------------------------------------------
+    --------------------------------------++++++++++++++++++++++++++++------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------+++++++++++++++++----------------------------------------------------
+    --------------------------------------+++++++++++++++++++++++++++++------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------++++++++++++++++----------------------------------------------------
+    ---------------------------------------+++++++++++++++++++++++++++++-----------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------+++++++++++++++++---------------------------------------------------
+    ---------------------------------------+++++++++++++++++++++++++++++++++++++++++---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------+++++++++++++++++---------------------------------------------------
+    ----------------------------------------+++++++++++++++++++++++++++++++++++++++++--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------+++++++++++++++++--------------------------------------------------
+    ----------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------+++++++++++++++++--------------------------------------------------
+    -----------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---+++++---------------------++++++++++++++++++-------------------------------------------------
+    -----------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------
+    ------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------
+    ------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------
+    -------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------
+    -------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------
+    --------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------
+    --------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------
+    ---------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------
+    ---------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------
+    ----------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------
+    ----------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------
+    -----------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------
+    -----------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------
+    ------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------
+    ------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------
+    -------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+    -------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+    --------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------
+    --------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------
+    ---------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------
+    ---------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------
+    ----------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------
+    ----------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------
+    -----------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-+++++++++++++++++++++++++++++-------------------------------------
+    -----------------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---++++++++++++++++++++++++++++-------------------------------------
+    ------------------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----++++++++++++++++++++++++++++------------------------------------
+    ------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------+++++++++++++++++++++++++++------------------------------------
+    -------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------+++++++++++++++++++++++++++-----------------------------------
+    -------------------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------++++++++++++++++++++++++++-----------------------------------
+    --------------------------------------------------------++++++++++++++++++++++++++++++++++++++--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------++++++++++++++++++++++++++----------------------------------
+    --------------------------------------------------------++++++++++++++++++++++++++++++++++-------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------+++++++++++++++++++++++++----------------------------------
+    ---------------------------------------------------------+++++++++++++++++++-++++-+++++++---------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------++++++++++++++++++++++++---------------------------------
+    ---------------------------------------------------------+++++++++++++++++++--+++--+++-------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------++-+++++++++++++++++++---------------------------------
+    ----------------------------------------------------------++++++++++++++----------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------+++++++++++++++++++--------------------------------
+    ----------------------------------------------------------++++++++++++++-----------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-++++--------------------------+++++++++++++++++--------------------------------
+    -----------------------------------------------------------++++++++++++++-----------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--++---------------------------+++++++++++++++++-------------------------------
+    -----------------------------------------------------------++++++++++++++------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------++++++++++++++++-------------------------------
+    ------------------------------------------------------------++++++++++++++------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------++++++++++++++++------------------------------
+    ------------------------------------------------------------+++++++++++++++------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------+++++++++++++++------------------------------
+    -------------------------------------------------------------++++++++++++++-------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------++++++++++++++++-----------------------------
+    -------------------------------------------------------------+++++++++++++++-------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------+++++++++++++++-----------------------------
+    --------------------------------------------------------------+++++++++++++++-------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++----------------------------
+    --------------------------------------------------------------++++++++++++++++-------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------+++++++++++++++----------------------------
+    ---------------------------------------------------------------++++++++++++++++--------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------+++++++++++++++---------------------------
+    ---------------------------------------------------------------+++++++++++++++---------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------+++++++++++++++---------------------------
+    ----------------------------------------------------------------++++++++++++++----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------++++++++++++++++--------------------------
+    ----------------------------------------------------------------++++++++++++++-----------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++--------------------------
+    -----------------------------------------------------------------+++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++-------------------------
+    -----------------------------------------------------------------+++++++++++++--------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------++++++++++++++++-------------------------
+    ------------------------------------------------------------------++++++++++++---------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------++++++++++++++++------------------------
+    ------------------------------------------------------------------++++++++++++-----------------------------------------++++---++++++++++++++++++++++++++++++++++++++++++++++++--------------+----------------------+++++++++++++++------------------------
+    -------------------------------------------------------------------+++++++++++------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------++++++++++++++++-----------------------
+    -------------------------------------------------------------------+++++++++++------------------------------------------------++++++++++++++++++++++++++++++++++++++++++-------------------------------------------++++++++++++++++-----------------------
+    --------------------------------------------------------------------+++++++++++-----------------------------------------------++++++++++++++++++++++++++++++++++++++++++-------------------------------------------+++++++++++++++++----------------------
+    --------------------------------------------------------------------++++++++++++-----------------------------------------------++++++++++++++++++++++++++++++++++++++++++------------------------------------------+++++++++++++++++----------------------
+    ---------------------------------------------------------------------++++++++++++----------------------------------------------++++++++++++++++++++++++++++++++++++++++++------------------------------------------++++++++++++++++++---------------------
+    ---------------------------------------------------------------------+++++++++++++---------------------------------------------+++++++++++++++++++++++++++++++++++++++++++-----------------------------------------++++++++++++++++++---------------------
+    ----------------------------------------------------------------------+++++++++++++--------------------------------------------+++++++++++++++++++++++++++++++++++++++++++-----------------------------------------+++++++++++++++++++--------------------
+    ----------------------------------------------------------------------+++++++++++++-------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------++++++++++++++++++--------------------
+    -----------------------------------------------------------------------+++++++++++++--------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------++++++++++++++++++-------------------
+    -----------------------------------------------------------------------++++++++++++++-------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------+++++++++++++++++-------------------
+    ------------------------------------------------------------------------+++++++++++++-------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------+++++++++++++++++------------------
+    ------------------------------------------------------------------------++++++++++++++------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------++++++++++++++++------------------
+    -------------------------------------------------------------------------+++++++++++++------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------++++++++++++++++-----------------
+    -------------------------------------------------------------------------+++++++++++++------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------+++++++++++++++-----------------
+    --------------------------------------------------------------------------++++++++++++++----------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------+++++++++++++++----------------
+    --------------------------------------------------------------------------+++++++++++++++---------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------++++++++++++++----------------
+    ---------------------------------------------------------------------------++++++++++++++---------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------++++++++++++++---------------
+    ---------------------------------------------------------------------------+++++++++++++++-------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------++++++++++++++---------------
+    ----------------------------------------------------------------------------+++++++++++++++------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------+++++++++++++++--------------
+    ----------------------------------------------------------------------------+++++++++++++++++----------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------+++++++++++++++--------------
+    -----------------------------------------------------------------------------+++++++++++++++++---------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------++++++++++++++++-------------
+    -----------------------------------------------------------------------------+++++++++++++++++---------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------+++++++++++++++-------------
+    ------------------------------------------------------------------------------+++++++++++++++++--------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------++++++++++++++++------------
+    ------------------------------------------------------------------------------++++++++++++++++++--------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------+++++++++++++++------------
+    -------------------------------------------------------------------------------++++++++++++++++++-------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------+++++++++++++++-----------
+    -------------------------------------------------------------------------------++++++++++++++++++--------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------++++++++++++++-----------
+    --------------------------------------------------------------------------------++++++++++++++++++-------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------+++-----------+++++++++++++++----------
+    --------------------------------------------------------------------------------+++++++++++++++++++-------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------++++----------+++++++++++++++----------
+    ---------------------------------------------------------------------------------+++++++++++++++++++------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------+++++++++++++++++----------+++++++++++++++---------
+    ---------------------------------------------------------------------------------++++++++++++++++++++-----------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------+++++++++++++++++++++++-----+++++++++++++++---------
+    ----------------------------------------------------------------------------------++++++++++++++++++++----------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------+++++++++++++++++++++++++---++++++++++++++++--------
+    ----------------------------------------------------------------------------------+++++++++++++++++++++----------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------+++++++++++++++++++++++++++++++++++++++++++++--------
+    -----------------------------------------------------------------------------------+++++++++++++++++++++++++++++++------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------++++++++++++++++++++++++++++++++++++++++++++++++-------
+    -----------------------------------------------------------------------------------++++++++++++++++++++++++++++++++------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------+++++++++++++++++++++++++++++++++++++++++++++++++-------
+    ------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++-----++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    ------------------------------------------------------------------------------------+++++++++++++++++++++++++++++++++----+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+    -------------------------------------------------------------------------------------+++++++++++++++++++++++++++++++++---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    -------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+    --------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    --------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+    ---------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ---------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+    ----------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    ----------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+    -----------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    -----------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    ------------------------------------------------------------------------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 END_OF_AREAS
 

@@ -3,11 +3,31 @@
 //   3 4
 
 // Types of used games
-// 1 - Normal
+// 1 - Normal                        
 
 // derived game parameters
+EXPORT
+      def_base_level,         // (0)  No Base, Depot Only, Fortified, *Extra Fortified
+      def_amount_of_people,   // (1)  9, 12, 15, 24
+      def_skill_level,        // (2)  Unexperienced, Little Experienced, Experienced, More Experienced
+      def_starting_resources, // (3)  None, Few, Medium, Lots
+      def_shipments_density,  // (4)  Low, Medium, High, Very High
+      def_extra_oil_deposits, // (5)  Normal, Extra / *Bool
+      def_extra_sib_deposits, // (6)  None, Normal, Extra / *Bool
+      def_shared_vision,      // (10) True, False
+      def_morale_flags,       // (11) None, Fast Decreasing, Decreasing, Slowly Decreasing, Not Decreasing
+      def_siberite_detection, // (12) True, False
+      def_amount_of_apemen,   // (13) None, Few, Medium, Lots
+      def_people_respawning,  // (14) None, Rare, Common
+      def_siberite_bomb,      // (15) 0 - disabled, 1 - enabled
+      def_builduptime;        // (20) 0 - disabled, 5-15 minutes
+
+EXPORT
+      No_Mechs,
+      Game_Type;
+
 export  is_depot,
-        number_of_breastworks,
+        number_of_breastworks,                                                                 
         number_of_people,
         initial_level,
         starting_crates,
@@ -24,9 +44,9 @@ export  Side_Teams, Teams;
 export  Side_Positions, Side_Nations, Team_Game;
 
 export  depot_def, breastworks_def, start_def,
-        extra_oil_deposits_locations,
+        extra_oil_deposits_locations, extra_sib_deposits_locations, normal_oil_deposits_locations, normal_sib_deposits_locations,
         battle_flags_id,Side_Comps;
-
+                                               
 export heroes;
 var  commander;
 
@@ -42,7 +62,11 @@ var neng,
 function init_map;
 var i;
 begin
-  extra_oil_deposits_locations:=[ [35,55], [189,74], [214,123], [83,154] ];
+  normal_oil_deposits_locations:=[ [65,49], [157,62], [192,143], [109,147] ];
+  extra_oil_deposits_locations:=[ [22,33], [179,43], [228,151], [83,154] ];
+
+  normal_sib_deposits_locations:=[ [39,18], [138,27], [222,157], [82,115] ];
+  extra_sib_deposits_locations:=[ [35,55], [188,70], [214,123], [66,120] ];
 
   depot_def:=[ [54,45,3], [161,55,5], [98,142,4], [194,133,1] ];
 
@@ -54,10 +78,21 @@ begin
                      [ [179,116,2], [175,145,1], [217,149,4], [202,158,0] ]
                    ];
 
-  if not def_extra_oil_deposits then
-    for i in extra_oil_deposits_locations do
-      RemoveDepositXY(i[1],i[2]);
+  for i in normal_oil_deposits_locations do
+      CreateDepositXY(i[1],i[2],mat_oil);
 
+  if def_extra_oil_deposits then
+    for i in extra_oil_deposits_locations do
+      CreateDepositXY(i[1],i[2],mat_oil);
+
+  if def_extra_sib_deposits > 0 then
+  begin
+    for i in normal_sib_deposits_locations do
+      CreateDepositXY(i[1],i[2],mat_siberit);
+    if def_extra_sib_deposits = 2 then
+      for i in extra_sib_deposits_locations do
+         CreateDepositXY(i[1],i[2],mat_siberit);
+   end;
 end;
 
 function read_multiplayer_and_game_parameters;
@@ -81,28 +116,23 @@ begin
 
       Your_Side    = 4;
 
-      Side_Positions = [0,3,0,1,0,0,4,0];
+      Side_Positions = [0,3,0,1,0,2,4,0];
       Side_Teams     = [0,1,0,2,0,1,2,0];
-      Side_Nations   = [0,3,0,1,0,1,3,0];
+      Side_Nations   = [0,3,0,2,0,1,3,0];
+      Side_Comps =     [0,0,0,0,0,0,0,0];
 
-      Teams          = [[2,7],[6,4]];
-    end;
-
-  for i:= 1 to 8 do
-    if Multiplayer_GetPlayerIsSpec(i) then
-    begin
-      Side_Positions:= Replace(Side_Positions, i, 0);
-      Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);
+      Teams          = [[2,6],[4,7]];
     end;
 
   if MultiPlayer then
     begin
       def_base_level=         GetMultiplayerSetting(0);
       def_amount_of_people=   GetMultiplayerSetting(1);
-      def_skill_level=      GetMultiplayerSetting(2);
+      def_skill_level=        GetMultiplayerSetting(2);
       def_starting_resources= GetMultiplayerSetting(3);
       def_shipments_density=  GetMultiplayerSetting(4);
       def_extra_oil_deposits= GetMultiplayerSetting(5);
+      def_extra_sib_deposits= GetMultiplayerSetting(6);
 
       def_shared_vision=      GetMultiplayerSetting(10);
       def_morale_flags=       GetMultiplayerSetting(11);
@@ -110,6 +140,7 @@ begin
       def_amount_of_apemen=   GetMultiplayerSetting(13);
       def_people_respawning=  GetMultiplayerSetting(14);
       def_siberite_bomb=      GetMultiplayerSetting(15);
+      def_builduptime=        GetMultiplayerSetting(20);
       tech_level =            GetMultiplayerSetting(22);
     end
   else
@@ -118,10 +149,11 @@ begin
 
       def_base_level=         2;
       def_amount_of_people=   1;
-      def_skill_level=      1;
+      def_skill_level=        1;
       def_starting_resources= 2;
       def_shipments_density=  1;
-      def_extra_oil_deposits= 0;
+      def_extra_oil_deposits= 1;
+      def_extra_sib_deposits= 1;
 
       def_shared_vision=      1;
       def_morale_flags=       2;
@@ -129,20 +161,14 @@ begin
       def_amount_of_apemen=   3;
       def_people_respawning=  2;
       def_siberite_bomb=      0;
+      def_builduptime=        1;
       tech_level =            4;
     end;
 
-  InitGameRules;
-
-  if def_game_rules = 0 then
-  begin
-    if isSGUI then
-       setMpTechs()
-    else
-    begin
-      SetMpTechLevel(tech_level + 1);
-    end;
-  end;
+  if isSGUI then
+     setMpTechs()
+  else
+     SetMpTechLevel(tech_level + 1);     
 
   is_depot                    = [0,1,1,1] [def_base_level+1];
   number_of_breastworks       = [0,0,2,4] [def_base_level+1];
@@ -151,17 +177,15 @@ begin
   starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
-  number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 20 + (def_shipments_density)*28;
-  amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
+  number_of_people            = def_amount_of_people+4 ;
+  shipments_density           = 20 + (def_shipments_density)*28;
+  amount_of_apemen            = [0, 3, 6, 9] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
   respawning_time_max         = [0$0, 10$00, 2$00] [def_people_respawning+1];
   morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             = [];
-  siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  siberite_bomb_Delay         = [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
-  if not def_builduptime then
-    disable(600);
 end;
 
 
@@ -169,7 +193,7 @@ end;
 function set_shared_visions_and_alliances;
 var i, j;
 begin
-  Team_Game:= (Side_Teams diff [0]) > 1;
+  Team_Game:= (Side_Teams diff [0]) > 1; 
 
   if not Team_Game then
     begin
@@ -449,7 +473,6 @@ begin
   init_shipments_and_respawning;
   Init_Win_Condition;
 
-  InitLimits;
   ShowTimer;
 
   music_nat:=Side_Nations[your_side];
@@ -466,4 +489,6 @@ begin
        CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
     end;
 
+  BuildUpAreas:= [base_nw, base_ne, base_sw, base_se];
+  BeginBuildUp;
 end;
