@@ -950,10 +950,10 @@
 1363: PUSH
 1364: LD_INT 2
 1366: ST_TO_ADDR
-// def_siberite_bomb = 0 ;
+// def_siberite_bomb = 2 ;
 1367: LD_ADDR_EXP 13
 1371: PUSH
-1372: LD_INT 0
+1372: LD_INT 2
 1374: ST_TO_ADDR
 // def_builduptime = 1 ;
 1375: LD_ADDR_EXP 14

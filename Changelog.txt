@@ -181,3 +181,18 @@ ForestLand (by Tomasz):
 
 The Abbys (by Tomasz):
 - Changed Apeman Area 
+
+Flags (by Tomasz):
+- Counter Build Time added
+
+Highlands (by Tomasz):
+- Relocated extra sib/oil deposits
+- Build Time added
+- game_modes by Radzio removed
+- Multidesc max players fixed
+
+Table Mountain (by Tomasz):
+- Build Time added
+- Main_ii removed
+- Siberite bomb counter fixed
+- Multidesc max players fixed

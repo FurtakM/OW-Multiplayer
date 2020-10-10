@@ -160,7 +160,7 @@ begin
       def_siberite_detection= 1;
       def_amount_of_apemen=   3;
       def_people_respawning=  2;
-      def_siberite_bomb=      0;
+      def_siberite_bomb=      2;
       def_builduptime=        1;
       tech_level =            4;
     end;
