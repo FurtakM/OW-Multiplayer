@@ -38,16 +38,16 @@ var l1,l2;
 begin
   if not (game_type in [11,12]) then
     exit;
-
-  if not your_side then
+  
+  if not Your_Side then
     begin
       enable;
       exit;
     end;
 
-  l1:=UnitFilter(sci1,[f_alive]);
-  l2:=UnitFilter(sci2,[f_alive]);
-
+  l1:=UnitFilter(sci1, [f_alive]);
+  l2:=UnitFilter(sci2, [f_alive]);  
+  
   if not l1 and not l2 then
     begin
       wait(0$3);
@@ -68,9 +68,9 @@ begin
           wait(0$3);
           YouWinInMultiplayer;
         end
-    end
+    end   
   else if not l2 then
-    begin
+    begin        
       if Side_teams[your_side]=2 then
         begin
           CenterOnXY(lastxlost,lastylost);

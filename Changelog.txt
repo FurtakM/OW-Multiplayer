@@ -196,3 +196,6 @@ Table Mountain (by Tomasz):
 - Main_ii removed
 - Siberite bomb counter fixed
 - Multidesc max players fixed
+- Spectator added
+- Game mode: Time travellers fixed
+

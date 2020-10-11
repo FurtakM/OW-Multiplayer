@@ -1,4 +1,4 @@
-// export game_type , def_base_level , def_amount_of_people , def_initial_level , def_starting_resources , def_shipments_density , def_shared_vision , def_morale_flags , def_siberite_detection , def_siberite_bomb , def_people_respawning , def_builduptime ; export is_depot , number_of_breastworks , number_of_people , initial_level , starting_crates , starting_resources , shipments_density , morale_decreasing_time , sci1_skills , sci2_skills , respawning_time_min , respawning_time_max , siberite_bomb_Delay ; export playing_sides , playing_teams , sci1 , sci2 ; export Side_Count , Team_Count , Player_Side , Player_Team , Side_Teams , Teams , Side_Comps ; export Side_Positions , Side_Nations , Side_Names , Team_Names , Positions , Team_Game ; export depot_def , breastworks_def , start_def , teleport_def ; export commander , battle_flags_id ; var global_units , global_defined , soldiers_created ; function read_multiplayer_and_game_parameters ; var side , dep , br1 , br2 , br3 , un , i , tech_level ; begin
+// export game_type , def_base_level , def_amount_of_people , def_initial_level , def_starting_resources , def_shipments_density , def_shared_vision , def_morale_flags , def_siberite_detection , def_siberite_bomb , def_people_respawning , def_builduptime ; export is_depot , number_of_breastworks , number_of_people , initial_level , starting_crates , starting_resources , shipments_density , morale_decreasing_time , sci1_skills , sci2_skills , respawning_time_min , respawning_time_max , siberite_bomb_Delay ; export playing_sides , playing_teams , sci1 , sci2 ; export Side_Count , Team_Count , Player_Team , Side_Teams , Teams , Side_Comps ; export Side_Positions , Side_Nations , Side_Names , Team_Names , Positions , Team_Game ; export depot_def , breastworks_def , start_def , teleport_def ; export commander , battle_flags_id ; var global_units , global_defined , soldiers_created ; function read_multiplayer_and_game_parameters ; var side , dep , br1 , br2 , br3 , un , i , tech_level ; begin
    0: LD_INT 0
    2: PPUSH
    3: PPUSH
@@ -17,69 +17,69 @@
   21: PUSH
   22: LD_OWVAR 6
   26: ST_TO_ADDR
-// Player_Side = mp_player_side ;
-  27: LD_ADDR_EXP 32
+// Your_Side = mp_player_side ;
+  27: LD_ADDR_OWVAR 2
   31: PUSH
   32: LD_OWVAR 7
   36: ST_TO_ADDR
 // Player_Team = mp_player_team ;
-  37: LD_ADDR_EXP 33
+  37: LD_ADDR_EXP 32
   41: PUSH
   42: LD_OWVAR 8
   46: ST_TO_ADDR
 // Side_Positions = mp_sides_positions ;
-  47: LD_ADDR_EXP 37
+  47: LD_ADDR_EXP 36
   51: PUSH
   52: LD_OWVAR 17
   56: ST_TO_ADDR
 // Side_Teams = mp_sides_teams ;
-  57: LD_ADDR_EXP 34
+  57: LD_ADDR_EXP 33
   61: PUSH
   62: LD_OWVAR 15
   66: ST_TO_ADDR
 // Side_Nations = mp_sides_nations ;
-  67: LD_ADDR_EXP 38
+  67: LD_ADDR_EXP 37
   71: PUSH
   72: LD_OWVAR 16
   76: ST_TO_ADDR
 // Teams = mp_teams ;
-  77: LD_ADDR_EXP 35
+  77: LD_ADDR_EXP 34
   81: PUSH
   82: LD_OWVAR 12
   86: ST_TO_ADDR
 // end else
   87: GO 298
-// begin game_type = 66 ;
+// begin game_type = 12 ;
   89: LD_ADDR_EXP 1
   93: PUSH
-  94: LD_INT 66
+  94: LD_INT 12
   96: ST_TO_ADDR
-// Player_Side = 4 ;
-  97: LD_ADDR_EXP 32
+// Your_Side = 4 ;
+  97: LD_ADDR_OWVAR 2
  101: PUSH
  102: LD_INT 4
  104: ST_TO_ADDR
-// Player_Team = 2 ;
- 105: LD_ADDR_EXP 33
+// Player_Team = 1 ;
+ 105: LD_ADDR_EXP 32
  109: PUSH
- 110: LD_INT 2
+ 110: LD_INT 1
  112: ST_TO_ADDR
-// Side_Positions = [ 0 , 3 , 0 , 1 , 0 , 2 , 4 , 0 ] ;
- 113: LD_ADDR_EXP 37
+// Side_Positions = [ 0 , 2 , 0 , 4 , 0 , 1 , 3 , 0 ] ;
+ 113: LD_ADDR_EXP 36
  117: PUSH
  118: LD_INT 0
  120: PUSH
- 121: LD_INT 3
+ 121: LD_INT 2
  123: PUSH
  124: LD_INT 0
  126: PUSH
- 127: LD_INT 1
+ 127: LD_INT 4
  129: PUSH
  130: LD_INT 0
  132: PUSH
- 133: LD_INT 2
+ 133: LD_INT 1
  135: PUSH
- 136: LD_INT 4
+ 136: LD_INT 3
  138: PUSH
  139: LD_INT 0
  141: PUSH
@@ -93,8 +93,8 @@
  149: LIST
  150: LIST
  151: ST_TO_ADDR
-// Side_Teams = [ 0 , 1 , 0 , 2 , 0 , 1 , 2 , 0 ] ;
- 152: LD_ADDR_EXP 34
+// Side_Teams = [ 0 , 1 , 0 , 1 , 0 , 2 , 2 , 0 ] ;
+ 152: LD_ADDR_EXP 33
  156: PUSH
  157: LD_INT 0
  159: PUSH
@@ -102,11 +102,11 @@
  162: PUSH
  163: LD_INT 0
  165: PUSH
- 166: LD_INT 2
+ 166: LD_INT 1
  168: PUSH
  169: LD_INT 0
  171: PUSH
- 172: LD_INT 1
+ 172: LD_INT 2
  174: PUSH
  175: LD_INT 2
  177: PUSH
@@ -123,7 +123,7 @@
  189: LIST
  190: ST_TO_ADDR
 // Side_Nations = [ 0 , 3 , 0 , 2 , 0 , 1 , 3 , 0 ] ;
- 191: LD_ADDR_EXP 38
+ 191: LD_ADDR_EXP 37
  195: PUSH
  196: LD_INT 0
  198: PUSH
@@ -152,7 +152,7 @@
  228: LIST
  229: ST_TO_ADDR
 // Side_Comps = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] ;
- 230: LD_ADDR_EXP 36
+ 230: LD_ADDR_EXP 35
  234: PUSH
  235: LD_INT 0
  237: PUSH
@@ -180,18 +180,18 @@
  266: LIST
  267: LIST
  268: ST_TO_ADDR
-// Teams = [ [ 2 , 6 ] , [ 4 , 7 ] ] ;
- 269: LD_ADDR_EXP 35
+// Teams = [ [ 2 , 4 ] , [ 6 , 7 ] ] ;
+ 269: LD_ADDR_EXP 34
  273: PUSH
  274: LD_INT 2
  276: PUSH
- 277: LD_INT 6
+ 277: LD_INT 4
  279: PUSH
  280: EMPTY
  281: LIST
  282: LIST
  283: PUSH
- 284: LD_INT 4
+ 284: LD_INT 6
  286: PUSH
  287: LD_INT 7
  289: PUSH
@@ -206,7 +206,7 @@
 // end ; Side_Count = ( Side_Positions diff [ 0 ] ) + 0 ;
  298: LD_ADDR_EXP 30
  302: PUSH
- 303: LD_EXP 37
+ 303: LD_EXP 36
  307: PUSH
  308: LD_INT 0
  310: PUSH
@@ -220,7 +220,7 @@
 // Team_Count = ( Side_Teams diff [ 0 ] ) + 0 ;
  319: LD_ADDR_EXP 31
  323: PUSH
- 324: LD_EXP 34
+ 324: LD_EXP 33
  328: PUSH
  329: LD_INT 0
  331: PUSH
@@ -829,7 +829,7 @@
 1216: ARRAY
 1217: ST_TO_ADDR
 // battle_flags_id = [ ] ;
-1218: LD_ADDR_EXP 48
+1218: LD_ADDR_EXP 47
 1222: PUSH
 1223: EMPTY
 1224: ST_TO_ADDR
@@ -884,12 +884,12 @@
 1295: PPUSH
 1296: PPUSH
 // depot_def = [ ] ;
-1297: LD_ADDR_EXP 43
+1297: LD_ADDR_EXP 42
 1301: PUSH
 1302: EMPTY
 1303: ST_TO_ADDR
 // breastworks_def = [ ] ;
-1304: LD_ADDR_EXP 44
+1304: LD_ADDR_EXP 43
 1308: PUSH
 1309: EMPTY
 1310: ST_TO_ADDR
@@ -957,9 +957,9 @@
 1411: MUL
 1412: ST_TO_ADDR
 // depot_def := depot_def ^ [ [ GetX ( dep ) , GetY ( dep ) , GetDir ( dep ) ] ] ;
-1413: LD_ADDR_EXP 43
+1413: LD_ADDR_EXP 42
 1417: PUSH
-1418: LD_EXP 43
+1418: LD_EXP 42
 1422: PUSH
 1423: LD_VAR 0 3
 1427: PPUSH
@@ -983,9 +983,9 @@
 1460: ADD
 1461: ST_TO_ADDR
 // start_def := start_def ^ [ [ ShiftX ( GetX ( Dep ) , GetDir ( Dep ) mod 6 , 6 ) , ShiftY ( GetY ( Dep ) , GetDir ( Dep ) mod 6 , 6 ) ] ] ;
-1462: LD_ADDR_EXP 45
+1462: LD_ADDR_EXP 44
 1466: PUSH
-1467: LD_EXP 45
+1467: LD_EXP 44
 1471: PUSH
 1472: LD_VAR 0 3
 1476: PPUSH
@@ -1026,9 +1026,9 @@
 1542: ADD
 1543: ST_TO_ADDR
 // breastworks_def := breastworks_def ^ [ [ [ GetX ( br1 ) , GetY ( br1 ) , GetDir ( br1 ) ] , [ GetX ( br2 ) , GetY ( br2 ) , GetDir ( br2 ) ] , [ GetX ( br3 ) , GetY ( br3 ) , GetDir ( br3 ) ] , [ GetX ( br4 ) , GetY ( br4 ) , GetDir ( br4 ) ] ] ] ;
-1544: LD_ADDR_EXP 44
+1544: LD_ADDR_EXP 43
 1548: PUSH
-1549: LD_EXP 44
+1549: LD_EXP 43
 1553: PUSH
 1554: LD_VAR 0 4
 1558: PPUSH
@@ -1133,7 +1133,7 @@
 1751: POP
 1752: POP
 // teleport_def = [ [ 19 , 16 , 0 ] , [ 108 , 9 , 1 ] , [ 62 , 112 , 2 ] , [ 157 , 126 , 1 ] ] ;
-1753: LD_ADDR_EXP 46
+1753: LD_ADDR_EXP 45
 1757: PUSH
 1758: LD_INT 19
 1760: PUSH
@@ -1194,7 +1194,7 @@
 1828: PPUSH
 1829: PPUSH
 // Team_Game := 0 ;
-1830: LD_ADDR_EXP 42
+1830: LD_ADDR_EXP 41
 1834: PUSH
 1835: LD_INT 0
 1837: ST_TO_ADDR
@@ -1210,11 +1210,11 @@
 1851: FOR_TO
 1852: IFFALSE 1878
 // Team_Game := Team_Game + Side_Teams [ i ] ;
-1854: LD_ADDR_EXP 42
+1854: LD_ADDR_EXP 41
 1858: PUSH
-1859: LD_EXP 42
+1859: LD_EXP 41
 1863: PUSH
-1864: LD_EXP 34
+1864: LD_EXP 33
 1868: PUSH
 1869: LD_VAR 0 2
 1873: ARRAY
@@ -1224,22 +1224,22 @@
 1878: POP
 1879: POP
 // if not Team_Game then
-1880: LD_EXP 42
+1880: LD_EXP 41
 1884: NOT
 1885: IFFALSE 1897
 // Team_Game := false else
-1887: LD_ADDR_EXP 42
+1887: LD_ADDR_EXP 41
 1891: PUSH
 1892: LD_INT 0
 1894: ST_TO_ADDR
 1895: GO 1905
 // Team_Game := true ;
-1897: LD_ADDR_EXP 42
+1897: LD_ADDR_EXP 41
 1901: PUSH
 1902: LD_INT 1
 1904: ST_TO_ADDR
 // if not Team_Game then
-1905: LD_EXP 42
+1905: LD_EXP 41
 1909: NOT
 1910: IFFALSE 2008
 // begin for i = 1 to 8 do
@@ -1305,7 +1305,7 @@
 // begin for i in Teams do
 2014: LD_ADDR_VAR 0 2
 2018: PUSH
-2019: LD_EXP 35
+2019: LD_EXP 34
 2023: PUSH
 2024: FOR_IN
 2025: IFFALSE 2075
@@ -1361,12 +1361,12 @@
 2106: FOR_TO
 2107: IFFALSE 2177
 // if Side_Teams [ i ] = Side_Teams [ j ] then
-2109: LD_EXP 34
+2109: LD_EXP 33
 2113: PUSH
 2114: LD_VAR 0 2
 2118: ARRAY
 2119: PUSH
-2120: LD_EXP 34
+2120: LD_EXP 33
 2124: PUSH
 2125: LD_VAR 0 3
 2129: ARRAY
@@ -1692,7 +1692,7 @@
 // pos := Side_Positions [ side ] ;
 2703: LD_ADDR_VAR 0 3
 2707: PUSH
-2708: LD_EXP 37
+2708: LD_EXP 36
 2712: PUSH
 2713: LD_VAR 0 1
 2717: ARRAY
@@ -1700,7 +1700,7 @@
 // uc_nation := Side_Nations [ side ] ;
 2719: LD_ADDR_OWVAR 21
 2723: PUSH
-2724: LD_EXP 38
+2724: LD_EXP 37
 2728: PUSH
 2729: LD_VAR 0 1
 2733: ARRAY
@@ -1713,7 +1713,7 @@
 // x := depot_def [ pos ] [ 1 ] ;
 2745: LD_ADDR_VAR 0 4
 2749: PUSH
-2750: LD_EXP 43
+2750: LD_EXP 42
 2754: PUSH
 2755: LD_VAR 0 3
 2759: ARRAY
@@ -1724,7 +1724,7 @@
 // y := depot_def [ pos ] [ 2 ] ;
 2765: LD_ADDR_VAR 0 5
 2769: PUSH
-2770: LD_EXP 43
+2770: LD_EXP 42
 2774: PUSH
 2775: LD_VAR 0 3
 2779: ARRAY
@@ -1747,7 +1747,7 @@
 2808: PPUSH
 2809: LD_VAR 0 5
 2813: PPUSH
-2814: LD_EXP 43
+2814: LD_EXP 42
 2818: PUSH
 2819: LD_VAR 0 3
 2823: ARRAY
@@ -1893,7 +1893,7 @@
 // end ; x := start_def [ pos ] [ 1 ] ;
 3076: LD_ADDR_VAR 0 4
 3080: PUSH
-3081: LD_EXP 45
+3081: LD_EXP 44
 3085: PUSH
 3086: LD_VAR 0 3
 3090: ARRAY
@@ -1904,7 +1904,7 @@
 // y := start_def [ pos ] [ 2 ] ;
 3096: LD_ADDR_VAR 0 5
 3100: PUSH
-3101: LD_EXP 45
+3101: LD_EXP 44
 3105: PUSH
 3106: LD_VAR 0 3
 3110: ARRAY
@@ -1940,9 +1940,9 @@
 3161: LD_EXP 8
 3165: IFFALSE 3244
 // battle_flags_id := battle_flags_id ^ SetBattleFlag ( side , x , y , [ [ bfo_defend_bonus_human , 100 ] , [ bfo_defend_bonus_vehicle , 50 ] , [ bfo_defend_bonus_building , 20 ] , [ bfo_height , 100 ] ] ) ;
-3167: LD_ADDR_EXP 48
+3167: LD_ADDR_EXP 47
 3171: PUSH
-3172: LD_EXP 48
+3172: LD_EXP 47
 3176: PUSH
 3177: LD_VAR 0 1
 3181: PPUSH
@@ -1992,7 +1992,7 @@
 3242: ADD
 3243: ST_TO_ADDR
 // commander := true ;
-3244: LD_ADDR_EXP 47
+3244: LD_ADDR_EXP 46
 3248: PUSH
 3249: LD_INT 1
 3251: ST_TO_ADDR
@@ -2024,7 +2024,7 @@
 3290: LD_INT 10
 3292: ST_TO_ADDR
 // CreateAndPlaceBuildingXYD ( teleport_def [ pos ] [ 1 ] , teleport_def [ pos ] [ 2 ] , teleport_def [ pos ] [ 3 ] ) ;
-3293: LD_EXP 46
+3293: LD_EXP 45
 3297: PUSH
 3298: LD_VAR 0 3
 3302: ARRAY
@@ -2032,7 +2032,7 @@
 3304: LD_INT 1
 3306: ARRAY
 3307: PPUSH
-3308: LD_EXP 46
+3308: LD_EXP 45
 3312: PUSH
 3313: LD_VAR 0 3
 3317: ARRAY
@@ -2040,7 +2040,7 @@
 3319: LD_INT 2
 3321: ARRAY
 3322: PPUSH
-3323: LD_EXP 46
+3323: LD_EXP 45
 3327: PUSH
 3328: LD_VAR 0 3
 3332: ARRAY
@@ -2049,16 +2049,16 @@
 3336: ARRAY
 3337: PPUSH
 3338: CALL_OW 47
-// if game_type = 11 then
+// if game_type = 12 then
 3342: LD_EXP 1
 3346: PUSH
-3347: LD_INT 11
+3347: LD_INT 12
 3349: EQUAL
 3350: IFFALSE 3386
 // if ( side in Teams [ 1 ] ) then
 3352: LD_VAR 0 1
 3356: PUSH
-3357: LD_EXP 35
+3357: LD_EXP 34
 3361: PUSH
 3362: LD_INT 1
 3364: ARRAY
@@ -2081,7 +2081,7 @@
 3391: LD_INT 101
 3393: ST_TO_ADDR
 // commander := false ;
-3394: LD_ADDR_EXP 47
+3394: LD_ADDR_EXP 46
 3398: PUSH
 3399: LD_INT 0
 3401: ST_TO_ADDR
@@ -2096,7 +2096,7 @@
 3415: LD_INT 0
 3417: ST_TO_ADDR
 // if ( teams [ t ] + 0 ) = 1 then
-3418: LD_EXP 35
+3418: LD_EXP 34
 3422: PUSH
 3423: LD_VAR 0 15
 3427: ARRAY
@@ -2291,7 +2291,7 @@
 3737: LD_EXP 28
 3741: ARRAY
 3742: PPUSH
-3743: LD_EXP 46
+3743: LD_EXP 45
 3747: PUSH
 3748: LD_VAR 0 3
 3752: ARRAY
@@ -2299,7 +2299,7 @@
 3754: LD_INT 1
 3756: ARRAY
 3757: PPUSH
-3758: LD_EXP 46
+3758: LD_EXP 45
 3762: PUSH
 3763: LD_VAR 0 3
 3767: ARRAY
@@ -2328,7 +2328,7 @@
 3806: LD_EXP 29
 3810: ARRAY
 3811: PPUSH
-3812: LD_EXP 46
+3812: LD_EXP 45
 3816: PUSH
 3817: LD_VAR 0 3
 3821: ARRAY
@@ -2336,7 +2336,7 @@
 3823: LD_INT 1
 3825: ARRAY
 3826: PPUSH
-3827: LD_EXP 46
+3827: LD_EXP 45
 3831: PUSH
 3832: LD_VAR 0 3
 3836: ARRAY
@@ -2430,7 +2430,7 @@
 3977: LD_EXP 28
 3981: ARRAY
 3982: PPUSH
-3983: LD_EXP 46
+3983: LD_EXP 45
 3987: PUSH
 3988: LD_VAR 0 3
 3992: ARRAY
@@ -2438,7 +2438,7 @@
 3994: LD_INT 1
 3996: ARRAY
 3997: PPUSH
-3998: LD_EXP 46
+3998: LD_EXP 45
 4002: PUSH
 4003: LD_VAR 0 3
 4007: ARRAY
@@ -2467,7 +2467,7 @@
 4046: LD_EXP 29
 4050: ARRAY
 4051: PPUSH
-4052: LD_EXP 46
+4052: LD_EXP 45
 4056: PUSH
 4057: LD_VAR 0 3
 4061: ARRAY
@@ -2475,7 +2475,7 @@
 4063: LD_INT 1
 4065: ARRAY
 4066: PPUSH
-4067: LD_EXP 46
+4067: LD_EXP 45
 4071: PUSH
 4072: LD_VAR 0 3
 4076: ARRAY
@@ -2507,7 +2507,7 @@
 // end ; uc_nation = Side_nations [ side ] ;
 4122: LD_ADDR_OWVAR 21
 4126: PUSH
-4127: LD_EXP 38
+4127: LD_EXP 37
 4131: PUSH
 4132: LD_VAR 0 1
 4136: ARRAY
@@ -2630,7 +2630,7 @@
 // begin x := breastworks_def [ pos ] [ i ] [ 1 ] ;
 4342: LD_ADDR_VAR 0 4
 4346: PUSH
-4347: LD_EXP 44
+4347: LD_EXP 43
 4351: PUSH
 4352: LD_VAR 0 3
 4356: ARRAY
@@ -2644,7 +2644,7 @@
 // y := breastworks_def [ pos ] [ i ] [ 2 ] ;
 4368: LD_ADDR_VAR 0 5
 4372: PUSH
-4373: LD_EXP 44
+4373: LD_EXP 43
 4377: PUSH
 4378: LD_VAR 0 3
 4382: ARRAY
@@ -2667,7 +2667,7 @@
 4411: PPUSH
 4412: LD_VAR 0 5
 4416: PPUSH
-4417: LD_EXP 44
+4417: LD_EXP 43
 4421: PUSH
 4422: LD_VAR 0 3
 4426: ARRAY
@@ -2685,7 +2685,7 @@
 4447: PUSH
 4448: LD_VAR 0 4
 4452: PPUSH
-4453: LD_EXP 44
+4453: LD_EXP 43
 4457: PUSH
 4458: LD_VAR 0 3
 4462: ARRAY
@@ -2705,7 +2705,7 @@
 4486: PUSH
 4487: LD_VAR 0 5
 4491: PPUSH
-4492: LD_EXP 44
+4492: LD_EXP 43
 4496: PUSH
 4497: LD_VAR 0 3
 4501: ARRAY
@@ -2735,7 +2735,7 @@
 4546: PPUSH
 4547: LD_INT 1
 4549: PPUSH
-4550: LD_ADDR_EXP 47
+4550: LD_ADDR_EXP 46
 4554: PPUSH
 4555: CALL 2188 0 7
 4559: PUSH
@@ -2763,7 +2763,7 @@
 // x := start_def [ pos ] [ 1 ] ;
 4596: LD_ADDR_VAR 0 4
 4600: PUSH
-4601: LD_EXP 45
+4601: LD_EXP 44
 4605: PUSH
 4606: LD_VAR 0 3
 4610: ARRAY
@@ -2774,7 +2774,7 @@
 // y := start_def [ pos ] [ 2 ] ;
 4616: LD_ADDR_VAR 0 5
 4620: PUSH
-4621: LD_EXP 45
+4621: LD_EXP 44
 4625: PUSH
 4626: LD_VAR 0 3
 4630: ARRAY
@@ -2798,7 +2798,7 @@
 4664: PPUSH
 4665: LD_INT 5
 4667: PPUSH
-4668: LD_ADDR_EXP 47
+4668: LD_ADDR_EXP 46
 4672: PPUSH
 4673: CALL 2188 0 7
 // prepare_people ( side , neng , class_engineer , x , y , 5 , commander ) ;
@@ -2814,7 +2814,7 @@
 4699: PPUSH
 4700: LD_INT 5
 4702: PPUSH
-4703: LD_ADDR_EXP 47
+4703: LD_ADDR_EXP 46
 4707: PPUSH
 4708: CALL 2188 0 7
 // prepare_people ( side , nmech , class_mechanic , x , y , 5 , commander ) ;
@@ -2830,7 +2830,7 @@
 4734: PPUSH
 4735: LD_INT 5
 4737: PPUSH
-4738: LD_ADDR_EXP 47
+4738: LD_ADDR_EXP 46
 4742: PPUSH
 4743: CALL 2188 0 7
 // prepare_people ( side , nsci , class_scientistic , x , y , 5 , commander ) ;
@@ -2846,7 +2846,7 @@
 4769: PPUSH
 4770: LD_INT 5
 4772: PPUSH
-4773: LD_ADDR_EXP 47
+4773: LD_ADDR_EXP 46
 4777: PPUSH
 4778: CALL 2188 0 7
 // if not global_defined then
@@ -2963,7 +2963,7 @@
 4972: FOR_TO
 4973: IFFALSE 5019
 // if Side_Positions [ i ] then
-4975: LD_EXP 37
+4975: LD_EXP 36
 4979: PUSH
 4980: LD_VAR 0 2
 4984: ARRAY
@@ -3017,7 +3017,7 @@
 5058: FOR_TO
 5059: IFFALSE 5084
 // if Side_Positions [ i ] then
-5061: LD_EXP 37
+5061: LD_EXP 36
 5065: PUSH
 5066: LD_VAR 0 2
 5070: ARRAY
@@ -3053,29 +3053,30 @@
 5117: CALL 1825 0 0
 // prepare_sides ;
 5121: CALL 5026 0 0
+// if Game_Type = 66 then
+5125: LD_EXP 1
+5129: PUSH
+5130: LD_INT 66
+5132: EQUAL
+5133: IFFALSE 5139
 // Init_Win_Condition ;
-5125: CALL 7611 0 0
+5135: CALL 7611 0 0
 // init_shipments_and_respawning ;
-5129: CALL 5245 0 0
-// your_side := Player_Side ;
-5133: LD_ADDR_OWVAR 2
-5137: PUSH
-5138: LD_EXP 32
-5142: ST_TO_ADDR
+5139: CALL 5245 0 0
 // ResetFog ;
 5143: CALL_OW 335
 // music_nat := Side_Nations [ your_side ] ;
 5147: LD_ADDR_OWVAR 71
 5151: PUSH
-5152: LD_EXP 38
+5152: LD_EXP 37
 5156: PUSH
 5157: LD_OWVAR 2
 5161: ARRAY
 5162: ST_TO_ADDR
 // CenterNowOnXY ( start_def [ Side_Positions [ your_side ] ] [ 1 ] , start_def [ Side_Positions [ your_side ] ] [ 2 ] ) ;
-5163: LD_EXP 45
+5163: LD_EXP 44
 5167: PUSH
-5168: LD_EXP 37
+5168: LD_EXP 36
 5172: PUSH
 5173: LD_OWVAR 2
 5177: ARRAY
@@ -3084,9 +3085,9 @@
 5180: LD_INT 1
 5182: ARRAY
 5183: PPUSH
-5184: LD_EXP 45
+5184: LD_EXP 44
 5188: PUSH
-5189: LD_EXP 37
+5189: LD_EXP 36
 5193: PUSH
 5194: LD_OWVAR 2
 5198: ARRAY
@@ -3097,7 +3098,7 @@
 5204: PPUSH
 5205: CALL_OW 86
 // BuildUpAreas := [ Base_nw , Base_ne , Base_sw , Base_se ] ;
-5209: LD_ADDR_EXP 50
+5209: LD_ADDR_EXP 49
 5213: PUSH
 5214: LD_INT 15
 5216: PUSH
@@ -3214,7 +3215,7 @@
 5375: PLUS
 5376: ST_TO_ADDR
 // if Side_Positions [ respawn ] and not inqueue [ respawn ] then
-5377: LD_EXP 37
+5377: LD_EXP 36
 5381: PUSH
 5382: LD_LOC 6
 5386: ARRAY
@@ -3430,7 +3431,7 @@
 // uc_nation := Side_Nations [ aktresp ] ;
 5713: LD_ADDR_OWVAR 21
 5717: PUSH
-5718: LD_EXP 38
+5718: LD_EXP 37
 5722: PUSH
 5723: LD_VAR 0 3
 5727: ARRAY
@@ -3982,7 +3983,7 @@
 // for un in battle_flags_id do
 6587: LD_ADDR_VAR 0 2
 6591: PUSH
-6592: LD_EXP 48
+6592: LD_EXP 47
 6596: PUSH
 6597: FOR_IN
 6598: IFFALSE 6673
@@ -4083,7 +4084,7 @@
 // for un in battle_flags_id do
 6746: LD_ADDR_VAR 0 1
 6750: PUSH
-6751: LD_EXP 48
+6751: LD_EXP 47
 6755: PUSH
 6756: FOR_IN
 6757: IFFALSE 6770
@@ -4118,7 +4119,7 @@
 6798: IFFALSE 6802
 // exit ;
 6800: GO 7208
-// if not your_side then
+// if not Your_Side then
 6802: LD_OWVAR 2
 6806: NOT
 6807: IFFALSE 6812
@@ -4173,7 +4174,7 @@
 6887: NOT
 6888: IFFALSE 6960
 // begin if Side_teams [ your_side ] = 1 then
-6890: LD_EXP 34
+6890: LD_EXP 33
 6894: PUSH
 6895: LD_OWVAR 2
 6899: ARRAY
@@ -4214,7 +4215,7 @@
 6964: NOT
 6965: IFFALSE 7037
 // begin if Side_teams [ your_side ] = 2 then
-6967: LD_EXP 34
+6967: LD_EXP 33
 6971: PUSH
 6972: LD_OWVAR 2
 6976: ARRAY
@@ -4251,7 +4252,7 @@
 // end end else
 7035: GO 7207
 // if Side_teams [ your_side ] = 1 then
-7037: LD_EXP 34
+7037: LD_EXP 33
 7041: PUSH
 7042: LD_OWVAR 2
 7046: ARRAY
@@ -4446,12 +4447,12 @@
 7347: LD_INT 1
 7349: DEC
 7350: ST_TO_ADDR
-7351: LD_EXP 37
+7351: LD_EXP 36
 7355: PUSH
 7356: FOR_TO
 7357: IFFALSE 7441
 // if Side_positions [ i ] and ( i <> your_side ) then
-7359: LD_EXP 37
+7359: LD_EXP 36
 7363: PUSH
 7364: LD_VAR 0 2
 7368: ARRAY
@@ -4468,18 +4469,18 @@
 7388: CALL_OW 108
 7392: IFFALSE 7439
 // if not Side_Teams [ i ] or ( Side_Teams [ i ] <> Side_Teams [ your_side ] ) then
-7394: LD_EXP 34
+7394: LD_EXP 33
 7398: PUSH
 7399: LD_VAR 0 2
 7403: ARRAY
 7404: NOT
 7405: PUSH
-7406: LD_EXP 34
+7406: LD_EXP 33
 7410: PUSH
 7411: LD_VAR 0 2
 7415: ARRAY
 7416: PUSH
-7417: LD_EXP 34
+7417: LD_EXP 33
 7421: PUSH
 7422: LD_OWVAR 2
 7426: ARRAY
@@ -4510,7 +4511,7 @@
 7464: PPUSH
 7465: CALL_OW 67
 // SA_Win ( Side_Nations [ Your_side ] ) ;
-7469: LD_EXP 38
+7469: LD_EXP 37
 7473: PUSH
 7474: LD_OWVAR 2
 7478: ARRAY
@@ -4606,7 +4607,7 @@
 7611: LD_INT 0
 7613: PPUSH
 // if Team_Game then
-7614: LD_EXP 42
+7614: LD_EXP 41
 7618: IFFALSE 7625
 // enable ( 98 ) else
 7620: LD_INT 98
@@ -4697,12 +4698,12 @@
 7737: LD_INT 1
 7739: DEC
 7740: ST_TO_ADDR
-7741: LD_EXP 37
+7741: LD_EXP 36
 7745: PUSH
 7746: FOR_TO
 7747: IFFALSE 7831
 // if Side_positions [ i ] and ( i <> your_side ) and MultiplayerSideAlive ( i ) then
-7749: LD_EXP 37
+7749: LD_EXP 36
 7753: PUSH
 7754: LD_VAR 0 2
 7758: ARRAY
@@ -4719,18 +4720,18 @@
 7781: AND
 7782: IFFALSE 7829
 // begin if not Side_Teams [ i ] or ( Side_Teams [ i ] <> Side_Teams [ your_side ] ) then
-7784: LD_EXP 34
+7784: LD_EXP 33
 7788: PUSH
 7789: LD_VAR 0 2
 7793: ARRAY
 7794: NOT
 7795: PUSH
-7796: LD_EXP 34
+7796: LD_EXP 33
 7800: PUSH
 7801: LD_VAR 0 2
 7805: ARRAY
 7806: PUSH
-7807: LD_EXP 34
+7807: LD_EXP 33
 7811: PUSH
 7812: LD_OWVAR 2
 7816: ARRAY
@@ -4838,12 +4839,12 @@
 7954: LD_INT 1
 7956: DEC
 7957: ST_TO_ADDR
-7958: LD_EXP 37
+7958: LD_EXP 36
 7962: PUSH
 7963: FOR_TO
 7964: IFFALSE 8028
 // if Side_Positions [ i ] and ( i <> your_side ) and MultiplayerSideAlive ( i ) then
-7966: LD_EXP 37
+7966: LD_EXP 36
 7970: PUSH
 7971: LD_VAR 0 2
 7975: ARRAY
@@ -5068,7 +5069,7 @@
 // if 0 <= buildUpTime_Delay - tick then
 8339: LD_INT 0
 8341: PUSH
-8342: LD_EXP 52
+8342: LD_EXP 51
 8346: PUSH
 8347: LD_OWVAR 1
 8351: MINUS
@@ -5081,7 +5082,7 @@
 8364: PUSH
 8365: LD_STRING #builduptime
 8367: PUSH
-8368: LD_EXP 52
+8368: LD_EXP 51
 8372: PUSH
 8373: LD_OWVAR 1
 8377: MINUS
@@ -5114,7 +5115,7 @@
 8411: PPUSH
 8412: PPUSH
 // BuildUpTime_Delay = 0 ;
-8413: LD_ADDR_EXP 52
+8413: LD_ADDR_EXP 51
 8417: PUSH
 8418: LD_INT 0
 8420: ST_TO_ADDR
@@ -5125,7 +5126,7 @@
 // exit ;
 8428: GO 8613
 // BuildUpTime_Delay := 4 4$00 + 1 1$00 * def_builduptime ;
-8430: LD_ADDR_EXP 52
+8430: LD_ADDR_EXP 51
 8434: PUSH
 8435: LD_INT 8400
 8437: PUSH
@@ -5136,7 +5137,7 @@
 8446: PLUS
 8447: ST_TO_ADDR
 // BuildUpTimeActive := true ;
-8448: LD_ADDR_EXP 51
+8448: LD_ADDR_EXP 50
 8452: PUSH
 8453: LD_INT 1
 8455: ST_TO_ADDR
@@ -5152,15 +5153,15 @@
 8469: FOR_TO
 8470: IFFALSE 8611
 // if Side_Positions [ i ] then
-8472: LD_EXP 37
+8472: LD_EXP 36
 8476: PUSH
 8477: LD_VAR 0 2
 8481: ARRAY
 8482: IFFALSE 8609
 // begin SetAreaMapShow ( BuildUpAreas [ Side_Positions [ i ] ] , 5 ) ;
-8484: LD_EXP 50
+8484: LD_EXP 49
 8488: PUSH
-8489: LD_EXP 37
+8489: LD_EXP 36
 8493: PUSH
 8494: LD_VAR 0 2
 8498: ARRAY
@@ -5181,23 +5182,23 @@
 8521: FOR_TO
 8522: IFFALSE 8607
 // if Side_Positions [ j ] and ( ( Side_Teams [ i ] <> Side_Teams [ j ] ) or ( not Team_Game ) and ( i <> j ) ) then
-8524: LD_EXP 37
+8524: LD_EXP 36
 8528: PUSH
 8529: LD_VAR 0 3
 8533: ARRAY
 8534: PUSH
-8535: LD_EXP 34
+8535: LD_EXP 33
 8539: PUSH
 8540: LD_VAR 0 2
 8544: ARRAY
 8545: PUSH
-8546: LD_EXP 34
+8546: LD_EXP 33
 8550: PUSH
 8551: LD_VAR 0 3
 8555: ARRAY
 8556: NONEQUAL
 8557: PUSH
-8558: LD_EXP 42
+8558: LD_EXP 41
 8562: NOT
 8563: PUSH
 8564: LD_VAR 0 2
@@ -5211,9 +5212,9 @@
 // HideArea ( j , BuildUpAreas [ Side_Positions [ i ] ] ) ;
 8579: LD_VAR 0 3
 8583: PPUSH
-8584: LD_EXP 50
+8584: LD_EXP 49
 8588: PUSH
-8589: LD_EXP 37
+8589: LD_EXP 36
 8593: PUSH
 8594: LD_VAR 0 2
 8598: ARRAY
@@ -5236,7 +5237,7 @@
 8621: PPUSH
 8622: PPUSH
 // BuildUpTimeActive := false ;
-8623: LD_ADDR_EXP 51
+8623: LD_ADDR_EXP 50
 8627: PUSH
 8628: LD_INT 0
 8630: ST_TO_ADDR
@@ -5252,15 +5253,15 @@
 8644: FOR_TO
 8645: IFFALSE 8786
 // if Side_Positions [ i ] then
-8647: LD_EXP 37
+8647: LD_EXP 36
 8651: PUSH
 8652: LD_VAR 0 2
 8656: ARRAY
 8657: IFFALSE 8784
 // begin SetAreaMapShow ( BuildUpAreas [ Side_Positions [ i ] ] , 0 ) ;
-8659: LD_EXP 50
+8659: LD_EXP 49
 8663: PUSH
-8664: LD_EXP 37
+8664: LD_EXP 36
 8668: PUSH
 8669: LD_VAR 0 2
 8673: ARRAY
@@ -5281,23 +5282,23 @@
 8696: FOR_TO
 8697: IFFALSE 8782
 // if Side_Positions [ j ] and ( ( Side_Teams [ i ] <> Side_Teams [ j ] ) or ( not Team_Game ) and ( i <> j ) ) then
-8699: LD_EXP 37
+8699: LD_EXP 36
 8703: PUSH
 8704: LD_VAR 0 3
 8708: ARRAY
 8709: PUSH
-8710: LD_EXP 34
+8710: LD_EXP 33
 8714: PUSH
 8715: LD_VAR 0 2
 8719: ARRAY
 8720: PUSH
-8721: LD_EXP 34
+8721: LD_EXP 33
 8725: PUSH
 8726: LD_VAR 0 3
 8730: ARRAY
 8731: NONEQUAL
 8732: PUSH
-8733: LD_EXP 42
+8733: LD_EXP 41
 8737: NOT
 8738: PUSH
 8739: LD_VAR 0 2
@@ -5311,9 +5312,9 @@
 // ShowArea ( j , BuildUpAreas [ Side_Positions [ i ] ] ) ;
 8754: LD_VAR 0 3
 8758: PPUSH
-8759: LD_EXP 50
+8759: LD_EXP 49
 8763: PUSH
-8764: LD_EXP 37
+8764: LD_EXP 36
 8768: PUSH
 8769: LD_VAR 0 2
 8773: ARRAY
@@ -5331,7 +5332,7 @@
 8788: LD_VAR 0 1
 8792: RET
 // every 5 trigger BuildUpTimeActive do var i , un ;
-8793: LD_EXP 51
+8793: LD_EXP 50
 8797: IFFALSE 8972
 8799: GO 8801
 8801: DISABLE
@@ -5350,7 +5351,7 @@
 8819: FOR_TO
 8820: IFFALSE 8969
 // if Side_Positions [ i ] then
-8822: LD_EXP 37
+8822: LD_EXP 36
 8826: PUSH
 8827: LD_VAR 0 1
 8831: ARRAY
@@ -5358,9 +5359,9 @@
 // for un in FilterUnitsInArea ( BuildUpAreas [ Side_Positions [ i ] ] , [ [ f_or , [ f_type , unit_human ] , [ f_type , unit_vehicle ] ] , [ f_side , Your_Side ] ] ) do
 8834: LD_ADDR_VAR 0 2
 8838: PUSH
-8839: LD_EXP 50
+8839: LD_EXP 49
 8843: PUSH
-8844: LD_EXP 37
+8844: LD_EXP 36
 8848: PUSH
 8849: LD_VAR 0 1
 8853: ARRAY
@@ -5406,18 +5407,18 @@
 8905: FOR_IN
 8906: IFFALSE 8965
 // if ( ( Side_Teams [ i ] <> Side_Teams [ Your_Side ] ) or ( not Team_Game ) and ( i <> Your_Side ) ) then
-8908: LD_EXP 34
+8908: LD_EXP 33
 8912: PUSH
 8913: LD_VAR 0 1
 8917: ARRAY
 8918: PUSH
-8919: LD_EXP 34
+8919: LD_EXP 33
 8923: PUSH
 8924: LD_OWVAR 2
 8928: ARRAY
 8929: NONEQUAL
 8930: PUSH
-8931: LD_EXP 42
+8931: LD_EXP 41
 8935: NOT
 8936: PUSH
 8937: LD_VAR 0 1
@@ -5477,7 +5478,7 @@
 9025: CALL_OW 12
 9029: ST_TO_ADDR
 // ObnovCas = [ k , k , k , k , k , k , k , k ] ;
-9030: LD_ADDR_EXP 53
+9030: LD_ADDR_EXP 52
 9034: PUSH
 9035: LD_VAR 0 6
 9039: PUSH
@@ -5515,7 +5516,7 @@
 9100: CALL_OW 12
 9104: ST_TO_ADDR
 // ObnovZpozdeni = k ;
-9105: LD_ADDR_EXP 54
+9105: LD_ADDR_EXP 53
 9109: PUSH
 9110: LD_VAR 0 6
 9114: ST_TO_ADDR
@@ -5535,7 +5536,7 @@
 9130: PPUSH
 9131: PPUSH
 // if ObnovCas [ side ] = 0 then
-9132: LD_EXP 53
+9132: LD_EXP 52
 9136: PUSH
 9137: LD_VAR 0 1
 9141: ARRAY
@@ -5651,18 +5652,18 @@
 // k = ObnovCas [ side ] + ObnovZpozdeni ;
 9336: LD_ADDR_VAR 0 9
 9340: PUSH
-9341: LD_EXP 53
+9341: LD_EXP 52
 9345: PUSH
 9346: LD_VAR 0 1
 9350: ARRAY
 9351: PUSH
-9352: LD_EXP 54
+9352: LD_EXP 53
 9356: PLUS
 9357: ST_TO_ADDR
 // ObnovCas = Replace ( ObnovCas , side , k ) ;
-9358: LD_ADDR_EXP 53
+9358: LD_ADDR_EXP 52
 9362: PUSH
-9363: LD_EXP 53
+9363: LD_EXP 52
 9367: PPUSH
 9368: LD_VAR 0 1
 9372: PPUSH
@@ -5671,12 +5672,12 @@
 9378: CALL_OW 1
 9382: ST_TO_ADDR
 // wait ( ObnovCas [ side ] - ObnovZpozdeni ) ;
-9383: LD_EXP 53
+9383: LD_EXP 52
 9387: PUSH
 9388: LD_VAR 0 1
 9392: ARRAY
 9393: PUSH
-9394: LD_EXP 54
+9394: LD_EXP 53
 9398: MINUS
 9399: PPUSH
 9400: CALL_OW 67
@@ -5874,7 +5875,7 @@
 // end else
 9695: GO 9775
 // begin unit_list = FilterAllUnits ( [ [ f_side , side ] , [ f_ok ] ] ) ;
-9697: LD_ADDR_EXP 55
+9697: LD_ADDR_EXP 54
 9701: PUSH
 9702: LD_INT 22
 9704: PUSH
@@ -5896,7 +5897,7 @@
 9724: CALL_OW 69
 9728: ST_TO_ADDR
 // if unit_list > 0 then
-9729: LD_EXP 55
+9729: LD_EXP 54
 9733: PUSH
 9734: LD_INT 0
 9736: GREATER
