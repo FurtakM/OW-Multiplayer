@@ -188,7 +188,8 @@ Flags (by Tomasz):
 Highlands (by Tomasz):
 - Relocated extra sib/oil deposits
 - Build Time added
-- game_modes by Radzio removed
+- game_modes.src by Radzio removed
+- DayNight.src removed
 - Multidesc max players fixed
 
 Table Mountain (by Tomasz):
@@ -199,3 +200,10 @@ Table Mountain (by Tomasz):
 - Spectator added
 - Game mode: Time travellers fixed
 
+Rocky Pass (by Tomasz):
+- Build Time changed
+- Counter Build Time added
+- game_modes.src by Radzio removed
+- DayNight.src removed
+- Build Time zones corrected
+- Number of Apeman changed(Standard AB:0,3,6,9)

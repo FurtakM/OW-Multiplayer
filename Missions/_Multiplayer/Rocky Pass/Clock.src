@@ -7,8 +7,8 @@ var AllStrings;
 begin
   AllStrings:= ['#Multi1x1-Time', tick];
   if 0<=siberite_bomb_Delay-tick then AllStrings:= AllStrings ^ ['#allowedsibbomb',siberite_bomb_Delay-tick];
+  if 0<=buildUpTime_Delay-tick then AllStrings:= AllStrings  ^ ['#builduptime', buildUpTime_Delay-tick];
   if (ExtraStrings) then AllStrings:= AllStrings ^ '' ^ ExtraStrings;
-  if (LimitsStrings) then AllStrings:= AllStrings ^ '' ^ LimitsStrings;
   Display_Strings:= AllStrings;
 end;
 
