@@ -207,3 +207,9 @@ Rocky Pass (by Tomasz):
 - DayNight.src removed
 - Build Time zones corrected
 - Number of Apeman changed(Standard AB:0,3,6,9)
+
+0.20:
+Flags (by Tomasz):
+- Build Time changed
+- game_modes.src by Radzio removed
+- Multidesc Build Time changed(instead of 4 there are 12)
