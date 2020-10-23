@@ -209,7 +209,7 @@ Rocky Pass (by Tomasz):
 - Number of Apeman changed(Standard AB:0,3,6,9)
 
 0.20:
-Flags (by Tomasz):
+Flags, Siberia (by Tomasz):
 - Build Time changed
 - game_modes.src by Radzio removed
 - Multidesc Build Time changed(instead of 4 there are 12)
