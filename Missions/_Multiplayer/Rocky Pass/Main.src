@@ -84,7 +84,7 @@ begin
     begin
       Game_Type:=      1;
 
-      Your_Side:=      3;
+      Your_Side:=      1;
 
       Side_Positions:= [1,2,3,4,5,6,0,0];
       Side_Teams:=     [1,2,3,4,5,6,0,0];
@@ -507,6 +507,7 @@ begin
       Init_Win_Condition;
     end;
 
+  AnimateTrees(true);
   InitApeman;
 
   BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4, BuildUp5, BuildUp6];

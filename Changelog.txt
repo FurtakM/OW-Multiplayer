@@ -209,10 +209,20 @@ Rocky Pass (by Tomasz):
 - Number of Apeman changed(Standard AB:0,3,6,9)
 
 0.20:
+- Tree animation has been activated on map: Siberia, Rocky Pass, Four to Win, Wilderness 
+
 Flags, Siberia (by Tomasz):
 - Build Time changed
 - game_modes.src by Radzio removed
 - Multidesc Build Time changed(instead of 4 there are 12)
 
 Rocky Pass (by Tomasz):
+- Materialization fixed
 - Multidesc Build Time changed(instead of 4 there are 12)
+
+Wilderness (by Tomasz):
+- Apeman respawn zone fixed
+- Spectator added
+
+Stonehenge, Party (by Tomasz):
+- Spectator added

@@ -1,9 +1,9 @@
 every 1$0+0$0.3 marked 10 do
 begin
- CreateCratesAnywhere(Rand(4,5),true);
+ CreateCratesArea(Rand(4,5),MZBaseArea,true);
  enable;
 end;
-
+ 
 every 0$1+0$0.6 marked 10 do
 var i, amount;
 begin
@@ -23,7 +23,7 @@ begin
     CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 20, true);
 
   enable;
-end;
+end;    
 
 
 

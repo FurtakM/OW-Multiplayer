@@ -589,6 +589,7 @@ begin
       Init_Win_Condition;
     end;
 
+  AnimateTrees(true);
   InitApeman;
 
   BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4, BuildUp5, BuildUp6];
