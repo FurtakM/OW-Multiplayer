@@ -219,6 +219,8 @@ Flags, Siberia (by Tomasz):
 
 Rocky Pass (by Tomasz):
 - Materialization fixed
+- Multidesc Teams reduced from 6 to 3
+- Multidesc Shared Vision added
 - Multidesc Build Time changed(instead of 4 there are 12)
 
 Wilderness (by Tomasz):
