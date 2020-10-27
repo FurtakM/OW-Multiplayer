@@ -209,7 +209,8 @@ Rocky Pass (by Tomasz):
 - Number of Apeman changed(Standard AB:0,3,6,9)
 
 0.20:
-- Tree animation has been activated on map: Siberia, Rocky Pass, Four to Win, Wilderness 
+- Tree animation has been activated on map: Siberia, Rocky Pass, Four to Win, Wilderness (by Tomasz)
+- Spectator added on map: Stonehenge, Party, Night Fight, River of Lost Souls, Rocky Land (by Tomasz)
 
 Flags, Siberia (by Tomasz):
 - Build Time changed
@@ -222,7 +223,4 @@ Rocky Pass (by Tomasz):
 
 Wilderness (by Tomasz):
 - Apeman respawn zone fixed
-- Spectator added
-
-Stonehenge, Party (by Tomasz):
 - Spectator added
