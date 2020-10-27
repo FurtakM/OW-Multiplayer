@@ -450,6 +450,12 @@ end;
 
 starting
 begin
+  Disable(98);
+  Disable(99);
+
+  Disable(400); // SuddenLost
+  Disable(401); // SuddenWin
+
   mp_selectmsg:=true;
   read_multiplayer_and_game_parameters;
   prepare_map_coordinates;
