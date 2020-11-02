@@ -32,8 +32,6 @@ every 0$1+0$0.5 do
 
             building_list = FilterAllUnits([[f_type,unit_building],[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ok],[f_side,aktresp]]);
             if building_list = 0 then
-                 building_list = FilterAllUnits([[f_type,unit_building],[f_ok],[f_side,aktresp]]);
-            if building_list = 0 then
                  exit;  //won't respawn
 
             hc_name:='';

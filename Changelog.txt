@@ -216,6 +216,7 @@ Flags, Siberia (by Tomasz):
 - Build Time changed
 - game_modes.src by Radzio removed
 - Multidesc Build Time changed(instead of 4 there are 12)
+- Flags people respawn fixed(now must be depot or warehouse)
 
 Rocky Pass (by Tomasz):
 - Materialization fixed
