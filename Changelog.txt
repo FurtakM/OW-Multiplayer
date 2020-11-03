@@ -226,3 +226,6 @@ Rocky Pass (by Tomasz):
 Wilderness (by Tomasz):
 - Apeman respawn zone fixed
 - Spectator added
+
+0.21:
+- New multidsc (by Sali)
