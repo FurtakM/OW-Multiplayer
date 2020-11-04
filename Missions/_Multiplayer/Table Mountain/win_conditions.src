@@ -8,7 +8,7 @@ end;
 
 
 // Team Game
-every 0$2 Marked 98 do
+every 0$2 Trigger CanWinLoose Marked 98 do
 var win,i;
 begin
   if your_side then
@@ -39,7 +39,7 @@ end;
 
 
 // (All for Free)
-every 0$3 Marked 99 do
+every 0$3 Trigger CanWinLoose Marked 99 do
 var win,i;
 begin
   if not FilterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then

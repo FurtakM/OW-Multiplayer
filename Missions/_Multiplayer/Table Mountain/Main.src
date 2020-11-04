@@ -119,7 +119,7 @@ begin
       def_siberite_bomb=      GetMultiplayerSetting(13);
       def_people_respawning=  GetMultiplayerSetting(14);
       def_builduptime=        GetMultiplayerSetting(20);
-
+      
       tech_level =            GetMultiplayerSetting(22);
     end
   else
@@ -139,7 +139,7 @@ begin
       def_siberite_bomb=      2;
       def_people_respawning=  2;
       def_builduptime:=       1;
-
+      
       tech_level =            6;
     end;
 

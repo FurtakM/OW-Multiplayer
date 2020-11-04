@@ -234,3 +234,6 @@ Babilon(by Tomasz):
 - Build Time changed
 - DayNight.src removed
 - Materialization changed(Standard AB)
+
+Table Mountain (by Tomasz):
+- Spectator/Server win fixed

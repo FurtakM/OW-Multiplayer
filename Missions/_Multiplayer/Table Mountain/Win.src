@@ -2,6 +2,17 @@ var strength,
     lastxwin,lastywin,
     lastxlost,lastylost;
 
+export function CanWinLoose;
+begin
+  Result := True;
+
+  if IAmServer and PlayerCount > 0 then
+    Result := False;
+
+  if IAmSpec and PlayerCount > 1 then
+    Result := False;
+
+end;
 
 function Update_Flags;
 var un;
@@ -33,7 +44,7 @@ end;
 
 
 // scientists
-every 0$1 Marked 44 do
+every 0$1 Trigger CanWinLoose Marked  44 do
 var l1,l2;
 begin
   if not (game_type in [11,12]) then
@@ -102,9 +113,9 @@ begin
 enable;
 end;
 
-
+ 
 // normal battle
-every 0$2 Marked 44 do
+every 0$2 Trigger CanWinLoose Marked 44 do
 var win,i;
 begin
   if game_type in [11,12] then
@@ -142,4 +153,4 @@ begin
         end;
     end;
   enable;
-end;
+end;   
