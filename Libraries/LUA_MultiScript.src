@@ -1,0 +1,42 @@
+Export Function UpdateSpectatorBar;
+var i, j, crates, oil, sib, people, bases;
+begin
+for i := 1 to 8 do
+    begin
+    if Side_Positions[i] then
+       begin
+       people := FilterAllUnits([[f_side, i], [f_type, unit_human]]) + 0;  
+       bases := FilterAllUnits([[f_side, i], [f_or, [f_btype, b_depot], [f_btype, b_warehouse]]]);
+
+       crates := 0;
+       oil := 0;
+       sib := 0;
+
+       if bases then
+          begin
+          for j in bases do
+              begin
+              crates := crates + GetResourceType(GetBase(j), mat_cans);
+              oil := oil + GetResourceType(GetBase(j), mat_oil);
+              sib := sib + GetResourceType(GetBase(j), mat_siberit);
+              end;
+          end;
+
+       ToLua('setSpecText(' & i & ',' & 2 & ',' & crates & ')');
+       ToLua('setSpecText(' & i & ',' & 3 & ',' & oil & ')');
+       ToLua('setSpecText(' & i & ',' & 4 & ',' & sib & ')');
+       ToLua('setSpecText(' & i & ',' & 5 & ',' & people & ')');
+
+       ToLua('setSpecLogoNumber(' & 2 & ',' & 1 & ')');
+       ToLua('setSpecLogoNumber(' & 3 & ',' & 2 & ')');
+       ToLua('setSpecLogoNumber(' & 4 & ',' & 3 & ')');
+       ToLua('setSpecLogoNumber(' & 5 & ',' & 4 & ')');
+       end;
+    end;
+End;
+
+Every 20 trigger FilterAllUnits([f_or, [f_btype, b_depot], [f_btype, b_warehouse]]) do
+begin
+enable;
+UpdateSpectatorBar;
+End;

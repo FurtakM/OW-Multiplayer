@@ -1,3 +1,4 @@
 SOURCE_CODES
   ENABLED SharedAchievements
+  ENABLED LUA_MultiScript
 END_OF_SOURCE_CODES
