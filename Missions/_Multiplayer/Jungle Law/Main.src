@@ -23,6 +23,7 @@ begin
   set_shared_visions_and_alliances;
   ResetFog;
   ClearAllFogForSide(Player_Side);
+  AnimateTrees(true);
 
   init_map;
 

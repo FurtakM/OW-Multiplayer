@@ -626,6 +626,7 @@ begin
 
   ResetFog;
   ClearAllFogForSide(your_side);
+  AnimateTrees(true);
 
   prepare_sides;
   init_respawning;

@@ -529,6 +529,7 @@ begin
 
   ResetFog;
   ClearAllFogForSide(Player_Side);
+  AnimateTrees(true);
 
   prepare_sides;
   Init_Win_Condition;

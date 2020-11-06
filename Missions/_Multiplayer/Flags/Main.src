@@ -502,6 +502,7 @@ begin
   set_shared_visions_and_alliances;
   ResetFog;
   ClearAllFogForSide(your_side);
+  AnimateTrees(true);
   prepare_sides;
 
   Init_Win_Condition;

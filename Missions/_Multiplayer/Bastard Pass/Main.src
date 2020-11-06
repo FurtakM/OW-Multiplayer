@@ -765,6 +765,7 @@ begin
   prepare_map_coordinates;
   ResetFog;
   ClearAllFogForSide(your_side);
+  AnimateTrees(true);
   prepare_sides;
 //  prepare_apemen;
 //  init_shipments_and_respawning;

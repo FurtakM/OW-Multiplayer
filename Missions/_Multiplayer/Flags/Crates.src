@@ -10,12 +10,12 @@ begin
   case tick of
          1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$20));
      1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$20,0$35));
-     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$35,0$50));
-    10$0+1..20$0:  Wait(shipments_density/100*Rand(0$50,1$10));
-    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$10,1$20));
-    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$20,1$35));
-    50$0+1..300$0: Wait(shipments_density/100*Rand(1$35,2$0));
-  else  Wait(shipments_density/100*Rand(2$0,2$30));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$35,0$45));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(0$45,0$55));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(0$55,1$05));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$05,1$15));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$15,1$30));
+  else  Wait(shipments_density/100*Rand(1$30,1$45));
   end;
 
   amount:= Rand(3, 5);

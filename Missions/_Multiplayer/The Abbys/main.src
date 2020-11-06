@@ -576,6 +576,8 @@ begin
 
   Enable(55);
 
+  AnimateTrees(true);
+
   init_map;
   set_shared_visions_and_alliances;
   prepare_sides;

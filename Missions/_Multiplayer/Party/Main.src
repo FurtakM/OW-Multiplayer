@@ -197,7 +197,7 @@ begin
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 20 + (def_shipments_density)*28;
+  shipments_density           := 20 + (def_shipments_density) * 4;
 
   amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -555,6 +555,8 @@ begin
   set_shared_visions_and_alliances;
   prepare_sides;
   Init_Win_Condition;
+
+  AnimateTrees(true);
 
   InitApeman;
   init_shipments_and_respawning;

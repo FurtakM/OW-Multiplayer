@@ -1,11 +1,11 @@
 -----------------------------------------------------------------------------
 ---  Orig. File : /lua/InGame/game_spectatorBar.lua
----  Version    : 1
+---  Version    : 3
 ---
 ---  Summary    : Players bars instead Resources bars.
 ---
 ---  Created    : Petr 'Sali' Salak, Freya Group
----  Modified   : Stuart 'Stucuk' Carey, OW Support
+---  Modified   : Serpent
 ------------------------------------------------------------------------------
 
 SpecBar = {};
@@ -14,20 +14,20 @@ SpecBar.bars  = {};
 
 function makeSpecBarLabel(element,ID,IX,IY,IW,IH)
 	return AddElement({
-	type=TYPE_LABEL,
-	parent=element,
-	anchor=anchorLT,
-	x=IX,
-	y=IY,
-	width=IW,
-	height=IH,
-	font_name=Tahoma_10B,--ADMUI3S ,
-	--text_halign=ALIGN_MIDDLE,
-	callback_mouseclick='',--'OW_SPECBAR_CLICK('..(ID)..');',,
-	text='',--'test1,test2,test3,test4,test5',
-	scissor=true,
-	scroll_text=true,
-});
+		type=TYPE_LABEL,
+		parent=element,
+		anchor=anchorLT,
+		x=IX,
+		y=IY,
+		width=IW,
+		height=IH,
+		font_name=Tahoma_10B,--ADMUI3S ,
+		--text_halign=ALIGN_MIDDLE,
+		callback_mouseclick='',--'OW_SPECBAR_CLICK('..(ID)..');',,
+		text='',--'test1,test2,test3,test4,test5',
+		scissor=true,
+		scroll_text=true,
+	});
 end;
 
 function makeSpecBar(ID)
@@ -41,7 +41,7 @@ function makeSpecBar(ID)
 		y=(ID-1)*specbarui.h,
 		width=specbarui.width,
 		height=specbarui.h,
-		callback_mouseclick='',--'OW_RESOURCEBAR_CLICK('..(ID)..');',
+		callback_mouseclick='showFadeSpaceBar();',--'OW_RESOURCEBAR_CLICK('..(ID)..');',
 		subtexture=true,
 		subcoords=SUBCOORD(0,0,specbarui.wt,50),
 		visible=false,
@@ -54,7 +54,7 @@ function makeSpecBar(ID)
 	element.l[3] = makeSpecBarLabel(element,ID,specbarui.x2+specbarui.w2,specbarui.y1,specbarui.w1,specbarui.h1);
 	element.l[4] = makeSpecBarLabel(element,ID,specbarui.x2+specbarui.w2*2,specbarui.y1,specbarui.w1,specbarui.h1);
 	element.l[5] = makeSpecBarLabel(element,ID,specbarui.x2+specbarui.w2*3,specbarui.y1,specbarui.w1,specbarui.h1);
-
+	
 	element.logo ={};
 	element.logo[1] = getElementEX(
 								element,
@@ -68,7 +68,7 @@ function makeSpecBar(ID)
 								true,
 								{
 									colour1 = SIDE_COLOURS[ID+1],
-									texture = 'SGUI/Nat/back.png',
+									texture = 'SGUI/Alien/Multiplayer/Nat/back.png', 
 								}
 				);
 	element.logo[1].nat = getElementEX(
@@ -83,7 +83,7 @@ function makeSpecBar(ID)
 								true,
 								{
 									colour1 = GRAY(SIDE_COLOURS[ID+1].c),
-									texture = 'SGUI/Nat/am.png',
+									texture = 'SGUI/Alien/Multiplayer/Nat/am.png', 
 								}
 				);
 
@@ -100,7 +100,7 @@ function makeSpecBar(ID)
 								true,
 								{
 									colour1 = WHITEA(255),
-									texture = 'empty.png',
+									texture = 'empty.png', 
 								}
 				);
 		element.logo[i+1].iconName = "";
@@ -109,7 +109,7 @@ function makeSpecBar(ID)
 end;
 
 for i=1,9 do
- SpecBar.bars[i] = makeSpecBar(i);
+	SpecBar.bars[i] = makeSpecBar(i);
 end;
 
 function setSpecBarCoords(ID,ISACTIVE)
@@ -123,11 +123,11 @@ end;
 function setSpecLogo(ID,ICON)					-- ICON - NAME OF PNG FILE inside SpecBar folder in nation directory.. like "crate"
 	if ID > 1 and ID < 6 then
 		for i=1,8 do
-			if ICON and not ICON == "" then
-				setInterfaceTexture(SpecBar.bars[i].logo[ID], 'SpecBar/'.. ICON ..'.png');
+			if ICON and ICON ~= "" then
+				setInterfaceTexture(SpecBar.bars[i].logo[ID],'SpecBar/'.. ICON ..'.png');
 				SpecBar.bars[i].logo[ID].iconName = ICON;
 			else
-				setTexture(SpecBar.bars[i].logo[ID], 'empty.png');
+				setTexture(SpecBar.bars[i].logo[ID],'empty.png');
 				SpecBar.bars[i].logo[ID].iconName = "";
 			end
 		end;
@@ -175,7 +175,7 @@ end;
 
 function DoInterfaceChange_Game_SpecBar()
 	local specbarui = interface.current.game.ui.specbar;
-
+	
 	for i=1,9 do
 		setInterfaceTexture(SpecBar.bars[i],'SpecBar/SpecBar.png');
 		setXYWH(SpecBar.bars[i].l[1],XYWH(specbarui.x1,specbarui.y1,specbarui.w3,specbarui.h1));
@@ -184,7 +184,7 @@ function DoInterfaceChange_Game_SpecBar()
 		setXYWH(SpecBar.bars[i].l[4],XYWH(specbarui.x2+specbarui.w2*2,specbarui.y1,specbarui.w1,specbarui.h1));
 		setXYWH(SpecBar.bars[i].l[5],XYWH(specbarui.x2+specbarui.w2*3,specbarui.y1,specbarui.w1,specbarui.h1));
 		setSpecBarCoords(i,false);																					-- TO DO: If is already Active
-
+		
 		for j=2,5 do
 			if not SpecBar.bars[i].logo[j].iconName == "" then
 				setInterfaceTexture(SpecBar.bars[i].logo[j],'SpecBar/'.. SpecBar.bars[i].logo[j].iconName ..'.png');
@@ -204,6 +204,27 @@ function showSpecBar(bool)
 			end;
 		end;
 	end;
+	
 
+end;
 
+specBarFadeVisible = 1;
+function showFadeSpaceBar()
+	local x = getX(SpecBar.bars[1]);
+	local width = getWidth(SpecBar.bars[1]);
+	local result = x;
+
+	if (specBarFadeVisible == 1) then -- user want to hide specBar
+		result = x + (width - 20);
+		specBarFadeVisible = 0;
+	else -- user want to show specBar
+		result = x;
+		specBarFadeVisible = 1;
+	end;
+
+	for i = 1, 9 do
+		if SpecBar.bars[i].isInGame == true then
+			AddEventSlideX(SpecBar.bars[i].ID, result, 0.80, nil);
+		end;
+	end;
 end;
