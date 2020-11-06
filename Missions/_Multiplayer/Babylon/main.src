@@ -176,7 +176,7 @@ begin
   starting_resources          := [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             := [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           := [ 20, 30, 40 ] [def_shipments_density+1];
-  shipments_density           := 380 - (def_shipments_density+1);
+  shipments_density           := 150 - (def_shipments_density+1);
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   respawning_time_min         := [0$0,  6$00, 1$00] [def_people_respawning+1];
   respawning_time_max         := [0$0, 10$00, 2$00] [def_people_respawning+1];

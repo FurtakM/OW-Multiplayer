@@ -227,7 +227,7 @@ Wilderness (by Tomasz):
 - Apeman respawn zone fixed
 - Spectator added
 
-0.21:
+0.21/22:
 - New multidsc (by Sali)
 
 Babilon(by Tomasz):
@@ -237,3 +237,7 @@ Babilon(by Tomasz):
 
 Table Mountain (by Tomasz):
 - Spectator/Server win fixed
+
+0.23:
+- Added spectator bar on all maps
+- Fix Flags apeman option

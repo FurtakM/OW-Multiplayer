@@ -710,10 +710,10 @@
 1120: PLUS
 1121: ARRAY
 1122: ST_TO_ADDR
-// shipments_density := 380 - ( def_shipments_density + 1 ) ;
+// shipments_density := 150 - ( def_shipments_density + 1 ) ;
 1123: LD_ADDR_EXP 13
 1127: PUSH
-1128: LD_INT 380
+1128: LD_INT 150
 1130: PUSH
 1131: LD_EXP 52
 1135: PUSH
