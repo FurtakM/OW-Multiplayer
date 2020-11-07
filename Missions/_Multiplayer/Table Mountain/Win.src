@@ -44,7 +44,7 @@ end;
 
 
 // scientists
-every 0$1 Trigger CanWinLoose Marked  44 do
+every 0$1 Marked  44 do
 var l1,l2;
 begin
   if not (game_type in [11,12]) then
@@ -60,9 +60,9 @@ begin
   l2:=UnitFilter(sci2, [f_alive]);  
   
   if not l1 and not l2 then
-    begin
-      wait(0$3);
-      YouLostInMultiplayer;
+    begin                         
+      wait(0$5);
+      Enable(400);
       exit;
     end
   else if not l1 then
@@ -70,14 +70,14 @@ begin
       if Side_teams[your_side]=1 then
         begin
           CenterOnXY(lastxlost,lastylost);
-          wait(0$3);
-          YouLostInMultiplayer;
+          wait(0$5);
+          Enable(400);
         end
       else
         begin
           CenterOnXY(lastxwin,lastywin);
-          wait(0$3);
-          YouWinInMultiplayer;
+          wait(0$5);
+          Enable(401);
         end
     end   
   else if not l2 then
@@ -85,14 +85,14 @@ begin
       if Side_teams[your_side]=2 then
         begin
           CenterOnXY(lastxlost,lastylost);
-          wait(0$3);
-          YouLostInMultiplayer;
+          wait(0$5);
+          Enable(400);
         end
       else
         begin
           CenterOnXY(lastxwin,lastywin);
-          wait(0$3);
-          YouWinInMultiplayer;
+          wait(0$5);
+          Enable(401);
         end
     end
   else
@@ -115,7 +115,7 @@ end;
 
  
 // normal battle
-every 0$2 Trigger CanWinLoose Marked 44 do
+every 0$2 Marked 44 do
 var win,i;
 begin
   if game_type in [11,12] then
@@ -128,7 +128,7 @@ begin
           wait(0$3);
           if IAmServer then
             wait(0$1);
-          YouLostInMultiplayer;
+          Enable(400);
           exit;
         end
       else
@@ -147,7 +147,7 @@ begin
                if IAmServer then
                  wait(0$1);
                SA_Win(Side_Nations[Your_side]);
-               YouWinInMultiplayer;
+               Enable(401);
                exit;
              end;
         end;

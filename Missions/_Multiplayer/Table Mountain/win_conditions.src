@@ -6,16 +6,21 @@ begin
     Enable(99);
 end;
 
+every 100 trigger CanWinLoose marked 400 do
+  YouLostInMultiplayer;
+
+every 100 trigger CanWinLoose marked 401 do
+  YouWinInMultiplayer;
 
 // Team Game
-every 0$2 Trigger CanWinLoose Marked 98 do
+every 0$2 Marked 98 do
 var win,i;
 begin
   if your_side then
     if not FilterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then
       begin
         wait(0$3);
-        YouLostInMultiplayer;
+        Enable(400);
         exit;
       end
     else
@@ -30,7 +35,7 @@ begin
         if win then
           begin
             wait(0$3);
-            YouWinInMultiplayer;
+            Enable(401);
             exit;
           end;
       end;
@@ -39,13 +44,13 @@ end;
 
 
 // (All for Free)
-every 0$3 Trigger CanWinLoose Marked 99 do
+every 0$3 Marked 99 do
 var win,i;
 begin
   if not FilterAllUnits([[f_side,your_side],[f_or,[f_type,unit_human],[f_btype,b_depot],[f_btype,b_warehouse]]]) then
     begin
       wait(0$3);
-      YouLostInMultiplayer;
+      Enable(400);
       exit;
     end
   else
@@ -58,7 +63,7 @@ begin
       if win then
         begin
           wait(0$3);
-          YouWinInMultiplayer;
+          Enable(401);
           exit;
         end;
     end;

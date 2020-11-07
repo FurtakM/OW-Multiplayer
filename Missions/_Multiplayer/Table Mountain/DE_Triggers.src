@@ -4,6 +4,9 @@ begin
   Disable(44);
   Disable(45);
 
+  Disable(400);
+  Disable(401);
+
   // Triggers from standard multiplayer Game
   Disable(98);
   Disable(99);
