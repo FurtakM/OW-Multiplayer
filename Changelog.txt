@@ -238,6 +238,13 @@ Babilon(by Tomasz):
 Table Mountain (by Tomasz):
 - Spectator/Server win fixed
 - Postmortem camera time increased(from 3 to 5 seconds)
+
 0.23:
 - Added spectator bar on all maps
 - Fix Flags apeman option
+
+0.24:
+Rocky Pass:
+- Fixed team fog
+
+Spectator Bar (lua fix)

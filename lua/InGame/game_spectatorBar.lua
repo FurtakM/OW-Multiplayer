@@ -174,6 +174,9 @@ end;
 
 
 function DoInterfaceChange_Game_SpecBar()
+	specBarFadeVisible = 1;
+	specBarVisible = 1;
+	
 	local specbarui = interface.current.game.ui.specbar;
 	
 	for i=1,9 do

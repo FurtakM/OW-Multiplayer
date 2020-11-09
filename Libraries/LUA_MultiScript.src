@@ -39,7 +39,7 @@ ToLua('setSpecLogoNumber(' & 4 & ',' & 3 & ')');
 ToLua('setSpecLogoNumber(' & 5 & ',' & 4 & ')');
 End;
 
-Every 20 trigger FilterAllUnits([f_or, [f_btype, b_depot], [f_btype, b_warehouse]]) do
+Every 20+0$5 trigger FilterAllUnits([f_or, [f_btype, b_depot], [f_btype, b_warehouse]]) do
 begin
 enable;
 UpdateSpectatorBar;
