@@ -8747,7 +8747,7 @@
 14751: CALL_OW 559
 // end ;
 14755: END
-// every 20 trigger FilterAllUnits ( [ f_or , [ f_btype , b_depot ] , [ f_btype , b_warehouse ] ] ) do
+// every 20 + 0 0$5 trigger FilterAllUnits ( [ f_or , [ f_btype , b_depot ] , [ f_btype , b_warehouse ] ] ) do
 14756: LD_INT 2
 14758: PUSH
 14759: LD_INT 30
