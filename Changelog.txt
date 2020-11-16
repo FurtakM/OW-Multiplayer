@@ -254,3 +254,6 @@ Bloody Valley (by Tomasz):
 - Build Time changed
 - DayNight.src removed
 - Materialization changed(Standard AB)
+
+Highlands (by Tomasz):
+- Materialization changed(Standard AB)

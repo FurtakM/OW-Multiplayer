@@ -3,7 +3,6 @@ var shipment,respawn,inqueue;
 // selection of first kvadrant
 export function init_shipments_and_respawning;
 begin
-  shipment:=Rand(0,3);
   respawn:=Rand(1,8);
   inqueue:=[0,0,0,0,0,0,0,0];
 end;
@@ -34,8 +33,6 @@ every 0$1+0$0.5 do
 
             building_list = FilterAllUnits([[f_type,unit_building],[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ok],[f_side,aktresp]]);
             if building_list = 0 then
-                 building_list = FilterAllUnits([[f_type,unit_building],[f_ok],[f_side,aktresp]]);
-            if building_list = 0 then
                  exit;  //won't respawn
 
             hc_name:='';
@@ -59,26 +56,30 @@ every 0$1+0$0.5 do
       enable;
   end;
 
-every 0$5+0$1.1 do
-var d;
+every 1$0+0$0.3 do  // crates anywhere on map
 begin
-                case tick of
-       1..  1$0: d:=150;
-   1$0+1..  5$0: d:=100;
-   5$0+1.. 10$0: d:=90;
-  10$0+1.. 20$0: d:=70;
-  20$0+1.. 30$0: d:=60;
-  30$0+1.. 50$0: d:=35;
-  50$0+1..300$0: d:=20;
-           else  d:=0;
-                end;
+ CreateCratesAnywhere(Rand(4,5),true);
+ enable;
+end;
 
-  if rand(1,10000)<=d*shipments_density then
-    begin
-      wait(Rand(1,0$4));
-      shipment:=(shipment+1)mod 4;
-      CreateCratesArea(5,nw+shipment,true);
-    end;
+every 0$1+0$0.6 do // create crates only on occupied bases
+var i, amount;
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$45));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$45,1$0));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$0,1$15));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$15,1$30));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$30,1$45));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$45,2$0));
+  else  Wait(shipments_density/100*Rand(2$0,2$30));
+  end;
+
+  amount:= Rand(3, 5);
+  for i in (Side_Positions diff [0]) do
+      CreateCratesArea(amount, [base_nw, base_ne, base_sw, base_se][i], true);
+
   enable;
 end;
 

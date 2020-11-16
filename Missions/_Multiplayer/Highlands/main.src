@@ -151,7 +151,7 @@ begin
       def_amount_of_people=   1;
       def_skill_level=        1;
       def_starting_resources= 2;
-      def_shipments_density=  1;
+      def_shipments_density=  50;
       def_extra_oil_deposits= 1;
       def_extra_sib_deposits= 1;
 
@@ -178,7 +178,7 @@ begin
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            = def_amount_of_people+4 ;
-  shipments_density           = 20 + (def_shipments_density)*28;
+  shipments_density           = 150 - (def_shipments_density+1);
   amount_of_apemen            = [0, 3, 6, 9] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
   respawning_time_max         = [0$0, 10$00, 2$00] [def_people_respawning+1];
