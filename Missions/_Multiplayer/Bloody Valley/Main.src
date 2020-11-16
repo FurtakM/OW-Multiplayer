@@ -19,14 +19,10 @@ EXPORT
   siberite_bomb_Delay,
   amount_of_apemen,
   tree_function,
-  def_win_rules,
-  buildUpTime_Delay;
-
+  def_win_rules;
 
 export Side_Teams, Teams, Side_Comps;
 export Side_Positions, Side_Nations, Team_Game;
-
-export Position_Sides;
 
 export depot_def, breastworks_def, start_def,
        battle_flags_id;
@@ -78,20 +74,6 @@ begin
       Teams:=          [[1,2],[3,4]];
     end;
 
-
-  for i := 1 to 8 do
-    if Multiplayer_GetPlayerIsSpec(i) then
-    begin
-      Side_Positions:= Replace(Side_Positions, i, 0);
-      Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);
-    end;
-
-  Position_Sides:= [0,0,0,0];
-
-  for i:= 1 to 8 do
-    if Side_Positions[i] then
-      Position_Sides:= Replace(Position_Sides, Side_Positions[i], i);
-
   Team_Game:= (Side_Teams diff [0]) > 1;
 
   if Multiplayer then
@@ -121,7 +103,7 @@ begin
       def_amount_of_people:=   1;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  71;
+      def_shipments_density:=  50;
       def_extra_oil_deposits:= 0;
       def_shared_vision:=      1;
       def_morale_flags:=       1;
@@ -158,7 +140,7 @@ begin
   starting_crates             := [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           := [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 350 - (def_shipments_density * 2);
+  shipments_density           := 150 - (def_shipments_density+1);
 
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   respawning_time_min         := [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -168,8 +150,7 @@ begin
   siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
   tree_function               := [ [0,0,0,0,0], [2,0,0,0,0], [0,4,0,0,0], [0,0,2,0,0], [0,0,0,3,0], [1,2,1,2,2], [0,0,0,0,3] ] [def_tree_function+1];
-  buildUpTime_Delay           := [0,5$00,6$00,7$00,8$00,9$00,10$00,11$00,12$00,13$00,14$00,15$00] [def_builduptime+1];
-  BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4];
+         
 end;
 
 function prepare_map_coordinates;
@@ -535,8 +516,9 @@ begin
 
     end;
 
+  AnimateTrees(true);
   InitApeman;
 
-  if def_builduptime then
-    BeginBuildUp;
+  BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4];
+  BeginBuildUp;
 end;

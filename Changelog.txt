@@ -248,3 +248,9 @@ Rocky Pass:
 - Fixed team fog
 
 Spectator Bar (lua fix)
+
+0.25:
+Bloody Valley (by Tomasz):
+- Build Time changed
+- DayNight.src removed
+- Materialization changed(Standard AB)
