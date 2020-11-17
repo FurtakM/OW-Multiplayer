@@ -254,6 +254,12 @@ Bloody Valley (by Tomasz):
 - Build Time changed
 - DayNight.src removed
 - Materialization changed(Standard AB)
+- Tree animation has been activated
 
 Highlands (by Tomasz):
 - Materialization changed(Standard AB)
+- Tree animation has been activated
+
+Babilon (by Tomasz):
+-Artifact clones fixed
+-The stone was moved from the entrance to the depot in the base left top

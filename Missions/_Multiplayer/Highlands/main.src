@@ -489,6 +489,8 @@ begin
        CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
     end;
 
+  AnimateTrees(true);
+
   BuildUpAreas:= [base_nw, base_ne, base_sw, base_se];
   BeginBuildUp;
 end;

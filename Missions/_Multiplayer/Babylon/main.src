@@ -79,7 +79,7 @@ begin
     end
   else
     begin
-      Game_Type:=      3;
+      Game_Type:=      2;
 
       Your_Side:=      4;
 
@@ -129,10 +129,10 @@ begin
       Randomize;
 
       def_base_level:=         2;
-      def_amount_of_people:=   1;
+      def_amount_of_people:=   10;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  1;
+      def_shipments_density:=  50;
       def_extra_oil_deposits:= 0;
 
       def_shared_vision:=      1;

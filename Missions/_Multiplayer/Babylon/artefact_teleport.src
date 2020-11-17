@@ -31,7 +31,6 @@ end;
 every 0$5 Marked 5 do
 var hex,un;
 begin
-  wait(3$0);
   if GetTag(09) then
     hex:=[ GetX(GetTag(13)), GetY(GetTag(13)) ]
   else
@@ -39,12 +38,16 @@ begin
 
   if not InArea(hex[1],hex[2],artefact_area) then
     begin
+      wait(3$0);
       if GetTag(09) then
         begin
           SetCargo(GetTag(13),mat_artefact,-artefact_size[1]);
           SetTag(09,0);
           SetTag(13,0);
         end;
+      hex:=FindArtifact(artefact_size[1]);
+      if not hex then
+        hex:=[ GetX(GetTag(13)), GetY(GetTag(13)) ];
       DestroyArtefact(hex,1);
       wait(5);
       repeat
@@ -69,7 +72,6 @@ end;
 every 0$5 Marked 6 do
 var hex,un;
 begin
-  wait(3$30);
   if GetTag(109) then
     hex:=[ GetX(GetTag(113)), GetY(GetTag(113)) ]
   else
@@ -77,12 +79,16 @@ begin
 
   if not InArea(hex[1],hex[2],artefact_area) then
     begin
+      wait(3$30);
       if GetTag(109) then
         begin
-          SetCargo(GetTag(113),mat_artefact,-artefact_size[1]);
+          SetCargo(GetTag(113),mat_artefact,-artefact_size[2]);
           SetTag(109,0);
           SetTag(113,0);
         end;
+      hex:=FindArtifact(artefact_size[2]);
+      if not hex then
+        hex:=[ GetX(GetTag(13)), GetY(GetTag(13)) ];
       DestroyArtefact(hex,2);
       wait(5);
       repeat
@@ -107,20 +113,23 @@ end;
 every 0$5 Marked 7 do
 var hex,un;
 begin
-  wait(4$0);
   if GetTag(209) then
     hex:=[ GetX(GetTag(213)), GetY(GetTag(213)) ]
   else
     hex:=FindArtifact(artefact_size[3]);
 
   if not InArea(hex[1],hex[2],artefact_area) then
-    begin
+    begin 
+      wait(4$0);
       if GetTag(209) then
         begin
-          SetCargo(GetTag(213),mat_artefact,-artefact_size[1]);
+          SetCargo(GetTag(213),mat_artefact,-artefact_size[3]);
           SetTag(209,0);
           SetTag(213,0);
         end;
+      hex:=FindArtifact(artefact_size[3]);
+      if not hex then
+        hex:=[ GetX(GetTag(13)), GetY(GetTag(13)) ];
       DestroyArtefact(hex,3);
       wait(5);
       repeat

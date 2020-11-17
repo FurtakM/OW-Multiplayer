@@ -45,7 +45,7 @@ HEXES
   LINE 15 8 167
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sA v6sA v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r5v2sah4 r5v2h4 r5v2h4 r5v2h4 r5v2h4 r5v2sXh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 16 8 167
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6v7so r6v7sp v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r4sqh4 r5sGh4 r5sGh4 r5sGh4 r4v1sfh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAS vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6v7so r6v7sp v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r4sqh4 r5sGh4 r5sGh4 r5sGh4 r4v1sfh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 17 9 168
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsA vAsA vAsA vAsA vAsA vAsB vAsB v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6vCsY r6vCsY r6vDsR r6v7sq v6sC v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6 r6v6sg r6v6sg v6sh r6v6sZ r4sqh4 r5h4 r5h4 r5h4 r5s9h4 r4v1sfh4 r6v6so r6v6sp r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 18 9 168
@@ -530,6 +530,8 @@ ENVIROMENT
     sCi#41
   ON_HEX 9 17
     sgi8
+  ON_HEX 20 17
+    sCi7
   ON_HEX 144 17
     sCiy
   ON_HEX 146 17
@@ -538,14 +540,14 @@ ENVIROMENT
     sfi7
   ON_HEX 12 19
     sgi4
+  ON_HEX 15 19
+    sCi7
   ON_HEX 61 19
     sfi6
   ON_HEX 167 19
     sCiD
   ON_HEX 11 20
     shi8
-  ON_HEX 23 20
-    sCi7
   ON_HEX 36 20
     sCiV
   ON_HEX 71 20
@@ -1606,16 +1608,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -341464008
-  RANDOM_SEED 2 -1601317138
-  RANDOM_SEED 3 435876129
+  RANDOM_SEED 1 -1749697398
+  RANDOM_SEED 2 820382758
+  RANDOM_SEED 3 515121941
   RANDOM_SEED 4 -458109257
   RANDOM_SEED 5 -353249387
   RANDOM_SEED 6 -1427881603
   RANDOM_SEED 7 -1785181649
   RANDOM_SEED 8 -189953117
   RANDOM_SEED 9 1074865947
-  RANDOM_SEED 10 -341464008
+  RANDOM_SEED 10 -1749697398
   RANDOM_SEED 11 1724635388
   RANDOM_SEED 12 -860054764
   RANDOM_SEED 13 1773727365
@@ -1658,7 +1660,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 1752 758 1220 672 1
+  VIEW -56 -96 1220 672 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -1687,7 +1689,7 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 25
+  ACTIVE 4
   LAST 76
   AREA 1
     NAME central
@@ -2950,7 +2952,7 @@ AREAS
     -------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------
     -------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------
     --------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------
-    ---------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------
+    --------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------
     ---------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------
     ---------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------
     ----------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------
@@ -3101,8 +3103,8 @@ AREAS
     COLOR 00FFF2
     SHORTCUT 3
     LINES 85 0 114 79
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------
-    -++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------
+    -+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------
     -+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------
     --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------
     --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------
@@ -3150,7 +3152,7 @@ AREAS
     -----------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------
     ------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------
     ------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------
-    -------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------
+    -------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------
     -------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------
     -------------------------++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------
     --------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------
