@@ -200,11 +200,11 @@ specBarVisible = 0;
 function showSpecBar(bool)
 	specBarVisible = 0;
 	for i=1,9 do
-		if bool == false or SpecBar.bars[i].isInGame == true then
+		if (bool == true) and (SpecBar.bars[i].isInGame == true) then
 			setVisible(SpecBar.bars[i],bool);
-			if bool == true then
-				specBarVisible = specBarVisible +1;
-			end;
+			specBarVisible = specBarVisible +1;
+		else
+			setVisible(SpecBar.bars[i],false);
 		end;
 	end;
 	
