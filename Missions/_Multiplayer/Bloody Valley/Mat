@@ -1,7 +1,0 @@
-
-every 0$1 do
-  begin
-    SendCrateAnywhere(5,1);
-    enable;
-  end;
-

@@ -111,7 +111,7 @@ begin
       def_amount_of_apemen:=   3;
       def_people_respawning:=  2;
       def_tree_function:=      7;
-      def_siberite_bomb:=      0;
+      def_siberite_bomb:=      2;
       def_builduptime:=        1;
       tech_level =             4;
       def_win_rules=           0;
@@ -147,10 +147,14 @@ begin
   respawning_time_max         := [0$0, 10$00, 2$00] [def_people_respawning+1];
   morale_decreasing_time      := [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             := [];
-  siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  //siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
   tree_function               := [ [0,0,0,0,0], [2,0,0,0,0], [0,4,0,0,0], [0,0,2,0,0], [0,0,0,3,0], [1,2,1,2,2], [0,0,0,0,3] ] [def_tree_function+1];
-         
+
+  if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+    else
+       siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 end;
 
 function prepare_map_coordinates;
