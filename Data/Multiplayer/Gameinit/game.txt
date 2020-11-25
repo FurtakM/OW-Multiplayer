@@ -1,0 +1,84 @@
+GAMEINIT
+ GAME
+   INVISIBLEDELAY 50
+   TELEPORTDELAY 60
+   HACKDELAY 175
+   CONTAMINATEDELAY 300
+   TIMELAPSER_INTENSITY 500
+   TIMELAPSER_MAXLIMIT 1000
+   TIMELAPSER_MINLIMIT 150
+   TIMESHIFTING_STRENGTH 900
+   TIMESHIFTING_DURATION 200
+   TIMESHIFTING_RANGE 5
+   TIMESHIFTING_MINLIMIT 50
+   CONTAMINATION_DURATION 6000
+   CONTAMINATION_RANGE 10
+   CONTAMINATION_PERIOD 10
+   CONTAMINATION_DAMAGE 10 10 0
+   CONTAMINATION_EXPLOSIONDAMAGE 1500 1200 900
+   SIBERITEROCKET_RANGE 25
+   SIBERITEROCKET_RUINRANGE 20
+   SIBERITEEXPLOSION_TOTALDESTROYRANGE 4
+   SIBERITEEXPLOSION_DURATION 125
+   SIBERITEEXPLOSION_DAMAGE 2000 20000 17000
+   SIBERITEEXPLOSION_CONTAMINATION_DURATION 6000
+   SIBERITEEXPLOSION_CONTAMINATION_RANGE 20
+   SIBERITEEXPLOSION_CONTAMINATION_PERIOD 10
+   SIBERITEEXPLOSION_CONTAMINATION_DAMAGE 2000 2000 0
+   MISSION_EXP_LIMITS 1250 1500 1750 2000 2250 2500 2750 3000 3500 4000 4500 5500 7500 10000 20000 5500 7500 10000 20000 5500
+   MAX_DISTANCE 26
+   MAX_DISTANCE_BONUS 8
+   sleptdelay 10
+   kamikaze_range 4
+   rocket_range 3
+   mine_range 3
+   mine_damage 1000 1000 1000
+   oilbarrel_damage 400 300 300
+   explosion_damage 100 50 50
+   selfdestruction_range 5
+   selfdestruction_damage 1500 100 100
+   animal_iq 0
+  {Returned shipments for dismantled vehicle.}
+   recycleratio 0.5
+  {Time of dismantling vehicle}
+   recycledelay 300
+  {Returned shipments for dismantled building.}
+   dismantleratio 0.5
+  {Time of dismantled * Build time of building}
+   rebuildratio 0.5
+   siberiterocketignition_delay 175
+   doublelaser_max_range 30
+   materialization_delay 60
+   materialization_radius 5
+   materialization_dispersal 3
+   prediction_dispersal 10
+   prediction_duration 525
+   prediction_radius 12
+   consumption_min 0
+   consumption_max 1
+   oil_mining_rate 100
+   sib_mining_rate 400
+  {power plants}
+   oil_consume_rate 100
+   maxunitidletime 4200
+   maxtaskexpiretime 140
+   noble_mastodont_angle 9
+   nvlimit 100
+   breast_range_bonus 2 4
+   armoury_range_bonus 2 4
+   barracks_range_bonus 2 4
+   breast_sight_bonus 1 1
+   armoury_sight_bonus 1 1
+   barracks_sight_bonus 1 1
+   turret_range_bonus 1 3
+   turret_sight_bonus 1 1
+   specresearchenergy 50
+   maxattackrange 37
+   zraneni_ve_vybuchujici_budove 20
+   zraneni_po_vybuchle_budove 200
+   koeficient_zraneni_ridice_sniperem 4
+   limit_computervehicles 6 9 12 15
+   limit_remotevehicles 6 9 12 15
+   limit_specprofessions 2 3 4 5
+ END_OF_GAME
+END_OF_GAMEINIT

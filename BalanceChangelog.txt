@@ -1,0 +1,46 @@
+Balance Changes
+0.27b:
+Timelapser:
+	Intensity: 
+		TIMELAPSER_INTENSITY 700 -> TIMELAPSER_INTENSITY 500
+	Cost changed: 
+		SIBERIUM 10 -> SIBERIUM 15
+
+Double laser:
+	Attack on vehicles/buildings increased by 10%:
+		DAMAGE 202 354 303 -> DAMAGE 202 389 334
+	    EFF 20 35 30 -> EFF 20 38 33
+	Maximal laser range increased by 5:
+		doublelaser_max_range 25 -> doublelaser_max_range 30
+
+Laser:
+	Speed fire ratio increased by 11%:
+		FREQUENCY  1  45 -> FREQUENCY  1  40
+	Range increased by 1:
+		RANGE 11 -> RANGE 12
+
+Rocket launcher:
+	Construct time increased by 20%:
+		TIME 60 -> TIME 72
+	Cost increased by 5 cans:
+		CANS 40 -> CANS 45
+
+Crane:
+	Construct time increased by 33%:
+		TIME 15 -> TIME 20
+	Cost increased by 10 cans:
+		CANS 15 -> CANS 25
+
+Arabian Gun:
+	Range increased by 2:
+		MINIMAX_RANGE 3 11 -> MINIMAX_RANGE 3 13
+	Speed fire ratio increased by 5%:
+		FREQUENCY 1 40 -> FREQUENCY 1 38
+
+Arabian Flamethrower
+	Cost decreased by 20 oil:
+		OIL 60 -> OIL 40
+	Construct time decreased by 10%:
+		TIME 40 -> TIME 36
+
+
