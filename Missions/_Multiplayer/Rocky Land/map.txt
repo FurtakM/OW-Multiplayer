@@ -5,9 +5,9 @@ MAIN_DEFINITIONS
   FOG_TYPE 0
   FOGSIDES 1 2 3 4 5 6 7 8
   ANIMGROUND 3
-  0 GroundAnim\am14-a_out0000.bmp 3799 1803
-  1 GroundAnim\am14-b_out0000.bmp 3724 1858
-  2 GroundAnim\am14-c_out0000.bmp 3485 1946
+  0 GroundAnim\am14-a_out0000.bmp 3799 1804
+  1 GroundAnim\am14-b_out0000.bmp 3724 1860
+  2 GroundAnim\am14-c_out0000.bmp 3481 1950
   END_OF_ANIMGROUND
   MAP_GBI am14.gbi
   MUCHY_RECT 0 0 0 0
@@ -252,7 +252,7 @@ HEXES
   LINE 116 58 197
     t4vEs9 t2vF vF vF vF vF vF vF vF vF vF vF vF vF vF r6vF r6v9sq r6v3sq r6v2sC v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 r6v2 r6v2sW r6v2sW r6v6se r6vB r6vAsC vA vA vA vA vA vA vA vA vAs9 vB vB r6vBs8 r6vBsD r6v9sK r6v7sK r6v5sK r6v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v4sDh4 r4sbh4 r4h4 r4h4 r4h4 r4h4 r4h4 r5sIh4 r6v2sIh4 r6v2so r6v8sg r6vD r6vAsS r6v4sq v3sBh4 r5v3sB r5v3sB r5v3sB r4sZh2 r4h2 r4h2 r4h2 r4h4 r4sH r6v2sf r6v7sm r6vAsm r6vBsj r4vAsjhE r4vAsjhE rBvAsmhE rBvAsmhE rBvAsmhE rBvAsrhE r4v6sahE r4v3sShE r4v1sJhE r4sJhE r4hE r4hE r4hE r4hE r4hE rBsfhE rBv5s9hE r4v6sfhE r4vBsghE vFsI vFsI vFsI vFsI r6vHso r6vHso r6vHso r6vLsX r6vPsf t2r6vUsn t4r6vas8
   LINE 117 59 198
-    t4vEs9 t2vF vF vF vF vF vF vF vF vF vF vF vF vF vF r6vF r6v9sq r6v3sq r6v2sC v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 r6v2 r6v2sX r6v6sf r6vAsD vA vA vA vA vA vA vA vA vAs9 vB vB vB vB r6vB r6v9sK v7sK v5sK v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v4sDh4 r4sbh4 r4h4 r4h4 r4h4 r4h4 r4h4 r5sIh4 r6v2sIh4 r6v4so r6v8sg r6vD r6vBsK r6v5sq v4sCh5 v4h5 v4 v4 v4 r4sah2 r4h2 r4h2 r4h4 r4s9h4 r4v1sXh5 r4v5sHh7 r4v7sPhC r4vAs8hC r4v8sThC r4v7sThC r4v7sThE rBv7sOhE r4v7sOhE r4v7sOhE r4v7sThE r4v6sChE r4v3sRhE r4v2sZhE r4sZhE r4sBhE r4hE r4hE r4hE r4hE rBsnhE rBv6sohE r4vBsfhE vGs9 vH vH vH r6vHsn r6vNsI r6vNsJ r6vMs8 r6vMsO r6vPsf t2r6vUsn t4r6va
+    t4vEs9 t2vF vF vF vF vF vF vF vF vF vF vF vF vF vF r6vF r6v9sq r6v3sq r6v2sC v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 r6v2 r6v2sX r6v6sf r6vAsD vA vA vA vA vA vA vA vA vAs9 vB vB vB vB r6vB r6v9sK v7sK v5sK v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v4sDh4 r4sbh4 r4h4 r4h4 r4h4 r4h4 r4h4 r5sIh4 r6v2sIh4 r6v4so r6v8sg r6vD r6vBsK r6v5sq v4sCh5 v4h5 v4 v4 v4 r4sah2 r4h2 r4h2 r4h4 r4s9h4 r4v1sXh5 r4v5sHh7 r4v7sPhC r4vAs8hC r4v8sThC r4v7sThC r4v7sThE rBv7sOhE r4v7sOhE r4v7sOhE r4v7sThE r4v6sChE r4v3sRhE r4v2sZhE r4sZhE r4sBhE r4hE r4hE r4hE r4hE rBsnhES rBv6sohE r4vBsfhE vGs9 vH vH vH r6vHsn r6vNsI r6vNsJ r6vMs8 r6vMsO r6vPsf t2r6vUsn t4r6va
   LINE 118 59 198
     t4vBsX t2vF vF vF vF vF vF vF vF vF vF vF vF vF vF vF r6vF r6v9sq r6v3sq r6v2sC v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 v2 r6v2sH r6v4sP r6v7sP vA vA vA vA vA vA vA vA vAs9 vB vB vB vB vB vB v9sK v7sK v5sK v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v5 v4sDh4 r4sbh4 r4h4 r4h4 r4h4 r4h4 r4h4 r5sIh4 r6v2sQ r6v4so r6vAsg r6vDsJ r6v9sb r6v8sT r6v5sS v4sBh5 v4 v4 v4 r4v1sSh3 r4sBh2 r4h2 r4h4 r4s9h4 r4v1sXh5 r4v5sHh7 r4v7sHhC r4v9s8hC r4v6sbhC r4v6sLhC r4v7hC rBv7hE r4v7hE r4v7hE r4v7hE r4v7hE r4v6sIhE r4v6sJhE r4v4sZhE r4v1sZhE r4sZhE r4hE r4hE r4hE r4snhE r4v6snhE rBvCsPhE vFsH vH vH vH r6vHsf r6vMsP r6vP r6vMsS r6vM r6vMsP t2r6vPsn t4r6vVsf
   LINE 119 60 199
@@ -353,6 +353,9 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
+  SET 53 stone-road
+  SET 54 bonus
+  SET 55 alien1
   ON_HEX 28 1
     sqiK
   ON_HEX 33 1
@@ -1239,8 +1242,6 @@ ENVIROMENT
     sdi2
   ON_HEX 160 104
     sdi1
-  ON_HEX 183 104
-    sFiH
   ON_HEX 97 105
     sCiD
   ON_HEX 129 105
@@ -1500,7 +1501,7 @@ ATTITUDES
 END_OF_ATTITUDES
 
 TECHS
-  PARAMS 72 8
+  PARAMS 81 8
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
@@ -1573,6 +1574,15 @@ TECHS
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
   F F F T F F T F F T F F T F F T F F T F F T F F T F F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
 END_OF_TECHS
 
 RESTRICTS
@@ -1624,7 +1634,7 @@ MISSION_OBJECTIVES_FULL 1
   "- Reach the Right Upper corner of map with John Macmillan in a vehicle" 1 REACH O
 
 SPECS
-  PARAMS 0 8
+  PARAMS 0 9
   FLAG 0 0
 END_OF_SPECS
 
@@ -1638,16 +1648,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -608567983
-  RANDOM_SEED 2 307503955
-  RANDOM_SEED 3 -810678863
+  RANDOM_SEED 1 -17987469
+  RANDOM_SEED 2 -17987469
+  RANDOM_SEED 3 -450572127
   RANDOM_SEED 4 1568105058
   RANDOM_SEED 5 -9533858
   RANDOM_SEED 6 -719918987
-  RANDOM_SEED 7 1032974429
+  RANDOM_SEED 7 2146323019
   RANDOM_SEED 8 156067333
   RANDOM_SEED 9 688368799
-  RANDOM_SEED 10 -608567983
+  RANDOM_SEED 10 -2016800537
   RANDOM_SEED 11 1975448649
   RANDOM_SEED 12 358602093
   RANDOM_SEED 13 199788295
@@ -1658,10 +1668,10 @@ RANDOMS
   RANDOM_SEED 18 -1325671885
   RANDOM_SEED 19 -1892125975
   RANDOM_SEED 20 1975448649
-  RANDOM_SEED 21 -603137628
+  RANDOM_SEED 21 283362171
   RANDOM_SEED 22 1975448649
   WIND_TIME 947209 947271 947284
-  WIND_STRENGTH 36.7606167791381 52 53.3803083895691
+  WIND_STRENGTH 36.7606167791381 52.0 53.3803083895691
   WIND_SCATTER 24.1066377870272
 END_OF_RANDOMS
 
@@ -1724,10 +1734,10 @@ NEW_UNITS
         BSKILLS 1 1 0 2
         EXPERIENCES 4500000 398535 372403 384321
         COLORS 7308969 5197647
-        COLOR_CODE 1BM
+        COLOR_CODE 1BMY
         FACE 0
         SPEAKER @
-        VOICE 11
+        VOICE 13
         RANDOM_SEED -1996822259
     END_OF_DEFINITION
     GAME_STATE
@@ -1771,7 +1781,7 @@ NEW_UNITS
         COLOR_CODE 1M
         FACE 7
         SPEAKER @
-        VOICE 1
+        VOICE 3
         RANDOM_SEED 0
     END_OF_DEFINITION
     GAME_STATE
@@ -1850,7 +1860,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 178 524 976 466 1
+  VIEW 2660 1772 1302 826 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 

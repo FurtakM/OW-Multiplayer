@@ -267,3 +267,9 @@ Babilon (by Tomasz):
 0.26:
 Materialization fixed on the map Bloody Valley (by Tomasz)
 Multidesc Kill 'em all max players fixed on the map Flags (by Tomasz)
+
+0.27:
+Rocky Land:
+- Waterfall animations fixed
+
+Balance changes - check BalanceChangelog.txt
