@@ -273,3 +273,7 @@ Rocky Land:
 - Waterfall animations fixed
 
 Balance changes - check BalanceChangelog.txt
+
+Flags (by Tomasz):
+- Build Time zone(top right base) corrected
+- Possible exit with wheeled tanks on the right side from the top center position(players decide yes/no)
