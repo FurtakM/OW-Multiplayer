@@ -263,3 +263,7 @@ Highlands (by Tomasz):
 Babilon (by Tomasz):
 -Artifact clones fixed
 -The stone was moved from the entrance to the depot in the base left top
+
+0.26:
+Materialization fixed on the map Bloody Valley (by Tomasz)
+Multidesc Kill 'em all max players fixed on the map Flags (by Tomasz)
