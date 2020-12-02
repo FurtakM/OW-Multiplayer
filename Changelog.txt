@@ -277,3 +277,11 @@ Balance changes - check BalanceChangelog.txt
 Flags (by Tomasz):
 - Build Time zone(top right base) corrected
 - Possible exit with wheeled tanks on the right side from the top center position(players decide yes/no)
+
+0.28:
+- New map: Mastodons Trail by Gwrhkhsh(code by Tomasz)
+- A library People_respawning has been added to almost every map
+- Tree animation has been activated on Rocky Land
+- Build Time zone(right middle and right bottom) corrected on Siberia
+- Removal of unused: DayNight.src, crates_loading.src, crates_loading_ii.src, respawning, colors_night.txt with map
+- obnova.src removed on Night Fight map(Replaced with library People_respawning)

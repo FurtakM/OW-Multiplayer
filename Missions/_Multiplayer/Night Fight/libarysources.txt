@@ -1,5 +1,5 @@
 SOURCE_CODES
   ENABLED US_SharedFuncs
-  ENABLED US_Respawning
   ENABLED US_SetTechs
+  ENABLED People_respawning
 END_OF_SOURCE_CODES

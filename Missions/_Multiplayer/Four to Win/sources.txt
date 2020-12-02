@@ -2,7 +2,6 @@ SOURCE_CODES
   ENABLED main
   ENABLED crates
   ENABLED events
-  DISABLED DayNight
   DISABLED win
   ENABLED apemans
   ENABLED battle_flags

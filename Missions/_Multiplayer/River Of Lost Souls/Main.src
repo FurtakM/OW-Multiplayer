@@ -465,6 +465,7 @@ begin
 
   InitLimits;
   ShowTimer;
+  AnimateTrees(true);
 
   second_oil;
   init_shipments_and_respawning;

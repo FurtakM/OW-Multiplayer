@@ -2,8 +2,6 @@ SOURCE_CODES
   ENABLED Main
   ENABLED apemans_loading
   ENABLED crates_loading
-  ENABLED people_respawn
-  DISABLED DayNight
   DISABLED win_conditions
   ENABLED Battle_Flag
   ENABLED sync

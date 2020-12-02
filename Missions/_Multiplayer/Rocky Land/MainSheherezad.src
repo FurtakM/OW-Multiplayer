@@ -475,6 +475,7 @@ export function starting_sheherezad;
 
     your_side:=Player_Side;
     ResetFog;
+    AnimateTrees(true);
     music_nat:=nation_arabian;
     CenterNowOnXY(coordinates[your_side][1],coordinates[your_side][2]);
 

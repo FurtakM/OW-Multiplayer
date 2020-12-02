@@ -7,7 +7,7 @@ EXPORT  gametype,
 
         def_base_level,          // (0) 0 - no base, 1 - depot, 2 - fortified, 3 - extra fortified [2]
         def_amount_of_people,    // (1) 0 - few, 1 - medium, 2 - more, 3 - lots
-        def_initial_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
+        def_skill_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
         def_starting_resources,  // (3) 0 - low, 1 - medium, 2 - high [1]
         def_shipments_density,   // (4) 0 - low, 1 - medium, 2 - high [1]
         def_oil_deposits,        // (5) 0 - close, 1 - far, 2 - both
@@ -27,7 +27,7 @@ EXPORT  gametype,
 EXPORT  is_depot,
         number_of_breastworks,
         number_of_people,
-        initial_level,
+        skill_level,
         starting_crates,
         starting_resources,
         shipments_density,
@@ -106,7 +106,7 @@ begin
     begin
       def_base_level=         GetMultiplayerSetting(0);
       def_amount_of_people=   GetMultiplayerSetting(1);
-      def_initial_level=      GetMultiplayerSetting(2);
+      def_skill_level=        GetMultiplayerSetting(2);
       def_starting_resources= GetMultiplayerSetting(3);
       def_shipments_density=  GetMultiplayerSetting(4);
       def_oil_deposits=       GetMultiplayerSetting(5);
@@ -136,7 +136,7 @@ begin
 
       def_base_level=         0;
       def_amount_of_people=   4;
-      def_initial_level=      3;
+      def_skill_level=        3;
       def_starting_resources= 3;
       def_shipments_density=  2;
       def_oil_deposits=       2;
@@ -192,7 +192,7 @@ begin
   is_depot                    = [0,1,1,1] [def_base_level+1];
   number_of_breastworks       = [0,0,2,4] [def_base_level+1];
 //  number_of_people            = [6,9,12,15,24] [def_amount_of_people+1];
-  initial_level               = [2,3,4,5] [def_initial_level+1];
+  skill_level                 = [2,3,4,5] [def_skill_level+1];
   starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
@@ -327,7 +327,7 @@ begin
       if commander then
         begin
           hc_name := mp_sides_players_names[uc_side];
-          PrepareHuman(Rand(1,2),cl,initial_level+2);
+          PrepareHuman(Rand(1,2),cl,skill_level+2);
           hc_importance:=105;
           commander:=false;
           If Multiplayer then
@@ -340,7 +340,7 @@ begin
       else
         begin
           hc_name := '';
-          PrepareHuman(rand(1,2),cl,initial_level);
+          PrepareHuman(rand(1,2),cl,skill_level);
           hc_importance:=0;
           If Multiplayer then
           begin
@@ -555,7 +555,7 @@ begin
   set_shared_visions_and_alliances;
   prepare_sides;
   Init_Win_Condition;
-
+  init_respawning;
   AnimateTrees(true);
 
   InitApeman;

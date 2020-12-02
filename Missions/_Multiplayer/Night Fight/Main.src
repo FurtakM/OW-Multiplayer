@@ -15,7 +15,7 @@ R 128 147
 R 136 3    }
 EXPORT Def_pocet_lidi,         
        Def_uroven_konvoje,
-       def_priblizna_uroven,
+       def_skill_level,
        def_cetnost_zasilek,
        def_mnozstvi_lozisek,
        def_nahodnost_lozisek,
@@ -27,13 +27,13 @@ EXPORT Def_pocet_lidi,
        def_arab,
        def_sib_bomb;
 
-export  pocet_lidi,
-        priblizna_uroven, initial_level,
+export  pocet_lidi, number_of_people,
+        skill_level,initial_level,
         cetnost_zasilek,
         obnova_opic,
         obnova_tygru,
-        obnovovaci_cas_min,
-        obnovovaci_cas_max,
+        obnovovaci_cas_min,respawning_time_min,
+        obnovovaci_cas_max,respawning_time_max,
         respawning_time_delay_min,
         respawning_time_delay_max,
         pozice_ropy,
@@ -90,7 +90,7 @@ begin
   if MultiPlayer then
     begin
       def_pocet_lidi=         GetMultiplayerSetting(1);
-      def_priblizna_uroven=   GetMultiplayerSetting(2);
+      def_skill_level=        GetMultiplayerSetting(2);
       def_cetnost_zasilek=    GetMultiplayerSetting(4);
       def_mnozstvi_lozisek=   GetMultiplayerSetting(5);
       def_nahodnost_lozisek=  GetMultiplayerSetting(6);
@@ -107,7 +107,7 @@ begin
       randomize;
 
       def_pocet_lidi=         3;
-      def_priblizna_uroven=   2;
+      def_skill_level=        2;
       def_cetnost_zasilek=    1;
       def_mnozstvi_lozisek=   0;
       def_nahodnost_lozisek=  0;
@@ -124,7 +124,7 @@ begin
        setMpTechs();
 
   pocet_lidi                  = [6,9,12,15,18,21,24] [def_pocet_lidi+1];
-  priblizna_uroven            = [2,3,4,5] [def_priblizna_uroven+1];
+  skill_level                 = [2,3,4,5] [def_skill_level+1];
   cetnost_zasilek             = [ 20, 30, 40 ] [def_cetnost_zasilek+1];
 
   obnova_opic                 = [0, 165,140,115] [def_pocet_opicaku+1];
@@ -134,7 +134,10 @@ begin
   respawning_time_delay_min   := [0$0, 0$30, 0$15] [def_obnovovaci_cas+1];
   respawning_time_delay_max   := [0$0, 1$00, 0$45] [def_obnovovaci_cas+1];
 
-  initial_level = priblizna_uroven ;
+  initial_level=skill_level;
+  respawning_time_min=obnovovaci_cas_min;
+  respawning_time_max=obnovovaci_cas_max;
+  number_of_people=pocet_lidi;
   pozice_sib:=[[112, 117],[131, 86],[207, 145],[180, 86],[118, 36],[103, 65],[54, 54]];
   pozice_ropy:=[[91, 110],[107, 84],[210, 125],[147, 113],[144, 46],[91, 42],[39, 68],[128, 147],[136, 3]];
   pozice_beden:=[Bedny1,Bedny2,Bedny3,Bedny4,Bedny5,Bedny6,Bedny7,Bedny8,Bedny9];
@@ -255,7 +258,7 @@ begin
       if commander then
         begin
           hc_name := mp_sides_players_names[side];
-          PrepareHuman(Rand(1,2),cl,priblizna_uroven+2);
+          PrepareHuman(Rand(1,2),cl,skill_level+2);
           hc_importance:=105;
           commander:=false;
           If Multiplayer then
@@ -268,7 +271,7 @@ begin
       else
         begin
           hc_name := '';
-          PrepareHuman(rand(1,2),cl,priblizna_uroven);
+          PrepareHuman(rand(1,2),cl,skill_level);
           hc_importance:=0;
           If Multiplayer then
           begin
@@ -525,14 +528,15 @@ begin
       
   ResetFog;
   ClearAllFogForSide(Player_Side);
+  AnimateTrees(true);
 
   priprava_stran;
   Init_Podminky_Vyhry;
   InitMultiplayerTime;
   //    prepare_apemen;
   //init_zasilky_a_obnova;
-  Oblasti_Bedny;
-  init_respawn;
+  Oblasti_Bedny;  
+  init_respawning;
 
   your_side:=Player_Side;
   music_nat:=Side_Nations[your_side];

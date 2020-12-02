@@ -1,7 +1,6 @@
 SOURCE_CODES
   ENABLED Main
   ENABLED Crates
-  ENABLED Respawn
   ENABLED Apemens
   ENABLED Events
   DISABLED Win

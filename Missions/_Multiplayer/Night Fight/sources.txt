@@ -8,5 +8,4 @@ SOURCE_CODES
   ENABLED vyhra
   ENABLED opice_tygri
   ENABLED Bedny
-  ENABLED obnova
 END_OF_SOURCE_CODES

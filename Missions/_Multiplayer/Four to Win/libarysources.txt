@@ -5,4 +5,5 @@ SOURCE_CODES
   ENABLED US_SetTechs
   ENABLED ScoreUtils
   ENABLED LUA_MultiScript
+  ENABLED People_respawning
 END_OF_SOURCE_CODES

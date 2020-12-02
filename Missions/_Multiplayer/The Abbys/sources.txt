@@ -4,7 +4,6 @@ SOURCE_CODES
   ENABLED poeple_respawn
   ENABLED apeman_loading
   ENABLED events
-  DISABLED DayNight
   ENABLED DE_Triggers
   ENABLED win_conditions
   ENABLED CTF

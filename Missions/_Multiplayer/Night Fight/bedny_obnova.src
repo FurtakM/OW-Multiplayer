@@ -1,55 +1,10 @@
-var shipment1,shipment2,respawn,inqueue;
+var shipment1,shipment2;
 
 // vybrani prvního kvadrátu
 export function init_zasilky_a_obnova;
   begin
     shipment1:=[];
     shipment2:=[];
-    respawn:=Rand(1,8);
-    inqueue:=[0,0,0,0,0,0,0,0];
-  end;
-
-every 0$1+0$0.5 do
-  var n,dep,aktresp;
-  begin
-    if obnovovaci_cas_max =0 then
-      exit;
-
-    if respawn=8 then respawn:=1
-    else respawn:=respawn+1;
-
-    if Side_Positions[respawn] and not inqueue[respawn] then
-      begin
-        n:=FilterAllUnits([ [f_type, unit_human],                      // units - people
-                            [f_side, respawn],                         // side - respawning side
-                            f_not, [f_nation,nation_nature]            // not tamed apeman
-                          ]);
-        if n<pocet_lidi then
-          begin
-            dep:=FilterAllUnits([[f_type,unit_building],[f_or,[f_btype,b_depot],[f_btype,b_warehouse]],[f_ok],[f_side,respawn]]);
-            if dep then
-              begin
-                aktresp:=respawn;
-                inqueue:=Replace(inqueue,aktresp,true);
-                enable;
-                wait(rand(obnovovaci_cas_min,obnovovaci_cas_max));
-                inqueue:=Replace(inqueue,aktresp,false);
-                hc_name:='';
-                hc_importance:=0;
-                PrepareHuman(0,0,priblizna_uroven div 2);
-                uc_nation:=Side_Nations[aktresp];
-                uc_side:=aktresp;
-                dep:=dep[Rand(1,dep)];
-                PlaceUnitXYR(CreateHuman,GetX(dep),GetY(dep),7,true);
-              end
-            else
-              enable;
-          end
-        else
-          enable;
-      end
-    else
-      enable;
   end;
 
 // shipment1

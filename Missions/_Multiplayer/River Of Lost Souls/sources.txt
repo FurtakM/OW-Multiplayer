@@ -3,7 +3,6 @@ SOURCE_CODES
   ENABLED bedny
   ENABLED events
   ENABLED lidi
-  DISABLED DayNight
   ENABLED winlost
   ENABLED battle_flags
   ENABLED game_modes

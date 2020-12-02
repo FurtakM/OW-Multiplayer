@@ -2,7 +2,6 @@ SOURCE_CODES
   ENABLED Main
   ENABLED Crates
   ENABLED Apeman
-  ENABLED PeopleRespawn
   ENABLED Events
   ENABLED Win
   ENABLED BattleFlag

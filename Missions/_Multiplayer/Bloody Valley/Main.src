@@ -500,11 +500,11 @@ begin
   ClearAllFogForSide(your_side);
   prepare_sides;
 
+  init_respawning;
   Init_Win_Condition;
   InitLimits;
   ShowTimer;
 
-  init_shipments_and_respawning;
   music_nat:=Side_Nations[your_side];
 
   if IAmSpec then

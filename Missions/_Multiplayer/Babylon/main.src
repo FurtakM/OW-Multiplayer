@@ -514,14 +514,13 @@ begin
 
   read_multiplayer_and_game_parameters;
   init_map;
-  init_respawn;
   set_shared_visions_and_alliances;
 
   ResetFog;
   ClearAllFogForSide(your_side);
 
   prepare_sides;
-
+  init_respawning;
   Init_Win_Condition;
 
   InitLimits;

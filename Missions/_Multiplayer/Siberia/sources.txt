@@ -2,7 +2,6 @@ SOURCE_CODES
   ENABLED main
   ENABLED crates_loading
   ENABLED apemans_loading
-  ENABLED people_respawning
   ENABLED events
   ENABLED win
   ENABLED mine

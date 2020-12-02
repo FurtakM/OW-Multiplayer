@@ -26,14 +26,11 @@ EXPORT
   amount_of_siberit,
   respawning_time_min,
   respawning_time_max,
-  buildUpTime_Delay,
   amount_of_apemen,
   siberite_bomb_Delay;
 
 export  Side_Teams, Teams;
 export  Side_Positions, Side_Nations, Team_Game, Side_Comps;
-
-export  Position_Sides;
 
 export  depot_def, breastworks_def, start_def,
         normal_oil_deposits_locations,
@@ -93,20 +90,7 @@ begin
 
       Teams:=          [[1],[2],[3],[4],[5],[6]];
     end;
-
-  for i:= 1 to 8 do
-    if Multiplayer_GetPlayerIsSpec(i) then
-    begin
-      Side_Positions:= Replace(Side_Positions, i, 0);
-      Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);
-    end;
-
-  Position_Sides:= [0,0,0,0,0,0];
-
-  for i := 1 to 8 do
-    if Side_Positions[i] then
-      Position_Sides:= Replace(Position_Sides, Side_Positions[i], i);
-
+                                                                  
   Team_Game:= (Side_Teams diff [0]) > 1;
 
   if Multiplayer then
@@ -206,11 +190,6 @@ begin
     else
        siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 
-    if def_builduptime = 0 then
-      buildUpTime_Delay = 0
-    else
-      buildUpTime_Delay           := 4$00 + 1$00*def_builduptime;
-
     amount_of_siberit := [
                           30, 60, 90, 120, 150, 180, 210, 240, 270, 300,
                           400, 500, 600, 700, 800, 900, 1000,
@@ -248,9 +227,8 @@ begin
       starting_crates             := [[10], [7,14], [6,12,18], [5,10,15,20]] [def_starting_resources+1];
     end;
   morale_decreasing_time      := [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
-  battle_flags_id             := [];
-
-  BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4, BuildUp5, BuildUp6];
+  battle_flags_id             := [];   
+  
 end;
 
 function init_map;
@@ -658,6 +636,6 @@ begin
 
   InitApeman;
 
-  if def_builduptime then
-    BeginBuildUp;
+  BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4, BuildUp5, BuildUp6];
+  BeginBuildUp;
 end;

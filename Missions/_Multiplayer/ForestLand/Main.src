@@ -8,7 +8,7 @@ export  Game_Type;               // 1 - forest war
 
 export  def_base_level,          // (0) 0 - no base, 1 - depot, 2 - fortified, 3 - extra fortified [2]
         def_amount_of_people,    // (1) 0 - few, 1 - medium, 2 - more, 3 - lots
-        def_initial_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
+        def_skill_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
         def_starting_resources,  // (3) 0 - low, 1 - medium, 2 - high [1]
         def_shipments_density,   // (4) 0 - low, 1 - medium, 2 - high [1]
         def_extra_oil_deposits,  // (5) bool [false]
@@ -25,7 +25,7 @@ export  def_base_level,          // (0) 0 - no base, 1 - depot, 2 - fortified, 3
 export  is_depot,
         number_of_breastworks,
         number_of_people,
-        initial_level,
+        skill_level,
         amount_of_apemen,
         starting_crates,
         starting_resources,
@@ -120,17 +120,17 @@ begin
 
   if MultiPlayer then                      // sides and teams definitions for real Multiplayer
     begin
-      Game_Type=mp_game_type;
+      Game_Type=      mp_game_type;
 
-      Player_Side= mp_player_side;         // cislo strany za kterou hraje TENTO hrac
-      Player_Team= mp_player_team;         // cislo tymu, za ktery hrac hraje
+      Player_Side=    mp_player_side;         // cislo strany za kterou hraje TENTO hrac
+      Player_Team=    mp_player_team;         // cislo tymu, za ktery hrac hraje
 
       Side_Positions= mp_sides_positions;  // =[1,0,3,2,0,4,0,0]; ... pro kazdou stranu jeji pozice, 0 - neucastni se
-      Side_Teams=  mp_sides_teams;         // =[1,0,1,2,0,2,0,0]; ... pro kazou stranu jeji tym
-      Side_Nations= mp_sides_nations;      // =[1,0,1,2,0,1,0,0]; ... pro kazdou stranu jeji narod
-      Side_Comps =     mp_sides_comps;
+      Side_Teams=     mp_sides_teams;         // =[1,0,1,2,0,2,0,0]; ... pro kazou stranu jeji tym
+      Side_Nations=   mp_sides_nations;      // =[1,0,1,2,0,1,0,0]; ... pro kazdou stranu jeji narod
+      Side_Comps =    mp_sides_comps;
 
-      Teams= mp_teams;                     // =[[1,3],[4,6]];     ... seznam seznamu clenu tymu (redundantni)
+      Teams=          mp_teams;                     // =[[1,3],[4,6]];     ... seznam seznamu clenu tymu (redundantni)
     end
   else
     begin                                  // sides and teams definitions for testing in editor
@@ -155,7 +155,7 @@ begin
     begin
       def_base_level=         GetMultiplayerSetting(0);
       def_amount_of_people=   GetMultiplayerSetting(1);
-      def_initial_level=      GetMultiplayerSetting(2);
+      def_skill_level=        GetMultiplayerSetting(2);
       def_starting_resources= GetMultiplayerSetting(3);
       def_shipments_density=  GetMultiplayerSetting(4);
       def_extra_oil_deposits= GetMultiplayerSetting(5);
@@ -177,7 +177,7 @@ begin
 
       def_base_level=         1;
       def_amount_of_people=   1;
-      def_initial_level=      1;
+      def_skill_level=        1;
       def_starting_resources= 2;
       def_shipments_density=  1;
       def_extra_oil_deposits= 0;
@@ -206,7 +206,7 @@ begin
   is_depot                    = [0,1,1,1] [def_base_level+1];
   number_of_breastworks       = [0,0,0,0] [def_base_level+1];
   number_of_people            = [9,12,15,24] [def_amount_of_people+1];
-  initial_level               = [2,3,4,5] [def_initial_level+1];
+  skill_level                 = [2,3,4,5] [def_skill_level+1];
   starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
   shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
@@ -277,7 +277,7 @@ begin
       if commander then
         begin
           hc_name := mp_sides_players_names[side];
-          PrepareHuman(Rand(1,2),cl,initial_level+2);
+          PrepareHuman(Rand(1,2),cl,skill_level+2);
           hc_importance:=105;
           commander:=false;
           If Multiplayer then
@@ -290,7 +290,7 @@ begin
       else
         begin
           hc_name := '';
-          PrepareHuman(rand(1,2),cl,initial_level);
+          PrepareHuman(rand(1,2),cl,skill_level);
           hc_importance:=0;
           If Multiplayer then
           begin
@@ -525,6 +525,7 @@ begin
   //------
   read_multiplayer_and_game_parameters;
   init_map;
+  init_respawning;
   set_shared_visions_and_alliances;
 
   ResetFog;
@@ -536,8 +537,6 @@ begin
 
   //------
   init_shipments;
-  init_respawn;
-
   InitApeman;   
 
   //------

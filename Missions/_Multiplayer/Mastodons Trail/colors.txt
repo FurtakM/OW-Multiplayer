@@ -1,0 +1,28 @@
+begin
+? type terrain
+ ! contr 110
+ ! sat 70
+new
+? type grass
+ ! hue -25
+ ! sat 65
+ ! contr 67
+ ! all 140
+new
+? inident keriky
+ ! hue -45
+ ! rgb 120 100 70
+ ! sat 80
+ ! all 89
+new
+? inident "STree: list-sahara"
+ ! sat 95
+ ! rgb 140 100 100
+ ! add 5 000FC2
+new
+? inident "STree: ker-rosti"
+ ! hue -35
+ ! rgb 140 100 0
+ ! all 90
+ ! sat 75
+end

@@ -13,7 +13,7 @@ begin
                    'Yogi','Brutal','Brutus','Janina','Crazy','Jen','Jenova','Kiosuke','Akamaru' ];
 
   hc_name=ape_names[Rand(1,ape_names)];
-  randomHumanStats(priblizna_uroven-2);
+  randomHumanStats(skill_level-2);
 
   hc_class:=class_apeman;
   if hc_attr[2] < 12 then
@@ -96,7 +96,7 @@ begin
   uc_side:=0;
   uc_nation:=nation_nature;
 
-  randomHumanStats(priblizna_uroven-2);
+  randomHumanStats(skill_level-2);
 
   hc_class:=class_tiger;
   hc_attr = [hc_attr[1]+2,hc_attr[2]+1];

@@ -11,8 +11,8 @@ function displ_status;
       begin
       //  s1:=['#Multi1x1-InfoL',Position_Sides[1],Position_Sides[1],(free1+0),-1];
       //  s2:=['#Multi1x1-InfoL',Position_Sides[2],Position_Sides[2],(free2+0),-1];
-        s1:=['#Multi1x1-InfoL',Position_Sides[1],(free1+0)];
-        s2:=['#Multi1x1-InfoL',Position_Sides[2],(free2+0)];
+        s1:=['#Multi1x1-InfoL',Side_Positions[1],(free1+0)];
+        s2:=['#Multi1x1-InfoL',Side_Positions[2],(free2+0)];
         if Side_Positions[your_side]<>2 then
           ExtraStrings:=s1^s2
         else
