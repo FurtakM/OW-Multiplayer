@@ -8,5 +8,4 @@ SOURCE_CODES
   ENABLED battle_flag
   ENABLED BloodGod
   ENABLED clock
-  ENABLED Builduptime
 END_OF_SOURCE_CODES

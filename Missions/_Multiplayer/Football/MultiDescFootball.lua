@@ -8,8 +8,8 @@ POSCOORS = {
 },
 
 POSMARKS = {
-	[1] ={ X= 130, Y = 160, ICON = "goal", , NAME = { ["ENG"] = "Goal", ["CZE"] = "Branka", }, },
-	[2] ={ X= 390, Y = 160, ICON = "goal", , NAME = { ["ENG"] = "Goal", ["CZE"] = "Branka", }, },
+	[1] ={ X= 130, Y = 160, ICON = "goal", , NAME = { ["ENG"] = "Goal", ["CZE"] = "Branka", ["POL"] = "Bramka", }, },
+	[2] ={ X= 390, Y = 160, ICON = "goal", , NAME = { ["ENG"] = "Goal", ["CZE"] = "Branka", ["POL"] = "Bramka", }, },
 },
 
 RESTRICTIONS = {

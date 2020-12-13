@@ -10,7 +10,7 @@ POSCOORS = {
 },
 
 POSMARKS = {
-	[1] ={ X= 260, Y = 160, ICON = "art", , NAME = { ["ENG"] = "Artefact", ["CZE"] = "Artefakt", }, },
+	[1] ={ X= 260, Y = 160, ICON = "art", , NAME = { ["ENG"] = "Artefact", ["CZE"] = "Artefakt", ["POL"] = "Artefakt", }, },
 },
 
 RESTRICTIONS = {

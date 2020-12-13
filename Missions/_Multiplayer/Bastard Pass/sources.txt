@@ -7,5 +7,4 @@ SOURCE_CODES
   ENABLED Arriving
   ENABLED game_modes
   ENABLED clock
-  ENABLED Builduptime
 END_OF_SOURCE_CODES

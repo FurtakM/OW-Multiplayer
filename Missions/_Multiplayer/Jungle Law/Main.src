@@ -69,8 +69,8 @@ begin
       Init_Win_Condition;
     end;
 
-  if def_builduptime then
-    BeginBuildUp;
+  BuildUpAreas:= [AR_ZaklLH,AR_ZaklLD,AR_ZaklPH,AR_ZaklPD];
+  BeginBuildUp;
 
   if def_warForTerritory then
     Init_WarForTerritory;
@@ -147,9 +147,8 @@ begin
   king_territory = stred;
   oblasti_beden := [ctverec1,ctverec2,ctverec3,ctverec4];
   dalsi_oblasti_beden := [map_center];
-  koof_bedny = 1.5;
+  koof_bedny = 1.5;    
   
-  BuildUpAreas:= [AR_ZaklLH,AR_ZaklLD,AR_ZaklPH,AR_ZaklPD];
 
   //d = rand(1,3);
   DailyPhase = [

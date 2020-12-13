@@ -12,7 +12,7 @@ POSCOORS = {
 },
 
 POSMARKS = {
-	[1] ={ X= 250, Y = 160, ICON = "Sib", , NAME = { ["ENG"] = "Siberite", ["CZE"] = "Siberit", }, },
+	[1] ={ X= 250, Y = 160, ICON = "Sib", , NAME = { ["ENG"] = "Mine the siberite", ["CZE"] = "Vytěž siberit", ["GER"] = "Sibirit abbauen", ["FRA"] = "Exploitation de sibérite", ["ITA"] = "Estrazione della Siberite", ["SPA"] = "Extracción de siberita", ["POL"] = "Wydobądź syberyt", ["RUS"] = "Добыча сибирита", ["JAP"] = "ｼﾍﾞﾗｲﾄ採掘", ["SLO"] = "Vyťaž siberit", }, },
 },
 
 RESTRICTIONS = {

@@ -285,3 +285,16 @@ Flags (by Tomasz):
 - Build Time zone(right middle and right bottom) corrected on Siberia
 - Removal of unused: DayNight.src, crates_loading.src, crates_loading_ii.src, respawning, colors_night.txt with map
 - obnova.src removed on Night Fight map(Replaced with library People_respawning)
+
+0.29:
+Mastodons Trail (by Tomasz):
+- More trees added
+- Crate materialization changed
+- Second oil depot added
+- Second sib depot added
+- Sheik person for Arabians added(As an option)
+- More Mastodons added(As an option)
+
+The US_BuilUp.src library has been updated
+The US_MP_Inicialization.src library has been updated
+Tree animation has been activated on Table Mountain

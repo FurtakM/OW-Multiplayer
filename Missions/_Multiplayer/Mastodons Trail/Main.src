@@ -16,7 +16,9 @@ EXPORT
   def_people_respawning,  // (13) None, Rare, Common
   def_amount_of_apemen,   // (14) None, Few, Medium, Lots
   def_siberite_bomb,      // (17)
-  def_builduptime;        // (20)
+  def_builduptime,        // (20)
+  def_Sheik,              // (21) Sheik
+  def_Mastodont;          // (23) None, Low, High
 
 EXPORT
   No_Mechs,
@@ -48,7 +50,7 @@ export  depot_def, breastworks_def, start_def,
         normal_sib_deposits_locations,
         extra_sib_deposits_locations,
         battle_flags_id,
-        mastodont;
+        Sheik, Mastodont;
 
 export heroes;
 var commander;
@@ -91,7 +93,7 @@ begin
     begin
       Game_Type      := 2;
 
-      Your_Side      := 1;
+      Your_Side      := 2;
 
       Side_Positions := [1,2,3,4,5,6,7,8];
       Side_Teams     := [1,1,1,1,2,2,2,2];
@@ -119,8 +121,10 @@ begin
       def_amount_of_apemen:=   GetMultiplayerSetting(14);
       def_siberite_bomb:=      GetMultiplayerSetting(17);
       def_builduptime:=        GetMultiplayerSetting(20);
+      def_Sheik=               GetMultiplayerSetting(21);
       tech_level =             GetMultiplayerSetting(22);
-      def_win_rules=           0;
+      def_mastodont:=          GetMultiplayerSetting(23);
+      def_win_rules=           0;  
     end
   else
     begin
@@ -130,9 +134,9 @@ begin
       def_amount_of_people:=   2;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  1;
-      def_extra_oil_deposits:= 0;
-      def_extra_sib_deposits:= 1;
+      def_shipments_density:=  50;
+      def_extra_oil_deposits:= 1;
+      def_extra_sib_deposits:= 2;
       def_shared_vision:=      1;
       def_morale_flags:=       1;
       def_siberite_detection:= 1;
@@ -140,7 +144,9 @@ begin
       def_amount_of_apemen:=   3;
       def_siberite_bomb:=      2;
       def_builduptime:=        1;
+      def_Sheik=               2;
       tech_level =             4;
+      def_mastodont:=          0;
       def_win_rules=           0;
     end;
 
@@ -163,7 +169,8 @@ begin
   morale_decreasing_time      := [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             := [];
   siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
-  mastodont                   := 8;
+  Sheik                       := [0, 1, 2][def_Sheik+1];
+  Mastodont                   := 8;
 
 end;
 
@@ -171,10 +178,10 @@ function init_map;
 var i,j;
 begin
   normal_oil_deposits_locations:=[ [61,60], [105,67], [106,43], [220,10], [188,284], [278,241], [277,204], [320,220] ];
-  extra_oil_deposits_locations :=[ ];
+  extra_oil_deposits_locations :=[ [36,57], [98,53],  [106,12], [247,20], [139,263], [280,280], [274,215], [345,223]  ];
 
   normal_sib_deposits_locations:=[ [52,91], [129,74], [93,16], [244,38], [146,250], [300,276], [253,200], [330,190] ];
-  extra_sib_deposits_locations :=[ ];
+  extra_sib_deposits_locations :=[ [88,88], [117,103],[137,45], [193,3], [202,296], [247,239], [270,169], [293,186] ];
 
   depot_def:=  [
                  [58, 73, 2],
@@ -182,7 +189,7 @@ begin
                  [110, 30, 1],
                  [223, 25, 3],
                  [168, 266, 0],
-                 [276, 256, 4],
+                 [276, 256, 4],                         
                  [262, 189, 0],
                  [324, 203, 5]
                ];
@@ -194,40 +201,36 @@ begin
 
   breastworks_def:= [
                       [ [ 72, 97, 5], [ 82, 85, 4], [ 66, 66, 4] ],
-                      [ [119, 99, 0], [143, 98, 5], [126, 66, 4] ],
+                      [ [119, 99, 0], [140, 98, 5], [126, 66, 4] ],
                       [ [113, 16, 4], [130, 38, 5], [111, 42, 0] ],
                       [ [218, 36, 0], [240, 40, 5], [205, 24, 1] ],
                       [ [174,250, 3], [151,248, 2], [193,272, 4] ],
-                      [ [248,249, 1], [263,267, 1], [270,238, 3] ],
-                      [ [239,173, 2], [261,173, 2], [256,208, 1] ],
+                      [ [252,246, 1], [263,267, 1], [270,238, 3] ],
+                      [ [240,173, 2], [261,173, 2], [256,208, 1] ],
                       [ [311,181, 2], [298,190, 2], [312,212, 1] ]
                     ];
 
-
+                                                                           
   for i = 1 to Side_Positions do
-      begin
-      if not Side_Positions[i] then
-         continue;
-
-      if def_extra_oil_deposits then
-         for j in extra_oil_deposits_locations[Side_Positions[i]] do
-             CreateDepositXY(j[1], j[2], mat_oil)
-      else
-         CreateDepositXY(normal_oil_deposits_locations[Side_Positions[i]][1], normal_oil_deposits_locations[Side_Positions[i]][2], mat_oil);
-      end;
+  begin
+    if not Side_Positions[i] then
+      continue;
+       
+    CreateDepositXY(normal_oil_deposits_locations[i][1], normal_oil_deposits_locations[i][2],mat_oil);
+    if def_extra_oil_deposits then
+      CreateDepositXY(extra_oil_deposits_locations[i][1], extra_oil_deposits_locations[i][2],mat_oil);
+  end; 
 
   if def_extra_sib_deposits then
      for i = 1 to Side_Positions do
-         begin
-         if not Side_Positions[i] then
-            continue;
+     begin
+       if not Side_Positions[i] then
+         continue;
 
-         if def_extra_sib_deposits = 2 then
-            for j in extra_sib_deposits_locations[Side_Positions[i]] do
-                CreateDepositXY(j[1], j[2], mat_siberit)
-         else
-            CreateDepositXY(normal_sib_deposits_locations[Side_Positions[i]][1], normal_sib_deposits_locations[Side_Positions[i]][2], mat_siberit);
-         end; 
+       CreateDepositXY(normal_sib_deposits_locations[i][1], normal_sib_deposits_locations[i][2], mat_siberit);
+       if def_extra_sib_deposits = 2 then
+         CreateDepositXY(extra_sib_deposits_locations[i][1], extra_sib_deposits_locations[i][2], mat_siberit);
+     end; 
 end;
 
 function set_shared_visions_and_alliances;
@@ -275,9 +278,18 @@ begin
           commander:=false;
           If Multiplayer then
           begin
-           hc_gallery:= 'MULTIAVATARS';
-           hc_face_number:=Multiplayer_GetPlayerSideNum(uc_side);
-           hc_sex := Multiplayer_GetPlayerSex(uc_side);
+            if Sheik=1 and uc_nation=2 then
+            begin
+              hc_gallery := '';
+              hc_class := class_desert_warior;
+              hc_sex := sex_male;
+            end
+            else
+            begin 
+              hc_gallery := 'MULTIAVATARS';
+              hc_face_number := Multiplayer_GetPlayerSideNum(uc_side);
+              hc_sex := Multiplayer_GetPlayerSex(uc_side);
+            end;
           end;
         end
       else
@@ -285,6 +297,13 @@ begin
           hc_name := '';
           PrepareHuman(rand(1,2),cl,skill_level);
           hc_importance:=0;
+          if cl=class_desert_warior then
+          begin
+            commander:=true;
+            PrepareHuman(Rand(1,2),cl,skill_level+2);
+            hc_importance:=105;
+            commander:=false;
+          end;               
           If Multiplayer then
           begin
            hc_gallery:= '';
@@ -335,9 +354,16 @@ begin
   vc_chassis := 31;
   vc_control := control_rider;
 
-  for i = 1 to n do
-    PlaceUnitArea(CreateVehicle, MastodontSpawn, false);
-end;
+  if def_mastodont=1 then
+    for i = 1 to n do
+      PlaceUnitArea(CreateVehicle, MastodontSpawn, false);
+  if def_mastodont=2 then
+    for i = 1 to n do
+      PlaceUnitArea(CreateVehicle, MastodontSpawn2, false);
+  if def_mastodont=3 then
+    for i = 1 to n do
+      PlaceUnitArea(CreateVehicle, MastodontSpawn3, false);  
+end;   
 
 function prepare_side(side);
 var pos,x,y,dir,i,r,br,dep;
@@ -417,10 +443,13 @@ begin
   x:=start_def[pos][1];
   y:=start_def[pos][2];
 
+  if Sheik=2 and uc_nation= nation_arabian then
+    prepare_people(1,class_desert_warior,x,y,5,0);
+  
   prepare_people(nsol-number_of_breastworks,class_soldier,x,y,5,0);
   prepare_people(neng,class_engineer,x,y,5,0);
   prepare_people(nmech,class_mechanic,x,y,5,0);
-  prepare_people(nsci,class_scientistic,x,y,5,0);
+  prepare_people(nsci,class_scientistic,x,y,5,0); 
 
   if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
     SetTech(tech_SibDet,side,state_researched);
@@ -452,7 +481,8 @@ begin
   for i:=1 to 8 do
     if Side_Positions[i] then
       prepare_side(i);
-  prepare_mastodonts(mastodont);
+  if def_mastodont then
+    prepare_mastodonts(Mastodont);
 end;
 
 function CountClassMembers;
@@ -485,15 +515,7 @@ begin
   if (neng < 1) then
     neng:= 1;
 end;
-{
-function Init_Win_Condition;
-begin
-  if Team_Game then
-    Enable(98)
-  else
-    Enable(99);
-end;
- }
+
 starting
 begin
   Disable(98); // YouWin (Team war)

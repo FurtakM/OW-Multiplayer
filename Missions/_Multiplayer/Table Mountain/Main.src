@@ -589,6 +589,7 @@ begin
   init_shipments_and_respawning;
 
   ResetFog;
+  AnimateTrees(true);
   music_nat:=Side_Nations[your_side];
 
   CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);

@@ -10,7 +10,7 @@ POSCOORS = {
 },
 
 POSMARKS = {
-	[1] ={ X= 250, Y = 160, ICON = "Tree", , NAME = { ["ENG"] = "Old Tree", ["CZE"] = "Prastarý strom", }, },
+	[1] ={ X= 250, Y = 160, ICON = "Tree", , NAME = { ["ENG"] = "Old Tree", ["CZE"] = "Prastarý strom", ["POL"] = "Stare drzewo", }, },
 },
 
 RESTRICTIONS = {

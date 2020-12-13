@@ -2,7 +2,7 @@ every 1$0+0$0.3 do  // crates anywhere on map
 begin
  CreateCratesAnywhere(Rand(4,5),true);
  enable;
-end;
+end;     
 
 every 0$1+0$0.6 do // create crates only on occupied bases
 var i, amount;
