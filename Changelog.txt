@@ -295,6 +295,11 @@ Mastodons Trail (by Tomasz):
 - Sheik person for Arabians added(As an option)
 - More Mastodons added(As an option)
 
+Table Mountain (by Tomasz):
+- Position of the houses on the minimap(lobby) has been corrected
+- Tree animation has been activated
+
 The US_BuilUp.src library has been updated
+The US_Init_Resp.src library has been updated
 The US_MP_Inicialization.src library has been updated
-Tree animation has been activated on Table Mountain
+A new East versus West mode has been added to The Abyss map
