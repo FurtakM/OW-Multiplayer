@@ -43,4 +43,33 @@ Arabian Flamethrower
 	Construct time decreased by 10%:
 		TIME 40 -> TIME 36
 
+0.30b:
+Morphling chassis:
+	Cost increased by 20 cans:
+		CANS 30 -> 50
+	Construct time increased:
+		TIME 60 -> 80
 
+Manual control:
+	Construct time increased:
+		TIME 0 -> 10
+
+Russian rocket:
+	Construct time increased:
+		TIME 70 -> 80
+
+Rocket Tech:
+	Research time increased:
+		TIME 70 -> 100
+
+Advanced metalurgy:
+	Research time increased:
+		TIME 100 -> 120
+
+Homogenous tau-field:
+	Research time increased:
+		TIME 60 -> 80
+
+Advanced chassis:
+	Research time increased:
+		TIME 30 -> 90
