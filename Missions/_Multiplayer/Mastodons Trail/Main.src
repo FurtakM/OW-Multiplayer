@@ -51,7 +51,7 @@ export  depot_def, breastworks_def, start_def,
         extra_sib_deposits_locations,
         battle_flags_id,
         Sheik, Mastodont;
-
+        
 export heroes;
 var commander;
 
@@ -113,7 +113,7 @@ begin
       def_starting_resources:= GetMultiplayerSetting(3);
       def_shipments_density:=  GetMultiplayerSetting(4);
       def_extra_oil_deposits:= GetMultiplayerSetting(5);
-      def_extra_sib_deposits:= 1;
+      def_extra_sib_deposits:= GetMultiplayerSetting(6);
       def_shared_vision:=      GetMultiplayerSetting(10);
       def_morale_flags:=       GetMultiplayerSetting(11);
       def_siberite_detection:= GetMultiplayerSetting(12);
@@ -168,10 +168,14 @@ begin
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   morale_decreasing_time      := [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             := [];
-  siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  //siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
   Sheik                       := [0, 1, 2][def_Sheik+1];
   Mastodont                   := 8;
 
+  if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+  else
+       siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 end;
 
 function init_map;
@@ -215,10 +219,10 @@ begin
   begin
     if not Side_Positions[i] then
       continue;
-       
-    CreateDepositXY(normal_oil_deposits_locations[i][1], normal_oil_deposits_locations[i][2],mat_oil);
+    
+    CreateDepositXY(normal_oil_deposits_locations[Side_Positions[i]][1], normal_oil_deposits_locations[Side_Positions[i]][2],mat_oil);
     if def_extra_oil_deposits then
-      CreateDepositXY(extra_oil_deposits_locations[i][1], extra_oil_deposits_locations[i][2],mat_oil);
+      CreateDepositXY(extra_oil_deposits_locations[Side_Positions[i]][1], extra_oil_deposits_locations[Side_Positions[i]][2],mat_oil);
   end; 
 
   if def_extra_sib_deposits then
@@ -226,10 +230,10 @@ begin
      begin
        if not Side_Positions[i] then
          continue;
-
-       CreateDepositXY(normal_sib_deposits_locations[i][1], normal_sib_deposits_locations[i][2], mat_siberit);
+       
+       CreateDepositXY(normal_sib_deposits_locations[Side_Positions[i]][1], normal_sib_deposits_locations[Side_Positions[i]][2], mat_siberit);
        if def_extra_sib_deposits = 2 then
-         CreateDepositXY(extra_sib_deposits_locations[i][1], extra_sib_deposits_locations[i][2], mat_siberit);
+         CreateDepositXY(extra_sib_deposits_locations[Side_Positions[i]][1], extra_sib_deposits_locations[Side_Positions[i]][2], mat_siberit);
      end; 
 end;
 
@@ -297,7 +301,7 @@ begin
           hc_name := '';
           PrepareHuman(rand(1,2),cl,skill_level);
           hc_importance:=0;
-          if cl=class_desert_warior then
+          if cl=class_desert_warior and Sheik=2 then
           begin
             commander:=true;
             PrepareHuman(Rand(1,2),cl,skill_level+2);
@@ -313,7 +317,7 @@ begin
 
       un:=CreateHuman;
 
-      if global_defined then
+      if global_defined and not cl=class_desert_warior then
         begin
           if (cl = class_soldier) then
             j:= i + soldiers_created
@@ -445,11 +449,10 @@ begin
 
   if Sheik=2 and uc_nation= nation_arabian then
     prepare_people(1,class_desert_warior,x,y,5,0);
-  
   prepare_people(nsol-number_of_breastworks,class_soldier,x,y,5,0);
   prepare_people(neng,class_engineer,x,y,5,0);
   prepare_people(nmech,class_mechanic,x,y,5,0);
-  prepare_people(nsci,class_scientistic,x,y,5,0); 
+  prepare_people(nsci,class_scientistic,x,y,5,0);
 
   if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
     SetTech(tech_SibDet,side,state_researched);

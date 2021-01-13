@@ -3,9 +3,8 @@ SOURCE_CODES
   ENABLED bedny
   ENABLED events
   ENABLED lidi
-  ENABLED winlost
+  DISABLED winlost
   ENABLED battle_flags
-  ENABLED game_modes
   ENABLED clock
   ENABLED apemen
 END_OF_SOURCE_CODES

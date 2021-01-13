@@ -1,6 +1,6 @@
 TECHNOLOGYLIMITS = { [1] = true , [2] =  true },
 
-LOCKEDTEAMS = { [1] = false , [2] =  fasle },
+LOCKEDTEAMS = { [1] = false , [2] =  false },
 
 POSCOORS = {
 	[1] ={ X= 126, Y = 110, },

@@ -44,10 +44,10 @@ var i, playersAmount, j, ape, pos, _apeAreas;
 begin
 playersAmount := 0;
 _apeAreas := [
-  ape1,
-  ape2,
-  ape3,
-  ape4
+  Ape1,
+  Ape2,
+  Ape3,
+  Ape4
 ];
 apeAreas := [0, 0, 0, 0, 0, 0, 0, 0];
 

@@ -161,7 +161,7 @@ begin
       def_amount_of_apemen=   3;
       def_people_respawning=  2;
       def_siberite_bomb=      2;
-      def_builduptime=        1;
+      def_builduptime=        2;
       tech_level =            4;
     end;
 
@@ -184,9 +184,13 @@ begin
   respawning_time_max         = [0$0, 10$00, 2$00] [def_people_respawning+1];
   morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             = [];
-  siberite_bomb_Delay         = [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  //siberite_bomb_Delay         = [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
-end;
+  if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+  else
+     siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
+end;                                                             
 
 
 

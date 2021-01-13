@@ -303,3 +303,32 @@ The US_BuilUp.src library has been updated
 The US_Init_Resp.src library has been updated
 The US_MP_Inicialization.src library has been updated
 A new East versus West mode has been added to The Abyss map
+
+0.31:
+New map: Mudbath
+
+Mastodons Trail:
+- More spawn locations for crates have been added
+- Missing deposits fixed
+- Mastodont attack changed
+
+Flags:
+- More spawn locations for crates have been added
+- Crate materialization changed
+
+Four to win:
+- Build Time added
+- King of the hill mode has been fixed
+
+Party:
+- Siberite bomb counter has been fixed
+- Crate materialization changed
+
+River Of Lost Souls:
+- Crate materialization changed
+- More spawn locations for crates have been added
+- Fixed a counter with the number of points to discover on the map
+
+Fixed siberite bomb counter on the Highlands map
+Fixed a message that a deposit was found despite being missing on the Babylon map
+Fixed materialization crates not on narrow roads in Jungle Law map

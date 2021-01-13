@@ -21,8 +21,8 @@ EXPORT
   def_builduptime;        // (20)
 
 EXPORT
-      No_Mechs,
-      Game_Type;          // Types of used games
+  No_Mechs,
+  Game_Type;              // Types of used games
                           // 1 - Kill 'em all
                           // 2 - Team war
                           // 3 - East vs West
@@ -42,9 +42,10 @@ EXPORT
   respawning_time_max,
   spect, def_spect,
   siberite_bomb_Delay,
+  def_win_rules,
   tech_level;
 
-export  Side_Teams, Teams;
+export  Side_Teams, Teams, Side_Comps;
 export  Side_Positions, Side_Nations, Team_Game;
 
 export  depot_def, breastworks_def, start_def,
@@ -54,6 +55,7 @@ export  depot_def, breastworks_def, start_def,
         extra_sib_deposits_locations,
         battle_flags_id;
 
+export heroes;
 var commander;
 
 var global_units,
@@ -64,6 +66,15 @@ var neng,
     nsci,
     nmech,
     nsol;
+
+function mp_sides_comps;
+var c,i;
+begin
+  c = [];
+  for i=1 to 8 do
+   c = c^Multiplayer_GetPlayerIsComp(i);
+  result = c;
+end;
 
 function read_multiplayer_and_game_parameters;
 var i;
@@ -77,6 +88,7 @@ begin
       Side_Positions:= mp_sides_positions;
       Side_Teams:=     mp_sides_teams;
       Side_Nations:=   mp_sides_nations;
+      Side_Comps:=     mp_sides_comps;
 
       Teams:=          mp_teams;
     end
@@ -89,6 +101,7 @@ begin
       Side_Positions:= [1,2,3,4,5,6,0,0];
       Side_Teams:=     [1,2,3,4,5,6,0,0];
       Side_Nations:=   [1,2,3,1,2,3,0,0];
+      Side_Comps:=     [0,0,0,0,0,0,0,0];
 
       Teams:=          [[1],[2],[3],[4],[5],[6]];
     end;
@@ -113,7 +126,7 @@ begin
       def_public_score:=       GetMultiplayerSetting(16);
       def_siberite_bomb:=      GetMultiplayerSetting(17);
       def_builduptime:=        GetMultiplayerSetting(20);
-      def_spect:=              GetMultiplayerSetting(22);
+      def_win_rules:=          0;
       tech_level =             GetMultiplayerSetting(23);
     end
   else
@@ -136,8 +149,8 @@ begin
       def_public_score:=       0;
       def_siberite_bomb:=      0;
       def_builduptime:=        1;
-      def_spect:=              1;
-      tech_level = 0;
+      def_win_rules:=          0;
+      tech_level:=             0;
     end;   
 
   if isSGUI then
@@ -512,10 +525,4 @@ begin
 
   BuildUpAreas:= [BuildUp1, BuildUp2, BuildUp3, BuildUp4, BuildUp5, BuildUp6];
   BeginBuildUp;
-end;
-
-
-every 0$1 trigger FilterAllUnits([[f_side, your_side], [f_or, [f_type, unit_human], [f_control, control_computer], [f_control, control_apeman], [f_btype, b_depot], [f_btype, b_warehouse]]]) = 0 and spect = 0 do
-begin
-fogoff(your_side);
 end;

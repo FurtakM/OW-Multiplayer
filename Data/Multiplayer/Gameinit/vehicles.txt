@@ -1318,13 +1318,13 @@ GAMEINIT
         SEL_XY 0 0
         ROTATE_TYPE Head
         SIGHT 13
-        WEIGHT  1  4 
+        WEIGHT  1  3 
         ATTACK
           MINMAX_RANGE  1  1 
           FREQUENCY  20  20 
           DAMAGE 24 48 40
           EFF 30 60 50
-          ANIM  1  12  1 
+          ANIM  1  11  1 
         END_OF_ATTACK
 {   END_OF_COMBAT_WEAPONS}
 {   NON_COMBAT}

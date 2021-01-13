@@ -1,0 +1,96 @@
+export oblasti_beden,start_oblasti_beden,
+  dalsi_oblasti_beden,
+  koof_bedny; // kooficient pro možný celkový poèet beden ležící na mapì  (100+ shipments_density*koof_bedny)
+  //pozice_beden;   // odkazy na pozice (nelze použít side_positions, protože neobsahují informace i sekundárních a terciálních pozice
+
+var  kontrolni_pocet;
+every 1$0+0$1 do  // crates anywhere on map
+begin
+   if game_type = GT_Survival then
+     exit;
+
+ CreateCratesArea(Rand(1,2),MZBaseArea,true);
+ enable;
+end;
+
+every 0$20 do // create crates only on occupied bases with bypassing the narrow passages and bases
+var i,d,shipment,tictac,k,p;
+begin
+   if game_type in GT_Survival then
+     exit;
+
+   shipment:=Rand(0,3);
+   tictac:=0;
+   case tick of
+          1.. 2$0:  d:=150;
+      2$0+1.. 4$0:  d:=120;
+       4$0+1..6$0:  d:=100;
+       6$0+1..7$0:  d:=80;
+       7$0+1..9$0:  d:=70;
+      9$0+1..15$0:  d:=45;
+     15$0+1..30$0:  d:=30;
+              else  d:=20;
+    end;
+
+
+    if GetResourceArea(celamapa,mat_cans)<(100+shipments_density*koof_bedny) then
+      if rand(1,10000)<=d*shipments_density then
+      begin
+         k = Rand(2,4);
+         if start_oblasti_beden then
+         begin
+           for i:=1 to 8 do
+             if side_positions[i] <> 0 then
+               for p in pozice_beden[i] do
+               begin
+                 CreateCratesArea(k, start_oblasti_beden[p], true);
+                 Wait(rand(2,0$2));
+               end;
+          end
+         else
+          begin
+           for i:=1 to 8 do
+             if side_positions[i] <> 0 then
+              for p in pozice_beden[i] do
+              begin
+                CreateCratesXYR(k,start_def[p][1],start_def[p][2],20,true);
+                wait(rand(2,0$2));
+              end;
+          end;
+       end
+       else if rand(1,10000)<=(150-d)*shipments_density then
+        begin
+         k := Rand(1,4);
+         wait(rand(2,0$4));
+         if oblasti_beden then
+           begin
+           for i:=1 to 8 do
+             if side_positions[i] <> 0 then
+             for p in pozice_beden[i] do
+             begin
+               CreateCratesArea(k, oblasti_beden[p], true);
+               Wait(rand(2,0$1));
+             end;
+           end
+         else
+          begin
+           for i:=1 to 8 do
+             if side_positions[i] <> 0 then
+              for p in pozice_beden[i] do
+              begin
+                CreateCratesXYR(k,start_def[p][1],start_def[p][2],20,true);
+                wait(rand(2,0$2));
+              end;
+           end;
+
+         if dalsi_oblasti_beden then 
+          for k in dalsi_oblasti_beden do
+           for i := 1 to Rand(1,3) do
+           begin
+             CreateCratesArea(Rand(3,5), k, true);
+             Wait(2);
+           end;
+       end;
+
+  enable;
+end;

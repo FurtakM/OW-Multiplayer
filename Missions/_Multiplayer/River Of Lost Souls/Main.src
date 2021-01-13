@@ -15,13 +15,16 @@ EXPORT
   def_shared_vision,       // (10) bool [true]
   def_morale_flags,        // (11) bool [true]
   def_siberite_detection,  // (12) bool [false]
-  def_second_oil,          // (16) bool [false]
   def_amount_of_apemen,    // (13) 0 - none, 1 - few, 2 - medium, 3 - lots, 4 - land od ape [1]
 
-  def_find_people,         // (14) 0 - no, 1 - small, 2 - medium, 3 - good [1]
-  def_lost_people,         // (15) 0 - none, 1 - small, 2 - medium, 3 - good [0]
+  def_siberite_bomb,       // (15)
+  def_second_oil,          // (16) bool [false]
   def_other_nation,        // (17) bool [true]
-  def_vehicles_too;        // (18) bool [false]
+  def_vehicles_too,        // (18) bool [false]
+
+  def_builduptime,         // (20)
+  def_find_people,         // (23) 0 - no, 1 - small, 2 - medium, 3 - good [1]
+  def_lost_people;         // (24) 0 - none, 1 - small, 2 - medium, 3 - good [0]
 
 // derived game parameters
 
@@ -33,7 +36,7 @@ EXPORT
   starting_crates,
   starting_resources,
   shipments_density,
-
+  siberite_bomb_Delay,
   morale_decreasing_time,
   battle_flags_id,                         // list of flags id
 
@@ -54,7 +57,6 @@ export commander;
 var global_units,
     global_defined,
     soldiers_created;
-
 
 // reads definitons of multiplayer game
 // (or simulate it in editor version)
@@ -89,8 +91,7 @@ function read_multiplayer_and_game_parameters;
         Teams          = [[2,6],[7,4]];
       end;
 
-// game settings for real Multiplayer
-    if MultiPlayer then
+    if MultiPlayer then         // game settings for real Multiplayer
       begin
         def_base_level=         GetMultiplayerSetting(0);
         def_amount_of_people=   GetMultiplayerSetting(1);
@@ -102,52 +103,50 @@ function read_multiplayer_and_game_parameters;
         def_morale_flags=       GetMultiplayerSetting(11);
         def_siberite_detection= GetMultiplayerSetting(12);
         def_amount_of_apemen=   GetMultiplayerSetting(13);
-        def_find_people=        GetMultiplayerSetting(14);
-        def_lost_people=        GetMultiplayerSetting(15);
+
+        def_siberite_bomb=      GetMultiplayerSetting(15);
         def_second_oil=         GetMultiplayerSetting(16);
         def_other_nation=       GetMultiplayerSetting(17);
         def_vehicles_too=       GetMultiplayerSetting(18);
-        def_game_rules=         GetMultiplayerSetting(21);
+        
+        def_builduptime=        GetMultiplayerSetting(20);
+        //def_game_rules=         GetMultiplayerSetting(21);
         tech_level =            GetMultiplayerSetting(22);
+        def_find_people=        GetMultiplayerSetting(23);
+        def_lost_people=        GetMultiplayerSetting(24);
       end
-    else
-// game settings for testing in editor
-      begin
-// not in multiplayer!!!
+    else                        // game settings for testing in editor
+      begin                     // not in multiplayer!!!
         randomize;
 
         def_base_level=         3;
-        def_amount_of_people=   1;
+        def_amount_of_people=   11;
         def_initial_level=      1;
         def_starting_resources= 2;
-        def_shipments_density=  1;
+        def_shipments_density=  50;
 
         def_shared_vision=      1;
         def_morale_flags=       1;
         def_siberite_detection= 1;
         def_amount_of_apemen=   1;
 
-        def_find_people =       2;
-        def_second_oil=         1;
-        def_lost_people=        1;
-
+        def_siberite_bomb=      2;
+        def_second_oil=         1;         
+        def_builduptime=        1;
         def_other_nation=       1;
         def_vehicles_too=       0;
-        def_game_rules=         0;
+
+        //def_game_rules=         0;
         tech_level =            4;
+        def_find_people =       2;
+        def_lost_people=        1;
    end;
-
-  InitGameRules;
-
-  if def_game_rules = 0 then
-  begin
-    if isSGUI then
-       setMpTechs()
-    else
-    begin
-      SetMpTechLevel(tech_level + 1);
-    end;
-  end;
+                   
+  if isSGUI then
+     setMpTechs()
+  else
+     SetMpTechLevel(tech_level + 1);
+  
 // derived game settings
     is_depot                    = [0,1,1,1] [def_base_level+1];
 //    number_of_people            = [6,8,10,12,15] [def_amount_of_people+1];
@@ -156,20 +155,26 @@ function read_multiplayer_and_game_parameters;
 // *************************************
 //    shipments_density           = [ 18, 29, 45 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 18 + (def_shipments_density)*38;
+  shipments_density           := 150 - def_shipments_density;
 
     amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
     if def_find_people then
-      chance_find                 = 20 * (100-((def_find_people-1)*10)/100)
+      chance_find                 = 20 * ((100-((def_find_people-1)*10))/100)
     else chance_find = 21;
     if def_lost_people then
-       chance_loose               = 500 * (100-((def_find_people-1)*12)/100)
+       chance_loose               = 500 * ((100-((def_find_people-1)*12))/100)
     else  chance_loose = 0;
 //    chance_find                 = [21,17,13,8] [def_find_people+1];
 //    chance_loose                = [0,500,250,100] [def_lost_people+1];
 
     morale_decreasing_time      = [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
     battle_flags_id             = [];
+
+
+    if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+    else
+       siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
   end;
 
 function prepare_map_coordinates;
@@ -403,6 +408,35 @@ begin
 
   if def_siberite_detection and GetTech(tech_sibdet,side) = state_enabled then
     SetTech(tech_SibDet,side,state_researched);
+
+  if def_siberite_bomb = 1 then
+  begin
+    SetTech(tech_SibFiss,side,state_enabled);
+    SetTech(73,side,state_enabled);
+  end
+  else
+  begin
+    SetTech(tech_SibFiss,side,state_disabled);
+    SetTech(73,side,state_disabled);
+  end;
+end;
+
+every 0$1 do
+if (def_siberite_bomb > 1) then
+begin
+    wait( siberite_bomb_Delay );  // can't be 0
+    EnableSibFiss;
+end;
+
+function EnableSibFiss;
+var i;
+begin
+  for i:=1 to 8 do
+    if Side_Positions[i] then
+    begin
+      SetTech(tech_SibFiss,i,state_enabled);
+      SetTech(73,i,state_enabled);
+    end;
 end;
 
 // prepare all sides with nonzero position
@@ -463,13 +497,14 @@ begin
   prepare_sides;
   Init_Win_Condition;
 
-  InitLimits;
   ShowTimer;
   AnimateTrees(true);
 
   second_oil;
-  init_shipments_and_respawning;
   vygeneruj_lidi_na_ztraceni;
   CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
+
+  BuildUpAreas:= [Base1, Base2, Base3, Base4];
+  BeginBuildUp;
 end;
 

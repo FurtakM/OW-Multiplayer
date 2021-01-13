@@ -4,4 +4,5 @@ SOURCE_CODES
   ENABLED LUA_MultiScript
   ENABLED People_respawning
   ENABLED US_BuildUp
+  ENABLED US_Win
 END_OF_SOURCE_CODES

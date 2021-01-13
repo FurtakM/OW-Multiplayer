@@ -1,0 +1,905 @@
+function SendToLab(Un, lab);
+ begin
+   if IsConstructed(lab) then
+     begin
+       AddComRepairBuilding(Un, lab);
+       AddComEnterUnit(Un, lab);
+       AddComChangeProfession(Un, class_scientistic);
+     end
+   else
+     begin
+       AddComEnterUnit(Un, lab);
+       AddComChangeProfession(Un, class_scientistic);
+     end;
+ end;
+
+
+function SendToFact(Un, fact);
+ begin
+   if IsConstructed(fact) then
+     begin
+       AddComRepairBuilding(Un, fact);
+       AddComEnterUnit(Un, fact);
+       AddComChangeProfession(Un, class_mechanic);
+     end
+   else
+     begin
+       AddComEnterUnit(Un, fact);
+       AddComChangeProfession(Un, class_mechanic);
+     end;
+ end;
+
+
+function RestorationOfJob(Un, group);
+var task, Current_Building, i;
+ begin
+
+   if (GetCargo(Un, mat_cans) > 0) and (My_depot <> 0) and not(IsConstructed(My_depot)) then
+     begin
+       SetState(Un, 3);                       
+       ComGive(Un, My_depot);               
+       WaitJob(Un, 0.5);
+     end;
+
+
+   if (Un in Builders ^ Collectors) or (group = 1) then
+     begin
+       if (GetClass(Un) <> class_engineer) and (My_depot <> 0) and not(IsConstructed(My_depot)) then
+         begin
+           SetState(Un, 3);   // change of profession
+           AddComMoveUnit(Un, My_depot);
+           AddComChangeProfession(Un, class_engineer);
+           AddComExitBuilding(Un);
+           WaitJob(Un, 0.5);
+           SetState(Un, 0);
+         end
+       else SetState(Un, 0);
+
+       task= Base_develop[Base_develop_pc];
+
+       if(task[1] = Build) and (Base_Develop_TMP <> 0) then         // A building is constructed
+         begin                                                      
+           Current_Building= GetUnitNumber(Base_Develop_TMP[2], Base_Develop_TMP[3]);
+           if Current_Building = 0 then
+               AddComBuild(Un, Base_Develop_TMP[1], Base_Develop_TMP[2],
+                        Base_Develop_TMP[3], Base_Develop_TMP[4])    // Start again
+
+           else  AddComRepairBuilding(Un, GetUnitNumber(Base_Develop_TMP[2], Base_Develop_TMP[3]));
+         end
+
+       else if Builders <> 0 then
+         begin
+           for i in Builders do
+             if (GetCargo(i, mat_cans) = 0) and (i <> Un) then
+               begin
+                 CopyTasks(Un, i);
+                 break;
+               end;
+         end;
+     end
+
+
+
+   else if (Un in Scientists) or (group = 2) then
+     begin
+       if (My_lab1 <> 0) and (My_lab2 <> 0) then
+         begin                       // Number of units in My_lab[1] is more then P% of bouth labs
+           if ((Round(Number_in_lab1 + Number_in_lab2 * Lab_proc)/100) < Number_in_lab1)
+              and (Number_in_lab1 <= 6) then
+                begin
+                  Number_in_lab1= Number_in_lab1+1;
+                  SetState(Un, 1);
+                  SendToLab(Un, My_lab1)
+                end
+
+           else
+             begin
+               Number_in_lab2= Number_in_lab2+1;
+               SetState(Un, 2);
+               SendToLab(Un, My_lab2);
+             end;
+         end
+
+       else if My_lab1 <> 0 then
+         begin
+           Number_in_lab1= Number_in_lab1+1;
+           SetState(Un, 1);
+           SendToLab(Un, My_lab1);
+         end
+
+       else if My_lab2 <> 0 then
+         begin
+           Number_in_lab2= Number_in_lab2+1;
+           SetState(Un, 2);
+           SendToLab(Un, My_lab2);
+         end;
+     end
+
+
+
+   else if (Un in Mechanics) or (group= 3) Then
+     begin
+       if (My_fact1 <> 0) and (My_fact2 <> 0) then
+         begin                       // Number of units in My_fact[1] is more then P% of bouth facts
+           if ((Round(Number_in_fact1 + Number_in_fact2 * Fact_proc)/100) < Number_in_fact1)
+              and (Number_in_fact1 <= 6) then
+                begin
+                  Number_in_fact1= Number_in_fact1+1;
+                  SetState(Un, 1);
+                  SendToFact(Un, My_fact1)
+                end
+
+           else
+             begin
+               Number_in_fact2= Number_in_fact2+1;
+               SetState(Un, 2);
+               SendToFact(Un, My_fact2);
+             end;
+         end
+
+       else if My_fact1 <> 0 then
+         begin
+           Number_in_fact1= Number_in_fact1+1;
+           SetState(Un, 1);
+           SendToFact(Un, My_fact1);
+         end
+
+       else if My_fact2 <> 0 then
+         begin
+           Number_in_fact2= Number_in_fact2+1;
+           SetState(Un, 2);
+           SendToFact(Un, My_fact2);
+         end;
+     end;
+ end;
+
+
+
+// Build_Parameters= [request, building_type]
+function BuildFunc(parameters);
+var i, j, Building, hlp, crates, Heap_pos,
+    Request_cans, Request_siberit, Building_type,
+    Building_X, Building_Y, Building_Rotation,
+    Free_builders, Free_collectors,
+    repair, Collecting, Rep_Build;
+ begin
+  Request_cans= parameters[1];
+  Request_siberit= parameters[2];
+  Building_type= parameters[3];
+
+  while  Builders = 0 do Wait(0.5);
+
+    // Change status of units
+    // and compute Free_builders and Free_collectors
+    hlp= []; Free_builders= []; Free_collectors= [];
+
+    for i in Builders do
+        if (GetState(i) = 0) then
+           SetState(i, 1);
+
+    for i in Builders do
+      if (GetState(i) = 1) then
+        Free_builders= Free_builders ^ i;
+
+    for i in Collectors do
+      if (GetState(i) < 10) then
+        Free_collectors= Free_collectors ^ i;
+
+    // Go to the base with a loaded material
+    j=0;
+    for i in Free_builders ^ Free_collectors do
+      if (GetCargo(i, mat_cans) > 0) and (My_depot <> 0) then
+        begin
+          ComMoveUnit(i, My_depot);
+          j= j+1;
+        end;
+
+
+     // Collect material if necessary
+     repair= true;
+     Collecting= false;
+     while (Request_cans > GetResourceType(GetBase(My_depot), mat_cans)) or
+           (request_siberit > GetResourceType(GetBase(My_depot), mat_siberit)) do
+       begin
+         if not(Collecting) then
+           begin
+             if repair then
+               begin
+                 Rep_Build= FilterAllUnits(Building_filter);
+                 if Rep_Build <> 0 then
+                   ComRepairBuilding(Free_builders, Rep_Build[1])
+                 else
+                   begin
+                     for i in Free_Builders do
+                       begin
+                         SetState(i, 0);
+                         Collectors= Collectors ^ i;
+                         GoForCrates(i);
+                       end;
+                     Collecting= true;
+                   end;
+               end
+             else
+               begin
+                 for i in Free_Builders do
+                   begin
+                     SetState(i, 0);
+                     Collectors= Collectors ^ i;
+                     GoForCrates(i);
+                   end;
+                 Collecting= true;
+               end;
+           end;
+         Wait(0$1);
+       end;
+
+    if Collecting= true then
+      for i in Free_Builders do
+        begin
+          if (GetCargo(i, mat_cans) > 0) then ComStop(i);
+          SetState(i, 1);
+          Collectors= Collectors diff i;
+        end;
+
+
+    // find the building in the Base list
+    i=1;
+    while not(Base[i][1] = Building_Type) do i= i+1;
+    Building= Base[i];
+    Building_Type= Building[1];
+    Building_X= Building[2];
+    Building_Y= Building[3];
+    Building_Rotation= Building[4];
+    Base= Base diff [Base[i]];
+    Base_Develop_TMP= [] ^ Building_Type ^ Building_X ^ Building_Y ^ Building_Rotation;
+
+    // Mines are visible
+    if (Building_Type = b_oil_mine) or (Building_Type = b_siberite_mine) then
+      SetResourceVisibility(Building_X, Building_Y, My_side);
+
+    // Build command
+    // liiii units, bud, x, y, dir
+    AddComBuild(Free_builders, Building_Type, Building_X, Building_Y, Building_Rotation);
+
+
+    While GetType(GetUnitNumber(Building_X, Building_Y)) <> unit_building do Wait(0$0.5);
+    case Building_Type of
+      b_depot:         My_depot= GetUnitNumber(Building_X, Building_Y);
+      b_lab:          if My_lab1 = 0 then My_lab1= GetUnitNumber(Building_X, Building_Y)
+                       else if My_lab2= 0 then My_lab2= GetUnitNumber(Building_X, Building_Y);
+      b_workshop:      if My_fact1 = 0 then My_fact1= GetUnitNumber(Building_X, Building_Y)
+                       else if My_fact2= 0 then My_fact2= GetUnitNumber(Building_X, Building_Y);
+{        b_armoury:
+      b_oil_power:
+      b_solar_power:
+      b_siberite_power:
+      b_oil_mine:
+      b_siberite_mine:
+      b_breastwork:
+      b_bunker:
+      b_turret:
+      b_teleport:
+      b_control_tower:}
+    end;
+
+ end;
+
+Function GoForCrates(Un);
+var crates, Heap_Position;
+ begin
+   crates= GetListOfCratesInArea(My_area);
+   if crates = 0 then SetState(Un, 0)
+   else
+     begin
+       Heap_Position= FindNearestPoint(crates, GetX(Un), GetY(Un));
+       ComMoveXY(Un, Heap_Position[1], Heap_Position[2]);
+       SetState(Un, 1);
+     end;
+ end;
+
+
+
+         // [Un, old_profession, new_profession]
+function ChangeProfessionFunc(parameters);
+var Un, old_profession, new_profession;
+ begin
+  Un= parameters[1];
+  Old_Profession= parameters[2];
+  New_Profession= parameters[3];
+
+  if Old_Profession= 2 then   // Decrease Number_in_lab
+    begin
+     if GetState(Un) = 1 then
+       Number_in_lab1= Number_in_lab1 -1
+     else if GetState(Un) = 2 then
+       Number_in_lab2= Number_in_lab2-1;
+    end
+    
+  else if Old_Profession= 3 then
+    begin
+        if GetState(Un) = 1 then
+       Number_in_fact1= Number_in_fact1 -1
+     else if GetState(Un) = 2 then
+       Number_in_fact2= Number_in_fact2-1;
+    end;
+
+  case new_profession of
+    1: begin  // Builders
+         RestorationOfJob(Un, 1);
+         Builders= Builders union Un;
+       end;
+
+
+    2: begin  // Scientists
+         RestorationOfJob(Un, 2);
+         Scientists= Scientists union Un;
+       end;
+
+
+    3: begin  // Mechanics
+         RestorationOfJob(Un, 3);                      // Not implemented yet!!!!!
+         Mechanics= Mechanics union Un;
+       end;
+
+
+    4: begin  // Collectors
+         Collectors= Collectors union Un;
+         GoForCrates(Un);
+       end;
+
+
+    5: begin // Soldiers
+         Soldiers= Soldiers union Un;
+       end;
+  end;
+ end;
+
+
+
+function DevelopFunc(parameters);
+var tech, upgrade, laboratory, old_tech, request_cans, request_siberit, number_of_eng, typ_of_laboratory,
+    explorer, Free_scientists, help_eng,
+    i, j, Un;
+ begin
+   tech= parameters[1];
+   laboratory= parameters[2];
+   old_tech= parameters[3];
+   upgrade= parameters[4];
+   if upgrade then
+     begin
+       request_cans= parameters[5];
+       request_siberit= parameters[6];
+       number_of_eng= parameters[7];
+       typ_of_laboratory= parameters[8];
+     end;
+
+
+   explorer= []; Free_scientists= [];
+   if old_tech= tech_SibDet then
+     begin
+       explorer= FindMinSkill(UnitsInside(laboratory), skill_scientistic);
+       Explore_Parameters= [explorer, source_siberium, My_area];
+       RaiseSailEvent(Explore_Event);
+     end;
+
+   if upgrade then
+     begin
+       WaitResources([mat_cans, mat_siberit], [request_cans, request_siberit], 0.5);
+
+       Free_scientists= [];
+       if laboratory = My_lab1 then
+         begin
+           for Un in Scientists do
+             if GetState(Un) = 1 then Free_scientists= Free_scientists ^ Un;
+         end
+       else if laboratory = My_lab2 then
+         begin
+           for Un in Scientists do
+             if GetState(Un) = 2 then Free_scientists= Free_scientists ^ Un;
+         end;
+
+       if explorer <> 0 then Free_scientists= Free_scientists diff explorer;
+       ComExitBuilding(Free_scientists);
+       Wait(2);
+       ComUpgradeLab(laboratory, typ_of_laboratory);                        // Upgrade of Lab.
+
+       if (My_depot <> 0) and (GetDistUnits(My_depot, laboratory) < 15) then   // Change of profession to engineers
+         begin
+           AddComEnterUnit(Free_scientists, My_depot);
+           AddComChangeProfession(Free_scientists, class_engineer);
+         end;
+       AddComRepairBuilding(Free_scientists, laboratory);
+
+       help_eng= [];
+       if number_of_eng > 0 then                                               // Some helpers
+         begin
+           for i = 1 to number_of_eng do
+             begin
+               for j in Builders do
+                 if (GetState(j) = 0) or (GetState(j) =1) then
+                   begin
+                     SetState(j, 11);
+                     help_eng= help_eng ^ j;
+                     break;
+                   end;
+             end;
+         end;
+       if help_eng <> 0 then
+         ComRepairBuilding(help_eng, laboratory);
+
+       Wait(2);
+       While IsConstructed(laboratory) do Wait(0$0.5);                         // Waiting to finish
+       if explorer <> 0 then Free_scientists= Free_scientists ^ explorer;
+       ComEnterUnit(Free_scientists, laboratory);
+       AddComChangeProfession(Free_scientists, class_scientistic);               // Change back the profession
+
+       if help_eng <> 0 then                                                   // Give back the helpers
+         for i in help_eng do
+           RestorationOfJob(i, 0);
+     end
+
+
+   else
+     begin    // Research
+       while IsOk(laboratory) and UnitsInside(laboratory) = 0 do Wait(0$1);   // for new laboratory
+       if IsOk(laboratory) then
+         ComResearch(laboratory, tech);
+     end;
+ end;
+
+
+
+function ConstructFunc(Parameters);
+var factory, vehicle, upgrade, request_cans, request_siberit, number_of_eng, chassis, engine, control, weapon,
+    Free_mechanics, help_eng,
+    i, j, Un;
+ begin
+   factory= Parameters[1];
+   vehicle= Parameters[2];
+   upgrade= Parameters[3];
+   request_cans= Parameters[4];
+   request_siberit= Parameters[5];
+   number_of_eng= Parameters[6];
+   chassis= Parameters[7];
+   engine= Parameters[8];
+   control= Parameters[9];
+   weapon= Parameters[10];
+
+   if upgrade then
+     begin
+       WaitResources([mat_cans, mat_siberit], [request_cans, request_siberit], 0.5);
+
+       Free_mechanics= [];
+       if factory = My_fact1 then
+         begin
+           for Un in Mechanics do
+             if GetState(Un) = 1 then Free_mechanics= Free_mechanics ^ Un;
+         end
+       else if factory = My_fact2 then
+         begin
+           for Un in Mechanics do
+             if GetState(Un) = 2 then Free_mechanics= Free_mechanics ^ Un;
+         end;
+
+       ComExitBuilding(Free_mechanics);
+       Wait(2);
+       ComUpgrade(factory);                        // Upgrade to factory
+
+       if (My_depot <> 0) and (GetDistUnits(My_depot, factory) < 15) then   // Change of profession to engineers
+         begin
+           AddComEnterUnit(Free_mechanics, My_depot);
+           AddComChangeProfession(Free_mechanics, class_engineer);
+         end;
+       AddComRepairBuilding(Free_mechanics, factory);
+
+       help_eng= [];
+       if number_of_eng > 0 then                                               // Some helpers
+         begin
+           for i = 1 to number_of_eng do
+             begin
+               for j in Builders do
+                 if (GetState(j) = 0) or (GetState(j) =1) then
+                   begin
+                     SetState(j, 11);
+                     help_eng= help_eng ^ j;
+                     break;
+                   end;
+             end;
+         end;
+       if help_eng <> 0 then
+         ComRepairBuilding(help_eng, factory);
+
+       Wait(2);
+       While IsConstructed(factory) do Wait(0$0.5);                         // Waiting to finish
+       ComEnterUnit(Free_mechanics, factory);
+       AddComChangeProfession(Free_mechanics, class_mechanic);               // Change back the profession
+
+       if help_eng <> 0 then                                                   // Give back the helpers
+         for i in help_eng do
+           RestorationOfJob(i, 0);
+
+     end
+
+
+   else            // Construction
+     begin
+       while IsOk(factory) and UnitsInside(factory) = 0 do Wait(0$1);   // for new factory
+       if IsOk(factory) then
+         ComConstruct(factory, chassis, engine, control, weapon);
+     end;
+
+ end;
+
+
+
+
+function CollectorFun(Un);
+ begin
+   if My_Depot = 0 then exit;
+
+   if GetState(Un) = 0 then
+     if GetCargo(Un, mat_cans) > 0 then
+       begin
+         SetState(Un, 2);
+         ComMoveUnit(Un, My_Depot);
+       end
+     else GoForCrates(Un);
+
+   if GetState(Un) = 1 then
+     if GetCargo(Un, mat_cans) > 0 then
+       begin
+         SetState(Un, 2);
+         ComMoveUnit(Un, My_Depot);
+       end
+     else if not(HasTask(Un)) then GoForCrates(Un);
+
+   if (GetState(Un) = 2) and (GetCargo(Un, mat_cans) = 0) then GoForCrates(Un);
+ end;
+
+
+
+function HelpersFun(Un);
+var i, Change_of_profession, B_in_progress, hlp;
+ begin
+   if (My_depot <> 0) and not(HasTask(Un)) and not(IsConstructed(My_depot)) then
+     begin
+       Change_of_profession= [];
+       for i in Helpers do
+         begin
+           hlp= [] ^ [i, 6, 1];
+           Change_of_profession= Change_of_profession ^ [hlp];
+         end;
+
+       for i= 1 to Change_of_profession do
+         begin
+           Change_Profession_Parameters= Change_of_profession[i];
+           RaiseSailEvent(Change_Profession_Event);               // in TacticalScheduler unit
+           Helpers= Helpers diff Un;
+         end;
+     end
+   else if not(IsBusy(Un)) then
+     begin
+       B_in_progress= FilterUnitsInArea(My_area, [[f_side, My_side], [f_constructed]]);
+       if B_in_progress <> 0 then ComRepairBuilding(Un, B_in_progress[1]);
+     end;
+ end;
+
+
+Function PauseFunc(parameters);
+ begin
+   if parameters[4] = 1 then // Queue = 1
+     begin
+        case parameters[1] of
+          1:   if not(End_Of_Base_Develop) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+
+          2:   if not(End_Of_Research_Develop1) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+
+          3:   if not(End_Of_Construct_Develop1) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+        end;
+     end
+   else  // Queue = 2
+     begin
+        case parameters[1] of
+          1:   if not(End_Of_Base_Develop) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+
+          2:   if not(End_Of_Research_Develop2) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+
+          3:   if not(End_Of_Construct_Develop2) then
+                 StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+        end;
+     end;
+ end;
+
+
+Function Lab1Func(parameters);
+var Wanted_in_lab1, Wanted_in_lab2,
+    Un, i, currently_in_lab1, currently_in_lab2, hlp1, hlp2, hlp3, belong;
+  begin
+    if (My_lab1 <> 0) and (My_lab2 <> 0) then  
+      begin
+        Wanted_in_lab1= Round(((Number_in_lab1+Number_in_lab2) * Lab_proc)/100);
+        if Wanted_in_lab1 > 6 then Wanted_in_lab1= 6;
+        Wanted_in_lab2= Number_in_lab1 + Number_in_lab2 - Wanted_in_lab1;
+
+        currently_in_lab1= UnitsInside(My_lab1);
+        currently_in_lab2= UnitsInside(My_lab2);
+        hlp1= currently_in_lab1;
+        hlp2= currently_in_lab2;
+        hlp3= Scientists diff (currently_in_lab1 ^ currently_in_lab2);
+        Number_in_lab1= currently_in_lab1+0;
+        Number_in_lab2= currently_in_lab2+0;
+
+        for Un in hlp1 do
+          begin
+            if Wanted_in_lab1 < hlp1 then
+              begin
+                hlp1= hlp1 diff Un;
+                Number_in_lab1= Number_in_lab1 -1;
+                Number_in_lab2= Number_in_lab2 +1;
+                ComExitBuilding(Un);
+                AddComEnterUnit(Un, My_lab2);
+                SetState(Un, 2);
+              end
+            else break;
+          end;
+
+        for Un in hlp2 do
+          begin
+            if Wanted_in_lab2 < hlp2 then
+              begin
+                hlp2= hlp2 diff Un;
+                Number_in_lab2= Number_in_lab2 -1;
+                Number_in_lab1= Number_in_lab1 +1;
+                ComExitBuilding(Un);
+                AddComEnterUnit(Un, My_lab1);
+                SetState(Un, 1);
+              end
+            else break;
+          end;
+
+
+        for Un in hlp3 do                                            // Units out of Labs
+          begin
+            belong= GetState(Un);                                   // belong: 1- lab1, 2- lab2
+            if belong> 10 then belong= (belong-10) mod 2;
+            if belong= 0 then belong= 2;
+
+            if Number_in_lab1 < Wanted_in_lab1 then                 // add person to lab1
+              begin
+                if GetState(Un) = 2 then
+                  begin
+                    Number_in_lab1= Number_in_lab1+1;
+                    Number_in_lab2= Number_in_lab2-1;
+                    SetState(Un, 1);
+                    ComEnterUnit(Un, My_lab1);
+                  end
+                else if (GetState(Un) > 10) and belong= 2 then
+                  begin
+                    Number_in_lab1= Number_in_lab1+1;
+                    Number_in_lab2= Number_in_lab2-1;
+                    SetState(Un, GetState(Un) -1);
+                  end;
+              end
+
+            else if Number_in_lab2 < Wanted_in_lab2 then            // add person to lab2
+              begin
+                if GetState(Un) = 1 then
+                  begin
+                    Number_in_lab2= Number_in_lab2+1;
+                    Number_in_lab1= Number_in_lab1-1;
+                    SetState(Un, 2);
+                    ComEnterUnit(Un, My_lab2);
+                  end
+                else if (GetState(Un) > 10) and belong= 1 then
+                  begin
+                    Number_in_lab2= Number_in_lab2+1;
+                    Number_in_lab1= Number_in_lab1-1;
+                    SetState(Un, GetState(Un) +1);
+                  end;
+              end;
+          end;
+
+      end;
+  end;
+
+
+Function Fact1Func(parameters);
+var Wanted_in_fact1, Wanted_in_fact2,
+    Un, i, currently_in_fact1, currently_in_fact2, hlp1, hlp2, hlp3, belong;
+  begin
+    if (My_fact1 <> 0) and (My_fact2 <> 0) then
+      begin
+        Wanted_in_fact1= Round(((Number_in_fact1+Number_in_fact2) * Fact_proc)/100);
+        if Wanted_in_fact1 > 6 then Wanted_in_fact1= 6;
+        Wanted_in_fact2= Number_in_fact1 + Number_in_fact2 - Wanted_in_fact1;
+
+        currently_in_fact1= UnitsInside(My_fact1);
+        currently_in_fact2= UnitsInside(My_fact2);
+        hlp1= currently_in_fact1;
+        hlp2= currently_in_fact2;
+        hlp3= Scientists diff (currently_in_fact1 ^ currently_in_fact2);
+        Number_in_fact1= currently_in_fact1+0;
+        Number_in_fact2= currently_in_fact2+0;
+
+        for Un in hlp1 do
+          begin
+            if Wanted_in_fact1 < hlp1 then
+              begin
+                hlp1= hlp1 diff Un;
+                Number_in_fact1= Number_in_fact1 -1;
+                Number_in_fact2= Number_in_fact2 +1;
+                ComExitBuilding(Un);
+                AddComEnterUnit(Un, My_fact2);
+                SetState(Un, 2);
+              end
+            else break;
+          end;
+
+        for Un in hlp2 do
+          begin
+            if Wanted_in_fact2 < hlp2 then
+              begin
+                hlp2= hlp2 diff Un;
+                Number_in_fact2= Number_in_fact2 -1;
+                Number_in_fact1= Number_in_fact1 +1;
+                ComExitBuilding(Un);
+                AddComEnterUnit(Un, My_fact1);
+                SetState(Un, 1);
+              end
+            else break;
+          end;
+
+
+        for Un in hlp3 do                                            // Units out of Facts
+          begin
+            belong= GetState(Un);                                   // belong: 1- fact1, 2- fact2
+            if belong> 10 then belong= (belong-10) mod 2;
+            if belong= 0 then belong= 2;
+
+            if Number_in_fact1 < Wanted_in_fact1 then                 // add person to fact1
+              begin
+                if GetState(Un) = 2 then
+                  begin
+                    Number_in_fact1= Number_in_fact1+1;
+                    Number_in_fact2= Number_in_fact2-1;
+                    SetState(Un, 1);
+                    ComEnterUnit(Un, My_fact1);
+                  end
+                else if (GetState(Un) > 10) and belong= 2 then
+                  begin
+                    Number_in_fact1= Number_in_fact1+1;
+                    Number_in_fact2= Number_in_fact2-1;
+                    SetState(Un, GetState(Un) -1);
+                  end;
+              end
+
+            else if Number_in_fact2 < Wanted_in_fact2 then            // add person to fact2
+              begin
+                if GetState(Un) = 1 then
+                  begin
+                    Number_in_fact2= Number_in_fact2+1;
+                    Number_in_fact1= Number_in_fact1-1;
+                    SetState(Un, 2);
+                    ComEnterUnit(Un, My_fact2);
+                  end
+                else if (GetState(Un) > 10) and belong= 1 then
+                  begin
+                    Number_in_fact2= Number_in_fact2+1;
+                    Number_in_fact1= Number_in_fact1-1;
+                    SetState(Un, GetState(Un) +1);
+                  end;
+              end;
+          end;
+
+      end;
+  end;
+
+
+function Run_Func(parameters);
+ begin
+   StrategicScheduler(parameters[1], parameters[2], parameters[3], parameters[4]);
+ end;
+
+
+ON SailEvent(Event) DO
+ begin
+   case Event of
+
+     Build_Event:
+       BuildFunc(Build_Parameters);
+
+     Change_Profession_Event:
+       ChangeProfessionFunc(Change_Profession_Parameters);
+
+     Develop_Event:
+       DevelopFunc(Develop_Parameters);
+
+     Explore_Event:
+       ExploreResources(Explore_Parameters);
+
+     Construct_Event:
+       ConstructFunc(Construct_Parameters);
+
+     Pause_Event:
+       PauseFunc(Pause_Parameters);
+
+     Lab1_Event:
+       Lab1Func(Lab1_Parameters);
+
+     Fact1_Event:
+       Fact1Func(Fact1_Parameters);
+
+     Run_Event:
+       Run_Func(Run_Parameters);
+
+   end;
+ end;
+
+
+
+EXPORT function InitTacticalScheduler;
+ begin
+ end;
+
+EXPORT function TacticalScheduler;
+var Un;
+ begin
+
+   // At base
+   for Un in Builders do
+     begin
+     end;
+
+   for Un in Collectors do
+     CollectorFun(Un);
+
+   for Un in Scientists do
+     begin
+     end;
+
+   for Un in Mechanics do
+     begin
+     end;
+
+   for Un in Soldiers do
+     begin
+     end;
+
+   for Un in Cargo do
+     begin
+     end;
+
+   for Un in Crane do
+     begin
+     end;
+
+   for Un in Helpers do
+     HelpersFun(Un);
+
+
+   // Out of base
+   for Un in Attackers do
+     begin
+     end;
+
+
+ end;
+
+
+
+EVERY 0$1 DO
+ begin
+//      debug_strings=[['Person'], [Build_parameters[1]], ['activity'], [GetUnitActivity(Build_parameters[1])],
+//      ['Activity of Person 27'], [GetUnitActivity(27)]];
+
+//   debug_strings= [['My_Units'], [My_Units], ['Builders'], [Builders], ['Collectors'], [Collectors], ['Scientists'], [Scientists],
+//                   ['Helpers'], [Helpers]];
+
+//   debug_strings= [['collectors'], [Collectors], ['Units_states'], [My_Units_states]];
+//   enable;
+ end;

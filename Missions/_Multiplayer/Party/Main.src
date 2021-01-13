@@ -7,7 +7,7 @@ EXPORT  gametype,
 
         def_base_level,          // (0) 0 - no base, 1 - depot, 2 - fortified, 3 - extra fortified [2]
         def_amount_of_people,    // (1) 0 - few, 1 - medium, 2 - more, 3 - lots
-        def_skill_level,       // (2) 0 to 3 [1] ... 2, 3, 4, 5
+        def_skill_level,         // (2) 0 to 3 [1] ... 2, 3, 4, 5
         def_starting_resources,  // (3) 0 - low, 1 - medium, 2 - high [1]
         def_shipments_density,   // (4) 0 - low, 1 - medium, 2 - high [1]
         def_oil_deposits,        // (5) 0 - close, 1 - far, 2 - both
@@ -135,10 +135,10 @@ begin
       randomize;
 
       def_base_level=         0;
-      def_amount_of_people=   4;
+      def_amount_of_people=   11;
       def_skill_level=        3;
       def_starting_resources= 3;
-      def_shipments_density=  2;
+      def_shipments_density=  50;
       def_oil_deposits=       2;
       def_sib_deposits=       2;
 
@@ -197,7 +197,7 @@ begin
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
 //  shipments_density           = [ 20, 30, 40 ] [def_shipments_density+1];
   number_of_people            := def_amount_of_people+4 ;
-  shipments_density           := 20 + (def_shipments_density) * 4;
+  shipments_density           := 150 - def_shipments_density;
 
   amount_of_apemen           := [0, 3, 6, 9] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];
@@ -211,7 +211,12 @@ begin
 
   oil_dep                     = [ [1],[4],[1,4] ] [def_oil_deposits+1];
   sib_dep                     = [ [2],[3],[2,3] ] [def_sib_deposits+1];
-  siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  //siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+
+  if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+  else
+     siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 end;
 
 function prepare_map_coordinates;
@@ -548,7 +553,8 @@ starting
 begin
   Disable(400);
   Disable(401);
-
+  Disable(10);
+  Disable(11);
   mp_selectmsg:=true;
   read_multiplayer_and_game_parameters;
   prepare_map_coordinates;
@@ -559,7 +565,6 @@ begin
   AnimateTrees(true);
 
   InitApeman;
-  init_shipments_and_respawning;
   init_infos;
   your_side:=Player_Side;
   music_nat:=Side_Nations[your_side];

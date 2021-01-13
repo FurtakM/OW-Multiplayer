@@ -20,7 +20,7 @@ begin
 
   amount:= Rand(3, 5);
   for i in (Side_Positions diff [0]) do
-    CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 20, true);
+    CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 15, true);
 
   enable;
 end;    

@@ -3,7 +3,7 @@ begin
  CreateCratesAnywhere(Rand(4,5),true);
  enable;
 end;
-
+       
 every 0$1+0$0.6 marked 10 do
 var i, amount;
 begin
@@ -24,7 +24,7 @@ begin
 
   enable;
 end;
-
+     
 every 0$20+0$0.9 marked 10 do
 var i,filter;
 begin

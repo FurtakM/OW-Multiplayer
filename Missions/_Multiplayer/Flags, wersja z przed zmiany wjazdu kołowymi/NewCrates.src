@@ -1,0 +1,53 @@
+var Step;
+
+Function CratesInArea(area);
+ begin
+   result=0;
+ end;
+
+Function ln(numb);   // logarithm is bounded by 1024
+var i;
+ begin
+   i=0;
+   while (i < 10) and (numb > 1) do
+     begin
+      numb= numb div 2;
+      i= i+1;
+     end;
+   result= i;
+ end;
+
+Function TimeStep;   // TimeStep is logarithm of the game time
+var r;
+ begin
+   r= tick div 200;
+   result= ln(r) +1;  // 1000 = ~ 30s.
+ end;
+
+Function CreateNewCrates(Number);
+var Old_Crates, area;
+ begin
+   for area in Crates_Areas do
+     begin
+       Old_Crates= ln(CratesInArea(area));
+       if Old_Crates < 10 then
+         if rand(1, 100) < 25 + (15*(10 - Old_Crates))/2  then // pravdep 1 az 1/4 podle mnozstvi beden na plose
+           CreateCratesArea(Number ,area,true);
+     end;
+ end;
+
+// New crates are created
+EVERY 0$5 TRIGGER tick > Time_Of_Crates DO
+//var Step;
+ begin
+   Step= TimeStep;
+   Time_Of_Crates= Time_Of_Crates + 0$10 +Rand(0$6*Step, 0$05 + 0$12*Step);   // [0$10 - 0$20] ... [0$55 - 1$40]
+   CreateNewCrates(Rand(3, 5));
+   enable;
+ end;
+
+{EVERY 0$1 DO
+ begin
+  debug_strings=[['tick'], [tick], ['Time_Of_Crates'], [Time_Of_Crates], ['Step'], [Step], ['Center'], [Center]];
+  enable;
+ end;}

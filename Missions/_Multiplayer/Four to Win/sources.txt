@@ -6,7 +6,6 @@ SOURCE_CODES
   ENABLED apemans
   ENABLED battle_flags
   DISABLED king
-  ENABLED game_modes
   ENABLED clock
   ENABLED PointGame
 END_OF_SOURCE_CODES

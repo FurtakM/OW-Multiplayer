@@ -120,10 +120,10 @@ begin
       Randomize;
 
       def_base_level:=         2;
-      def_amount_of_people:=   0;
+      def_amount_of_people:=   11;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  1;
+      def_shipments_density:=  50;
       def_extra_oil_deposits:= 0;
       def_extra_sib_deposits:= 1;
       def_shared_vision:=      1;

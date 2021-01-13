@@ -6,6 +6,7 @@ export function init_infos;
     infos=[0,0,0,0,0,0,0,0];
     real_cost=cost;
     cost=cost*10;
+  Enable;
   end;
 
 every 0$1 do
@@ -24,7 +25,7 @@ every 0$1 do
   end;
 
 
-every 0$2 do
+every 0$1 do
 begin
   if gametype<>11 then
     ShowTimer

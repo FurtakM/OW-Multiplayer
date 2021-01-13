@@ -2,12 +2,29 @@
 //   1 2
 //   3 4
 
-// Types of used games
-// 1 - Normal
 
 EXPORT
-  def_public_score,        // (16)
-  def_amount_score;        // (17);
+  def_base_level,         // (0)  No Base, Depot Only, Fortified, *Extra Fortified
+  def_amount_of_people,   // (1)  9, 12, 15, 24
+  def_skill_level,        // (2)  Unexperienced, Little Experienced, Experienced, More Experienced
+  def_starting_resources, // (3)  None, Few, Medium, Lots
+  def_shipments_density,  // (4)  Low, Medium, High, Very High
+  def_extra_oil_deposits, // (5)  Normal, Extra / *Bool
+  def_extra_sib_deposits, // (6)  None, Normal, Extra / *-
+  def_shared_vision,      // (10) True, False
+  def_morale_flags,       // (11) None, Fast Decreasing, Decreasing, Slowly Decreasing, Not Decreasing
+  def_siberite_detection, // (12) True, False
+  def_people_respawning,  // (13) None, Rare, Common
+  def_amount_of_apemen,   // (14) None, Few, Medium, Lots
+  def_siberite_bomb,      // (15)
+  def_public_score,       // (16)
+  def_amount_score,       // (17)
+  def_builduptime;        // (20)
+
+EXPORT
+  No_Mechs,
+  Game_Type;         // Types of used games
+                     // 1 - Normal
 
 EXPORT  
   is_depot,
@@ -110,8 +127,9 @@ begin
       def_siberite_bomb=      GetMultiplayerSetting(15);
       def_public_score=       GetMultiplayerSetting(16);
       def_amount_score=       GetMultiplayerSetting(17);
+      def_builduptime=        GetMultiplayerSetting(20);
       tech_level =            GetMultiplayerSetting(22);
-      def_win_rules=           0;
+      //def_win_rules=           0;
     end
   else
     begin
@@ -119,7 +137,7 @@ begin
 
       def_base_level=         3;
       def_amount_of_people=   1;
-      def_skill_level=      1;
+      def_skill_level=        1;
       def_starting_resources= 2;
       def_shipments_density=  1;
       def_extra_oil_deposits= 0;
@@ -132,23 +150,17 @@ begin
       def_siberite_bomb=      0;
       def_public_score=       1;
       def_amount_score=       0;
+      def_builduptime=        0;
       tech_level =            4;
-      def_win_rules=           0;
+      //def_win_rules=           0;
     end;
   Player_Side = Your_Side;
   player_team = Side_Teams[Player_Side];
 
-  InitGameRules;
-
-  if def_game_rules = 0 then
-  begin
-    if isSGUI then
-       setMpTechs()
-    else
-    begin
-      SetMpTechLevel(tech_level + 1);
-    end;
-  end;
+  if isSGUI then
+     setMpTechs()
+  else
+     SetMpTechLevel(tech_level + 1);
 
   is_depot                    = [0,1,1,1] [def_base_level+1];
   number_of_breastworks       = [0,0,2,4] [def_base_level+1];
@@ -168,10 +180,12 @@ begin
 
 //  score                       = [0,0,0,0,0,0,0,0];
   amount_score                = [200,300,500,700,1000,1500] [def_amount_score+1];
-  siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
+  //siberite_bomb_Delay        := [0,1,30$00,60$00,90$00,120$00]  [def_siberite_bomb+1];
 
-  if not def_builduptime then
-    disable(600);
+  if def_siberite_bomb = 0 then
+       siberite_bomb_Delay = 0
+    else
+       siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 
   king_territory = KopecStred;
   final_count =  amount_score ;
@@ -456,23 +470,7 @@ begin
   if (neng < 1) then
     neng:= 1;
 end;
-{
-function Init_Win_Condition;
-begin
-  case Game_Type of
-    1,2,10,11:
-      if Team_Game then
-        Enable(98)
-      else
-        Enable(99);
-    3:
-      begin
-        Enable(99);
-        Enable(100);
-      end;
-  end;
-end;
-}
+
 starting
 begin
   Disable(98); // YouWin (All for Free)
@@ -496,7 +494,6 @@ begin
   AnimateTrees(true);
   prepare_sides;
 
-  init_shipments_and_respawning;
   Init_Win_Condition;
   if game_type = 3 then
   begin
@@ -505,7 +502,6 @@ begin
   end;
 
   InitApeman;
-  InitLimits;
   ShowTimer;
 
   music_nat:=Side_Nations[your_side];

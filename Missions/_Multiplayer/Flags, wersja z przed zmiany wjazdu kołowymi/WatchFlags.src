@@ -1,0 +1,36 @@
+var Depots, Depot, Nearist_Depot;
+
+EXPORT function TestFlagsForNewBuilding(building);
+var i;
+ begin
+   i=0;
+   if GetBType(building) = b_depot then
+     for i= 1 to 8 do
+       begin
+         if IsInArea(building, Flag_Areas[i]) then
+           if GetBattleFlagSide(Flag_Identifiers[i]) = 0 then  // Neutral
+             ChangeBattleFlagSide(Flag_Identifiers[i], GetSide(building));
+       end;
+ end;
+
+EXPORT function TestFlagsForDemolition(Un);
+var i;
+ begin
+   if (GetType(un) = unit_building) and (GetBType(un) = b_depot) then
+     for i= 1 to 8 do
+       begin
+         if IsInArea(un, Flag_Areas[i]) then
+           begin
+             Depots= FilterUnitsInArea(Flag_Areas[i], [[f_type, unit_building], [f_btype, b_depot]]);
+             if Depots = [] then
+               ChangeBattleFlagSide(Flag_Identifiers[i], 0)  // Change to neutral
+             else
+               begin
+                 for Depot in Depots do
+                   if GetSide(Depot) = GetSide(un) then exit;  // There is an another depot of the same side here.
+                 Nearist_Depot= NearestUnitToXY(Depots, Flag_Positions[i][1], Flag_Positions[i][2]);
+                 ChangeBattleFlagSide(Flag_Identifiers[i], GetSide(Nearist_Depot));
+               end;
+           end;
+       end;
+ end;

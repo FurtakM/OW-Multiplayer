@@ -1,21 +1,33 @@
-every 1$0+0$0.3 do  // crates anywhere on map
+every 0$25+0$1.0 do  // Between and center
 begin
- CreateCratesAnywhere(Rand(4,5),true);
- enable;
-end;     
+  if GetResourceArea(Between1,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Between1,true);
+  if GetResourceArea(Between2,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Between2,true);
+  if GetResourceArea(Between3,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Between3,true);
+  if GetResourceArea(Between4,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Between4,true);
+
+  if GetResourceArea(Center1,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(5,Center1,true);
+  if GetResourceArea(Center2,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(5,Center2,true);
+  enable;
+end;
 
 every 0$1+0$0.6 do // create crates only on occupied bases
 var i, amount;
 begin
   case tick of
-         1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$20));
-     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$20,0$35));
-     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$35,0$45));
-    10$0+1..20$0:  Wait(shipments_density/100*Rand(0$45,0$55));
-    20$0+1..30$0:  Wait(shipments_density/100*Rand(0$55,1$05));
-    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$05,1$15));
-    50$0+1..300$0: Wait(shipments_density/100*Rand(1$15,1$30));
-  else  Wait(shipments_density/100*Rand(1$30,1$45));
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$15,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$50));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$50,1$00));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$00,1$05));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$05,1$10));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$20,1$40));
+  else  Wait(shipments_density/100*Rand(1$40,1$50));
   end;
 
   amount:= Rand(3, 5);

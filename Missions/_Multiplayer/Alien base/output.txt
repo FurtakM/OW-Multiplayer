@@ -409,10 +409,10 @@
  651: PUSH
  652: LD_INT 2
  654: ST_TO_ADDR
-// def_amount_of_people := 0 ;
+// def_amount_of_people := 11 ;
  655: LD_ADDR_EXP 42
  659: PUSH
- 660: LD_INT 0
+ 660: LD_INT 11
  662: ST_TO_ADDR
 // def_skill_level := 1 ;
  663: LD_ADDR_EXP 43
@@ -424,10 +424,10 @@
  675: PUSH
  676: LD_INT 2
  678: ST_TO_ADDR
-// def_shipments_density := 1 ;
+// def_shipments_density := 50 ;
  679: LD_ADDR_EXP 45
  683: PUSH
- 684: LD_INT 1
+ 684: LD_INT 50
  686: ST_TO_ADDR
 // def_extra_oil_deposits := 0 ;
  687: LD_ADDR_EXP 46

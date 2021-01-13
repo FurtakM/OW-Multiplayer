@@ -1,38 +1,29 @@
-var shipment;
-
-// selection of first kvadrant
-export function init_shipments_and_respawning;
-begin
-  shipment:=Rand(0,3);
-end;
-
-
-every 0$5+0$1.1 do
-var d;
+every 0$1+0$0.6 do // create crates only on occupied bases
+var i, amount;
 begin
   case tick of
-         1..  1$0: d:=150;
-     1$0+1..  5$0: d:=100;
-     5$0+1.. 10$0: d:=90;
-    10$0+1.. 20$0: d:=70;
-    20$0+1.. 30$0: d:=60;
-    30$0+1.. 50$0: d:=35;
-    50$0+1..300$0: d:=20;
-  else  d:=0;
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$15,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$50));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$50,1$00));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$00,1$05));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$05,1$10));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$20,1$40));
+  else  Wait(shipments_density/100*Rand(1$40,1$50));
   end;
 
-  if rand(1,10000)<=d*shipments_density then
-    begin
-      wait(Rand(1,0$4));
-      shipment:=(shipment+1)mod 4;
-      CreateCratesArea(5,ZaklLH+shipment,true);
-    end;
+  amount:= Rand(3, 5);
+
+  for i in (Side_Positions diff [0]) do
+    CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 20, true);
+
   enable;
 end;
 
 every 0$7+0$1.7 do
-var d;
+var d, shipment;
 begin
+  shipment:=Rand(0,3);
   case tick of
          1..  1$0: d:=20;
      1$0+1..  5$0: d:=50;

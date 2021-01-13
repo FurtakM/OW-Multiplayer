@@ -1,18 +1,28 @@
-every 0$25+0$1.0 do  // crates center side
+every 0$25+0$1.0 do  // Between, ring and center
 begin
-  if GetResourceArea(MZBaseArea3,mat_cans)<20 then
-    CreateCratesArea(Rand(4,5),MZBaseArea3,true);
+  if GetResourceArea(Between1,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(Rand(3,4),Between1,true);
+  if GetResourceArea(Between2,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(Rand(3,4),Between2,true);
+  if GetResourceArea(Between3,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(Rand(3,4),Between3,true);
+  if GetResourceArea(Between4,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(Rand(3,4),Between4,true);
+ 
+  if GetResourceArea(Ring1,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Ring1,true);
+  if GetResourceArea(Ring2,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Ring2,true);
+  if GetResourceArea(Ring3,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Ring3,true);
+  if GetResourceArea(Ring4,mat_cans)<((200-shipments_density)/50*5) then
+    CreateCratesArea(Rand(3,4),Ring4,true);
+
+  if GetResourceArea(MZCenter,mat_cans)<((200-shipments_density)/25*5) then
+    CreateCratesArea(5,MZCenter,true);
   enable;                         
 end;
-
-
-every 1$25+0$0.3 do  // crates left nad right side
-begin
-  CreateCratesArea(Rand(4,5),MZBaseArea,true);
-  CreateCratesArea(Rand(4,5),MZBaseArea2,true);
-  enable;
-end;   
-
+     
 every 0$1+0$0.6 do // create crates only on occupied bases
 var i, amount;
 begin
