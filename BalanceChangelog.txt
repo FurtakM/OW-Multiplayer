@@ -73,3 +73,21 @@ Homogenous tau-field:
 Advanced chassis:
 	Research time increased:
 		TIME 30 -> 90
+
+0.31b:
+Heavy tracked (US)
+	Armor increased: 
+		DEFEND 60 -> 66
+	Speed increased:
+		SPEED 9 -> 10
+
+Heavy tracked (RU)
+	Armor increased:
+		DEFEND 65 -> 70
+
+Morphling
+	Speed increased:
+		SPEED 12 -> 13
+
+Behemoth:
+	Behemoth shoots 2 rockets now at the same time
