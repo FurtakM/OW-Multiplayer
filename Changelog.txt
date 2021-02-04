@@ -332,3 +332,19 @@ River Of Lost Souls:
 Fixed siberite bomb counter on the Highlands map
 Fixed a message that a deposit was found despite being missing on the Babylon map
 Fixed materialization crates not on narrow roads in Jungle Law map
+
+0.32:
+New model for Arabian Crane by Jacok
+Interface face images for Arabian Crane and Arabian Siberite Bomb
+
+
+Wilderness/Rocky Land:
+- Fixed win conditions for vehicle hunting mode
+
+The Abbys:
+- Changed amount of apes
+
+Bloody Valley:
+- Fixed Tree bonus
+
+Balance changes (see BalanceChangelog.txt)

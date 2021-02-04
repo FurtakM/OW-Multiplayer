@@ -19,7 +19,9 @@ EXPORT
   siberite_bomb_Delay,
   amount_of_apemen,
   tree_function,
-  def_win_rules;
+  def_win_rules,
+  bonus_gained,
+  activated;
 
 export Side_Teams, Teams, Side_Comps;
 export Side_Positions, Side_Nations, Team_Game;
@@ -491,7 +493,9 @@ begin
 
   Disable(600); // Build-Up
 
-  mp_selectmsg:=true;
+  mp_selectmsg := true;
+  bonus_gained := [];
+  activated := false;
 
   read_multiplayer_and_game_parameters;
   prepare_map_coordinates;

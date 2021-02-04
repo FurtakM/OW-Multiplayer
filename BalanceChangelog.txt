@@ -91,3 +91,9 @@ Morphling
 
 Behemoth:
 	Behemoth shoots 2 rockets now at the same time
+
+
+0.32b:
+Laser:
+	Range decreased by 1:
+		RANGE 12 -> RANGE 11

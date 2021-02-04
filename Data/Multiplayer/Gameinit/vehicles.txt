@@ -674,7 +674,7 @@ GAMEINIT
         SIGHT 9
         WEIGHT  2  4 
         ATTACK
-          MINMAX_RANGE  1  12 
+          MINMAX_RANGE  1  11 
           FREQUENCY  1  40 
           DAMAGE 110 253 115
           EFF 12 55 25
@@ -966,7 +966,7 @@ GAMEINIT
       WEAPON_TYPE  69 
         NAME "E(Crane)C(jeøáb)"
         NATION Arabian
-        SYMBOL n-r-crane
+        SYMBOL n-a-crane
         OIL 0
         SIBERIUM 0
         CANS 25

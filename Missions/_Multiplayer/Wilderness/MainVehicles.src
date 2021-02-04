@@ -93,7 +93,7 @@ function read_multiplayer_and_game_parameters;
 
 // derived game settings
     game_time     = [5$0,10$0,15$0,20$0,30$0,0,0,0,0,0,0] [def_victory_conditions+1];
-    point_limit   = [0,0,0,0,0,0,5,10,15,20,30,50] [def_victory_conditions+1];
+    point_limit   = [0,0,0,0,0,5,10,15,20,30,50] [def_victory_conditions+1];
 
     npeop         = [4,6,8,10] [def_number_of_people+1];
     peopresp      = [ false, [0$40,1$20], [0$20,0$40], [0$10,0$20] ] [def_people_respawning+1];
