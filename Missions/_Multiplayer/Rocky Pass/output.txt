@@ -3261,13 +3261,13 @@
 5093: IFTRUE 5097
 5095: GO 5125
 5097: POP
-// Wait ( shipments_density / 100 * Rand ( 0 0$10 , 0 0$30 ) ) ; 1 1$0 + 1 .. 5 5$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$15 , 0 0$30 ) ) ; 1 1$0 + 1 .. 5 5$0 :
 5098: LD_EXP 25
 5102: PUSH
 5103: LD_INT 100
 5105: DIVREAL
 5106: PUSH
-5107: LD_INT 350
+5107: LD_INT 525
 5109: PPUSH
 5110: LD_INT 1050
 5112: PPUSH
@@ -3289,7 +3289,7 @@
 5139: IFTRUE 5143
 5141: GO 5171
 5143: POP
-// Wait ( shipments_density / 100 * Rand ( 0 0$30 , 0 0$45 ) ) ; 5 5$0 + 1 .. 10 10$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$30 , 0 0$50 ) ) ; 5 5$0 + 1 .. 10 10$0 :
 5144: LD_EXP 25
 5148: PUSH
 5149: LD_INT 100
@@ -3297,7 +3297,7 @@
 5152: PUSH
 5153: LD_INT 1050
 5155: PPUSH
-5156: LD_INT 1575
+5156: LD_INT 1750
 5158: PPUSH
 5159: CALL_OW 12
 5163: MUL
@@ -3317,13 +3317,13 @@
 5185: IFTRUE 5189
 5187: GO 5217
 5189: POP
-// Wait ( shipments_density / 100 * Rand ( 0 0$45 , 1 1$0 ) ) ; 10 10$0 + 1 .. 20 20$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$50 , 1 1$00 ) ) ; 10 10$0 + 1 .. 20 20$0 :
 5190: LD_EXP 25
 5194: PUSH
 5195: LD_INT 100
 5197: DIVREAL
 5198: PUSH
-5199: LD_INT 1575
+5199: LD_INT 1750
 5201: PPUSH
 5202: LD_INT 2100
 5204: PPUSH
@@ -3345,7 +3345,7 @@
 5231: IFTRUE 5235
 5233: GO 5263
 5235: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$0 , 1 1$15 ) ) ; 20 20$0 + 1 .. 30 30$0 :
+// Wait ( shipments_density / 100 * Rand ( 1 1$00 , 1 1$05 ) ) ; 20 20$0 + 1 .. 30 30$0 :
 5236: LD_EXP 25
 5240: PUSH
 5241: LD_INT 100
@@ -3353,7 +3353,7 @@
 5244: PUSH
 5245: LD_INT 2100
 5247: PPUSH
-5248: LD_INT 2625
+5248: LD_INT 2275
 5250: PPUSH
 5251: CALL_OW 12
 5255: MUL
@@ -3373,15 +3373,15 @@
 5277: IFTRUE 5281
 5279: GO 5309
 5281: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$15 , 1 1$30 ) ) ; 30 30$0 + 1 .. 50 50$0 :
+// Wait ( shipments_density / 100 * Rand ( 1 1$05 , 1 1$10 ) ) ; 30 30$0 + 1 .. 50 50$0 :
 5282: LD_EXP 25
 5286: PUSH
 5287: LD_INT 100
 5289: DIVREAL
 5290: PUSH
-5291: LD_INT 2625
+5291: LD_INT 2275
 5293: PPUSH
-5294: LD_INT 3150
+5294: LD_INT 2450
 5296: PPUSH
 5297: CALL_OW 12
 5301: MUL
@@ -3401,15 +3401,15 @@
 5323: IFTRUE 5327
 5325: GO 5355
 5327: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$30 , 1 1$45 ) ) ; 50 50$0 + 1 .. 300 300$0 :
+// Wait ( shipments_density / 100 * Rand ( 1 1$10 , 1 1$20 ) ) ; 50 50$0 + 1 .. 300 300$0 :
 5328: LD_EXP 25
 5332: PUSH
 5333: LD_INT 100
 5335: DIVREAL
 5336: PUSH
-5337: LD_INT 3150
+5337: LD_INT 2450
 5339: PPUSH
-5340: LD_INT 3675
+5340: LD_INT 2800
 5342: PPUSH
 5343: CALL_OW 12
 5347: MUL
@@ -3429,15 +3429,15 @@
 5369: IFTRUE 5373
 5371: GO 5401
 5373: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$45 , 2 2$0 ) ) ; else
+// Wait ( shipments_density / 100 * Rand ( 1 1$20 , 1 1$40 ) ) ; else
 5374: LD_EXP 25
 5378: PUSH
 5379: LD_INT 100
 5381: DIVREAL
 5382: PUSH
-5383: LD_INT 3675
+5383: LD_INT 2800
 5385: PPUSH
-5386: LD_INT 4200
+5386: LD_INT 3500
 5388: PPUSH
 5389: CALL_OW 12
 5393: MUL
@@ -3445,15 +3445,15 @@
 5395: CALL_OW 67
 5399: GO 5427
 5401: POP
-// Wait ( shipments_density / 100 * Rand ( 2 2$0 , 2 2$30 ) ) ; end ;
+// Wait ( shipments_density / 100 * Rand ( 1 1$40 , 1 1$50 ) ) ; end ;
 5402: LD_EXP 25
 5406: PUSH
 5407: LD_INT 100
 5409: DIVREAL
 5410: PUSH
-5411: LD_INT 4200
+5411: LD_INT 3500
 5413: PPUSH
-5414: LD_INT 5250
+5414: LD_INT 3850
 5416: PPUSH
 5417: CALL_OW 12
 5421: MUL

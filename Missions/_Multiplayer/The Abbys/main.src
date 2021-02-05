@@ -6,6 +6,7 @@
 // 1 - CTF
 // 2 - Big Bases (two sides)
 // 3 - Big Bases (four sides)
+// 4 - Big Bases (East vs West)
 // 12- Big Bases (two nations)
 
 
@@ -117,22 +118,15 @@ begin
     end
   else
     begin
-      Game_Type=12;
+      Game_Type=4;
 
-      Your_Side    = 4;
+      Your_Side    = 1;
 
-      Side_Positions = [1,0,0,0,0,0,0,3];
-      Side_Teams     = [0,0,0,0,0,0,0,0];
-      Side_Nations   = [3,0,0,0,0,0,0,1];
+      Side_Positions = [1,2,3,4,0,0,0,0];
+      Side_Teams     = [1,1,2,2,0,0,0,0];
+      Side_Nations   = [3,2,1,2,0,0,0,0];
 
-      Teams          = [];
-    end;
-
-  for i:= 1 to 8 do
-    if Multiplayer_GetPlayerIsSpec(i) then
-    begin
-      Side_Positions:= Replace(Side_Positions, i, 0);
-      Teams:= Replace(Teams, Side_Teams[i], Teams[Side_Teams[i]] diff i);
+      Teams          = [[1,2],[3,4]];
     end;
 
   // game settings for real Multiplayer
@@ -203,7 +197,10 @@ begin
   // derived game settings
   is_depot                    = [0,1,1,1] [def_base_level+1];
   number_of_breastworks       = [0,0,2,4] [def_base_level+1];
-  number_of_people            = [5,7,9,11] [def_amount_of_people+1];
+  if Game_Type<>4 then
+     number_of_people            = [5,7,9,11] [def_amount_of_people+1]
+  else
+     number_of_people            = [9,12,15,24] [def_amount_of_people+1];
   skill_level                 = [2,3,4,5] [def_skill_level+1];
   starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];

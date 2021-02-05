@@ -136,10 +136,10 @@ begin
       randomize;
 
       def_base_level=         3;
-      def_amount_of_people=   1;
+      def_amount_of_people=   3;
       def_skill_level=        1;
       def_starting_resources= 2;
-      def_shipments_density=  1;
+      def_shipments_density=  50;
       def_extra_oil_deposits= 0;
 
       def_shared_vision=      1;
@@ -168,8 +168,8 @@ begin
   skill_level                 = [2,3,4,5] [def_skill_level+1];
   starting_resources          = [ [0,0,0], [30,0,0], [50,20,0], [80,40,20] ] [def_starting_resources+1];
   starting_crates             = [ [10], [7,14], [6,12,18], [5,10,15,20] ] [def_starting_resources+1];
-  shipments_density           = [ 15, 20, 25 ] [def_shipments_density+1];
-
+  //shipments_density           = [ 15, 20, 25 ] [def_shipments_density+1];
+  shipments_density           = 150 - def_shipments_density;
   amount_of_apemen           := [0, 1, 2, 3] [def_amount_of_apemen+1];
   spawning_koef_of_apemen     = [0, 165,140,115] [def_amount_of_apemen+1];
   respawning_time_min         = [0$0,  4$00, 0$50] [def_people_respawning+1];

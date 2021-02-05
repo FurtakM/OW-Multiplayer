@@ -8,14 +8,14 @@ every 0$1+0$0.6 do // create crates only on occupied bases
 var i, amount;
 begin
   case tick of
-         1.. 1$0:  Wait(shipments_density/100*Rand(0$10,0$30));
-     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$45));
-     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$45,1$0));
-    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$0,1$15));
-    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$15,1$30));
-    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$30,1$45));
-    50$0+1..300$0: Wait(shipments_density/100*Rand(1$45,2$0));
-  else  Wait(shipments_density/100*Rand(2$0,2$30));
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$15,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$50));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$50,1$00));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$00,1$05));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$05,1$10));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$20,1$40));
+  else  Wait(shipments_density/100*Rand(1$40,1$50));
   end;
 
   amount:= Rand(3, 5);

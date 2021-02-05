@@ -7,10 +7,9 @@ SOURCE_CODES
   ENABLED DE_Triggers
   ENABLED win_conditions
   ENABLED CTF
-  DISABLED Base_Names
-  DISABLED synch
   ENABLED other_game
   ENABLED battle_flags
   ENABLED game_modes
   ENABLED clock
+  DISABLED Synch
 END_OF_SOURCE_CODES
