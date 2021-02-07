@@ -1,0 +1,1580 @@
+EXPORT My_Units_States;
+EXPORT My_Units_in_Base, My_Units_out_of_Base;
+
+// Buildings
+
+EXPORT My_depot, My_lab1, My_lab2, My_fact1, My_fact2;
+
+// Program counters
+EXPORT Base_develop_pc;
+EXPORT Research_develop_pc1;
+EXPORT Construct_develop_pc1;
+EXPORT Research_develop_pc2;
+EXPORT Construct_develop_pc2;
+
+// Stacks
+EXPORT Base_develop_stack;
+EXPORT Research_develop_stack1;
+EXPORT Construct_develop_stack1;
+EXPORT Research_develop_stack2;
+EXPORT Construct_develop_stack2;
+
+// Base develop condition
+EXPORT End_Of_Base_Develop;
+EXPORT End_Of_Research_Develop1;
+EXPORT End_Of_Construct_Develop1;
+EXPORT End_Of_Research_Develop2;
+EXPORT End_Of_Construct_Develop2;
+
+
+// Key Words
+EXPORT Label;
+EXPORT Divide;
+EXPORT Build;
+EXPORT Jump;
+EXPORT Research;
+EXPORT Lab1;
+EXPORT Upgrade;
+EXPORT Construct;
+EXPORT Fact1;
+EXPORT Jump_B;
+EXPORT Jump_NB;
+EXPORT Jump_T;
+EXPORT Jump_NT;
+EXPORT Jump_Rand;
+EXPORT Jump_Var;
+EXPORT Jump_Res;
+EXPORT Jump_NRes;
+EXPORT Reserve;
+EXPORT Set_Var;
+EXPORT Inc_Var;
+EXPORT Dec_Var;
+EXPORT Copy_Var;
+EXPORT Call;
+EXPORT Ret;
+EXPORT Pause;
+EXPORT Run_B;       
+EXPORT Run_R;        // one parameter more
+EXPORT Run_C;
+EXPORT Kill_B;
+EXPORT Kill_R;
+EXPORT Kill_C;
+EXPORT EOB;
+EXPORT EOR;
+EXPORT EOC;
+
+// Ratio in buildings
+EXPORT Lab_proc;
+EXPORT Fact_proc;
+
+// Base variables
+EXPORT Base_Variables;
+EXPORT Number_of_Base_Variables;
+
+// Sail events
+EXPORT Build_event;
+EXPORT Change_Profession_Event;
+EXPORT Develop_Event;
+EXPORT Construct_Event;
+EXPORT Explore_Event;
+EXPORT Pause_Event;
+EXPORT Lab1_Event;
+EXPORT Fact1_Event;
+EXPORT Run_Event;
+
+// Parameters
+EXPORT Build_Parameters;
+EXPORT Change_Profession_Parameters;
+EXPORT Develop_Parameters;
+EXPORT Construct_Parameters;
+EXPORT Explore_Parameters;
+EXPORT Pause_Parameters;
+EXPORT Lab1_Parameters;
+EXPORT Fact1_Parameters;
+EXPORT Run_Parameters;
+
+EXPORT Midpoint, Base, Rotation;
+EXPORT Base_develop, research_develop1, research_develop2, Construct_develop1, Construct_develop2;
+
+// Units
+EXPORT Builders, Collectors, Scientists, Mechanics, Soldiers;
+EXPORT Cargo, Crane;
+EXPORT Helpers;  // At start of the game...
+EXPORT Attackers;
+
+// TMP
+EXPORT Base_Develop_TMP;
+EXPORT Research_Develop_TMP1;
+EXPORT Construct_Develop_TMP1;
+EXPORT Research_Develop_TMP2;
+EXPORT Construct_Develop_TMP2;
+
+
+EXPORT Building_filter;
+EXPORT Number_in_lab1, Number_in_lab2;
+EXPORT Number_in_fact1, Number_in_fact2;
+
+///
+///    Flag_Areas[My_position] - Ma pozice
+///
+
+// Debug
+var New_step;
+var builders_num, scientists_num, mechanics_num, collectors_num, soldiers_num;
+var Quotient;
+var Sc, Sc_set, Res_places;
+
+var Change_of_profession;     // [[person, old_profession, new_profession], ... []]
+{
+                                 My_Units_States
+
+  Builders:     0:  free   1: Busy                                            3: Change of profession
+  Collectors:   0:  free   1: Going for material   2: Returning with material
+  Scientists:   0:  free   1: Lab1                 2: Lab2                    3: Change of profession
+  Mechanics:
+  soldiers:     0:  free   1: Fact1                2: Fact2                   3: Change of profession
+
+10 - allert interrupt
+X > 10 - special tasks
+odd - Lab1, Fact1
+11,12 - explore
+11, 12 - upgrade
+}
+
+
+EXPORT function InitStrategicScheduler;
+var i;//, Sc, Sc_set, Res_places;
+ begin
+
+  // Set Events
+  Build_Event= 1;
+  Change_Profession_Event= 2;
+  Develop_Event= 3;
+  Explore_Event= 4;
+  Construct_Event= 5;
+  Pause_Event= 6;
+  Lab1_Event= 7;
+  Fact1_Event= 8;
+  Run_Event= 9;
+
+  // Program Counters    The pc points to a instruction which has to been processed currently.
+  Base_develop_pc= 0;
+  Research_develop_pc1= 0;
+  Construct_develop_pc1= 0;
+  Research_develop_pc2= 0;
+  Construct_develop_pc2= 0;
+
+  // Stacks
+  Base_develop_stack= [];
+  Research_develop_stack1= [];
+  Construct_develop_stack1= [];
+  Research_develop_stack2= [];
+  Construct_develop_stack2= [];
+
+  // Base develop conditions
+  End_Of_Base_Develop= false;
+  End_Of_Research_Develop1= false;
+  End_Of_Construct_Develop1= false;
+  End_Of_Research_Develop2= false;
+  End_Of_Construct_Develop2= false;
+
+
+  // Key Words
+  Label= 1;
+  Divide= 2;
+  Build= 3;
+  Jump= 4;
+  Research= 5;
+  Lab1= 6;
+  Upgrade= 7;
+  Construct= 8;
+  Fact1= 9;
+  Jump_B= 10;
+  Jump_NB= 11;
+  Jump_T= 12;
+  Jump_NT= 13;
+  Jump_Rand= 14;
+  Jump_Res= 15;
+  Jump_NRes= 16;
+  Reserve= 17;
+  Jump_Var= 18;
+  Set_Var= 19;
+  Inc_Var= 20;
+  Dec_Var= 21;
+  Copy_Var= 22;
+  Call= 23;
+  Ret= 24;
+  Pause= 25;
+  Run_B= 26;
+  Run_R= 27;
+  Run_C= 28;
+  Kill_B= 29;
+  Kill_R= 30;
+  Kill_C= 31;
+  EOB= 32;
+  EOR= 33;
+  EOC= 34;
+
+
+  Number_of_Base_Variables= 20;
+  Base_Variables= [];
+  for i = 1 to Number_of_Base_Variables do
+    Base_Variables= Base_Variables ^ [0];
+
+
+  Building_filter= [[f_side, My_side], [f_type, unit_building], f_not, [f_lives, 950]];
+
+  Number_in_lab1= 0; Number_in_lab2= 0;
+  Number_in_fact1= 0; Number_in_fact2= 0;
+
+
+  InitBaseDef;
+
+  My_depot= []; My_lab1= []; My_lab2= []; My_fact1= []; My_fact2= [];
+  Lab_proc= 50; Fact_proc= 50;
+
+  Midpoint= Midpoint_def[1];
+  Base= Base_def[1];
+  Rotation= Rotation_def[1];
+
+  Base_develop= Base_develop_def[1];
+  Research_develop1= Research_develop_def[1];
+  Construct_develop1= Construct_develop_def[1];
+  Research_develop2= Research_develop_def[2];
+  Construct_develop2= Construct_develop_def[2];
+
+  My_Units_out_of_Base= [];
+  My_Units_in_Base= [];
+  Helpers= [];
+  for i in My_Units do
+    if (GetClass(i) = class_engineer) then
+      My_units_in_Base= My_Units_in_Base ^ i
+    else Helpers= Helpers ^ i;
+
+  Builders= My_Units_in_Base;
+
+  for i in My_units do                                // set all units to state free - 0
+    My_Units_states= My_Units_states ^ [[i,0]];
+
+
+   // Send a scienist to source_oil palce if it is possible
+  Sc_set= [];
+  for i in Helpers do
+    if (GetClass(i) = class_scientistic) then Sc_set= Sc_set ^ i;
+  if Sc_set <> 0 then
+    begin
+      Sc= FindMinSkill(Sc_set, skill_scientistic);
+      if Sc <> 0 then
+        begin
+          Explore_Parameters= [Sc, source_oil, My_area];
+          RaiseSailEvent(Explore_Event);
+        end;
+    end;
+
+  DevelopStep(1, 0, 0, 1);                                            // A depot is built
+ end;
+
+
+
+
+// The function removes units from lists Builders ... Soldiers
+// and set the variable Change_of_Profession as result for Change_Profession_Event
+function DividePeople(req_builders, req_scientists, req_mechanics, req_collectors, req_soldiers);   // requested quotient of units
+var Together_req, Together_num,
+// Quotient,
+//    builders_num, scientists_num, mechanics_num, collectors_num, soldiers_num,     // new numbers of units
+    request, offer, offered_units,
+    i, j,
+    k, hlp,
+    Selected_Unit;
+
+ begin
+   Together_req= req_builders + req_collectors + req_scientists + req_mechanics + req_soldiers;
+   Quotient= (Builders+Collectors+Scientists+Mechanics+Soldiers) / Together_req;
+   if Quotient = 0 then exit;
+
+   builders_num=   Round(req_builders * Quotient);
+   scientists_num= Round(req_scientists * Quotient);
+   mechanics_num=  Round(req_mechanics * Quotient);
+   collectors_num= Round(req_collectors * Quotient);
+   soldiers_num=   Round(req_soldiers * Quotient);
+   Together_num=   builders_num + collectors_num + scientists_num + mechanics_num + soldiers_num;
+
+   if Together_num < (Builders+Collectors+Scientists+Mechanics+Soldiers) then
+     begin
+       for i = Together_num to (Builders+Collectors+Scientists+Mechanics+Soldiers) do                 // Increase numbers of people in new groups
+         begin
+           case i mod 5 of
+             0: if req_builders <> 0 then builders_num= builders_num+1;
+             1: if req_scientists <> 0 then scientists_num= scientists_num+1;
+             2: if req_mechanics <> 0 then mechanics_num= mechanics_num+1;
+             3: if req_collectors <> 0 then collectors_num= collectors_num+1;
+             4: if req_soldiers <> 0 then soldiers_num= soldiers_num+1;
+           end;
+         end;
+     end
+   else if Together_num > (Builders+Collectors+Scientists+Mechanics+Soldiers) then
+     begin
+       for i = (Builders+Collectors+Scientists+Mechanics+Soldiers) to Together_num do                 // Decrease numbers of people in new groups
+         begin
+           case i mod 5 of
+             0: if req_builders <> 0 then builders_num= builders_num-1;
+             1: if req_scientists <> 0 then scientists_num= scientists_num-1;
+             2: if req_mechanics <> 0 then mechanics_num= mechanics_num-1;
+             3: if req_collectors <> 0 then collectors_num= collectors_num-1;
+             4: if req_soldiers <> 0 then soldiers_num= soldiers_num-1;
+           end;
+         end;
+     end;
+
+   request= 1000; // index in tag
+   offer= 2000;
+
+   SetArray(request, 1, Natural(builders_num - builders));
+   SetArray(request, 2, Natural(scientists_num - scientists));
+   SetArray(request, 3, Natural(mechanics_num - mechanics));
+   SetArray(request, 4, Natural(collectors_num - collectors));
+   SetArray(request, 5, Natural(soldiers_num - soldiers));
+
+   SetArray(offer, 1, Natural(builders - builders_num));
+   SetArray(offer, 2, Natural(scientists - scientists_num));
+   SetArray(offer, 3, Natural(mechanics - mechanics_num));
+   SetArray(offer, 4, Natural(collectors - collectors_num));
+   SetArray(offer, 5, Natural(soldiers - soldiers_num));
+
+   offered_units= [];
+   for i= 1 to 5 do   // builders ... soldiers
+     begin
+       for j= 1 to GetArray(request, i) do
+         begin
+
+           offered_units= [];
+           if GetArray(offer, 1) > 0 then offered_units= offered_units ^ Builders;
+           if GetArray(offer, 2) > 0 then offered_units= offered_units ^ Scientists;
+           if GetArray(offer, 3) > 0 then offered_units= offered_units ^ Mechanics;
+           if GetArray(offer, 4) > 0 then offered_units= offered_units ^ Collectors;
+           if GetArray(offer, 5) > 0 then offered_units= offered_units ^ Soldiers;
+
+           case i of         // We select a unit and assign ti to corresponding list.
+             1: begin
+                  Selected_unit= FindMaxSkill(offered_units, skill_engineering);
+                end;
+
+             2: begin
+                  Selected_unit= FindMaxSkill(offered_units, skill_scientistic);
+                end;
+
+             3: begin
+                  Selected_unit= FindMaxSkill(offered_units, skill_mechanical);
+                end;
+
+             4: begin
+                  Selected_unit= FindMinSkill(offered_units, skill_engineering);
+                end;
+
+             5: begin
+                  Selected_unit= FindMaxSkill(offered_units, skill_combat);
+                end;
+           end;
+
+           if Selected_unit in Builders then   // We have to remove unit from the list and update offer
+             begin
+               Builders= Builders diff [Selected_unit];                      // Remove unit
+               SetArray(offer, 1, (GetArray(offer, 1) -1));                // Update offer
+               hlp= [] ^ Selected_unit ^ [1] ^ [i];
+               Change_of_profession= Change_of_profession ^ [hlp];
+             end
+           else if Selected_unit in Scientists then
+             begin
+               Scientists= Scientists diff [Selected_unit];
+               SetArray(offer, 2, (GetArray(offer, 2) -1));
+               hlp= [] ^ Selected_unit ^ [2] ^ [i];
+               Change_of_profession= Change_of_profession ^ [hlp];
+             end
+           else if Selected_unit in Mechanics then
+             begin
+               Mechanics= Mechanics diff [Selected_unit];
+               SetArray(offer, 3, (GetArray(offer, 3) -1));
+               hlp= [] ^ Selected_unit ^ [3] ^ [i];
+               Change_of_profession= Change_of_profession ^ [hlp];
+             end
+           else if Selected_unit in Collectors then
+             begin
+               Collectors= Collectors diff [Selected_unit];
+               SetArray(offer, 4, (GetArray(offer, 4) -1));
+               hlp= [] ^ Selected_unit ^ [4] ^ [i];
+               Change_of_profession= Change_of_profession ^ [hlp];
+             end
+           else if Selected_unit in Soldiers then
+             begin
+               Soldiers= Soldiers diff [Selected_unit];
+               SetArray(offer, 5, (GetArray(offer, 5) -1));
+               hlp= [] ^ Selected_unit ^ [5] ^ [i];
+               Change_of_profession= Change_of_profession ^ [hlp];
+             end;
+
+         end;
+     end;
+
+ end;
+
+
+function ComputeBaseJump(label_name);
+var i, j;
+ begin
+   j= 0;
+   for i in Base_develop do
+     begin
+       if i[1] = Label then
+         if i[2] = label_name then
+           begin
+             Base_develop_pc= j;
+             break;
+           end;
+       j= j+1;
+     end;
+ end;
+
+function ComputeResearchJump(label_name, Queue);
+var i,j;
+ begin
+   j= 0;
+   if Queue = 1 then
+     begin
+       for i in Research_develop1 do
+         begin
+           if i[1] = Label then
+             if i[2] = label_name then
+               begin
+                 Research_develop_pc1= j;
+                 break;
+               end;
+           j= j+1;
+         end;
+     end
+   else
+     begin
+       for i in Research_develop2 do
+         begin
+           if i[1] = Label then
+             if i[2] = label_name then
+               begin
+                 Research_develop_pc2= j;
+                 break;
+               end;
+           j= j+1;
+         end;
+     end;
+ end;
+
+function ComputeConstructJump(label_name, Queue);
+var i, j;
+ begin
+   j= 0;
+   if Queue = 1 then
+     begin
+       for i in Construct_develop1 do
+         begin
+           if i[1] = Label then
+             if i[2] = label_name then
+               begin
+                 Construct_develop_pc1= j;
+                 break;
+               end;
+           j= j+1;
+         end;
+     end
+   else
+     begin
+       for i in Construct_develop2 do
+         begin
+           if i[1] = Label then
+             if i[2] = label_name then
+               begin
+                 Construct_develop_pc2= j;
+                 break;
+               end;
+           j= j+1;
+         end;
+     end;
+ end;
+
+
+function BaseJump(typ, building, subj, label_name, Queue);
+ begin
+   ComputeBaseJump(label_name);
+   DevelopStep(typ, building, subj, Queue);
+ end;
+
+function ResearchJump(typ, building, subj, label_name, Queue);
+ begin
+   ComputeResearchJump(label_name, Queue);
+   DevelopStep(typ, building, subj, Queue);
+ end;
+
+function ConstructJump(typ, building, subj, label_name, Queue);
+ begin
+   ComputeConstructJump(label_name, Queue);
+   DevelopStep(typ, building, subj, Queue);
+ end;
+
+
+
+                                          // Queue \in \{1, 2\}
+function DevelopStep(typ, building, subj, Queue);  // typ: 1- Base (building), 2- Research (in lab.), 3- Construct (in factory)  // subj- vehicle/technology
+var //New_step,
+   i, j, Selected_unit, label_name, condition,
+   r, sum, jmp, number_of_poss;
+ begin
+   case typ of
+
+    1: begin
+         Base_develop_pc= Base_develop_pc+1;
+         New_step= Base_develop[Base_develop_pc];
+
+         case New_step[1] of
+
+          Divide:                         // Divide People
+             begin
+               DividePeople(New_step[2], New_step[3], New_step[4], New_step[5], New_step[6]);
+
+               for i= 1 to Change_of_profession do
+                 begin
+                   Change_Profession_Parameters= Change_of_profession[i];
+                   RaiseSailEvent(Change_Profession_Event);               // in TacticalScheduler unit
+                 end;
+               Change_of_profession= [];
+
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Build:                         // Build a new building
+             begin
+               Build_Parameters= [New_step[2], New_step[3], New_step[4]];
+               RaiseSailEvent(Build_Event);                               // in TacticalScheduler unit
+             end;
+
+
+          Label:                          // Label of the program
+             begin
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Run_R:
+             begin
+               if Queue = 1 then
+                 begin
+                   if End_Of_Research_Develop1 then            // Run it form scratch
+                     begin
+                       End_Of_Research_Develop1= false;
+                       ComputeResearchJump(New_step[3], 1);
+                       Run_Parameters= [2, 0, 0, 1];
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeResearchJump(New_step[3], 1);     // Jump only
+                   DevelopStep(typ, building, subj, 1);
+                 end
+               else
+                 begin
+                   if End_Of_Research_Develop2 then
+                     begin
+                       End_Of_Research_Develop2= false;
+                       ComputeResearchJump(New_step[3], 2);
+                       Run_Parameters= [2, 0, 0, 2];
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeResearchJump(New_step[3], 2);
+                   DevelopStep(typ, building, subj, 2);
+                 end;
+             end;
+
+
+          Run_C:
+            begin
+               if New_step[2] = 1 then   // Queue = 2
+                 begin
+                   if End_Of_Construct_Develop1 then            // Run it form scratch
+                     begin
+                       End_Of_Construct_Develop1= false;
+                       ComputeConstructJump(New_step[3], 1);
+                       Run_Parameters= [3, 0, 0, 1];          // 3 - construct queue
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeConstructJump(New_step[3], 1);     // Jump only
+                   DevelopStep(typ, building, subj, 1);
+                 end
+               else if New_step[2] = 2 then
+                 begin
+                   if End_Of_Construct_Develop2 then
+                     begin
+                       End_Of_Construct_Develop2= false;
+                       ComputeConstructJump(New_step[3], 2);
+                       Run_Parameters= [3, 0, 0, 2];
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeConstructJump(New_step[3], 2);
+                   DevelopStep(typ, building, subj, 2);
+                 end;
+            end;
+
+
+          Lab1:
+             begin
+               Lab1_Parameters= [New_step[2]];
+               RaiseSailEvent(Lab1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+          Fact1:
+             begin
+               Fact1_Parameters= [New_step[2]];
+               RaiseSailEvent(Fact1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump:                           // Jump to a label
+             begin
+               label_name= New_step[2];
+               BaseJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+          Jump_B:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition >= New_step[3] then
+                 begin
+                   label_name= New_step[4];
+                   BaseJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NB:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition = 0 then
+                 begin
+                   label_name= New_step[3];
+                   BaseJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_T:
+             begin
+               if (GetTech(New_step[2], My_side) = state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   BaseJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NT:
+             begin
+               if (GetTech(New_step[2], My_side) <> state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   BaseJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Rand:
+             begin
+               number_of_poss= (New_step -1) div 2;
+               i=1; r= Rand(1, 100); sum= 0; jmp= false;
+               While (i < number_of_poss) and not(jmp) do
+                 begin
+                   sum= sum+New_step[i*2];
+                   if r < sum then
+                     begin
+                       BaseJump(typ, Building, Subj, New_step[i*2 +1], Queue);
+                       jmp= true;
+                     end;
+                   i= i+1;
+                 end;
+               if not(jmp) then DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Res:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) > New_step[2]) and
+                  (GetResourceType(GetBase(My_depot), mat_oil) > New_step[3]) and
+                  (GetResourceType(GetBase(My_depot), mat_siberit) > New_step[4]) then
+                  BaseJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NRes:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) < New_step[2]) or
+                  (GetResourceType(GetBase(My_depot), mat_oil) < New_step[3]) or
+                  (GetResourceType(GetBase(My_depot), mat_siberit) < New_step[4]) then
+                  BaseJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Var:
+             begin
+               if (GetVariable(New_step[2]) >= New_step[3]) then
+                 BaseJump(typ, Building, Subj, New_step[4], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Set_Var:
+             begin
+               SetVariable(New_step[2], New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Inc_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) + New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Dec_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) - New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Copy_Var:
+             begin
+               SetVAriable(GetVariable(New_step[2]), GetVariable(New_step[3]));
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Call:
+             begin
+               Base_develop_stack= Base_develop_pc ^ Base_develop_stack;
+               label_name= New_step[2];
+               BaseJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+          Ret:
+             begin
+               Base_develop_pc= Base_develop_stack[1];
+               Delete(Base_develop_stack, 1);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Pause:
+             begin
+               Wait(0$1 * New_step[2]);
+               Pause_Parameters= [typ, Building, Subj, Queue];
+               RaiseSailEvent(Pause_Event);
+             end;
+
+
+          EOB:
+             begin
+                 End_Of_Base_Develop= True;
+             end;
+
+
+          EOR:
+             begin
+               if Queue = 1 then
+                 End_Of_Research_Develop1= True
+               else if Queue = 2 then End_Of_Research_Develop2= True
+             end;
+
+
+          EOC:
+             begin
+               if Queue = 1 then
+                 End_Of_Construct_Develop1= True
+               else if Queue = 2 then End_Of_Construct_Develop2= True
+             end;
+
+
+         end;      // End of Case
+       end;        // End of Base develop
+
+
+
+    2: begin
+         if Queue = 1 then
+           begin
+             Research_develop_pc1= Research_develop_pc1+1;
+             New_step= Research_develop1[Research_develop_pc1];
+           end
+         else if Queue = 2 then
+           begin
+             Research_develop_pc2= Research_develop_pc2+1;
+             New_step= Research_develop2[Research_develop_pc2];
+           end;
+
+         case New_step[1] of
+
+          Divide:
+             begin
+               DividePeople(New_step[2], New_step[3], New_step[4], New_step[5], New_step[6]);
+
+               for i= 1 to Change_of_profession do
+                 begin
+                   Change_Profession_Parameters= Change_of_profession[i];
+                   RaiseSailEvent(Change_Profession_Event);               // in TacticalScheduler unit
+                 end;
+               Change_of_profession= [];
+
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Research:
+             begin
+               if Queue = 1 then
+                 Develop_Parameters= [New_step[2], My_lab1, subj, false]  // false - no upgrade, subj - old technology
+               else if Queue = 2 then
+                 Develop_Parameters= [New_step[2], My_lab2, subj, false];
+               RaiseSailEvent(Develop_Event);
+             end;
+
+
+          Lab1:
+             begin
+               Lab1_Parameters= [New_step[2]];
+               RaiseSailEvent(Lab1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+          Fact1:
+             begin
+               Fact1_Parameters= [New_step[2]];
+               RaiseSailEvent(Fact1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+          Upgrade:
+             begin   // Upgrade of Laboratory
+               if Queue = 1 then
+                 Develop_Parameters= [0, My_lab1, subj, true, New_step[2], New_step[3], New_step[4], New_step[5]]  // true - upgrade, subj - old technology
+               else if Queue = 2 then
+                 Develop_Parameters= [0, My_lab2, subj, true, New_step[2], New_step[3], New_step[4], New_step[5]];
+               RaiseSailEvent(Develop_Event);
+             end;
+
+
+          Label:                          // Label of the program
+             begin
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Run_B:
+             begin
+               if End_Of_Base_Develop then            // Run it form scratch
+                 begin
+                   End_Of_Base_Develop= false;
+                   ComputeBaseJump(New_step[2]);
+                   Run_Parameters= [1, 0, 0, 0];
+                   RaiseSailEvent(Run_Event);
+                 end
+               else ComputeBaseJump(New_step[2]);     // Jump only
+
+               DevelopStep(typ, building, subj, 0);
+             end;
+
+
+          Run_C:
+            begin
+               if New_step[2] = 1 then   // Queue = 2
+                 begin
+                   if End_Of_Construct_Develop1 then            // Run it form scratch
+                     begin
+                       End_Of_Construct_Develop1= false;
+                       ComputeConstructJump(New_step[3], 1);
+                       Run_Parameters= [3, 0, 0, 1];          // 3 - construct queue
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeConstructJump(New_step[3], 1);     // Jump only
+                   DevelopStep(typ, building, subj, 1);
+                 end
+               else if New_step[2] = 2 then
+                 begin
+                   if End_Of_Construct_Develop2 then
+                     begin
+                       End_Of_Construct_Develop2= false;
+                       ComputeConstructJump(New_step[3], 2);
+                       Run_Parameters= [3, 0, 0, 2];
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeConstructJump(New_step[3], 2);
+                   DevelopStep(typ, building, subj, 2);
+                 end;
+            end;
+
+
+          Jump:                           // Jump to a label
+             begin
+               label_name= New_step[2];
+               ResearchJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+
+          Jump_B:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition >= New_step[3] then
+                 begin
+                   label_name= New_step[4];
+                   ResearchJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NB:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition = 0 then
+                 begin
+                   label_name= New_step[3];
+                   ResearchJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_T:
+             begin
+               if (GetTech(New_step[2], My_side) = state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   ResearchJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NT:
+             begin
+               if (GetTech(New_step[2], My_side) <> state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   ResearchJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Rand:
+             begin
+               number_of_poss= (New_step -1) div 2;
+               i=1; r= Rand(1, 100); sum= 0; jmp= false;
+               While (i < number_of_poss) and not(jmp) do
+                 begin
+                   sum= sum+New_step[i*2];
+                   if r < sum then
+                     begin
+                       ResearchJump(typ, Building, Subj, New_step[i*2 +1], Queue);
+                       jmp= true;
+                     end;
+                   i= i+1;
+                 end;
+               if not(jmp) then DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Res:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) > New_step[2]) and
+                  (GetResourceType(GetBase(My_depot), mat_oil) > New_step[3]) and
+                  (GetResourceType(GetBase(My_depot), mat_siberit) > New_step[4]) then
+                  ResearchJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NRes:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) < New_step[2]) or
+                  (GetResourceType(GetBase(My_depot), mat_oil) < New_step[3]) or
+                  (GetResourceType(GetBase(My_depot), mat_siberit) < New_step[4]) then
+                  ResearchJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Var:
+             begin
+               if (GetVariable(New_step[2]) >= New_step[3]) then
+                 ResearchJump(typ, Building, Subj, New_step[4], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Set_Var:
+             begin
+               SetVariable(New_step[2], New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Inc_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) + New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Dec_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) - New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Copy_Var:
+             begin
+               SetVAriable(GetVariable(New_step[2]), GetVariable(New_step[3]));
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Call:
+             begin
+               if Queue = 1 then Research_develop_stack1= Research_develop_pc1 ^ Research_develop_stack1
+               else if Queue = 2 then Research_develop_stack2= Research_develop_pc2 ^ Research_develop_stack2;
+               label_name= New_step[2];
+               ResearchJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+          Ret:
+             begin
+               if Queue = 1 then
+                 begin
+                   Research_develop_pc1= Research_develop_stack1[1];
+                   Delete(Research_develop_stack1, 1);
+                 end
+               else
+                 begin
+                   Research_develop_pc2= Research_develop_stack2[1];
+                   Delete(Research_develop_stack2, 1);
+                 end;
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Pause:
+             begin
+               Wait(0$1 * New_step[2]);
+               Pause_Parameters= [typ, Building, Subj, Queue];
+               RaiseSailEvent(Pause_Event);
+             end;
+
+
+          EOB:
+             begin
+                 End_Of_Base_Develop= True;
+             end;
+
+
+          EOR:
+             begin
+               if Queue = 1 then
+                 End_Of_Research_Develop1= True
+               else if Queue = 2 then End_Of_Research_Develop2= True
+             end;
+
+
+          EOC:
+             begin
+               if Queue = 1 then
+                 End_Of_Construct_Develop1= True
+               else if Queue = 2 then End_Of_Construct_Develop2= True
+             end;
+
+
+         end;        // End of Case
+       end;          // End of Research
+
+    3: begin
+         if Queue = 1 then
+           begin
+             Construct_develop_pc1= Construct_develop_pc1+1;
+             New_step= Construct_develop1[Construct_develop_pc1];
+           end
+         else if Queue = 2 then
+           begin
+             Construct_develop_pc2= Construct_develop_pc2+1;
+             New_step= Construct_develop2[Construct_develop_pc2];
+           end;
+
+         case New_step[1] of
+
+          Divide:
+             begin
+               DividePeople(New_step[2], New_step[3], New_step[4], New_step[5], New_step[6]);
+
+               for i= 1 to Change_of_profession do
+                 begin
+                   Change_Profession_Parameters= Change_of_profession[i];
+                   RaiseSailEvent(Change_Profession_Event);               // in TacticalScheduler unit
+                 end;
+               Change_of_profession= [];
+
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+          Construct:
+             begin
+               if Queue = 1 then
+                 Construct_Parameters= [My_fact1, subj, 0, New_step[2], New_step[3], 0,
+                                        New_step[4], New_step[5], New_step[6], New_step[7]]
+               else if Queue = 2 then
+                 Construct_Parameters= [My_fact2, subj, 0, New_step[2], New_step[3], 0,
+                                        New_step[4], New_step[5], New_step[6], New_step[7]];
+               RaiseSailEvent(Construct_Event);
+             end;
+
+
+          Upgrade:
+             begin
+               if Queue = 1 then
+                 Construct_Parameters= [My_fact1, subj, 1, New_step[2], New_step[3], New_step[4], 0, 0, 0, 0]
+               else if Queue = 2 then
+                 Construct_Parameters= [My_fact2, subj, 1, New_step[2], New_step[3], New_step[4], 0, 0, 0, 0];
+               RaiseSailEvent(Construct_Event);
+             end;
+
+
+          Label:                          // Label of the program
+             begin
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Lab1:
+             begin
+               Lab1_Parameters= [New_step[2]];
+               RaiseSailEvent(Lab1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+          Fact1:
+             begin
+               Fact1_Parameters= [New_step[2]];
+               RaiseSailEvent(Fact1_Event);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+
+          Run_B:
+             begin
+               if End_Of_Base_Develop then            // Run it form scratch
+                 begin
+                   End_Of_Base_Develop= false;
+                   ComputeBaseJump(New_step[2]);
+                   Run_Parameters= [1, 0, 0, 0];
+                   RaiseSailEvent(Run_Event);
+                 end
+               else ComputeBaseJump(New_step[2]);     // Jump only
+
+               DevelopStep(typ, building, subj, 0);
+             end;
+
+
+          Run_R:
+             begin
+               if Queue = 1 then
+                 begin
+                   if End_Of_Research_Develop1 then            // Run it form scratch
+                     begin
+                       End_Of_Research_Develop1= false;
+                       ComputeResearchJump(New_step[3], 1);
+                       Run_Parameters= [2, 0, 0, 1];
+                       RaiseSailEvent(Run_Event);
+                     end
+                   else ComputeResearchJump(New_step[3], 1);     // Jump only
+
+                   DevelopStep(typ, building, subj, 1);
+                 end
+               else
+                 begin
+                   if End_Of_Research_Develop2 then
+                     begin
+                       End_Of_Research_Develop2= false;
+                       ComputeResearchJump(New_step[3], 2);
+                       Run_Parameters= [2, 0, 0, 2];
+                       RaiseSailEvent(Run_Event);
+                     end
+
+                   else ComputeResearchJump(New_step[3], 2);
+                   DevelopStep(typ, building, subj, 2);
+                 end;
+             end;
+
+
+
+          Jump:                           // Jump to a label
+             begin
+               label_name= New_step[2];
+               ConstructJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+          Jump_B:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition >= New_step[3] then
+                 begin
+                   label_name= New_step[4];
+                   ConstructJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NB:
+             begin
+               condition= FilterAllUnits([[f_side, My_side], [f_type, unit_building], [f_btype, New_step[2]], f_not, [f_constructed]]);
+               if condition = 0 then
+                 begin
+                   label_name= New_step[3];
+                   ConstructJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_T:
+             begin
+               if (GetTech(New_step[2], My_side) = state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   ConstructJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NT:
+             begin
+               if (GetTech(New_step[2], My_side) <> state_researched) then
+                 begin
+                   label_name= New_step[3];
+                   ConstructJump(typ, building, subj, label_name, Queue);
+                 end
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Rand:
+             begin
+               number_of_poss= (New_step -1) div 2;
+               i=1; r= Rand(1, 100); sum= 0; jmp= false;
+               While (i < number_of_poss) and not(jmp) do
+                 begin
+                   sum= sum+New_step[i*2];
+                   if r < sum then
+                     begin
+                       ConstructJump(typ, Building, Subj, New_step[i*2 +1], Queue);
+                       jmp= true;
+                     end;
+                   i= i+1;
+                 end;
+               if not(jmp) then DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Res:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) > New_step[2]) and
+                  (GetResourceType(GetBase(My_depot), mat_oil) > New_step[3]) and
+                  (GetResourceType(GetBase(My_depot), mat_siberit) > New_step[4]) then
+                  ConstructJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_NRes:
+             begin
+               if (GetResourceType(GetBase(My_depot), mat_cans) < New_step[2]) or
+                  (GetResourceType(GetBase(My_depot), mat_oil) < New_step[3]) or
+                  (GetResourceType(GetBase(My_depot), mat_siberit) < New_step[4]) then
+                  ConstructJump(typ, Building, Subj, New_step[5], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Jump_Var:
+             begin
+               if (GetVariable(New_step[2]) >= New_step[3]) then
+                 ConstructJump(typ, Building, Subj, New_step[4], Queue)
+               else DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Set_Var:
+             begin
+               SetVariable(New_step[2], New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Inc_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) + New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Dec_Var:
+             begin
+               SetVariable(New_step[2], GetVariable(New_step[2]) - New_step[3]);
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Copy_Var:
+             begin
+               SetVAriable(GetVariable(New_step[2]), GetVariable(New_step[3]));
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Call:
+             begin
+               if Queue = 1 then Construct_develop_stack1= Construct_develop_pc1 ^ Construct_develop_stack1
+               else if Queue = 2 then Construct_develop_stack2= Construct_develop_pc2^ Construct_develop_stack2;
+               label_name= New_step[2];
+               ConstructJump(typ, building, subj, label_name, Queue);
+             end;
+
+
+          Ret:
+             begin
+               if Queue = 1 then
+                 begin
+                   Construct_develop_pc1= Construct_develop_stack1[1];
+                   Delete(Construct_develop_stack1, 1);
+                 end
+               else
+                 begin
+                   Construct_develop_pc2= Construct_develop_stack2[1];
+                   Delete(Construct_develop_stack2, 1);
+                 end;
+               DevelopStep(typ, building, subj, Queue);
+             end;
+
+
+          Pause:
+             begin
+               Wait(0$1 * New_step[2]);
+               Pause_Parameters= [typ, Building, Subj, Queue];
+               RaiseSailEvent(Pause_Event);
+             end;
+
+
+
+          EOB:
+             begin
+                 End_Of_Base_Develop= True;
+             end;
+
+
+          EOR:
+             begin
+               if Queue = 1 then
+                 End_Of_Research_Develop1= True
+               else if Queue = 2 then End_Of_Research_Develop2= True
+             end;
+
+
+          EOC:
+             begin
+               if Queue = 1 then
+                 End_Of_Construct_Develop1= True
+               else if Queue = 2 then End_Of_Construct_Develop2= True
+             end;
+
+
+         end;         // End of Case
+       end;           // End of Construct
+    // We have to chack the building lives and the busy flags...
+
+   end;
+ end;
+
+
+
+function Defend;
+ begin
+ end;
+
+                    
+                                 
+// The heard of the A-I
+EXPORT function StrategicScheduler(typ, building, subj, Queue);        // building in [lab1, lab2, fact1, fact2]
+ begin
+   if Computer_Player then
+     begin
+       DevelopStep(typ, building, subj, Queue);
+       Defend;
+     // Attack;
+     end;
+ end;
+
+
+
+/////////////////////////////////////////////////////////
+///////////// Control of tactic and strategy ////////////
+/////////////////////////////////////////////////////////
+
+
+
+EVERY 0$1 TRIGGER Computer_Player DO
+ begin
+//   StrategicScheduler(4, 0, 0); //  Defend only
+   TacticalScheduler;
+   enable;
+ end;
+
+
+ON VehicleConstructed(veh, fact) DO
+ begin
+   if fact = My_fact1 and not(End_Of_Construct_Develop1) then
+     StrategicScheduler(3, fact, veh, 1)
+   else if fact = My_fact2 and not(End_Of_Construct_Develop2) then
+     StrategicScheduler(3, fact, veh, 2)
+ end;
+
+
+ON BuildingComplete(build) DO          
+ begin
+   TestFlagsForNewBuilding(build);  // a flag can be captured...
+
+   if GetSide(build) = My_side then
+     begin
+       if not(End_Of_Base_Develop) then
+         StrategicScheduler(1, build, 0, 0);                 // base develop
+
+       if GetBType(build) = b_lab then                       // Research develop
+           if ((build = My_lab1) and not(End_Of_Research_Develop1)) then
+             StrategicScheduler(2, build, 0, 1)
+           else if ((build = My_lab2) and not(End_Of_Research_Develop2)) then
+             StrategicScheduler(2, build, 0, 2);
+            
+       if GetBType(build) = b_workshop then                  // vehicles develop
+         if ((build = My_fact1) and not(End_Of_Construct_Develop1)) then
+           StrategicScheduler(3, build, 0, 1)
+         else if ((build = My_fact2) and not(End_Of_Construct_Develop2)) then
+           StrategicScheduler(3, build, 0, 2);
+     end;                               
+ end;    
+
+ON UpgradeComplete(build) DO
+ begin
+   if build = My_lab1 then
+     begin
+       if not(End_Of_Research_Develop1) then
+         StrategicScheduler(2, build, -1, 1);
+     end
+   else if build = My_lab2 then
+     begin
+       if not(End_Of_Research_Develop2) then
+         StrategicScheduler(2, build, -1, 2);
+     end
+
+
+   else if build = My_fact1 then
+     begin
+       if not(End_Of_Construct_Develop1) then
+         StrategicScheduler(3, build, -1, 1);
+     end
+   else if build = My_fact2 then
+     begin
+       if not(End_Of_Construct_Develop2) then
+         StrategicScheduler(3, build, -1, 2);
+     end;
+
+ end;
+
+ON ResearchComplete(tech, lab) DO
+ begin
+   if lab = My_lab1 then
+     begin
+       if not(End_Of_Research_Develop1) then
+         StrategicScheduler(2, lab, tech, 1);         // Research develop
+     end
+   else if not(End_Of_Research_Develop2) then
+          StrategicScheduler(2, lab, tech, 2);  
+ end;
+
+ON VehicleCaptured(vehnew, vehold, origside, hum) DO
+ begin
+ end;
+
+ON BuildingCaptured(build, origside, eng) DO
+ begin
+ end;
+
+ON UnitDestroyed(i) DO
+ begin
+   TestFlagsForDemolition(i);
+
+   if i = My_lab1 then
+     begin
+       My_lab1= 0;
+       Number_in_lab1=0;
+     end
+   else if i = My_lab2 then
+     begin
+       My_lab2= 0;
+       Number_in_lab2=0;
+     end
+   else if i = My_fact1 then
+     begin
+       My_fact1= 0;
+       Number_in_fact1=0;
+     end
+   else if i = My_fact2 then
+     begin
+       My_fact2= 0;
+       Number_in_fact2=0;
+     end
+ end;
+
+{
+ zabity clovek uprostred ukolu.
+ Po obrane opet rozdelit lidi podle procent
+
+ pri staveni budov - kdyz mi tam zavazi nekdo cizi a tak...
+
+ Dodelat Stavy!!!
+ Parkoviste - vice?
+ Po preruseni nastavit Number_in_lab? a Number_in_fact?
+
+ Special tasks: explore, help with upgrade
+}

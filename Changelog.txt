@@ -342,9 +342,15 @@ Wilderness/Rocky Land:
 - Fixed win conditions for vehicle hunting mode
 
 The Abbys:
+- People amount fixed(East vs West)
 - Changed amount of apes
+- Multidesc Shared Vision added
 
 Bloody Valley:
+- Crate drop in the bases has been changed
 - Fixed Tree bonus
+
+New materialization of crates in bases on maps: Alien Base, Babylon, Bastard Pass, Bloody Valley,
+ Four to Win, Rocky Pass, Siberia
 
 Balance changes (see BalanceChangelog.txt)

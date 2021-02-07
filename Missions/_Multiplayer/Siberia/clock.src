@@ -1,6 +1,7 @@
 // Keep this module last!
 
 export ExtraStrings;
+export WaitServerStrings;
 
 export function ShowTimer;
 var AllStrings;

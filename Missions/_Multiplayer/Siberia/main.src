@@ -22,6 +22,7 @@ EXPORT
   def_public_score,       // (16)
   def_siberite_bomb,      // (17)
   def_builduptime,        // (20)
+  def_game_rules,         // Game_rules off
   def_sheik,              // (22) Off, On
   def_mastodont;          // (23) None, Low, High
 
@@ -51,7 +52,7 @@ EXPORT
   respawning_time_max,
   siberite_bomb_Delay;
 
-export  Side_Teams, Teams;
+export  Side_Teams, Teams, Side_Comps;
 export  Side_Positions, Side_Nations, Team_Game;
 
 export  depot_def, breastworks_def, start_def,
@@ -59,9 +60,8 @@ export  depot_def, breastworks_def, start_def,
         extra_oil_deposits_locations,
         normal_sib_deposits_locations,
         extra_sib_deposits_locations,
-        battle_flags_id,
-        sheik,
-        mastodont;
+        battle_flags_id, def_win_rules,
+        heroes, sheik, mastodont;
 
 var commander;
 
@@ -98,6 +98,7 @@ begin
       Side_Positions:= [1,2,3,4,5,6,0,0];
       Side_Teams:=     [1,2,3,4,5,6,0,0];
       Side_Nations:=   [1,2,3,1,2,3,0,0];
+      Side_Comps:=     [0,0,0,0,0,0,0,0];
 
       Teams:=          [[1],[2],[3],[4],[5],[6]];
     end;
@@ -122,7 +123,7 @@ begin
       def_public_score:=       GetMultiplayerSetting(16);
       def_siberite_bomb:=      GetMultiplayerSetting(17);
       def_builduptime:=        GetMultiplayerSetting(20);
-      //def_game_rules:=         0; // <---- game_rules off
+      def_game_rules:=         0; // <---- game_rules off
       def_sheik:=              GetMultiplayerSetting(22);
       def_mastodont:=          GetMultiplayerSetting(23);
     end
@@ -146,7 +147,7 @@ begin
       def_public_score:=       0;
       def_siberite_bomb:=      0;
       def_builduptime:=        1;
-      //def_game_rules:=         0;
+      def_game_rules:=         0;
       def_sheik:=              0;
       def_mastodont:=          0;
     end;
