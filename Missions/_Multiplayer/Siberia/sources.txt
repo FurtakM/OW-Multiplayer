@@ -3,7 +3,7 @@ SOURCE_CODES
   ENABLED crates_loading
   ENABLED apemans_loading
   ENABLED events
-  ENABLED win
+  DISABLED win
   ENABLED mine
   ENABLED battle_flag
   ENABLED BloodGod

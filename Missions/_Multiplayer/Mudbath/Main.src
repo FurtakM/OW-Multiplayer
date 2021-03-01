@@ -130,7 +130,7 @@ begin
       def_skill_level:=        1;
       def_starting_resources:= 2;
       def_shipments_density:=  50;
-      def_extra_oil_deposits:= 1;
+      def_extra_oil_deposits:= 2;
       def_extra_sib_deposits:= 2;
       def_shared_vision:=      1;
       def_morale_flags:=       1;
@@ -172,19 +172,19 @@ function init_map;
 var i,j;
 begin
   normal_oil_deposits_locations:=[ [36,6], [103,5], [163,9], [200,51], [54,86], [134,154], [177,151], [239,152] ];
-  extra_oil_deposits_locations :=[ [54,6], [68,6],  [126,7], [214,83], [79,120], [115,150], [207,150], [216,148]  ];
+  extra_oil_deposits_locations :=[ [56,6], [62,7],  [186,17], [219,87], [83,131], [114,153], [214,156], [221,105]  ];
 
-  normal_sib_deposits_locations:=[ [26,32], [78,16], [160,32], [177,60], [84,100], [136,126], [191,129], [214,121] ];
+  normal_sib_deposits_locations:=[ [26,32], [115,31], [142,34], [175,54], [84,100], [133,122], [161,122], [214,121] ];
   //extra_sib_deposits_locations :=[ [88,88], [117,103],[137,45], [193,3], [202,296], [247,239], [270,169], [293,186] ];
 
   depot_def:=  [
                  [32, 17, 2],
                  [95, 16, 3],
                  [154, 14, 3],
-                 [195, 58, 4],
+                 [188, 54, 4],
                  [65, 97, 1],
                  [136, 144, 5],
-                 [186, 144, 0],
+                 [182, 145, 0],
                  [234, 140, 5]
                ];
 

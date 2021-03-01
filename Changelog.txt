@@ -354,3 +354,22 @@ New materialization of crates in bases on maps: Alien Base, Babylon, Bastard Pas
  Four to Win, Rocky Pass, Siberia
 
 Balance changes (see BalanceChangelog.txt)
+
+0.33:
+Fixed apeman script (Apes should not cause synch now).
+
+The Abyss:
+- Changed amount of apeman on map
+
+Mudbath:
+- GBI reworked
+- Changed localization of deposits
+- Fixed map structure in some places
+Siberia:
+- Fixed win conditions
+
+Interface:
+- Added missed faces to SGUI
+
+Data:
+- Fixed polish name for arabian siberite bomb

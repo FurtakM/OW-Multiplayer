@@ -46,8 +46,6 @@ playersAmount := 0;
 _apeAreas := [
   Base1ApeArea,
   Base2ApeArea,
-  Base2ApeArea,
-  Base1ApeArea
 ];
 apeAreas := [0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -91,7 +89,7 @@ uc_nation := 0;
 
 InitHc;
 
-bonus := [-1, 0, 1][tick mod 3 + 1];
+bonus := [-1, 0, 1][FilterAllUnits([f_class, class_apeman]) mod 3 + 1];
 
 hc_class := class_apeman;
 hc_gallery := '';
