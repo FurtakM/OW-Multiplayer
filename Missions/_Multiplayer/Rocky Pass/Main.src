@@ -137,7 +137,7 @@ begin
       def_amount_of_people:=   0;
       def_skill_level:=        1;
       def_starting_resources:= 2;
-      def_shipments_density:=  1;
+      def_shipments_density:=  3;
       def_extra_oil_deposits:= 0;
       def_extra_sib_deposits:= 1;
       def_shared_vision:=      1;
@@ -164,7 +164,7 @@ begin
   skill_level                 := [2,3,5,6] [def_skill_level+1];
   starting_resources          := [[0,0,0], [30,0,0], [50,20,0], [80,40,20]] [def_starting_resources+1];
   starting_crates             := [[10], [7,14], [6,12,18], [5,10,15,20]] [def_starting_resources+1];
-  shipments_density           := [150, 125, 100, 50] [def_shipments_density+1];
+  shipments_density           := [125, 100, 75, 50] [def_shipments_density+1];
   respawning_time_min         := [0$0, 5$00, 3$0] [def_people_respawning+1];
   respawning_time_max         := [0$0, 15$00, 5$0] [def_people_respawning+1];
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];

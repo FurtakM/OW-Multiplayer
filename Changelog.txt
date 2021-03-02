@@ -373,3 +373,6 @@ Interface:
 
 Data:
 - Fixed polish name for arabian siberite bomb
+
+Rocky Pass:
+- Changed crates spawn system

@@ -207,7 +207,7 @@ HEXES
   LINE 96 48 207
     t4v3 t2v1sK sC "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" sI sI sY r6v2so r6v4so r6v4sp r6v4sY r6v8so r6v8so r6v8sp r6v3sh v3sA v4 v3sB v3sB v3sA rAv3sA rAv3sA rAv3sA rAv3sA v4sI v4sI v4sI v6 v6 v6sA r6v7so r6vDso r7vJ r7vJsP r7vMsA r7vMsA r7vMsY r7vMsY r7vQsI r7vQsJ r7vQ r7vNsS r6vIsi vI vI vI rAvI rAvI rAvI rAvHsC vH vGsC vG r6vGsf r7vL r7vL r7vLsP r7vO r7vOs9 r7vP r7vP r7vOsB r7vLsR r6vL r6vGsh r6vAsp r6vAsp r6v4sp r6v4sp r6sZ sZ "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" t2 t4
   LINE 97 49 208
-    t4v3 t2sS "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" sI r6sI r6sI r6v2so r6v2so r6v4so r6v8so r6vAsY r6v8sp r6v8so r6vEso r6vEsp r6v8sp r6v4sZ v4sI v4sI v4sJ v4sJ rAv4sI rAv4sI rAv4sI rAv4sI rAv4sI v6 v6 v6 v6 v6s9 r6v7sn r6vDsn r7vJ r7vJ r7vJsX r7vN r7vNsQ r7vQ r7vQsI r7vS r7vQsK r7vOsK r7vNsC r6vIsi vI vI vI rAvI rAvI rAvHsC vH vH vGsC vG r6vGsf r7vL r7vL r7vLsP r7vO r7vOs9 vP vP r7vOsB r7vLsR r6vL r6vGsh r6vG r6vAsp r6vAsp r6v4sp r6v4sp sZ "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" t2 t4
+    t4v3 t2sS "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" sI r6sI r6sI r6v2so r6v2so r6v4so r6v8so r6vAsY r6v8sp r6v8so r6vEso r6vEsp r6v8sp r6v4sZ v4sI v4sI v4sJ v4sJ rAv4sI rAv4sI rAv4sI rAv4sI rAv4sI v6 v6 v6 v6 v6s9 r6v7sn r6vDsn r7vJ r7vJ r7vJsX r7vN r7vNsQ r7vQ r7vQsI r7vS r7vQsK r7vOsK r7vNsC r6vIsi vI vI vI rAvI rAvI rAvHsCS vH vH vGsC vG r6vGsf r7vL r7vL r7vLsP r7vO r7vOs9 vP vP r7vOsB r7vLsR r6vL r6vGsh r6vG r6vAsp r6vAsp r6v4sp r6v4sp sZ "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" t2 t4
   LINE 98 49 208
     t4v3 t2sS "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" sI r6v2so r6v2so r6v2so r6v8so r6v8so r6vAso r6vEso r6vEso r6vEso r6vEso r6vK r6vEsq r6v8sq v6sK v6 v6 v6 v6 rAv6 rAv6 rAv6 rAv6 v6 v6 v6 v6 v6s9 r6v7sn r6vDsn r7vJ r7vJ r7vJsX r7vN r7vNsP r7vQsI vQsI vS r7vS r7vQsK r7vOsK r6vJsi vIsC vI vI rAvI rAvI rAvI rAvHsB vH vH vGsB vG r6vGsf r7vL r7vL r7vLsO r7vO r7vOs8 vP vP r7vOsB r6vLsR r6vLsR r6vGsh r6vG r6vG r6vAsp r6vAsp r6v4sp r6sZ "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" rA rA rA rA "" sA sB "" "" "" "" "" "" "" "" "" "" "" "" t2 t4
   LINE 99 50 209
@@ -468,8 +468,15 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
-  SET 53 snowman
-  SET 54 snowman_small
+  SET 53 stone-road
+  SET 54 bonus
+  SET 55 alien1
+  SET 56 much
+  SET 57 fire-bone
+  SET 58 barrel
+  SET 59 skelet
+  SET 60 wreck
+  SET 61 comp
   ON_HEX 24 0
     sci4
   ON_HEX 7 1
@@ -1961,7 +1968,16 @@ ATTITUDES
 END_OF_ATTITUDES
 
 TECHS
-  PARAMS 72 8
+  PARAMS 81 8
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
@@ -2098,16 +2114,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -1986554243
-  RANDOM_SEED 2 -1986554243
-  RANDOM_SEED 3 -913685724
+  RANDOM_SEED 1 1970693234
+  RANDOM_SEED 2 1970693234
+  RANDOM_SEED 3 -1060487460
   RANDOM_SEED 4 51269801
   RANDOM_SEED 5 1177500497
   RANDOM_SEED 6 672576156
   RANDOM_SEED 7 1778939217
   RANDOM_SEED 8 1981102935
   RANDOM_SEED 9 1539541175
-  RANDOM_SEED 10 -42008484
+  RANDOM_SEED 10 -1489356150
   RANDOM_SEED 11 1111748614
   RANDOM_SEED 12 257134117
   RANDOM_SEED 13 2135840189
@@ -2150,7 +2166,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 280 524 1220 672 1
+  VIEW 1712 1274 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -2179,8 +2195,8 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 14
-  LAST 22
+  ACTIVE 15
+  LAST 23
   AREA 1
     NAME Base3ApeArea
     COLOR 0080FF
@@ -3262,5 +3278,32 @@ AREAS
     --------------------------------------------------------------------------------------------------------++++++++++++++++++++++++++---------------------------+++++++++++++++------------
     --------------------------------------------------------------------------------------------------------++++++++++++++++++++++++--------------------------------------------------------
     -------------------------------------------------------------------------------------------------------------++++++---------------------------------------------------------------------
+  AREA 15
+    NAME MZSpecialArea
+    COLOR BFFF06
+    VISIBLE
+    SHORTCUT 1
+    LINES 125 88 14 21
+    +++++++-------
+    +++++++-------
+    -+++++++------
+    +++++++++-----
+    ++++++++++----
+    ++++++++++----
+    -+++++++++----
+    -++++++++++---
+    --+++++++++---
+    --++++++++++--
+    --+++++++++++-
+    ---++++++++++-
+    ---+++++++++++
+    ----++++++++++
+    -----++++++++-
+    -----++++++++-
+    ------++++++--
+    -------+++++--
+    --------++++--
+    ---------+++--
+    ---------+++++
 END_OF_AREAS
 
