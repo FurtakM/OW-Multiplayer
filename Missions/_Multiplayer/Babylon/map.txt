@@ -45,7 +45,7 @@ HEXES
   LINE 15 8 167
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sA v6sA v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r5v2sah4 r5v2h4 r5v2h4 r5v2h4 r5v2h4 r5v2sXh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 16 8 167
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAS vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6v7so r6v7sp v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r4sqh4 r5sGh4 r5sGh4 r5sGh4 r4v1sfh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6v7so r6v7sp v6sB v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r4sqh4 r5sGh4 r5sGh4 r5sGh4 r4v1sfh4 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 17 9 168
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsA vAsA vAsA vAsA vAsA vAsB vAsB v8sK v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6vCsY r6vCsY r6vDsR r6v7sq v6sC v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6 r6v6sg r6v6sg v6sh r6v6sZ r4sqh4 r5h4 r5h4 r5h4 r5s9h4 r4v1sfh4 r6v6so r6v6sp r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9 v9sH vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 18 9 168
@@ -53,7 +53,7 @@ HEXES
   LINE 19 10 169
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vBsI vDsI vDsI vDsI vDsI vDsI vDsJ r6vAsS r6v6sa v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6vCsY r6vCsY r6vCsY vG vG vG r6vCsa r6v6sq v6 v6 v6 v6 v6 v6 v6 r6v6sg r6vBsg r6vBsg r6vBsg r6vBsg r6vG r6vG r6vAsq r6v4sqh4 r5sah4 r5h4 r5h4 r5h4 r4snh4 r6v6sn vCu1 r6v6sp v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9 v9 v9 v9sA r6v9sA vAs9 vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2vB t4vB
   LINE 20 10 169
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vBsI vDsI vF vF vF vF vF r6vAsi r6v6sa r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6vCsY r6vCsY vG vG vG vG vG r6vCsa r6v6sq v6 v6 v6 v6 v6 v6 v6 r6v6sf r6vBsg vGu1 vGu1 vGu1 vGu1 vGu1 r6vAsq r6v4sqh4 r6sah4 r5h4 r5h4 r5h4 r4snh4 r6v6sn vCu1 vCu1 r6v6sp r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v7sG v9 v9 v9 v9 v9 v9sA r6vAso r6vAso vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2r6vB t4r6vBsQ
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vAS vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vBsI vDsI vF vF vF vF vF r6vAsi r6v6sa r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6v6so r6vCsY r6vCsY vG vG vG vG vG r6vCsa r6v6sq v6 v6 v6 v6 v6 v6 v6 r6v6sf r6vBsg vGu1 vGu1 vGu1 vGu1 vGu1 r6vAsq r6v4sqh4 r6sah4 r5h4 r5h4 r5h4 r4snh4 r6v6sn vCu1 vCu1 r6v6sp r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v7sG v7sG v9 v9 v9 v9 v9 v9sA r6vAso r6vAso vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB t2r6vB t4r6vBsQ
   LINE 21 11 170
     t4r6vAsp t2r6vAsp vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vBsI vDsI vF vF vF vF vF r6vF r6vAsi r6v6sa v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 r6v6so r6vCsY r6vCsY vG vG vG vG vG vG vG r6vCsa r6v6sq v6 v6 v6 v6 v6 v6 r6v6sf r6vBsf vGu1 vGu1 vGu1 vGu1 vGu1 vGu1 r6vAsq r6v4sqh4 r5sah4 r5h4 r5h4 r5h4 r4snh4 r6v6sn vCu1 vCu1 r6v6sp r6v6 r6v6 r6v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v7sG v9 v9 v9 v9 v9sA r6vAso r6vG r6vBsg vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB vB r7vBsQ t2r6vBsQ t4vE
   LINE 22 11 170
@@ -388,8 +388,15 @@ ENVIROMENT
   SET 50 branka
   SET 51 leknin
   SET 52 monolit
-  SET 53 snowman
-  SET 54 snowman_small
+  SET 53 stone-road
+  SET 54 bonus
+  SET 55 alien1
+  SET 56 much
+  SET 57 fire-bone
+  SET 58 barrel
+  SET 59 skelet
+  SET 60 wreck
+  SET 61 comp
   ON_HEX 66 0
     sfi3
   ON_HEX 10 1
@@ -530,8 +537,6 @@ ENVIROMENT
     sCi#41
   ON_HEX 9 17
     sgi8
-  ON_HEX 20 17
-    sCi7
   ON_HEX 144 17
     sCiy
   ON_HEX 146 17
@@ -1447,7 +1452,16 @@ ATTITUDES
 END_OF_ATTITUDES
 
 TECHS
-  PARAMS 72 8
+  PARAMS 81 8
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
+  F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
   F T F T T F T T F T T F T T F T T F T T F T T F T T F
@@ -1600,16 +1614,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -1449336046
+  RANDOM_SEED 1 -1747303252
   RANDOM_SEED 2 820382758
-  RANDOM_SEED 3 -1733263047
+  RANDOM_SEED 3 -1458183523
   RANDOM_SEED 4 -458109257
   RANDOM_SEED 5 -353249387
   RANDOM_SEED 6 -1427881603
   RANDOM_SEED 7 -1785181649
   RANDOM_SEED 8 -189953117
   RANDOM_SEED 9 1074865947
-  RANDOM_SEED 10 -1449336046
+  RANDOM_SEED 10 -1747303252
   RANDOM_SEED 11 1724635388
   RANDOM_SEED 12 -860054764
   RANDOM_SEED 13 1773727365
@@ -1652,7 +1666,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 3068 -96 1220 672 1
+  VIEW -56 -96 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -1863,7 +1877,6 @@ AREAS
   AREA 4
     NAME north_west
     COLOR 7940FF
-    VISIBLE
     SHORTCUT 4
     LINES 6 0 45 40
     ----++++++++++++++++++++---------------------
@@ -1909,7 +1922,6 @@ AREAS
   AREA 5
     NAME north_east
     COLOR FF1A44
-    VISIBLE
     SHORTCUT 5
     LINES 125 0 55 40
     ++++++++-----------------------------------------------
@@ -1955,7 +1967,6 @@ AREAS
   AREA 6
     NAME south_east
     COLOR 4CFF44
-    VISIBLE
     SHORTCUT 6
     LINES 183 120 57 40
     +++++++++--+++++++++++++++-++++++++++--------------------
@@ -2001,7 +2012,6 @@ AREAS
   AREA 7
     NAME south_west
     COLOR 1A40FF
-    VISIBLE
     SHORTCUT 1
     LINES 65 120 52 40
     ---++++++++++++++++++++++++++-----------------------
