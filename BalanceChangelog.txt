@@ -97,3 +97,11 @@ Behemoth:
 Laser:
 	Range decreased by 1:
 		RANGE 12 -> RANGE 11
+
+0.34b:
+Morphling:
+	Speed increased:
+ 		SPEED 13 -> 14
+Heavy tracked (US):
+        Cost increased:
+                CANS 35 -> 40

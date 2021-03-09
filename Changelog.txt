@@ -376,3 +376,7 @@ Data:
 
 Rocky Pass:
 - Changed crates spawn system
+
+0.34:
+Mutbath:
+- Added extra siberite deposits
