@@ -150,7 +150,7 @@ begin
       def_siberite_bomb=      0;
       def_public_score=       1;
       def_amount_score=       0;
-      def_builduptime=        0;
+      def_builduptime=        1;
       tech_level =            4;
       //def_win_rules=           0;
     end;
@@ -188,7 +188,7 @@ begin
        siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 
   king_territory = KopecStred;
-  final_count =  amount_score ;
+  final_count =  amount_score;
 end;
 
 function init_map;
@@ -516,4 +516,13 @@ begin
     begin
       CenterNowOnXY(start_def[Side_Positions[your_side]][1],start_def[Side_Positions[your_side]][2]);
     end;
+
+  BuildUpAreas := [
+    Base_nw,
+    Base_ne,
+    Base_sw,
+    Base_se
+  ];
+
+  BeginBuildUp;
 end;
