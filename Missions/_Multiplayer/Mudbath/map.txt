@@ -55,7 +55,7 @@ HEXES
   LINE 20 10 189
     t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sP r6v9sf vE r7vDsB r7vCsJ vC vC vC vC r6v9sT r6v9sT r6v6sT r6v6sT r6v4sL v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v2h3 r8v2s9h4 r8v3s9h4 v4 r6v4sX r6v8sY r6vAsY r6vEsA r6vDsK r6v7sq r6v4sS v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6s9 r6v7sH r6v9sP vC vC vC vC vC vC vC vC vC vC vC vC vC t2vC t4vC
   LINE 21 11 190
-    t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sP r6v9sX vDs9 vE vE r7vCsK vC vC vC r6v9sT r6v6sT r6v6sT r6v4sL r6v4sL v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v2h3 r8v2sHh4 v4 r6v4sH r6v6sn r6vC r6vCsP r6vF r6vCsS r6v6sq r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sH r6v8s9 r6v9sP vC vC vC vC vC vC vC vC vC vC vC vC vC t2vC t4vC
+    t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sP r6v9sX vDs9 vE vE r7vCsK vC vC vC r6v9sT r6v6sT r6v6sT r6v4sL r6v4sL v4 v4 v4S v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v2h3 r8v2sHh4 v4 r6v4sH r6v6sn r6vC r6vCsP r6vF r6vCsS r6v6sq r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sH r6v8s9 r6v9sP vC vC vC vC vC vC vC vC vC vC vC vC vC t2vC t4vC
   LINE 22 11 190
     t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6sP r6v9sf vE vE r7vDsC r7vCsC vC r6v9sT r6v9sT r6v6sT r6v4sL r6v4sL v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v2h3 r8v2sHh3 v4 r6v4sH r6v6sn r6vBsP r6vEsH r6vEsK r6vCsK r6v6sq r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sH r6v6s9 r6v7s9 r6v8sX vC vC vC vC vC vC vC vC vC vC vC vC vC t2r6vCsY t4r6vCsg
   LINE 23 12 191
@@ -179,7 +179,7 @@ HEXES
   LINE 82 41 220
     t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sG r6v6sO r6v8sG r6vAsX r7vEsA r7vEsB r7vCsJ vC vC vC vC r6vCsH r6vEsP r6vHsP vK vK vK vK vK vK r6vGsa r6vDsS r6vAsS r6v5si r6v4sC v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v1sCh3 r8v1h3 r8v1s9h3 r8v2s9h3 r8v3s9h4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r7v4sH r7v6sH r7v8sH r7vAsH vC vC vC vC vC vC vC vC vC vC vC vC vC vC vC r6v9sS r6v6sS r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sI r6v4sg r6v4sg r6v7so r6vDso r6vFso r6vL r6vFsp r6vDsp r6vDsp r6v7sp r6v4sp v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 t2v4 t4v4
   LINE 83 42 221
-    t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sG r6v5sO r6v8sn r6vEs9 vF r7vEsC r7vCsK vC vC vC r6vCsH r6vEsP r6vHsP vK vK vK vK vK vK r6vJsC r6vFsa r6vAsi r6v7sS r6v4sS v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v1sCh3 r8v1h3 r8v1h3 r8v1s9h3S r8v2sHh3 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r7v4sH r7v6sH r7v8sH r7vAsH vC vC vC vC vC vC vC vC vC vC vC vC vC vC r6v9sS r6v6sS r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sA r6v4sI r6v6sg r6v9so r6v9so r6vDso r6vJso r6vLso r6vLsp r6vJsp r6vJsp r6vDsp r6vAsp r6v4sp v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 t2v4 t4v4
+    t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sG r6v5sO r6v8sn r6vEs9 vF r7vEsC r7vCsK vC vC vC r6vCsH r6vEsP r6vHsP vK vK vK vK vK vK r6vJsC r6vFsa r6vAsi r6v7sS r6v4sS v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v1sCh3 r8v1h3 r8v1h3 r8v1s9h3 r8v2sHh3 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r7v4sH r7v6sH r7v8sH r7vAsH vC vC vC vC vC vC vC vC vC vC vC vC vC vC r6v9sS r6v6sS r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4sA r6v4sI r6v6sg r6v9so r6v9so r6vDso r6vJso r6vLso r6vLsp r6vJsp r6vJsp r6vDsp r6vAsp r6v4sp v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 t2v4 t4v4
   LINE 84 42 221
     t4v4 t2v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4s8 r6v5sf r6vAsW r6vDsG r7vDsL r7vCsL vC vC vC vC r6vCsH r6vEsP r6vHsP vK vK vK vK vK vK r6vGsa r6vDsS r6vAsS r6v6sa r6v4sK v4 v4 v4 v4 v4 v4 r8v2sKh3 r8v1sCh3 r8v1h3 r8v1s9h3 r8v2s9h3 r8v3s9h4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r7v4sH r7v6sH r7v8sH r7vAsH vC vC vC vC vC vC vC vC vC vC vC vC vC r6v9sS r6v6sS r6v4sK v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 r6v4s9 r6v5sQ r6v6sg r6vBso r6vFsI r6vFsY r6vJso r6vPso r6vRsY r6vPsp r6vP r6vJsq r6vGsS r6vAsq r6v4sq v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 v4 t2v4 t4v4
   LINE 85 43 222
@@ -528,8 +528,6 @@ ENVIROMENT
     seiA
   ON_HEX 60 31
     sCis
-  ON_HEX 116 31
-    sCi1
   ON_HEX 171 34
     sgi6
   ON_HEX 177 34
@@ -1034,16 +1032,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 1333187702
+  RANDOM_SEED 1 -1062414949
   RANDOM_SEED 2 1333187702
-  RANDOM_SEED 3 -462484170
+  RANDOM_SEED 3 608513792
   RANDOM_SEED 4 2123004112
   RANDOM_SEED 5 831283735
   RANDOM_SEED 6 722619000
   RANDOM_SEED 7 1569035866
   RANDOM_SEED 8 1073404871
   RANDOM_SEED 9 863316197
-  RANDOM_SEED 10 -1606952599
+  RANDOM_SEED 10 -1062414949
   RANDOM_SEED 11 1939288184
   RANDOM_SEED 12 45766237
   RANDOM_SEED 13 1092085203
@@ -1086,7 +1084,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 3780 2104 1302 826 1
+  VIEW 2182 78 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
