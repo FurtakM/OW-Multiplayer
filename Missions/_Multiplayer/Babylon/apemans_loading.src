@@ -98,7 +98,7 @@ hc_gallery := '';
 hc_name := '';
 hc_skills := [apeLevel + bonus, apeLevel + bonus, apeLevel + bonus, apeLevel + bonus];
 hc_agressivity := 10 * bonus;
-hc_attr := [12, 10];
+hc_attr := [12, 12];
 
 result := CreateHuman;
 End;
