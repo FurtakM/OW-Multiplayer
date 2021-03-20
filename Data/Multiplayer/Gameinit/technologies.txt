@@ -153,14 +153,14 @@ GAMEINIT
       NATIONS 1 0 0
       REQUIRES 1  12 
       LAB  15 
-      TIME 50 
+      TIME 50
 
       TECHNOLOGY  14 
       NAME "Double laser"
       NATIONS 1 0 0
       REQUIRES 2 10 21
       LAB  15 
-      TIME 50 
+      TIME 120 
 
       TECHNOLOGY  20 
       NAME "Siberite detection"

@@ -1187,10 +1187,10 @@
 1794: PLUS
 1795: ARRAY
 1796: ST_TO_ADDR
-// shipments_density := 380 - ( def_shipments_density * 2 ) ;
+// shipments_density := 300 - ( def_shipments_density * 2 ) ;
 1797: LD_ADDR_EXP 32
 1801: PUSH
-1802: LD_INT 380
+1802: LD_INT 300
 1804: PUSH
 1805: LD_EXP 10
 1809: PUSH
@@ -5504,7 +5504,7 @@
 8750: IFTRUE 8754
 8752: GO 8782
 8754: POP
-// Wait ( shipments_density / 100 * Rand ( 0 0$30 , 0 0$50 ) ) ; 5 5$0 + 1 .. 10 10$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$30 , 0 0$40 ) ) ; 5 5$0 + 1 .. 10 10$0 :
 8755: LD_EXP 32
 8759: PUSH
 8760: LD_INT 100
@@ -5512,7 +5512,7 @@
 8763: PUSH
 8764: LD_INT 1050
 8766: PPUSH
-8767: LD_INT 1750
+8767: LD_INT 1400
 8769: PPUSH
 8770: CALL_OW 12
 8774: MUL
@@ -5532,15 +5532,15 @@
 8796: IFTRUE 8800
 8798: GO 8828
 8800: POP
-// Wait ( shipments_density / 100 * Rand ( 0 0$50 , 1 1$00 ) ) ; 10 10$0 + 1 .. 20 20$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$40 , 0 0$50 ) ) ; 10 10$0 + 1 .. 20 20$0 :
 8801: LD_EXP 32
 8805: PUSH
 8806: LD_INT 100
 8808: DIVREAL
 8809: PUSH
-8810: LD_INT 1750
+8810: LD_INT 1400
 8812: PPUSH
-8813: LD_INT 2100
+8813: LD_INT 1750
 8815: PPUSH
 8816: CALL_OW 12
 8820: MUL
@@ -5560,13 +5560,13 @@
 8842: IFTRUE 8846
 8844: GO 8874
 8846: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$00 , 1 1$05 ) ) ; 20 20$0 + 1 .. 30 30$0 :
+// Wait ( shipments_density / 100 * Rand ( 0 0$50 , 1 1$05 ) ) ; 20 20$0 + 1 .. 30 30$0 :
 8847: LD_EXP 32
 8851: PUSH
 8852: LD_INT 100
 8854: DIVREAL
 8855: PUSH
-8856: LD_INT 2100
+8856: LD_INT 1750
 8858: PPUSH
 8859: LD_INT 2275
 8861: PPUSH
@@ -5644,7 +5644,7 @@
 8980: IFTRUE 8984
 8982: GO 9012
 8984: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$20 , 1 1$40 ) ) ; else
+// Wait ( shipments_density / 100 * Rand ( 1 1$20 , 1 1$30 ) ) ; else
 8985: LD_EXP 32
 8989: PUSH
 8990: LD_INT 100
@@ -5652,7 +5652,7 @@
 8993: PUSH
 8994: LD_INT 2800
 8996: PPUSH
-8997: LD_INT 3500
+8997: LD_INT 3150
 8999: PPUSH
 9000: CALL_OW 12
 9004: MUL
@@ -5660,15 +5660,15 @@
 9006: CALL_OW 67
 9010: GO 9038
 9012: POP
-// Wait ( shipments_density / 100 * Rand ( 1 1$40 , 1 1$50 ) ) ; end ;
+// Wait ( shipments_density / 100 * Rand ( 1 1$30 , 1 1$40 ) ) ; end ;
 9013: LD_EXP 32
 9017: PUSH
 9018: LD_INT 100
 9020: DIVREAL
 9021: PUSH
-9022: LD_INT 3500
+9022: LD_INT 3150
 9024: PPUSH
-9025: LD_INT 3850
+9025: LD_INT 3500
 9027: PPUSH
 9028: CALL_OW 12
 9032: MUL

@@ -102,6 +102,14 @@ Laser:
 Morphling:
 	Speed increased:
  		SPEED 13 -> 14
+
 Heavy tracked (US):
         Cost increased:
                 CANS 35 -> 40
+Kamikadze:
+	Speed bonus:
+		0 -> 3
+
+Double laser:
+	Research time increased:
+		TIME 50 -> 120

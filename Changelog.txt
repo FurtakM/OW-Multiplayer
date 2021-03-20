@@ -380,3 +380,8 @@ Rocky Pass:
 0.34:
 Mutbath:
 - Added extra siberite deposits
+- Fixed terrain structure
+- Crates area drop modified
+
+Bastard Pass:
+- Crates drop ration increased
