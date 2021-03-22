@@ -4,6 +4,16 @@ begin
  enable;
 end;
 
+Every 1$0 marked 10 do
+begin
+repeat
+ wait(shipments_density / 100 * rand(0$50, 1$00));
+
+ if GetResourceArea(MZSpecialArea, mat_cans) < 60 then
+    CreateCratesArea(Rand(3,5), MZSpecialArea, true);
+until tick >= 300$00;
+End;
+
 every 0$1+0$0.6 marked 10 do
 var i, amount;
 begin

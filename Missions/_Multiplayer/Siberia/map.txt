@@ -158,7 +158,7 @@ HEXES
   LINE 70 35 194
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs8 r7vAsW r7vAsW r6vAsW r6vAsm r6vBsm r6vBsr r6vAsj r6vAsT r6vAsD r6vA r6vA vA vA vA vAsP vD vBsK vB vB vB vB vB vB vBsA vBsD vAsD vAs8 vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v7sS r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vAs8 vAs8 vB vBs9 vBs9 vC vBsD vBsD vB vB vB vAsC v9sC v8sC r5v6sKhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6s9hA v7s9 v8sH vA vA vA vA vA vA vA vA vA vA vAsH vCs9 vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 71 36 195
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vAs8 r6vAs8 r6vAsD r6vA r6vA r6vA vA vA vA vA vAsH vCs8 vBsL vB vB vAsD vAs8 vAs8 vBsA vBsA vC vAsK vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v7sR r8v7sRh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vBs9 vC vAsL vAsL vB vB vB vB vB vAsC v8sK r5v6sKhB r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vAs8 r6vAs8 r6vAsD r6vA r6vA r6vA vA vA vA vA vAsH vCs8 vBsL vB vB vAsD vAs8 vAs8 vBsA vBsA vC vAsK vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAS vA vA vA vA vA vA vA vA vA v7sR r8v7sRh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vBs9 vC vAsL vAsL vB vB vB vB vB vAsC v8sK r5v6sKhB r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 72 36 195
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vA r6vA r6vA r6vA vA vA vA vAsA vAsI vC vBsC vB vB vAsD vA vA vAsH vC vC vBsC vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r8v7sSh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vAsG vAsL vA vAs8 vB vB vB vB vAsC vA r5v8sKh8 r5v6sKhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 73 37 196
@@ -981,8 +981,6 @@ ENVIROMENT
     sdi6
   ON_HEX 81 72
     sMi2
-  ON_HEX 124 72
-    sdi2
   ON_HEX 136 72
     sci6
   ON_HEX 39 73
@@ -1005,136 +1003,142 @@ ENVIROMENT
     sMi7
   ON_HEX 78 75
     sSi1
-  ON_HEX 124 75
-    sdi8
-  ON_HEX 130 75
-    sMi5
   ON_HEX 63 76
     sSi8
   ON_HEX 74 76
     sMi3
   ON_HEX 78 76
     sMi8
-  ON_HEX 127 76
-    sMi7
   ON_HEX 136 76
     sMi9
   ON_HEX 138 76
     s8i5
   ON_HEX 44 77
     sciA
+  ON_HEX 113 77
+    sci6
+  ON_HEX 118 77
+    sdiA
   ON_HEX 62 78
     sci6
   ON_HEX 65 78
     sci3
-  ON_HEX 123 78
-    sdi1
+  ON_HEX 120 78
+    sMi2
   ON_HEX 166 78
     spiF
-  ON_HEX 121 79
-    sci8
-  ON_HEX 127 80
+  ON_HEX 115 79
     sdi9
-  ON_HEX 129 80
-    sSi7
-  ON_HEX 135 80
+  ON_HEX 117 79
     sMi2
+  ON_HEX 121 79
+    sci4
+  ON_HEX 118 80
+    sci4
   ON_HEX 165 80
     spiB
-  ON_HEX 132 81
-    sRi5
-  ON_HEX 133 81
-    sci2
-  ON_HEX 137 81
-    sRi2
+  ON_HEX 119 81
+    sei6
+  ON_HEX 121 81
+    sci5
   ON_HEX 140 81
     sci6
-  ON_HEX 127 82
+  ON_HEX 118 82
+    sPi2
+  ON_HEX 122 83
+    sci9
+  ON_HEX 117 84
     sMi2
-  ON_HEX 138 83
-    sci8
-  ON_HEX 140 84
-    sSi2
+  ON_HEX 119 84
+    sHiJ
+  ON_HEX 121 84
+    sci2
   ON_HEX 91 85
     sSi7
   ON_HEX 93 85
     sRi1
-  ON_HEX 124 85
-    sMi4
-  ON_HEX 129 85
-    sci8
   ON_HEX 86 86
     sMi2
   ON_HEX 87 86
     sRi3
   ON_HEX 93 86
     sMi1
+  ON_HEX 120 86
+    sci5
+  ON_HEX 122 86
+    sei9
+  ON_HEX 123 86
+    sei3
   ON_HEX 47 87
     sMi5
   ON_HEX 83 87
     sRi5
-  ON_HEX 128 87
-    sRi4
-  ON_HEX 141 87
-    sci6
+  ON_HEX 119 87
+    sei4
   ON_HEX 145 87
     sdi7
   ON_HEX 81 88
     sMi3
-  ON_HEX 124 88
-    sSi1
-  ON_HEX 139 88
-    sMi7
-  ON_HEX 127 89
-    sMi5
-  ON_HEX 129 89
-    sci5
+  ON_HEX 118 88
+    sMi2
+  ON_HEX 120 89
+    sci3
+  ON_HEX 122 89
+    sMi2
   ON_HEX 46 90
     sRi5
   ON_HEX 47 90
     sMi8
   ON_HEX 99 90
     sMi3
-  ON_HEX 142 92
-    sdiA
+  ON_HEX 121 90
+    sei9
+  ON_HEX 120 91
+    sdi9
+  ON_HEX 125 92
+    sciA
   ON_HEX 144 92
     shi2
   ON_HEX 57 93
     sci7
   ON_HEX 83 93
     sMi6
-  ON_HEX 128 93
-    sdi7
+  ON_HEX 144 93
+    shi4
+  ON_HEX 122 94
+    sdi6
+  ON_HEX 127 94
+    sMi2
+  ON_HEX 144 94
+    sEi4
+  ON_HEX 145 94
+    sdi9
+  ON_HEX 125 95
+    sdi8
+  ON_HEX 127 95
+    sci2
   ON_HEX 86 96
     sRi4
   ON_HEX 106 96
     sMi8
   ON_HEX 51 97
     sMi3
-  ON_HEX 132 97
-    sMi9
+  ON_HEX 126 97
+    sdi6
   ON_HEX 146 97
-    sRi2
+    sdi7
   ON_HEX 51 98
     sRi3
   ON_HEX 87 98
     sci9
   ON_HEX 105 98
     sRi2
-  ON_HEX 141 98
-    sdi1
+  ON_HEX 128 98
+    sdiA
   ON_HEX 147 98
-    sai6
-  ON_HEX 135 99
-    sMi2
-  ON_HEX 140 99
-    sMi3
-  ON_HEX 144 99
-    sMi8
-  ON_HEX 138 100
-    sRi4
-  ON_HEX 148 100
-    shi4
+    sdi9
+  ON_HEX 129 100
+    sdi9
   ON_HEX 51 101
     sci8
   ON_HEX 69 101
@@ -1143,14 +1147,10 @@ ENVIROMENT
     sci3
   ON_HEX 106 101
     sSi2
-  ON_HEX 147 101
-    sMi4
   ON_HEX 193 101
     sdi2
   ON_HEX 200 101
     sci5
-  ON_HEX 134 102
-    sSi8
   ON_HEX 189 102
     sMi1
   ON_HEX 192 102
@@ -1169,10 +1169,6 @@ ENVIROMENT
     sMi1
   ON_HEX 107 103
     sci9
-  ON_HEX 136 103
-    sdi7
-  ON_HEX 140 103
-    sdi2
   ON_HEX 204 103
     sdi9
   ON_HEX 102 104
@@ -1191,10 +1187,6 @@ ENVIROMENT
     sdi1
   ON_HEX 99 105
     sMi3
-  ON_HEX 138 105
-    sdi5
-  ON_HEX 148 105
-    sdi3
   ON_HEX 150 105
     sRi4
   ON_HEX 56 106
@@ -1203,10 +1195,6 @@ ENVIROMENT
     sRi3
   ON_HEX 102 106
     sdi1
-  ON_HEX 144 106
-    sSi2
-  ON_HEX 146 106
-    sMi8
   ON_HEX 149 106
     sci3
   ON_HEX 196 106
@@ -1215,10 +1203,6 @@ ENVIROMENT
     sMi5
   ON_HEX 103 107
     sci9
-  ON_HEX 143 107
-    sdiA
-  ON_HEX 147 107
-    sciA
   ON_HEX 155 107
     sci7
   ON_HEX 56 108
@@ -2202,16 +2186,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -709645255
-  RANDOM_SEED 2 -709645255
-  RANDOM_SEED 3 -1147651889
+  RANDOM_SEED 1 -831192437
+  RANDOM_SEED 2 -831192437
+  RANDOM_SEED 3 -1809365293
   RANDOM_SEED 4 898151057
   RANDOM_SEED 5 -18222789
   RANDOM_SEED 6 1882865670
   RANDOM_SEED 7 -1515174943
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 -1051396069
-  RANDOM_SEED 10 -665217138
+  RANDOM_SEED 10 -346464148
   RANDOM_SEED 11 -443074555
   RANDOM_SEED 12 911650
   RANDOM_SEED 13 364498371
@@ -2254,7 +2238,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 3138 3004 1222 674 1
+  VIEW 1942 1066 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 
@@ -2283,8 +2267,8 @@ SIDE 8 10
 END_OF_DEBRIEFING
 
 AREAS
-  ACTIVE 16
-  LAST 25
+  ACTIVE 17
+  LAST 26
   AREA 1
     NAME Base1ApeArea
     COLOR 0020FF
@@ -3525,5 +3509,42 @@ AREAS
     --------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------
     --------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------
     ---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+--------
+  AREA 17
+    NAME MZSpecialArea
+    COLOR FF265D
+    VISIBLE
+    SHORTCUT 1
+    LINES 119 71 27 31
+    ----------++---------------
+    +++++++++++++--------------
+    ++++++++++++++-------------
+    ++++++++++++++++-----------
+    -++++++++++++++++----------
+    --++++++++++++++++---------
+    --+++++++++++++++++--------
+    ---+++++++++++++++++-------
+    ---+++++++++++++++++-------
+    ----++++++++++++++++-------
+    ----+++++++++++++++++------
+    -----+++++++++++++++++-----
+    -----++++++++++++++++++----
+    ------++++++++++++++++++---
+    ------++++++++++++++++++---
+    -------++++++++++++++++----
+    -------+++++++++++++++-----
+    --------++++++++++++++-----
+    --------++++++++++++++-----
+    --------++++++++++++++-----
+    ---------++++++++++++++----
+    ---------++++++++++++++----
+    ----------+++++++++++++----
+    ----------++++++++++++++---
+    -----------+++++++++++++---
+    -----------++++++++++++++--
+    ------------+++++++++++++--
+    ------------++++++++++++++-
+    -------------+++++++++++++-
+    -------------++++++++++++++
+    -------------------++++++++
 END_OF_AREAS
 

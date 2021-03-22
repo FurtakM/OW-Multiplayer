@@ -385,3 +385,6 @@ Mutbath:
 
 Bastard Pass:
 - Crates drop ration increased
+
+Siberia:
+- Additional crates spawn
