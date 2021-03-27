@@ -388,3 +388,6 @@ Bastard Pass:
 
 Siberia:
 - Additional crates spawn
+
+0.35:
+New map added - Middle Ground by Gwrhkhsh
