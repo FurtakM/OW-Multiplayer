@@ -46,17 +46,19 @@ playersAmount := 0;
 _apeAreas := [
   Base1ApeArea,
   Base2ApeArea,
+  Base1ApeArea,
+  Base2ApeArea,
 ];
 apeAreas := [0, 0, 0, 0, 0, 0, 0, 0];
 
 for j = 1 to Side_Positions do
     if Side_Positions[j] then
-      begin
+       begin
        playersAmount := playersAmount + 1;
-      apeAreas := Replace(apeAreas, j, _apeAreas[Side_Positions[j]]);
+       apeAreas := Replace(apeAreas, j, _apeAreas[Side_Positions[j]]);
        end;
 
-apemanPerPlayer := 3 * amount_of_apemen;
+apemanPerPlayer := 2 * amount_of_apemen;
 apemanNumber := playersAmount * apemanPerPlayer;
 apemanLimit := apemanNumber;
 apemanPos := [0, 0, 0, 0, 0, 0, 0, 0];
