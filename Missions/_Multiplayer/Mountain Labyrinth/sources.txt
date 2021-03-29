@@ -1,0 +1,8 @@
+SOURCE_CODES
+  ENABLED Main
+  ENABLED Crates
+  ENABLED Apemans
+  ENABLED Events
+  ENABLED Battle_Flags
+  ENABLED Clock
+END_OF_SOURCE_CODES

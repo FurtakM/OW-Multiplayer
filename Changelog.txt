@@ -391,3 +391,7 @@ Siberia:
 
 0.35:
 New map added - Middle Ground by Gwrhkhsh
+New map added - Mountain Labyrinth by Gwrhkhsh
+New map added - Decravass by Jacok
+Siberia & Rocky Pass:
+- Fxied win conditions

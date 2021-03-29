@@ -540,17 +540,6 @@ begin
     neng:= 1;
 end;
 
-function Init_Win_Condition;
-begin
-  if Team_Game then
-    Enable(98)
-  else
-    Enable(99);
-  case Game_Type of
-    3: Enable(100);
-  end;
-end;
-
 starting
 begin
   Disable(98);  // YouWin (Team war)
@@ -569,6 +558,8 @@ begin
   init_respawning;
   set_shared_visions_and_alliances;
   prepare_sides;
+
+  Init_Win_Condition;
 
   ShowTimer;
 

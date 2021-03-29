@@ -130,25 +130,25 @@ HEXES
   LINE 56 28 187
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vAsX r6vEsm r6vJsm r6vMsm r7vQsL r7vPsL r7vOsL r7vOsL r7vOsD r7vNsL r7vNsL r7vMsL r6vLsT r6vKsT r6vEsr r7vAsj vA vA vA vAs9 vB vB vB vAsB vAsA vAsB vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsP vDs9 vE vE vE vE vE vE vBsR vAsZ vAsZ vA vA vA vA vA vA vA vA vA r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 57 29 188
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r6vEse r6vGsm r6vLse r7vOsL r7vNsL r7vMsL r7vMsG r7vNsD r7vLsL r7vLsL r6vLsD r6vKsC r6vEsq r6vAsa vA vA vA vA vAs9 r6vBsY r6vBsZ vAsB vAsB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsP vDs9 vE vE vE vE vE vE vE vE vAsZ vAsZ vA vA vA vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r6vEse r6vGsm r6vLse r7vOsL r7vNsL r7vMsL r7vMsG r7vNsD r7vLsL r7vLsL r6vLsD r6vKsC r6vEsq r6vAsa vA vA vA vA vAs9 r6vBsY r6vBsZ vAsB vAsB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsP vDs9 vE vE vE vE vE vE vE vE vAsZ vAsJ vA vA vA vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 58 29 188
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r7vEs9 r6vFs9 r6vGsf r7vLsO r7vNsD r7vMsD r7vM r7vLsL r7vLsL r7vKsD r7vKs8 r6vL r6vFsq r6vAsi vA vA vA vA vA r6vAsf r6vF r6vBsZ vAsZ vAsB vAsB vAsB vAsB vAsB vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsP vE vE vE vE vE vE vE vE vE vE vAsa vA vA vA vA vA vA vA r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r7vEs9 r6vFs9 r6vGsf r7vLsO r7vNsD r7vMsD r7vM r7vLsL r7vLsL r7vKsD r7vKs8 r6vL r6vFsq r6vAsi vA vA vA vA vA r6vAsf r6vF r6vBsZ vAsZ vAsB vAsB vAsB vAsB vAsB vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsH vDs9 vE vE vE vE vE vE vE vE vCsK vAsK vA vA vA vA vA vA vA r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 59 30 189
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r7vEsI r7vFsI r7vGsQ r7vJsG r7vLsG r7vMsD r7vM r7vLsD r7vL r7vJsL r7vJs8 r7vKs8 r6vFsr r6vAsi vA vA vA vA vA r6vAsf r6vF r6vF r6vEsB r6vAsZ vAsB vAsB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsH vDs8 vE vE vE vE vE vE vE vE vE vBsS vAsC vA vA vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH r7vCsH r7vEsI r7vFsI r7vGsQ r7vJsG r7vLsG r7vMsD r7vM r7vLsD r7vL r7vJsL r7vJs8 r7vKs8 r6vFsr r6vAsi vA vA vA vA vA r6vAsf r6vF r6vF r6vEsB r6vAsZ vAsB vAsB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBs9 vCsH vE vE vE vE vE vE vE vE vDsC vBsK vAsC vA vA vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 60 30 189
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsI r7vCsH r7vEsH r7vGs9 r7vHsH r7vJ r7vJsG r7vKsG r7vLsD r7vLsD r7vL r7vJsK r7vJ r7vIsL r6vEsr r6vBsb vAsC vA vA vA vA vA r6vAse r6vAse r6vF r6vEsB r6vBsZ vB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs8 vAsO vCsG vE vE vE vE vE vE vE vE vE vBsS vAsC vA vA vA vA vA vA r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsI r7vCsH r7vEsH r7vGs9 r7vHsH r7vJ r7vJsG r7vKsG r7vLsD r7vLsD r7vL r7vJsK r7vJ r7vIsL r6vEsr r6vBsb vAsC vA vA vA vA vA r6vAse r6vAse r6vF r6vEsB r6vBsZ vB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs8 vAsG vCsG vE vE vE vE vE vE vE vE vDsC vBsK vAsC vA vA vA vA vA vA r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 61 31 190
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsI r7vCsA r7vDsH r7vFsH r7vHsH r7vJ r7vJ r7vJs9 r7vKs9 r7vL r7vL r7vL r7vJsK r7vHsL r6vCsr r6vBsT vB vAsC vA vA vA vA vA vA r6vAse r6vCsP r6vFsA r6vBsh vB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsG vCsG vE vE vE vE vE vE vE vE vE vBsS vAsB vAsB vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsI r7vCsA r7vDsH r7vFsH r7vHsH r7vJ r7vJ r7vJs9 r7vKs9 r7vL r7vL r7vL r7vJsK r7vHsL r6vCsr r6vBsT vB vAsC vA vA vA vA vA vA r6vAse r6vCsP r6vFsA r6vBsh vB vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsG vCsG vE vE vE vE vE vE vE vE vDsC vBsK vAsB vAsB vA vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 62 31 190
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 r7vBsH r7vDsA r7vDsI r7vFs9 r7vGsH r7vIs9 r7vJsI r7vJsH r7vK r7vKs9 r7vL r7vLsI r6vLsJ r6vHsa r6vBsr r6vAsL vAsD vAsD vA vA vA vAsA vAsA vAsA vAsA r6vAsH r6vCsX r6vGsA r6vBsp r7vBsJ vB vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsG vCsG vE vE vE vE vE vE vE vE vDsC vBsK vB vAsC vA vA vA r4vAh5 r4v4sqh5 r4sah5 r4h5 r4h5 r4sXh5 r4v4snh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 63 32 191
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsH r7vEsI r7vFsI r7vGsI r7vIsI r7vJsI r7vL r7vKsA r7vKsA r7vL r7vLsH r6vN r6vHsq r6vBsq r6vAsD vA vA vA vA vA vAsA vB vB vB vAs9 r6vAsP r6vDsX r6vH r6vDsa vAsR vAsD vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH vCsG vE vE vE vE vE vE vE vBsT vAsT vAsD vAsD vA vA vA vA r4vAh5 r4v4sqh5 r4sph5 r4soh5 r4soh5 r4v4sXh5 r4v8sHh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsH r7vEsI r7vFsI r7vGsI r7vIsI r7vJsI r7vL r7vKsA r7vKsA r7vL r7vLsH r6vN r6vHsq r6vBsq r6vAsD vA vA vA vA vA vAsA vB vB vB vAs9 r6vAsP r6vDsX r6vH r6vDsa vAsR vAsD vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsH vCsG vE vE vE vE vE vE vE vCsL vBsL vAsD vAsD vA vA vA vA r4vAh5 r4v4sqh5 r4sph5 r4soh5 r4soh5 r4v4sXh5 r4v8sHh5 r4vAh5 vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA t2vA t4vA
   LINE 64 32 191
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsH r7vEsH r7vGsI r7vHsA r7vIsI r7vK r7vKsA r7vKsA r7vKsA r7vL r7vL r6vLsG r6vHsr r6vBsq r6vAsC vA vAsA vAsB vA vAsI vAsI vBsB vB vB vAsC vA r6vAsP r6vCse r6vGsD r6vAsr vAsD vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBs9 vCsH vE vE vE vE vE vE vBsS vAsC vA vA vA vA vA vA vA r5v6sahA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA r5v8sHhA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsA vAsA vAsB vA vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsH r7vEsH r7vGsI r7vHsA r7vIsI r7vK r7vKsA r7vKsA r7vKsA r7vL r7vL r6vLsG r6vHsr r6vBsq r6vAsC vA vAsA vAsB vA vAsI vAsI vBsB vB vB vAsC vA r6vAsP r6vCse r6vGsD r6vAsr vAsD vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBs9 vCsH vE vE vE vE vE vE vCsK vBsC vAsD vA vA vA vA vA vA r5v6sahA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA r5v8sHhA vA vA vA vA vA vA vA vA vA vA vA vA vA vAsA vAsA vAsA vAsB vA vA vA vA vA vA vA t2vA t4vA
   LINE 65 33 192
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsX r7vGsH r7vI r7vIsI r7vKsA r7vKsA r7vKsI r7vKsI r7vL r7vL r6vJsL r6vFsr r6vBsr r6vAsC r6vA vAs9 vB vAsI vAsI vC vC vBsB vB vAsC vA vAs9 vBs9 r6vAsr r6vAsr vAsD vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBs9 vCsH vE vE vE vE vE vE vAsa vA vA vA vA vA vA v9sD r6v6sbhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8sG v9s8 vA vA vA vA vA vA vA vA vA vA vA vAsA vB vB vB vAsJ vAsJ vA vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAsH r7vCsX r7vGsH r7vI r7vIsI r7vKsA r7vKsA r7vKsI r7vKsI r7vL r7vL r6vJsL r6vFsr r6vBsr r6vAsC r6vA vAs9 vB vAsI vAsI vC vC vBsB vB vAsC vA vAs9 vBs9 r6vAsr r6vAsr vAsD vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBs9 vCsH vE vE vE vE vE vDsC vBsK vAsC vA vA vA vA vA v9sD r6v6sbhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8sG v9s8 vA vA vA vA vA vA vA vA vA vA vA vAsA vB vB vB vAsJ vAsJ vA vA vA vA vA vA t2vA t4vA
   LINE 66 33 192
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAs9 r7vBsX r7vFsX r7vIsQ r7vIsQ r7vKsA r7vL r7vLs9 r7vM r7vLsC r7vL r6vIsT r6vDsr r6vAsj r6vAsD r6vA vA vAs9 vBs9 vC vC vC vC vBsC vAsC vA vAsI vBs9 vAsC vA vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsP vE vE vE vCsL vCsL vCsL vBsT vAsC vA vA vA vA vA v9sC r6v6sShA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8s9 v9s9 vA vA vA vA vA vA vA vA vA vAsA vAsI vBsI vBsI vBsI vBsI vCsB vAsK vA vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r7vAs9 r7vBsX r7vFsX r7vIsQ r7vIsQ r7vKsA r7vL r7vLs9 r7vM r7vLsC r7vL r6vIsT r6vDsr r6vAsj r6vAsD r6vA vA vAs9 vBs9 vC vC vC vC vBsC vAsC vA vAsI vBs9 vAsC vA vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 vBsP vE vE vE vCsL vCsL vCsL vBsL vAsC vA vA vA vA vA v9sC r6v6sShA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8s9 v9s9 vA vA vA vA vA vA vA vA vA vAsA vAsI vBsI vBsI vBsI vBsI vCsB vAsK vA vA vA vA vA t2vA t4vA
   LINE 67 34 193
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs9 r7vBsX r7vFsX r7vJsH r7vL r7vKs8 r7vKs8 r7vKs8 r7vLs8 r7vKsL r6vHsb r6vGsj r6vCsr r6vAsT r6vA r6vA vA vA vAsH vCsA vCsB vC vC vBsC vB vAsB vAsI vC vBsC vAsB vAsB vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v8sL v8sG vA vA vA vA vA vA vA vA vAs9 vBsO vDs8 vCsL vCsL vC vC vBsC vB vAsC vA vA vA vA vA r6v6sahA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8s9 v9s9 vA vA vA vA vA vA vA vA vA vAs9 vBsI vCsA vD vD vD vD vBsK vAsC vA vA vA vA vA t2vA t4vA
   LINE 68 34 193
@@ -158,7 +158,7 @@ HEXES
   LINE 70 35 194
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAs8 r7vAsW r7vAsW r6vAsW r6vAsm r6vBsm r6vBsr r6vAsj r6vAsT r6vAsD r6vA r6vA vA vA vA vAsP vD vBsK vB vB vB vB vB vB vBsA vBsD vAsD vAs8 vB vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v7sS r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vAs8 vAs8 vB vBs9 vBs9 vC vBsD vBsD vB vB vB vAsC v9sC v8sC r5v6sKhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6s9hA v7s9 v8sH vA vA vA vA vA vA vA vA vA vA vAsH vCs9 vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 71 36 195
-    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vAs8 r6vAs8 r6vAsD r6vA r6vA r6vA vA vA vA vA vAsH vCs8 vBsL vB vB vAsD vAs8 vAs8 vBsA vBsA vC vAsK vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vAS vA vA vA vA vA vA vA vA vA v7sR r8v7sRh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vBs9 vC vAsL vAsL vB vB vB vB vB vAsC v8sK r5v6sKhB r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
+    t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vAs8 r6vAs8 r6vAsD r6vA r6vA r6vA vA vA vA vA vAsH vCs8 vBsL vB vB vAsD vAs8 vAs8 vBsA vBsA vC vAsK vA vAs8 vAsD vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA v7sR r8v7sRh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vBs9 vC vAsL vAsL vB vB vB vB vB vAsC v8sK r5v6sKhB r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 72 36 195
     t4vA t2vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r6vA r6vA r6vA r6vA r6vA vA vA vA vAsA vAsI vC vBsC vB vB vAsD vA vA vAsH vC vC vBsC vAsC vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA vA r8v7sSh9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7h9 r8v7sOh9 vA vA vAs8 vAsG vAsL vA vAs8 vB vB vB vB vAsC vA r5v8sKh8 r5v6sKhA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6hA r5v6sHhA v8 v8 v8sH vA vA vA vA vA vA vA vA vA vAs9 vBsH vD vD vD vD vD vCsC vAsK vA vA vA vA t2vA t4vA
   LINE 73 37 196
@@ -815,6 +815,10 @@ ENVIROMENT
     sdiA
   ON_HEX 67 51
     sMi3
+  ON_HEX 129 51
+    shi1
+  ON_HEX 133 51
+    shi2
   ON_HEX 151 51
     s8i1
   ON_HEX 131 52
@@ -873,10 +877,6 @@ ENVIROMENT
     sci4
   ON_HEX 109 59
     sSi2
-  ON_HEX 130 59
-    sMi5
-  ON_HEX 133 59
-    sRi2
   ON_HEX 32 60
     sMi5
   ON_HEX 80 60
@@ -891,8 +891,6 @@ ENVIROMENT
     sdiA
   ON_HEX 79 61
     sRi1
-  ON_HEX 135 61
-    sMi2
   ON_HEX 164 61
     sci5
   ON_HEX 80 62
@@ -903,12 +901,8 @@ ENVIROMENT
     sOi5
   ON_HEX 115 62
     sOi2
-  ON_HEX 144 62
-    sSi7
   ON_HEX 114 63
     sSi8
-  ON_HEX 137 63
-    sMi9
   ON_HEX 103 64
     sci9
   ON_HEX 108 64
@@ -919,8 +913,6 @@ ENVIROMENT
     sOi4
   ON_HEX 111 65
     sSi9
-  ON_HEX 133 65
-    sRi3
   ON_HEX 59 66
     sdi5
   ON_HEX 111 66
@@ -2186,16 +2178,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 -831192437
-  RANDOM_SEED 2 -831192437
-  RANDOM_SEED 3 -1809365293
+  RANDOM_SEED 1 -1761651821
+  RANDOM_SEED 2 425934591
+  RANDOM_SEED 3 -1761651821
   RANDOM_SEED 4 898151057
   RANDOM_SEED 5 -18222789
   RANDOM_SEED 6 1882865670
   RANDOM_SEED 7 -1515174943
   RANDOM_SEED 8 1751026996
   RANDOM_SEED 9 -1051396069
-  RANDOM_SEED 10 -346464148
+  RANDOM_SEED 10 -849068748
   RANDOM_SEED 11 -443074555
   RANDOM_SEED 12 911650
   RANDOM_SEED 13 364498371
@@ -2238,7 +2230,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 1942 1066 1300 824 1
+  VIEW 2020 770 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 

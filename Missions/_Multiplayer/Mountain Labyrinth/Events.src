@@ -1,0 +1,45 @@
+on BuildingStarted(b,u) do
+begin
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b, '@' & GetSide(b));
+end;
+
+on BuildingCaptured(b,o,e) do
+begin
+  if GetBType(b) in [b_depot, b_warehouse] then
+    SetBName(b, '@' & GetSide(b));
+end;
+
+On VehicleConstructed(veh, fac) do
+var side;
+begin
+  if GetControl(veh) = control_apeman then
+     begin
+     side := GetSide(veh);
+
+     apemanPos := Replace(apemanPos, side, UnitFilter(apemanPos[side], [f_placed]) union FilterAllUnits([[f_side, side],
+                                                           [f_or, [f_control, control_apeman], [f_class, class_apeman],
+                                                           [f_class, class_apeman_soldier], [f_class, class_apeman_engineer],
+                                                           [f_class, class_apeman_kamikaze]]]));
+     end;
+End;
+
+on UnitDestroyed(j) do
+var x,y,pos,dir;
+begin
+  if GetClass(j) in [class_apeman, class_apeman_soldier, class_apeman_kamikaze, class_apeman_engineer] or GetControl(j) = control_apeman then
+     ApeKilled(j);
+
+  if GetBType(j) in [b_depot, b_warehouse] then
+  begin
+    pos:=Side_Positions[GetSide(j)];
+
+    x:=start_def[pos][1];
+    y:=start_def[pos][2];
+
+    KillBattleFlag(FindBattleFlag(x,y));
+  end;
+end;
+
+on siberiterocketexploded(un,x,y) do
+  SA_OnSiberiteRocketExploded(un,x,y,Your_Side);

@@ -1,0 +1,9 @@
+begin
+? type grass
+ ! rgb 108 84 87
+ ! add 17 404000
+ ! all 103
+new
+? type terrain
+ ! rgb 100 100 100
+end
