@@ -1,0 +1,85 @@
+Every 0$10+0$2.0 do
+var i;
+begin
+
+repeat
+ wait(0$20 + (shipments_density - 100));
+ i := rand(1,5);
+
+ CreateCratesArea(i, SafeCrates1a, true);
+ CreateCratesArea(i, SafeCrates1b, true);
+until tick < 10$00;
+
+repeat
+ wait(0$55 + (shipments_density - 60));
+ i := rand(1,5);
+
+ CreateCratesArea(i, SafeCrates2a, true);
+ CreateCratesArea(i, SafeCrates2b, true);
+until false;
+End;
+
+Every 1$20+0$2.0 trigger tick >= 5$00 do
+var i;
+begin
+enable;
+
+i := rand(1,5);
+
+CreateCratesArea(i, MidCrates3a, true);
+CreateCratesArea(i, MidCrates3b, true);
+
+if i < 4 then
+   begin
+   wait(0$15);
+
+   if GetResourceArea(MidCrates1a, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+      CreateCratesArea(i, MidCrates1a, true);
+
+   if GetResourceArea(MidCrates1b, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+      CreateCratesArea(i, MidCrates1b, true);
+   end
+else
+   begin
+   wait(0$10);
+
+   if GetResourceArea(MidCrates2a, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+      CreateCratesArea(i, MidCrates2a, true);
+
+   if GetResourceArea(MidCrates2b, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+      CreateCratesArea(i, MidCrates2b, true);
+   end;
+End;
+
+every 0$45+0$1.0 do
+begin
+if GetResourceArea(MidCrates3a, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+   CreateCratesArea(5, ExpansionCrates1a, true);
+
+if GetResourceArea(MidCrates3b, mat_cans) < ((200 - shipments_density) / 25 * 5) then
+   CreateCratesArea(5, ExpansionCrates1b, true);
+
+enable;
+end;
+
+every 0$1+0$0.6 do // create crates only on occupied bases
+var i, amount;
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$15,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$50));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$50,1$00));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$00,1$05));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$05,1$10));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$20,1$40));
+  else  Wait(shipments_density/100*Rand(1$40,1$50));
+  end;
+
+  amount:= Rand(3, 5);
+
+  for i in (Side_Positions diff [0]) do
+    CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 20, true);
+
+  enable;
+end;
