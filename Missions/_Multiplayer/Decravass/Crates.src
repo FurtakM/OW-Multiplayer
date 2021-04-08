@@ -3,7 +3,7 @@ var i;
 begin
 
 repeat
- wait(0$20 + (shipments_density - 100));
+ wait(0$40 + (shipments_density - 100));
  i := rand(1,5);
 
  CreateCratesArea(i, SafeCrates1a, true);
@@ -11,15 +11,15 @@ repeat
 until tick < 10$00;
 
 repeat
- wait(0$55 + (shipments_density - 60));
+ wait(2$55 + (shipments_density - 60));
  i := rand(1,5);
 
  CreateCratesArea(i, SafeCrates2a, true);
  CreateCratesArea(i, SafeCrates2b, true);
-until false;
+until tick < 30$00;
 End;
 
-Every 1$20+0$2.0 trigger tick >= 5$00 do
+Every 1$50+0$2.0 trigger tick >= 5$00 do
 var i;
 begin
 enable;
@@ -51,7 +51,7 @@ else
    end;
 End;
 
-every 0$45+0$1.0 do
+every 1$55+0$1.0 do
 begin
 if GetResourceArea(MidCrates3a, mat_cans) < ((200 - shipments_density) / 25 * 5) then
    CreateCratesArea(5, ExpansionCrates1a, true);

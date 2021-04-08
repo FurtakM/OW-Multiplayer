@@ -103,7 +103,7 @@ HEXES
   LINE 44 22 161
     t4r6vC t2r6vC r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v6 v6 v6s8 v6sB v6 v6 v6 v6 v6 v6 v6 v6sA v6sB v6 v6 v6 v6 v6 r6v6sm r6vCsm r6vIsm r6vIsm r6vIsm r6vO r6vO r6vO r6vO r6vIsq r6vCsp r6vCsp r6v6sp r6v6sp r6v6sr v6 v6 v6sA v6sB v6sA v7 v7 v6sC v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s9 v7 v6sC v6 v6 v6 v6 v6 v6sA v6sB v6 v6s9 v7 v7 v6sC v6 v6s8 v6sD v6sA v7 v6sB v6 r6v6sn r6vCsn t2r6vI t4r6vI
   LINE 45 23 162
-    t4r6vC t2r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6sB v6sB v6s8 v7 v6sB v6sB v6 v6 v6 v6 v6 v6s9 v7 v6sC v6 v6 v6 v6 v6 r6v6sm r6vCsm r6vI r6vI r6vIsm r6vO r6vO r6vO r6vIsq r6vI r6vI r6vCsp r6vC r6vC r6v6sp v6 v6s9 v7 v6sB v6sC v6sD v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6sD v6 v6 v6 v6 v6 v6s9 v7 v6sC v6 v6s8 v7 v6sC v6 v6 v6 v6 v6sA v7 v6sC v6 r6v6sn r6vCsn t2r6vI t4r6vI
+    t4r6vC t2r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6sB v6sB v6s8 v7 v6sB v6sB v6 v6 v6 v6 v6 v6s9 v7 v6sC v6 v6 v6 v6 v6 r6v6sm r6vCsm r6vI r6vI r6vIsm r6vO r6vO r6vO r6vIsq r6vI r6vI r6vCsp r6vC r6vC r6v6sp v6 v6s9 v7 v6sB v6sC v6sD v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6sD v6 v6 v6 v6 v6S v6s9 v7 v6sC v6 v6s8 v7 v6sC v6 v6 v6 v6 v6sA v7 v6sC v6 r6v6sn r6vCsn t2r6vI t4r6vI
   LINE 46 23 162
     t4r6vC t2r6vC r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s9 v7 v7 v6s8 v6s8 v6s8 v7 v6sC v6 v6 v6 v6 v6 v6s8 v6sD v6 v6 v6 v6 v6 v6 r6v6sm r6vCsm r6vCsm r6vI r6vIsn r6vO r6vO r6vO r6vIsp r6vI r6vI r6vCsp r6vC r6vC r6v6sp v6 v6s9 v7 v6sC v6 v6 v6 v6 r8v4sLh6 r8v4sLh6 r8v4sGh6 r8v4sGh6 v6 v6 v6 v6 v6 r8v4sLh6 r8v4sGh6 r8v4sGh6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v6 v6 v6s8 v6sD v6 v6 v6 v6 v6 v6sA v6sD v6 r6v6sn r6vCsn t2r6vI t4r6vI
   LINE 47 24 163
@@ -229,7 +229,7 @@ HEXES
   LINE 107 54 193
     t4r6vO t2r6vO r6vIsq r6vI r6vCsq r6v6sq v6sA v7sA v6sJ v6s9 v6s9 v7 v6sC v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sI v8 v8 v8 v8sA v8sA v8sA v8sB v8sB v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s8 v6s8 v6 v6 r6v6sm r6vCsn r6vIsn r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vIsp r6vIso r6vO r6vO r6vO r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 r6v6sn r6vCsn r6vIsn t2r6vO t4r6vIss
   LINE 108 54 193
-    t4r6vO t2r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6sH v8 v7sC v6s8 v6s8 v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sI v6sI v6sI v8 v8 v8 v8sA v9sA v9sA v9sA v9sB v8sB v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s9 v6sB v6 r6v6sm r6vCsm r6vIsm r6vIsm r6vIsm r6vIsm r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8S v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 r6v6sn r6vCsn r6vIsn t2r6vO t4r6vO
+    t4r6vO t2r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6sH v8 v7sC v6s8 v6s8 v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sI v6sI v6sI v8 v8 v8 v8sA v9sA v9sA v9sA v9sB v8sB v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s9 v6sB v6 r6v6sm r6vCsm r6vIsm r6vIsm r6vIsm r6vIsm r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 r6v6sn r6vCsn r6vIsn t2r6vO t4r6vO
   LINE 109 55 194
     t4r6vO t2r6vO r6vIsq r6vCsq r6v6sq v6 v6 v6sG v7sD v6sD v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sI v8 v8 v8 v8 v8 v8s9 v9s9 vA vA vA v9sB v8sB v8sB v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6s9 v7 v6sC v6 r6v6sm r6vCsm r6vCsm r6vCsm r6vCsm r6vIsm r6vIsm r6vIsm r6vO r6vO r6vIsr r6vIsm r6vIsm r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vO r6vIsq r6vCsq r6v6sq v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6 v6sH v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v8 v6sK v6 v6 v6 v6 v6 v6 v6 r6v6sn r6vCsn r6vI r6vIsn t2r6vO t4r6vIss
   LINE 110 55 194
@@ -884,8 +884,6 @@ ENVIROMENT
     sci2
   ON_HEX 116 42
     sZi4
-  ON_HEX 141 42
-    sci4
   ON_HEX 154 42
     sci3
   ON_HEX 122 43
@@ -914,8 +912,6 @@ ENVIROMENT
     sci2
   ON_HEX 135 44
     sci9
-  ON_HEX 138 44
-    sZi8
   ON_HEX 97 45
     sZi6
   ON_HEX 98 45
@@ -926,8 +922,6 @@ ENVIROMENT
     sciA
   ON_HEX 136 45
     sci4
-  ON_HEX 144 45
-    sci6
   ON_HEX 147 45
     sci7
   ON_HEX 152 45
@@ -950,10 +944,6 @@ ENVIROMENT
     sci1
   ON_HEX 107 47
     sci4
-  ON_HEX 141 47
-    sci4
-  ON_HEX 146 47
-    sZi5
   ON_HEX 153 47
     sci9
   ON_HEX 63 48
@@ -974,16 +964,12 @@ ENVIROMENT
     sci1
   ON_HEX 139 49
     sci1
-  ON_HEX 146 49
-    sci2
   ON_HEX 149 49
     sci9
   ON_HEX 101 50
     sci5
   ON_HEX 109 50
     sbi7
-  ON_HEX 144 50
-    sZi6
   ON_HEX 157 50
     sci6
   ON_HEX 27 51
@@ -1000,10 +986,6 @@ ENVIROMENT
     sZi5
   ON_HEX 140 51
     sJi1
-  ON_HEX 142 51
-    sci1
-  ON_HEX 149 51
-    sci4
   ON_HEX 152 51
     sZi5
   ON_HEX 61 52
@@ -1030,8 +1012,6 @@ ENVIROMENT
     sCiU
   ON_HEX 131 53
     sci3
-  ON_HEX 148 53
-    sci4
   ON_HEX 154 53
     sci6
   ON_HEX 162 53
@@ -1148,8 +1128,6 @@ ENVIROMENT
     sciA
   ON_HEX 147 61
     sci5
-  ON_HEX 152 61
-    sci3
   ON_HEX 71 62
     sciA
   ON_HEX 81 62
@@ -1192,8 +1170,6 @@ ENVIROMENT
     sci2
   ON_HEX 145 64
     sci8
-  ON_HEX 152 64
-    sZi4
   ON_HEX 50 65
     sci7
   ON_HEX 65 65
@@ -1210,8 +1186,6 @@ ENVIROMENT
     sZi4
   ON_HEX 149 65
     sci5
-  ON_HEX 156 65
-    sciA
   ON_HEX 164 65
     sci3
   ON_HEX 36 66
@@ -1304,8 +1278,6 @@ ENVIROMENT
     sci5
   ON_HEX 48 74
     sZi3
-  ON_HEX 53 74
-    sci1
   ON_HEX 60 74
     sZi2
   ON_HEX 66 74
@@ -1322,8 +1294,6 @@ ENVIROMENT
     sZi4
   ON_HEX 46 75
     sci6
-  ON_HEX 57 75
-    sci9
   ON_HEX 64 75
     sci8
   ON_HEX 68 75
@@ -1348,8 +1318,6 @@ ENVIROMENT
     sZi7
   ON_HEX 51 77
     sci8
-  ON_HEX 54 77
-    sJi5
   ON_HEX 71 77
     sci2
   ON_HEX 99 77
@@ -1360,8 +1328,6 @@ ENVIROMENT
     sci9
   ON_HEX 138 77
     sci1
-  ON_HEX 57 78
-    sci2
   ON_HEX 66 78
     sci5
   ON_HEX 94 78
@@ -1470,8 +1436,6 @@ ENVIROMENT
     sci9
   ON_HEX 55 86
     sZi3
-  ON_HEX 61 86
-    sci1
   ON_HEX 76 86
     sci5
   ON_HEX 105 86
@@ -1502,8 +1466,6 @@ ENVIROMENT
     sci4
   ON_HEX 182 88
     sZi7
-  ON_HEX 65 89
-    sci2
   ON_HEX 89 89
     sci6
   ON_HEX 95 89
@@ -1542,10 +1504,6 @@ ENVIROMENT
     sci3
   ON_HEX 56 92
     sZi6
-  ON_HEX 63 92
-    sZi5
-  ON_HEX 68 92
-    sci1
   ON_HEX 100 92
     sciA
   ON_HEX 179 92
@@ -1554,8 +1512,6 @@ ENVIROMENT
     sciA
   ON_HEX 59 93
     sci3
-  ON_HEX 67 93
-    sci1
   ON_HEX 88 93
     sci4
   ON_HEX 90 93
@@ -1568,8 +1524,6 @@ ENVIROMENT
     sci9
   ON_HEX 62 94
     sci8
-  ON_HEX 65 94
-    sci2
   ON_HEX 73 94
     sci9
   ON_HEX 81 94
@@ -1588,8 +1542,6 @@ ENVIROMENT
     sZi3
   ON_HEX 48 95
     sbi1
-  ON_HEX 71 95
-    sZi7
   ON_HEX 74 95
     sci8
   ON_HEX 78 95
@@ -1624,8 +1576,6 @@ ENVIROMENT
     sci7
   ON_HEX 65 97
     sZi8
-  ON_HEX 68 97
-    sci1
   ON_HEX 93 97
     sci4
   ON_HEX 95 97
@@ -2285,16 +2235,16 @@ END_OF_BASES
 
 RANDOMS
   MICROLOGIC 2 0 1
-  RANDOM_SEED 1 878652680
+  RANDOM_SEED 1 -596806192
   RANDOM_SEED 2 878652680
-  RANDOM_SEED 3 -363643147
+  RANDOM_SEED 3 1546804867
   RANDOM_SEED 4 -1755861510
   RANDOM_SEED 5 1874549979
   RANDOM_SEED 6 -656968538
   RANDOM_SEED 7 -1874143360
   RANDOM_SEED 8 -2007692137
   RANDOM_SEED 9 1503618265
-  RANDOM_SEED 10 -1637201454
+  RANDOM_SEED 10 -596806192
   RANDOM_SEED 11 1753988952
   RANDOM_SEED 12 1613816511
   RANDOM_SEED 13 -197788041
@@ -2337,7 +2287,7 @@ LASER_EFECTS
 END_OF_LASER_EFECTS
 
 USER_INTERFACE
-  VIEW 1442 1704 1302 826 1
+  VIEW 2662 616 1300 824 1
   MASHA_FLAG 2 F F
 END_OF_USER_INTERFACE
 

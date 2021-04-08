@@ -184,7 +184,7 @@ GAMEINIT
      {Morphling Speed}
      UPGRADE 28
        LEVEL  0  100 
-       LEVEL  3  120 
+       LEVEL  2  120 
        TECH 57 58 59
      {Hacking speed}
      UPGRADE 29

@@ -123,15 +123,6 @@ Upgrade "AI SKILL":
        LEVEL  2  6
        LEVEL  3  8 
 
-Upgrade "Morphling Speed":
-      UPGRADE 28
-       LEVEL  0  100 
-       LEVEL  2  120
-->
-   	  UPGRADE 28
-       LEVEL  0  100 
-       LEVEL  3  120 
-
 Update "Laser Damage":
 	UPGRADE 34
        LEVEL  0  100 
