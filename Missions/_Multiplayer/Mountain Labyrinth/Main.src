@@ -166,11 +166,8 @@ begin
   amount_of_apemen            := [0, 1, 2, 3] [def_amount_of_apemen+1];
   morale_decreasing_time      := [ -1, 0$10, 0$20, 0$40, 0$0 ] [def_morale_flags+1];
   battle_flags_id             := [];
+  siberite_bomb_Delay         := [0,1,30$00,60$00,90$00,120$00] [def_siberite_bomb+1];
 
-  if def_siberite_bomb = 0 then
-    siberite_bomb_Delay = 0
-  else
-    siberite_bomb_Delay = (def_siberite_bomb-1)*10$0 +1;
 end;
 
 function init_map;

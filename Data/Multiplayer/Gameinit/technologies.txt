@@ -76,7 +76,7 @@ GAMEINIT
       NATIONS 0 1 0
       REQUIRES 0 
       LAB  13 
-      TIME 50 
+      TIME 120 
 
       TECHNOLOGY  6 
       NAME "Radar"
@@ -307,7 +307,7 @@ GAMEINIT
       NATIONS 1 1 1
       REQUIRES 0 
       LAB  10 
-      TIME 50 
+      TIME 60 
 
       TECHNOLOGY  34 
       NAME "Advanced metalurgy"
