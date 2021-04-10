@@ -140,3 +140,27 @@ Stim drugs:
 Gun:
 	Research time increased:
 		TIME 50 -> 60
+
+Laser:
+	Research time increased:
+		TIME 50 -> 60
+
+Morphling upgrade:
+	LEVEL  2  120 -> LEVEL  2  110 
+
+Solar engine speed:
+     UPGRADE 4
+       LEVEL  0  100 
+       LEVEL  2  130 
+->
+     UPGRADE 4
+       LEVEL  0  100 
+       LEVEL  2  120 
+       LEVEL  3  150
+
+Double Laser:
+	Main laser reload time:
+		100 -> 70
+
+Arabian half-tracked armour changed:
+	40 -> 45

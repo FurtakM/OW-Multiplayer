@@ -153,7 +153,7 @@ GAMEINIT
       NATIONS 1 0 0
       REQUIRES 1  12 
       LAB  15 
-      TIME 50
+      TIME 60
 
       TECHNOLOGY  14 
       NAME "Double laser"

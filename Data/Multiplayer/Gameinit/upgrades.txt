@@ -27,7 +27,8 @@ GAMEINIT
      {Solar Engine Speed}
      UPGRADE 4
        LEVEL  0  100 
-       LEVEL  2  130 
+       LEVEL  2  120 
+       LEVEL  3  150
        TECH 48 49 50
        UBP 
      {Oil Engine Speed}
@@ -184,7 +185,7 @@ GAMEINIT
      {Morphling Speed}
      UPGRADE 28
        LEVEL  0  100 
-       LEVEL  2  120 
+       LEVEL  2  110 
        TECH 57 58 59
      {Hacking speed}
      UPGRADE 29
