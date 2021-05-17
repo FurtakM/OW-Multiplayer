@@ -43,7 +43,7 @@ Export Function InitApeman;
 var i, playersAmount, j, ape, pos, _apeAreas;
 begin
 playersAmount := 0; 
-apeAreas := [
+_apeAreas := [
   Base1ApeArea,
   Base2ApeArea,
   Base3ApeArea,
