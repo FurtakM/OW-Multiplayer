@@ -24,8 +24,9 @@ EXPORT
 
   def_builduptime,         // (20)
   def_find_people,         // (23) 0 - no, 1 - small, 2 - medium, 3 - good [1]
-  def_lost_people;         // (24) 0 - none, 1 - small, 2 - medium, 3 - good [0]
-
+  def_lost_people,         // (24) 0 - none, 1 - small, 2 - medium, 3 - good [0]
+  def_win_rules,
+  def_people_respawning;
 // derived game parameters
 
 // *************************************************
@@ -42,10 +43,12 @@ EXPORT
 
   chance_loose,
   chance_find,
-  amount_of_apemen;
+  amount_of_apemen,
+  heroes,
+  WaitServerStrings;
 
 // multiplayer parameters
-EXPORT Side_Teams, Teams;
+EXPORT Side_Teams, Teams, Side_Comps;
 EXPORT Side_Positions, Side_Nations, Team_Game;
 
 // map parameters
@@ -90,6 +93,8 @@ function read_multiplayer_and_game_parameters;
         {Positions   = [4,0,2,7];}
         Teams          = [[2,6],[7,4]];
       end;
+
+    Side_Comps := [];
 
     if MultiPlayer then         // game settings for real Multiplayer
       begin
@@ -141,6 +146,9 @@ function read_multiplayer_and_game_parameters;
         def_find_people =       2;
         def_lost_people=        1;
    end;
+
+   def_win_rules := 0;
+   def_people_respawning := 0;
                    
   if isSGUI then
      setMpTechs()

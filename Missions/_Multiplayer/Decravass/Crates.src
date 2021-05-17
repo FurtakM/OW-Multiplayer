@@ -3,7 +3,7 @@ var i;
 begin
 
 repeat
- wait(0$40 + (shipments_density - 100));
+ wait(0$60 + (shipments_density - 100));
  i := rand(1,5);
 
  CreateCratesArea(i, SafeCrates1a, true);
