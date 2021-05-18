@@ -146,7 +146,7 @@ GAMEINIT
       NATIONS 1 0 0
       REQUIRES 1  12 
       LAB  10 
-      TIME 50 
+      TIME 100 
 
       TECHNOLOGY  10 
       NAME "High-energy laser"

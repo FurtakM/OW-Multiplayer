@@ -164,3 +164,11 @@ Double Laser:
 
 Arabian half-tracked armour changed:
 	40 -> 45
+
+Heavy tracked (US):
+	Speed decreased:
+		SPEED 10 -> 9
+
+Soporific ammunition
+	Research time increased:
+		TIME 50 -> 100
