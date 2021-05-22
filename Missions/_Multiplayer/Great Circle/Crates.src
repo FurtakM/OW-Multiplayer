@@ -1,0 +1,54 @@
+every 0$25+0$1.0 do  // Between and center
+var i, areas;
+begin
+areas := [
+  Between18,
+  Between21,
+  Between32,
+  Between43,
+  Between54,
+  Between65,
+  Between76,
+  Between87
+];
+
+for i := 1 to 8 do
+    begin
+    if FilterUnitsInArea(areas[i], [[f_not, [f_side, 0]], [f_type, unit_building]]) and GetResourceArea(areas[i], mat_cans) < ((200-shipments_density) / 50 * 5) then
+       begin
+       wait(rand(0$2, 0$6));
+       CreateCratesArea(rand(2, 5), areas[i], true);
+       end;
+    end;
+
+if GetResourceArea(Center, mat_cans) < ((400 - shipments_density)/ 25 * 5) then
+   CreateCratesArea(5, Center, true);
+
+wait(rand(0$10, 0$15));
+
+CreateCratesAnyWhere(rand(1, 5), true);
+
+enable;
+End;
+
+every 0$1+0$0.6 do // create crates only on occupied bases
+var i, amount;
+begin
+  case tick of
+         1.. 1$0:  Wait(shipments_density/100*Rand(0$15,0$30));
+     1$0+1.. 5$0:  Wait(shipments_density/100*Rand(0$30,0$50));
+     5$0+1..10$0:  Wait(shipments_density/100*Rand(0$50,1$00));
+    10$0+1..20$0:  Wait(shipments_density/100*Rand(1$00,1$05));
+    20$0+1..30$0:  Wait(shipments_density/100*Rand(1$05,1$10));
+    30$0+1..50$0:  Wait(shipments_density/100*Rand(1$10,1$20));
+    50$0+1..300$0: Wait(shipments_density/100*Rand(1$20,1$40));
+  else  Wait(shipments_density/100*Rand(1$40,1$50));
+  end;
+
+  amount:= Rand(3, 5);
+
+  for i in (Side_Positions diff [0]) do
+    CreateCratesXYR(amount, start_def[i][1], start_def[i][2], 20, true);
+
+  enable;
+end;

@@ -1,0 +1,8 @@
+SOURCE_CODES
+  ENABLED LUA_MultiScript
+  ENABLED SharedAchievements
+  ENABLED US_Win
+  ENABLED US_SetTechs
+  ENABLED US_BuildUp
+  ENABLED people_respawning
+END_OF_SOURCE_CODES
