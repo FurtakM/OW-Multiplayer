@@ -224,7 +224,7 @@ GAMEINIT
      UPGRADE 34
        LEVEL  0  100 
        LEVEL  2  130 
-       LEVEL  3  150
+       LEVEL  3  140
        TECH 60 61 62
        UVP UBP 
      {Laser range}

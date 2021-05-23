@@ -496,7 +496,7 @@ GAMEINIT
       NATIONS 0 1 0
       REQUIRES 0 
       LAB  13 
-      TIME 100 
+      TIME 130 
 
       TECHNOLOGY  67 
       NAME "Biotechnology upgrade 2"

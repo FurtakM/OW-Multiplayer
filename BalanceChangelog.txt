@@ -172,3 +172,20 @@ Heavy tracked (US):
 Soporific ammunition
 	Research time increased:
 		TIME 50 -> 100
+
+0.37b:
+Update "Laser Damage":
+	UPGRADE 34
+       LEVEL  0  100 
+       LEVEL  2  130 
+       LEVEL  3  150
+->
+	UPDATE 34
+	   LEVEL  0  100
+ 	   LEVEL  2  130
+ 	   LEVEL  3  140
+
+
+I bio upgrade:
+	Research time increased:
+		TIME 100 -> 130
