@@ -153,24 +153,24 @@
  242: LIST
  243: LIST
  244: ST_TO_ADDR
-// Side_Nations := [ 1 , 2 , 3 , 1 , 2 , 3 , 1 , 2 ] ;
+// Side_Nations := [ 3 , 3 , 3 , 3 , 3 , 3 , 3 , 3 ] ;
  245: LD_ADDR_EXP 19
  249: PUSH
- 250: LD_INT 1
+ 250: LD_INT 3
  252: PUSH
- 253: LD_INT 2
+ 253: LD_INT 3
  255: PUSH
  256: LD_INT 3
  258: PUSH
- 259: LD_INT 1
+ 259: LD_INT 3
  261: PUSH
- 262: LD_INT 2
+ 262: LD_INT 3
  264: PUSH
  265: LD_INT 3
  267: PUSH
- 268: LD_INT 1
+ 268: LD_INT 3
  270: PUSH
- 271: LD_INT 2
+ 271: LD_INT 3
  273: PUSH
  274: EMPTY
  275: LIST
@@ -1622,7 +1622,7 @@
 2289: LIST
 2290: LIST
 2291: ST_TO_ADDR
-// depot_def := [ [ 71 , 53 , 5 ] , [ 99 , 30 , 5 ] , [ 150 , 55 , 0 ] , [ 194 , 119 , 1 ] , [ 213 , 179 , 2 ] , [ 187 , 206 , 3 ] , [ 136 , 183 , 3 ] , [ 93 , 117 , 4 ] ] ;
+// depot_def := [ [ 71 , 53 , 5 ] , [ 99 , 30 , 5 ] , [ 150 , 55 , 0 ] , [ 192 , 119 , 1 ] , [ 213 , 179 , 2 ] , [ 187 , 206 , 3 ] , [ 136 , 183 , 3 ] , [ 93 , 117 , 4 ] ] ;
 2292: LD_ADDR_EXP 22
 2296: PUSH
 2297: LD_INT 71
@@ -1658,7 +1658,7 @@
 2336: LIST
 2337: LIST
 2338: PUSH
-2339: LD_INT 194
+2339: LD_INT 192
 2341: PUSH
 2342: LD_INT 119
 2344: PUSH
