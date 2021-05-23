@@ -1,43 +1,21 @@
 every 0$25+0$1.0 do  // Between and center
-var i, areas, _areas;
+var i, areas;
 begin
-_areas := [
-  BuildUp1,
-  BuildUp2,
-  BuildUp3,
-  BuildUp4,
-  BuildUp5,
-  BuildUp6,
-  BuildUp7,
-  BuildUp8
-];
-
 areas := [
   Between18,
-  Between21,
-  Between32,
-  Between43,
-  Between54,
-  Between65,
-  Between76,
-  Between87
+  Between23,
+  Between45,
+  Between67
 ];
 
-for i := 1 to 8 do
+for i := 1 to 4 do
     begin
-    if FilterUnitsInArea(_areas[i], [[f_not, [f_side, 0]], [f_type, unit_building]]) and GetResourceArea(areas[i], mat_cans) < ((200-shipments_density) / 50 * 5) then
-       begin
-       wait(rand(0$2, 0$6));
+    if GetResourceArea(areas[i], mat_cans) < ((200-shipments_density) / 50 * 5) then
        CreateCratesArea(rand(2, 5), areas[i], true);
-       end;
     end;
 
-if GetResourceArea(Center, mat_cans) < ((700 - shipments_density)/ 25 * 5) then
+if GetResourceArea(Center, mat_cans) < ((600 - shipments_density)/ 25 * 5) then
    CreateCratesArea(5, Center, true);
-
-wait(rand(0$10, 0$15));
-
-CreateCratesAnyWhere(rand(1, 5), true);
 
 enable;
 End;

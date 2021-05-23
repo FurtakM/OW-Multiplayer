@@ -395,3 +395,10 @@ New map added - Mountain Labyrinth by Gwrhkhsh
 New map added - Decravass by Jacok
 Siberia & Rocky Pass:
 - Fxied win conditions
+
+0.36:
+New map added - Alien Base #2 (Big Alien Base) by Gogeta & Serpent
+New map added - Competitions by Gogeta
+New map added - Big Circle by Gogeta & Serpent
+Flags:
+- Remove fishes from map
