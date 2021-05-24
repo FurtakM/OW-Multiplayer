@@ -182,8 +182,8 @@ Update "Laser Damage":
 ->
 	UPDATE 34
 	   LEVEL  0  100
- 	   LEVEL  2  130
- 	   LEVEL  3  140
+ 	   LEVEL  2  125
+ 	   LEVEL  3  135
 
 
 I bio upgrade:
@@ -200,3 +200,12 @@ Solar engine speed:
        LEVEL  0  100 
        LEVEL  2  125 
        LEVEL  3  135
+
+Morphling upgrade:
+	UPGRADE 28
+	   LEVEL  2  110
+->
+	UPGRADE 28
+       LEVEL  0  100 
+       LEVEL  2  110
+       LEVEL  3  120 

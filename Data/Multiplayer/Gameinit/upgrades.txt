@@ -185,7 +185,8 @@ GAMEINIT
      {Morphling Speed}
      UPGRADE 28
        LEVEL  0  100 
-       LEVEL  2  110 
+       LEVEL  2  110
+       LEVEL  3  120 
        TECH 57 58 59
      {Hacking speed}
      UPGRADE 29
@@ -223,8 +224,8 @@ GAMEINIT
      {Laser damage}
      UPGRADE 34
        LEVEL  0  100 
-       LEVEL  2  130 
-       LEVEL  3  140
+       LEVEL  2  125 
+       LEVEL  3  135
        TECH 60 61 62
        UVP UBP 
      {Laser range}
