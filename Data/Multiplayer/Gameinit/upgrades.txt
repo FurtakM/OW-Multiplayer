@@ -27,8 +27,8 @@ GAMEINIT
      {Solar Engine Speed}
      UPGRADE 4
        LEVEL  0  100 
-       LEVEL  2  120 
-       LEVEL  3  150
+       LEVEL  2  125 
+       LEVEL  3  135
        TECH 48 49 50
        UBP 
      {Oil Engine Speed}

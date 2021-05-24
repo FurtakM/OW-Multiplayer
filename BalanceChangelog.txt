@@ -189,3 +189,14 @@ Update "Laser Damage":
 I bio upgrade:
 	Research time increased:
 		TIME 100 -> 130
+
+Solar engine speed:
+     UPGRADE 4
+       LEVEL  0  100 
+       LEVEL  2  120 
+       LEVEL  3  150
+->
+     UPGRADE 4
+       LEVEL  0  100 
+       LEVEL  2  125 
+       LEVEL  3  135
