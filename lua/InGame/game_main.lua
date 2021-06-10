@@ -697,7 +697,7 @@ for i=1,5 do
         game.chat.labels[i] = getLabel(game.chat,anchorLT,0,game.chat.height-i*15,0,15,Tahoma_13B,'');
         set_Property(game.chat.labels[i].ID,PROP_OUTLINE,true);
         set_Property(game.chat.labels[i].ID,PROP_SHADOWTEXT,true);
-        set_Outline2Settings(game.chat.labels[i].ID,{colour=RGB(0,0,0),min=0.0,max=0.2});
+        set_Outline2Settings(game.chat.labels[i].ID,{colour=RGB(0,0,0),min=0.0,max=0.1});
 		sgui_set(game.chat.labels[i].ID,PROP_OUTLINE2,true);
         setVisible(game.chat.labels[i],false);
         game.chat.labels[i].time = 0;
