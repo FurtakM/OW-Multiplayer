@@ -76,7 +76,7 @@ GAMEINIT
       NATIONS 0 1 0
       REQUIRES 0 
       LAB  13 
-      TIME 120 
+      TIME 130 
 
       TECHNOLOGY  6 
       NAME "Radar"
