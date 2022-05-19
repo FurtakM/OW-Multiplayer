@@ -209,3 +209,21 @@ Morphling upgrade:
        LEVEL  0  100 
        LEVEL  2  110
        LEVEL  3  120 
+
+
+0.38b:
+Stim drugs:
+	Research time increased:
+		TIME 120 -> 130
+
+Medium tracked (RU):
+	Speed increased:
+		SPEED 10 -> 11
+
+Heavy tracked (RU):
+	Speed increased:
+		SPEED 7 -> 8
+
+Heavy wheeled (RU):
+	Speed increased:
+		SPEED 9 -> 10

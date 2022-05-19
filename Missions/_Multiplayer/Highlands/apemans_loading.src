@@ -102,23 +102,18 @@ result := CreateHuman;
 End;
 
 Export Function ApeKilled(ape);
-var side, i;
+var s, i;
 begin
 if not ape then
    exit;
 
-side := GetSide(ape);
+for i = 1 to apemanPos do
+    if ape in apemanPos[i] then
+       begin
+       s := i;
+       break;
+       end;
 
-if not side then
-   begin
-   for i = 1 to apemanPos do
-       if ape in apemanPos[i] then
-          begin
-          side := i;
-          break;
-          end;
-   end;
-
-apemanPos := Replace(apemanPos, side, apemanPos[side] diff ape);
+apemanPos := Replace(apemanPos, s, apemanPos[s] diff ape);
 apemanNumber := apemanNumber - 1;
 End;
