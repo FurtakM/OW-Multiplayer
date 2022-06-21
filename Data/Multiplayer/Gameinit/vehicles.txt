@@ -849,7 +849,7 @@ GAMEINIT
         OIL 40
         SIBERIUM 0
         CANS 40
-        TIME 36
+        TIME 40
         SOUND_NAME Flame
         SOUND_TYPE 0
         SEL_XY 0 0
@@ -858,9 +858,9 @@ GAMEINIT
         WEIGHT  2  4 
         ATTACK
           MINMAX_RANGE  2  9 
-          FREQUENCY  40  60 
-          DAMAGE 129 30 78
-          EFF 85 20 40
+          FREQUENCY  40  80 
+          DAMAGE 99 32 52
+          EFF 62 20 24
           ANIM  1  10  3 
           ATTACKGROUND
         END_OF_ATTACK

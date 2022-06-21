@@ -227,3 +227,16 @@ Heavy tracked (RU):
 Heavy wheeled (RU):
 	Speed increased:
 		SPEED 9 -> 10
+
+0.39b:
+Flamethrower:
+	Frequency increased:
+	    60 -> 80
+	Damage changed from:
+		DAMAGE 129 30 78		
+	To:
+		DAMAGE 99 32 52
+	Eff changed from:
+		EFF 85 20 40
+	To:
+		EFF 62 20 24
