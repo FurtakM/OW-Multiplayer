@@ -240,3 +240,24 @@ Flamethrower:
 		EFF 85 20 40
 	To:
 		EFF 62 20 24
+
+0.40b:
+Advanced metalurgy:
+	Research time increased:
+		TIME 120 -> 220
+
+Heavy tracked (US/RU):
+    Cost increased:
+        CANS 40 -> 50
+
+Morphling chassis:
+	Cost decreased:
+		CANS 50 -> 40
+
+Self-propelled bomb:
+	Damage:
+		1010 505 1010
+		 100 200 600
+	to:
+		1010 805 1010
+		 100 300 600

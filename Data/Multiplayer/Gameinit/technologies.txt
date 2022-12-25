@@ -314,7 +314,7 @@ GAMEINIT
       NATIONS 1 0 1
       REQUIRES 1  39 
       LAB  10 
-      TIME 120 
+      TIME 220
 
       TECHNOLOGY  40 
       NAME "Rocket"

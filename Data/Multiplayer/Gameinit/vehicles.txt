@@ -99,7 +99,7 @@ GAMEINIT
         SYMBOL u-heavyt
         OIL 0
         SIBERIUM 0
-        CANS 40
+        CANS 50
         TIME 30
         SOUND_NAME Heavy
         SOUND_TYPE 1
@@ -121,7 +121,7 @@ GAMEINIT
         SYMBOL u-morphling
         OIL 0
         SIBERIUM 0
-        CANS 50
+        CANS 40
         TIME 80
         SOUND_NAME Morph
         SOUND_TYPE 1
@@ -317,7 +317,7 @@ GAMEINIT
         SYMBOL r-heavyt
         OIL 0
         SIBERIUM 0
-        CANS 40
+        CANS 50
         TIME 40
         SOUND_NAME heavyTrack
         SOUND_TYPE 1
@@ -931,8 +931,8 @@ GAMEINIT
         ATTACK
           MINMAX_RANGE  1  1 
           FREQUENCY  1  100 
-          DAMAGE 1010 505 1010
-          EFF 100 200 600
+          DAMAGE 1010 805 1010
+          EFF 100 300 600
           ANIM  1  19  3 
         END_OF_ATTACK
         PRODUCED_IN 21 
