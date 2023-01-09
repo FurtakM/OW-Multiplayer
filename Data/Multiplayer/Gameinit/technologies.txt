@@ -76,7 +76,7 @@ GAMEINIT
       NATIONS 0 1 0
       REQUIRES 0 
       LAB  13 
-      TIME 130 
+      TIME 50 
 
       TECHNOLOGY  6 
       NAME "Radar"
@@ -146,21 +146,21 @@ GAMEINIT
       NATIONS 1 0 0
       REQUIRES 1  12 
       LAB  10 
-      TIME 100 
+      TIME 50 
 
       TECHNOLOGY  10 
       NAME "High-energy laser"
       NATIONS 1 0 0
       REQUIRES 1  12 
       LAB  15 
-      TIME 60
+      TIME 50 
 
       TECHNOLOGY  14 
       NAME "Double laser"
       NATIONS 1 0 0
       REQUIRES 2 10 21
       LAB  15 
-      TIME 120 
+      TIME 50 
 
       TECHNOLOGY  20 
       NAME "Siberite detection"
@@ -204,13 +204,6 @@ GAMEINIT
       LAB  11 
       TIME 1500 
 
-      TECHNOLOGY  73 
-      NAME "Siberite fission"
-      NATIONS 0 1 0
-      REQUIRES 2 22 43
-      LAB  11 
-      TIME 1500 
-
       TECHNOLOGY  72 
       NAME "Siberite implosion"
       NATIONS 0 1 0
@@ -251,7 +244,7 @@ GAMEINIT
       NATIONS 0 0 1
       REQUIRES 1  30 
       LAB  14 
-      TIME 80 
+      TIME 60 
 
       TECHNOLOGY  37 
       NAME "Limited spontaneous teleportation"
@@ -293,7 +286,7 @@ GAMEINIT
       NATIONS 1 0 0
       REQUIRES 1  32 
       LAB  12 
-      TIME 90 
+      TIME 30 
 
       TECHNOLOGY  69 
       NAME "Gatling gun"
@@ -307,21 +300,21 @@ GAMEINIT
       NATIONS 1 1 1
       REQUIRES 0 
       LAB  10 
-      TIME 60 
+      TIME 50 
 
       TECHNOLOGY  34 
       NAME "Advanced metalurgy"
       NATIONS 1 0 1
       REQUIRES 1  39 
       LAB  10 
-      TIME 220
+      TIME 100 
 
       TECHNOLOGY  40 
       NAME "Rocket"
       NATIONS 1 1 1
       REQUIRES 1  39 
       LAB  10 
-      TIME 100 
+      TIME 70 
 
       TECHNOLOGY  71 
       NAME "Advanced rocketry"
@@ -412,21 +405,21 @@ GAMEINIT
       NATIONS 1 1 1
       REQUIRES 0 
       LAB  11 
-      TIME 75 
+      TIME 150 
 
       TECHNOLOGY  55 
       NAME "Siberite technology upgrade 2"
       NATIONS 1 1 1
       REQUIRES 1  54 
       LAB  11 
-      TIME 150 
+      TIME 300 
 
       TECHNOLOGY  56 
       NAME "Siberite technology upgrade 3"
       NATIONS 1 1 1
       REQUIRES 1  55 
       LAB  11 
-      TIME 300 
+      TIME 600 
 
       TECHNOLOGY  57 
       NAME "Computer upgrade 1"
@@ -496,7 +489,7 @@ GAMEINIT
       NATIONS 0 1 0
       REQUIRES 0 
       LAB  13 
-      TIME 130 
+      TIME 100 
 
       TECHNOLOGY  67 
       NAME "Biotechnology upgrade 2"
